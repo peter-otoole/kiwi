@@ -67,6 +67,18 @@ xLift...(fn, ...)</pre>
       <p>Compose a binary function with two other functions.</p>
   
     </div>
+
+    <div class="Details">
+      <h2>Details</h2>
+      
+      <p>Two partially applied version of <b>xLift</b> exist;
+<b>%or%</b> and <b>%and%</b>. These exist to solve</p>
+  
+      <p><code>is.na(x) || is.null(x) || is.nan(x)</code></p>
+  
+      <p><code>(is.na %or% is.null %or% is.nan)(x)</code></p>
+  
+    </div>
       </div>
   <div class="span4">
     <!-- <ul>

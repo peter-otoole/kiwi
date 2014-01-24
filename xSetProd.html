@@ -47,7 +47,8 @@ xSetProd...(...)</pre>
     <h2>Arguments</h2>
     <dl>
       <dt>colls</dt>
-      <dd>n collections.</dd>
+      <dd>a collection of collections. The collections
+  to use to take the cartesian product.</dd>
       <dt>...</dt>
       <dd>see above.</dd>
     </dl>
@@ -55,7 +56,8 @@ xSetProd...(...)</pre>
     <div class="Value">
       <h2>Value</h2>
       
-      <p>A list of n-element lists.</p>
+      <p>A list of collections, with as many elements per collection
+as there are collections in <b>colls</b>.</p>
   
     </div>
 
@@ -69,7 +71,7 @@ xSetProd...(...)</pre>
     <div class="Corner Cases">
       <h2>Corner Cases</h2>
       
-      <p>Returns the empty list if <b>coll</b> is length-zero.</p>
+      <p>Returns the empty list if <b>colls</b> is length-zero.</p>
   
     </div>
     

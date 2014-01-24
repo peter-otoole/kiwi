@@ -40,17 +40,18 @@
 <div class="row">
   <div class="span8">
     <h2>Usage</h2>
-    <pre>xPermute(coll, colls)
+    <pre>xPermute(nums, colls)
 
-xPermute...(coll, ...)</pre>
+xPermute...(nums, ...)</pre>
     
     <h2>Arguments</h2>
     <dl>
-      <dt>coll</dt>
-      <dd>a collection of whole numbers.</dd>
+      <dt>nums</dt>
+      <dd>a collection of whole numbers. The indices by
+  which to permute the input collections.</dd>
       <dt>colls</dt>
       <dd>several collections of equal length to
-  <b>coll</b>.</dd>
+  <b>nums</b>.</dd>
       <dt>...</dt>
       <dd>see above.</dd>
     </dl>
@@ -69,10 +70,24 @@ xPermute...(coll, ...)</pre>
   
     </div>
 
+    <div class="Details">
+      <h2>Details</h2>
+      
+      <p><b>xPermute</b> allows several collections to be rearranged
+in the same way simultaneously.</p>
+  
+      <p><code>colls <- list(ids = list(15, 1, 12), ages = list(17,
+29, 24), weights = list(80, 82, 76))</code></p>
+  
+      <p><code>xPermute((order 
+colls)</code></p>
+  
+    </div>
+
     <div class="Corner Cases">
       <h2>Corner Cases</h2>
       
-      <p>returns the empty list is <b>coll</b> is length-zero.</p>
+      <p>returns the empty list is <b>nums</b> is length-zero.</p>
   
     </div>
       </div>
