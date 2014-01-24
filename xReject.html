@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+<title>xReject. arrow 0.1.0</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="">
+
+<link href="css/bootstrap.css" rel="stylesheet">
+<link href="css/bootstrap-responsive.css" rel="stylesheet">
+<link href="css/highlight.css" rel="stylesheet">
+<link href="css/staticdocs.css" rel="stylesheet">
+
+<!--[if lt IE 9]>
+  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+  </head>
+
+  <body>
+    <div class="navbar">
+  <div class="navbar-inner">
+    <div class="container">
+      <a class="brand" href="#">arrow 0.1.0</a>
+      <div class="nav">
+        <ul class="nav">
+          <li><a href="index.html"><i class="icon-home icon-white"></i> Index</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <div class="container">
+      <header>
+        
+      </header>
+      
+      <h1>xReject</h1>
+
+<div class="row">
+  <div class="span8">
+    <h2>Usage</h2>
+    <pre>xReject(pred, coll)
+
+xReject...(pred, ...)</pre>
+    
+    <h2>Arguments</h2>
+    <dl>
+      <dt>pred</dt>
+      <dd>a predicate.</dd>
+      <dt>coll</dt>
+      <dd>a collection</dd>
+      <dt>...</dt>
+      <dd>see above.</dd>
+    </dl>
+    
+    <div class="Value">
+      <h2>Value</h2>
+      
+      <p>A list.</p>
+  
+    </div>
+
+    <div class="Description">
+      <h2>Description</h2>
+      
+      <p>Remove all elements from a collection matching a predicate.</p>
+  
+    </div>
+
+    <div class="Details">
+      <h2>Details</h2>
+      
+      <p><b>xReject</b> applies a predicate function such as
+<b>is.integer</b> or <b>is.null</b> to each element of a
+collection. The elements for which the predicate returned
+false are kept, and the remaining elements are removed from
+the collection.</p>
+  
+    </div>
+
+    <div class="Corner Cases">
+      <h2>Corner Cases</h2>
+      
+      <p>Returns the empty list if <code>coll</code> is length-zero, or
+  no match is found. If the predicate returns a non-logical
+  value an error is thrown. If an na value is returned by
+  the predicate it is treated as a false value.</p>
+  
+    </div>
+      </div>
+  <div class="span4">
+    <!-- <ul>
+      <li>xReject</li><li>xReject...</li>
+    </ul>
+    <ul>
+      
+    </ul> -->
+      
+    <h2>See also</h2>
+    
+Other filtering_functions: <code><a href='xPack.html'>xPack</a></code>,
+<code><a href='xPack.html'>xPack...</a></code>; <code><a href='xPartition.html'>xPartition</a></code>;
+<code><a href='xRemoveEmpty.html'>xRemoveEmpty</a></code>, <code><a href='xRemoveEmpty.html'>xRemoveEmpty...</a></code>;
+<code><a href='xRemoveNan.html'>xRemoveNan</a></code>; <code><a href='xRemoveNa.html'>xRemoveNa</a></code>;
+<code><a href='xRemoveNull.html'>xRemoveNull</a></code>, <code><a href='xRemoveNull.html'>xRemoveNull...</a></code>;
+<code><a href='xSelect.html'>xSelect</a></code>, <code><a href='xSelect.html'>xSelect...</a></code>
+
+        
+  </div>
+</div>
+      
+      <footer>
+      <p class="pull-right"><a href="#">Back to top</a></p>
+<p>Built by <a href="https://github.com/hadley/staticdocs">staticdocs</a>. Styled with <a href="http://twitter.github.com/bootstrap">bootstrap</a>.</p>
+      </footer>
+    </div>
+  </body>
+</html>

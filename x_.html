@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+<title>x_. arrow 0.1.0</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="">
+
+<link href="css/bootstrap.css" rel="stylesheet">
+<link href="css/bootstrap-responsive.css" rel="stylesheet">
+<link href="css/highlight.css" rel="stylesheet">
+<link href="css/staticdocs.css" rel="stylesheet">
+
+<!--[if lt IE 9]>
+  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+  </head>
+
+  <body>
+    <div class="navbar">
+  <div class="navbar-inner">
+    <div class="container">
+      <a class="brand" href="#">arrow 0.1.0</a>
+      <div class="nav">
+        <ul class="nav">
+          <li><a href="index.html"><i class="icon-home icon-white"></i> Index</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <div class="container">
+      <header>
+        
+      </header>
+      
+      <h1>x_</h1>
+
+<div class="row">
+  <div class="span8">
+    <h2>Usage</h2>
+    <pre>x_(val)</pre>
+    
+    <h2>Arguments</h2>
+    <dl>
+      <dt>val</dt>
+      <dd>an arbitrary value. The methods available
+  depend on the input type; functions and collections have
+  the most methods available.</dd>
+    </dl>
+    
+    <div class="Value">
+      <h2>Value</h2>
+      
+      <p>An object of class "arrow". Internally the object is
+represented as a list with a single field <b>x</b>, but
+this field cannot be accessed directly.  Instead, the
+method <b>$ x_( )</b> or <b>$ x_Identity( )</b> can be used
+to return the data stored in an arrow object.</p>
+  
+      <p>The methods available to an arrow object depend on the type
+of the data it contains. All arrow objects inherit a
+handful of methods regardless of their type; these include
+<b>xIdentity</b> and <b>xTap</b> - a method that allows
+anonymous function to be executed on an arrow object.</p>
+  
+      <p>Matrices, data frames, and factors have methods for
+converting them to collections, while normal Arrow
+functions are also available as methods for collections and
+functions.</p>
+  
+    </div>
+
+    <div class="Description">
+      <h2>Description</h2>
+      
+      <p>Generate an arrow object with methods available to it.</p>
+  
+    </div>
+
+    <div class="Corner Cases">
+      <h2>Corner Cases</h2>
+      
+      <p>The methods that can be used by <b>$ x_( )</b> object
+  varies depending on the type of val.</p>
+  
+    </div>
+    
+    <h2 id="examples">Examples</h2>
+    <pre class="examples"><div class='input'>
+Null
+</div>
+<div class='output'>NULL
+</div></pre>
+  </div>
+  <div class="span4">
+    <!-- <ul>
+      <li>x_</li>
+    </ul>
+    <ul>
+      
+    </ul> -->
+      
+    <h2>See also</h2>
+    
+Other method_functions: <code><a href='xByColnames.html'>xByColnames</a></code>;
+<code><a href='xByCols.html'>xByCols</a></code>; <code><a href='xByLevels.html'>xByLevels</a></code>,
+<code><a href='xByLevels.html'>xByLevels</a></code>; <code><a href='xByRows.html'>xByRows</a></code>;
+<code><a href='xColUnit.html'>xColUnit</a></code>; <code><a href='xElemsByCols.html'>xElemsByCols</a></code>;
+<code><a href='xElemsByRows.html'>xElemsByRows</a></code>; <code><a href='xExecute.html'>xExecute</a></code>;
+<code><a href='xRowUnit.html'>xRowUnit</a></code>; <code><a href='xTap.html'>xTap</a></code>;
+<code><a href='xTranspose.html'>xTranspose</a></code>
+
+        
+  </div>
+</div>
+      
+      <footer>
+      <p class="pull-right"><a href="#">Back to top</a></p>
+<p>Built by <a href="https://github.com/hadley/staticdocs">staticdocs</a>. Styled with <a href="http://twitter.github.com/bootstrap">bootstrap</a>.</p>
+      </footer>
+    </div>
+  </body>
+</html>

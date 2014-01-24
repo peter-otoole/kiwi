@@ -1,0 +1,12 @@
+/*colors from the incredibly lovely http://flatuicolors.com/ */
+
+tt, code, pre {
+  font-family: "Inconsolata", "Consolas", "Monaco", "monospace"; }
+
+pre, code {
+  size: 16pt;
+  text-align: left;
+  line-height: 1.2em; }
+
+pre {
+  white-space: pre-wrap; }

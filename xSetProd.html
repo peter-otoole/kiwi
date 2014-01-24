@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+<title>xSetProd. arrow 0.1.0</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="">
+
+<link href="css/bootstrap.css" rel="stylesheet">
+<link href="css/bootstrap-responsive.css" rel="stylesheet">
+<link href="css/highlight.css" rel="stylesheet">
+<link href="css/staticdocs.css" rel="stylesheet">
+
+<!--[if lt IE 9]>
+  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+  </head>
+
+  <body>
+    <div class="navbar">
+  <div class="navbar-inner">
+    <div class="container">
+      <a class="brand" href="#">arrow 0.1.0</a>
+      <div class="nav">
+        <ul class="nav">
+          <li><a href="index.html"><i class="icon-home icon-white"></i> Index</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <div class="container">
+      <header>
+        
+      </header>
+      
+      <h1>xSetProd</h1>
+
+<div class="row">
+  <div class="span8">
+    <h2>Usage</h2>
+    <pre>xSetProd(colls)
+
+xSetProd...(...)</pre>
+    
+    <h2>Arguments</h2>
+    <dl>
+      <dt>colls</dt>
+      <dd>n collections.</dd>
+      <dt>...</dt>
+      <dd>see above.</dd>
+    </dl>
+    
+    <div class="Value">
+      <h2>Value</h2>
+      
+      <p>A list of n-element lists.</p>
+  
+    </div>
+
+    <div class="Description">
+      <h2>Description</h2>
+      
+      <p>Get the cartesian product of several collections.</p>
+  
+    </div>
+
+    <div class="Corner Cases">
+      <h2>Corner Cases</h2>
+      
+      <p>Returns the empty list if <code>coll</code> is length-zero.</p>
+  
+    </div>
+    
+    <h2 id="examples">Examples</h2>
+    <pre class="examples"><div class='input'>
+# 1. xSetProd with xMap, xMapply or xReduce are
+#    generally very nice replacements for loops.
+
+xMapply(
+    (ith : jth) := {
+        ith^2 + jth^2
+    },
+    xSetProd...(1:4, 1:4)
+)
+</div>
+<div class='output'>[[1]]
+[1] 2
+
+[[2]]
+[1] 5
+
+[[3]]
+[1] 10
+
+[[4]]
+[1] 17
+
+[[5]]
+[1] 5
+
+[[6]]
+[1] 8
+
+[[7]]
+[1] 13
+
+[[8]]
+[1] 20
+
+[[9]]
+[1] 10
+
+[[10]]
+[1] 13
+
+[[11]]
+[1] 18
+
+[[12]]
+[1] 25
+
+[[13]]
+[1] 17
+
+[[14]]
+[1] 20
+
+[[15]]
+[1] 25
+
+[[16]]
+[1] 32
+
+</div>
+<div class='input'>
+# is roughly the same as base R's...
+
+res <- list()
+
+for (ith in 1:4) {
+    for (jth in 1:4) {
+        res <- c(res, ith^2 + jth^2)
+    }
+}
+
+res
+</div>
+<div class='output'>[[1]]
+[1] 2
+
+[[2]]
+[1] 5
+
+[[3]]
+[1] 10
+
+[[4]]
+[1] 17
+
+[[5]]
+[1] 5
+
+[[6]]
+[1] 8
+
+[[7]]
+[1] 13
+
+[[8]]
+[1] 20
+
+[[9]]
+[1] 10
+
+[[10]]
+[1] 13
+
+[[11]]
+[1] 18
+
+[[12]]
+[1] 25
+
+[[13]]
+[1] 17
+
+[[14]]
+[1] 20
+
+[[15]]
+[1] 25
+
+[[16]]
+[1] 32
+
+</div></pre>
+  </div>
+  <div class="span4">
+    <!-- <ul>
+      <li>xSetProd</li><li>xSetProd...</li>
+    </ul>
+    <ul>
+      
+    </ul> -->
+      
+    <h2>See also</h2>
+    
+Other combinatoric_functions: <code><a href='xCombos.html'>xCombos</a></code>,
+<code><a href='xCombos.html'>xCombos...</a></code>
+
+Other set_functions: <code><a href='xCombos.html'>xCombos</a></code>,
+<code><a href='xCombos.html'>xCombos...</a></code>; <code><a href='xDuplicated.html'>xDuplicated</a></code>,
+<code><a href='xDuplicated.html'>xDuplicated...</a></code>; <code><a href='xInter.html'>xInter</a></code>,
+<code><a href='xInter.html'>xInter...</a></code>; <code><a href='xIsMember.html'>xIsMember</a></code>,
+<code><a href='xIsMember.html'>xIsMember...</a></code>; <code><a href='xNotMember.html'>xNotMember</a></code>,
+<code><a href='xNotMember.html'>xNotMember...</a></code>; <code><a href='xUnion.html'>xUnion</a></code>,
+<code><a href='xUnion.html'>xUnion...</a></code>; <code><a href='xUnique.html'>xUnique</a></code>,
+<code><a href='xUnique.html'>xUnique...</a></code>
+
+        
+  </div>
+</div>
+      
+      <footer>
+      <p class="pull-right"><a href="#">Back to top</a></p>
+<p>Built by <a href="https://github.com/hadley/staticdocs">staticdocs</a>. Styled with <a href="http://twitter.github.com/bootstrap">bootstrap</a>.</p>
+      </footer>
+    </div>
+  </body>
+</html>
