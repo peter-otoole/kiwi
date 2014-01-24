@@ -45,9 +45,11 @@
     <h2>Arguments</h2>
     <dl>
       <dt>strs</dt>
-      <dd>a collection of strings.</dd>
+      <dd>a collection of strings. The names to add to
+  the input collection.</dd>
       <dt>coll</dt>
-      <dd>a collection</dd>
+      <dd>a collection. The collection to add names
+  to.</dd>
     </dl>
     
     <div class="Value">
@@ -64,10 +66,19 @@
   
     </div>
 
+    <div class="Details">
+      <h2>Details</h2>
+      
+      <p><b>xAsNamed</b> is similar to the in-place assignment
+function <b>names<-</b>, except that it is not an in-place
+assignment function.</p>
+  
+    </div>
+
     <div class="Corner Cases">
       <h2>Corner Cases</h2>
       
-      <p>Returns the empty list if <code>coll</code> is length-zero.
+      <p>Returns the empty list if <b>coll</b> is length-zero.
   Both duplicated and length-zero names are allowed.</p>
   
     </div>

@@ -47,9 +47,11 @@ xChunk...(num, ...)</pre>
     <h2>Arguments</h2>
     <dl>
       <dt>num</dt>
-      <dd>a nonnegative whole number.</dd>
+      <dd>a nonnegative whole number. The desired length
+  of each group of elements.</dd>
       <dt>coll</dt>
-      <dd>a collection</dd>
+      <dd>a collection. The collections to divide into
+  groups.</dd>
       <dt>...</dt>
       <dd>see above.</dd>
     </dl>
@@ -73,7 +75,7 @@ xChunk...(num, ...)</pre>
       
       <p>The final list in the return value will have less than
   <code>num</code> elements if <code>length(coll)</code> is not evenly
-  divisible by <code>num</code>.  if <code>coll</code> is length-zero,
+  divisible by <code>num</code>.  if <b>coll</b> is length-zero,
   the empty list is returned.</p>
   
     </div>

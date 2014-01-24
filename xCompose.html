@@ -47,7 +47,8 @@ xCompose...(...)</pre>
     <h2>Arguments</h2>
     <dl>
       <dt>fns</dt>
-      <dd>a collection of functions.</dd>
+      <dd>a collection of functions. The functions to
+  compose with each other.</dd>
       <dt>...</dt>
       <dd>see above.</dd>
     </dl>
@@ -55,7 +56,7 @@ xCompose...(...)</pre>
     <div class="Value">
       <h2>Value</h2>
       
-      <p>A function with the same parametres as <code>fn2</code>.</p>
+      <p>A variadic function.</p>
   
     </div>
 
@@ -63,6 +64,42 @@ xCompose...(...)</pre>
       <h2>Description</h2>
       
       <p>Take several functions and return a composite function.</p>
+  
+    </div>
+
+    <div class="Details">
+      <h2>Details</h2>
+      
+      <p>In contrast to many functional languages and frameworks,
+Arrow's compose function does not require the order of
+functions to be reversed. The following equation holds</p>
+  
+      <p><code>(f %of% g)(x) == f(g(x))</code></p>
+  
+      <p>for Arrow function composition.</p>
+  
+      <p>The classic example of function composition (apart from
+Church numerals) is composing linear functions.</p>
+  
+      <p><code>f <- x := 2*x</code></p>
+  
+      <p><code>g <- x := 4*x</code></p>
+  
+      <p><code>h <- x := 1*x</code></p>
+  
+      <p><code>(f %of% g %of% h)(1)</code></p>
+  
+      <p><code>(x := 2*(4*(1*x)) )(1)</code></p>
+  
+      <p>8</p>
+  
+      <p>In this case the output of one function is piped to
+another:</p>
+  
+      <p><code>1 => 1*1 => 1*4 => 4*2 => 8</code></p>
+  
+      <p>In this case function composition behaves exactly like
+multiplication.</p>
   
     </div>
       </div>
