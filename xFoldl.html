@@ -52,9 +52,11 @@ xFoldl...(fn, val, ...)</pre>
       <dd>a binary function that returns a value that
   <b>fn</b> can later take as its left argument.</dd>
       <dt>val</dt>
-      <dd>an arbitrary value.</dd>
+      <dd>an arbitrary value. The initial value to be
+  used as the first left argument to <b>fn</b>.</dd>
       <dt>coll</dt>
-      <dd>a collection.</dd>
+      <dd>a collection. The collection to reduce to a
+  single value.</dd>
       <dt>...</dt>
       <dd>see above.</dd>
     </dl>
@@ -334,12 +336,14 @@ remove_odds <- coll := {
 
 remove_odds(letters)
 </div>
-<div class='output'> [1] "b" "d" "f" "h" "j" "l" "n" "p" "r" "t" "v" "x" "z"
+<div class='output'> [1] "b" "d" "f" "h" "j" "l" "n" "p" "r" "t" "v"
+[12] "x" "z"
 </div>
 <div class='input'>
 c("b", "d", "f", "h", "j", "l", "n", "p", "r", "t", "v", "x", "z")
 </div>
-<div class='output'> [1] "b" "d" "f" "h" "j" "l" "n" "p" "r" "t" "v" "x" "z"
+<div class='output'> [1] "b" "d" "f" "h" "j" "l" "n" "p" "r" "t" "v"
+[12] "x" "z"
 </div>
 <div class='input'>
 # 5. HackerRank Functional Programming

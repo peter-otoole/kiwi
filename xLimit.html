@@ -45,9 +45,11 @@
     <h2>Arguments</h2>
     <dl>
       <dt>fn</dt>
-      <dd>an arbitrary function.</dd>
+      <dd>an arbitrary function. The function to limit
+  the number of times it can be called.</dd>
       <dt>num</dt>
-      <dd>a positive whole number.</dd>
+      <dd>a nonnegative whole number. The number of
+  times to allow the function to be called.</dd>
     </dl>
     
     <div class="Value">
@@ -64,7 +66,66 @@
 limited number of times.</p>
   
     </div>
-      </div>
+
+    <div class="Details">
+      <h2>Details</h2>
+      
+      <p><b>xLimit</b> limits the number of times a function can be
+called. It is primarily used for functions that makes
+request to online services with a rate limit.
+<b>xLimit</b> makes it easy to respect a website's rate
+limits without adding a lot of boilerplate to your code.</p>
+  
+      <p><code>require(RCurl)</code></p>
+  
+      <p><code>url <- "http://randomword.setgetgo.com/get.php"</code></p>
+  
+      <p><code>random_word <- xLimit(function ()
+toString(httpGET(url)), 3)</code></p>
+  
+      <p><code>xMap(function (ith) random_word(), 1:3)</code></p>
+  
+      <p><code>list("mashy\r\n", "iridectomy\r\n",
+"cystopyelitis\r\n")</code></p>
+  
+    </div>
+    
+    <h2 id="examples">Examples</h2>
+    <pre class="examples"><div class='input'>
+# 1. Get random words from an API.
+
+require(RCurl)
+</div>
+<strong class='message'>Loading required package: RCurl</strong>
+<strong class='message'>Loading required package: bitops</strong>
+<div class='input'>
+url <- "http://randomword.setgetgo.com/get.php"
+
+random_word <-
+	x_( function (...) toString(httpGET(url)) ) $
+	x_Limit(3)
+
+
+xMap(random_word, 1:4)
+</div>
+<div class='output'>[[1]]
+[1] "Chwana\r\n"
+
+[[2]]
+[1] "bigeminum\r\n"
+
+[[3]]
+[1] "orthobrachycephalic\r\n"
+
+[[4]]
+NULL
+
+</div>
+<div class='input'>
+# the final request isn't executed, since the limit
+# of three calls was exceeded.
+</div></pre>
+  </div>
   <div class="span4">
     <!-- <ul>
       <li>xLimit</li>

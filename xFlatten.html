@@ -47,7 +47,8 @@ xFlatten...(num, ...)</pre>
     <h2>Arguments</h2>
     <dl>
       <dt>num</dt>
-      <dd>a nonnegative whole-number.</dd>
+      <dd>a nonnegative whole-number. The maximum depth
+  of collection in the return value.</dd>
       <dt>coll</dt>
       <dd>a list or pairlist.</dd>
       <dt>...</dt>
@@ -71,8 +72,12 @@ xFlatten...(num, ...)</pre>
     <div class="Details">
       <h2>Details</h2>
       
-      <p><code>num</code> specifies the maximum allowed depth in the
-returned list;</p>
+      <p><b>xFlatten</b> flattens nested collections to a specific
+depth. <b>num</b> specifies the maximum allowed depth in
+the returned list. When flattening a (infinitely nested)
+collection, <b>num</b> equals 1 returns a collection,
+<b>num</b> equals 2 returns a collection of collections,
+and so on.</p>
   
     </div>
 

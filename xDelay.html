@@ -45,9 +45,11 @@
     <h2>Arguments</h2>
     <dl>
       <dt>fn</dt>
-      <dd>an arbitrary function.</dd>
+      <dd>an arbitrary function. The function to slow the
+  rate of execution of.</dd>
       <dt>num</dt>
-      <dd>a nonnegative whole number.</dd>
+      <dd>a nonnegative whole number. The number of
+  seconds to delay execution by.</dd>
     </dl>
     
     <div class="Value">
@@ -68,15 +70,22 @@ set amount of time.</p>
     <div class="Details">
       <h2>Details</h2>
       
-      <p><code>xDelay</code> sleeps for a preset amount of time
-<b>before</b> executing its underlying function.</p>
+      <p><b>xDelay</b> is primarily meant for use with
+side-effectful functions; likely examples including
+functions that call web API's and functions that that
+display graphics.</p>
+  
+      <p><b>xDelay</b> throttles the rate at which a function can be
+repeatedly excecuted. This can be useful in preventing API
+rate limits from being exceeded or to emulate a refresh
+rate.</p>
   
     </div>
 
     <div class="Corner Cases">
       <h2>Corner Cases</h2>
       
-      <p>If <code>num</code> is zero then <b>fn</b> is returned
+      <p>If <b>num</b> is zero then <b>fn</b> is returned
   untouched.</p>
   
     </div>

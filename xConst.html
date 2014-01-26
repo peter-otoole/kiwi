@@ -53,7 +53,7 @@ xK(val)</pre>
     <div class="Value">
       <h2>Value</h2>
       
-      <p>A variadic function.</p>
+      <p>A variadic function that returns <b>val</b>.</p>
   
     </div>
 
@@ -67,7 +67,12 @@ xK(val)</pre>
     <div class="Details">
       <h2>Details</h2>
       
-      <p><b>xConst</b>.</p>
+      <p><b>xConst</b> is the contant combinator - a function that
+takes an arguments and returns a function that always
+returns that value.</p>
+  
+      <p>The function returned by <b>xConst</b> has ellipsis
+arguments, and ignores those arguments.</p>
   
     </div>
       </div>
