@@ -70,7 +70,33 @@
 newlines are treated the same as one newline.</p>
   
     </div>
-      </div>
+    
+    <h2 id="examples">Examples</h2>
+    <pre class="examples"><div class='input'>
+# 1. Lexically sort a list.
+#
+
+info <-
+"
+a: a for aardvark.
+z: z for zebra.
+d: d for deer.
+f: f for ferret.
+g: g for green snake.
+y: y for yapok.
+"
+
+x_(info) $ xToLines() $ x_Tap(sort)
+</div>
+<div class='output'>[1] ""                     
+[2] "a: a for aardvark."   
+[3] "d: d for deer."       
+[4] "f: f for ferret."     
+[5] "g: g for green snake."
+[6] "y: y for yapok."      
+[7] "z: z for zebra."      
+</div></pre>
+  </div>
   <div class="span4">
     <!-- <ul>
       <li>xToLines</li>
