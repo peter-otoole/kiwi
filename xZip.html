@@ -75,7 +75,71 @@ xZip...(...)</pre>
     </div>
     
     <h2 id="examples">Examples</h2>
-    <pre class="examples"><div class='input'></div></pre>
+    <pre class="examples"><div class='input'>
+# seperate a csv of country,median age pairs
+# into a list of countries and ages.
+# this is a nicer format for Arrow to work with
+# than a string or data.frame.
+
+csv <- "Monaco,48.9,Japan,44.6,Italy,44.3,Germany,43.7,Jersey,43.4"
+
+x_(csv) $ xExplode(',') $ xChunk(2) $ xZip() $
+x_AsNamed(c('country', 'age'))
+</div>
+<div class='output'>$country
+$country[[1]]
+[1] "Monaco"
+
+$country[[2]]
+[1] "Japan"
+
+$country[[3]]
+[1] "Italy"
+
+$country[[4]]
+[1] "Germany"
+
+$country[[5]]
+[1] "Jersey"
+
+
+$age
+$age[[1]]
+[1] "48.9"
+
+$age[[2]]
+[1] "44.6"
+
+$age[[3]]
+[1] "44.3"
+
+$age[[4]]
+[1] "43.7"
+
+$age[[5]]
+[1] "43.4"
+
+
+</div>
+<div class='input'>
+# list(
+#     country =
+#     list(
+#         "Monaco",
+#         "Japan",
+#         "Italy",
+#         "Germany",
+#         "Jersey"),
+#     age =
+#     list(
+#         "48.9",
+#         "44.6",
+#         "44.3",
+#         "43.7",
+#         "43.4"
+# ))
+
+</div></pre>
   </div>
   <div class="span4">
     <!-- <ul>
