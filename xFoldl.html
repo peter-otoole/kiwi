@@ -218,11 +218,8 @@ xFold("+", 0, 1:10)
 <div class='output'>[1] 55
 </div>
 <div class='input'>
-55
-</div>
-<div class='output'>[1] 55
-</div>
-<div class='input'>
+## 55
+
 # 2. demonstrate how Return works by using
 #    it to break out of the fold across 26 letters
 #    prematurely.
@@ -244,12 +241,9 @@ xFold(
 </div>
 <div class='input'>
 # terminated after 16 checks, not 26.
-16
-</div>
-<div class='output'>[1] 16
-</div>
-<div class='input'>
-# 3. HackerRank Functional Programming #4
+# 16
+
+# 3. HR Functional Programming #4
 #    Return the sum of the odd elements of a list
 
 # There are two parts to this problem; selecting the odd numbers from a list
@@ -273,11 +267,8 @@ sum_odds(c(1, 2, 3, 4, 5, 6))
 <div class='output'>[1] 9
 </div>
 <div class='input'>
-9
-</div>
-<div class='output'>[1] 9
-</div>
-<div class='input'>
+# 9
+
 # A more efficient solution would only use xFold; the right argument is checked to see
 # if it is odd; if it is it's added to the accumulator value.
 
@@ -306,7 +297,7 @@ sum_odds(c(1, 2, 3, 4, 5, 6))
 <div class='output'>[1] 9
 </div>
 <div class='input'>
-# 4. HackerRank Functional Programming
+# 4. HR Functional Programming
 #    Remove the odd indices from a collection
 
 # As is normal for functional programming, fold is the solution to all problems.
@@ -336,17 +327,14 @@ remove_odds <- coll := {
 
 remove_odds(letters)
 </div>
-<div class='output'> [1] "b" "d" "f" "h" "j" "l" "n" "p" "r" "t" "v"
-[12] "x" "z"
+<div class='output'> [1] "b" "d" "f" "h" "j" "l"
+ [7] "n" "p" "r" "t" "v" "x"
+[13] "z"
 </div>
 <div class='input'>
-c("b", "d", "f", "h", "j", "l", "n", "p", "r", "t", "v", "x", "z")
-</div>
-<div class='output'> [1] "b" "d" "f" "h" "j" "l" "n" "p" "r" "t" "v"
-[12] "x" "z"
-</div>
-<div class='input'>
-# 5. HackerRank Functional Programming
+# c("b", "d", "f", "h", "j", "l", "n", "p", "r", "t", "v", "x", "z")
+
+# 5. HR Functional Programming
 # Area under curves and solids of rotation
 
 # Time to flex my atrophied Calculus muscles...
@@ -386,11 +374,8 @@ integrate(
 <div class='output'>[1] -6000.9
 </div>
 <div class='input'>
--6000.9
-</div>
-<div class='output'>[1] -6000.9
-</div>
-<div class='input'>
+# -6000.9
+
 # Wolfram Alpha (where most of my calculus knowledge comes from)
 # says -6000, so not bad.
 </div></pre>

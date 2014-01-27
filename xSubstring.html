@@ -47,9 +47,12 @@ xSubstring...(str, ...)</pre>
     <h2>Arguments</h2>
     <dl>
       <dt>str</dt>
-      <dd>a string.</dd>
+      <dd>a string. The string to subset.</dd>
       <dt>nums</dt>
-      <dd>indices of <code>str</code>.</dd>
+      <dd>a collection of whole numbers. The indices to
+  select characters with. Negative, positive and zero
+  indices are allowed, but normal R index semantics dictate
+  how they can intermix.</dd>
       <dt>...</dt>
       <dd>see above.</dd>
     </dl>
@@ -71,7 +74,9 @@ xSubstring...(str, ...)</pre>
     <div class="Corner Cases">
       <h2>Corner Cases</h2>
       
-      <p>Returns the empty list if <b>coll</b> is length-zero.</p>
+      <p>Returns the empty list if <b>coll</b> is length-zero. If
+  any number in nums is larger than the length of
+  <b>coll</b> an error is thrown.</p>
   
     </div>
     

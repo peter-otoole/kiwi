@@ -119,36 +119,39 @@ NULL
 
 xDo(print %of% list.files, '.')
 </div>
-<div class='output'>[1] "demo"             "DESCRIPTION"     
-[3] "inst"             "man"             
-[5] "NAMESPACE"        "R"               
-[7] "README.md"        "staticdocs"      
+<div class='output'>[1] "demo"            
+[2] "DESCRIPTION"     
+[3] "inst"            
+[4] "man"             
+[5] "NAMESPACE"       
+[6] "R"               
+[7] "README.md"       
+[8] "staticdocs"      
 [9] "staticdocs.Rproj"
 </div>
 <div class='input'>
 #2. plot a trig function.
 
 plot(
-0, 0,
-xlim = c(0, 10),
-ylim = c(-10, 10),
-type = 'n')
+    0, 0,
+    xlim = c(0, 10),
+    ylim = c(-10, 10),
+    type = 'n')
 </div>
 <p><img src='xDo-9.png' alt='' width='400' height='400' /></p>
 <div class='input'>
 xDo(
-x := {
+    x := {
+        y <- tan( sin( x ) / cos( x )^2 )
+        points(x, y)
 
-    y <- tan( sin( x ) / cos( x )^2 )
-    points(x, y)
-
-},
-(1:1000) / 100
+    },
+    (1:1000) / 100
 )
 </div>
 <p><img src='xDo-11.png' alt='' width='400' height='400' /></p>
 <div class='input'>
-#3. HackerRank Functional Programming
+#3. HR Functional Programming
 #   Print "Hello World" n times
 
 # xDo is Arrow's construct for mapping over a collection and discarding the result, for use

@@ -77,9 +77,11 @@ xUnique...(...)</pre>
     <pre class="examples"><div class='input'>
 # 1. Find the smallest unique number in a list.
 
-lowest <- x_( list(1, 1, 3, 2, 2, 2, 5, 4, 9, 9) ) $ xUnique() $ x_Tap(min)
-</div>
-<strong class='error'>Error in fn(Self()): invalid 'type' (list) of argument</strong></pre>
+lowest <-
+x_( list(1, 1, 3, 2, 2, 2, 5, 4, 9, 9) ) $
+xUnique() $
+x_Tap(min %of% xAsInteger)
+</div></pre>
   </div>
   <div class="span4">
     <!-- <ul>
@@ -92,7 +94,8 @@ lowest <- x_( list(1, 1, 3, 2, 2, 2, 5, 4, 9, 9) ) $ xUnique() $ x_Tap(min)
     <h2>See also</h2>
     
 Other set_functions: <code><a href='xCombos.html'>xCombos</a></code>,
-<code><a href='xCombos.html'>xCombos...</a></code>; <code><a href='xDuplicated.html'>xDuplicated</a></code>,
+<code><a href='xCombos.html'>xCombos...</a></code>; <code><a href='xCycle.html'>xCycle</a></code>,
+<code><a href='xCycle.html'>xCycle...</a></code>; <code><a href='xDuplicated.html'>xDuplicated</a></code>,
 <code><a href='xDuplicated.html'>xDuplicated...</a></code>; <code><a href='xInter.html'>xInter</a></code>,
 <code><a href='xInter.html'>xInter...</a></code>; <code><a href='xIsMember.html'>xIsMember</a></code>,
 <code><a href='xIsMember.html'>xIsMember...</a></code>; <code><a href='xNotMember.html'>xNotMember</a></code>,
