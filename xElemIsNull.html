@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-<title>xMapMany. arrow 0.1.0</title>
+<title>xElemIsNull. arrow 0.1.0</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="author" content="">
 
@@ -35,21 +35,19 @@
         
       </header>
       
-      <h1>xMapMany</h1>
+      <h1>xElemIsNull</h1>
 
 <div class="row">
   <div class="span8">
     <h2>Usage</h2>
-    <pre>xMapMany(fn, colls)
+    <pre>xElemIsNull(coll)
 
-xMapMany...(fn, ...)</pre>
+xElemIsNull...(...)</pre>
     
     <h2>Arguments</h2>
     <dl>
-      <dt>fn</dt>
-      <dd>a n-ary function.</dd>
-      <dt>colls</dt>
-      <dd>n collections.</dd>
+      <dt>coll</dt>
+      <dd>a collection</dd>
       <dt>...</dt>
       <dd>see above.</dd>
     </dl>
@@ -57,83 +55,38 @@ xMapMany...(fn, ...)</pre>
     <div class="Value">
       <h2>Value</h2>
       
-      <p>A list.</p>
+      <p>A vector of boolean values.</p>
   
     </div>
 
     <div class="Description">
       <h2>Description</h2>
       
-      <p>Map a function across many collections simultaneously.</p>
+      <p>Is an element of a collection null?</p>
   
     </div>
 
     <div class="Corner Cases">
       <h2>Corner Cases</h2>
       
-      <p>Returns the empty list if any collection is length-zero.
-  If the collection lengths are not equal then elements are
-  recycled in the shorter collections.</p>
+      <p>Returns True if coll is Null.</p>
   
     </div>
     
     <h2 id="examples">Examples</h2>
     <pre class="examples"><div class='input'>
-# 1. Multiply the corresponding elements of two lists.
+NULL
 
-xMapMany...('*', sample(0:9), sample(0:9))
-</div>
-<div class='output'>[[1]]
-[1] 0
-
-[[2]]
-[1] 25
-
-[[3]]
-[1] 18
-
-[[4]]
-[1] 14
-
-[[5]]
-[1] 8
-
-[[6]]
-[1] 12
-
-[[7]]
-[1] 24
-
-[[8]]
-[1] 63
-
-[[9]]
-[1] 48
-
-[[10]]
-[1] 0
-
-</div>
-<div class='input'></div></pre>
+</div></pre>
   </div>
   <div class="span4">
     <!-- <ul>
-      <li>xMapMany</li><li>xMapMany...</li>
+      <li>xElemIsNull</li><li>xElemIsNull...</li>
     </ul>
     <ul>
       
     </ul> -->
       
-    <h2>See also</h2>
-    
-Other mapping_functions: <code><a href='xDeepMap.html'>xDeepMap</a></code>,
-<code><a href='xDeepMap.html'>xDeepMap...</a></code>; <code><a href='xFlatMap.html'>xFlatMap</a></code>,
-<code><a href='xFlatMap.html'>xFlatMap...</a></code>; <code><a href='xMapIndexed.html'>xMapIndexed</a></code>,
-<code><a href='xMapIndexed.html'>xMapIndexed...</a></code>; <code><a href='xMapply.html'>xMapply</a></code>,
-<code><a href='xMapply.html'>xMapply...</a></code>; <code><a href='xMap.html'>xMap</a></code>,
-<code><a href='xMap.html'>xMap...</a></code>; <code><a href='xVectorise.html'>xVectorise</a></code>,
-<code><a href='xVectorise.html'>xVectorize</a></code>
-
         
   </div>
 </div>
