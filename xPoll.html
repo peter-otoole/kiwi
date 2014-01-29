@@ -76,7 +76,6 @@ mapped over a collection.</p>
     
     <h2 id="examples">Examples</h2>
     <pre class="examples"><div class='input'>
-
 # 1. HR Functional Programming
 #    Count the number of elements in a list without using length
 
@@ -88,10 +87,7 @@ mapped over a collection.</p>
 # xK(TRUE) returns a function that always returns TRUE. If we partially apply
 # xPoll with this predicate we have a new length function.
 
-lenof <- xPartial...(
-	xPoll,
-	pred = xK(TRUE)
-)
+lenof <- xPartial...(xPoll, pred = xK(TRUE))
 
 lenof(c(1,2,3,4))
 </div>

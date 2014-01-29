@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-<title>xNotNan. arrow 0.1.0</title>
+<title>xOrder. arrow 0.1.0</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="author" content="">
 
@@ -35,17 +35,20 @@
         
       </header>
       
-      <h1>xNotNan</h1>
+      <h1>xOrder</h1>
 
 <div class="row">
   <div class="span8">
     <h2>Usage</h2>
-    <pre>xNotNan(val)</pre>
+    <pre>xOrder(nums)
+
+xOrder...(...)</pre>
     
     <h2>Arguments</h2>
     <dl>
-      <dt>val</dt>
-      <dd>an arbitrary value.</dd>
+      <dt>nums</dt>
+      <dd>a vector of numbers. The numbers to rank in
+  order of size.</dd>
       <dt>...</dt>
       <dd>see above.</dd>
     </dl>
@@ -53,23 +56,22 @@
     <div class="Value">
       <h2>Value</h2>
       
-      <p>A true or false value.</p>
+      <p>A vector of numbers.</p>
   
     </div>
 
     <div class="Description">
       <h2>Description</h2>
       
-      <p>Is an value not nan?</p>
+      <p>Return a permutation of indices giving the order of an
+integer vector.</p>
   
     </div>
 
     <div class="Corner Cases">
       <h2>Corner Cases</h2>
       
-      <p>xNotNan returns either true or false, to make it safe for
-  use with if statements. If val is length zero True is
-  returned.</p>
+      <p>If nums is empty then <b>integer(0)</b> is returned.</p>
   
     </div>
     
@@ -80,20 +82,12 @@ NULL
   </div>
   <div class="span4">
     <!-- <ul>
-      <li>xNotNan</li>
+      <li>xOrder</li><li>xOrder...</li>
     </ul>
     <ul>
       
     </ul> -->
       
-    <h2>See also</h2>
-    
-Other testing_functions: <code><a href='xIsFalse.html'>xIsFalse</a></code>;
-<code><a href='xIsNan.html'>xIsNan</a></code>; <code><a href='xIsNa.html'>xIsNa</a></code>;
-<code><a href='xIsNull.html'>xIsNull</a></code>; <code><a href='xIsTrue.html'>xIsTrue</a></code>;
-<code><a href='xNotFalse.html'>xNotFalse</a></code>; <code><a href='xNotNa.html'>xNotNa</a></code>;
-<code><a href='xNotNull.html'>xNotNull</a></code>; <code><a href='xNotTrue.html'>xNotTrue</a></code>
-
         
   </div>
 </div>

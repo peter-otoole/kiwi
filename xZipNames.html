@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-<title>xPermute. arrow 0.1.0</title>
+<title>xZipNames. arrow 0.1.0</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="author" content="">
 
@@ -35,23 +35,24 @@
         
       </header>
       
-      <h1>xPermute</h1>
+      <h1>xZipNames</h1>
 
 <div class="row">
   <div class="span8">
     <h2>Usage</h2>
-    <pre>xPermute(nums, colls)
+    <pre>xZipNames(colls)
 
-xPermute...(nums, ...)</pre>
+xZipNames...(...)</pre>
     
     <h2>Arguments</h2>
     <dl>
-      <dt>nums</dt>
-      <dd>a collection of whole numbers. The indices by
-  which to permute the input collections.</dd>
       <dt>colls</dt>
-      <dd>several collections of equal length to
-  <b>nums</b>.</dd>
+      <dd>a list or pairlist of two-element lists or
+  pairlists, with the first element being a string and the
+  second element being an arbitrary value. The string part
+  of each sublist is used as the name in the output list,
+  and the remaining part is used as the value associated
+  with that key.</dd>
       <dt>...</dt>
       <dd>see above.</dd>
     </dl>
@@ -59,47 +60,85 @@ xPermute...(nums, ...)</pre>
     <div class="Value">
       <h2>Value</h2>
       
-      <p>A list of collections.</p>
+      <p>A named list.</p>
   
     </div>
 
     <div class="Description">
       <h2>Description</h2>
       
-      <p>Permute several collections using indices.</p>
-  
-    </div>
-
-    <div class="Details">
-      <h2>Details</h2>
-      
-      <p><b>xPermute</b> allows several collections to be rearranged
-in the same way simultaneously.</p>
-  
-      <p><code>colls <- list(ids = list(15, 1, 12), ages = list(17,
-29, 24), weights = list(80, 82, 76))</code></p>
-  
-      <p><code>xPermute((order 
-colls)</code></p>
+      <p>Convert a list of name, value pairs into a named list.</p>
   
     </div>
 
     <div class="Corner Cases">
       <h2>Corner Cases</h2>
       
-      <p>returns the empty list is <b>nums</b> is length-zero.</p>
+      <p>Returns the empty list if <b>coll</b> is length-zero.</p>
   
     </div>
     
     <h2 id="examples">Examples</h2>
     <pre class="examples"><div class='input'>
-NULL
+# 1. turn a csv of country names and median ages into
+#    a named list of countires, with values being the median age.
+
+csv <- "Monaco,48.9,Japan,44.6,Italy,44.3,Germany,43.7,Jersey,43.4"
+
+x_(csv) $ xExplode(',') $ xChunk(2) $ x_ZipNames()
+</div>
+<div class='output'>$Monaco
+[1] "48.9"
+
+$Japan
+[1] "44.6"
+
+$Italy
+[1] "44.3"
+
+$Germany
+[1] "43.7"
+
+$Jersey
+[1] "43.4"
+
+</div>
+<div class='input'>
+# list(
+#    Monaco =
+#        48.9,
+#    Japan =
+#        44.6,
+#    Italy =
+#        44.3,
+#    Germany =
+#        43.7,
+#    Jersey =
+#        43.4
+# )
+
+x_(csv) $ xExplode(',') $ xChunk(2) $ x_ZipNames()
+</div>
+<div class='output'>$Monaco
+[1] "48.9"
+
+$Japan
+[1] "44.6"
+
+$Italy
+[1] "44.3"
+
+$Germany
+[1] "43.7"
+
+$Jersey
+[1] "43.4"
 
 </div></pre>
   </div>
   <div class="span4">
     <!-- <ul>
-      <li>xPermute</li><li>xPermute...</li>
+      <li>xZipNames</li><li>xZipNames...</li>
     </ul>
     <ul>
       
@@ -107,17 +146,22 @@ NULL
       
     <h2>See also</h2>
     
+Other name_functions: <code><a href='xAsNamed.html'>xAsNamed</a></code>;
+<code><a href='xGetKey.html'>xGetKey</a></code>; <code><a href='xPluck.html'>xPluck</a></code>,
+<code><a href='xPluck.html'>xPluck...</a></code>; <code><a href='xUnzipNames.html'>xUnzipNames</a></code>,
+<code><a href='xUnzipNames.html'>xUnzipNames...</a></code>
+
 Other reshaping_functions: <code><a href='xChop.html'>xChop</a></code>,
 <code><a href='xChop.html'>xChop...</a></code>; <code><a href='xChunk.html'>xChunk</a></code>,
 <code><a href='xChunk.html'>xChunk...</a></code>; <code><a href='xFlatten.html'>xFlatten</a></code>,
 <code><a href='xFlatten.html'>xFlatten...</a></code>; <code><a href='xJoin.html'>xJoin</a></code>,
-<code><a href='xJoin.html'>xJoin...</a></code>; <code><a href='xRepeat.html'>xRepeat</a></code>,
+<code><a href='xJoin.html'>xJoin...</a></code>; <code><a href='xPermute.html'>xPermute</a></code>,
+<code><a href='xPermute.html'>xPermute...</a></code>; <code><a href='xRepeat.html'>xRepeat</a></code>,
 <code><a href='xRepeat.html'>xRepeat...</a></code>; <code><a href='xReverse.html'>xReverse</a></code>;
 <code><a href='xShuffle.html'>xShuffle</a></code>, <code><a href='xShuffle.html'>xShuffle...</a></code>;
 <code><a href='xSplitAt.html'>xSplitAt</a></code>, <code><a href='xSplitAt.html'>xSplitAt...</a></code>;
 <code><a href='xSplitWith.html'>xSplitWith</a></code>, <code><a href='xSplitWith.html'>xSplitWith...</a></code>;
 <code><a href='xUnzipNames.html'>xUnzipNames</a></code>, <code><a href='xUnzipNames.html'>xUnzipNames...</a></code>;
-<code><a href='xZipNames.html'>xZipNames</a></code>, <code><a href='xZipNames.html'>xZipNames...</a></code>;
 <code><a href='xZip.html'>xZip</a></code>, <code><a href='xZip.html'>xZip...</a></code>
 
         

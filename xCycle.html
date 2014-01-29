@@ -87,10 +87,8 @@ xCycle...(num, ...)</pre>
 
 all_cyclic_permutations <- coll := {
     xMap(
-        ith := {
-            xCycle(ith - 1, coll)
-        },
-        seq_along(coll)
+    	xPartial...(xCycle, coll = coll),
+        seq_along(coll) - 1
     )
 }
 
@@ -153,14 +151,14 @@ Other combinatoric_functions: <code><a href='xCombos.html'>xCombos</a></code>,
 <code><a href='xSetProd.html'>xSetProd...</a></code>
 
 Other set_functions: <code><a href='xCombos.html'>xCombos</a></code>,
-<code><a href='xCombos.html'>xCombos...</a></code>; <code><a href='xDuplicated.html'>xDuplicated</a></code>,
-<code><a href='xDuplicated.html'>xDuplicated...</a></code>; <code><a href='xInter.html'>xInter</a></code>,
+<code><a href='xCombos.html'>xCombos...</a></code>; <code><a href='xDuplicatesOf.html'>xDuplicatesOf</a></code>,
+<code><a href='xDuplicatesOf.html'>xDuplicatesOf...</a></code>; <code><a href='xInter.html'>xInter</a></code>,
 <code><a href='xInter.html'>xInter...</a></code>; <code><a href='xIsMember.html'>xIsMember</a></code>,
 <code><a href='xIsMember.html'>xIsMember...</a></code>; <code><a href='xNotMember.html'>xNotMember</a></code>,
 <code><a href='xNotMember.html'>xNotMember...</a></code>; <code><a href='xSetProd.html'>xSetProd</a></code>,
 <code><a href='xSetProd.html'>xSetProd...</a></code>; <code><a href='xUnion.html'>xUnion</a></code>,
-<code><a href='xUnion.html'>xUnion...</a></code>; <code><a href='xUnique.html'>xUnique</a></code>,
-<code><a href='xUnique.html'>xUnique...</a></code>
+<code><a href='xUnion.html'>xUnion...</a></code>; <code><a href='xUniqueOf.html'>xUniqueOf</a></code>,
+<code><a href='xUniqueOf.html'>xUniqueOf...</a></code>
 
         
   </div>

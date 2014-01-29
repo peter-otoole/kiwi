@@ -70,13 +70,18 @@ xCompose...(...)</pre>
     <div class="Details">
       <h2>Details</h2>
       
-      <p>In contrast to many functional languages and frameworks,
-Arrow's compose function does not require the order of
-functions to be reversed. The following equation holds</p>
+      <p>Arrow's function composition is largely done with the infix
+operators %of% and %then%.</p>
   
-      <p><code>(f %of% g)(x) == f(g(x))</code></p>
+      <p><b>%then%</b> is the classic function composition
+operator;</p>
   
-      <p>for Arrow function composition.</p>
+      <p><code>(as.numeric</p>
+  
+      <p>Like methods, the order of function execution is from left
+to right; convert a string to a number then take the square
+root then print the value. The reversed form %of% is
+equally as ubiquitous.</p>
   
       <p>The classic example of function composition (apart from
 Church numerals) is composing linear functions.</p>
@@ -104,31 +109,14 @@ multiplication.</p>
       <p>In more typical use of <b>xCompose</b> is to reduce the
 number of anonymous functions needed by some programs.</p>
   
-      <p><code>xMap(sqrt %of% sqrt, 1:10)</code></p>
+      <p><code>xMap(sqrt %of% sqrt, 1:10)</code>
+</code></p>
   
-    </div>
-    
-    <h2 id="examples">Examples</h2>
-    <pre class="examples"><div class='input'>
-NULL
-
-</div></pre>
-  </div>
-  <div class="span4">
-    <!-- <ul>
-      <li>xCompose</li><li>xCompose...</li>
-    </ul>
-    <ul>
-      
-    </ul> -->
-      
-    <h2>See also</h2>
-    
-Other function_combining_functions:
+      <p>Other function_combining_functions:
 <code><a href='xJuxtapose.html'>xJuxtapose</a></code>, <code><a href='xJuxtapose.html'>xJuxtapose...</a></code>;
-<code><a href='xLift.html'>xLift</a></code>, <code><a href='xLift.html'>xLift...</a></code>
-
-Other function_modifying_functions:
+<code><a href='xLift.html'>xLift</a></code>, <code><a href='xLift.html'>xLift...</a></code></p>
+  
+      <p>Other function_modifying_functions:
 <code><a href='xAsClosure.html'>xAsClosure</a></code>; <code><a href='xAsFunction.html'>xAsFunction</a></code>,
 <code><a href='xAsFunction.html'>xAsFunction...</a></code>; <code><a href='xAsUnary.html'>xAsUnary</a></code>;
 <code><a href='xAsVariadic.html'>xAsVariadic</a></code>; <code><a href='xConst.html'>xConst</a></code>,
@@ -138,8 +126,20 @@ Other function_modifying_functions:
 <code><a href='xLift.html'>xLift...</a></code>; <code><a href='xNot.html'>xNot</a></code>;
 <code><a href='xPartial.html'>xPartial</a></code>, <code><a href='xPartial.html'>xPartial...</a></code>;
 <code><a href='xThread.html'>xThread</a></code>, <code><a href='xThread.html'>xThread...</a></code>;
-<code><a href='xVectorise.html'>xVectorise</a></code>, <code><a href='xVectorise.html'>xVectorize</a></code>
-
+<code><a href='xVectorise.html'>xVectorise</a></code>, <code><a href='xVectorise.html'>xVectorize</a></code></p>
+  
+      <p></p>
+  
+    </div>
+      </div>
+  <div class="span4">
+    <!-- <ul>
+      <li>xCompose</li><li>xCompose...</li>
+    </ul>
+    <ul>
+      
+    </ul> -->
+      
         
   </div>
 </div>

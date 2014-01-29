@@ -40,15 +40,12 @@
 <div class="row">
   <div class="span8">
     <h2>Usage</h2>
-    <pre>xIsFalse(coll)
-
-xIsFalse...(...)</pre>
+    <pre>xIsFalse(val)</pre>
     
     <h2>Arguments</h2>
     <dl>
-      <dt>coll</dt>
-      <dd>a collection. The collection to test each
-  element of.</dd>
+      <dt>val</dt>
+      <dd>an arbitrary value.</dd>
       <dt>...</dt>
       <dd>see above.</dd>
     </dl>
@@ -56,31 +53,47 @@ xIsFalse...(...)</pre>
     <div class="Value">
       <h2>Value</h2>
       
-      <p>A vector of boolean values.</p>
+      <p>A true or false value.</p>
   
     </div>
 
     <div class="Description">
       <h2>Description</h2>
       
-      <p>Is an element of a collection false?</p>
+      <p>Is an value false?</p>
+  
+    </div>
+
+    <div class="Corner Cases">
+      <h2>Corner Cases</h2>
+      
+      <p>xIsFalse returns either true or false, to make it safe
+  for use with if statements. If val is length zero False
+  is returned.</p>
   
     </div>
     
     <h2 id="examples">Examples</h2>
     <pre class="examples"><div class='input'>
 NULL
-
 </div></pre>
   </div>
   <div class="span4">
     <!-- <ul>
-      <li>xIsFalse</li><li>xIsFalse...</li>
+      <li>xIsFalse</li>
     </ul>
     <ul>
       
     </ul> -->
       
+    <h2>See also</h2>
+    
+Other testing_functions: <code><a href='xIsNan.html'>xIsNan</a></code>;
+<code><a href='xIsNa.html'>xIsNa</a></code>; <code><a href='xIsNull.html'>xIsNull</a></code>;
+<code><a href='xIsTrue.html'>xIsTrue</a></code>; <code><a href='xNotFalse.html'>xNotFalse</a></code>;
+<code><a href='xNotNan.html'>xNotNan</a></code>; <code><a href='xNotNa.html'>xNotNa</a></code>;
+<code><a href='xNotNull.html'>xNotNull</a></code>; <code><a href='xNotTrue.html'>xNotTrue</a></code>
+
         
   </div>
 </div>
