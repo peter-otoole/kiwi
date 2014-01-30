@@ -64,6 +64,30 @@
   
     </div>
 
+    <div class="Details">
+      <h2>Details</h2>
+      
+      <p><b>xIsTrue</b> is primarily meant for use with conditional
+statements like if and while. <b>xIsTrue</b> always returns
+a length-one true or false value; conditional statements
+throw an error if they are given a length zero logical
+vector.</p>
+  
+      <p>The below example will throw an error; forall of an empty
+list is logical zero, which if cannot handle:</p>
+  
+      <p><code>mybool <- xForall(xI, list())</code></p>
+  
+      <p><code>if (mybool) 1 else 2</code></p>
+  
+      <p>The correct way to test for truth in Arrow is
+<b>xIsTrue</b>, which will return false in this case since
+logical zero isn't the value true.</p>
+  
+      <p><code>if (xIsTrue(mybool)) 1 else 2</code></p>
+  
+    </div>
+
     <div class="Corner Cases">
       <h2>Corner Cases</h2>
       
