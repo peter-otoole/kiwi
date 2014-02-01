@@ -40,16 +40,18 @@
 <div class="row">
   <div class="span8">
     <h2>Usage</h2>
-    <pre>xMapply(fn, coll)
+    <pre>xMapply(fn, colls)
 
 xMapply...(fn, ...)</pre>
     
     <h2>Arguments</h2>
     <dl>
       <dt>fn</dt>
-      <dd>a unary function.</dd>
-      <dt>coll</dt>
-      <dd>a collection.</dd>
+      <dd>a function. The function to apply to each tuple
+  of elements in <b>colls</b>.</dd>
+      <dt>colls</dt>
+      <dd>a collection of collections. The collection
+  to have a function applied to each inner tuple.</dd>
       <dt>...</dt>
       <dd>see above.</dd>
     </dl>
@@ -71,7 +73,7 @@ xMapply...(fn, ...)</pre>
     <div class="Corner Cases">
       <h2>Corner Cases</h2>
       
-      <p>Returns the empty list is <b>coll</b> is length-zero.</p>
+      <p>Returns the empty list is <b>colls</b> is length-zero.</p>
   
     </div>
     

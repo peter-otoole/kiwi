@@ -47,7 +47,8 @@ xZip...(...)</pre>
     <h2>Arguments</h2>
     <dl>
       <dt>colls</dt>
-      <dd>n-vectors, lists or pairlists.</dd>
+      <dd>a collection of collections of equal
+  lengths.  The collections to zip together.</dd>
       <dt>...</dt>
       <dd>see above.</dd>
     </dl>
@@ -55,7 +56,7 @@ xZip...(...)</pre>
     <div class="Value">
       <h2>Value</h2>
       
-      <p>Returns a list.</p>
+      <p>Returns a list of lists.</p>
   
     </div>
 
@@ -63,6 +64,31 @@ xZip...(...)</pre>
       <h2>Description</h2>
       
       <p>Generate a list of n-element lists from n collections.</p>
+  
+    </div>
+
+    <div class="Details">
+      <h2>Details</h2>
+      
+      <p><b>xZip</b> converts the 'columns' of a collection of
+collections (each inner collection) to 'rows.'</p>
+  
+      <p><code>coll <- list( list(1, 2, 3), list('a', 'b', 'c') )</code></p>
+  
+      <p><code>xZip(coll)</code></p>
+  
+      <p><code>list( list(1, 'a'), list(2, 'b'), list('c') )</code></p>
+  
+      <p>In the above case the 'columns' - a list of numbers and a
+list of letters - were zipped into corresponding 'rows' of
+a number and a letter.</p>
+  
+      <p>Applying <b>xZip</b> again will reconvert the 'rows' back
+into columns.</p>
+  
+      <p><code>coll <- list( list(1, 2, 3), list('a', 'b', 'c') )</code></p>
+  
+      <p><code>xZip(coll)</code></p>
   
     </div>
 
@@ -159,8 +185,10 @@ Other reshaping_functions: <code><a href='xChop.html'>xChop</a></code>,
 <code><a href='xPermute.html'>xPermute...</a></code>; <code><a href='xRepeat.html'>xRepeat</a></code>,
 <code><a href='xRepeat.html'>xRepeat...</a></code>; <code><a href='xReverse.html'>xReverse</a></code>;
 <code><a href='xShuffle.html'>xShuffle</a></code>, <code><a href='xShuffle.html'>xShuffle...</a></code>;
+<code><a href='xSortBy.html'>xSortBy</a></code>, <code><a href='xSortBy.html'>xSortBy...</a></code>;
 <code><a href='xSplitAt.html'>xSplitAt</a></code>, <code><a href='xSplitAt.html'>xSplitAt...</a></code>;
 <code><a href='xSplitWith.html'>xSplitWith</a></code>, <code><a href='xSplitWith.html'>xSplitWith...</a></code>;
+<code><a href='xTabulate.html'>xTabulate</a></code>, <code><a href='xTabulate.html'>xTabulate...</a></code>;
 <code><a href='xUnzipNames.html'>xUnzipNames</a></code>, <code><a href='xUnzipNames.html'>xUnzipNames...</a></code>;
 <code><a href='xZipNames.html'>xZipNames</a></code>, <code><a href='xZipNames.html'>xZipNames...</a></code>
 

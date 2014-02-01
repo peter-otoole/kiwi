@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-<title>xRepeat. arrow 0.1.0</title>
+<title>xTabulate. arrow 0.1.0</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="author" content="">
 
@@ -35,23 +35,20 @@
         
       </header>
       
-      <h1>xRepeat</h1>
+      <h1>xTabulate</h1>
 
 <div class="row">
   <div class="span8">
     <h2>Usage</h2>
-    <pre>xRepeat(num, coll)
+    <pre>xTabulate(coll)
 
-xRepeat...(num, ...)</pre>
+xTabulate...(...)</pre>
     
     <h2>Arguments</h2>
     <dl>
-      <dt>num</dt>
-      <dd>a nonnegative positive number. The number of
-  times to repeat the collection.</dd>
       <dt>coll</dt>
-      <dd>a collection. The collection to repeat end to
-  end.</dd>
+      <dd>a collection. The values to find the
+  frequency of.</dd>
       <dt>...</dt>
       <dd>see above.</dd>
     </dl>
@@ -66,40 +63,38 @@ xRepeat...(num, ...)</pre>
     <div class="Description">
       <h2>Description</h2>
       
-      <p>Repeat a collection several times.</p>
+      <p>Tabulate a collection into pairs of value:frequency lists.</p>
+  
+    </div>
+
+    <div class="Details">
+      <h2>Details</h2>
+      
+      <p><b>xTabulate</b> is superficially similar to the base
+function <b>table</b>: given a collection that may or may
+not contain duplicates, it calculates the frequencies of
+each unique element.</p>
+  
+      <p>The result of the tabulation is unsorted for efficiencies
+sake; if sorting is required <b>xSortBy</b> can be used.</p>
   
     </div>
 
     <div class="Corner Cases">
       <h2>Corner Cases</h2>
       
-      <p>Returns the empty list if <b>coll</b> is length-zero or
-  num is zero.</p>
+      <p>If <b>coll</b> is length-zero the empty list is returned.</p>
   
     </div>
     
     <h2 id="examples">Examples</h2>
     <pre class="examples"><div class='input'>
-# Example 1
-#
-# Use xRepeat to repeat a sine wave.
-
-range <- seq(0, 2*pi, len = 600)
-wave <- xRepeat(5, sin(range))
-
-plot(unlist(wave), type = 'l')
-</div>
-<p><img src='xRepeat-2.png' alt='' width='400' height='400' /></p>
-<div class='input'>
-# Example 2
-#
-# Use xRepeat to build up a nested list.
-
+NULL
 </div></pre>
   </div>
   <div class="span4">
     <!-- <ul>
-      <li>xRepeat</li><li>xRepeat...</li>
+      <li>xTabulate</li><li>xTabulate...</li>
     </ul>
     <ul>
       
@@ -112,12 +107,12 @@ Other reshaping_functions: <code><a href='xChop.html'>xChop</a></code>,
 <code><a href='xChunk.html'>xChunk...</a></code>; <code><a href='xFlatten.html'>xFlatten</a></code>,
 <code><a href='xFlatten.html'>xFlatten...</a></code>; <code><a href='xJoin.html'>xJoin</a></code>,
 <code><a href='xJoin.html'>xJoin...</a></code>; <code><a href='xPermute.html'>xPermute</a></code>,
-<code><a href='xPermute.html'>xPermute...</a></code>; <code><a href='xReverse.html'>xReverse</a></code>;
+<code><a href='xPermute.html'>xPermute...</a></code>; <code><a href='xRepeat.html'>xRepeat</a></code>,
+<code><a href='xRepeat.html'>xRepeat...</a></code>; <code><a href='xReverse.html'>xReverse</a></code>;
 <code><a href='xShuffle.html'>xShuffle</a></code>, <code><a href='xShuffle.html'>xShuffle...</a></code>;
 <code><a href='xSortBy.html'>xSortBy</a></code>, <code><a href='xSortBy.html'>xSortBy...</a></code>;
 <code><a href='xSplitAt.html'>xSplitAt</a></code>, <code><a href='xSplitAt.html'>xSplitAt...</a></code>;
 <code><a href='xSplitWith.html'>xSplitWith</a></code>, <code><a href='xSplitWith.html'>xSplitWith...</a></code>;
-<code><a href='xTabulate.html'>xTabulate</a></code>, <code><a href='xTabulate.html'>xTabulate...</a></code>;
 <code><a href='xUnzipNames.html'>xUnzipNames</a></code>, <code><a href='xUnzipNames.html'>xUnzipNames...</a></code>;
 <code><a href='xZipNames.html'>xZipNames</a></code>, <code><a href='xZipNames.html'>xZipNames...</a></code>;
 <code><a href='xZip.html'>xZip</a></code>, <code><a href='xZip.html'>xZip...</a></code>

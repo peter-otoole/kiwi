@@ -47,9 +47,12 @@ xMapIndexed...(fn, ...)</pre>
     <h2>Arguments</h2>
     <dl>
       <dt>fn</dt>
-      <dd>a binary function.</dd>
+      <dd>a binary function. A function that takes a
+  value in <b>coll</b> as its left argument and a an index
+  as its right argument.</dd>
       <dt>coll</dt>
-      <dd>a collection.</dd>
+      <dd>a collection. The collection to apply a
+  function to.</dd>
       <dt>...</dt>
       <dd>see above.</dd>
     </dl>
@@ -92,19 +95,24 @@ its index.</p>
 #    There are more efficient ways to find the numbers,
 #    but a brute force search is fun, if really slow.
 
-x_(1:50000) $
-xMap(
-	# a very big anonymous function!
+digit_factorial_sum_of <-
 	paste %then% xToChars %then% as.integer %then% factorial %then% sum
-) $
-xMapIndexed(
-	(num : ith) := {
-		if (num == ith) num else integer(0)
+
+x_(1:50000) $
+xFlatMap(num := {
+
+	digit_factorial_sum <- digit_factorial_sum_of(num)
+
+	if (digit_factorial_sum == num) {
+		digit_factorial_sum
 	}
-) $
-x_Pack()
+
+})
 </div>
-<div class='output'>[[1]]
+<div class='output'>[ an arrow object with methods for collections ]
+
+$x_()
+[[1]]
 [1] 1
 
 [[2]]
