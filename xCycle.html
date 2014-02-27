@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+<title>xCycle. arrow 0.1.0</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="">
+
+<link href="css/bootstrap.css" rel="stylesheet">
+<link href="css/bootstrap-responsive.css" rel="stylesheet">
+<link href="css/highlight.css" rel="stylesheet">
+<link href="css/staticdocs.css" rel="stylesheet">
+
+<!--[if lt IE 9]>
+  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+  </head>
+
+  <body>
+    <div class="navbar">
+  <div class="navbar-inner">
+    <div class="container">
+      <a class="brand" href="#">arrow 0.1.0</a>
+      <div class="nav">
+        <ul class="nav">
+          <li><a href="index.html"><i class="icon-home icon-white"></i> Index</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <div class="container">
+      <header>
+        
+      </header>
+      
+      <h1>xCycle</h1>
+
+<div class="row">
+  <div class="span8">
+    <h2>Usage</h2>
+    <pre><div>xCycle(num, colls)</div>
+<div>xCycle...(num, ...)</div></pre>
+    
+    <h2>Arguments</h2>
+    <dl>
+      <dt>num</dt>
+      <dd>a whole number. The magnitude gives number of
+  elements to cycle, and the sign gives the direction:
+  positive numbers cause elements from the tail of
+  <b>coll</b> to be prepended to the output, while negative
+  numbers cause elements from the head of <b>coll</b> to
+  appended to the output.</dd>
+      <dt>coll</dt>
+      <dd>a collection. The collection to cycle.</dd>
+      <dt>...</dt>
+      <dd>see above.</dd>
+    </dl>
+    
+    <div class="Value">
+      <h2>Value</h2>
+      
+      <p>A list.</p>
+  
+    </div>
+
+    <div class="Description">
+      <h2>Description</h2>
+      
+      <p>Generate a cyclic permutation of a collection.</p>
+  
+    </div>
+
+    <div class="Details">
+      <h2>Details</h2>
+      
+      <p>Cyclic permutations are an important combinatorial object.
+There are four cyclic permutations of a length-four
+collection:</p>
+  
+      <p><code>[1, 2, 3, 4]</code></p>
+  
+      <p><code>[2, 3, 4, 1]</code></p>
+  
+      <p><code>[3, 4, 1, 2]</code></p>
+  
+      <p><code>[4, 1, 2, 3]</code></p>
+  
+      <p>Which map to</p>
+  
+      <p><code>xCycle...(0, 1:4)</code></p>
+  
+      <p><code>xCycle...(1, 1:4)</code></p>
+  
+      <p><code>xCycle...(2, 1:4)</code></p>
+  
+      <p><code>xCycle...(3, 1:4)</code></p>
+  
+    </div>
+
+    <div class="Corner Cases">
+      <h2>Corner Cases</h2>
+      
+      <p>If <b>coll</b> is empty the empty list is returned.</p>
+  
+    </div>
+    
+    <h2 id="examples">Examples</h2>
+    <pre class="examples"><div class='input'>
+# 1. Generate all cyclic permutations of a list
+#    This is really easy to do with xCycle.
+
+all_cyclic_permutations &lt;- coll := {
+    xMap(
+    	xPartial(xCycle, list(colls = coll)),
+        seq_along(coll) - 1
+    )
+}
+
+all_cyclic_permutations(letters[1:3])
+</div>
+<div class='output'>[[1]]
+[[1]][[1]]
+[[1]][[1]][[1]]
+[1] &quot;a&quot;
+
+
+[[1]][[2]]
+[[1]][[2]][[1]]
+[1] &quot;b&quot;
+
+
+[[1]][[3]]
+[[1]][[3]][[1]]
+[1] &quot;c&quot;
+
+
+
+[[2]]
+[[2]][[1]]
+[[2]][[1]][[1]]
+[1] &quot;a&quot;
+
+
+[[2]][[2]]
+[[2]][[2]][[1]]
+[1] &quot;b&quot;
+
+
+[[2]][[3]]
+[[2]][[3]][[1]]
+[1] &quot;c&quot;
+
+
+
+[[3]]
+[[3]][[1]]
+[[3]][[1]][[1]]
+[1] &quot;a&quot;
+
+
+[[3]][[2]]
+[[3]][[2]][[1]]
+[1] &quot;b&quot;
+
+
+[[3]][[3]]
+[[3]][[3]][[1]]
+[1] &quot;c&quot;
+
+
+
+</div>
+<div class='input'>
+# list(
+#     list(&#39;a&#39;, &#39;b&#39;, &#39;c&#39;),
+#     list(&#39;b&#39;, &#39;c&#39;, &#39;a&#39;),
+#     list(&#39;c&#39;, &#39;a&#39;, &#39;b&#39;)
+# )
+</div></pre>
+  </div>
+  <div class="span4">
+    <!-- <ul>
+      <li>xCycle</li><li>xCycle...</li>
+    </ul>
+    <ul>
+      
+    </ul> -->
+      
+    <h2>See also</h2>
+    
+Other combinatoric_functions: <code><a href='xCombos.html'>xCombos</a></code>,
+<code><a href='xCombos.html'>xCombos...</a></code>; <code><a href='xPermute.html'>xPermute</a></code>,
+<code><a href='xPermute.html'>xPermute...</a></code>; <code><a href='xPowerSetOf.html'>xPowerSetOf</a></code>,
+<code><a href='xPowerSetOf.html'>xPowerSetOf...</a></code>; <code><a href='xProdSetOf.html'>xProdSetOf</a></code>,
+<code><a href='xProdSetOf.html'>xProdSetOf...</a></code>
+
+Other set_functions: <code><a href='xCombos.html'>xCombos</a></code>,
+<code><a href='xCombos.html'>xCombos...</a></code>; <code><a href='xDuplicatesOf.html'>xDuplicatesOf</a></code>,
+<code><a href='xDuplicatesOf.html'>xDuplicatesOf...</a></code>; <code><a href='xInter.html'>xInter</a></code>,
+<code><a href='xInter.html'>xInter...</a></code>; <code><a href='xIsMember.html'>xIsMember</a></code>,
+<code><a href='xIsMember.html'>xIsMember...</a></code>; <code><a href='xNotMember.html'>xNotMember</a></code>,
+<code><a href='xNotMember.html'>xNotMember...</a></code>; <code><a href='xPermute.html'>xPermute</a></code>,
+<code><a href='xPermute.html'>xPermute...</a></code>; <code><a href='xPowerSetOf.html'>xPowerSetOf</a></code>,
+<code><a href='xPowerSetOf.html'>xPowerSetOf...</a></code>; <code><a href='xProdSetOf.html'>xProdSetOf</a></code>,
+<code><a href='xProdSetOf.html'>xProdSetOf...</a></code>; <code><a href='xUnionOf.html'>xUnionOf</a></code>,
+<code><a href='xUnionOf.html'>xUnionOf...</a></code>; <code><a href='xUniqueOf.html'>xUniqueOf</a></code>,
+<code><a href='xUniqueOf.html'>xUniqueOf...</a></code>
+
+        
+  </div>
+</div>
+      
+      <footer>
+      <p class="pull-right"><a href="#">Back to top</a></p>
+<p>Built by <a href="https://github.com/hadley/staticdocs">staticdocs</a>. Styled with <a href="http://twitter.github.com/bootstrap">bootstrap</a>.</p>
+      </footer>
+    </div>
+  </body>
+</html>

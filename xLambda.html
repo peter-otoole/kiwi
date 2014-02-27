@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+<title>xLambda. arrow 0.1.0</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="">
+
+<link href="css/bootstrap.css" rel="stylesheet">
+<link href="css/bootstrap-responsive.css" rel="stylesheet">
+<link href="css/highlight.css" rel="stylesheet">
+<link href="css/staticdocs.css" rel="stylesheet">
+
+<!--[if lt IE 9]>
+  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+  </head>
+
+  <body>
+    <div class="navbar">
+  <div class="navbar-inner">
+    <div class="container">
+      <a class="brand" href="#">arrow 0.1.0</a>
+      <div class="nav">
+        <ul class="nav">
+          <li><a href="index.html"><i class="icon-home icon-white"></i> Index</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <div class="container">
+      <header>
+        
+      </header>
+      
+      <h1>xLambda</h1>
+
+<div class="row">
+  <div class="span8">
+    <h2>Usage</h2>
+    <pre><div>xLambda(sym, val)</div>
+<div>":="(sym, val)</div></pre>
+    
+    <h2>Arguments</h2>
+    <dl>
+      <dt>sym</dt>
+      <dd>a parametres body.</dd>
+      <dt>val</dt>
+      <dd>a valid function body, which will be lazily
+  evaluated.</dd>
+    </dl>
+    
+    <div class="Value">
+      <h2>Value</h2>
+      
+      <p>Returns a unary function.</p>
+  
+    </div>
+
+    <div class="Description">
+      <h2>Description</h2>
+      
+      <p>Syntactic sugar for creating unary functions.</p>
+  
+    </div>
+    
+    <h2 id="examples">Examples</h2>
+    <pre class="examples"><div class='input'>
+# 1. greatest common divisor:
+#    a multi parametre function.
+
+gcd &lt;- (a : b) := {
+    if (b == 0) a else gcd(b, a %% b)
+}
+
+gcd(156, 87)
+</div>
+<div class='output'>[1] 3
+</div>
+<div class='input'>
+# 2. Boolean logic using only functions.
+
+true  &lt;- x := y := x # λx.λy.x
+false &lt;- x := y := y # λx.λy.y
+
+# if the function is &#39;true&#39;, the first value True is returned.
+# if the function is &#39;false&#39;, the second value False is returned.
+
+to_bool &lt;- f := f(True, False)
+
+# now for the operators and if statement.
+
+and &lt;- p := q := p(q)(p)
+or  &lt;- p := q := p(p)(q)
+
+not &lt;- p := a := b := p(b)(a)
+
+# if the function p is &#39;true&#39;, then the first
+# value a is returned. Otherwise the second value is returned.
+case &lt;- p := a := b := p(a)(b)
+
+case( and(true)(false) )(&#39;case was true&#39;)(&#39;case was false&#39;)
+</div>
+<div class='output'>[1] &quot;case was false&quot;
+</div>
+<div class='input'>
+# &#39;case was false&#39;
+</div></pre>
+  </div>
+  <div class="span4">
+    <!-- <ul>
+      <li>:=</li><li>xLambda</li>
+    </ul>
+    <ul>
+      
+    </ul> -->
+      
+        
+  </div>
+</div>
+      
+      <footer>
+      <p class="pull-right"><a href="#">Back to top</a></p>
+<p>Built by <a href="https://github.com/hadley/staticdocs">staticdocs</a>. Styled with <a href="http://twitter.github.com/bootstrap">bootstrap</a>.</p>
+      </footer>
+    </div>
+  </body>
+</html>

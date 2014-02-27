@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+<title>help_arrow_install. arrow 0.1.0</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="">
+
+<link href="css/bootstrap.css" rel="stylesheet">
+<link href="css/bootstrap-responsive.css" rel="stylesheet">
+<link href="css/highlight.css" rel="stylesheet">
+<link href="css/staticdocs.css" rel="stylesheet">
+
+<!--[if lt IE 9]>
+  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+  </head>
+
+  <body>
+    <div class="navbar">
+  <div class="navbar-inner">
+    <div class="container">
+      <a class="brand" href="#">arrow 0.1.0</a>
+      <div class="nav">
+        <ul class="nav">
+          <li><a href="index.html"><i class="icon-home icon-white"></i> Index</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <div class="container">
+      <header>
+        
+      </header>
+      
+      <h1>Usage - Installing Arrow</h1>
+
+<div class="row">
+  <div class="span8">
+        
+    <div class="Description">
+      <h2>Description</h2>
+      
+      <p>A guide to installating Arrow.</p>
+  
+    </div>
+
+    <div class="Details">
+      <h2>Details</h2>
+      
+      <p>R libraries are fairly trivial to install from the CRAN
+repositories.</p>
+  
+      <p><code>install.packages("arrow")</code></p>
+  
+      <p>To check that everything is working you can run the
+following:</p>
+  
+      <p><code>require(arrow)</code></p>
+  
+      <p><code>xDo(print('hi!'), 1)</code></p>
+  
+      <p>Arrow is available under the GPL-3 license, a permissive
+open-source license. If you want a more cutting-edge
+version of Arrow you an install Arrow directly from github.</p>
+  
+      <p><code>install.packages('devtools')</code></p>
+  
+      <p><code>require(devtools)</code></p>
+  
+      <p><code>install_github('rgrannell1', 'arrow')</code></p>
+  
+      <p>The github repository for arrow is available at
+https://github.com/rgrannell1/arrow; feel free to
+contribute with feedback, bug reports or feature requests.</p>
+  
+      <p>Note: if you are running Arrow from a terminal and aren't
+seeing coloured error messages (and care), you might need
+to modify the TERM environmental variable.</p>
+  
+      <p>In R, run</p>
+  
+      <p><code>Sys.getenv()["TERM"]</code></p>
+  
+      <p>. If the output is 'xterm' but you're sure your terminal
+supports colour, do the following. Run sudo nano ~/.bashrc</p>
+  
+      <p>and add this line to the bottom (Ctrl + O to save).</p>
+  
+      <p><code>export TERM=term-color</code></p>
+  
+      <p>Run</p>
+  
+      <p><code> ~/.bashenv</code></p>
+  
+      <p>And if your TERM variable was misconfigured colour should
+now be displayed in your terminal.</p>
+  
+    </div>
+      </div>
+  <div class="span4">
+    <!-- <ul>
+      <li>help_arrow_install</li>
+    </ul>
+    <ul>
+      
+    </ul> -->
+      
+        
+  </div>
+</div>
+      
+      <footer>
+      <p class="pull-right"><a href="#">Back to top</a></p>
+<p>Built by <a href="https://github.com/hadley/staticdocs">staticdocs</a>. Styled with <a href="http://twitter.github.com/bootstrap">bootstrap</a>.</p>
+      </footer>
+    </div>
+  </body>
+</html>

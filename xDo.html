@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+<title>xDo. arrow 0.1.0</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="">
+
+<link href="css/bootstrap.css" rel="stylesheet">
+<link href="css/bootstrap-responsive.css" rel="stylesheet">
+<link href="css/highlight.css" rel="stylesheet">
+<link href="css/staticdocs.css" rel="stylesheet">
+
+<!--[if lt IE 9]>
+  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+  </head>
+
+  <body>
+    <div class="navbar">
+  <div class="navbar-inner">
+    <div class="container">
+      <a class="brand" href="#">arrow 0.1.0</a>
+      <div class="nav">
+        <ul class="nav">
+          <li><a href="index.html"><i class="icon-home icon-white"></i> Index</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <div class="container">
+      <header>
+        
+      </header>
+      
+      <h1>xDo</h1>
+
+<div class="row">
+  <div class="span8">
+    <h2>Usage</h2>
+    <pre><div>xDo(fn, coll)</div>
+<div>xDo...(fn, ...)</div></pre>
+    
+    <h2>Arguments</h2>
+    <dl>
+      <dt>fn</dt>
+      <dd>a unary function, usually side-effectful.</dd>
+      <dt>coll</dt>
+      <dd>a collection</dd>
+      <dt>...</dt>
+      <dd>see above.</dd>
+    </dl>
+    
+    <div class="Value">
+      <h2>Value</h2>
+      
+      <p>A list.</p>
+  
+    </div>
+
+    <div class="Description">
+      <h2>Description</h2>
+      
+      <p>Map (a possibly side-effectful) function over a collection
+and discard the results.</p>
+  
+    </div>
+    
+    <h2 id="examples">Examples</h2>
+    <pre class="examples"><div class='input'>
+#1. print the files in your current directory.
+
+xDo(print, list.files(&#39;.&#39;))
+</div>
+<div class='output'>[1] &quot;demo&quot;
+[1] &quot;DESCRIPTION&quot;
+[1] &quot;inst&quot;
+[1] &quot;LICENSE&quot;
+[1] &quot;man&quot;
+[1] &quot;NAMESPACE&quot;
+[1] &quot;R&quot;
+[1] &quot;README.md&quot;
+[1] &quot;staticdocs.Rproj&quot;
+[1] &quot;vignettes&quot;
+</div>
+<div class='input'>
+#    or
+
+x_(list.files(&#39;.&#39;))$xDo(print)
+</div>
+<div class='output'>[1] &quot;demo&quot;
+[1] &quot;DESCRIPTION&quot;
+[1] &quot;inst&quot;
+[1] &quot;LICENSE&quot;
+[1] &quot;man&quot;
+[1] &quot;NAMESPACE&quot;
+[1] &quot;R&quot;
+[1] &quot;README.md&quot;
+[1] &quot;staticdocs.Rproj&quot;
+[1] &quot;vignettes&quot;
+</div>
+<div class='output'>[ an arrow object with methods for collections ]
+
+$x_()
+NULL
+</div>
+<div class='input'>
+#    or even
+
+xDo(print %of% list.files, &#39;.&#39;)
+</div>
+<div class='output'> [1] &quot;demo&quot;             &quot;DESCRIPTION&quot;     
+ [3] &quot;inst&quot;             &quot;LICENSE&quot;         
+ [5] &quot;man&quot;              &quot;NAMESPACE&quot;       
+ [7] &quot;R&quot;                &quot;README.md&quot;       
+ [9] &quot;staticdocs.Rproj&quot; &quot;vignettes&quot;       
+</div>
+<div class='input'>
+#2. plot a trig function.
+
+plot(
+    0, 0,
+    xlim = c(0, 10),
+    ylim = c(-10, 10),
+    type = &#39;n&#39;)
+</div>
+<p><img src='xDo-9.png' alt='' width='400' height='400' /></p>
+<div class='input'>
+xDo(
+    x := {
+        y &lt;- tan( sin( x ) / cos( x )^2 )
+        points(x, y)
+
+    },
+    (1:1000) / 100
+)
+</div>
+<p><img src='xDo-11.png' alt='' width='400' height='400' /></p>
+<div class='input'>
+#3. HR Functional Programming
+#   Print &quot;Hello World&quot; n times
+
+# xDo is Arrow&#39;s construct for mapping over a collection and discarding the result, for use
+# with side-effectful functions. An anonymous function or print composed with a constant function can
+# be used to print the actual message.
+
+n &lt;- 5
+
+xDo(print %of% xK(&#39;hello&#39;), 1:n)
+</div>
+<div class='output'>[1] &quot;hello&quot;
+[1] &quot;hello&quot;
+[1] &quot;hello&quot;
+[1] &quot;hello&quot;
+[1] &quot;hello&quot;
+</div>
+<div class='input'>xDo(num := print(&#39;hello&#39;),  1:n)
+</div>
+<div class='output'>[1] &quot;hello&quot;
+[1] &quot;hello&quot;
+[1] &quot;hello&quot;
+[1] &quot;hello&quot;
+[1] &quot;hello&quot;
+</div></pre>
+  </div>
+  <div class="span4">
+    <!-- <ul>
+      <li>xDo</li><li>xDo...</li>
+    </ul>
+    <ul>
+      
+    </ul> -->
+      
+    <h2>See also</h2>
+    
+Other inpure_functions: <code><a href='xDelay.html'>xDelay</a></code>;
+<code><a href='xExecute.html'>xExecute</a></code>; <code><a href='xStopwatch.html'>xStopwatch</a></code>;
+<code><a href='xVersion.html'>xVersion</a></code>
+
+        
+  </div>
+</div>
+      
+      <footer>
+      <p class="pull-right"><a href="#">Back to top</a></p>
+<p>Built by <a href="https://github.com/hadley/staticdocs">staticdocs</a>. Styled with <a href="http://twitter.github.com/bootstrap">bootstrap</a>.</p>
+      </footer>
+    </div>
+  </body>
+</html>

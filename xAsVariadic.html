@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+<title>xAsVariadic. arrow 0.1.0</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="">
+
+<link href="css/bootstrap.css" rel="stylesheet">
+<link href="css/bootstrap-responsive.css" rel="stylesheet">
+<link href="css/highlight.css" rel="stylesheet">
+<link href="css/staticdocs.css" rel="stylesheet">
+
+<!--[if lt IE 9]>
+  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+  </head>
+
+  <body>
+    <div class="navbar">
+  <div class="navbar-inner">
+    <div class="container">
+      <a class="brand" href="#">arrow 0.1.0</a>
+      <div class="nav">
+        <ul class="nav">
+          <li><a href="index.html"><i class="icon-home icon-white"></i> Index</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <div class="container">
+      <header>
+        
+      </header>
+      
+      <h1>xAsVariadic</h1>
+
+<div class="row">
+  <div class="span8">
+    <h2>Usage</h2>
+    <pre><div>xAsVariadic(fn)</div></pre>
+    
+    <h2>Arguments</h2>
+    <dl>
+      <dt>fn</dt>
+      <dd>a unary function. The function to convert to a
+  variadic function.</dd>
+    </dl>
+    
+    <div class="Value">
+      <h2>Value</h2>
+      
+      <p>A variadic function.</p>
+  
+    </div>
+
+    <div class="Description">
+      <h2>Description</h2>
+      
+      <p>Return a variadic function that passes its arguments as a
+list to ints underyling function.</p>
+  
+    </div>
+
+    <div class="Details">
+      <h2>Details</h2>
+      
+      <p><code>xAsVariadic</code> takes a unary function and returns a
+function with ellipsis parametres.  The returned function
+passes its ellipsis arguments as a single list to the
+underlying function.</p>
+  
+    </div>
+    
+    <h2 id="examples">Examples</h2>
+    <pre class="examples"><div class='input'># xAsVariadic lets you take a non-unary function and# creates a function that lets you pass it arguments# as a single list.## 1. create a version of sum that</div></pre>
+  </div>
+  <div class="span4">
+    <!-- <ul>
+      <li>xAsVariadic</li>
+    </ul>
+    <ul>
+      
+    </ul> -->
+      
+    <h2>See also</h2>
+    
+Other function_application_functions: <code><a href='xApply.html'>xApply</a></code>,
+<code><a href='xApply.html'>xApply...</a></code>; <code><a href='xAsUnary.html'>xAsUnary</a></code>;
+<code><a href='xThread.html'>xThread</a></code>, <code><a href='xThread.html'>xThread...</a></code>
+
+Other function_modifying_functions: <code><a href='xLift.html'>%and%</a></code>,
+<code><a href='xLift.html'>%or%</a></code>, <code><a href='xLift.html'>xLift</a></code>,
+<code><a href='xLift.html'>xLift...</a></code>; <code><a href='xCompose.html'>%of%</a></code>,
+<code><a href='xCompose.html'>%then%</a></code>, <code><a href='xCompose.html'>xCompose</a></code>,
+<code><a href='xCompose.html'>xCompose...</a></code>; <code><a href='xAsClosure.html'>xAsClosure</a></code>;
+<code><a href='xAsUnary.html'>xAsUnary</a></code>; <code><a href='xCapture.html'>xCapture</a></code>,
+<code><a href='xCapture.html'>xK</a></code>; <code><a href='xDelay.html'>xDelay</a></code>;
+<code><a href='xFlip.html'>xFlip</a></code>; <code><a href='xJuxtapose.html'>xJuxtapose</a></code>,
+<code><a href='xJuxtapose.html'>xJuxtapose...</a></code>; <code><a href='xNot.html'>xNot</a></code>;
+<code><a href='xPartial.html'>xPartial</a></code>, <code><a href='xPartial.html'>xPartial...</a></code>;
+<code><a href='xThread.html'>xThread</a></code>, <code><a href='xThread.html'>xThread...</a></code>;
+<code><a href='xVectorise.html'>xVectorise</a></code>, <code><a href='xVectorise.html'>xVectorize</a></code>
+
+Other parametre_functions: <code><a href='xAsUnary.html'>xAsUnary</a></code>;
+<code><a href='xFlip.html'>xFlip</a></code>; <code><a href='xFormalsOf.html'>xFormalsOf</a></code>;
+<code><a href='xIsVariadic.html'>xIsVariadic</a></code>; <code><a href='xParamsOf.html'>xParamsOf</a></code>;
+<code><a href='xPartial.html'>xPartial</a></code>, <code><a href='xPartial.html'>xPartial...</a></code>
+
+        
+  </div>
+</div>
+      
+      <footer>
+      <p class="pull-right"><a href="#">Back to top</a></p>
+<p>Built by <a href="https://github.com/hadley/staticdocs">staticdocs</a>. Styled with <a href="http://twitter.github.com/bootstrap">bootstrap</a>.</p>
+      </footer>
+    </div>
+  </body>
+</html>

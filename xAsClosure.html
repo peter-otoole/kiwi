@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+<title>xAsClosure. arrow 0.1.0</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="">
+
+<link href="css/bootstrap.css" rel="stylesheet">
+<link href="css/bootstrap-responsive.css" rel="stylesheet">
+<link href="css/highlight.css" rel="stylesheet">
+<link href="css/staticdocs.css" rel="stylesheet">
+
+<!--[if lt IE 9]>
+  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+  </head>
+
+  <body>
+    <div class="navbar">
+  <div class="navbar-inner">
+    <div class="container">
+      <a class="brand" href="#">arrow 0.1.0</a>
+      <div class="nav">
+        <ul class="nav">
+          <li><a href="index.html"><i class="icon-home icon-white"></i> Index</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <div class="container">
+      <header>
+        
+      </header>
+      
+      <h1>xAsClosure</h1>
+
+<div class="row">
+  <div class="span8">
+    <h2>Usage</h2>
+    <pre><div>xAsClosure(fn)</div></pre>
+    
+    <h2>Arguments</h2>
+    <dl>
+      <dt>fn</dt>
+      <dd>an arbitrary function. Either a primitive or
+  non-primitive function to convert to a non-primitive
+  function.</dd>
+    </dl>
+    
+    <div class="Value">
+      <h2>Value</h2>
+      
+      <p>A non-primitive closure.</p>
+  
+    </div>
+
+    <div class="Description">
+      <h2>Description</h2>
+      
+      <p>Convert a primitive function to a closure.</p>
+  
+    </div>
+
+    <div class="Details">
+      <h2>Details</h2>
+      
+      <p><b>xAsClosure</b> takes a primitive function and wraps it
+in a normal R function that passes its arguments to the
+underlying primitive function.</p>
+  
+      <p>The most commonly encountered R primitive functions are the
+arithmetic operators. <b>xAsClosure</b> can convert these
+to normal functions.</p>
+  
+      <p><code>xAsClosure('+')</code></p>
+  
+      <p><code>function (e1, e2) fn(e1, e2)</code></p>
+  
+      <p>doc</p>
+  
+    </div>
+
+    <div class="Corner Cases">
+      <h2>Corner Cases</h2>
+      
+      <p><code>xAsClosure</code> does not work for every primitive
+  function (for example <b>c( )</b>), so caution should be
+  taken when using this function.</p>
+  
+    </div>
+    
+    <h2 id="examples">Examples</h2>
+    <pre class="examples"><div class='input'>
+# 1. The most likely use case; converting the
+#    primitive operations to normal R functions.
+
+plus &lt;- xAsClosure(&#39;+&#39;)
+plus(1, 2)
+</div>
+<div class='output'>[1] 3
+</div>
+<div class='input'>
+# 3
+
+is.primitive(plus)
+</div>
+<div class='output'>[1] FALSE
+</div>
+<div class='input'>
+# FALSE
+
+# 2. Arrow functions are usually fine with primitive functions.
+#
+
+x_(1:3) $ x_Scanl(plus, 0)
+</div>
+<div class='output'>[[1]]
+[1] 0
+
+[[2]]
+[1] 1
+
+[[3]]
+[1] 3
+
+[[4]]
+[1] 6
+
+</div>
+<div class='input'>
+# list(0, 1, 3, 6)
+
+x_(1:3) $ x_Scanl(&#39;+&#39;, 0)
+</div>
+<div class='output'>[[1]]
+[1] 0
+
+[[2]]
+[1] 1
+
+[[3]]
+[1] 3
+
+[[4]]
+[1] 6
+
+</div>
+<div class='input'>
+# list(0, 1, 3, 6)
+</div></pre>
+  </div>
+  <div class="span4">
+    <!-- <ul>
+      <li>xAsClosure</li>
+    </ul>
+    <ul>
+      
+    </ul> -->
+      
+    <h2>See also</h2>
+    
+Other function_modifying_functions: <code><a href='xLift.html'>%and%</a></code>,
+<code><a href='xLift.html'>%or%</a></code>, <code><a href='xLift.html'>xLift</a></code>,
+<code><a href='xLift.html'>xLift...</a></code>; <code><a href='xCompose.html'>%of%</a></code>,
+<code><a href='xCompose.html'>%then%</a></code>, <code><a href='xCompose.html'>xCompose</a></code>,
+<code><a href='xCompose.html'>xCompose...</a></code>; <code><a href='xAsUnary.html'>xAsUnary</a></code>;
+<code><a href='xAsVariadic.html'>xAsVariadic</a></code>; <code><a href='xCapture.html'>xCapture</a></code>,
+<code><a href='xCapture.html'>xK</a></code>; <code><a href='xDelay.html'>xDelay</a></code>;
+<code><a href='xFlip.html'>xFlip</a></code>; <code><a href='xJuxtapose.html'>xJuxtapose</a></code>,
+<code><a href='xJuxtapose.html'>xJuxtapose...</a></code>; <code><a href='xNot.html'>xNot</a></code>;
+<code><a href='xPartial.html'>xPartial</a></code>, <code><a href='xPartial.html'>xPartial...</a></code>;
+<code><a href='xThread.html'>xThread</a></code>, <code><a href='xThread.html'>xThread...</a></code>;
+<code><a href='xVectorise.html'>xVectorise</a></code>, <code><a href='xVectorise.html'>xVectorize</a></code>
+
+        
+  </div>
+</div>
+      
+      <footer>
+      <p class="pull-right"><a href="#">Back to top</a></p>
+<p>Built by <a href="https://github.com/hadley/staticdocs">staticdocs</a>. Styled with <a href="http://twitter.github.com/bootstrap">bootstrap</a>.</p>
+      </footer>
+    </div>
+  </body>
+</html>

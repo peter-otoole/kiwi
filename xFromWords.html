@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+<title>xFromWords. arrow 0.1.0</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="">
+
+<link href="css/bootstrap.css" rel="stylesheet">
+<link href="css/bootstrap-responsive.css" rel="stylesheet">
+<link href="css/highlight.css" rel="stylesheet">
+<link href="css/staticdocs.css" rel="stylesheet">
+
+<!--[if lt IE 9]>
+  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+  </head>
+
+  <body>
+    <div class="navbar">
+  <div class="navbar-inner">
+    <div class="container">
+      <a class="brand" href="#">arrow 0.1.0</a>
+      <div class="nav">
+        <ul class="nav">
+          <li><a href="index.html"><i class="icon-home icon-white"></i> Index</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <div class="container">
+      <header>
+        
+      </header>
+      
+      <h1>xFromWords</h1>
+
+<div class="row">
+  <div class="span8">
+    <h2>Usage</h2>
+    <pre><div>xFromWords(strs)</div>
+<div>xFromWords...(...)</div></pre>
+    
+    <h2>Arguments</h2>
+    <dl>
+      <dt>strs</dt>
+      <dd>a collection of strings. The strings to
+  collapse into one string.</dd>
+      <dt>...</dt>
+      <dd>see above.</dd>
+    </dl>
+    
+    <div class="Value">
+      <h2>Value</h2>
+      
+      <p>A length-one character vector.</p>
+  
+    </div>
+
+    <div class="Description">
+      <h2>Description</h2>
+      
+      <p>Concatentate a character vector with spaces as delimiters.</p>
+  
+    </div>
+    
+    <h2 id="examples">Examples</h2>
+    <pre class="examples"><div class='input'>
+# 1. CE Capitalise the first letter of each word in a sentence.
+#    The text is from Wikipedia.
+
+text &lt;-
+&quot;Assyria was a major Semitic kingdom or empire of the Ancient Near East,
+existing in various forms during a period of approximately nineteen
+centuries from circa 2500 BC to 605 BC, spanning the Early Bronze Age
+through to the late Iron Age. Centered on the Upper Tigris river, in
+northern Mesopotamia(Iraq), the Assyrians came to rule powerful empires at
+several times. As substantial part of the greater Mesopotamian &#39;cradle of
+civilization&#39;, Assyria was at the height of technological, scientific and
+cultural achievements for its time. At its peak, the Assyrian empire
+stretched from the Mediterranean Sea to the Caspian Sea, and from the
+foothills of the Caucasus to Arabia.&quot;
+
+x_(text) $
+xToWords() $
+xMap(word := {
+
+    chars &lt;- xToChars(word)
+    if (chars[1] %in% letters) {
+        c(toupper(chars[1]), xRestOf(chars))
+    } else {
+        chars
+    }
+}) $
+xMap(xFromChars) $
+x_FromWords()
+</div>
+<div class='output'>[1] &quot;Assyria Was A Major Semitic Kingdom Or Empire Of The Ancient Near East, Existing In Various Forms During A Period Of Approximately Nineteen Centuries From Circa 2500 BC To 605 BC, Spanning The Early Bronze Age Through To The Late Iron Age. Centered On The Upper Tigris River, In Northern Mesopotamia(Iraq), The Assyrians Came To Rule Powerful Empires At Several Times. As Substantial Part Of The Greater Mesopotamian &#39;cradle Of Civilization&#39;, Assyria Was At The Height Of Technological, Scientific And Cultural Achievements For Its Time. At Its Peak, The Assyrian Empire Stretched From The Mediterranean Sea To The Caspian Sea, And From The Foothills Of The Caucasus To Arabia.&quot;
+</div>
+<div class='input'>
+# &quot;Assyria Was A Major Semitic Kingdom Or Empire Of The Ancient Near East,
+# Existing In Various Forms During A Period Of Approximately Nineteen
+# Centuries From Circa 2500 BC To 605 BC, Spanning The Early Bronze Age
+# Through To The Late Iron Age. Centered On The Upper Tigris River, In
+# Northern Mesopotamia(Iraq), The Assyrians Came To Rule Powerful Empires At
+# Several Times. As Substantial Part Of The Greater Mesopotamian &#39;cradle Of
+# Civilization&#39;, Assyria Was At The Height Of Technological, Scientific
+# And Cultural Achievements For Its Time. At Its Peak, The Assyrian Empire
+# Stretched From The Mediterranean Sea To The Caspian Sea, And From The
+# Foothills Of The Caucasus To Arabia.&quot;
+
+</div></pre>
+  </div>
+  <div class="span4">
+    <!-- <ul>
+      <li>xFromWords</li><li>xFromWords...</li>
+    </ul>
+    <ul>
+      
+    </ul> -->
+      
+    <h2>See also</h2>
+    
+Other character_functions: <code><a href='xExplode.html'>xExplode</a></code>,
+<code><a href='xExplode.html'>xExplode...</a></code>; <code><a href='xFromChars.html'>xFromChars</a></code>,
+<code><a href='xFromChars.html'>xFromChars...</a></code>; <code><a href='xFromLines.html'>xFromLines</a></code>,
+<code><a href='xFromLines.html'>xFromLines...</a></code>; <code><a href='xImplode.html'>xImplode</a></code>,
+<code><a href='xImplode.html'>xImplode...</a></code>; <code><a href='xReadLines.html'>xReadChars</a></code>,
+<code><a href='xReadLines.html'>xReadLines</a></code>; <code><a href='xReadWords.html'>xReadWords</a></code>;
+<code><a href='xSubstring.html'>xSubstring</a></code>, <code><a href='xSubstring.html'>xSubstring...</a></code>;
+<code><a href='xToChars.html'>xToChars</a></code>; <code><a href='xToLines.html'>xToLines</a></code>;
+<code><a href='xToWords.html'>xToWords</a></code>; <code><a href='xWriteChars.html'>xWriteChars</a></code>,
+<code><a href='xWriteChars.html'>xWriteWords</a></code>; <code><a href='xWriteLines.html'>xWriteLines</a></code>
+
+        
+  </div>
+</div>
+      
+      <footer>
+      <p class="pull-right"><a href="#">Back to top</a></p>
+<p>Built by <a href="https://github.com/hadley/staticdocs">staticdocs</a>. Styled with <a href="http://twitter.github.com/bootstrap">bootstrap</a>.</p>
+      </footer>
+    </div>
+  </body>
+</html>

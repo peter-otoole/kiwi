@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+<title>xExists. arrow 0.1.0</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="">
+
+<link href="css/bootstrap.css" rel="stylesheet">
+<link href="css/bootstrap-responsive.css" rel="stylesheet">
+<link href="css/highlight.css" rel="stylesheet">
+<link href="css/staticdocs.css" rel="stylesheet">
+
+<!--[if lt IE 9]>
+  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+  </head>
+
+  <body>
+    <div class="navbar">
+  <div class="navbar-inner">
+    <div class="container">
+      <a class="brand" href="#">arrow 0.1.0</a>
+      <div class="nav">
+        <ul class="nav">
+          <li><a href="index.html"><i class="icon-home icon-white"></i> Index</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <div class="container">
+      <header>
+        
+      </header>
+      
+      <h1>xExists</h1>
+
+<div class="row">
+  <div class="span8">
+    <h2>Usage</h2>
+    <pre><div>xExists(pred, colls)</div>
+<div>xExists...(pred, ...)</div></pre>
+    
+    <h2>Arguments</h2>
+    <dl>
+      <dt>pred</dt>
+      <dd>an predicate function that takes as many
+  arguments as there are collections in <b>colls</b>.</dd>
+      <dt>colls</dt>
+      <dd>a collection of collections. The collection
+  to draw arguments for <b>pred</b> from.</dd>
+      <dt>...</dt>
+      <dd>see above.</dd>
+    </dl>
+    
+    <div class="Value">
+      <h2>Value</h2>
+      
+      <p>A boolean value.</p>
+  
+    </div>
+
+    <div class="Description">
+      <h2>Description</h2>
+      
+      <p>Test if any ordered group of arguments from several
+collections is true for a predicate.</p>
+  
+    </div>
+
+    <div class="Details">
+      <h2>Details</h2>
+      
+      <p><b>xExists</b> can be used to test if any element of a
+collection is true (like the base function <b>all( )</b>)
+by simply using it with the identity function.</p>
+  
+      <p><code>coll <- c(True, False, True, True)</code></p>
+  
+      <p><code>xExists...(xIdentity, coll)</code></p>
+  
+      <p>When supplied with a collection of multiple collections the
+set product of those collections is checked with the
+predicate. In order for <b>xExists</b> to return true at
+least one element of the set product must return true for a
+predicate.</p>
+  
+      <p><code>commutes <- (a : b) := { a + b == b + a }</code></p>
+  
+      <p><code>xExists...(commutes, 1:2, 1:2)</code></p>
+  
+      <p>The set product is</p>
+  
+      <p><code>list(list(1, 1), list(1, 2), list(2, 1), list(2, 2))</code></p>
+  
+      <p>Each member of the set product is tested with the
+<b>commutes</b> function</p>
+  
+      <p><code>list(commutes(1, 1), commutes(1, 2), commutes(2, 1),
+commutes(2, 2))</code></p>
+  
+      <p><code>list(True, True, True, True)</code></p>
+  
+      <p><code>True</code></p>
+  
+    </div>
+
+    <div class="Corner Cases">
+      <h2>Corner Cases</h2>
+      
+      <p>If any collection is length zero (or no collections are
+  given), then logical(0) is returned.</p>
+  
+    </div>
+    
+    <h2 id="examples">Examples</h2>
+    <pre class="examples"><div class='input'>
+# 1. Determine if a string is a cyclic permutation of another string.
+#    check if there exists a way of cyclically permutting one string
+#    so that the other string is identical.
+
+is_cyclic_permutation &lt;- (string1 : string2) := {
+
+    is_same_length &lt;- nchar(string1) == nchar(string2)
+
+    string1 &lt;- xToChars(string1)
+    string2 &lt;- xToChars(string2)
+
+    if (length(string1) != length(string2)) {
+        False
+    } else {
+
+        x_(seq_along(string1)) $
+        x_Exists...(
+            ith := {
+                identical(xCycle...(ith, string1), as.list(string2))
+            }
+        )
+
+    }
+
+}
+
+is_cyclic_permutation(
+    &#39;CyclicStringsForTheWin&#39;, &#39;ForTheWinCyclicStrings&#39;)
+</div>
+<div class='output'>[1] FALSE
+</div>
+<div class='input'>
+True
+</div>
+<div class='output'>[1] TRUE
+</div></pre>
+  </div>
+  <div class="span4">
+    <!-- <ul>
+      <li>xExists</li><li>xExists...</li>
+    </ul>
+    <ul>
+      
+    </ul> -->
+      
+    <h2>See also</h2>
+    
+Other quantifier_functions: <code><a href='xForall.html'>xForall</a></code>,
+<code><a href='xForall.html'>xForall...</a></code>
+
+        
+  </div>
+</div>
+      
+      <footer>
+      <p class="pull-right"><a href="#">Back to top</a></p>
+<p>Built by <a href="https://github.com/hadley/staticdocs">staticdocs</a>. Styled with <a href="http://twitter.github.com/bootstrap">bootstrap</a>.</p>
+      </footer>
+    </div>
+  </body>
+</html>

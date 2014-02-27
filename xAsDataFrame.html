@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+<title>xAsDataFrame. arrow 0.1.0</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="">
+
+<link href="css/bootstrap.css" rel="stylesheet">
+<link href="css/bootstrap-responsive.css" rel="stylesheet">
+<link href="css/highlight.css" rel="stylesheet">
+<link href="css/staticdocs.css" rel="stylesheet">
+
+<!--[if lt IE 9]>
+  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+  </head>
+
+  <body>
+    <div class="navbar">
+  <div class="navbar-inner">
+    <div class="container">
+      <a class="brand" href="#">arrow 0.1.0</a>
+      <div class="nav">
+        <ul class="nav">
+          <li><a href="index.html"><i class="icon-home icon-white"></i> Index</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <div class="container">
+      <header>
+        
+      </header>
+      
+      <h1>xAsDataFrame</h1>
+
+<div class="row">
+  <div class="span8">
+    <h2>Usage</h2>
+    <pre><div>xAsDataFrame(colls)</div>
+<div>xAsDataFrame...(...)</div></pre>
+    
+    <h2>Arguments</h2>
+    <dl>
+      <dt>colls</dt>
+      <dd>a collection of collections. The collection
+  to convert to a data frame.</dd>
+      <dt>...</dt>
+      <dd>see above.</dd>
+    </dl>
+    
+    <div class="Value">
+      <h2>Value</h2>
+      
+      <p>Returns a data.frame.</p>
+  
+    </div>
+
+    <div class="Description">
+      <h2>Description</h2>
+      
+      <p>Convert a collection of collections to a data.frame</p>
+  
+    </div>
+
+    <div class="Details">
+      <h2>Details</h2>
+      
+      <p>data.frames are not a beloved part of arrow, but they are
+ubiquitous in the base language.  Arrow uses collections of
+collections instead of data.frames, but data.frames are
+more common in the base language and importantly in
+libraries like ggplot2.</p>
+  
+    </div>
+
+    <div class="Corner Cases">
+      <h2>Corner Cases</h2>
+      
+      <p><b>xAsDataFrame</b> tried hard to avoid the crazy corner
+  cases of <b>data.frame</b>, but data frames are kludgy
+  and there's only so much they can be made workable.</p>
+  
+      <p>Character vectors are not converted into factors, unlike
+  the base functions.</p>
+  
+      <p>Rownames are added to the data.frame if the names of the
+  collections inside colls are identical.  If the rownames
+  are different, an error is thrown.</p>
+  
+      <p>If row names or column names are ommitted they default to
+  indices.</p>
+  
+    </div>
+      </div>
+  <div class="span4">
+    <!-- <ul>
+      <li>xAsDataFrame</li><li>xAsDataFrame...</li>
+    </ul>
+    <ul>
+      
+    </ul> -->
+      
+        
+  </div>
+</div>
+      
+      <footer>
+      <p class="pull-right"><a href="#">Back to top</a></p>
+<p>Built by <a href="https://github.com/hadley/staticdocs">staticdocs</a>. Styled with <a href="http://twitter.github.com/bootstrap">bootstrap</a>.</p>
+      </footer>
+    </div>
+  </body>
+</html>

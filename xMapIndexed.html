@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+<title>xMapIndexed. arrow 0.1.0</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="">
+
+<link href="css/bootstrap.css" rel="stylesheet">
+<link href="css/bootstrap-responsive.css" rel="stylesheet">
+<link href="css/highlight.css" rel="stylesheet">
+<link href="css/staticdocs.css" rel="stylesheet">
+
+<!--[if lt IE 9]>
+  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+  </head>
+
+  <body>
+    <div class="navbar">
+  <div class="navbar-inner">
+    <div class="container">
+      <a class="brand" href="#">arrow 0.1.0</a>
+      <div class="nav">
+        <ul class="nav">
+          <li><a href="index.html"><i class="icon-home icon-white"></i> Index</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <div class="container">
+      <header>
+        
+      </header>
+      
+      <h1>xMapIndexed</h1>
+
+<div class="row">
+  <div class="span8">
+    <h2>Usage</h2>
+    <pre><div>xMapIndexed(fn, coll)</div>
+<div>xMapIndexed...(fn, ...)</div></pre>
+    
+    <h2>Arguments</h2>
+    <dl>
+      <dt>fn</dt>
+      <dd>a binary function. A function that takes a
+  value in <b>coll</b> as its left argument and a an index
+  as its right argument.</dd>
+      <dt>coll</dt>
+      <dd>a collection. The collection to apply a
+  function to.</dd>
+      <dt>...</dt>
+      <dd>see above.</dd>
+    </dl>
+    
+    <div class="Value">
+      <h2>Value</h2>
+      
+      <p>A list.</p>
+  
+    </div>
+
+    <div class="Description">
+      <h2>Description</h2>
+      
+      <p>Apply a binary function to each element of a collection and
+its index.</p>
+  
+    </div>
+
+    <div class="Corner Cases">
+      <h2>Corner Cases</h2>
+      
+      <p>Returns the empty list is <b>coll</b> is length-zero.</p>
+  
+    </div>
+    
+    <h2 id="examples">Examples</h2>
+    <pre class="examples"><div class='input'>
+# 1. Factorions
+#    factorions are numbers whose value is the sum of the
+#    factorials of its digits. For example,
+#    145 = 1! + 4! + 5!
+#    the below example uses a lot of chained function composition,
+#    to process and sum each digit of the number to search,
+#
+#    There are only four factorions in base 10:
+#
+#    1, 2, 145, 40585
+#
+#    There are more efficient ways to find the numbers,
+#    but a brute force search is fun, if really slow.
+
+digit_factorial_sum_of &lt;-
+	paste %then% xToChars %then% as.integer %then% factorial %then% sum
+
+x_(1:50000) $
+xFlatMap(num := {
+
+	digit_factorial_sum &lt;- digit_factorial_sum_of(num)
+
+	if (digit_factorial_sum == num) {
+		digit_factorial_sum
+	}
+
+})
+</div>
+<div class='output'>[ an arrow object with methods for collections ]
+
+$x_()
+[[1]]
+[1] 1
+
+[[2]]
+[1] 2
+
+[[3]]
+[1] 145
+
+[[4]]
+[1] 40585
+
+</div></pre>
+  </div>
+  <div class="span4">
+    <!-- <ul>
+      <li>xMapIndexed</li><li>xMapIndexed...</li>
+    </ul>
+    <ul>
+      
+    </ul> -->
+      
+    <h2>See also</h2>
+    
+Other mapping_functions: <code><a href='xDeepMap.html'>xDeepMap</a></code>,
+<code><a href='xDeepMap.html'>xDeepMap...</a></code>; <code><a href='xFlatMap.html'>xFlatMap</a></code>,
+<code><a href='xFlatMap.html'>xFlatMap...</a></code>; <code><a href='xMapply.html'>xMapply</a></code>,
+<code><a href='xMapply.html'>xMapply...</a></code>; <code><a href='xMap.html'>xMap</a></code>,
+<code><a href='xMap.html'>xMap...</a></code>; <code><a href='xVectorise.html'>xVectorise</a></code>,
+<code><a href='xVectorise.html'>xVectorize</a></code>
+
+        
+  </div>
+</div>
+      
+      <footer>
+      <p class="pull-right"><a href="#">Back to top</a></p>
+<p>Built by <a href="https://github.com/hadley/staticdocs">staticdocs</a>. Styled with <a href="http://twitter.github.com/bootstrap">bootstrap</a>.</p>
+      </footer>
+    </div>
+  </body>
+</html>

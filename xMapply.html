@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+<title>xMapply. arrow 0.1.0</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="">
+
+<link href="css/bootstrap.css" rel="stylesheet">
+<link href="css/bootstrap-responsive.css" rel="stylesheet">
+<link href="css/highlight.css" rel="stylesheet">
+<link href="css/staticdocs.css" rel="stylesheet">
+
+<!--[if lt IE 9]>
+  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+  </head>
+
+  <body>
+    <div class="navbar">
+  <div class="navbar-inner">
+    <div class="container">
+      <a class="brand" href="#">arrow 0.1.0</a>
+      <div class="nav">
+        <ul class="nav">
+          <li><a href="index.html"><i class="icon-home icon-white"></i> Index</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <div class="container">
+      <header>
+        
+      </header>
+      
+      <h1>xMapply</h1>
+
+<div class="row">
+  <div class="span8">
+    <h2>Usage</h2>
+    <pre><div>xMapply(fn, colls)</div>
+<div>xMapply...(fn, ...)</div></pre>
+    
+    <h2>Arguments</h2>
+    <dl>
+      <dt>fn</dt>
+      <dd>a function. The function to apply to each tuple
+  of elements in <b>colls</b>.</dd>
+      <dt>colls</dt>
+      <dd>a collection of collections. The collection
+  to have a function applied to each inner tuple.</dd>
+      <dt>...</dt>
+      <dd>see above.</dd>
+    </dl>
+    
+    <div class="Value">
+      <h2>Value</h2>
+      
+      <p>A list.</p>
+  
+    </div>
+
+    <div class="Description">
+      <h2>Description</h2>
+      
+      <p>Apply a function to each element of a collection.</p>
+  
+    </div>
+
+    <div class="Corner Cases">
+      <h2>Corner Cases</h2>
+      
+      <p>Returns the empty list is <b>colls</b> is length-zero.</p>
+  
+    </div>
+    
+    <h2 id="examples">Examples</h2>
+    <pre class="examples"><div class='input'>
+# 1. CE Find the minimum distance
+#    between any two points in a set of points.
+#    xMapply could be swapped for xMap(xAsUnary(fn) )
+#    below, as was done with the call to reject, but
+#    map is important enough to have a few variants for
+#    convenience.
+
+points &lt;- list(
+	c(12, 2),
+	c(32, -4),
+	c(5, -2),
+	c(6, 7),
+	c(9, 31)
+)
+
+# get the set product to generate all pairs of points.
+x_( xProdSetOf...(points, points) ) $
+# remove the pairs wich contain the same point twice.
+xReject(xAsUnary(identical)) $
+xMapply(
+	(xs : ys) := {
+		# the distance function.
+
+		sqrt( (xs[1] - xs[2])^2 + (ys[1] - ys[2])^2 )
+
+	}
+) $
+x_Reduce(min)
+</div>
+<div class='output'>[1] 7.071068
+</div>
+<div class='input'>
+# 7.071068
+</div></pre>
+  </div>
+  <div class="span4">
+    <!-- <ul>
+      <li>xMapply</li><li>xMapply...</li>
+    </ul>
+    <ul>
+      
+    </ul> -->
+      
+    <h2>See also</h2>
+    
+Other mapping_functions: <code><a href='xDeepMap.html'>xDeepMap</a></code>,
+<code><a href='xDeepMap.html'>xDeepMap...</a></code>; <code><a href='xFlatMap.html'>xFlatMap</a></code>,
+<code><a href='xFlatMap.html'>xFlatMap...</a></code>; <code><a href='xMapIndexed.html'>xMapIndexed</a></code>,
+<code><a href='xMapIndexed.html'>xMapIndexed...</a></code>; <code><a href='xMap.html'>xMap</a></code>,
+<code><a href='xMap.html'>xMap...</a></code>; <code><a href='xVectorise.html'>xVectorise</a></code>,
+<code><a href='xVectorise.html'>xVectorize</a></code>
+
+        
+  </div>
+</div>
+      
+      <footer>
+      <p class="pull-right"><a href="#">Back to top</a></p>
+<p>Built by <a href="https://github.com/hadley/staticdocs">staticdocs</a>. Styled with <a href="http://twitter.github.com/bootstrap">bootstrap</a>.</p>
+      </footer>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+<title>xDelay. arrow 0.1.0</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="">
+
+<link href="css/bootstrap.css" rel="stylesheet">
+<link href="css/bootstrap-responsive.css" rel="stylesheet">
+<link href="css/highlight.css" rel="stylesheet">
+<link href="css/staticdocs.css" rel="stylesheet">
+
+<!--[if lt IE 9]>
+  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+  </head>
+
+  <body>
+    <div class="navbar">
+  <div class="navbar-inner">
+    <div class="container">
+      <a class="brand" href="#">arrow 0.1.0</a>
+      <div class="nav">
+        <ul class="nav">
+          <li><a href="index.html"><i class="icon-home icon-white"></i> Index</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <div class="container">
+      <header>
+        
+      </header>
+      
+      <h1>xDelay</h1>
+
+<div class="row">
+  <div class="span8">
+    <h2>Usage</h2>
+    <pre><div>xDelay(fn, num)</div></pre>
+    
+    <h2>Arguments</h2>
+    <dl>
+      <dt>fn</dt>
+      <dd>an arbitrary function. The function to slow the
+  rate of execution of.</dd>
+      <dt>num</dt>
+      <dd>a nonnegative whole number. The number of
+  seconds to delay execution by.</dd>
+    </dl>
+    
+    <div class="Value">
+      <h2>Value</h2>
+      
+      <p>A function with the same parametres as <b>fn</b>.</p>
+  
+    </div>
+
+    <div class="Description">
+      <h2>Description</h2>
+      
+      <p>Delay the evalution of a function after invokation for a
+set amount of time.</p>
+  
+    </div>
+
+    <div class="Details">
+      <h2>Details</h2>
+      
+      <p><b>xDelay</b> is primarily meant for use with
+side-effectful functions; likely examples including
+functions that call web API's and functions that that
+display graphics.</p>
+  
+      <p><b>xDelay</b> throttles the rate at which a function can be
+repeatedly excecuted. This can be useful in preventing API
+rate limits from being exceeded or to emulate a refresh
+rate.</p>
+  
+    </div>
+
+    <div class="Corner Cases">
+      <h2>Corner Cases</h2>
+      
+      <p>If <b>num</b> is zero then <b>fn</b> is returned
+  untouched.</p>
+  
+    </div>
+    
+    <h2 id="examples">Examples</h2>
+    <pre class="examples"><div class='input'>
+NULL
+
+</div></pre>
+  </div>
+  <div class="span4">
+    <!-- <ul>
+      <li>xDelay</li>
+    </ul>
+    <ul>
+      
+    </ul> -->
+      
+    <h2>See also</h2>
+    
+Other function_modifying_functions: <code><a href='xLift.html'>%and%</a></code>,
+<code><a href='xLift.html'>%or%</a></code>, <code><a href='xLift.html'>xLift</a></code>,
+<code><a href='xLift.html'>xLift...</a></code>; <code><a href='xCompose.html'>%of%</a></code>,
+<code><a href='xCompose.html'>%then%</a></code>, <code><a href='xCompose.html'>xCompose</a></code>,
+<code><a href='xCompose.html'>xCompose...</a></code>; <code><a href='xAsClosure.html'>xAsClosure</a></code>;
+<code><a href='xAsUnary.html'>xAsUnary</a></code>; <code><a href='xAsVariadic.html'>xAsVariadic</a></code>;
+<code><a href='xCapture.html'>xCapture</a></code>, <code><a href='xCapture.html'>xK</a></code>;
+<code><a href='xFlip.html'>xFlip</a></code>; <code><a href='xJuxtapose.html'>xJuxtapose</a></code>,
+<code><a href='xJuxtapose.html'>xJuxtapose...</a></code>; <code><a href='xNot.html'>xNot</a></code>;
+<code><a href='xPartial.html'>xPartial</a></code>, <code><a href='xPartial.html'>xPartial...</a></code>;
+<code><a href='xThread.html'>xThread</a></code>, <code><a href='xThread.html'>xThread...</a></code>;
+<code><a href='xVectorise.html'>xVectorise</a></code>, <code><a href='xVectorise.html'>xVectorize</a></code>
+
+Other inpure_functions: <code><a href='xDo.html'>xDo</a></code>,
+<code><a href='xDo.html'>xDo...</a></code>; <code><a href='xExecute.html'>xExecute</a></code>;
+<code><a href='xStopwatch.html'>xStopwatch</a></code>; <code><a href='xVersion.html'>xVersion</a></code>
+
+Other time_functions: <code><a href='xLimit.html'>xLimit</a></code>;
+<code><a href='xStopwatch.html'>xStopwatch</a></code>
+
+        
+  </div>
+</div>
+      
+      <footer>
+      <p class="pull-right"><a href="#">Back to top</a></p>
+<p>Built by <a href="https://github.com/hadley/staticdocs">staticdocs</a>. Styled with <a href="http://twitter.github.com/bootstrap">bootstrap</a>.</p>
+      </footer>
+    </div>
+  </body>
+</html>

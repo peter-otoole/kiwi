@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+<title>xMap. arrow 0.1.0</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="">
+
+<link href="css/bootstrap.css" rel="stylesheet">
+<link href="css/bootstrap-responsive.css" rel="stylesheet">
+<link href="css/highlight.css" rel="stylesheet">
+<link href="css/staticdocs.css" rel="stylesheet">
+
+<!--[if lt IE 9]>
+  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+  </head>
+
+  <body>
+    <div class="navbar">
+  <div class="navbar-inner">
+    <div class="container">
+      <a class="brand" href="#">arrow 0.1.0</a>
+      <div class="nav">
+        <ul class="nav">
+          <li><a href="index.html"><i class="icon-home icon-white"></i> Index</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <div class="container">
+      <header>
+        
+      </header>
+      
+      <h1>xMap</h1>
+
+<div class="row">
+  <div class="span8">
+    <h2>Usage</h2>
+    <pre><div>xMap(fn, coll)</div>
+<div>xMap...(fn, ...)</div></pre>
+    
+    <h2>Arguments</h2>
+    <dl>
+      <dt>fn</dt>
+      <dd>a unary function. The function to modify each
+  element of a collection with.</dd>
+      <dt>coll</dt>
+      <dd>a collection. The collection to be modified.</dd>
+      <dt>...</dt>
+      <dd>see above.</dd>
+    </dl>
+    
+    <div class="Value">
+      <h2>Value</h2>
+      
+      <p>A list.</p>
+  
+    </div>
+
+    <div class="Description">
+      <h2>Description</h2>
+      
+      <p>Apply a function to each element of a collection.</p>
+  
+    </div>
+
+    <div class="Corner Cases">
+      <h2>Corner Cases</h2>
+      
+      <p>Returns the empty list if <b>coll</b> is length-zero.</p>
+  
+    </div>
+    
+    <h2 id="examples">Examples</h2>
+    <pre class="examples"><div class='input'>
+# 1. Convert letters to uppercase.
+
+LETTERS &lt;- xMap(toupper, letters)
+LETTERS
+</div>
+<div class='output'>[[1]]
+[1] &quot;A&quot;
+
+[[2]]
+[1] &quot;B&quot;
+
+[[3]]
+[1] &quot;C&quot;
+
+[[4]]
+[1] &quot;D&quot;
+
+[[5]]
+[1] &quot;E&quot;
+
+[[6]]
+[1] &quot;F&quot;
+
+[[7]]
+[1] &quot;G&quot;
+
+[[8]]
+[1] &quot;H&quot;
+
+[[9]]
+[1] &quot;I&quot;
+
+[[10]]
+[1] &quot;J&quot;
+
+[[11]]
+[1] &quot;K&quot;
+
+[[12]]
+[1] &quot;L&quot;
+
+[[13]]
+[1] &quot;M&quot;
+
+[[14]]
+[1] &quot;N&quot;
+
+[[15]]
+[1] &quot;O&quot;
+
+[[16]]
+[1] &quot;P&quot;
+
+[[17]]
+[1] &quot;Q&quot;
+
+[[18]]
+[1] &quot;R&quot;
+
+[[19]]
+[1] &quot;S&quot;
+
+[[20]]
+[1] &quot;T&quot;
+
+[[21]]
+[1] &quot;U&quot;
+
+[[22]]
+[1] &quot;V&quot;
+
+[[23]]
+[1] &quot;W&quot;
+
+[[24]]
+[1] &quot;X&quot;
+
+[[25]]
+[1] &quot;Y&quot;
+
+[[26]]
+[1] &quot;Z&quot;
+
+</div>
+<div class='input'>
+# list(
+#    &quot;A&quot;, &quot;B&quot;, &quot;C&quot;, &quot;D&quot;, &quot;E&quot;, &quot;F&quot;,
+#    &quot;G&quot;, &quot;H&quot;, &quot;I&quot;, &quot;J&quot;, &quot;K&quot;, &quot;L&quot;,
+#    &quot;M&quot;, &quot;N&quot;, &quot;O&quot;, &quot;P&quot;, &quot;Q&quot;, &quot;R&quot;,
+#    &quot;S&quot;, &quot;T&quot;, &quot;U&quot;, &quot;V&quot;, &quot;W&quot;, &quot;X&quot;,
+#    &quot;Y&quot;, &quot;Z&quot;)
+
+# 2. grab the second value in a collection
+#    of collections.
+
+xMap...(
+    xSecondOf,
+    list(&quot;a&quot;, &quot;b&quot;, &quot;c&quot;),
+    list(1, 2, 3)
+)
+</div>
+<div class='output'>[[1]]
+[1] &quot;b&quot;
+
+[[2]]
+[1] 2
+
+</div>
+<div class='input'>
+# list(&quot;b&quot;, 2)
+
+
+
+# 3. HR Functional Programming
+# Evaluate the first 10 terms of the series of e^x
+
+# The number e^x is given by the series
+
+# 1 + x + x^2/2! + x^3/3! + ...,
+
+# This problem is perfect for xMap and xReduce.
+# The moderately astute will notice that
+
+# x = x^1 / 1!, and that 1 = x^0 / 0!,
+
+# meaning that the first two terms aren&#39;t any more difficult
+# to generate than the rest of the series. The series really is
+
+# x^0/0! + x^1/1! + x^2/2! + x^3/3! + ...,
+
+# which means we can map over the sequence 0, 1, ... and generate
+# the corresponding term in the series e^x
+
+power_of_e &lt;- x := {
+
+	x_(0:15)$
+	xMap(ith := {
+		(x^ith) / factorial(ith)
+	})$
+	x_Reduce(&#39;+&#39;)
+
+}
+
+power_of_e(1)
+</div>
+<div class='output'>[1] 2.718282
+</div>
+<div class='input'># 2.718282
+</div></pre>
+  </div>
+  <div class="span4">
+    <!-- <ul>
+      <li>xMap</li><li>xMap...</li>
+    </ul>
+    <ul>
+      
+    </ul> -->
+      
+    <h2>See also</h2>
+    
+Other mapping_functions: <code><a href='xDeepMap.html'>xDeepMap</a></code>,
+<code><a href='xDeepMap.html'>xDeepMap...</a></code>; <code><a href='xFlatMap.html'>xFlatMap</a></code>,
+<code><a href='xFlatMap.html'>xFlatMap...</a></code>; <code><a href='xMapIndexed.html'>xMapIndexed</a></code>,
+<code><a href='xMapIndexed.html'>xMapIndexed...</a></code>; <code><a href='xMapply.html'>xMapply</a></code>,
+<code><a href='xMapply.html'>xMapply...</a></code>; <code><a href='xVectorise.html'>xVectorise</a></code>,
+<code><a href='xVectorise.html'>xVectorize</a></code>
+
+        
+  </div>
+</div>
+      
+      <footer>
+      <p class="pull-right"><a href="#">Back to top</a></p>
+<p>Built by <a href="https://github.com/hadley/staticdocs">staticdocs</a>. Styled with <a href="http://twitter.github.com/bootstrap">bootstrap</a>.</p>
+      </footer>
+    </div>
+  </body>
+</html>

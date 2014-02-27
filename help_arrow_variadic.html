@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+<title>help_arrow_variadic. arrow 0.1.0</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="">
+
+<link href="css/bootstrap.css" rel="stylesheet">
+<link href="css/bootstrap-responsive.css" rel="stylesheet">
+<link href="css/highlight.css" rel="stylesheet">
+<link href="css/staticdocs.css" rel="stylesheet">
+
+<!--[if lt IE 9]>
+  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+  </head>
+
+  <body>
+    <div class="navbar">
+  <div class="navbar-inner">
+    <div class="container">
+      <a class="brand" href="#">arrow 0.1.0</a>
+      <div class="nav">
+        <ul class="nav">
+          <li><a href="index.html"><i class="icon-home icon-white"></i> Index</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <div class="container">
+      <header>
+        
+      </header>
+      
+      <h1>Usage - Variadic</h1>
+
+<div class="row">
+  <div class="span8">
+        
+    <div class="Description">
+      <h2>Description</h2>
+      
+      <p>Good function naming conventions can make a library easier
+to use. The fantastic plyr library uses a two-letter prefix
+to denote the input and output types of each ply function,
+which makes it trivial to find the correct variant of ply
+function. Arrow uses a few different naming conventions,
+though most don't need to be remembered.</p>
+  
+    </div>
+
+    <div class="Details">
+      <h2>Details</h2>
+      
+      <p><b>Function Names</b></p>
+  
+      <p>Arrow functions are always prefixed with the letter 'x',
+followed by an uppercase letter. Method names are camel
+case.</p>
+  
+      <p><code>xMap</code></p>
+  
+      <p><code>xFold</code></p>
+  
+      <p><code>xProdSetOf</code></p>
+  
+      <p>Functions often come in pairs of related functions;</p>
+  
+      <p><code>xExplode</code></p>
+  
+      <p><code>xImplode</code></p>
+  
+      <p><code>xSelect</code></p>
+  
+      <p><code>xReject</code></p>
+  
+      <p>Certain functions process collections in a certain
+direction; as is convention in Haskell these have a 'l'
+(left) or 'r' (right) suffix.</p>
+  
+      <p><code>xFoldl</code></p>
+  
+      <p><code>xFoldr</code></p>
+  
+      <p>Most arrow functions have a normal version and a ellipsis
+(...) version; the ellipsis form has a three-dot suffix.</p>
+  
+      <p><code>xMap</code></p>
+  
+      <p><code>xMap...</code></p>
+  
+      <p><b>Parametre Names</b></p>
+  
+      <p>Arrow has a small number of parametre names, which refer to
+some property of the expected argument.</p>
+  
+      <p><ul>
+<li><b>bool:</b> a single boolean value. 
+</li>
+<li><b>bools:</b> a collection of boolean values. 
+</li>
+<li><b>coll:</b> a collection.  </li>
+<li><b>ims:</b> a
+collection of complex values.  </li>
+<li><b>colls:</b> a
+collection of collections.  </li>
+<li><b>fn:</b> a
+collection of collections.  </li>
+<li><b>num:</b> a single
+number.  </li>
+<li><b>nums:</b> a collection of numbers. 
+</li>
+<li><b>pred:</b> a function that returns a logical
+value.  </li>
+<li><b>rexp:</b> a string to be used as a
+regular expression.  </li>
+<li><b>str:</b> a string. 
+</li>
+<li><b>strs:</b> a collection of strings. 
+</li>
+<li><b>sym:</b> a symbol or string. 
+</li>
+<li><b>val:</b> any R value.  </li>
+</ul></p>
+  
+      <p></p>
+  
+    </div>
+      </div>
+  <div class="span4">
+    <!-- <ul>
+      <li>help_arrow_variadic</li>
+    </ul>
+    <ul>
+      
+    </ul> -->
+      
+        
+  </div>
+</div>
+      
+      <footer>
+      <p class="pull-right"><a href="#">Back to top</a></p>
+<p>Built by <a href="https://github.com/hadley/staticdocs">staticdocs</a>. Styled with <a href="http://twitter.github.com/bootstrap">bootstrap</a>.</p>
+      </footer>
+    </div>
+  </body>
+</html>

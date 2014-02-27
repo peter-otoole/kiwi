@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+<title>xFoldl. arrow 0.1.0</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="">
+
+<link href="css/bootstrap.css" rel="stylesheet">
+<link href="css/bootstrap-responsive.css" rel="stylesheet">
+<link href="css/highlight.css" rel="stylesheet">
+<link href="css/staticdocs.css" rel="stylesheet">
+
+<!--[if lt IE 9]>
+  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+  </head>
+
+  <body>
+    <div class="navbar">
+  <div class="navbar-inner">
+    <div class="container">
+      <a class="brand" href="#">arrow 0.1.0</a>
+      <div class="nav">
+        <ul class="nav">
+          <li><a href="index.html"><i class="icon-home icon-white"></i> Index</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <div class="container">
+      <header>
+        
+      </header>
+      
+      <h1>xFoldl</h1>
+
+<div class="row">
+  <div class="span8">
+    <h2>Usage</h2>
+    <pre><div>xFoldl(fn, val, coll)</div>
+<div>xFold(fn, val, coll)</div>
+<div>xFoldl...(fn, val, ...)</div>
+<div>xFold...(fn, val, coll)</div></pre>
+    
+    <h2>Arguments</h2>
+    <dl>
+      <dt>fn</dt>
+      <dd>a binary function that returns a value that
+  <b>fn</b> can later take as its left argument.</dd>
+      <dt>val</dt>
+      <dd>an arbitrary value. The initial value to be
+  used as the first left argument to <b>fn</b>.</dd>
+      <dt>coll</dt>
+      <dd>a collection. The collection to reduce to a
+  single value.</dd>
+      <dt>...</dt>
+      <dd>see above.</dd>
+    </dl>
+    
+    <div class="Value">
+      <h2>Value</h2>
+      
+      <p>An arbitrary value, depending on the function <b>fn</b>.</p>
+  
+    </div>
+
+    <div class="Description">
+      <h2>Description</h2>
+      
+      <p>Successively combine a list of values into a single value
+using a binary function (left to right, with an initial
+value).</p>
+  
+    </div>
+
+    <div class="Details">
+      <h2>Details</h2>
+      
+      <p>Fold successively combines the first two elements of a
+collection into one element, until only one element is
+remaining. The combining is done with with a binary
+combining function. Examples of such functions - functions
+that take two elements and combine them into one element -
+include the plus operator and list concatenation.</p>
+  
+      <p><b>Associative vs Non-Associative Values.</b></p>
+  
+      <p>There are two important types of combining functions:
+associative and non-associative. The difference between
+these functions is best demonstrated using infix notation.
+An example of an associative function is the plus operator,
+because the following equation holds</p>
+  
+      <p><code>(a + b) + c == a + (b + c)</code></p>
+  
+      <p>for arbitrary numbers a, b, c. Bracketing from the left or
+the right does not alter the result of adding several
+numbers together. The below example involves using
+<b>xFoldl</b> to add a vector of numbers. <b>xFoldl</b>
+successively combines (with +) the leftmost two values into
+a single number, and repeats the process until the sum of
+the entire list is found.</p>
+  
+      <p><code>xFoldl('+', 0, 1:5)</code></p>
+  
+      <p><code>(((((0 + 1) + 2) + 3) + 4) + 5)</code></p>
+  
+      <p><code>0 + 1 + 2 + 3 + 4 + 5</code> <code>1 + 2 + 3 + 4 + 5</code></p>
+  
+      <p><code>3 + 3 + 4 + 5</code></p>
+  
+      <p><code>6 + 4 + 5</code></p>
+  
+      <p><code>10 + 5</code></p>
+  
+      <p><code>15</code></p>
+  
+      <p>As stated above the plus operator is associative, so both
+<b>xFoldl</b> or <b>xFoldr</b> yield the same result.</p>
+  
+      <p>Non-associative combining functions often focus on
+accumulating a data structure entirely different from the
+input collection, one element at a time. In the following
+example a non-associative combining function takes an tally
+list that counts votes for bsd versus linux as its left
+argument, and a vote as its right argument. If the vote is
+for bsd or linux the tally list is updated, if not it is
+returned as is.</p>
+  
+      <p><code>combiner <- (acc : elem) := if (elem in names(acc))
+elem[[acc]] + 1 else acc</code></p>
+  
+      <p><code>votes <- c('linux', 'mac', 'mac', 'bsd', 'windows',
+'linux')</code></p>
+  
+      <p><code>xFoldl(combiner, list(linux = 0, bsd = 0), votes) </code></p>
+  
+      <p>The votes are tallied in the following order:</p>
+  
+      <p><code>list(linux = 0, bsd = 0), 'linux', 'mac', 'mac',
+'bsd', 'windows', 'linux'</code></p>
+  
+      <p><code>list(linux = 1, bsd = 0), 'mac', 'mac', 'bsd',
+'windows', 'linux'</code></p>
+  
+      <p><code>list(linux = 1, bsd = 0), 'mac', 'bsd', 'windows',
+'linux'</code></p>
+  
+      <p><code>list(linux = 1, bsd = 0), 'bsd', 'windows', 'linux'</code></p>
+  
+      <p><code>list(linux = 1, bsd = 1), 'windows', 'linux'</code></p>
+  
+      <p><code>list(linux = 2, bsd = 1), 'linux'</code></p>
+  
+      <p><code>list(linux = 3, bsd = 1)</code></p>
+  
+      <p>The combining function is non-associative, since it
+increments a field in its left argument, while the right
+argument doesn't even have fields.</p>
+  
+      <p><b>Short-Circuiting</b></p>
+  
+      <p>The folds examined so far involve iterating over an entire
+input collection. When the input collections are very long
+this isn't always desirable. Sometimes it is possible - an
+more efficent - to return a result before checking every
+element of the input collection.</p>
+  
+      <p>A good demonstration of short circuiting is to improve the
+efficiency of searching for a value. For example, if we
+want to check if a collection contains any na value we
+could (but shouldn't) use the following inefficient code.</p>
+  
+      <p><code>coll <- c(1, 2, 3, NA, rep(10, 1000))</code></p>
+  
+      <p><code>xFoldl((acc : elem) := acc || is.na(elem), False,
+coll)</code></p>
+  
+      <p><code>True</code> x The obvious problem is the fourth element of
+the very long collection is na, but the code searches
+though thousands of elements after finding a match. If we
+were searching the collection with a for loop we would use
+<b>break</b> or <b>return( )</b> to terminate the search
+early and return true. Arrow adds a similar construct for
+terminating certain higher-order functions called the
+<b>Return( )</b> function.</p>
+  
+      <p>This function can be used to break out of the fold early;
+in this case upon discovery of an na value.</p>
+  
+      <p><code>xFoldl((acc : elem) := if (is.na(elem)) Return(True)
+else False, False, coll)</code></p>
+  
+      <p>The use of <b>Return( )</b> reduces the number of steps
+required to return a result from thousands to less than
+ten.</p>
+  
+    </div>
+
+    <div class="Corner Cases">
+      <h2>Corner Cases</h2>
+      
+      <p>If <b>coll</b> is length-zero then the parametre
+  <b>val</b> is returned automatically.</p>
+  
+    </div>
+    
+    <h2 id="examples">Examples</h2>
+    <pre class="examples"><div class='input'>
+# 1. sum a vector with fold.
+
+xFold(&quot;+&quot;, 0, 1:10)
+</div>
+<div class='output'>[1] 55
+</div>
+<div class='input'>
+## 55
+
+# 2. demonstrate how Return works by using
+#    it to break out of the fold across 26 letters
+#    prematurely.
+
+xFold(
+    (number_checked : letter) := {
+
+        if (letter == &#39;q&#39;) {
+            Return (number_checked)
+        } else {
+            number_checked + 1
+        }
+    },
+    0,
+    letters
+)
+</div>
+<div class='output'>[1] 16
+</div>
+<div class='input'>
+# terminated after 16 checks, not 26.
+# 16
+
+# 3. HR Functional Programming #4
+#    Return the sum of the odd elements of a list
+
+# There are two parts to this problem; selecting the odd numbers from a list
+# and then summing them. xSelect is (naturally) the solution to the latter half.
+# xFold takes a binary function (in this case &#39;plus&#39;), and successively merges values (from
+# left to right) in a collection until a single result is returned.
+
+# Arrow chaining methods work nicely for multi-part processing of data.
+
+sum_odds &lt;- nums := {
+
+    x_(nums)$
+    xSelect(
+        x := {x %% 2 == 1}
+    )$
+    x_Fold(&#39;+&#39;, 0)
+}
+
+sum_odds(c(1, 2, 3, 4, 5, 6))
+</div>
+<div class='output'>[1] 9
+</div>
+<div class='input'>
+# 9
+
+# A more efficient solution would only use xFold; the right argument is checked to see
+# if it is odd; if it is it&#39;s added to the accumulator value.
+
+sum_odds &lt;- nums := {
+
+    xFold(
+        (acc : nextelem) := {
+            if (nextelem %% 2 == 1) {
+                acc + nextelem
+            } else {
+                acc
+            }
+        },
+        0,
+        nums
+    )
+}
+
+sum_odds(c(1, 2, 3, 4, 5, 6))
+</div>
+<div class='output'>[1] 9
+</div>
+<div class='input'>
+9
+</div>
+<div class='output'>[1] 9
+</div>
+<div class='input'>
+# 4. HR Functional Programming
+#    Remove the odd indices from a collection
+
+# As is normal for functional programming, fold is the solution to all problems.
+# Most functions in Arrow could actually be expressed by partially applying fold,
+# but that would be inefficient.
+
+#
+# In this case we want to take a collection xs and keep xs[ 2, 4, 6, ... ]
+# We can use xFold to take each index of the collection and only accumulate
+# the values at even indices.
+
+remove_odds &lt;- coll := {
+
+    xFold(
+        (acc : index) := {
+            if (index %% 2 == 0) {
+                c(acc, coll[index])
+            } else {
+                acc
+            }
+        },
+        xUnit(coll),
+        seq_along(coll)
+    )
+
+}
+
+remove_odds(letters)
+</div>
+<div class='output'> [1] &quot;b&quot; &quot;d&quot; &quot;f&quot; &quot;h&quot; &quot;j&quot; &quot;l&quot; &quot;n&quot; &quot;p&quot; &quot;r&quot; &quot;t&quot;
+[11] &quot;v&quot; &quot;x&quot; &quot;z&quot;
+</div>
+<div class='input'>
+# c(&quot;b&quot;, &quot;d&quot;, &quot;f&quot;, &quot;h&quot;, &quot;j&quot;, &quot;l&quot;, &quot;n&quot;, &quot;p&quot;, &quot;r&quot;, &quot;t&quot;, &quot;v&quot;, &quot;x&quot;, &quot;z&quot;)
+
+# 5. HR Functional Programming
+# Area under curves and solids of rotation
+
+# Time to flex my atrophied Calculus muscles...
+
+# This particular problem involves finding the area underneath a
+# subsection of a polynomial of x, and finding the area of the solid of
+# rotation about the x-axis. Luckily numerical integration isn&#39;t so hard.
+
+# The easiest way to approximate the area under a curve is to approximate the
+# curve with small rectangles, and to summate their area. This isn&#39;t a great
+# approximation -
+# it converges on the true value slowly with respect to rectangle width -
+# but it will do here.
+
+# I think this is most naturally expressed with xFold; starting from an initial
+# area of 0 add the area of each rectangle under the polynomial to the accumulated area.
+
+integrate &lt;- (f : x_bounds) := {
+
+    xVal(epsilon, 0.001)
+    x_values &lt;- seq(from = x_bounds[1], to = x_bounds[2], by = epsilon)
+
+    xFold(
+        (area : x) := {
+            area + (f(x) * epsilon)
+        },
+        0,
+        x_values
+    )
+}
+
+integrate(
+    x := x^3 - 9*x^2,
+    c(-10, +10)
+)
+</div>
+<div class='output'>[1] -6000.9
+</div>
+<div class='input'>
+# -6000.9
+
+# Wolfram Alpha (where most of my calculus knowledge comes from)
+# says -6000, so not bad.
+</div></pre>
+  </div>
+  <div class="span4">
+    <!-- <ul>
+      <li>xFold</li><li>xFold...</li><li>xFoldl</li><li>xFoldl...</li>
+    </ul>
+    <ul>
+      
+    </ul> -->
+      
+    <h2>See also</h2>
+    
+Other folding_functions: <code><a href='xFoldr.html'>xFoldr</a></code>,
+<code><a href='xFoldr.html'>xFoldr...</a></code>; <code><a href='xReducer.html'>xReducer</a></code>,
+<code><a href='xReducer.html'>xReducer...</a></code>; <code><a href='xReducel.html'>xReduce</a></code>,
+<code><a href='xReducel.html'>xReduce...</a></code>, <code><a href='xReducel.html'>xReducel</a></code>,
+<code><a href='xReducel.html'>xReducel...</a></code>; <code><a href='xScan.html'>xScan</a></code>,
+<code><a href='xScan.html'>xScan...</a></code>, <code><a href='xScan.html'>xScanl</a></code>,
+<code><a href='xScan.html'>xScanl...</a></code>
+
+Other short_circuiting_functions: <code><a href='xFoldr.html'>xFoldr</a></code>,
+<code><a href='xFoldr.html'>xFoldr...</a></code>; <code><a href='xIterate.html'>xIterate</a></code>;
+<code><a href='xReducer.html'>xReducer</a></code>, <code><a href='xReducer.html'>xReducer...</a></code>;
+<code><a href='xReducel.html'>xReduce</a></code>, <code><a href='xReducel.html'>xReduce...</a></code>,
+<code><a href='xReducel.html'>xReducel</a></code>, <code><a href='xReducel.html'>xReducel...</a></code>;
+<code><a href='xScan.html'>xScan</a></code>, <code><a href='xScan.html'>xScan...</a></code>,
+<code><a href='xScan.html'>xScanl</a></code>, <code><a href='xScan.html'>xScanl...</a></code>
+
+        
+  </div>
+</div>
+      
+      <footer>
+      <p class="pull-right"><a href="#">Back to top</a></p>
+<p>Built by <a href="https://github.com/hadley/staticdocs">staticdocs</a>. Styled with <a href="http://twitter.github.com/bootstrap">bootstrap</a>.</p>
+      </footer>
+    </div>
+  </body>
+</html>

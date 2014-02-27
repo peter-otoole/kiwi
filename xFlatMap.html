@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+<title>xFlatMap. arrow 0.1.0</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="">
+
+<link href="css/bootstrap.css" rel="stylesheet">
+<link href="css/bootstrap-responsive.css" rel="stylesheet">
+<link href="css/highlight.css" rel="stylesheet">
+<link href="css/staticdocs.css" rel="stylesheet">
+
+<!--[if lt IE 9]>
+  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+  </head>
+
+  <body>
+    <div class="navbar">
+  <div class="navbar-inner">
+    <div class="container">
+      <a class="brand" href="#">arrow 0.1.0</a>
+      <div class="nav">
+        <ul class="nav">
+          <li><a href="index.html"><i class="icon-home icon-white"></i> Index</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <div class="container">
+      <header>
+        
+      </header>
+      
+      <h1>xFlatMap</h1>
+
+<div class="row">
+  <div class="span8">
+    <h2>Usage</h2>
+    <pre><div>xFlatMap(fn, coll)</div>
+<div>xFlatMap...(fn, ...)</div></pre>
+    
+    <h2>Arguments</h2>
+    <dl>
+      <dt>fn</dt>
+      <dd>a unary function. The function to map across a
+  collection.</dd>
+      <dt>coll</dt>
+      <dd>a collection. The collection to map across.</dd>
+      <dt>...</dt>
+      <dd>see above.</dd>
+    </dl>
+    
+    <div class="Value">
+      <h2>Value</h2>
+      
+      <p>A list.</p>
+  
+    </div>
+
+    <div class="Description">
+      <h2>Description</h2>
+      
+      <p>Concatenate the results of applying a function to each
+element of a collection.</p>
+  
+    </div>
+
+    <div class="Details">
+      <h2>Details</h2>
+      
+      <p><b>xFlatMap</b> is similar to <b>xMap</b> but allows more
+fine-grained control of the output format. For example,
+elements can be removed (by returning NULL) or added (by
+returning a collection), or names can be added to the
+collection.</p>
+  
+      <p><b>xFlatMap</b> can be used to emulate the behaviour of
+<b>xSelect</b>, allowing it to drop elements:</p>
+  
+      <p><code>odds <- xFlatMap(x := if (x %% 2) x, 1:10)</code></p>
+  
+      <p><code>list(1, 3, 5, 7, 9)</code></p>
+  
+      <p>It may also be used to add new elements to a collection:</p>
+  
+      <p><code>xFlatMap(x := c(num = x, sqrt = sqrt(x)), 1:3) )</code></p>
+  
+      <p><code>list(num = 1, sqrt = 1, num = 2, sqrt = 1.41, num =
+3, sqrt = 1.73)</code></p>
+  
+    </div>
+
+    <div class="Corner Cases">
+      <h2>Corner Cases</h2>
+      
+      <p>Returns the empty list if <b>coll</b> is length-zero.</p>
+  
+    </div>
+    
+    <h2 id="examples">Examples</h2>
+    <pre class="examples"><div class='input'>
+
+# 1. HR Functional Programming
+#    Given an input list repeat each element n times
+
+# In this problem each element of a list must be repeated n times;
+# so the list
+
+# list(1, 2, 3)
+
+# with n = 2 would be become
+
+# list(1, 1, 2, 2, 3, 3)
+
+# I think xFlatMap is the most elegant way of expressing this problem, but (as is usually true)
+# xFold can also be used here. xFlatMap is like xMap, but it joins its return values end-to-end;
+# for this reason it can return an output collection longer than its input collection.
+
+repeat_elements &lt;- (n : coll) := {
+
+	xFlatMap(
+		xPartial...(xRepeat, num = n),
+		coll)
+
+}
+
+# Here we mapped a partially-applied version of the xRepeat function (so it repeats its element n times) over
+# the elements we want to repeat; xFlatMap then joins them end-to-end as we need.
+
+repeat_elements(2, c(1, 2, 3))
+</div>
+<div class='output'>[[1]]
+[1] 1
+
+[[2]]
+[1] 1
+
+[[3]]
+[1] 2
+
+[[4]]
+[1] 2
+
+[[5]]
+[1] 3
+
+[[6]]
+[1] 3
+
+</div>
+<div class='input'>
+# list(1, 1, 2, 2, 3, 3)
+
+
+# 2. Factorions
+#    factorions are numbers whose value is the sum of the
+#    factorials of its digits. For example,
+#    145 = 1! + 4! + 5!
+#    the below example uses a lot of chained function composition,
+#    to process and sum each digit of the number to search,
+#
+#    There are only four factorions in base 10:
+#
+#    1, 2, 145, 40585
+#
+#    There are more efficient ways to find the numbers,
+#    but a brute force search is fun, if really slow.
+
+digit_factorial_sum_of &lt;-
+	paste %then% xToChars %then% as.integer %then% factorial %then% sum
+
+x_(1:50000) $
+xFlatMap(num := {
+
+	digit_factorial_sum &lt;- digit_factorial_sum_of(num)
+
+	if (digit_factorial_sum == num) {
+		digit_factorial_sum
+	}
+
+})
+</div>
+<div class='output'>[ an arrow object with methods for collections ]
+
+$x_()
+[[1]]
+[1] 1
+
+[[2]]
+[1] 2
+
+[[3]]
+[1] 145
+
+[[4]]
+[1] 40585
+
+</div></pre>
+  </div>
+  <div class="span4">
+    <!-- <ul>
+      <li>xFlatMap</li><li>xFlatMap...</li>
+    </ul>
+    <ul>
+      
+    </ul> -->
+      
+    <h2>See also</h2>
+    
+Other mapping_functions: <code><a href='xDeepMap.html'>xDeepMap</a></code>,
+<code><a href='xDeepMap.html'>xDeepMap...</a></code>; <code><a href='xMapIndexed.html'>xMapIndexed</a></code>,
+<code><a href='xMapIndexed.html'>xMapIndexed...</a></code>; <code><a href='xMapply.html'>xMapply</a></code>,
+<code><a href='xMapply.html'>xMapply...</a></code>; <code><a href='xMap.html'>xMap</a></code>,
+<code><a href='xMap.html'>xMap...</a></code>; <code><a href='xVectorise.html'>xVectorise</a></code>,
+<code><a href='xVectorise.html'>xVectorize</a></code>
+
+        
+  </div>
+</div>
+      
+      <footer>
+      <p class="pull-right"><a href="#">Back to top</a></p>
+<p>Built by <a href="https://github.com/hadley/staticdocs">staticdocs</a>. Styled with <a href="http://twitter.github.com/bootstrap">bootstrap</a>.</p>
+      </footer>
+    </div>
+  </body>
+</html>
