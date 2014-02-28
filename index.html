@@ -135,7 +135,7 @@ as standard operations.</p></li>
     
     </ul>
     <h3>Combinatoric Functions</h3>
-    <p>These functions generate combinatorial structures.</p>
+    <p>These functions generate combinatorial structures, which are typically used for specialised patterns of iteration or generating more useful substructures from an initial pool of candidate structures. As these functions enumerate rapidly growing data structures they tend to inefficient for large inputs.</p>
 
     
     <ul class="index">
@@ -157,7 +157,7 @@ as standard operations.</p></li>
     
     </ul>
     <h3>Time Functions</h3>
-    <p>These functions involve timing.</p>
+    <p>These side-effectful functions work with time, or  alter the temporal properties of functions. These are useful for interacting with rate-limited API&#39;s.</p>
 
     
     <ul class="index">
@@ -253,7 +253,7 @@ as standard operations.</p></li>
     
     </ul>
     <h3>Short-Circuiting Functions</h3>
-    <p>These functions use the short circuiting Return function.</p>
+    <p>These functions can use to the short-circuit operator to break evaluation prematurely.</p>
 
     
     <ul class="index">
@@ -289,6 +289,9 @@ as standard operations.</p></li>
         <code><a href="xOneOf.html">xOneOf</a></code>(xOneOf...)<br />xOneOf</li>
             
       <li>
+        <code><a href="xRecycle.html">xRecycle</a></code>(xRecycle...)<br />xRecycle</li>
+            
+      <li>
         <code><a href="xRepeat.html">xRepeat</a></code>(xRepeat...)<br />xRepeat</li>
             
       <li>
@@ -320,7 +323,8 @@ as standard operations.</p></li>
     
     </ul>
     <h3>Filtering Functions</h3>
-    
+    <p>These functions create a subset of collection, with elements sharing a certain property.</p>
+
     
     <ul class="index">
         
@@ -341,14 +345,77 @@ as standard operations.</p></li>
             
       <li>
         <code><a href="xReject.html">xReject</a></code>(xReject...)<br />xReject</li>
+            
+      <li>
+        <code><a href="xSelect.html">xSelect</a></code>(xSelect...)<br />xSelect</li>
     
     </ul>
-    <h3>Testing Functions</h3>
+    <h3>Value Testing Functions</h3>
     <p>These functions test values to see if they are a particular type of value.</p>
 
     
     <ul class="index">
-
+        
+      <li>
+        <code><a href="xIsFalse.html">xIsFalse</a></code><br />xIsFalse</li>
+            
+      <li>
+        <code><a href="xIsNa.html">xIsNa</a></code><br />xIsNa</li>
+            
+      <li>
+        <code><a href="xIsNan.html">xIsNan</a></code><br />xIsNan</li>
+            
+      <li>
+        <code><a href="xIsNull.html">xIsNull</a></code><br />xIsNull</li>
+            
+      <li>
+        <code><a href="xIsTrue.html">xIsTrue</a></code><br />xIsTrue</li>
+            
+      <li>
+        <code><a href="xNotFalse.html">xNotFalse</a></code><br />xNotFalse</li>
+            
+      <li>
+        <code><a href="xNotNan.html">xNotNan</a></code><br />xNotNan</li>
+            
+      <li>
+        <code><a href="xNotNa.html">xNotNa</a></code><br />xNotNa</li>
+            
+      <li>
+        <code><a href="xNotNull.html">xNotNull</a></code><br />xNotNull</li>
+            
+      <li>
+        <code><a href="xNotTrue.html">xNotTrue</a></code><br />xNotTrue</li>
+            
+      <li>
+        <code><a href="xElemIsFalse.html">xElemIsFalse</a></code>(xElemIsFalse...)<br />xElemIsFalse</li>
+            
+      <li>
+        <code><a href="xElemIsNa.html">xElemIsNa</a></code>(xElemIsNa...)<br />xElemIsNa</li>
+            
+      <li>
+        <code><a href="xElemIsNan.html">xElemIsNan</a></code>(xElemIsNan...)<br />xElemIsNan</li>
+            
+      <li>
+        <code><a href="xElemIsNull.html">xElemIsNull</a></code>(xElemIsNull...)<br />xElemIsNull</li>
+            
+      <li>
+        <code><a href="xElemIsTrue.html">xElemIsTrue</a></code>(xElemIsTrue...)<br />xElemIsTrue</li>
+            
+      <li>
+        <code><a href="xElemNotFalse.html">xElemNotFalse</a></code>(xElemNotFalse...)<br />xElemNotFalse</li>
+            
+      <li>
+        <code><a href="xElemNotNa.html">xElemNotNa</a></code>(xElemNotNa...)<br />xElemNotNa</li>
+            
+      <li>
+        <code><a href="xElemNotNan.html">xElemNotNan</a></code>(xElemNotNan...)<br />xElemNotNan</li>
+            
+      <li>
+        <code><a href="xElemNotNull.html">xElemNotNull</a></code>(xElemNotNull...)<br />xElemNotNull</li>
+            
+      <li>
+        <code><a href="xElemNotTrue.html">xElemNotTrue</a></code>(xElemNotTrue...)<br />xElemNotTrue</li>
+    
     </ul>
     <h3>Logical Constant Functions</h3>
     <p>These functions are constant functions that return a fixed logical value.</p>
@@ -372,6 +439,12 @@ as standard operations.</p></li>
     
     <ul class="index">
         
+      <li>
+        <code><a href="xAt.html">xAt</a></code>(xAt...)<br />xAt</li>
+            
+      <li>
+        <code><a href="xAtCol.html">xAtCol</a></code>(xAtCol...)<br />xAtCol</li>
+            
       <li>
         <code><a href="xDropWhile.html">xDropWhile</a></code>(xDropWhile...)<br />xDropWhile</li>
             
@@ -397,10 +470,19 @@ as standard operations.</p></li>
         <code><a href="xRestOf.html">xRestOf</a></code>(xRestOf...)<br />xRestOf</li>
             
       <li>
+        <code><a href="xSlice.html">xSlice</a></code>(xSlice...)<br />xSlice</li>
+            
+      <li>
         <code><a href="xSecondOf.html">xSecondOf</a></code>(xSecondOf...)<br />xSecondOf</li>
             
       <li>
+        <code><a href="xTake.html">xTake</a></code>(xTake...)<br />xTake</li>
+            
+      <li>
         <code><a href="xTakeWhile.html">xTakeWhile</a></code>(xTakeWhile...)<br />xTakeWhile</li>
+            
+      <li>
+        <code><a href="xThirdOf.html">xThirdOf</a></code>(xThirdOf...)<br />xThirdOf</li>
     
     </ul>
     <h3>Mapping Functions</h3>
@@ -460,7 +542,8 @@ as standard operations.</p></li>
     
     </ul>
     <h3>Immutable Value Functions</h3>
-    
+    <p>These functions work with immutable values; references to a variable that cannot be altered by reassignment after creation.</p>
+
     
     <ul class="index">
         
@@ -511,7 +594,8 @@ as standard operations.</p></li>
     
     </ul>
     <h3>Quantifier Functions</h3>
-    
+    <p>These functions count or summarise the true/false cases of a predicate over a data set.</p>
+
     
     <ul class="index">
         
@@ -520,13 +604,19 @@ as standard operations.</p></li>
             
       <li>
         <code><a href="xExists.html">xExists</a></code>(xExists...)<br />xExists</li>
+            
+      <li>
+        <code><a href="xPoll.html">xPoll</a></code>(xPoll..., xRejectNan...)<br />xPoll</li>
     
     </ul>
     <h3>Set Functions</h3>
     
     
     <ul class="index">
-
+        
+      <li>
+        <code><a href="xDuplicatesOf.html">xDuplicatesOf</a></code>(xDuplicatesOf...)<br />xDuplicatesOf</li>
+    
     </ul>
     <h3>Name Functions</h3>
     
@@ -541,7 +631,8 @@ as standard operations.</p></li>
 
     </ul>
     <h3>Character Functions</h3>
-    
+    <p>These functions are involved in text-processing, or interacting with text-files.</p>
+
     
     <ul class="index">
         
@@ -645,45 +736,6 @@ as standard operations.</p></li>
         <code><a href="xAsRaw.html">xAsRaw</a></code>(xAsRaw...)<br />xAsRaw</li>
             
       <li>
-        <code><a href="xAt.html">xAt</a></code>(xAt...)<br />xAt</li>
-            
-      <li>
-        <code><a href="xAtColumn.html">xAtColumn</a></code>(xAtColumn...)<br />xAtColumn</li>
-            
-      <li>
-        <code><a href="xDuplicatesOf.html">xDuplicatesOf</a></code>(xDuplicatesOf...)<br />xDuplicatesOf</li>
-            
-      <li>
-        <code><a href="xElemIsFalse.html">xElemIsFalse</a></code>(xElemIsFalse...)<br />xElemIsFalse</li>
-            
-      <li>
-        <code><a href="xElemIsNa.html">xElemIsNa</a></code>(xElemIsNa...)<br />xElemIsNa</li>
-            
-      <li>
-        <code><a href="xElemIsNan.html">xElemIsNan</a></code>(xElemIsNan...)<br />xElemIsNan</li>
-            
-      <li>
-        <code><a href="xElemIsNull.html">xElemIsNull</a></code>(xElemIsNull...)<br />xElemIsNull</li>
-            
-      <li>
-        <code><a href="xElemIsTrue.html">xElemIsTrue</a></code>(xElemIsTrue...)<br />xElemIsTrue</li>
-            
-      <li>
-        <code><a href="xElemNotFalse.html">xElemNotFalse</a></code>(xElemNotFalse...)<br />xElemNotFalse</li>
-            
-      <li>
-        <code><a href="xElemNotNa.html">xElemNotNa</a></code>(xElemNotNa...)<br />xElemNotNa</li>
-            
-      <li>
-        <code><a href="xElemNotNan.html">xElemNotNan</a></code>(xElemNotNan...)<br />xElemNotNan</li>
-            
-      <li>
-        <code><a href="xElemNotNull.html">xElemNotNull</a></code>(xElemNotNull...)<br />xElemNotNull</li>
-            
-      <li>
-        <code><a href="xElemNotTrue.html">xElemNotTrue</a></code>(xElemNotTrue...)<br />xElemNotTrue</li>
-            
-      <li>
         <code><a href="xFoldr.html">xFoldr</a></code>(xFoldr...)<br />xFoldr</li>
             
       <li>
@@ -699,22 +751,7 @@ as standard operations.</p></li>
         <code><a href="xIsEmpty.html">xIsEmpty</a></code>(xIsEmpty...)<br />xIsEmpty</li>
             
       <li>
-        <code><a href="xIsFalse.html">xIsFalse</a></code><br />xIsFalse</li>
-            
-      <li>
         <code><a href="xIsMember.html">xIsMember</a></code>(xIsMember...)<br />xIsMember</li>
-            
-      <li>
-        <code><a href="xIsNa.html">xIsNa</a></code><br />xIsNa</li>
-            
-      <li>
-        <code><a href="xIsNan.html">xIsNan</a></code><br />xIsNan</li>
-            
-      <li>
-        <code><a href="xIsNull.html">xIsNull</a></code><br />xIsNull</li>
-            
-      <li>
-        <code><a href="xIsTrue.html">xIsTrue</a></code><br />xIsTrue</li>
             
       <li>
         <code><a href="xIsVal.html">xIsVal</a></code><br />xIsVal</li>
@@ -744,52 +781,19 @@ as standard operations.</p></li>
         <code><a href="xNotEmpty.html">xNotEmpty</a></code>(xNotEmpty...)<br />xNotEmpty</li>
             
       <li>
-        <code><a href="xNotFalse.html">xNotFalse</a></code><br />xNotFalse</li>
-            
-      <li>
         <code><a href="xNotMember.html">xNotMember</a></code>(xNotMember...)<br />xNotMember</li>
-            
-      <li>
-        <code><a href="xNotNa.html">xNotNa</a></code><br />xNotNa</li>
-            
-      <li>
-        <code><a href="xNotNan.html">xNotNan</a></code><br />xNotNan</li>
-            
-      <li>
-        <code><a href="xNotNull.html">xNotNull</a></code><br />xNotNull</li>
-            
-      <li>
-        <code><a href="xNotTrue.html">xNotTrue</a></code><br />xNotTrue</li>
             
       <li>
         <code><a href="xOrder.html">xOrder</a></code>(xOrder...)<br />xOrder</li>
             
       <li>
-        <code><a href="xPoll.html">xPoll</a></code>(xPoll..., xRejectNan...)<br />xPoll</li>
-            
-      <li>
         <code><a href="xRank.html">xRank</a></code>(xRank...)<br />xRank</li>
-            
-      <li>
-        <code><a href="xRecycle.html">xRecycle</a></code>(xRecycle...)<br />xRecycle</li>
             
       <li>
         <code><a href="xReducer.html">xReducer</a></code>(xReducer...)<br />xReducer</li>
             
       <li>
         <code><a href="xScan.html">xScanl</a></code>(xScan, xScan..., xScanl...)<br />xScan</li>
-            
-      <li>
-        <code><a href="xSelect.html">xSelect</a></code>(xSelect...)<br />xSelect</li>
-            
-      <li>
-        <code><a href="xSlice.html">xSlice</a></code>(xSlice...)<br />xSlice</li>
-            
-      <li>
-        <code><a href="xTake.html">xTake</a></code>(xTake...)<br />xTake</li>
-            
-      <li>
-        <code><a href="xThirdOf.html">xThirdOf</a></code>(xThirdOf...)<br />xThirdOf</li>
             
       <li>
         <code><a href="xUnionOf.html">xUnionOf</a></code>(xUnionOf...)<br />xUnionOf

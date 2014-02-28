@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-<title>xPluck. arrow 0.1.0</title>
+<title>xAtCol. arrow 0.1.0</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="author" content="">
 
@@ -35,22 +35,22 @@
         
       </header>
       
-      <h1>xPluck</h1>
+      <h1>xAtCol</h1>
 
 <div class="row">
   <div class="span8">
     <h2>Usage</h2>
-    <pre><div>xPluck(str, colls)</div>
-<div>xPluck...(str, ...)</div></pre>
+    <pre><div>xAtCol(num, colls)</div>
+<div>xAtCol...(num, ...)</div></pre>
     
     <h2>Arguments</h2>
     <dl>
-      <dt>str</dt>
-      <dd>a string. The key to select from each
-  collection.</dd>
+      <dt>num</dt>
+      <dd>a whole number. The number of the column to
+  select.</dd>
       <dt>colls</dt>
-      <dd>a collections of collections. The collection
-  of collections to select keys from.</dd>
+      <dd>a collection of collections. The collection
+  of rows to select a column from.</dd>
       <dt>...</dt>
       <dd>see above.</dd>
     </dl>
@@ -65,17 +65,7 @@
     <div class="Description">
       <h2>Description</h2>
       
-      <p>Map over a collection of lists or pairlists, selecting
-fields in each element by name.</p>
-  
-    </div>
-
-    <div class="Corner Cases">
-      <h2>Corner Cases</h2>
-      
-      <p>Returns the empty list if <code>colls</code> is length-zero.
-  If str is length-zero then the empty string "" is used to
-  match key-names.</p>
+      <p>Select a column of values from a collection of rows.</p>
   
     </div>
     
@@ -86,7 +76,7 @@ NULL
   </div>
   <div class="span4">
     <!-- <ul>
-      <li>xPluck</li><li>xPluck...</li>
+      <li>xAtCol</li><li>xAtCol...</li>
     </ul>
     <ul>
       
@@ -94,13 +84,7 @@ NULL
       
     <h2>See also</h2>
     
-Other name_functions: <code><a href='xAsNamed.html'>xAsNamed</a></code>;
-<code><a href='xGetKey.html'>xGetKey</a></code>; <code><a href='xUnzipNames.html'>xUnzipNames</a></code>,
-<code><a href='xUnzipNames.html'>xUnzipNames...</a></code>; <code><a href='xZipNames.html'>xZipNames</a></code>,
-<code><a href='xZipNames.html'>xZipNames...</a></code>
-
-Other selection_functions: <code><a href='xAtCol.html'>xAtCol</a></code>,
-<code><a href='xAtCol.html'>xAtCol...</a></code>; <code><a href='xAt.html'>xAt</a></code>,
+Other selection_functions: <code><a href='xAt.html'>xAt</a></code>,
 <code><a href='xAt.html'>xAt...</a></code>; <code><a href='xDropWhile.html'>xDropWhile</a></code>,
 <code><a href='xDropWhile.html'>xDropWhile...</a></code>; <code><a href='xDrop.html'>xDrop</a></code>,
 <code><a href='xDrop.html'>xDrop...</a></code>; <code><a href='xFirstOf.html'>xFirstOf</a></code>,
@@ -108,6 +92,7 @@ Other selection_functions: <code><a href='xAtCol.html'>xAtCol</a></code>,
 <code><a href='xFourthOf.html'>xFourthOf...</a></code>; <code><a href='xGetKey.html'>xGetKey</a></code>;
 <code><a href='xInitOf.html'>xInitOf</a></code>, <code><a href='xInitOf.html'>xInitOf...</a></code>;
 <code><a href='xLastOf.html'>xLastOf</a></code>, <code><a href='xLastOf.html'>xLastOf...</a></code>;
+<code><a href='xPluck.html'>xPluck</a></code>, <code><a href='xPluck.html'>xPluck...</a></code>;
 <code><a href='xRestOf.html'>xRestOf</a></code>, <code><a href='xRestOf.html'>xRestOf...</a></code>;
 <code><a href='xSecondOf.html'>xSecondOf</a></code>, <code><a href='xSecondOf.html'>xSecondOf...</a></code>;
 <code><a href='xSlice.html'>xSlice</a></code>, <code><a href='xSlice.html'>xSlice...</a></code>;
