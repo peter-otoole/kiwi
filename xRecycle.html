@@ -46,7 +46,8 @@
     <h2>Arguments</h2>
     <dl>
       <dt>colls</dt>
-      <dd>a collection of collections.</dd>
+      <dd>a collection of collections. The collection
+  to convert to a non-ragged form.</dd>
       <dt>...</dt>
       <dd>see above.</dd>
     </dl>
@@ -54,7 +55,7 @@
     <div class="Value">
       <h2>Value</h2>
       
-      <p>A list.</p>
+      <p>A list of lists.</p>
   
     </div>
 
@@ -63,6 +64,20 @@
       
       <p>Make every subcollection in a collection the same length by
 cyclically reusing elements.</p>
+  
+    </div>
+
+    <div class="Details">
+      <h2>Details</h2>
+      
+      <p>xRecycle takes a ragged collection - a collection of
+collections of varying length - and recycles elements to
+make the shorter collections the same length as the longest
+collection.</p>
+  
+      <p><code>xRecycle...( list('a', 'b'), 1:3 )</code></p>
+  
+      <p><code>list(list("a", "b", "a"), list(1L, 2L, 3L))</code></p>
   
     </div>
 
@@ -94,8 +109,8 @@ Other reshaping_functions: <code><a href='xChop.html'>xChop</a></code>,
 <code><a href='xReverse.html'>xReverse...</a></code>; <code><a href='xShuffle.html'>xShuffle</a></code>,
 <code><a href='xShuffle.html'>xShuffle...</a></code>; <code><a href='xSortBy.html'>xSortBy</a></code>,
 <code><a href='xSortBy.html'>xSortBy...</a></code>; <code><a href='xSplitAt.html'>xSplitAt</a></code>,
-<code><a href='xSplitAt.html'>xSplitAt...</a></code>; <code><a href='xSplitWith.html'>xSplitBy</a></code>,
-<code><a href='xSplitWith.html'>xSplitBy...</a></code>; <code><a href='xTabulate.html'>xTabulate</a></code>,
+<code><a href='xSplitAt.html'>xSplitAt...</a></code>; <code><a href='xSplitBy.html'>xSplitBy</a></code>,
+<code><a href='xSplitBy.html'>xSplitBy...</a></code>; <code><a href='xTabulate.html'>xTabulate</a></code>,
 <code><a href='xTabulate.html'>xTabulate...</a></code>; <code><a href='xUnzipNames.html'>xUnzipNames</a></code>,
 <code><a href='xUnzipNames.html'>xUnzipNames...</a></code>; <code><a href='xZipNames.html'>xZipNames</a></code>,
 <code><a href='xZipNames.html'>xZipNames...</a></code>; <code><a href='xZip.html'>xZip</a></code>,

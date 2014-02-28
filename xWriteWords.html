@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-<title>xReadWords. arrow 0.1.0</title>
+<title>xWriteWords. arrow 0.1.0</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="author" content="">
 
@@ -35,18 +35,21 @@
         
       </header>
       
-      <h1>xReadWords</h1>
+      <h1>xWriteWords</h1>
 
 <div class="row">
   <div class="span8">
     <h2>Usage</h2>
-    <pre><div>xReadWords(str)</div></pre>
+    <pre><div>xWriteWords(str, strs)</div></pre>
     
     <h2>Arguments</h2>
     <dl>
       <dt>str</dt>
       <dd>a length-one character vector. The path to
-  import files from.</dd>
+  export to.</dd>
+      <dt>strs</dt>
+      <dd>a character vector. Lines to write to a
+  file.</dd>
     </dl>
     
     <div class="Value">
@@ -59,15 +62,7 @@
     <div class="Description">
       <h2>Description</h2>
       
-      <p>Import each word in a file to an element in a character
-vector.</p>
-  
-    </div>
-
-    <div class="Corner Cases">
-      <h2>Corner Cases</h2>
-      
-      <p>xReadWords ignores missing terminal newlines.</p>
+      <p>Export a collection of strings as a single line in a file.</p>
   
     </div>
     
@@ -78,7 +73,7 @@ NULL
   </div>
   <div class="span4">
     <!-- <ul>
-      <li>xReadWords</li>
+      <li>xWriteWords</li>
     </ul>
     <ul>
       
@@ -92,18 +87,18 @@ Other character_functions: <code><a href='xExplode.html'>xExplode</a></code>,
 <code><a href='xFromLines.html'>xFromLines...</a></code>; <code><a href='xFromWords.html'>xFromWords</a></code>,
 <code><a href='xFromWords.html'>xFromWords...</a></code>; <code><a href='xImplode.html'>xImplode</a></code>,
 <code><a href='xImplode.html'>xImplode...</a></code>; <code><a href='xReadLines.html'>xReadChars</a></code>,
-<code><a href='xReadLines.html'>xReadLines</a></code>; <code><a href='xSubstring.html'>xSubstring</a></code>,
-<code><a href='xSubstring.html'>xSubstring...</a></code>; <code><a href='xToChars.html'>xToChars</a></code>;
-<code><a href='xToLines.html'>xToLines</a></code>; <code><a href='xToWords.html'>xToWords</a></code>;
-<code><a href='xWriteChars.html'>xWriteChars</a></code>; <code><a href='xWriteLines.html'>xWriteLines</a></code>;
-<code><a href='xWriteWords.html'>xWriteWords</a></code>
+<code><a href='xReadLines.html'>xReadLines</a></code>; <code><a href='xReadWords.html'>xReadWords</a></code>;
+<code><a href='xSubstring.html'>xSubstring</a></code>, <code><a href='xSubstring.html'>xSubstring...</a></code>;
+<code><a href='xToChars.html'>xToChars</a></code>; <code><a href='xToLines.html'>xToLines</a></code>;
+<code><a href='xToWords.html'>xToWords</a></code>; <code><a href='xWriteChars.html'>xWriteChars</a></code>;
+<code><a href='xWriteLines.html'>xWriteLines</a></code>
 
 Other inpure_functions: <code><a href='xDelay.html'>xDelay</a></code>;
 <code><a href='xDo.html'>xDo</a></code>, <code><a href='xDo.html'>xDo...</a></code>;
 <code><a href='xExecute.html'>xExecute</a></code>; <code><a href='xReadLines.html'>xReadChars</a></code>,
-<code><a href='xReadLines.html'>xReadLines</a></code>; <code><a href='xStopwatch.html'>xStopwatch</a></code>;
-<code><a href='xVersion.html'>xVersion</a></code>; <code><a href='xWriteChars.html'>xWriteChars</a></code>;
-<code><a href='xWriteLines.html'>xWriteLines</a></code>; <code><a href='xWriteWords.html'>xWriteWords</a></code>
+<code><a href='xReadLines.html'>xReadLines</a></code>; <code><a href='xReadWords.html'>xReadWords</a></code>;
+<code><a href='xStopwatch.html'>xStopwatch</a></code>; <code><a href='xVersion.html'>xVersion</a></code>;
+<code><a href='xWriteChars.html'>xWriteChars</a></code>; <code><a href='xWriteLines.html'>xWriteLines</a></code>
 
         
   </div>
