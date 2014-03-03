@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-<title>xTap. arrow 0.1.0</title>
+<title>xChoose. arrow 0.1.0</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="author" content="">
 
@@ -39,45 +39,71 @@
         
       </header>
       
-      <h1>$ xTap</h1>
+      <h1>xChoose</h1>
 
 <div class="row">
   <div class="span8">
     <h2>Usage</h2>
-    <pre><div>x_(  ) $ xTap(fn)</div></pre>
-        
+    <pre><div>xChoose(num, coll)</div>
+<div>xChoose...(num, ...)</div></pre>
+    
+    <h2>Arguments</h2>
+    <dl>
+      <dt>num</dt>
+      <dd>a nonnegative whole number. The number of
+  elements to choose from <b>coll</b>.</dd>
+      <dt>coll</dt>
+      <dd>a collection. The collection to draw elements
+  from.</dd>
+      <dt>...</dt>
+      <dd>see above.</dd>
+    </dl>
+    
     <div class="Value">
       <h2>Value</h2>
       
-      <p>An arrow object.</p>
+      <p>A list of lists, with each list containing <b>num</b>
+elements.</p>
   
     </div>
 
     <div class="Description">
       <h2>Description</h2>
       
-      <p>Apply an anonymous function to the contents of an arrow
-object.</p>
+      <p>Enumerate all ways of choosing several elements from a
+collection.</p>
   
     </div>
 
     <div class="Details">
       <h2>Details</h2>
       
-      <p><b>xTap</b> applies anonymous methods to arrow objects.
-This serves the same purpose as anonymous functions in the
-base language.</p>
+      <p><b>xChoose</b> enumerates all ways of choosing <b>num</b>
+distinct elements from a larger collection, where order
+doesn't matter.</p>
   
-      <p><code>x_(letters) $ xTap(xs := length(xs) == 26)</code></p>
-  
-      <p><b>xTap</b> also allows useful base functions to be used by
-arrow objects.</p>
+      <p>The number of ways of choosing <b>num</b> elements from a
+collection is given by the base R function
+<code>choose(num, length(coll))</code>.</p>
   
     </div>
-      </div>
+
+    <div class="Corner Cases">
+      <h2>Corner Cases</h2>
+      
+      <p>Returns the empty list if <b>num</b> is zero.</p>
+  
+    </div>
+    
+    <h2 id="examples">Examples</h2>
+    <pre class="examples"><div class='input'>
+NULL
+
+</div></pre>
+  </div>
   <div class="span4">
     <!-- <ul>
-      <li>xTap</li>
+      <li>xChoose</li><li>xChoose...</li>
     </ul>
     <ul>
       
@@ -85,13 +111,11 @@ arrow objects.</p>
       
     <h2>See also</h2>
     
-Other methods: <code><a href='xByColnames.html'>xByColnames</a></code>;
-<code><a href='xByCols.html'>xByCols</a></code>; <code><a href='xByLevels.html'>xByLevels</a></code>,
-<code><a href='xByLevels.html'>xByLevels</a></code>; <code><a href='xByRows.html'>xByRows</a></code>;
-<code><a href='xColUnit.html'>xColUnit</a></code>; <code><a href='xElemsByCols.html'>xElemsByCols</a></code>;
-<code><a href='xElemsByRows.html'>xElemsByRows</a></code>; <code><a href='xExecute.html'>xExecute</a></code>;
-<code><a href='xRowUnit.html'>xRowUnit</a></code>; <code><a href='xTranspose.html'>xTranspose</a></code>;
-<code><a href='x_.html'>x_</a></code>
+Other combinatoric_functions: <code><a href='xCycle.html'>xCycle</a></code>,
+<code><a href='xCycle.html'>xCycle...</a></code>; <code><a href='xPermute.html'>xPermute</a></code>,
+<code><a href='xPermute.html'>xPermute...</a></code>; <code><a href='xPowerSetOf.html'>xPowerSetOf</a></code>,
+<code><a href='xPowerSetOf.html'>xPowerSetOf...</a></code>; <code><a href='xProdSetOf.html'>xProdSetOf</a></code>,
+<code><a href='xProdSetOf.html'>xProdSetOf...</a></code>
 
         
   </div>
