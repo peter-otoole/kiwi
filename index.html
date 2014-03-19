@@ -14,6 +14,52 @@
 <!--[if lt IE 9]>
   <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
+
+<link href='http://fonts.googleapis.com/css?family=Open+Sans|Quicksand' rel='stylesheet' type='text/css'>
+
+<style type="text/css">
+	html * {
+		font-family: Open Sans;
+	}
+
+	h1 {
+		font-family: Quicksand;
+	}
+
+	h2 {
+		font-family: Quicksand;
+	}
+
+
+	h3 {
+		font-family: Quicksand;
+	}
+
+	h4 {
+		font-family: Quicksand;
+	}
+
+	h5 {
+		font-family: Quicksand;
+	}
+
+	h6 {
+		font-family: Quicksand;
+	}
+
+	.navbar * {
+		background: white;
+	}
+
+	.examples * {
+		font-family: monospace;
+	}
+
+	code {
+		font-family: monospace;
+	}
+
+</style>
   </head>
 
   <body>
@@ -23,7 +69,7 @@
       <a class="brand" href="#">arrow 0.1.0</a>
       <div class="nav">
         <ul class="nav">
-          <li><a href="index.html"><i class="icon-home icon-white"></i> Documentation</a></li>
+          <li><a href="index.html"><i class="icon-home icon-white"></i> Index</a></li>
           <li><a href=""><i></i> Tutorials</a></li>
           <li><a href=""><i></i> Overview</a></li>
           <li><a href=""><i></i> Demos</a></li>
@@ -122,7 +168,7 @@ as standard operations.</p></li>
     <h3>Character Functions</h3>
     <p>These functions are involved in text-processing, or interacting with text-files. These functions primarily involve converting text between a line, word or character representation.</p>
 
-    
+
     <ul class="index">
         
       <li>
@@ -141,7 +187,10 @@ as standard operations.</p></li>
         <code><a href="xImplode.html">xImplode</a></code>(xImplode...)<br />xImplode</li>
             
       <li>
-        <code><a href="xReadLines.html">xReadChars</a></code>(xReadLines)<br />xReadLines</li>
+        <code><a href="xReadChars.html">xReadChars</a></code><br />xReadChars</li>
+            
+      <li>
+        <code><a href="xReadLines.html">xReadLines</a></code><br />xReadLines</li>
             
       <li>
         <code><a href="xReadWords.html">xReadWords</a></code><br />xReadWords</li>
@@ -171,7 +220,7 @@ as standard operations.</p></li>
     <h3>Combinatoric Functions</h3>
     <p>These functions generate combinatorial structures, which are typically used for specialised patterns of iteration or generating more useful substructures from an initial pool of candidate structures. As these functions enumerate rapidly growing data structures they tend to inefficient for large inputs.</p>
 
-    
+
     <ul class="index">
         
       <li>
@@ -193,7 +242,7 @@ as standard operations.</p></li>
     <h3>Collection Comprehensions</h3>
     <p>Collection comprehensions provide syntactic sugar for defining  collections by providing the contraints that each element must satisfy to be a member of the collection. These are a translation of set-builder notation, which defines a set in terms of membership constraints.</p>
 
-    
+
     <ul class="index">
         
       <li>
@@ -203,7 +252,7 @@ as standard operations.</p></li>
     <h3>Container Conversion Functions</h3>
     <p>These functions convert the type of container that surrounds a data set. They do not coerce the contents of the container to a different type.</p>
 
-    
+
     <ul class="index">
         
       <li>
@@ -228,7 +277,7 @@ as standard operations.</p></li>
     <h3>Filtering Functions</h3>
     <p>These functions create a subset of collection, with elements sharing a certain property. This typically involves removing null or other special values from a collection, or selecting or rejecting elements based on a predicate.</p>
 
-    
+
     <ul class="index">
         
       <li>
@@ -262,7 +311,7 @@ as standard operations.</p></li>
     <h3>Immutable Value Functions</h3>
     <p>These functions work with immutable values; references to a variable that cannot be altered by reassignment after creation.</p>
 
-    
+
     <ul class="index">
         
       <li>
@@ -281,7 +330,7 @@ as standard operations.</p></li>
     <h3>Impure Functions</h3>
     <p>These functions are referentially impure or have side-effects like interacting with the file system.</p>
 
-    
+
     <ul class="index">
         
       <li>
@@ -294,7 +343,10 @@ as standard operations.</p></li>
         <code><a href="xExecute.html">xExecute</a></code><br />$ xExecute</li>
             
       <li>
-        <code><a href="xReadLines.html">xReadChars</a></code>(xReadLines)<br />xReadLines</li>
+        <code><a href="xReadChars.html">xReadChars</a></code><br />xReadChars</li>
+            
+      <li>
+        <code><a href="xReadLines.html">xReadLines</a></code><br />xReadLines</li>
             
       <li>
         <code><a href="xReadWords.html">xReadWords</a></code><br />xReadWords</li>
@@ -318,7 +370,7 @@ as standard operations.</p></li>
     <h3>Methods</h3>
     <p>These functions involve arrow methods, or are only available as arrow methods. Most functions that are only available as methods convert second-class citizens of arrow like data frames and factors to collection representations.</p>
 
-    
+
     <ul class="index">
         
       <li>
@@ -364,7 +416,7 @@ as standard operations.</p></li>
     <h3>Basic Functions</h3>
     <p>These very simple functions are useful for function corner cases.</p>
 
-    
+
     <ul class="index">
         
       <li>
@@ -386,7 +438,7 @@ as standard operations.</p></li>
     <h3>Folding Functions</h3>
     <p>Folding is a fundemental operation in functional programming. These functions are varients of fold.</p>
 
-    
+
     <ul class="index">
         
       <li>
@@ -402,7 +454,7 @@ as standard operations.</p></li>
     <h3>Function Application Functions</h3>
     <p>These apply a function to a data set in varying ways, or  create a new function with a different function application pattern. These include the fuction xMap and varients theiron, and functions to convert functions to different arities.</p>
 
-    
+
     <ul class="index">
         
       <li>
@@ -439,7 +491,7 @@ as standard operations.</p></li>
     <h3>Function Combining Functions</h3>
     <p>These functions take several functions and combine them into a resultant function. These include xCompose and xLift.</p>
 
-    
+
     <ul class="index">
         
       <li>
@@ -455,7 +507,7 @@ as standard operations.</p></li>
     <h3>Function Modifying Functions</h3>
     <p>These functions take a function and return a different or modified function</p>
 
-    
+
     <ul class="index">
         
       <li>
@@ -492,14 +544,11 @@ as standard operations.</p></li>
     <h3>Key Functions</h3>
     <p>These functions deal with collection names. They modify the names of a collection, or select from a collection using keys.</p>
 
-    
+
     <ul class="index">
         
       <li>
         <code><a href="xAsNamed.html">xAsNamed</a></code><br />xAsNamed</li>
-            
-      <li>
-        <code><a href="xGetKey.html">xGetKey</a></code><br />xGetKey</li>
             
       <li>
         <code><a href="xPluck.html">xPluck</a></code>(xPluck...)<br />xPluck</li>
@@ -514,7 +563,7 @@ as standard operations.</p></li>
     <h3>Order Functions</h3>
     <p>These functions deal with the order of a collection.</p>
 
-    
+
     <ul class="index">
         
       <li>
@@ -527,7 +576,7 @@ as standard operations.</p></li>
     <h3>Parametre Functions</h3>
     <p>These functions work with or alter function parametres. These include functions that return the parametres of a function, or partial application functions.</p>
 
-    
+
     <ul class="index">
         
       <li>
@@ -555,7 +604,7 @@ as standard operations.</p></li>
     <h3>Quantifier Functions</h3>
     <p>These functions count or summarise the true/false cases of a predicate over a data set.</p>
 
-    
+
     <ul class="index">
         
       <li>
@@ -571,7 +620,7 @@ as standard operations.</p></li>
     <h3>Reshaping Functions</h3>
     <p>These functions loosely fall into the role of reshaping or adding new elements to a collection. These include functions that subdivide collections, join collections, or reorder collections.</p>
 
-    
+
     <ul class="index">
         
       <li>
@@ -626,7 +675,7 @@ as standard operations.</p></li>
     <h3>Selection Functions</h3>
     <p>These functions select or subset collections of values. This includes positional subsetting, selecting at certain keys and indices, or using a predicate for subsetting.</p>
 
-    
+
     <ul class="index">
         
       <li>
@@ -646,9 +695,6 @@ as standard operations.</p></li>
             
       <li>
         <code><a href="xFourthOf.html">xFourthOf</a></code>(xFourthOf...)<br />xFourthOf</li>
-            
-      <li>
-        <code><a href="xGetKey.html">xGetKey</a></code><br />xGetKey</li>
             
       <li>
         <code><a href="xInitOf.html">xInitOf</a></code>(xInitOf...)<br />xInitOf</li>
@@ -681,7 +727,7 @@ as standard operations.</p></li>
     <h3>Set Functions</h3>
     <p>These include functions for working with duplicated values, generating sets and the classic set operations</p>
 
-    
+
     <ul class="index">
         
       <li>
@@ -707,7 +753,7 @@ as standard operations.</p></li>
     <h3>Short-Circuiting Functions</h3>
     <p>Short-circuiting functions are higher-order functions that take functions with the ability to prematurely break evaluation of a program. When Return( ) is called the result is returned immediately, improving the efficiency of the subprogram.</p>
 
-    
+
     <ul class="index">
         
       <li>
@@ -729,7 +775,7 @@ as standard operations.</p></li>
     <h3>Time Functions</h3>
     <p>These side-effectful functions work with time, or alter the temporal properties of functions. These are useful for interacting with rate-limited API&#39;s, or allowing programs to observer their own run-times.</p>
 
-    
+
     <ul class="index">
         
       <li>
@@ -745,7 +791,7 @@ as standard operations.</p></li>
     <h3>Value Testing Functions</h3>
     <p>These functions test values to see if they are a particular type of value. These include functions that test for special values like null and na, and functions that test each element of a collection for these values.</p>
 
-    
+
     <ul class="index">
         
       <li>
@@ -817,7 +863,7 @@ as standard operations.</p></li>
     </ul>
     <h3>Other</h3>
     
-    
+
     <ul class="index">
         
       <li>
@@ -839,6 +885,12 @@ as standard operations.</p></li>
         <code><a href="help_arrow_variadic.html">help_arrow_variadic</a></code><br />Usage - Variadic</li>
             
       <li>
+        <code><a href="xAll.html">xAll</a></code>(xAll...)<br />xAll</li>
+            
+      <li>
+        <code><a href="xAny.html">xAny</a></code>(xAny...)<br />xAny</li>
+            
+      <li>
         <code><a href="xLambda.html">xLambda</a></code>(:=)<br />xLambda</li>
             
       <li>
@@ -849,27 +901,19 @@ as standard operations.</p></li>
             
       <li>
         <code><a href="xUnit.html">xUnit</a></code><br />xUnit</li>
+            
+      <li>
+        <code><a href="xWhere.html">xWhere</a></code>(xWhere...)<br />xWhere</li>
     
     </ul>
   </div>
-  
+
   <div class="span3 offset1">
-        
-    <h2>Dependencies</h2>
-    <ul>
-      <li><strong>Depends</strong>: </li>
-      <li><strong>Imports</strong>: </li>
-      <li><strong>Suggests</strong>: </li>
-      <li><strong>Extends</strong>: </li>
-    </ul>
-     
-    
-  </div>
+      </div>
 </div>
       
       <footer>
-      <p class="pull-right"><a href="#">Back to top</a></p>
-<p>Built by <a href="https://github.com/hadley/staticdocs">staticdocs</a>. Styled with <a href="http://twitter.github.com/bootstrap">bootstrap</a>.</p>
+      
       </footer>
     </div>
   </body>

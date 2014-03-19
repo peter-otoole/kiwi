@@ -14,6 +14,52 @@
 <!--[if lt IE 9]>
   <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
+
+<link href='http://fonts.googleapis.com/css?family=Open+Sans|Quicksand' rel='stylesheet' type='text/css'>
+
+<style type="text/css">
+	html * {
+		font-family: Open Sans;
+	}
+
+	h1 {
+		font-family: Quicksand;
+	}
+
+	h2 {
+		font-family: Quicksand;
+	}
+
+
+	h3 {
+		font-family: Quicksand;
+	}
+
+	h4 {
+		font-family: Quicksand;
+	}
+
+	h5 {
+		font-family: Quicksand;
+	}
+
+	h6 {
+		font-family: Quicksand;
+	}
+
+	.navbar * {
+		background: white;
+	}
+
+	.examples * {
+		font-family: monospace;
+	}
+
+	code {
+		font-family: monospace;
+	}
+
+</style>
   </head>
 
   <body>
@@ -23,7 +69,7 @@
       <a class="brand" href="#">arrow 0.1.0</a>
       <div class="nav">
         <ul class="nav">
-          <li><a href="index.html"><i class="icon-home icon-white"></i> Documentation</a></li>
+          <li><a href="index.html"><i class="icon-home icon-white"></i> Index</a></li>
           <li><a href=""><i></i> Tutorials</a></li>
           <li><a href=""><i></i> Overview</a></li>
           <li><a href=""><i></i> Demos</a></li>
@@ -59,21 +105,21 @@
     
     <div class="Value">
       <h2>Value</h2>
-      
+
       <p>A list.</p>
-  
+
     </div>
 
     <div class="Description">
       <h2>Description</h2>
-      
+
       <p>Map (a possibly side-effectful) function over a collection
 and discard the results.</p>
-  
+
     </div>
     
     <h2 id="examples">Examples</h2>
-    <pre class="examples"><div class='input'>
+    <pre class="examples r"><div class='input'>
 #1. print the files in your current directory.
 
 xDo(print, list.files(&#39;.&#39;))
@@ -115,9 +161,10 @@ NULL
 
 xDo(print %of% list.files, &#39;.&#39;)
 </div>
-<div class='output'> [1] &quot;demo&quot;             &quot;DESCRIPTION&quot;      &quot;inst&quot;             &quot;LICENSE&quot;         
- [5] &quot;man&quot;              &quot;NAMESPACE&quot;        &quot;R&quot;                &quot;README.md&quot;       
- [9] &quot;staticdocs.Rproj&quot; &quot;vignettes&quot;       
+<div class='output'> [1] &quot;demo&quot;             &quot;DESCRIPTION&quot;      &quot;inst&quot;            
+ [4] &quot;LICENSE&quot;          &quot;man&quot;              &quot;NAMESPACE&quot;       
+ [7] &quot;R&quot;                &quot;README.md&quot;        &quot;staticdocs.Rproj&quot;
+[10] &quot;vignettes&quot;       
 </div>
 <div class='input'>
 #2. plot a trig function.
@@ -128,7 +175,7 @@ plot(
     ylim = c(-10, 10),
     type = &#39;n&#39;)
 </div>
-<strong class='error'>Error in plot.new(): figure margins too large</strong>
+<p><img src='xDo-9.png' alt='' width='400' height='400' /></p>
 <div class='input'>
 xDo(
     x := {
@@ -139,18 +186,7 @@ xDo(
     (1:1000) / 100
 )
 </div>
-<strong class='error'>Error: 
-[ error thrown from xDo ]:
-
-    xDo(function (x) { y &lt;- tan(sin( [truncated]
-
-[ details ]:
-
-[ an error occurred while executing a function passed to xDo ]:
-
-    plot.xy(xy.coords(x, y), type = typ [truncated]:
-
-    plot.new has not been called yet</strong>
+<p><img src='xDo-11.png' alt='' width='400' height='400' /></p>
 <div class='input'>
 #3. HR Functional Programming
 #   Print &quot;Hello World&quot; n times
@@ -185,23 +221,22 @@ xDo(print %of% xK(&#39;hello&#39;), 1:n)
     <ul>
       
     </ul> -->
-      
+
     <h2>See also</h2>
     
 Other inpure_functions: <code><a href='xDelay.html'>xDelay</a></code>;
-<code><a href='xExecute.html'>xExecute</a></code>; <code><a href='xReadLines.html'>xReadChars</a></code>,
+<code><a href='xExecute.html'>xExecute</a></code>; <code><a href='xReadChars.html'>xReadChars</a></code>;
 <code><a href='xReadLines.html'>xReadLines</a></code>; <code><a href='xReadWords.html'>xReadWords</a></code>;
 <code><a href='xStopwatch.html'>xStopwatch</a></code>; <code><a href='xVersion.html'>xVersion</a></code>;
 <code><a href='xWriteChars.html'>xWriteChars</a></code>; <code><a href='xWriteLines.html'>xWriteLines</a></code>;
 <code><a href='xWriteWords.html'>xWriteWords</a></code>
 
-        
+    
   </div>
 </div>
       
       <footer>
-      <p class="pull-right"><a href="#">Back to top</a></p>
-<p>Built by <a href="https://github.com/hadley/staticdocs">staticdocs</a>. Styled with <a href="http://twitter.github.com/bootstrap">bootstrap</a>.</p>
+      
       </footer>
     </div>
   </body>

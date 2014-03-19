@@ -14,6 +14,52 @@
 <!--[if lt IE 9]>
   <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
+
+<link href='http://fonts.googleapis.com/css?family=Open+Sans|Quicksand' rel='stylesheet' type='text/css'>
+
+<style type="text/css">
+	html * {
+		font-family: Open Sans;
+	}
+
+	h1 {
+		font-family: Quicksand;
+	}
+
+	h2 {
+		font-family: Quicksand;
+	}
+
+
+	h3 {
+		font-family: Quicksand;
+	}
+
+	h4 {
+		font-family: Quicksand;
+	}
+
+	h5 {
+		font-family: Quicksand;
+	}
+
+	h6 {
+		font-family: Quicksand;
+	}
+
+	.navbar * {
+		background: white;
+	}
+
+	.examples * {
+		font-family: monospace;
+	}
+
+	code {
+		font-family: monospace;
+	}
+
+</style>
   </head>
 
   <body>
@@ -23,7 +69,7 @@
       <a class="brand" href="#">arrow 0.1.0</a>
       <div class="nav">
         <ul class="nav">
-          <li><a href="index.html"><i class="icon-home icon-white"></i> Documentation</a></li>
+          <li><a href="index.html"><i class="icon-home icon-white"></i> Index</a></li>
           <li><a href=""><i></i> Tutorials</a></li>
           <li><a href=""><i></i> Overview</a></li>
           <li><a href=""><i></i> Demos</a></li>
@@ -51,6 +97,10 @@
     
     <h2>Arguments</h2>
     <dl>
+      <dt>fn1</dt>
+      <dd>a function.</dd>
+      <dt>fn2</dt>
+      <dd>a function.</dd>
       <dt>fn</dt>
       <dd>a binary function.</dd>
       <dt>fns</dt>
@@ -61,40 +111,40 @@
     
     <div class="Value">
       <h2>Value</h2>
-      
+
       <p>Returns a unary function of x.</p>
-  
+
     </div>
 
     <div class="Description">
       <h2>Description</h2>
-      
+
       <p>Compose a function with two other functions.</p>
-  
+
     </div>
 
     <div class="Details">
       <h2>Details</h2>
-      
+
       <p><b>xLift</b> takes a function that works on some type of
 value, and makes that function work on functions of those
 values.</p>
-  
+
       <p>Two partially applied version of <b>xLift</b> exist;
 %and% & %or%.  These are primarily intended for use
 with higher-order functions that take a predicate, allowing
 several predicates to be stringed together into a new
 predicate.</p>
-  
+
       <p><code>xSelect(is.integer 
 2L, 'string'))</code></p>
-  
+
       <p><code>list(1L, 1+1i, 2L, 'string')</code></p>
-  
+
     </div>
     
     <h2 id="examples">Examples</h2>
-    <pre class="examples"><div class='input'>
+    <pre class="examples r"><div class='input'>
 NULL
 
 </div></pre>
@@ -106,7 +156,7 @@ NULL
     <ul>
       
     </ul> -->
-      
+
     <h2>See also</h2>
     
 Other function_combining_functions: <code><a href='xCompose.html'>%of%</a></code>,
@@ -125,13 +175,12 @@ Other function_modifying_functions: <code><a href='xCompose.html'>%of%</a></code
 <code><a href='xThread.html'>xThread</a></code>, <code><a href='xThread.html'>xThread...</a></code>;
 <code><a href='xVectorise.html'>xVectorise</a></code>, <code><a href='xVectorise.html'>xVectorize</a></code>
 
-        
+    
   </div>
 </div>
       
       <footer>
-      <p class="pull-right"><a href="#">Back to top</a></p>
-<p>Built by <a href="https://github.com/hadley/staticdocs">staticdocs</a>. Styled with <a href="http://twitter.github.com/bootstrap">bootstrap</a>.</p>
+      
       </footer>
     </div>
   </body>

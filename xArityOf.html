@@ -14,6 +14,52 @@
 <!--[if lt IE 9]>
   <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
+
+<link href='http://fonts.googleapis.com/css?family=Open+Sans|Quicksand' rel='stylesheet' type='text/css'>
+
+<style type="text/css">
+	html * {
+		font-family: Open Sans;
+	}
+
+	h1 {
+		font-family: Quicksand;
+	}
+
+	h2 {
+		font-family: Quicksand;
+	}
+
+
+	h3 {
+		font-family: Quicksand;
+	}
+
+	h4 {
+		font-family: Quicksand;
+	}
+
+	h5 {
+		font-family: Quicksand;
+	}
+
+	h6 {
+		font-family: Quicksand;
+	}
+
+	.navbar * {
+		background: white;
+	}
+
+	.examples * {
+		font-family: monospace;
+	}
+
+	code {
+		font-family: monospace;
+	}
+
+</style>
   </head>
 
   <body>
@@ -23,7 +69,7 @@
       <a class="brand" href="#">arrow 0.1.0</a>
       <div class="nav">
         <ul class="nav">
-          <li><a href="index.html"><i class="icon-home icon-white"></i> Documentation</a></li>
+          <li><a href="index.html"><i class="icon-home icon-white"></i> Index</a></li>
           <li><a href=""><i></i> Tutorials</a></li>
           <li><a href=""><i></i> Overview</a></li>
           <li><a href=""><i></i> Demos</a></li>
@@ -55,40 +101,40 @@
     
     <div class="Value">
       <h2>Value</h2>
-      
+
       <p>A positive whole number.</p>
-  
+
     </div>
 
     <div class="Description">
       <h2>Description</h2>
-      
+
       <p>Return the number of arguments a function can accept.</p>
-  
+
     </div>
 
     <div class="Details">
       <h2>Details</h2>
-      
+
       <p><b>xArityOf</b> returns the arity of a function - the
 number of arguments that can be passed to the function. R
 functions can be nullary (0-arguments), have infinitely
 many arguments (variadic functions), or have a fixed number
 of arguments (non-variadic functions).</p>
-  
+
     </div>
 
     <div class="Corner Cases">
       <h2>Corner Cases</h2>
-      
+
       <p>If <b>fn</b> has an ellipsis (...) parametre then
   <code>+Inf</code> is returned, as the function can accept an
   infinite number of arguments.</p>
-  
+
     </div>
     
     <h2 id="examples">Examples</h2>
-    <pre class="examples"><div class='input'>
+    <pre class="examples r"><div class='input'>
 # 1. xArityOf works on primitive functions.
 
 xArityOf(&#39;+&#39;)
@@ -136,7 +182,7 @@ safeMap &lt;- function (fn, coll) {
     <ul>
       
     </ul> -->
-      
+
     <h2>See also</h2>
     
 Other parametre_functions: <code><a href='xAsUnary.html'>xAsUnary</a></code>;
@@ -144,13 +190,12 @@ Other parametre_functions: <code><a href='xAsUnary.html'>xAsUnary</a></code>;
 <code><a href='xIsVariadic.html'>xIsVariadic</a></code>; <code><a href='xParamsOf.html'>xParamsOf</a></code>;
 <code><a href='xPartial.html'>xPartial</a></code>, <code><a href='xPartial.html'>xPartial...</a></code>
 
-        
+    
   </div>
 </div>
       
       <footer>
-      <p class="pull-right"><a href="#">Back to top</a></p>
-<p>Built by <a href="https://github.com/hadley/staticdocs">staticdocs</a>. Styled with <a href="http://twitter.github.com/bootstrap">bootstrap</a>.</p>
+      
       </footer>
     </div>
   </body>

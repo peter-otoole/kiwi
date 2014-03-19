@@ -14,6 +14,52 @@
 <!--[if lt IE 9]>
   <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
+
+<link href='http://fonts.googleapis.com/css?family=Open+Sans|Quicksand' rel='stylesheet' type='text/css'>
+
+<style type="text/css">
+	html * {
+		font-family: Open Sans;
+	}
+
+	h1 {
+		font-family: Quicksand;
+	}
+
+	h2 {
+		font-family: Quicksand;
+	}
+
+
+	h3 {
+		font-family: Quicksand;
+	}
+
+	h4 {
+		font-family: Quicksand;
+	}
+
+	h5 {
+		font-family: Quicksand;
+	}
+
+	h6 {
+		font-family: Quicksand;
+	}
+
+	.navbar * {
+		background: white;
+	}
+
+	.examples * {
+		font-family: monospace;
+	}
+
+	code {
+		font-family: monospace;
+	}
+
+</style>
   </head>
 
   <body>
@@ -23,7 +69,7 @@
       <a class="brand" href="#">arrow 0.1.0</a>
       <div class="nav">
         <ul class="nav">
-          <li><a href="index.html"><i class="icon-home icon-white"></i> Documentation</a></li>
+          <li><a href="index.html"><i class="icon-home icon-white"></i> Index</a></li>
           <li><a href=""><i></i> Tutorials</a></li>
           <li><a href=""><i></i> Overview</a></li>
           <li><a href=""><i></i> Demos</a></li>
@@ -49,7 +95,7 @@
 <div>write_error(..., call.&nbsp;=&nbsp;True)</div>
 <div>get_call_components(invoking_call)</div>
 <div>insist</div>
-<div>demand</div>
+<div>dictate</div>
 <div>Truth(...)</div>
 <div>one_of(coll)</div>
 <div>a %equals% b</div>
@@ -63,7 +109,7 @@
         
     <div class="Format">
       <h2>Format</h2>
-      
+
       <p><pre>List of 5
  $ black :function (message)  
  $ red   :function (message)  
@@ -71,166 +117,165 @@
  $ blue  :function (message)  
  $ yellow:function (message)  
 </pre></p>
-  
+
     </div>
 
     <div class="Description">
       <h2>Description</h2>
-      
+
       <p>Documentation for the internals of Arrow. Every
 sufficiently large utility library will contain its own
 utility library. These functions are required to reduce
 repetition of code when implementing arrow functions.</p>
-  
+
     </div>
 
     <div class="stringify_call">
       <h2>stringify_call</h2>
-      
+
       <p>stringify_call is a tool for formatting the source call
   of an error message. It fixes as issue with printing ':='
   functions, and cuts off very long calls.</p>
-  
+
     </div>
 
     <div class="colourise">
       <h2>colourise</h2>
-      
+
       <p>colourise is a set of functions that wraps strings in
   ansii escape sequences on coloured terminals, allowing
   coloured text to be printed. These are used to colour
   error messages and print methods.</p>
-  
+
     </div>
 
     <div class="write_error">
       <h2>write_error</h2>
-      
+
       <p>write_error prints a red error message to the terminal,
   if the terminal supports colour.</p>
-  
+
     </div>
 
     <div class="assert">
       <h2>assert</h2>
-      
+
       <p>assert is a key arrow function - it takes an expression,
   a call to display, and a string message. If the
   expression isn't true, the error is thrown with that
   message and call.</p>
-  
+
     </div>
 
     <div class="insist">
       <h2>insist</h2>
-      
+
       <p>insist is a list of functions that provide a minimal
   interface to an assertion. This object exists to reduce
   the amount of assertion checking code needed.</p>
-  
+
       <p><code>insist $ must_be_fn_matchable(fn, invoking_call)</code></p>
-  
+
       <p>Each function encloses a message function to stop the
   function being repeatedly created when assertions are
   ran. When the assertion inside the insist function fails,
   an error is thrown.</p>
-  
+
     </div>
 
     <div class="demand">
       <h2>demand</h2>
-      
+
       <p>An internal object containing assertions that are
   required by the collection comprehension functions.
   Mostly contains parse error assertions.</p>
-  
+
     </div>
 
     <div class="one_of">
       <h2>one_of</h2>
-      
+
       <p>Return one value from a collection.</p>
-  
+
     </div>
 
     <div class="equals">
       <h2>equals</h2>
-      
+
       <p>R's equal operator doesn't work on lists or strange
   values. equals is a better measure of identity.</p>
-  
+
     </div>
 
     <div class="call_with_params">
       <h2>call_with_params</h2>
-      
+
       <p>Construct a call to a function 'fnname' with the
   parametres of a second function. Useful for higher order
   functions.</p>
-  
+
     </div>
 
     <div class="+">
       <h2>+</h2>
-      
+
       <p>Concatenate two strings.</p>
-  
+
     </div>
 
     <div class="in">
       <h2>in</h2>
-      
+
       <p>An infix function to test for the non-membership of an
   element in a set.</p>
-  
+
     </div>
 
     <div class="Object">
       <h2>Object</h2>
-      
+
       <p>Construct an empty environment.</p>
-  
+
     </div>
 
     <div class="join_env">
       <h2>join_env</h2>
-      
+
       <p>Join two environments together into one environment. This
   allows for inheritance of environments without having to
   traverse multiple environments.</p>
-  
+
     </div>
 
     <div class="is_fn_matchable">
       <h2>is_fn_matchable</h2>
-      
+
       <p>Is a value a function, or possibly the name of a
   function.</p>
-  
+
     </div>
 
     <div class="is_collection">
       <h2>is_collection</h2>
-      
+
       <p>Is a value a generic or atomic vector or a pairlist.</p>
-  
+
     </div>
       </div>
   <div class="span4">
     <!-- <ul>
-      <li>Object</li><li>Truth</li><li>%!in%</li><li>%+%</li><li>%equals%</li><li>call_with_params</li><li>colourise</li><li>demand</li><li>get_call_components</li><li>insist</li><li>is_collection</li><li>is_fn_matchable</li><li>join_env</li><li>one_of</li><li>stringify_call</li><li>write_error</li>
+      <li>Object</li><li>Truth</li><li>%!in%</li><li>%+%</li><li>%equals%</li><li>call_with_params</li><li>colourise</li><li>dictate</li><li>get_call_components</li><li>insist</li><li>is_collection</li><li>is_fn_matchable</li><li>join_env</li><li>one_of</li><li>stringify_call</li><li>write_error</li>
     </ul>
     <ul>
       <li>internal</li>
     </ul> -->
-      
-        
+
+    
   </div>
 </div>
       
       <footer>
-      <p class="pull-right"><a href="#">Back to top</a></p>
-<p>Built by <a href="https://github.com/hadley/staticdocs">staticdocs</a>. Styled with <a href="http://twitter.github.com/bootstrap">bootstrap</a>.</p>
+      
       </footer>
     </div>
   </body>

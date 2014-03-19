@@ -14,6 +14,52 @@
 <!--[if lt IE 9]>
   <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
+
+<link href='http://fonts.googleapis.com/css?family=Open+Sans|Quicksand' rel='stylesheet' type='text/css'>
+
+<style type="text/css">
+	html * {
+		font-family: Open Sans;
+	}
+
+	h1 {
+		font-family: Quicksand;
+	}
+
+	h2 {
+		font-family: Quicksand;
+	}
+
+
+	h3 {
+		font-family: Quicksand;
+	}
+
+	h4 {
+		font-family: Quicksand;
+	}
+
+	h5 {
+		font-family: Quicksand;
+	}
+
+	h6 {
+		font-family: Quicksand;
+	}
+
+	.navbar * {
+		background: white;
+	}
+
+	.examples * {
+		font-family: monospace;
+	}
+
+	code {
+		font-family: monospace;
+	}
+
+</style>
   </head>
 
   <body>
@@ -23,7 +69,7 @@
       <a class="brand" href="#">arrow 0.1.0</a>
       <div class="nav">
         <ul class="nav">
-          <li><a href="index.html"><i class="icon-home icon-white"></i> Documentation</a></li>
+          <li><a href="index.html"><i class="icon-home icon-white"></i> Index</a></li>
           <li><a href=""><i></i> Tutorials</a></li>
           <li><a href=""><i></i> Overview</a></li>
           <li><a href=""><i></i> Demos</a></li>
@@ -51,6 +97,10 @@
     
     <h2>Arguments</h2>
     <dl>
+      <dt>fn1</dt>
+      <dd>a function.</dd>
+      <dt>fn2</dt>
+      <dd>a function.</dd>
       <dt>fns</dt>
       <dd>a collection of functions. The functions to
   compose with each other.</dd>
@@ -60,67 +110,85 @@
     
     <div class="Value">
       <h2>Value</h2>
-      
+
       <p>A variadic function.</p>
-  
+
     </div>
 
     <div class="Description">
       <h2>Description</h2>
-      
+
       <p>Take several functions and return a composite function.</p>
-  
+
     </div>
 
     <div class="Details">
       <h2>Details</h2>
-      
+
       <p>Arrow's function composition is largely done with the infix
 operators %of% and %then%.</p>
-  
+
       <p><b>%then%</b> is the classic function composition
 operator;</p>
-  
+
       <p><code>(as.numeric %then% sqrt %then% print)('10')</code></p>
-  
-      <p>Like methods, the order of function execution is from left
+
+      <p>Like methods, the order of fwunction execution is from left
 to right; convert a string to a number then take the square
 root then print the value. The reversed form %of% is
 equally as ubiquitous.</p>
-  
+
       <p>The classic example of function composition (apart from
 Church numerals) is composing linear functions.</p>
-  
+
       <p><code>f <- x := 2*x</code></p>
-  
+
       <p><code>g <- x := 4*x</code></p>
-  
+
       <p><code>h <- x := 1*x</code></p>
-  
+
       <p><code>(f %of% g %of% h)(1)</code></p>
-  
+
       <p><code>(x := 2*(4*(1*x)) )(1)</code></p>
-  
+
       <p>xCompose</p>
-  
+
       <p>In this case the output of one function is piped to
 another:</p>
-  
+
       <p><code>1 => 1*1 => 1*4 => 4*2 => 8</code></p>
-  
+
       <p>In this case function composition behaves exactly like
 multiplication.</p>
-  
+
       <p>In more typical use of <b>xCompose</b> is to reduce the
 number of anonymous functions needed by some programs.</p>
-  
+
       <p><code>xMap(sqrt %of% sqrt, 1:10)</code></p>
-  
+
     </div>
     
     <h2 id="examples">Examples</h2>
-    <pre class="examples"><div class='input'>
-NULL
+    <pre class="examples r"><div class='input'>
+# 1. Composing linear functions
+#    composing linear function &#39;multiplies&#39; them,
+#    so composing x := 2x and x := 3x returns the
+#    &#39;product&#39; function x := 6x
+
+f &lt;- x := 2*x
+g &lt;- x := 3*x
+
+# h = x := 3(2*x)
+# h = x := 6*x
+
+h &lt;- f %then% g
+
+h(2)
+</div>
+<div class='output'>[1] 12
+</div>
+<div class='input'># 12
+
 </div></pre>
   </div>
   <div class="span4">
@@ -130,7 +198,7 @@ NULL
     <ul>
       
     </ul> -->
-      
+
     <h2>See also</h2>
     
 Other function_combining_functions: <code><a href='xLift.html'>%and%</a></code>,
@@ -149,13 +217,12 @@ Other function_modifying_functions: <code><a href='xLift.html'>%and%</a></code>,
 <code><a href='xThread.html'>xThread</a></code>, <code><a href='xThread.html'>xThread...</a></code>;
 <code><a href='xVectorise.html'>xVectorise</a></code>, <code><a href='xVectorise.html'>xVectorize</a></code>
 
-        
+    
   </div>
 </div>
       
       <footer>
-      <p class="pull-right"><a href="#">Back to top</a></p>
-<p>Built by <a href="https://github.com/hadley/staticdocs">staticdocs</a>. Styled with <a href="http://twitter.github.com/bootstrap">bootstrap</a>.</p>
+      
       </footer>
     </div>
   </body>

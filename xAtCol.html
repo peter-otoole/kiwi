@@ -14,6 +14,52 @@
 <!--[if lt IE 9]>
   <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
+
+<link href='http://fonts.googleapis.com/css?family=Open+Sans|Quicksand' rel='stylesheet' type='text/css'>
+
+<style type="text/css">
+	html * {
+		font-family: Open Sans;
+	}
+
+	h1 {
+		font-family: Quicksand;
+	}
+
+	h2 {
+		font-family: Quicksand;
+	}
+
+
+	h3 {
+		font-family: Quicksand;
+	}
+
+	h4 {
+		font-family: Quicksand;
+	}
+
+	h5 {
+		font-family: Quicksand;
+	}
+
+	h6 {
+		font-family: Quicksand;
+	}
+
+	.navbar * {
+		background: white;
+	}
+
+	.examples * {
+		font-family: monospace;
+	}
+
+	code {
+		font-family: monospace;
+	}
+
+</style>
   </head>
 
   <body>
@@ -23,7 +69,7 @@
       <a class="brand" href="#">arrow 0.1.0</a>
       <div class="nav">
         <ul class="nav">
-          <li><a href="index.html"><i class="icon-home icon-white"></i> Documentation</a></li>
+          <li><a href="index.html"><i class="icon-home icon-white"></i> Index</a></li>
           <li><a href=""><i></i> Tutorials</a></li>
           <li><a href=""><i></i> Overview</a></li>
           <li><a href=""><i></i> Demos</a></li>
@@ -61,21 +107,119 @@
     
     <div class="Value">
       <h2>Value</h2>
-      
+
       <p>A list.</p>
-  
+
     </div>
 
     <div class="Description">
       <h2>Description</h2>
-      
+
       <p>Select a column of values from a collection of rows.</p>
-  
+
     </div>
     
     <h2 id="examples">Examples</h2>
-    <pre class="examples"><div class='input'>
-NULL
+    <pre class="examples r"><div class='input'>
+# 1. Selecting columns in data-frame like structures
+#    Arrow eshews data frames, but works well with lists of rows.
+#    All
+
+df &lt;- xList[ list(ith, letters[ith], LETTERS[ith]), ith &lt;- 1:26 ]
+
+# [
+#   [1, a, A]
+#   [2, b, A]
+#      .
+#      .
+#   [26, z, Z]
+# ]
+
+x_(df) $ x_AtCol(2)
+</div>
+<div class='output'>[[1]]
+[1] &quot;a&quot;
+
+[[2]]
+[1] &quot;b&quot;
+
+[[3]]
+[1] &quot;c&quot;
+
+[[4]]
+[1] &quot;d&quot;
+
+[[5]]
+[1] &quot;e&quot;
+
+[[6]]
+[1] &quot;f&quot;
+
+[[7]]
+[1] &quot;g&quot;
+
+[[8]]
+[1] &quot;h&quot;
+
+[[9]]
+[1] &quot;i&quot;
+
+[[10]]
+[1] &quot;j&quot;
+
+[[11]]
+[1] &quot;k&quot;
+
+[[12]]
+[1] &quot;l&quot;
+
+[[13]]
+[1] &quot;m&quot;
+
+[[14]]
+[1] &quot;n&quot;
+
+[[15]]
+[1] &quot;o&quot;
+
+[[16]]
+[1] &quot;p&quot;
+
+[[17]]
+[1] &quot;q&quot;
+
+[[18]]
+[1] &quot;r&quot;
+
+[[19]]
+[1] &quot;s&quot;
+
+[[20]]
+[1] &quot;t&quot;
+
+[[21]]
+[1] &quot;u&quot;
+
+[[22]]
+[1] &quot;v&quot;
+
+[[23]]
+[1] &quot;w&quot;
+
+[[24]]
+[1] &quot;x&quot;
+
+[[25]]
+[1] &quot;y&quot;
+
+[[26]]
+[1] &quot;z&quot;
+
+</div>
+<div class='input'>
+# list(&quot;a&quot;, &quot;b&quot;, &quot;c&quot;, &quot;d&quot;, &quot;e&quot;, &quot;f&quot;, &quot;g&quot;, &quot;h&quot;, &quot;i&quot;, &quot;j&quot;, &quot;k&quot;, &quot;l&quot;,
+#      &quot;m&quot;, &quot;n&quot;, &quot;o&quot;, &quot;p&quot;, &quot;q&quot;, &quot;r&quot;, &quot;s&quot;, &quot;t&quot;, &quot;u&quot;, &quot;v&quot;, &quot;w&quot;, &quot;x&quot;,
+#      &quot;y&quot;, &quot;z&quot;)
 </div></pre>
   </div>
   <div class="span4">
@@ -85,7 +229,7 @@ NULL
     <ul>
       
     </ul> -->
-      
+
     <h2>See also</h2>
     
 Other selection_functions: <code><a href='xAt.html'>xAt</a></code>,
@@ -93,24 +237,23 @@ Other selection_functions: <code><a href='xAt.html'>xAt</a></code>,
 <code><a href='xDropWhile.html'>xDropWhile...</a></code>; <code><a href='xDrop.html'>xDrop</a></code>,
 <code><a href='xDrop.html'>xDrop...</a></code>; <code><a href='xFirstOf.html'>xFirstOf</a></code>,
 <code><a href='xFirstOf.html'>xFirstOf...</a></code>; <code><a href='xFourthOf.html'>xFourthOf</a></code>,
-<code><a href='xFourthOf.html'>xFourthOf...</a></code>; <code><a href='xGetKey.html'>xGetKey</a></code>;
-<code><a href='xInitOf.html'>xInitOf</a></code>, <code><a href='xInitOf.html'>xInitOf...</a></code>;
-<code><a href='xLastOf.html'>xLastOf</a></code>, <code><a href='xLastOf.html'>xLastOf...</a></code>;
-<code><a href='xPluck.html'>xPluck</a></code>, <code><a href='xPluck.html'>xPluck...</a></code>;
-<code><a href='xRestOf.html'>xRestOf</a></code>, <code><a href='xRestOf.html'>xRestOf...</a></code>;
-<code><a href='xSecondOf.html'>xSecondOf</a></code>, <code><a href='xSecondOf.html'>xSecondOf...</a></code>;
-<code><a href='xSlice.html'>xSlice</a></code>, <code><a href='xSlice.html'>xSlice...</a></code>;
-<code><a href='xTakeWhile.html'>xTakeWhile</a></code>, <code><a href='xTakeWhile.html'>xTakeWhile...</a></code>;
-<code><a href='xTake.html'>xTake</a></code>, <code><a href='xTake.html'>xTake...</a></code>;
-<code><a href='xThirdOf.html'>xThirdOf</a></code>, <code><a href='xThirdOf.html'>xThirdOf...</a></code>
+<code><a href='xFourthOf.html'>xFourthOf...</a></code>; <code><a href='xInitOf.html'>xInitOf</a></code>,
+<code><a href='xInitOf.html'>xInitOf...</a></code>; <code><a href='xLastOf.html'>xLastOf</a></code>,
+<code><a href='xLastOf.html'>xLastOf...</a></code>; <code><a href='xPluck.html'>xPluck</a></code>,
+<code><a href='xPluck.html'>xPluck...</a></code>; <code><a href='xRestOf.html'>xRestOf</a></code>,
+<code><a href='xRestOf.html'>xRestOf...</a></code>; <code><a href='xSecondOf.html'>xSecondOf</a></code>,
+<code><a href='xSecondOf.html'>xSecondOf...</a></code>; <code><a href='xSlice.html'>xSlice</a></code>,
+<code><a href='xSlice.html'>xSlice...</a></code>; <code><a href='xTakeWhile.html'>xTakeWhile</a></code>,
+<code><a href='xTakeWhile.html'>xTakeWhile...</a></code>; <code><a href='xTake.html'>xTake</a></code>,
+<code><a href='xTake.html'>xTake...</a></code>; <code><a href='xThirdOf.html'>xThirdOf</a></code>,
+<code><a href='xThirdOf.html'>xThirdOf...</a></code>
 
-        
+    
   </div>
 </div>
       
       <footer>
-      <p class="pull-right"><a href="#">Back to top</a></p>
-<p>Built by <a href="https://github.com/hadley/staticdocs">staticdocs</a>. Styled with <a href="http://twitter.github.com/bootstrap">bootstrap</a>.</p>
+      
       </footer>
     </div>
   </body>

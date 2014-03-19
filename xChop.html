@@ -14,6 +14,52 @@
 <!--[if lt IE 9]>
   <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
+
+<link href='http://fonts.googleapis.com/css?family=Open+Sans|Quicksand' rel='stylesheet' type='text/css'>
+
+<style type="text/css">
+	html * {
+		font-family: Open Sans;
+	}
+
+	h1 {
+		font-family: Quicksand;
+	}
+
+	h2 {
+		font-family: Quicksand;
+	}
+
+
+	h3 {
+		font-family: Quicksand;
+	}
+
+	h4 {
+		font-family: Quicksand;
+	}
+
+	h5 {
+		font-family: Quicksand;
+	}
+
+	h6 {
+		font-family: Quicksand;
+	}
+
+	.navbar * {
+		background: white;
+	}
+
+	.examples * {
+		font-family: monospace;
+	}
+
+	code {
+		font-family: monospace;
+	}
+
+</style>
   </head>
 
   <body>
@@ -23,7 +69,7 @@
       <a class="brand" href="#">arrow 0.1.0</a>
       <div class="nav">
         <ul class="nav">
-          <li><a href="index.html"><i class="icon-home icon-white"></i> Documentation</a></li>
+          <li><a href="index.html"><i class="icon-home icon-white"></i> Index</a></li>
           <li><a href=""><i></i> Tutorials</a></li>
           <li><a href=""><i></i> Overview</a></li>
           <li><a href=""><i></i> Demos</a></li>
@@ -60,53 +106,70 @@
     
     <div class="Value">
       <h2>Value</h2>
-      
+
       <p>A list of lists.</p>
-  
+
     </div>
 
     <div class="Description">
       <h2>Description</h2>
-      
+
       <p>Divide a collection into a fixed number of segments.</p>
-  
+
     </div>
 
     <div class="Details">
       <h2>Details</h2>
-      
+
       <p><b>xChop</b> is used to divide a collection into several
 segments. This differs from <b>xChunk</b> in that
 <b>xChop</b> creates a fixed number of segments or
 arbitrary size, while <b>xChunk</b> creates segments of
 fixed size, but not a fixed number of such segments.</p>
-  
+
       <p><code>xChop(2, 1:5)</code></p>
-  
+
       <p><code>list(list(1, 2, 3), list(4, 5))</code></p>
-  
+
       <p><b>xChop</b> can be used for dividing a task for parallel
 execution. For example, a very large collection could be
 chopped into four subcollections by using <b>xChop(4,
 coll)</b>, before applying a function to each sublist using
 <b>mclapply( )</b>.</p>
-  
+
     </div>
 
     <div class="Corner Cases">
       <h2>Corner Cases</h2>
-      
+
       <p>The final sublist returned by <b>xChop</b> may have less
   elements than the other sublists, depending on whether or
   not the length of <b>coll</b> is evenly divisible by
   <b>num</b>. If <b>coll</b> is length-zero, the empty list
   is returned.</p>
-  
+
     </div>
     
     <h2 id="examples">Examples</h2>
-    <pre class="examples"><div class='input'>
-NULL
+    <pre class="examples r"><div class='input'>
+# 1. Composing linear functions
+#    composing linear function &#39;multiplies&#39; them,
+#    so composing x := 2x and x := 3x returns the
+#    &#39;product&#39; function x := 6x
+
+f &lt;- x := 2*x
+g &lt;- x := 3*x
+
+# h = x := 3(2*x)
+# h = x := 6*x
+
+h &lt;- f %then% g
+
+h(2)
+</div>
+<div class='output'>[1] 12
+</div>
+<div class='input'># 12
 
 </div></pre>
   </div>
@@ -117,7 +180,7 @@ NULL
     <ul>
       
     </ul> -->
-      
+
     <h2>See also</h2>
     
 Other reshaping_functions: <code><a href='xChunk.html'>xChunk</a></code>,
@@ -137,13 +200,12 @@ Other reshaping_functions: <code><a href='xChunk.html'>xChunk</a></code>,
 <code><a href='xZipNames.html'>xZipNames...</a></code>; <code><a href='xZip.html'>xZip</a></code>,
 <code><a href='xZip.html'>xZip...</a></code>
 
-        
+    
   </div>
 </div>
       
       <footer>
-      <p class="pull-right"><a href="#">Back to top</a></p>
-<p>Built by <a href="https://github.com/hadley/staticdocs">staticdocs</a>. Styled with <a href="http://twitter.github.com/bootstrap">bootstrap</a>.</p>
+      
       </footer>
     </div>
   </body>

@@ -14,6 +14,52 @@
 <!--[if lt IE 9]>
   <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
+
+<link href='http://fonts.googleapis.com/css?family=Open+Sans|Quicksand' rel='stylesheet' type='text/css'>
+
+<style type="text/css">
+	html * {
+		font-family: Open Sans;
+	}
+
+	h1 {
+		font-family: Quicksand;
+	}
+
+	h2 {
+		font-family: Quicksand;
+	}
+
+
+	h3 {
+		font-family: Quicksand;
+	}
+
+	h4 {
+		font-family: Quicksand;
+	}
+
+	h5 {
+		font-family: Quicksand;
+	}
+
+	h6 {
+		font-family: Quicksand;
+	}
+
+	.navbar * {
+		background: white;
+	}
+
+	.examples * {
+		font-family: monospace;
+	}
+
+	code {
+		font-family: monospace;
+	}
+
+</style>
   </head>
 
   <body>
@@ -23,7 +69,7 @@
       <a class="brand" href="#">arrow 0.1.0</a>
       <div class="nav">
         <ul class="nav">
-          <li><a href="index.html"><i class="icon-home icon-white"></i> Documentation</a></li>
+          <li><a href="index.html"><i class="icon-home icon-white"></i> Index</a></li>
           <li><a href=""><i></i> Tutorials</a></li>
           <li><a href=""><i></i> Overview</a></li>
           <li><a href=""><i></i> Demos</a></li>
@@ -61,29 +107,29 @@
     
     <div class="Value">
       <h2>Value</h2>
-      
+
       <p>A list.</p>
-  
+
     </div>
 
     <div class="Description">
       <h2>Description</h2>
-      
+
       <p>Create a collection by repeating another collection several
 times.</p>
-  
+
     </div>
 
     <div class="Corner Cases">
       <h2>Corner Cases</h2>
-      
+
       <p>Returns the empty list if <b>coll</b> is length-zero or
   num is zero.</p>
-  
+
     </div>
     
     <h2 id="examples">Examples</h2>
-    <pre class="examples"><div class='input'>
+    <pre class="examples r"><div class='input'>
 # Example 1
 #
 # Use xRepeat to repeat a sine wave.
@@ -93,7 +139,7 @@ wave &lt;- xRepeat(5, sin(range))
 
 plot(unlist(wave), type = &#39;l&#39;)
 </div>
-<strong class='error'>Error in plot.new(): figure margins too large</strong>
+<p><img src='xRepeat-2.png' alt='' width='400' height='400' /></p>
 <div class='input'>
 # Example 2
 #
@@ -108,7 +154,7 @@ plot(unlist(wave), type = &#39;l&#39;)
     <ul>
       
     </ul> -->
-      
+
     <h2>See also</h2>
     
 Other reshaping_functions: <code><a href='xChop.html'>xChop</a></code>,
@@ -128,13 +174,12 @@ Other reshaping_functions: <code><a href='xChop.html'>xChop</a></code>,
 <code><a href='xZipNames.html'>xZipNames...</a></code>; <code><a href='xZip.html'>xZip</a></code>,
 <code><a href='xZip.html'>xZip...</a></code>
 
-        
+    
   </div>
 </div>
       
       <footer>
-      <p class="pull-right"><a href="#">Back to top</a></p>
-<p>Built by <a href="https://github.com/hadley/staticdocs">staticdocs</a>. Styled with <a href="http://twitter.github.com/bootstrap">bootstrap</a>.</p>
+      
       </footer>
     </div>
   </body>

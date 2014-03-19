@@ -14,6 +14,52 @@
 <!--[if lt IE 9]>
   <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
+
+<link href='http://fonts.googleapis.com/css?family=Open+Sans|Quicksand' rel='stylesheet' type='text/css'>
+
+<style type="text/css">
+	html * {
+		font-family: Open Sans;
+	}
+
+	h1 {
+		font-family: Quicksand;
+	}
+
+	h2 {
+		font-family: Quicksand;
+	}
+
+
+	h3 {
+		font-family: Quicksand;
+	}
+
+	h4 {
+		font-family: Quicksand;
+	}
+
+	h5 {
+		font-family: Quicksand;
+	}
+
+	h6 {
+		font-family: Quicksand;
+	}
+
+	.navbar * {
+		background: white;
+	}
+
+	.examples * {
+		font-family: monospace;
+	}
+
+	code {
+		font-family: monospace;
+	}
+
+</style>
   </head>
 
   <body>
@@ -23,7 +69,7 @@
       <a class="brand" href="#">arrow 0.1.0</a>
       <div class="nav">
         <ul class="nav">
-          <li><a href="index.html"><i class="icon-home icon-white"></i> Documentation</a></li>
+          <li><a href="index.html"><i class="icon-home icon-white"></i> Index</a></li>
           <li><a href=""><i></i> Tutorials</a></li>
           <li><a href=""><i></i> Overview</a></li>
           <li><a href=""><i></i> Demos</a></li>
@@ -58,56 +104,56 @@
     
     <div class="Value">
       <h2>Value</h2>
-      
+
       <p>The result of successively applying <b>fn</b> to
 <b>val</b>.</p>
-  
+
     </div>
 
     <div class="Description">
       <h2>Description</h2>
-      
+
       <p>Iteratively apply a function to a value.</p>
-  
+
     </div>
 
     <div class="Details">
       <h2>Details</h2>
-      
+
       <p><b>xIterate</b> repeatedly calls a function on an initial
 value until it is explicitely halted using <b>Return(
 )</b>. It is similar for a while loop, with the added benefits
 of an explicit return value and easier debugging.</p>
-  
+
       <p>The only way to end <b>xIterate</b> is to call
 <b>Return( )</b>. A trivial example of ending an
 <b>xIterate</b> call is given below.</p>
-  
+
       <p><code>xIterate(num := if (num >= 10) Return(num) else num +
 1, 0)</code></p>
-  
+
       <p><code>10</code></p>
-  
+
       <p>The above call iterates from zero to ten, before returning
 the last number it encounters - ten. More useful examples
 are given below, but the above example demonstrates the
 basic usage of <b>xIterate</b>.</p>
-  
+
     </div>
 
     <div class="Corner Cases">
       <h2>Corner Cases</h2>
-      
+
       <p>Length-zero values of <b>val</b> are treated as normal
   values, since <b>val</b> accepts an arbitrary value. Like
   while loops <b>xIterate</b> is potentially
   non-terminating, and <b>Return( )</b> must be called to
   terminate the function.</p>
-  
+
     </div>
     
     <h2 id="examples">Examples</h2>
-    <pre class="examples"><div class='input'>
+    <pre class="examples r"><div class='input'>
 # 1.
 #
 # find the smallest number evenly divisible by 1, 2, ..., 10
@@ -254,7 +300,7 @@ xIterate(
     <ul>
       
     </ul> -->
-      
+
     <h2>See also</h2>
     
 Other short_circuiting_functions: <code><a href='xFoldr.html'>xFoldr</a></code>,
@@ -267,13 +313,12 @@ Other short_circuiting_functions: <code><a href='xFoldr.html'>xFoldr</a></code>,
 <code><a href='xScan.html'>xScan...</a></code>, <code><a href='xScan.html'>xScanl</a></code>,
 <code><a href='xScan.html'>xScanl...</a></code>
 
-        
+    
   </div>
 </div>
       
       <footer>
-      <p class="pull-right"><a href="#">Back to top</a></p>
-<p>Built by <a href="https://github.com/hadley/staticdocs">staticdocs</a>. Styled with <a href="http://twitter.github.com/bootstrap">bootstrap</a>.</p>
+      
       </footer>
     </div>
   </body>
