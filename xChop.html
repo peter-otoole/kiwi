@@ -83,6 +83,11 @@
 		font-family: monospace;
 	}
 
+	/* a sloppy hack to get rid of a duplicated title field */
+	.span8 div:first-of-type h2 {
+		display: none;
+	}
+
 </style>
   </head>
 
@@ -105,17 +110,11 @@
       <ul class="nav navbar-nav">
 
         <li><a href="index.html">Index</a></li>
-        <li><a href="#">Tutorials</a></li>
+        <li><a href="content-test.html">Tutorials</a></li>
         <li><a href="#">Demos</a></li>
         <li><a href="#">Contact/About</a></li>
 
       </ul>
-      <form class="navbar-form navbar-left" role="search">
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Search">
-        </div>
-        <button type="submit" class="btn btn-default">Submit</button>
-      </form>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="https://github.com/rgrannell1/arrow">Github</a></li>
         </li>
@@ -126,9 +125,9 @@
 
     <div class="container">
       <header>
-        
-      </header>
       
+      </header>
+
       <h1>xChop</h1>
 
 <div class="row">
@@ -200,26 +199,8 @@ function to each sublist using <b>mclapply( )</b>.</p>
     </div>
     
     <h2 id="examples">Examples</h2>
-    <pre class="examples r"><div class='input'>
-# 1. Composing linear functions
-#    composing linear function &#39;multiplies&#39; them,
-#    so composing x := 2x and x := 3x returns the
-#    &#39;product&#39; function x := 6x
-
-f &lt;- x := 2*x
-g &lt;- x := 3*x
-
-# h = x := 3(2*x)
-# h = x := 6*x
-
-h &lt;- f %then% g
-
-h(2)
-</div>
-<div class='output'>[1] 12
-</div>
-<div class='input'># 12
-
+    <pre class="examples"><div class='input'>
+NULL
 </div></pre>
   </div>
   <div class="span4">
@@ -252,7 +233,7 @@ Other reshaping_functions: <code><a href='xChunk.html'>xChunk</a></code>,
     
   </div>
 </div>
-      
+
       <footer>
       <p class="pull-right"><a href="#">Back to top</a></p>
 <p>Built by <a href="https://github.com/hadley/staticdocs">staticdocs</a>. Styled with Flatstrap.</p>
