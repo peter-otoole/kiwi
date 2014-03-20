@@ -23,6 +23,7 @@
 	}
 
 	h1 {
+		color: #C7254E;
 		font-family: Quicksand;
 	}
 
@@ -76,6 +77,10 @@
 	nav a {
 		display: inline-block;
 		padding: 10px;
+	}
+
+	pre {
+		font-family: monospace;
 	}
 
 </style>
@@ -135,15 +140,19 @@
     <h2>Arguments</h2>
     <dl>
       <dt>pred</dt>
-      <dd>a predicate. The function used to test each
-  element of the input collection.</dd>
+      <dd>a predicate. The function used to test each element of
+   the input collection.</dd>
       <dt>coll</dt>
-      <dd>a collection. The collection to remove
-  elements from.</dd>
+      <dd>a collection. The collection to remove elements from.</dd>
       <dt>...</dt>
       <dd>see above.</dd>
     </dl>
     
+    <div class="xSelect">
+      <h2>xSelect</h2>
+
+    </div>
+
     <div class="Value">
       <h2>Value</h2>
 
@@ -154,29 +163,30 @@
     <div class="Description">
       <h2>Description</h2>
 
-      <p>Include all elements from a collection matching a
-predicate.</p>
+      <p>Include all elements from a collection matching a predicate.</p>
 
     </div>
 
     <div class="Details">
       <h2>Details</h2>
 
-      <p><b>xSelect</b> applies a predicate function such as
-<b>is.integer</b> or <b>is.null</b> to each element of a
-collection. The elements for which the predicate returned
-true are kept, and the remaining elements are removed from
-the collection.</p>
+      <p><b>xSelect</b> applies a predicate function
+   such as <b>is.integer</b> or <b>is.null</b> to each element
+   of a collection. The elements for which the predicate
+   returned true are kept, and the remaining elements are
+   removed from the collection.</p>
 
     </div>
 
     <div class="Corner Cases">
       <h2>Corner Cases</h2>
 
-      <p>Returns the empty list if <b>coll</b> is length-zero, or
-  no match is found. If the predicate returns a non-logical
-  value an error is thrown. If an na value is returned by
-  the predicate it is treated as a false value.</p>
+      <p></p>
+
+      <p>Returns the empty list if <b>coll</b> is length-zero,
+   or no match is found. If the predicate returns a
+   non-logical value an error is thrown. If an na value
+   is returned by the predicate it is treated as a false value.</p>
 
     </div>
     
@@ -233,19 +243,20 @@ x_UniqueOf()
     <h2>See also</h2>
     
 Other filtering_functions: <code><a href='xRejectEmpty.html'>xPack</a></code>,
-<code><a href='xRejectEmpty.html'>xPack...</a></code>, <code><a href='xRejectEmpty.html'>xRejectEmpty</a></code>,
-<code><a href='xRejectEmpty.html'>xRejectEmpty...</a></code>; <code><a href='xPartition.html'>xPartition</a></code>;
-<code><a href='xRejectNan.html'>xRejectNan</a></code>; <code><a href='xRejectNa.html'>xRejectNa</a></code>,
-<code><a href='xRejectNa.html'>xRejectNa...</a></code>; <code><a href='xRejectNull.html'>xRejectNull</a></code>,
-<code><a href='xRejectNull.html'>xRejectNull...</a></code>; <code><a href='xReject.html'>xReject</a></code>,
-<code><a href='xReject.html'>xReject...</a></code>
+  <code><a href='xRejectEmpty.html'>xPack...</a></code>, <code><a href='xRejectEmpty.html'>xRejectEmpty</a></code>,
+  <code><a href='xRejectEmpty.html'>xRejectEmpty...</a></code>; <code><a href='xPartition.html'>xPartition</a></code>;
+  <code><a href='xRejectNan.html'>xRejectNan</a></code>; <code><a href='xRejectNa.html'>xRejectNa</a></code>,
+  <code><a href='xRejectNa.html'>xRejectNa...</a></code>; <code><a href='xRejectNull.html'>xRejectNull</a></code>,
+  <code><a href='xRejectNull.html'>xRejectNull...</a></code>; <code><a href='xReject.html'>xReject</a></code>,
+  <code><a href='xReject.html'>xReject...</a></code>
 
     
   </div>
 </div>
       
       <footer>
-      
+      <p class="pull-right"><a href="#">Back to top</a></p>
+<p>Built by <a href="https://github.com/hadley/staticdocs">staticdocs</a>. Styled with Flatstrap.</p>
       </footer>
     </div>
   </body>

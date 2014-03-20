@@ -23,6 +23,7 @@
 	}
 
 	h1 {
+		color: #C7254E;
 		font-family: Quicksand;
 	}
 
@@ -76,6 +77,10 @@
 	nav a {
 		display: inline-block;
 		padding: 10px;
+	}
+
+	pre {
+		font-family: monospace;
 	}
 
 </style>
@@ -142,11 +147,16 @@
       <dd>a function.</dd>
       <dt>fns</dt>
       <dd>a collection of functions. The functions to
-  compose with each other.</dd>
+   compose with each other.</dd>
       <dt>...</dt>
       <dd>see above.</dd>
     </dl>
     
+    <div class="xCompose">
+      <h2>xCompose</h2>
+
+    </div>
+
     <div class="Value">
       <h2>Value</h2>
 
@@ -167,15 +177,13 @@
       <p>Arrow's function composition is largely done with the infix
 operators %of% and %then%.</p>
 
-      <p><b>%then%</b> is the classic function composition
-operator;</p>
+      <p><b>%then%</b> is the classic function composition operator;</p>
 
       <p><code>(as.numeric %then% sqrt %then% print)('10')</code></p>
 
-      <p>Like methods, the order of fwunction execution is from left
-to right; convert a string to a number then take the square
-root then print the value. The reversed form %of% is
-equally as ubiquitous.</p>
+      <p>Like methods, the order of fwunction execution is from left to right;
+convert a string to a number then take the square root then print the value.
+The reversed form %of% is equally as ubiquitous.</p>
 
       <p>The classic example of function composition (apart from
 Church numerals) is composing linear functions.</p>
@@ -241,27 +249,28 @@ h(2)
     <h2>See also</h2>
     
 Other function_combining_functions: <code><a href='xLift.html'>%and%</a></code>,
-<code><a href='xLift.html'>%or%</a></code>, <code><a href='xLift.html'>xLift</a></code>,
-<code><a href='xLift.html'>xLift...</a></code>; <code><a href='xJuxtapose.html'>xJuxtapose</a></code>,
-<code><a href='xJuxtapose.html'>xJuxtapose...</a></code>
+  <code><a href='xLift.html'>%or%</a></code>, <code><a href='xLift.html'>xLift</a></code>,
+  <code><a href='xLift.html'>xLift...</a></code>; <code><a href='xJuxtapose.html'>xJuxtapose</a></code>,
+  <code><a href='xJuxtapose.html'>xJuxtapose...</a></code>
 
 Other function_modifying_functions: <code><a href='xLift.html'>%and%</a></code>,
-<code><a href='xLift.html'>%or%</a></code>, <code><a href='xLift.html'>xLift</a></code>,
-<code><a href='xLift.html'>xLift...</a></code>; <code><a href='xAsClosure.html'>xAsClosure</a></code>;
-<code><a href='xAsUnary.html'>xAsUnary</a></code>; <code><a href='xAsVariadic.html'>xAsVariadic</a></code>;
-<code><a href='xCapture.html'>xCapture</a></code>, <code><a href='xCapture.html'>xK</a></code>;
-<code><a href='xDelay.html'>xDelay</a></code>; <code><a href='xJuxtapose.html'>xJuxtapose</a></code>,
-<code><a href='xJuxtapose.html'>xJuxtapose...</a></code>; <code><a href='xNot.html'>xNot</a></code>;
-<code><a href='xPartial.html'>xPartial</a></code>, <code><a href='xPartial.html'>xPartial...</a></code>;
-<code><a href='xThread.html'>xThread</a></code>, <code><a href='xThread.html'>xThread...</a></code>;
-<code><a href='xVectorise.html'>xVectorise</a></code>, <code><a href='xVectorise.html'>xVectorize</a></code>
+  <code><a href='xLift.html'>%or%</a></code>, <code><a href='xLift.html'>xLift</a></code>,
+  <code><a href='xLift.html'>xLift...</a></code>; <code><a href='xAsClosure.html'>xAsClosure</a></code>;
+  <code><a href='xAsUnary.html'>xAsUnary</a></code>; <code><a href='xAsVariadic.html'>xAsVariadic</a></code>;
+  <code><a href='xCapture.html'>xCapture</a></code>, <code><a href='xCapture.html'>xK</a></code>;
+  <code><a href='xDelay.html'>xDelay</a></code>; <code><a href='xJuxtapose.html'>xJuxtapose</a></code>,
+  <code><a href='xJuxtapose.html'>xJuxtapose...</a></code>; <code><a href='xNot.html'>xNot</a></code>;
+  <code><a href='xPartial.html'>xPartial</a></code>, <code><a href='xPartial.html'>xPartial...</a></code>;
+  <code><a href='xThread.html'>xThread</a></code>, <code><a href='xThread.html'>xThread...</a></code>;
+  <code><a href='xVectorise.html'>xVectorise</a></code>, <code><a href='xVectorise.html'>xVectorize</a></code>
 
     
   </div>
 </div>
       
       <footer>
-      
+      <p class="pull-right"><a href="#">Back to top</a></p>
+<p>Built by <a href="https://github.com/hadley/staticdocs">staticdocs</a>. Styled with Flatstrap.</p>
       </footer>
     </div>
   </body>

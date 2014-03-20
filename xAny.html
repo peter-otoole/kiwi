@@ -23,6 +23,7 @@
 	}
 
 	h1 {
+		color: #C7254E;
 		font-family: Quicksand;
 	}
 
@@ -76,6 +77,10 @@
 	nav a {
 		display: inline-block;
 		padding: 10px;
+	}
+
+	pre {
+		font-family: monospace;
 	}
 
 </style>
@@ -135,15 +140,19 @@
     <h2>Arguments</h2>
     <dl>
       <dt>pred</dt>
-      <dd>a predicate. The function used to test each
-  element of the input collection.</dd>
+      <dd>a predicate. The function used to test each element of
+   the input collection.</dd>
       <dt>coll</dt>
-      <dd>a collection. The collection to test each
-  element of.</dd>
+      <dd>a collection. The collection to test each element of.</dd>
       <dt>...</dt>
       <dd>see above.</dd>
     </dl>
     
+    <div class="xAny">
+      <h2>xAny</h2>
+
+    </div>
+
     <div class="Value">
       <h2>Value</h2>
 
@@ -160,6 +169,8 @@
 
     <div class="Corner Cases">
       <h2>Corner Cases</h2>
+
+      <p></p>
 
       <p>If coll is length zero then logical(0) is returned.</p>
 
@@ -181,17 +192,18 @@ NULL
     <h2>See also</h2>
     
 Other quantifier_functions: <code><a href='xAll.html'>xAll</a></code>,
-<code><a href='xAll.html'>xAll...</a></code>; <code><a href='xExists.html'>xExists</a></code>,
-<code><a href='xExists.html'>xExists...</a></code>; <code><a href='xForall.html'>xForall</a></code>,
-<code><a href='xForall.html'>xForall...</a></code>; <code><a href='xPoll.html'>xPoll</a></code>,
-<code><a href='xPoll.html'>xPoll...</a></code>, <code><a href='xPoll.html'>xRejectNan...</a></code>
+  <code><a href='xAll.html'>xAll...</a></code>; <code><a href='xExists.html'>xExists</a></code>,
+  <code><a href='xExists.html'>xExists...</a></code>; <code><a href='xForall.html'>xForall</a></code>,
+  <code><a href='xForall.html'>xForall...</a></code>; <code><a href='xPoll.html'>xPoll</a></code>,
+  <code><a href='xPoll.html'>xPoll...</a></code>, <code><a href='xPoll.html'>xRejectNan...</a></code>
 
     
   </div>
 </div>
       
       <footer>
-      
+      <p class="pull-right"><a href="#">Back to top</a></p>
+<p>Built by <a href="https://github.com/hadley/staticdocs">staticdocs</a>. Styled with Flatstrap.</p>
       </footer>
     </div>
   </body>

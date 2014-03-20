@@ -23,6 +23,7 @@
 	}
 
 	h1 {
+		color: #C7254E;
 		font-family: Quicksand;
 	}
 
@@ -76,6 +77,10 @@
 	nav a {
 		display: inline-block;
 		padding: 10px;
+	}
+
+	pre {
+		font-family: monospace;
 	}
 
 </style>
@@ -134,13 +139,17 @@
     <h2>Arguments</h2>
     <dl>
       <dt>fn</dt>
-      <dd>an arbitrary function. The function to slow the
-  rate of execution of.</dd>
+      <dd>an arbitrary function. The function to slow the rate of execution of.</dd>
       <dt>num</dt>
-      <dd>a nonnegative whole number. The number of
-  seconds to delay execution by.</dd>
+      <dd>a nonnegative whole number. The number of seconds
+   to delay execution by.</dd>
     </dl>
     
+    <div class="xDelay">
+      <h2>xDelay</h2>
+
+    </div>
+
     <div class="Value">
       <h2>Value</h2>
 
@@ -151,31 +160,30 @@
     <div class="Description">
       <h2>Description</h2>
 
-      <p>Delay the evalution of a function after invokation for a
-set amount of time.</p>
+      <p>Delay the evalution of a function after invokation
+for a set amount of time.</p>
 
     </div>
 
     <div class="Details">
       <h2>Details</h2>
 
-      <p><b>xDelay</b> is primarily meant for use with
-side-effectful functions; likely examples including
-functions that call web API's and functions that that
-display graphics.</p>
+      <p><b>xDelay</b> is primarily meant for use with side-effectful functions;
+   likely examples including functions that call web API's and functions that
+   that display graphics.</p>
 
-      <p><b>xDelay</b> throttles the rate at which a function can be
-repeatedly excecuted. This can be useful in preventing API
-rate limits from being exceeded or to emulate a refresh
-rate.</p>
+      <p><b>xDelay</b> throttles the rate at which a function can be repeatedly
+   excecuted. This can be useful in preventing API rate limits from being
+   exceeded or to emulate a refresh rate.</p>
 
     </div>
 
     <div class="Corner Cases">
       <h2>Corner Cases</h2>
 
-      <p>If <b>num</b> is zero then <b>fn</b> is returned
-  untouched.</p>
+      <p></p>
+
+      <p>If <b>num</b> is zero then <b>fn</b> is returned untouched.</p>
 
     </div>
     
@@ -196,34 +204,35 @@ NULL
     <h2>See also</h2>
     
 Other function_modifying_functions: <code><a href='xLift.html'>%and%</a></code>,
-<code><a href='xLift.html'>%or%</a></code>, <code><a href='xLift.html'>xLift</a></code>,
-<code><a href='xLift.html'>xLift...</a></code>; <code><a href='xCompose.html'>%of%</a></code>,
-<code><a href='xCompose.html'>%then%</a></code>, <code><a href='xCompose.html'>xCompose</a></code>,
-<code><a href='xCompose.html'>xCompose...</a></code>; <code><a href='xAsClosure.html'>xAsClosure</a></code>;
-<code><a href='xAsUnary.html'>xAsUnary</a></code>; <code><a href='xAsVariadic.html'>xAsVariadic</a></code>;
-<code><a href='xCapture.html'>xCapture</a></code>, <code><a href='xCapture.html'>xK</a></code>;
-<code><a href='xJuxtapose.html'>xJuxtapose</a></code>, <code><a href='xJuxtapose.html'>xJuxtapose...</a></code>;
-<code><a href='xNot.html'>xNot</a></code>; <code><a href='xPartial.html'>xPartial</a></code>,
-<code><a href='xPartial.html'>xPartial...</a></code>; <code><a href='xThread.html'>xThread</a></code>,
-<code><a href='xThread.html'>xThread...</a></code>; <code><a href='xVectorise.html'>xVectorise</a></code>,
-<code><a href='xVectorise.html'>xVectorize</a></code>
+  <code><a href='xLift.html'>%or%</a></code>, <code><a href='xLift.html'>xLift</a></code>,
+  <code><a href='xLift.html'>xLift...</a></code>; <code><a href='xCompose.html'>%of%</a></code>,
+  <code><a href='xCompose.html'>%then%</a></code>, <code><a href='xCompose.html'>xCompose</a></code>,
+  <code><a href='xCompose.html'>xCompose...</a></code>; <code><a href='xAsClosure.html'>xAsClosure</a></code>;
+  <code><a href='xAsUnary.html'>xAsUnary</a></code>; <code><a href='xAsVariadic.html'>xAsVariadic</a></code>;
+  <code><a href='xCapture.html'>xCapture</a></code>, <code><a href='xCapture.html'>xK</a></code>;
+  <code><a href='xJuxtapose.html'>xJuxtapose</a></code>, <code><a href='xJuxtapose.html'>xJuxtapose...</a></code>;
+  <code><a href='xNot.html'>xNot</a></code>; <code><a href='xPartial.html'>xPartial</a></code>,
+  <code><a href='xPartial.html'>xPartial...</a></code>; <code><a href='xThread.html'>xThread</a></code>,
+  <code><a href='xThread.html'>xThread...</a></code>; <code><a href='xVectorise.html'>xVectorise</a></code>,
+  <code><a href='xVectorise.html'>xVectorize</a></code>
 
 Other inpure_functions: <code><a href='xDo.html'>xDo</a></code>,
-<code><a href='xDo.html'>xDo...</a></code>; <code><a href='xExecute.html'>xExecute</a></code>;
-<code><a href='xReadChars.html'>xReadChars</a></code>; <code><a href='xReadLines.html'>xReadLines</a></code>;
-<code><a href='xReadWords.html'>xReadWords</a></code>; <code><a href='xStopwatch.html'>xStopwatch</a></code>;
-<code><a href='xVersion.html'>xVersion</a></code>; <code><a href='xWriteChars.html'>xWriteChars</a></code>;
-<code><a href='xWriteLines.html'>xWriteLines</a></code>; <code><a href='xWriteWords.html'>xWriteWords</a></code>
+  <code><a href='xDo.html'>xDo...</a></code>; <code><a href='xExecute.html'>xExecute</a></code>;
+  <code><a href='xReadChars.html'>xReadChars</a></code>; <code><a href='xReadLines.html'>xReadLines</a></code>;
+  <code><a href='xReadWords.html'>xReadWords</a></code>; <code><a href='xStopwatch.html'>xStopwatch</a></code>;
+  <code><a href='xVersion.html'>xVersion</a></code>; <code><a href='xWriteChars.html'>xWriteChars</a></code>;
+  <code><a href='xWriteLines.html'>xWriteLines</a></code>; <code><a href='xWriteWords.html'>xWriteWords</a></code>
 
 Other time_functions: <code><a href='xLimit.html'>xLimit</a></code>;
-<code><a href='xStopwatch.html'>xStopwatch</a></code>
+  <code><a href='xStopwatch.html'>xStopwatch</a></code>
 
     
   </div>
 </div>
       
       <footer>
-      
+      <p class="pull-right"><a href="#">Back to top</a></p>
+<p>Built by <a href="https://github.com/hadley/staticdocs">staticdocs</a>. Styled with Flatstrap.</p>
       </footer>
     </div>
   </body>

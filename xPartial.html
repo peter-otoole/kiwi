@@ -23,6 +23,7 @@
 	}
 
 	h1 {
+		color: #C7254E;
 		font-family: Quicksand;
 	}
 
@@ -76,6 +77,10 @@
 	nav a {
 		display: inline-block;
 		padding: 10px;
+	}
+
+	pre {
+		font-family: monospace;
 	}
 
 </style>
@@ -135,14 +140,19 @@
     <h2>Arguments</h2>
     <dl>
       <dt>fn</dt>
-      <dd>an arbitrary function. The function to have
-  some of its arguments fixed.</dd>
+      <dd>an arbitrary function. The function to have some
+   of its arguments fixed.</dd>
       <dt>coll</dt>
       <dd>a collection. The arguments to fix.</dd>
       <dt>...</dt>
       <dd>see above.</dd>
     </dl>
     
+    <div class="xPartial">
+      <h2>xPartial</h2>
+
+    </div>
+
     <div class="Value">
       <h2>Value</h2>
 
@@ -153,37 +163,34 @@
     <div class="Description">
       <h2>Description</h2>
 
-      <p>Fix several arguments of a function, producing a function
-of smaller arity.</p>
+      <p>Fix several arguments of a function, producing a function of smaller arity.</p>
 
     </div>
 
     <div class="Details">
       <h2>Details</h2>
 
-      <p>Partial application is a mechanism for specialising a
-general function to a particular purpose. For example, the
-very general function <b>xMap</b> can be easily specialised
-to particular tasks using <code>xPartial</code>:</p>
+      <p>Partial application is a mechanism for specialising a general function
+    to a particular purpose. For example, the very general function <b>xMap</b>
+    can be easily specialised to particular tasks using <code>xPartial</code>:</p>
 
       <p><code>lengths <- xPartial(xMap, list(fn = length))</code></p>
 
       <p><code>sizes <- xPartial(xMap, object.size))</code></p>
 
-      <p>In this case the use of xPartial can match the argument to
-specialise by name, or by position. The use of
-<b>xPartial</b> over <b>xPartial...</b> is required in the
-first case, to avoid a parametre name class between the
-argument of <b>xMap</b> to fix (fn) and the function passed
-to <b>xPartial</b> (fn).</p>
+      <p>In this case the use of xPartial can match the argument to specialise by
+    name, or by position. The use of <b>xPartial</b> over <b>xPartial...</b> is
+    required in the first case, to avoid a parametre name class between the argument of
+    <b>xMap</b> to fix (fn) and the function passed to <b>xPartial</b> (fn).</p>
 
     </div>
 
     <div class="Corner Cases">
       <h2>Corner Cases</h2>
 
-      <p>Partial application also works for ellipses (eg list(...
-  = 1)).</p>
+      <p></p>
+
+      <p>Partial application also works for ellipses (eg list(... = 1)).</p>
 
     </div>
     
@@ -204,28 +211,29 @@ NULL
     <h2>See also</h2>
     
 Other function_modifying_functions: <code><a href='xLift.html'>%and%</a></code>,
-<code><a href='xLift.html'>%or%</a></code>, <code><a href='xLift.html'>xLift</a></code>,
-<code><a href='xLift.html'>xLift...</a></code>; <code><a href='xCompose.html'>%of%</a></code>,
-<code><a href='xCompose.html'>%then%</a></code>, <code><a href='xCompose.html'>xCompose</a></code>,
-<code><a href='xCompose.html'>xCompose...</a></code>; <code><a href='xAsClosure.html'>xAsClosure</a></code>;
-<code><a href='xAsUnary.html'>xAsUnary</a></code>; <code><a href='xAsVariadic.html'>xAsVariadic</a></code>;
-<code><a href='xCapture.html'>xCapture</a></code>, <code><a href='xCapture.html'>xK</a></code>;
-<code><a href='xDelay.html'>xDelay</a></code>; <code><a href='xJuxtapose.html'>xJuxtapose</a></code>,
-<code><a href='xJuxtapose.html'>xJuxtapose...</a></code>; <code><a href='xNot.html'>xNot</a></code>;
-<code><a href='xThread.html'>xThread</a></code>, <code><a href='xThread.html'>xThread...</a></code>;
-<code><a href='xVectorise.html'>xVectorise</a></code>, <code><a href='xVectorise.html'>xVectorize</a></code>
+  <code><a href='xLift.html'>%or%</a></code>, <code><a href='xLift.html'>xLift</a></code>,
+  <code><a href='xLift.html'>xLift...</a></code>; <code><a href='xCompose.html'>%of%</a></code>,
+  <code><a href='xCompose.html'>%then%</a></code>, <code><a href='xCompose.html'>xCompose</a></code>,
+  <code><a href='xCompose.html'>xCompose...</a></code>; <code><a href='xAsClosure.html'>xAsClosure</a></code>;
+  <code><a href='xAsUnary.html'>xAsUnary</a></code>; <code><a href='xAsVariadic.html'>xAsVariadic</a></code>;
+  <code><a href='xCapture.html'>xCapture</a></code>, <code><a href='xCapture.html'>xK</a></code>;
+  <code><a href='xDelay.html'>xDelay</a></code>; <code><a href='xJuxtapose.html'>xJuxtapose</a></code>,
+  <code><a href='xJuxtapose.html'>xJuxtapose...</a></code>; <code><a href='xNot.html'>xNot</a></code>;
+  <code><a href='xThread.html'>xThread</a></code>, <code><a href='xThread.html'>xThread...</a></code>;
+  <code><a href='xVectorise.html'>xVectorise</a></code>, <code><a href='xVectorise.html'>xVectorize</a></code>
 
 Other parametre_functions: <code><a href='xArityOf.html'>xArityOf</a></code>;
-<code><a href='xAsUnary.html'>xAsUnary</a></code>; <code><a href='xAsVariadic.html'>xAsVariadic</a></code>;
-<code><a href='xFormalsOf.html'>xFormalsOf</a></code>; <code><a href='xIsVariadic.html'>xIsVariadic</a></code>;
-<code><a href='xParamsOf.html'>xParamsOf</a></code>
+  <code><a href='xAsUnary.html'>xAsUnary</a></code>; <code><a href='xAsVariadic.html'>xAsVariadic</a></code>;
+  <code><a href='xFormalsOf.html'>xFormalsOf</a></code>; <code><a href='xIsVariadic.html'>xIsVariadic</a></code>;
+  <code><a href='xParamsOf.html'>xParamsOf</a></code>
 
     
   </div>
 </div>
       
       <footer>
-      
+      <p class="pull-right"><a href="#">Back to top</a></p>
+<p>Built by <a href="https://github.com/hadley/staticdocs">staticdocs</a>. Styled with Flatstrap.</p>
       </footer>
     </div>
   </body>

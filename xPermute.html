@@ -23,6 +23,7 @@
 	}
 
 	h1 {
+		color: #C7254E;
 		font-family: Quicksand;
 	}
 
@@ -76,6 +77,10 @@
 	nav a {
 		display: inline-block;
 		padding: 10px;
+	}
+
+	pre {
+		font-family: monospace;
 	}
 
 </style>
@@ -135,15 +140,20 @@
     <h2>Arguments</h2>
     <dl>
       <dt>nums</dt>
-      <dd>a collection of whole numbers. The indices by
-  which to permute the input collections.</dd>
+      <dd>a collection of whole numbers. The indices
+   by which to permute the input collections.</dd>
       <dt>colls</dt>
-      <dd>several collections of equal length to
-  <b>nums</b>. The collections to permute.</dd>
+      <dd>several collections of equal length to <b>nums</b>. The
+   collections to permute.</dd>
       <dt>...</dt>
       <dd>see above.</dd>
     </dl>
     
+    <div class="xPermute">
+      <h2>xPermute</h2>
+
+    </div>
+
     <div class="Value">
       <h2>Value</h2>
 
@@ -162,10 +172,9 @@
       <h2>Details</h2>
 
       <p><b>xPermute</b> allows several collections to be rearranged
-in the same way simultaneously.</p>
+   in the same way simultaneously.</p>
 
-      <p><code>colls <- list(ids = list(15, 1, 12), ages = list(17,
-29, 24), weights = list(80, 82, 76))</code></p>
+      <p><code>colls <- list(ids = list(15, 1, 12), ages = list(17, 29, 24), weights = list(80, 82, 76))</code></p>
 
       <p><code>xPermute(xOrderOf( xFirstOf(colls) ), colls)</code></p>
 
@@ -173,6 +182,8 @@ in the same way simultaneously.</p>
 
     <div class="Corner Cases">
       <h2>Corner Cases</h2>
+
+      <p></p>
 
       <p>returns the empty list is <b>nums</b> is length-zero.</p>
 
@@ -195,27 +206,28 @@ NULL
     <h2>See also</h2>
     
 Other combinatoric_functions: <code><a href='xChoose.html'>xChoose</a></code>,
-<code><a href='xChoose.html'>xChoose...</a></code>; <code><a href='xCycle.html'>xCycle</a></code>,
-<code><a href='xCycle.html'>xCycle...</a></code>; <code><a href='xPowerSetOf.html'>xPowerSetOf</a></code>,
-<code><a href='xPowerSetOf.html'>xPowerSetOf...</a></code>; <code><a href='xProdSetOf.html'>xProdSetOf</a></code>,
-<code><a href='xProdSetOf.html'>xProdSetOf...</a></code>
+  <code><a href='xChoose.html'>xChoose...</a></code>; <code><a href='xCycle.html'>xCycle</a></code>,
+  <code><a href='xCycle.html'>xCycle...</a></code>; <code><a href='xPowerSetOf.html'>xPowerSetOf</a></code>,
+  <code><a href='xPowerSetOf.html'>xPowerSetOf...</a></code>; <code><a href='xProdSetOf.html'>xProdSetOf</a></code>,
+  <code><a href='xProdSetOf.html'>xProdSetOf...</a></code>
 
 Other set_functions: <code><a href='xDuplicatesOf.html'>xDuplicatesOf</a></code>,
-<code><a href='xDuplicatesOf.html'>xDuplicatesOf...</a></code>; <code><a href='xInter.html'>xInter</a></code>,
-<code><a href='xInter.html'>xInter...</a></code>; <code><a href='xIsMember.html'>xIsMember</a></code>,
-<code><a href='xIsMember.html'>xIsMember...</a></code>; <code><a href='xNotMember.html'>xNotMember</a></code>,
-<code><a href='xNotMember.html'>xNotMember...</a></code>; <code><a href='xPowerSetOf.html'>xPowerSetOf</a></code>,
-<code><a href='xPowerSetOf.html'>xPowerSetOf...</a></code>; <code><a href='xProdSetOf.html'>xProdSetOf</a></code>,
-<code><a href='xProdSetOf.html'>xProdSetOf...</a></code>; <code><a href='xUnionOf.html'>xUnionOf</a></code>,
-<code><a href='xUnionOf.html'>xUnionOf...</a></code>; <code><a href='xUniqueOf.html'>xUniqueOf</a></code>,
-<code><a href='xUniqueOf.html'>xUniqueOf...</a></code>
+  <code><a href='xDuplicatesOf.html'>xDuplicatesOf...</a></code>; <code><a href='xInter.html'>xInter</a></code>,
+  <code><a href='xInter.html'>xInter...</a></code>; <code><a href='xIsMember.html'>xIsMember</a></code>,
+  <code><a href='xIsMember.html'>xIsMember...</a></code>; <code><a href='xNotMember.html'>xNotMember</a></code>,
+  <code><a href='xNotMember.html'>xNotMember...</a></code>; <code><a href='xPowerSetOf.html'>xPowerSetOf</a></code>,
+  <code><a href='xPowerSetOf.html'>xPowerSetOf...</a></code>; <code><a href='xProdSetOf.html'>xProdSetOf</a></code>,
+  <code><a href='xProdSetOf.html'>xProdSetOf...</a></code>; <code><a href='xUnionOf.html'>xUnionOf</a></code>,
+  <code><a href='xUnionOf.html'>xUnionOf...</a></code>; <code><a href='xUniqueOf.html'>xUniqueOf</a></code>,
+  <code><a href='xUniqueOf.html'>xUniqueOf...</a></code>
 
     
   </div>
 </div>
       
       <footer>
-      
+      <p class="pull-right"><a href="#">Back to top</a></p>
+<p>Built by <a href="https://github.com/hadley/staticdocs">staticdocs</a>. Styled with Flatstrap.</p>
       </footer>
     </div>
   </body>

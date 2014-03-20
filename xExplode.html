@@ -23,6 +23,7 @@
 	}
 
 	h1 {
+		color: #C7254E;
 		font-family: Quicksand;
 	}
 
@@ -76,6 +77,10 @@
 	nav a {
 		display: inline-block;
 		padding: 10px;
+	}
+
+	pre {
+		font-family: monospace;
 	}
 
 </style>
@@ -136,13 +141,18 @@
     <dl>
       <dt>rexp</dt>
       <dd>a regular expression. The pattern at which to
-  split <b>str</b>.</dd>
+   split <b>str</b>.</dd>
       <dt>str</dt>
       <dd>a string. The string to split.</dd>
       <dt>...</dt>
       <dd>see above</dd>
     </dl>
     
+    <div class="xExplode">
+      <h2>xExplode</h2>
+
+    </div>
+
     <div class="Value">
       <h2>Value</h2>
 
@@ -153,19 +163,20 @@
     <div class="Description">
       <h2>Description</h2>
 
-      <p>Split a string into a character vector using a regular
-expression.</p>
+      <p>Split a string into a character vector using a regular expression.</p>
 
     </div>
 
     <div class="Corner Cases">
       <h2>Corner Cases</h2>
 
-      <p>Returns the empty list if <b>coll</b> is length-zero.  If
-  no match is found the original string is returned.  Every
-  element of the returned character vector has one or more
-  characters - no zero-character elements are ever
-  generated.</p>
+      <p></p>
+
+      <p>Returns the empty list if <b>coll</b> is length-zero.
+   If no match is found the original string is returned.
+   Every element of the returned character vector has one
+   or more characters - no zero-character elements are ever
+   generated.</p>
 
     </div>
     
@@ -186,22 +197,23 @@ NULL
     <h2>See also</h2>
     
 Other text_processing_functions: <code><a href='xFromChars.html'>xFromChars</a></code>,
-<code><a href='xFromChars.html'>xFromChars...</a></code>; <code><a href='xFromLines.html'>xFromLines</a></code>,
-<code><a href='xFromLines.html'>xFromLines...</a></code>; <code><a href='xFromWords.html'>xFromWords</a></code>,
-<code><a href='xFromWords.html'>xFromWords...</a></code>; <code><a href='xImplode.html'>xImplode</a></code>,
-<code><a href='xImplode.html'>xImplode...</a></code>; <code><a href='xReadChars.html'>xReadChars</a></code>;
-<code><a href='xReadLines.html'>xReadLines</a></code>; <code><a href='xReadWords.html'>xReadWords</a></code>;
-<code><a href='xSubstring.html'>xSubstring</a></code>, <code><a href='xSubstring.html'>xSubstring...</a></code>;
-<code><a href='xToChars.html'>xToChars</a></code>; <code><a href='xToLines.html'>xToLines</a></code>;
-<code><a href='xToWords.html'>xToWords</a></code>; <code><a href='xWriteChars.html'>xWriteChars</a></code>;
-<code><a href='xWriteLines.html'>xWriteLines</a></code>; <code><a href='xWriteWords.html'>xWriteWords</a></code>
+  <code><a href='xFromChars.html'>xFromChars...</a></code>; <code><a href='xFromLines.html'>xFromLines</a></code>,
+  <code><a href='xFromLines.html'>xFromLines...</a></code>; <code><a href='xFromWords.html'>xFromWords</a></code>,
+  <code><a href='xFromWords.html'>xFromWords...</a></code>; <code><a href='xImplode.html'>xImplode</a></code>,
+  <code><a href='xImplode.html'>xImplode...</a></code>; <code><a href='xReadChars.html'>xReadChars</a></code>;
+  <code><a href='xReadLines.html'>xReadLines</a></code>; <code><a href='xReadWords.html'>xReadWords</a></code>;
+  <code><a href='xSubstring.html'>xSubstring</a></code>, <code><a href='xSubstring.html'>xSubstring...</a></code>;
+  <code><a href='xToChars.html'>xToChars</a></code>; <code><a href='xToLines.html'>xToLines</a></code>;
+  <code><a href='xToWords.html'>xToWords</a></code>; <code><a href='xWriteChars.html'>xWriteChars</a></code>;
+  <code><a href='xWriteLines.html'>xWriteLines</a></code>; <code><a href='xWriteWords.html'>xWriteWords</a></code>
 
     
   </div>
 </div>
       
       <footer>
-      
+      <p class="pull-right"><a href="#">Back to top</a></p>
+<p>Built by <a href="https://github.com/hadley/staticdocs">staticdocs</a>. Styled with Flatstrap.</p>
       </footer>
     </div>
   </body>

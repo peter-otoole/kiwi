@@ -23,6 +23,7 @@
 	}
 
 	h1 {
+		color: #C7254E;
 		font-family: Quicksand;
 	}
 
@@ -76,6 +77,10 @@
 	nav a {
 		display: inline-block;
 		padding: 10px;
+	}
+
+	pre {
+		font-family: monospace;
 	}
 
 </style>
@@ -137,9 +142,9 @@
     <h2>Arguments</h2>
     <dl>
       <dt>fn1</dt>
-      <dd>a function.</dd>
+      <dd>a function. The left function to compose with locical and or logical or.</dd>
       <dt>fn2</dt>
-      <dd>a function.</dd>
+      <dd>a function. The right function to compose with locical and or logical or.</dd>
       <dt>fn</dt>
       <dd>a binary function.</dd>
       <dt>fns</dt>
@@ -148,6 +153,11 @@
       <dd>see above.</dd>
     </dl>
     
+    <div class="xLift">
+      <h2>xLift</h2>
+
+    </div>
+
     <div class="Value">
       <h2>Value</h2>
 
@@ -165,20 +175,47 @@
     <div class="Details">
       <h2>Details</h2>
 
-      <p><b>xLift</b> takes a function that works on some type of
-value, and makes that function work on functions of those
-values.</p>
+      <p><b>xLift</b> takes a function that works on some type of value, and makes that
+   function work on functions of those values.</p>
 
-      <p>Two partially applied version of <b>xLift</b> exist;
-%and% & %or%.  These are primarily intended for use
-with higher-order functions that take a predicate, allowing
-several predicates to be stringed together into a new
-predicate.</p>
+      <p><b>xLift</b> is a fairly abstract operator, best explained by looking at examples.
+   The most obvious use for <b>xLift</b> is to take normally binary functions like <b>+</b>,
+   and <b>max</b> that take numbers, and 'lift' it to work on functions of numbers.</p>
 
-      <p><code>xSelect(is.integer 
-2L, 'string'))</code></p>
+      <p>A function that multiplies a number can be defined in a function that adds the output of
+   double that number and triple that number.</p>
 
-      <p><code>list(1L, 1+1i, 2L, 'string')</code></p>
+      <p><code>double <- x := 2*x</code>
+   <code>triple <- x := 3*x</code></p>
+
+      <p><code>sexdruple <- x := double(x) + triple(x)</code>
+   <code>sexdruple <- x := '+'(double(x), triple(x))</code></p>
+
+      <p>This can be viewed as 'adding' the double and triple function, or composing them
+   with addition.</p>
+
+      <p>Similarily, a function to check if a value is a complex number or an integer can be
+   defined by</p>
+
+      <p>is_positive <- x := x > 0
+   is_whole <- x := round(x) == x</p>
+
+      <p>is_positive_and_whole <- x := is_positive(x) && is_whole(x)
+   is_positive_and_whole <- x := '&&'(is_positive(x), is_whole(x))</p>
+
+      <p><b>sexdruple</b> and <b>is_positive_and_whole</b> share a common structure. They both
+   have take one value, and call a binary function (plus, and) with the ouput of two other functions.</p>
+
+      <p><b>xLift</b> factors out this pattern, for binary functions and higher arity functions.</p>
+
+      <p><code>sexdruple <- xLift...('+', double, triple)</code>
+   <code>is_positive_and_whole <- xLift...('&&', is_positive, is_whole)</code></p>
+
+      <p>Two partially applied forms of xLift are included in arrow, which are useful for cutting down
+  on the amount of anonymous functions you need to pass to higher-order functions.</p>
+
+      <p><code>xSelect(is_positive %and% is_whole, seq(1, 3, by = 0.1))</code>
+  <code>list(1, 2, 3)</code></p>
 
     </div>
     
@@ -199,27 +236,28 @@ NULL
     <h2>See also</h2>
     
 Other function_combining_functions: <code><a href='xCompose.html'>%of%</a></code>,
-<code><a href='xCompose.html'>%then%</a></code>, <code><a href='xCompose.html'>xCompose</a></code>,
-<code><a href='xCompose.html'>xCompose...</a></code>; <code><a href='xJuxtapose.html'>xJuxtapose</a></code>,
-<code><a href='xJuxtapose.html'>xJuxtapose...</a></code>
+  <code><a href='xCompose.html'>%then%</a></code>, <code><a href='xCompose.html'>xCompose</a></code>,
+  <code><a href='xCompose.html'>xCompose...</a></code>; <code><a href='xJuxtapose.html'>xJuxtapose</a></code>,
+  <code><a href='xJuxtapose.html'>xJuxtapose...</a></code>
 
 Other function_modifying_functions: <code><a href='xCompose.html'>%of%</a></code>,
-<code><a href='xCompose.html'>%then%</a></code>, <code><a href='xCompose.html'>xCompose</a></code>,
-<code><a href='xCompose.html'>xCompose...</a></code>; <code><a href='xAsClosure.html'>xAsClosure</a></code>;
-<code><a href='xAsUnary.html'>xAsUnary</a></code>; <code><a href='xAsVariadic.html'>xAsVariadic</a></code>;
-<code><a href='xCapture.html'>xCapture</a></code>, <code><a href='xCapture.html'>xK</a></code>;
-<code><a href='xDelay.html'>xDelay</a></code>; <code><a href='xJuxtapose.html'>xJuxtapose</a></code>,
-<code><a href='xJuxtapose.html'>xJuxtapose...</a></code>; <code><a href='xNot.html'>xNot</a></code>;
-<code><a href='xPartial.html'>xPartial</a></code>, <code><a href='xPartial.html'>xPartial...</a></code>;
-<code><a href='xThread.html'>xThread</a></code>, <code><a href='xThread.html'>xThread...</a></code>;
-<code><a href='xVectorise.html'>xVectorise</a></code>, <code><a href='xVectorise.html'>xVectorize</a></code>
+  <code><a href='xCompose.html'>%then%</a></code>, <code><a href='xCompose.html'>xCompose</a></code>,
+  <code><a href='xCompose.html'>xCompose...</a></code>; <code><a href='xAsClosure.html'>xAsClosure</a></code>;
+  <code><a href='xAsUnary.html'>xAsUnary</a></code>; <code><a href='xAsVariadic.html'>xAsVariadic</a></code>;
+  <code><a href='xCapture.html'>xCapture</a></code>, <code><a href='xCapture.html'>xK</a></code>;
+  <code><a href='xDelay.html'>xDelay</a></code>; <code><a href='xJuxtapose.html'>xJuxtapose</a></code>,
+  <code><a href='xJuxtapose.html'>xJuxtapose...</a></code>; <code><a href='xNot.html'>xNot</a></code>;
+  <code><a href='xPartial.html'>xPartial</a></code>, <code><a href='xPartial.html'>xPartial...</a></code>;
+  <code><a href='xThread.html'>xThread</a></code>, <code><a href='xThread.html'>xThread...</a></code>;
+  <code><a href='xVectorise.html'>xVectorise</a></code>, <code><a href='xVectorise.html'>xVectorize</a></code>
 
     
   </div>
 </div>
       
       <footer>
-      
+      <p class="pull-right"><a href="#">Back to top</a></p>
+<p>Built by <a href="https://github.com/hadley/staticdocs">staticdocs</a>. Styled with Flatstrap.</p>
       </footer>
     </div>
   </body>

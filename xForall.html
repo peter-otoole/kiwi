@@ -23,6 +23,7 @@
 	}
 
 	h1 {
+		color: #C7254E;
 		font-family: Quicksand;
 	}
 
@@ -76,6 +77,10 @@
 	nav a {
 		display: inline-block;
 		padding: 10px;
+	}
+
+	pre {
+		font-family: monospace;
 	}
 
 </style>
@@ -135,15 +140,20 @@
     <h2>Arguments</h2>
     <dl>
       <dt>pred</dt>
-      <dd>an predicate function that takes as many
-  arguments as there are collections in <b>colls</b>.</dd>
+      <dd>an predicate function that takes as many arguments as there
+   are collections in <b>colls</b>.</dd>
       <dt>colls</dt>
-      <dd>a collection of collections. The collection
-  to draw arguments for <b>pred</b> from.</dd>
+      <dd>a collection of collections. The collection to draw arguments
+   for <b>pred</b> from.</dd>
       <dt>...</dt>
       <dd>see above.</dd>
     </dl>
     
+    <div class="xForall">
+      <h2>xForall</h2>
+
+    </div>
+
     <div class="Value">
       <h2>Value</h2>
 
@@ -154,8 +164,8 @@
     <div class="Description">
       <h2>Description</h2>
 
-      <p>Test if every ordered group of arguments from several
-collections is true for a predicate.</p>
+      <p>Test if every ordered group of arguments from several collections
+is true for a predicate.</p>
 
     </div>
 
@@ -163,18 +173,17 @@ collections is true for a predicate.</p>
       <h2>Details</h2>
 
       <p><b>xForall</b> can be used to test if every element of a
-collection is true (like the base function <b>all( )</b>)
-by simply using it with the identity function.</p>
+collection is true (like the base function <b>all( )</b>) by
+simply using it with the identity function.</p>
 
       <p><code>coll <- c(True, False, True, True)</code></p>
 
       <p><code>xForall...(xIdentity, coll)</code></p>
 
       <p>When supplied with a collection of multiple collections the
-set product of those collections is checked with the
-predicate. In order for <b>xForall</b> to return true every
-element of the set product must return true for a
-predicate.</p>
+set product of those collections is checked with the predicate.
+In order for <b>xForall</b> to return true every element of the
+set product must return true for a predicate.</p>
 
       <p><code>commutes <- (a : b) := { a + b == b + a }</code></p>
 
@@ -187,8 +196,7 @@ predicate.</p>
       <p>Each member of the set product is tested with the
 <b>commutes</b> function</p>
 
-      <p><code>list(commutes(1, 1), commutes(1, 2), commutes(2, 1),
-commutes(2, 2))</code></p>
+      <p><code>list(commutes(1, 1), commutes(1, 2), commutes(2, 1), commutes(2, 2))</code></p>
 
       <p><code>list(True, True, True, True)</code></p>
 
@@ -199,8 +207,10 @@ commutes(2, 2))</code></p>
     <div class="Corner Cases">
       <h2>Corner Cases</h2>
 
-      <p>If any collection is length zero (or no collections are
-  given), then logical(0) is returned.</p>
+      <p></p>
+
+      <p>If any collection is length zero (or no
+   collections are given), then logical(0) is returned.</p>
 
     </div>
     
@@ -242,17 +252,18 @@ xForall...(
     <h2>See also</h2>
     
 Other quantifier_functions: <code><a href='xAll.html'>xAll</a></code>,
-<code><a href='xAll.html'>xAll...</a></code>; <code><a href='xAny.html'>xAny</a></code>,
-<code><a href='xAny.html'>xAny...</a></code>; <code><a href='xExists.html'>xExists</a></code>,
-<code><a href='xExists.html'>xExists...</a></code>; <code><a href='xPoll.html'>xPoll</a></code>,
-<code><a href='xPoll.html'>xPoll...</a></code>, <code><a href='xPoll.html'>xRejectNan...</a></code>
+  <code><a href='xAll.html'>xAll...</a></code>; <code><a href='xAny.html'>xAny</a></code>,
+  <code><a href='xAny.html'>xAny...</a></code>; <code><a href='xExists.html'>xExists</a></code>,
+  <code><a href='xExists.html'>xExists...</a></code>; <code><a href='xPoll.html'>xPoll</a></code>,
+  <code><a href='xPoll.html'>xPoll...</a></code>, <code><a href='xPoll.html'>xRejectNan...</a></code>
 
     
   </div>
 </div>
       
       <footer>
-      
+      <p class="pull-right"><a href="#">Back to top</a></p>
+<p>Built by <a href="https://github.com/hadley/staticdocs">staticdocs</a>. Styled with Flatstrap.</p>
       </footer>
     </div>
   </body>

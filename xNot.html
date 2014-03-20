@@ -23,6 +23,7 @@
 	}
 
 	h1 {
+		color: #C7254E;
 		font-family: Quicksand;
 	}
 
@@ -76,6 +77,10 @@
 	nav a {
 		display: inline-block;
 		padding: 10px;
+	}
+
+	pre {
+		font-family: monospace;
 	}
 
 </style>
@@ -134,15 +139,18 @@
     <h2>Arguments</h2>
     <dl>
       <dt>pred</dt>
-      <dd>a predicate. The predicate function to return
-  a negation of.</dd>
+      <dd>a predicate. The predicate function to return a negation of.</dd>
     </dl>
     
+    <div class="xNot">
+      <h2>xNot</h2>
+
+    </div>
+
     <div class="Value">
       <h2>Value</h2>
 
-      <p>A predicate function with the same parametres as
-<code>pred</code>.</p>
+      <p>A predicate function with the same parametres as <code>pred</code>.</p>
 
     </div>
 
@@ -156,9 +164,8 @@
     <div class="Details">
       <h2>Details</h2>
 
-      <p><b>xNot</b> takes a predicate function - such as
-<b>is.integer( )</b> - and returns the negation of that
-function - <b>not.integer( )</b>.</p>
+      <p><b>xNot</b> takes a predicate function - such as <b>is.integer( )</b> -
+   and returns the negation of that function - <b>not.integer( )</b>.</p>
 
       <p><code>not.integer <- xNot(is.integer)</code></p>
 
@@ -170,12 +177,10 @@ function - <b>not.integer( )</b>.</p>
 
       <p><code>False</code></p>
 
-      <p>In general, if a function <b>fn</b> returns true
-<b>xNot(fn)</b> returns false for the same value.
-Similarily, if <b>fn</b> returns false then <b>xNot(fn)</b>
-returns true for that value. Finally (R uses three-value
-logic) if <b>fn</b> returns na for a value so does its
-negation.</p>
+      <p>In general, if a function <b>fn</b> returns true <b>xNot(fn)</b> returns false
+   for the same value. Similarily, if <b>fn</b> returns false then <b>xNot(fn)</b>
+   returns true for that value. Finally (R uses three-value logic) if <b>fn</b> returns
+   na for a value so does its negation.</p>
 
     </div>
     
@@ -196,24 +201,25 @@ NULL
     <h2>See also</h2>
     
 Other function_modifying_functions: <code><a href='xLift.html'>%and%</a></code>,
-<code><a href='xLift.html'>%or%</a></code>, <code><a href='xLift.html'>xLift</a></code>,
-<code><a href='xLift.html'>xLift...</a></code>; <code><a href='xCompose.html'>%of%</a></code>,
-<code><a href='xCompose.html'>%then%</a></code>, <code><a href='xCompose.html'>xCompose</a></code>,
-<code><a href='xCompose.html'>xCompose...</a></code>; <code><a href='xAsClosure.html'>xAsClosure</a></code>;
-<code><a href='xAsUnary.html'>xAsUnary</a></code>; <code><a href='xAsVariadic.html'>xAsVariadic</a></code>;
-<code><a href='xCapture.html'>xCapture</a></code>, <code><a href='xCapture.html'>xK</a></code>;
-<code><a href='xDelay.html'>xDelay</a></code>; <code><a href='xJuxtapose.html'>xJuxtapose</a></code>,
-<code><a href='xJuxtapose.html'>xJuxtapose...</a></code>; <code><a href='xPartial.html'>xPartial</a></code>,
-<code><a href='xPartial.html'>xPartial...</a></code>; <code><a href='xThread.html'>xThread</a></code>,
-<code><a href='xThread.html'>xThread...</a></code>; <code><a href='xVectorise.html'>xVectorise</a></code>,
-<code><a href='xVectorise.html'>xVectorize</a></code>
+  <code><a href='xLift.html'>%or%</a></code>, <code><a href='xLift.html'>xLift</a></code>,
+  <code><a href='xLift.html'>xLift...</a></code>; <code><a href='xCompose.html'>%of%</a></code>,
+  <code><a href='xCompose.html'>%then%</a></code>, <code><a href='xCompose.html'>xCompose</a></code>,
+  <code><a href='xCompose.html'>xCompose...</a></code>; <code><a href='xAsClosure.html'>xAsClosure</a></code>;
+  <code><a href='xAsUnary.html'>xAsUnary</a></code>; <code><a href='xAsVariadic.html'>xAsVariadic</a></code>;
+  <code><a href='xCapture.html'>xCapture</a></code>, <code><a href='xCapture.html'>xK</a></code>;
+  <code><a href='xDelay.html'>xDelay</a></code>; <code><a href='xJuxtapose.html'>xJuxtapose</a></code>,
+  <code><a href='xJuxtapose.html'>xJuxtapose...</a></code>; <code><a href='xPartial.html'>xPartial</a></code>,
+  <code><a href='xPartial.html'>xPartial...</a></code>; <code><a href='xThread.html'>xThread</a></code>,
+  <code><a href='xThread.html'>xThread...</a></code>; <code><a href='xVectorise.html'>xVectorise</a></code>,
+  <code><a href='xVectorise.html'>xVectorize</a></code>
 
     
   </div>
 </div>
       
       <footer>
-      
+      <p class="pull-right"><a href="#">Back to top</a></p>
+<p>Built by <a href="https://github.com/hadley/staticdocs">staticdocs</a>. Styled with Flatstrap.</p>
       </footer>
     </div>
   </body>

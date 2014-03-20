@@ -23,6 +23,7 @@
 	}
 
 	h1 {
+		color: #C7254E;
 		font-family: Quicksand;
 	}
 
@@ -76,6 +77,10 @@
 	nav a {
 		display: inline-block;
 		padding: 10px;
+	}
+
+	pre {
+		font-family: monospace;
 	}
 
 </style>
@@ -134,10 +139,14 @@
     <h2>Arguments</h2>
     <dl>
       <dt>fn</dt>
-      <dd>an function. The function to have its arity
-  checked.</dd>
+      <dd>an function. The function to have its arity checked.</dd>
     </dl>
     
+    <div class="xArityOf">
+      <h2>xArityOf</h2>
+
+    </div>
+
     <div class="Value">
       <h2>Value</h2>
 
@@ -155,20 +164,20 @@
     <div class="Details">
       <h2>Details</h2>
 
-      <p><b>xArityOf</b> returns the arity of a function - the
-number of arguments that can be passed to the function. R
-functions can be nullary (0-arguments), have infinitely
-many arguments (variadic functions), or have a fixed number
-of arguments (non-variadic functions).</p>
+      <p><b>xArityOf</b> returns the arity of a function - the number of
+   arguments that can be passed to the function. R functions can be nullary
+   (0-arguments), have infinitely many arguments (variadic functions), or
+   have a fixed number of arguments (non-variadic functions).</p>
 
     </div>
 
     <div class="Corner Cases">
       <h2>Corner Cases</h2>
 
-      <p>If <b>fn</b> has an ellipsis (...) parametre then
-  <code>+Inf</code> is returned, as the function can accept an
-  infinite number of arguments.</p>
+      <p></p>
+
+      <p>If <b>fn</b> has an ellipsis (...) parametre then <code>+Inf</code> is returned, as the
+   function can accept an infinite number of arguments.</p>
 
     </div>
     
@@ -225,16 +234,17 @@ safeMap &lt;- function (fn, coll) {
     <h2>See also</h2>
     
 Other parametre_functions: <code><a href='xAsUnary.html'>xAsUnary</a></code>;
-<code><a href='xAsVariadic.html'>xAsVariadic</a></code>; <code><a href='xFormalsOf.html'>xFormalsOf</a></code>;
-<code><a href='xIsVariadic.html'>xIsVariadic</a></code>; <code><a href='xParamsOf.html'>xParamsOf</a></code>;
-<code><a href='xPartial.html'>xPartial</a></code>, <code><a href='xPartial.html'>xPartial...</a></code>
+  <code><a href='xAsVariadic.html'>xAsVariadic</a></code>; <code><a href='xFormalsOf.html'>xFormalsOf</a></code>;
+  <code><a href='xIsVariadic.html'>xIsVariadic</a></code>; <code><a href='xParamsOf.html'>xParamsOf</a></code>;
+  <code><a href='xPartial.html'>xPartial</a></code>, <code><a href='xPartial.html'>xPartial...</a></code>
 
     
   </div>
 </div>
       
       <footer>
-      
+      <p class="pull-right"><a href="#">Back to top</a></p>
+<p>Built by <a href="https://github.com/hadley/staticdocs">staticdocs</a>. Styled with Flatstrap.</p>
       </footer>
     </div>
   </body>

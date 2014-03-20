@@ -23,6 +23,7 @@
 	}
 
 	h1 {
+		color: #C7254E;
 		font-family: Quicksand;
 	}
 
@@ -76,6 +77,10 @@
 	nav a {
 		display: inline-block;
 		padding: 10px;
+	}
+
+	pre {
+		font-family: monospace;
 	}
 
 </style>
@@ -136,15 +141,19 @@
     <dl>
       <dt>fn</dt>
       <dd>a binary function. A function that takes a
-  value in <b>coll</b> as its left argument and a an index
-  as its right argument.</dd>
+   value in <b>coll</b> as its left argument and a
+   an index as its right argument.</dd>
       <dt>coll</dt>
-      <dd>a collection. The collection to apply a
-  function to.</dd>
+      <dd>a collection. The collection to apply a function to.</dd>
       <dt>...</dt>
       <dd>see above.</dd>
     </dl>
     
+    <div class="xMapIndexed">
+      <h2>xMapIndexed</h2>
+
+    </div>
+
     <div class="Value">
       <h2>Value</h2>
 
@@ -155,13 +164,15 @@
     <div class="Description">
       <h2>Description</h2>
 
-      <p>Apply a binary function to each element of a collection and
-its index.</p>
+      <p>Apply a binary function to each element of a
+collection and its index.</p>
 
     </div>
 
     <div class="Corner Cases">
       <h2>Corner Cases</h2>
+
+      <p></p>
 
       <p>Returns the empty list is <b>coll</b> is length-zero.</p>
 
@@ -225,21 +236,22 @@ $x_()
     <h2>See also</h2>
     
 Other function_application_functions: <code><a href='xApply.html'>xApply</a></code>,
-<code><a href='xApply.html'>xApply...</a></code>; <code><a href='xAsUnary.html'>xAsUnary</a></code>;
-<code><a href='xAsVariadic.html'>xAsVariadic</a></code>; <code><a href='xDeepMap.html'>xDeepMap</a></code>,
-<code><a href='xDeepMap.html'>xDeepMap...</a></code>; <code><a href='xFlatMap.html'>xFlatMap</a></code>,
-<code><a href='xFlatMap.html'>xFlatMap...</a></code>; <code><a href='xMapply.html'>xMapply</a></code>,
-<code><a href='xMapply.html'>xMapply...</a></code>; <code><a href='xMap.html'>xMap</a></code>,
-<code><a href='xMap.html'>xMap...</a></code>; <code><a href='xThread.html'>xThread</a></code>,
-<code><a href='xThread.html'>xThread...</a></code>; <code><a href='xVectorise.html'>xVectorise</a></code>,
-<code><a href='xVectorise.html'>xVectorize</a></code>
+  <code><a href='xApply.html'>xApply...</a></code>; <code><a href='xAsUnary.html'>xAsUnary</a></code>;
+  <code><a href='xAsVariadic.html'>xAsVariadic</a></code>; <code><a href='xDeepMap.html'>xDeepMap</a></code>,
+  <code><a href='xDeepMap.html'>xDeepMap...</a></code>; <code><a href='xFlatMap.html'>xFlatMap</a></code>,
+  <code><a href='xFlatMap.html'>xFlatMap...</a></code>; <code><a href='xMapply.html'>xMapply</a></code>,
+  <code><a href='xMapply.html'>xMapply...</a></code>; <code><a href='xMap.html'>xMap</a></code>,
+  <code><a href='xMap.html'>xMap...</a></code>; <code><a href='xThread.html'>xThread</a></code>,
+  <code><a href='xThread.html'>xThread...</a></code>; <code><a href='xVectorise.html'>xVectorise</a></code>,
+  <code><a href='xVectorise.html'>xVectorize</a></code>
 
     
   </div>
 </div>
       
       <footer>
-      
+      <p class="pull-right"><a href="#">Back to top</a></p>
+<p>Built by <a href="https://github.com/hadley/staticdocs">staticdocs</a>. Styled with Flatstrap.</p>
       </footer>
     </div>
   </body>

@@ -23,6 +23,7 @@
 	}
 
 	h1 {
+		color: #C7254E;
 		font-family: Quicksand;
 	}
 
@@ -78,6 +79,10 @@
 		padding: 10px;
 	}
 
+	pre {
+		font-family: monospace;
+	}
+
 </style>
   </head>
 
@@ -129,8 +134,22 @@
 <div class="row">
   <div class="span8">
     <h2>Usage</h2>
-    <pre><div>xList(...)</div></pre>
+    <pre><div>xList</div></pre>
         
+    <div class="xList[ ]">
+      <h2>xList[ ]</h2>
+
+    </div>
+
+    <div class="Format">
+      <h2>Format</h2>
+
+      <p><pre>function (...)  
+ - attr(*, "class")= chr "list_builder"
+</pre></p>
+
+    </div>
+
     <div class="Description">
       <h2>Description</h2>
 
@@ -141,35 +160,31 @@
     <div class="Details">
       <h2>Details</h2>
 
-      <p><b>xList</b> allows for shorthand construction of lists
-using a form of set-builder notation.  The notation
-typically looks like</p>
+      <p><b>xList</b> allows for shorthand construction of lists using a form of set-builder notation.
+   The notation typically looks like</p>
 
       <p><code>S = {2.x | x ε 1..100, x^2 > 3}</code></p>
 
-      <p>which reads "S is the set of numbers '2x' from the numbers
-1...100, where x^2 is larger than three".  In general the
-syntax is of the form</p>
+      <p>which reads "S is the set of numbers '2x' from the
+   numbers 1...100, where x^2 is larger than three".
+   In general the syntax is of the form</p>
 
-      <p><code>S = {output expression, variable ε set, predicate
-expression}</code></p>
+      <p><code>S = {output expression, variable ε set, predicate expression}</code></p>
 
       <p>Arrow's syntax is similar</p>
 
       <p><code>S <- xList[ 2*x, x <- 1:10 x^2 > 3 ]</code></p>
 
-      <p><code>S <- xList[output expression, variable <- set,
-predicate expression]</code></p>
+      <p><code>S <- xList[output expression, variable <- set, predicate expression]</code></p>
 
-      <p>Collection comprehensions are a shorthand for several
-operations; taking the <b>set product</b> of several
-collections, <b>selecting</b> them based on a predicate,
-and <b>mapping</b> a function over each result.</p>
+      <p>Collection comprehensions are a shorthand for several operations; taking
+   the <b>set product</b> of several collections, <b>selecting</b> them based
+   on a predicate, and <b>mapping</b> a function over each result.</p>
 
       <p><b>1 The output expression</b></p>
 
-      <p>The output expression corresponds to the map operation
-mentioned above.  The for comprehension</p>
+      <p>The output expression corresponds to the map operation mentioned above.
+   The for comprehension</p>
 
       <p><code>xList[2*x, x <- 1:10]</code></p>
 
@@ -180,7 +195,7 @@ mentioned above.  The for comprehension</p>
       <p><b>2 Variable bindings</b></p>
 
       <p>At least one variable must be bound for a non-empty list
-comprehension. Multiple variables may also be bound.</p>
+   comprehension. Multiple variables may also be bound.</p>
 
       <p><code>xList[list(x, y), x <- 1:3, y <- 1:3]</code></p>
 
@@ -190,15 +205,14 @@ comprehension. Multiple variables may also be bound.</p>
 
       <p><b>3 The predicate expression (optional)</b></p>
 
-      <p>If the final expression given to a comprehension is not a
-binding expression it is treated as a predicate for
-selecting particular values. This is optional. If it isn't
-included no elements are filtered out.</p>
+      <p>If the final expression given to a comprehension is not a binding
+   expression it is treated as a predicate for selecting particular
+   values. This is optional. If it isn't included no elements are filtered out.</p>
 
       <p><code>xList[c(a, b), a <- 1:3, b <- 1:3, a + b > 2]</code></p>
 
-      <p>In the above pairs of a, b such that their sum is larger
-than two are returned.</p>
+      <p>In the above pairs of a, b such that their sum is larger than
+   two are returned.</p>
 
     </div>
     
@@ -277,7 +291,7 @@ xList[paste(first_name, middleinit, sirname), middleinit &lt;- c(&#39;K&#39;, &#
       <li>xList</li>
     </ul>
     <ul>
-      
+      <li>datasets</li>
     </ul> -->
 
     
@@ -285,7 +299,8 @@ xList[paste(first_name, middleinit, sirname), middleinit &lt;- c(&#39;K&#39;, &#
 </div>
       
       <footer>
-      
+      <p class="pull-right"><a href="#">Back to top</a></p>
+<p>Built by <a href="https://github.com/hadley/staticdocs">staticdocs</a>. Styled with Flatstrap.</p>
       </footer>
     </div>
   </body>

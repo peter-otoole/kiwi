@@ -23,6 +23,7 @@
 	}
 
 	h1 {
+		color: #C7254E;
 		font-family: Quicksand;
 	}
 
@@ -76,6 +77,10 @@
 	nav a {
 		display: inline-block;
 		padding: 10px;
+	}
+
+	pre {
+		font-family: monospace;
 	}
 
 </style>
@@ -135,46 +140,48 @@
     <h2>Arguments</h2>
     <dl>
       <dt>num</dt>
-      <dd>a nonnegative whole number. The number of
-  elements to choose from <b>coll</b>.</dd>
+      <dd>a nonnegative whole number. The number of elements to choose
+   from <b>coll</b>.</dd>
       <dt>coll</dt>
-      <dd>a collection. The collection to draw elements
-  from.</dd>
+      <dd>a collection. The collection to draw elements from.</dd>
       <dt>...</dt>
       <dd>see above.</dd>
     </dl>
     
+    <div class="xChoose">
+      <h2>xChoose</h2>
+
+    </div>
+
     <div class="Value">
       <h2>Value</h2>
 
-      <p>A list of lists, with each list containing <b>num</b>
-elements.</p>
+      <p>A list of lists, with each list containing <b>num</b> elements.</p>
 
     </div>
 
     <div class="Description">
       <h2>Description</h2>
 
-      <p>Enumerate all ways of choosing several elements from a
-collection.</p>
+      <p>Enumerate all ways of choosing several elements from a collection.</p>
 
     </div>
 
     <div class="Details">
       <h2>Details</h2>
 
-      <p><b>xChoose</b> enumerates all ways of choosing <b>num</b>
-distinct elements from a larger collection, where order
-doesn't matter.</p>
+      <p><b>xChoose</b> enumerates all ways of choosing <b>num</b> distinct
+elements from a larger collection, where order doesn't matter.</p>
 
-      <p>The number of ways of choosing <b>num</b> elements from a
-collection is given by the base R function
-<code>choose(num, length(coll))</code>.</p>
+      <p>The number of ways of choosing <b>num</b> elements from a collection
+is given by the base R function <code>choose(num, length(coll))</code>.</p>
 
     </div>
 
     <div class="Corner Cases">
       <h2>Corner Cases</h2>
+
+      <p></p>
 
       <p>Returns the empty list if <b>num</b> is zero.</p>
 
@@ -197,17 +204,18 @@ NULL
     <h2>See also</h2>
     
 Other combinatoric_functions: <code><a href='xCycle.html'>xCycle</a></code>,
-<code><a href='xCycle.html'>xCycle...</a></code>; <code><a href='xPermute.html'>xPermute</a></code>,
-<code><a href='xPermute.html'>xPermute...</a></code>; <code><a href='xPowerSetOf.html'>xPowerSetOf</a></code>,
-<code><a href='xPowerSetOf.html'>xPowerSetOf...</a></code>; <code><a href='xProdSetOf.html'>xProdSetOf</a></code>,
-<code><a href='xProdSetOf.html'>xProdSetOf...</a></code>
+  <code><a href='xCycle.html'>xCycle...</a></code>; <code><a href='xPermute.html'>xPermute</a></code>,
+  <code><a href='xPermute.html'>xPermute...</a></code>; <code><a href='xPowerSetOf.html'>xPowerSetOf</a></code>,
+  <code><a href='xPowerSetOf.html'>xPowerSetOf...</a></code>; <code><a href='xProdSetOf.html'>xProdSetOf</a></code>,
+  <code><a href='xProdSetOf.html'>xProdSetOf...</a></code>
 
     
   </div>
 </div>
       
       <footer>
-      
+      <p class="pull-right"><a href="#">Back to top</a></p>
+<p>Built by <a href="https://github.com/hadley/staticdocs">staticdocs</a>. Styled with Flatstrap.</p>
       </footer>
     </div>
   </body>

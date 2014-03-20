@@ -23,6 +23,7 @@
 	}
 
 	h1 {
+		color: #C7254E;
 		font-family: Quicksand;
 	}
 
@@ -76,6 +77,10 @@
 	nav a {
 		display: inline-block;
 		padding: 10px;
+	}
+
+	pre {
+		font-family: monospace;
 	}
 
 </style>
@@ -135,12 +140,17 @@
     <h2>Arguments</h2>
     <dl>
       <dt>fns</dt>
-      <dd>a collections of functions. The functions to
-  call with a set of arguments.</dd>
+      <dd>a collections of functions. The functions
+   to call with a set of arguments.</dd>
       <dt>...</dt>
       <dd>see above.</dd>
     </dl>
     
+    <div class="xJuxtapose">
+      <h2>xJuxtapose</h2>
+
+    </div>
+
     <div class="Value">
       <h2>Value</h2>
 
@@ -151,24 +161,20 @@
     <div class="Description">
       <h2>Description</h2>
 
-      <p>Create a function that applies an argument to a list of
-underlying functions.</p>
+      <p>Create a function that applies an argument to a list of underlying functions.</p>
 
     </div>
 
     <div class="Details">
       <h2>Details</h2>
 
-      <p><b>xJuxtapose</b> is a method of applying one value to
-several functions simultaneously. The function returned by
-<b>xJuxtapose</b> returns a list - on element for each
-input function to <b>xJuxtapose</b>.  Each element of this
-list contains the result of calling an element of
-<b>fns</b> with the arguments supplied to
-<b>xJuxtapose</b>'s return function.</p>
+      <p><b>xJuxtapose</b> is a method of applying one value to several functions
+   simultaneously. The function returned by <b>xJuxtapose</b> returns
+   a list - on element for each input function to <b>xJuxtapose</b>.
+   Each element of this list contains the result of calling an element of
+   <b>fns</b> with the arguments supplied to <b>xJuxtapose</b>'s return function.</p>
 
-      <p>A function to summarise a data set can be implemented with
-<b>xJuxtapose</b>:</p>
+      <p>A function to summarise a data set can be implemented with <b>xJuxtapose</b>:</p>
 
       <p><code>summarise <- xJuxtapose...(min, median, max)</code></p>
 
@@ -176,13 +182,15 @@ list contains the result of calling an element of
 
       <p><code>list(1, 2.5, 4)</code></p>
 
-      <p>Each function passed to <b>xJuxtapose</b> is invoked with
-the data set, and the results are collected in a list.</p>
+      <p>Each function passed to <b>xJuxtapose</b> is invoked with the data set,
+   and the results are collected in a list.</p>
 
     </div>
 
     <div class="Corner Cases">
       <h2>Corner Cases</h2>
+
+      <p></p>
 
       <p>If no functions are provided the empty list is returned.</p>
 
@@ -320,29 +328,30 @@ x_(nums) $ x_Map(xJuxtapose...(max, mean, min))
     <h2>See also</h2>
     
 Other function_combining_functions: <code><a href='xLift.html'>%and%</a></code>,
-<code><a href='xLift.html'>%or%</a></code>, <code><a href='xLift.html'>xLift</a></code>,
-<code><a href='xLift.html'>xLift...</a></code>; <code><a href='xCompose.html'>%of%</a></code>,
-<code><a href='xCompose.html'>%then%</a></code>, <code><a href='xCompose.html'>xCompose</a></code>,
-<code><a href='xCompose.html'>xCompose...</a></code>
+  <code><a href='xLift.html'>%or%</a></code>, <code><a href='xLift.html'>xLift</a></code>,
+  <code><a href='xLift.html'>xLift...</a></code>; <code><a href='xCompose.html'>%of%</a></code>,
+  <code><a href='xCompose.html'>%then%</a></code>, <code><a href='xCompose.html'>xCompose</a></code>,
+  <code><a href='xCompose.html'>xCompose...</a></code>
 
 Other function_modifying_functions: <code><a href='xLift.html'>%and%</a></code>,
-<code><a href='xLift.html'>%or%</a></code>, <code><a href='xLift.html'>xLift</a></code>,
-<code><a href='xLift.html'>xLift...</a></code>; <code><a href='xCompose.html'>%of%</a></code>,
-<code><a href='xCompose.html'>%then%</a></code>, <code><a href='xCompose.html'>xCompose</a></code>,
-<code><a href='xCompose.html'>xCompose...</a></code>; <code><a href='xAsClosure.html'>xAsClosure</a></code>;
-<code><a href='xAsUnary.html'>xAsUnary</a></code>; <code><a href='xAsVariadic.html'>xAsVariadic</a></code>;
-<code><a href='xCapture.html'>xCapture</a></code>, <code><a href='xCapture.html'>xK</a></code>;
-<code><a href='xDelay.html'>xDelay</a></code>; <code><a href='xNot.html'>xNot</a></code>;
-<code><a href='xPartial.html'>xPartial</a></code>, <code><a href='xPartial.html'>xPartial...</a></code>;
-<code><a href='xThread.html'>xThread</a></code>, <code><a href='xThread.html'>xThread...</a></code>;
-<code><a href='xVectorise.html'>xVectorise</a></code>, <code><a href='xVectorise.html'>xVectorize</a></code>
+  <code><a href='xLift.html'>%or%</a></code>, <code><a href='xLift.html'>xLift</a></code>,
+  <code><a href='xLift.html'>xLift...</a></code>; <code><a href='xCompose.html'>%of%</a></code>,
+  <code><a href='xCompose.html'>%then%</a></code>, <code><a href='xCompose.html'>xCompose</a></code>,
+  <code><a href='xCompose.html'>xCompose...</a></code>; <code><a href='xAsClosure.html'>xAsClosure</a></code>;
+  <code><a href='xAsUnary.html'>xAsUnary</a></code>; <code><a href='xAsVariadic.html'>xAsVariadic</a></code>;
+  <code><a href='xCapture.html'>xCapture</a></code>, <code><a href='xCapture.html'>xK</a></code>;
+  <code><a href='xDelay.html'>xDelay</a></code>; <code><a href='xNot.html'>xNot</a></code>;
+  <code><a href='xPartial.html'>xPartial</a></code>, <code><a href='xPartial.html'>xPartial...</a></code>;
+  <code><a href='xThread.html'>xThread</a></code>, <code><a href='xThread.html'>xThread...</a></code>;
+  <code><a href='xVectorise.html'>xVectorise</a></code>, <code><a href='xVectorise.html'>xVectorize</a></code>
 
     
   </div>
 </div>
       
       <footer>
-      
+      <p class="pull-right"><a href="#">Back to top</a></p>
+<p>Built by <a href="https://github.com/hadley/staticdocs">staticdocs</a>. Styled with Flatstrap.</p>
       </footer>
     </div>
   </body>

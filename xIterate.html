@@ -23,6 +23,7 @@
 	}
 
 	h1 {
+		color: #C7254E;
 		font-family: Quicksand;
 	}
 
@@ -76,6 +77,10 @@
 	nav a {
 		display: inline-block;
 		padding: 10px;
+	}
+
+	pre {
+		font-family: monospace;
 	}
 
 </style>
@@ -134,18 +139,20 @@
     <h2>Arguments</h2>
     <dl>
       <dt>fn</dt>
-      <dd>a function. The function to repeatedly apply to
-  an initial value.</dd>
+      <dd>a function. The function to repeatedly apply to an initial value.</dd>
       <dt>val</dt>
-      <dd>an arbitrary value. The initial value to
-  iteratively modify.</dd>
+      <dd>an arbitrary value. The initial value to iteratively modify.</dd>
     </dl>
     
+    <div class="xIterate">
+      <h2>xIterate</h2>
+
+    </div>
+
     <div class="Value">
       <h2>Value</h2>
 
-      <p>The result of successively applying <b>fn</b> to
-<b>val</b>.</p>
+      <p>The result of successively applying <b>fn</b> to <b>val</b>.</p>
 
     </div>
 
@@ -159,35 +166,33 @@
     <div class="Details">
       <h2>Details</h2>
 
-      <p><b>xIterate</b> repeatedly calls a function on an initial
-value until it is explicitely halted using <b>Return(
-)</b>. It is similar for a while loop, with the added benefits
-of an explicit return value and easier debugging.</p>
+      <p><b>xIterate</b> repeatedly calls a function on an initial value until
+it is explicitely halted using <b>Return( )</b>. It is similar
+for a while loop, with the added benefits of an explicit return value
+and easier debugging.</p>
 
-      <p>The only way to end <b>xIterate</b> is to call
-<b>Return( )</b>. A trivial example of ending an
-<b>xIterate</b> call is given below.</p>
+      <p>The only way to end <b>xIterate</b> is to call <b>Return( )</b>. A
+trivial example of ending an <b>xIterate</b> call is given below.</p>
 
-      <p><code>xIterate(num := if (num >= 10) Return(num) else num +
-1, 0)</code></p>
+      <p><code>xIterate(num := if (num >= 10) Return(num) else num + 1, 0)</code></p>
 
       <p><code>10</code></p>
 
-      <p>The above call iterates from zero to ten, before returning
-the last number it encounters - ten. More useful examples
-are given below, but the above example demonstrates the
-basic usage of <b>xIterate</b>.</p>
+      <p>The above call iterates from zero to ten, before returning the
+last number it encounters - ten. More useful examples are given below,
+but the above example demonstrates the basic usage of <b>xIterate</b>.</p>
 
     </div>
 
     <div class="Corner Cases">
       <h2>Corner Cases</h2>
 
-      <p>Length-zero values of <b>val</b> are treated as normal
-  values, since <b>val</b> accepts an arbitrary value. Like
-  while loops <b>xIterate</b> is potentially
-  non-terminating, and <b>Return( )</b> must be called to
-  terminate the function.</p>
+      <p></p>
+
+      <p>Length-zero values of <b>val</b> are treated as normal values,
+   since <b>val</b> accepts an arbitrary value. Like while loops
+   <b>xIterate</b> is potentially non-terminating, and <b>Return( )</b>
+   must be called to terminate the function.</p>
 
     </div>
     
@@ -343,21 +348,22 @@ xIterate(
     <h2>See also</h2>
     
 Other short_circuiting_functions: <code><a href='xFoldr.html'>xFoldr</a></code>,
-<code><a href='xFoldr.html'>xFoldr...</a></code>; <code><a href='xFold.html'>xFold</a></code>,
-<code><a href='xFold.html'>xFold...</a></code>, <code><a href='xFold.html'>xFoldl</a></code>,
-<code><a href='xFold.html'>xFoldl...</a></code>; <code><a href='xReducer.html'>xReducer</a></code>,
-<code><a href='xReducer.html'>xReducer...</a></code>; <code><a href='xReduce.html'>xReduce</a></code>,
-<code><a href='xReduce.html'>xReduce...</a></code>, <code><a href='xReduce.html'>xReducel</a></code>,
-<code><a href='xReduce.html'>xReducel...</a></code>; <code><a href='xScan.html'>xScan</a></code>,
-<code><a href='xScan.html'>xScan...</a></code>, <code><a href='xScan.html'>xScanl</a></code>,
-<code><a href='xScan.html'>xScanl...</a></code>
+  <code><a href='xFoldr.html'>xFoldr...</a></code>; <code><a href='xFold.html'>xFold</a></code>,
+  <code><a href='xFold.html'>xFold...</a></code>, <code><a href='xFold.html'>xFoldl</a></code>,
+  <code><a href='xFold.html'>xFoldl...</a></code>; <code><a href='xReducer.html'>xReducer</a></code>,
+  <code><a href='xReducer.html'>xReducer...</a></code>; <code><a href='xReduce.html'>xReduce</a></code>,
+  <code><a href='xReduce.html'>xReduce...</a></code>, <code><a href='xReduce.html'>xReducel</a></code>,
+  <code><a href='xReduce.html'>xReducel...</a></code>; <code><a href='xScan.html'>xScan</a></code>,
+  <code><a href='xScan.html'>xScan...</a></code>, <code><a href='xScan.html'>xScanl</a></code>,
+  <code><a href='xScan.html'>xScanl...</a></code>
 
     
   </div>
 </div>
       
       <footer>
-      
+      <p class="pull-right"><a href="#">Back to top</a></p>
+<p>Built by <a href="https://github.com/hadley/staticdocs">staticdocs</a>. Styled with Flatstrap.</p>
       </footer>
     </div>
   </body>

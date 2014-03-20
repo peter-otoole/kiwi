@@ -23,6 +23,7 @@
 	}
 
 	h1 {
+		color: #C7254E;
 		font-family: Quicksand;
 	}
 
@@ -76,6 +77,10 @@
 	nav a {
 		display: inline-block;
 		padding: 10px;
+	}
+
+	pre {
+		font-family: monospace;
 	}
 
 </style>
@@ -135,14 +140,19 @@
     <dl>
       <dt>fn</dt>
       <dd>an arbitrary function. The function to be
-  converted to a function that takes a single collection.</dd>
+   converted to a function that takes a single collection.</dd>
     </dl>
     
+    <div class="xAsUnary">
+      <h2>xAsUnary</h2>
+
+    </div>
+
     <div class="Value">
       <h2>Value</h2>
 
       <p>A unary function of <b>coll</b>, that applies its arguments
-to its underlying function.</p>
+   to its underlying function.</p>
 
     </div>
 
@@ -156,8 +166,8 @@ to its underlying function.</p>
     <div class="Details">
       <h2>Details</h2>
 
-      <p><b>xAsUnary</b> takes a function and returns a function
-that has one argument. The first element of the argument is
+      <p><b>xAsUnary</b> takes a function and returns a function that
+has one argument. The first element of the argument is
 passed to the first parametre of the underlying function,
 the second element to the second parametre, and so on.</p>
 
@@ -204,39 +214,40 @@ xSelect...(
     <h2>See also</h2>
     
 Other function_application_functions: <code><a href='xApply.html'>xApply</a></code>,
-<code><a href='xApply.html'>xApply...</a></code>; <code><a href='xAsVariadic.html'>xAsVariadic</a></code>;
-<code><a href='xDeepMap.html'>xDeepMap</a></code>, <code><a href='xDeepMap.html'>xDeepMap...</a></code>;
-<code><a href='xFlatMap.html'>xFlatMap</a></code>, <code><a href='xFlatMap.html'>xFlatMap...</a></code>;
-<code><a href='xMapIndexed.html'>xMapIndexed</a></code>, <code><a href='xMapIndexed.html'>xMapIndexed...</a></code>;
-<code><a href='xMapply.html'>xMapply</a></code>, <code><a href='xMapply.html'>xMapply...</a></code>;
-<code><a href='xMap.html'>xMap</a></code>, <code><a href='xMap.html'>xMap...</a></code>;
-<code><a href='xThread.html'>xThread</a></code>, <code><a href='xThread.html'>xThread...</a></code>;
-<code><a href='xVectorise.html'>xVectorise</a></code>, <code><a href='xVectorise.html'>xVectorize</a></code>
+  <code><a href='xApply.html'>xApply...</a></code>; <code><a href='xAsVariadic.html'>xAsVariadic</a></code>;
+  <code><a href='xDeepMap.html'>xDeepMap</a></code>, <code><a href='xDeepMap.html'>xDeepMap...</a></code>;
+  <code><a href='xFlatMap.html'>xFlatMap</a></code>, <code><a href='xFlatMap.html'>xFlatMap...</a></code>;
+  <code><a href='xMapIndexed.html'>xMapIndexed</a></code>, <code><a href='xMapIndexed.html'>xMapIndexed...</a></code>;
+  <code><a href='xMapply.html'>xMapply</a></code>, <code><a href='xMapply.html'>xMapply...</a></code>;
+  <code><a href='xMap.html'>xMap</a></code>, <code><a href='xMap.html'>xMap...</a></code>;
+  <code><a href='xThread.html'>xThread</a></code>, <code><a href='xThread.html'>xThread...</a></code>;
+  <code><a href='xVectorise.html'>xVectorise</a></code>, <code><a href='xVectorise.html'>xVectorize</a></code>
 
 Other function_modifying_functions: <code><a href='xLift.html'>%and%</a></code>,
-<code><a href='xLift.html'>%or%</a></code>, <code><a href='xLift.html'>xLift</a></code>,
-<code><a href='xLift.html'>xLift...</a></code>; <code><a href='xCompose.html'>%of%</a></code>,
-<code><a href='xCompose.html'>%then%</a></code>, <code><a href='xCompose.html'>xCompose</a></code>,
-<code><a href='xCompose.html'>xCompose...</a></code>; <code><a href='xAsClosure.html'>xAsClosure</a></code>;
-<code><a href='xAsVariadic.html'>xAsVariadic</a></code>; <code><a href='xCapture.html'>xCapture</a></code>,
-<code><a href='xCapture.html'>xK</a></code>; <code><a href='xDelay.html'>xDelay</a></code>;
-<code><a href='xJuxtapose.html'>xJuxtapose</a></code>, <code><a href='xJuxtapose.html'>xJuxtapose...</a></code>;
-<code><a href='xNot.html'>xNot</a></code>; <code><a href='xPartial.html'>xPartial</a></code>,
-<code><a href='xPartial.html'>xPartial...</a></code>; <code><a href='xThread.html'>xThread</a></code>,
-<code><a href='xThread.html'>xThread...</a></code>; <code><a href='xVectorise.html'>xVectorise</a></code>,
-<code><a href='xVectorise.html'>xVectorize</a></code>
+  <code><a href='xLift.html'>%or%</a></code>, <code><a href='xLift.html'>xLift</a></code>,
+  <code><a href='xLift.html'>xLift...</a></code>; <code><a href='xCompose.html'>%of%</a></code>,
+  <code><a href='xCompose.html'>%then%</a></code>, <code><a href='xCompose.html'>xCompose</a></code>,
+  <code><a href='xCompose.html'>xCompose...</a></code>; <code><a href='xAsClosure.html'>xAsClosure</a></code>;
+  <code><a href='xAsVariadic.html'>xAsVariadic</a></code>; <code><a href='xCapture.html'>xCapture</a></code>,
+  <code><a href='xCapture.html'>xK</a></code>; <code><a href='xDelay.html'>xDelay</a></code>;
+  <code><a href='xJuxtapose.html'>xJuxtapose</a></code>, <code><a href='xJuxtapose.html'>xJuxtapose...</a></code>;
+  <code><a href='xNot.html'>xNot</a></code>; <code><a href='xPartial.html'>xPartial</a></code>,
+  <code><a href='xPartial.html'>xPartial...</a></code>; <code><a href='xThread.html'>xThread</a></code>,
+  <code><a href='xThread.html'>xThread...</a></code>; <code><a href='xVectorise.html'>xVectorise</a></code>,
+  <code><a href='xVectorise.html'>xVectorize</a></code>
 
 Other parametre_functions: <code><a href='xArityOf.html'>xArityOf</a></code>;
-<code><a href='xAsVariadic.html'>xAsVariadic</a></code>; <code><a href='xFormalsOf.html'>xFormalsOf</a></code>;
-<code><a href='xIsVariadic.html'>xIsVariadic</a></code>; <code><a href='xParamsOf.html'>xParamsOf</a></code>;
-<code><a href='xPartial.html'>xPartial</a></code>, <code><a href='xPartial.html'>xPartial...</a></code>
+  <code><a href='xAsVariadic.html'>xAsVariadic</a></code>; <code><a href='xFormalsOf.html'>xFormalsOf</a></code>;
+  <code><a href='xIsVariadic.html'>xIsVariadic</a></code>; <code><a href='xParamsOf.html'>xParamsOf</a></code>;
+  <code><a href='xPartial.html'>xPartial</a></code>, <code><a href='xPartial.html'>xPartial...</a></code>
 
     
   </div>
 </div>
       
       <footer>
-      
+      <p class="pull-right"><a href="#">Back to top</a></p>
+<p>Built by <a href="https://github.com/hadley/staticdocs">staticdocs</a>. Styled with Flatstrap.</p>
       </footer>
     </div>
   </body>

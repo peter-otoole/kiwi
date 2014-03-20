@@ -23,6 +23,7 @@
 	}
 
 	h1 {
+		color: #C7254E;
 		font-family: Quicksand;
 	}
 
@@ -76,6 +77,10 @@
 	nav a {
 		display: inline-block;
 		padding: 10px;
+	}
+
+	pre {
+		font-family: monospace;
 	}
 
 </style>
@@ -134,13 +139,18 @@
     <h2>Arguments</h2>
     <dl>
       <dt>fn</dt>
-      <dd>an arbitrary function. The function to limit
-  the number of times it can be called.</dd>
+      <dd>an arbitrary function. The function to
+   limit the number of times it can be called.</dd>
       <dt>num</dt>
-      <dd>a nonnegative whole number. The number of
-  times to allow the function to be called.</dd>
+      <dd>a nonnegative whole number. The number
+   of times to allow the function to be called.</dd>
     </dl>
     
+    <div class="xLimit">
+      <h2>xLimit</h2>
+
+    </div>
+
     <div class="Value">
       <h2>Value</h2>
 
@@ -151,31 +161,30 @@
     <div class="Description">
       <h2>Description</h2>
 
-      <p>Create a function that can call its underlying function a
-limited number of times.</p>
+      <p>Create a function that can call its underlying
+function a limited number of times.</p>
 
     </div>
 
     <div class="Details">
       <h2>Details</h2>
 
-      <p><b>xLimit</b> limits the number of times a function can be
-called. It is primarily used for functions that makes
-request to online services with a rate limit.
-<b>xLimit</b> makes it easy to respect a website's rate
-limits without adding a lot of boilerplate to your code.</p>
+      <p><b>xLimit</b> limits the number of times a function
+   can be called. It is primarily used for functions that
+   makes request to online services with a rate limit.
+   <b>xLimit</b> makes it easy to respect a website's
+   rate limits without adding a lot of boilerplate to your
+   code.</p>
 
       <p><code>require(RCurl)</code></p>
 
       <p><code>url <- "http://randomword.setgetgo.com/get.php"</code></p>
 
-      <p><code>random_word <- xLimit(function ()
-toString(httpGET(url)), 3)</code></p>
+      <p><code>random_word <- xLimit(function () toString(httpGET(url)), 3)</code></p>
 
       <p><code>xMap(function (ith) random_word(), 1:3)</code></p>
 
-      <p><code>list("mashy\r\n", "iridectomy\r\n",
-"cystopyelitis\r\n")</code></p>
+      <p><code>list("mashy\r\n", "iridectomy\r\n", "cystopyelitis\r\n")</code></p>
 
     </div>
     
@@ -193,14 +202,15 @@ toString(httpGET(url)), 3)</code></p>
     <h2>See also</h2>
     
 Other time_functions: <code><a href='xDelay.html'>xDelay</a></code>;
-<code><a href='xStopwatch.html'>xStopwatch</a></code>
+  <code><a href='xStopwatch.html'>xStopwatch</a></code>
 
     
   </div>
 </div>
       
       <footer>
-      
+      <p class="pull-right"><a href="#">Back to top</a></p>
+<p>Built by <a href="https://github.com/hadley/staticdocs">staticdocs</a>. Styled with Flatstrap.</p>
       </footer>
     </div>
   </body>

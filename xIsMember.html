@@ -23,6 +23,7 @@
 	}
 
 	h1 {
+		color: #C7254E;
 		font-family: Quicksand;
 	}
 
@@ -76,6 +77,10 @@
 	nav a {
 		display: inline-block;
 		padding: 10px;
+	}
+
+	pre {
+		font-family: monospace;
 	}
 
 </style>
@@ -135,15 +140,20 @@
     <h2>Arguments</h2>
     <dl>
       <dt>val</dt>
-      <dd>an arbitrary value. The value to test for
-  membership in <b>coll</b>.</dd>
+      <dd>an arbitrary value. The value to test for membership
+   in <b>coll</b>.</dd>
       <dt>coll</dt>
-      <dd>a collection. The collection of elements to
-  check against <b>val</b>.</dd>
+      <dd>a collection. The collection of elements to check against
+   <b>val</b>.</dd>
       <dt>...</dt>
       <dd>see above.</dd>
     </dl>
     
+    <div class="xIsMember">
+      <h2>xIsMember</h2>
+
+    </div>
+
     <div class="Value">
       <h2>Value</h2>
 
@@ -161,8 +171,10 @@
     <div class="Corner Cases">
       <h2>Corner Cases</h2>
 
+      <p></p>
+
       <p>Various types of <code>Na</code> are not-distinguished between.
-  Type conversion is not carried out.</p>
+   Type conversion is not carried out.</p>
 
     </div>
     
@@ -183,21 +195,22 @@ NULL
     <h2>See also</h2>
     
 Other set_functions: <code><a href='xDuplicatesOf.html'>xDuplicatesOf</a></code>,
-<code><a href='xDuplicatesOf.html'>xDuplicatesOf...</a></code>; <code><a href='xInter.html'>xInter</a></code>,
-<code><a href='xInter.html'>xInter...</a></code>; <code><a href='xNotMember.html'>xNotMember</a></code>,
-<code><a href='xNotMember.html'>xNotMember...</a></code>; <code><a href='xPermute.html'>xPermute</a></code>,
-<code><a href='xPermute.html'>xPermute...</a></code>; <code><a href='xPowerSetOf.html'>xPowerSetOf</a></code>,
-<code><a href='xPowerSetOf.html'>xPowerSetOf...</a></code>; <code><a href='xProdSetOf.html'>xProdSetOf</a></code>,
-<code><a href='xProdSetOf.html'>xProdSetOf...</a></code>; <code><a href='xUnionOf.html'>xUnionOf</a></code>,
-<code><a href='xUnionOf.html'>xUnionOf...</a></code>; <code><a href='xUniqueOf.html'>xUniqueOf</a></code>,
-<code><a href='xUniqueOf.html'>xUniqueOf...</a></code>
+  <code><a href='xDuplicatesOf.html'>xDuplicatesOf...</a></code>; <code><a href='xInter.html'>xInter</a></code>,
+  <code><a href='xInter.html'>xInter...</a></code>; <code><a href='xNotMember.html'>xNotMember</a></code>,
+  <code><a href='xNotMember.html'>xNotMember...</a></code>; <code><a href='xPermute.html'>xPermute</a></code>,
+  <code><a href='xPermute.html'>xPermute...</a></code>; <code><a href='xPowerSetOf.html'>xPowerSetOf</a></code>,
+  <code><a href='xPowerSetOf.html'>xPowerSetOf...</a></code>; <code><a href='xProdSetOf.html'>xProdSetOf</a></code>,
+  <code><a href='xProdSetOf.html'>xProdSetOf...</a></code>; <code><a href='xUnionOf.html'>xUnionOf</a></code>,
+  <code><a href='xUnionOf.html'>xUnionOf...</a></code>; <code><a href='xUniqueOf.html'>xUniqueOf</a></code>,
+  <code><a href='xUniqueOf.html'>xUniqueOf...</a></code>
 
     
   </div>
 </div>
       
       <footer>
-      
+      <p class="pull-right"><a href="#">Back to top</a></p>
+<p>Built by <a href="https://github.com/hadley/staticdocs">staticdocs</a>. Styled with Flatstrap.</p>
       </footer>
     </div>
   </body>

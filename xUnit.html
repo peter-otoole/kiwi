@@ -23,6 +23,7 @@
 	}
 
 	h1 {
+		color: #C7254E;
 		font-family: Quicksand;
 	}
 
@@ -76,6 +77,10 @@
 	nav a {
 		display: inline-block;
 		padding: 10px;
+	}
+
+	pre {
+		font-family: monospace;
 	}
 
 </style>
@@ -135,16 +140,21 @@
     <dl>
       <dt>coll</dt>
       <dd>an list, pairlist, or vector of any length.
-  The collection to return the length-zero unit element
-  of.</dd>
+   The collection to return the length-zero
+   unit element of.</dd>
     </dl>
     
+    <div class="xUnit">
+      <h2>xUnit</h2>
+
+    </div>
+
     <div class="Value">
       <h2>Value</h2>
 
-      <p>Returns null if <b>coll</b> is a pairlist, a typed vector
-of length zero if <b>coll</b> is a vector, and the empty
-list if <b>coll</b> is a list.</p>
+      <p>Returns null if <b>coll</b> is a pairlist, a
+   typed vector of length zero if <b>coll</b>
+	  is a vector, and the empty list if <b>coll</b> is a list.</p>
 
     </div>
 
@@ -198,7 +208,8 @@ reverse(1:4)
 </div>
       
       <footer>
-      
+      <p class="pull-right"><a href="#">Back to top</a></p>
+<p>Built by <a href="https://github.com/hadley/staticdocs">staticdocs</a>. Styled with Flatstrap.</p>
       </footer>
     </div>
   </body>

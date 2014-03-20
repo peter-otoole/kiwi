@@ -23,6 +23,7 @@
 	}
 
 	h1 {
+		color: #C7254E;
 		font-family: Quicksand;
 	}
 
@@ -78,6 +79,10 @@
 		padding: 10px;
 	}
 
+	pre {
+		font-family: monospace;
+	}
+
 </style>
   </head>
 
@@ -131,6 +136,11 @@
     <h2>Usage</h2>
     <pre><div>x_(  ) $ xTranspose()</div></pre>
         
+    <div class="$ xTranspose">
+      <h2>$ xTranspose</h2>
+
+    </div>
+
     <div class="Value">
       <h2>Value</h2>
 
@@ -149,24 +159,24 @@
       <h2>Details</h2>
 
       <p><b>xTranspose( )</b> is very similar to the base function
-<b>t( )</b>. It takes each row of an input matrix and uses
-it as a column in the output matrix. The dimensions of the
-input matrix is flipped; if a 4 x 2 matrix is supplied to
-<b>xTranspose( )</b> then a 2 x 4 matrix is returned.</p>
+   <b>t( )</b>. It takes each row of an input matrix and
+   uses it as a column in the output matrix. The dimensions of
+   the input matrix is flipped; if a 4 x 2 matrix is supplied to
+   <b>xTranspose( )</b> then a 2 x 4 matrix is returned.</p>
 
-      <p><b>xTranspose</b> is an involution - a function that is its
-own inverse. For any collection,
-<b>xTranspose(xTranspose(coll))</b> is the original
-collection.</p>
+      <p><b>xTranspose</b> is an involution - a function that is its own
+   inverse. For any collection, <b>xTranspose(xTranspose(coll))</b>
+   is the original collection.</p>
 
     </div>
 
     <div class="Corner Cases">
       <h2>Corner Cases</h2>
 
-      <p>The empty matrix is returned if the input matrix is
-  empty.  Matrices with zero rows or columns are transposed
-  as expected.</p>
+      <p></p>
+
+      <p>The empty matrix is returned if the input matrix is empty.
+   Matrices with zero rows or columns are transposed as expected.</p>
 
     </div>
       </div>
@@ -181,19 +191,20 @@ collection.</p>
     <h2>See also</h2>
     
 Other methods: <code><a href='xByColnames.html'>xByColnames</a></code>;
-<code><a href='xByCols.html'>xByCols</a></code>; <code><a href='xByLevels.html'>xByLevels</a></code>,
-<code><a href='xByLevels.html'>xByLevels</a></code>; <code><a href='xByRows.html'>xByRows</a></code>;
-<code><a href='xColUnit.html'>xColUnit</a></code>; <code><a href='xElemsByCols.html'>xElemsByCols</a></code>;
-<code><a href='xElemsByRows.html'>xElemsByRows</a></code>; <code><a href='xExecute.html'>xExecute</a></code>;
-<code><a href='xRowUnit.html'>xRowUnit</a></code>; <code><a href='xTap.html'>xTap</a></code>;
-<code><a href='x_.html'>x_</a></code>
+  <code><a href='xByCols.html'>xByCols</a></code>; <code><a href='xByLevels.html'>xByLevels</a></code>,
+  <code><a href='xByLevels.html'>xByLevels</a></code>; <code><a href='xByRows.html'>xByRows</a></code>;
+  <code><a href='xColUnit.html'>xColUnit</a></code>; <code><a href='xElemsByCols.html'>xElemsByCols</a></code>;
+  <code><a href='xElemsByRows.html'>xElemsByRows</a></code>; <code><a href='xExecute.html'>xExecute</a></code>;
+  <code><a href='xRowUnit.html'>xRowUnit</a></code>; <code><a href='xTap.html'>xTap</a></code>;
+  <code><a href='x_.html'>x_</a></code>
 
     
   </div>
 </div>
       
       <footer>
-      
+      <p class="pull-right"><a href="#">Back to top</a></p>
+<p>Built by <a href="https://github.com/hadley/staticdocs">staticdocs</a>. Styled with Flatstrap.</p>
       </footer>
     </div>
   </body>

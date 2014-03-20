@@ -23,6 +23,7 @@
 	}
 
 	h1 {
+		color: #C7254E;
 		font-family: Quicksand;
 	}
 
@@ -76,6 +77,10 @@
 	nav a {
 		display: inline-block;
 		padding: 10px;
+	}
+
+	pre {
+		font-family: monospace;
 	}
 
 </style>
@@ -138,6 +143,11 @@
       <dd>a unary function. The function to vectorise.</dd>
     </dl>
     
+    <div class="xVectorise">
+      <h2>xVectorise</h2>
+
+    </div>
+
     <div class="Value">
       <h2>Value</h2>
 
@@ -148,20 +158,18 @@
     <div class="Description">
       <h2>Description</h2>
 
-      <p>Convert a function on one value to a function on
-collections of values.</p>
+      <p>Convert a function on one value to a function on collections of values.</p>
 
     </div>
 
     <div class="Details">
       <h2>Details</h2>
 
-      <p><b>xVectorise</b> is a shorthand function for partially
-applying <b>xMap</b> with a function, returning a
-vectorised function.  This can be useful for taking a
-function that only works on single values - like
-<b>is.null( )</b> - and extending them to work on
-collections of values.</p>
+      <p><b>xVectorise</b> is a shorthand function for partially applying
+   <b>xMap</b> with a function, returning a vectorised function.
+   This can be useful for taking a function that only works on single
+   values - like <b>is.null( )</b> - and extending them to work on
+   collections of values.</p>
 
       <p><code>is.nulls <- xVectorise(is.null)</code></p>
 
@@ -173,6 +181,8 @@ collections of values.</p>
 
     <div class="Corner Cases">
       <h2>Corner Cases</h2>
+
+      <p></p>
 
       <p>Returns the empty list if <b>coll</b> is length-zero.</p>
 
@@ -217,33 +227,34 @@ absolutes(c(-1, 0, +1))
     <h2>See also</h2>
     
 Other function_application_functions: <code><a href='xApply.html'>xApply</a></code>,
-<code><a href='xApply.html'>xApply...</a></code>; <code><a href='xAsUnary.html'>xAsUnary</a></code>;
-<code><a href='xAsVariadic.html'>xAsVariadic</a></code>; <code><a href='xDeepMap.html'>xDeepMap</a></code>,
-<code><a href='xDeepMap.html'>xDeepMap...</a></code>; <code><a href='xFlatMap.html'>xFlatMap</a></code>,
-<code><a href='xFlatMap.html'>xFlatMap...</a></code>; <code><a href='xMapIndexed.html'>xMapIndexed</a></code>,
-<code><a href='xMapIndexed.html'>xMapIndexed...</a></code>; <code><a href='xMapply.html'>xMapply</a></code>,
-<code><a href='xMapply.html'>xMapply...</a></code>; <code><a href='xMap.html'>xMap</a></code>,
-<code><a href='xMap.html'>xMap...</a></code>; <code><a href='xThread.html'>xThread</a></code>,
-<code><a href='xThread.html'>xThread...</a></code>
+  <code><a href='xApply.html'>xApply...</a></code>; <code><a href='xAsUnary.html'>xAsUnary</a></code>;
+  <code><a href='xAsVariadic.html'>xAsVariadic</a></code>; <code><a href='xDeepMap.html'>xDeepMap</a></code>,
+  <code><a href='xDeepMap.html'>xDeepMap...</a></code>; <code><a href='xFlatMap.html'>xFlatMap</a></code>,
+  <code><a href='xFlatMap.html'>xFlatMap...</a></code>; <code><a href='xMapIndexed.html'>xMapIndexed</a></code>,
+  <code><a href='xMapIndexed.html'>xMapIndexed...</a></code>; <code><a href='xMapply.html'>xMapply</a></code>,
+  <code><a href='xMapply.html'>xMapply...</a></code>; <code><a href='xMap.html'>xMap</a></code>,
+  <code><a href='xMap.html'>xMap...</a></code>; <code><a href='xThread.html'>xThread</a></code>,
+  <code><a href='xThread.html'>xThread...</a></code>
 
 Other function_modifying_functions: <code><a href='xLift.html'>%and%</a></code>,
-<code><a href='xLift.html'>%or%</a></code>, <code><a href='xLift.html'>xLift</a></code>,
-<code><a href='xLift.html'>xLift...</a></code>; <code><a href='xCompose.html'>%of%</a></code>,
-<code><a href='xCompose.html'>%then%</a></code>, <code><a href='xCompose.html'>xCompose</a></code>,
-<code><a href='xCompose.html'>xCompose...</a></code>; <code><a href='xAsClosure.html'>xAsClosure</a></code>;
-<code><a href='xAsUnary.html'>xAsUnary</a></code>; <code><a href='xAsVariadic.html'>xAsVariadic</a></code>;
-<code><a href='xCapture.html'>xCapture</a></code>, <code><a href='xCapture.html'>xK</a></code>;
-<code><a href='xDelay.html'>xDelay</a></code>; <code><a href='xJuxtapose.html'>xJuxtapose</a></code>,
-<code><a href='xJuxtapose.html'>xJuxtapose...</a></code>; <code><a href='xNot.html'>xNot</a></code>;
-<code><a href='xPartial.html'>xPartial</a></code>, <code><a href='xPartial.html'>xPartial...</a></code>;
-<code><a href='xThread.html'>xThread</a></code>, <code><a href='xThread.html'>xThread...</a></code>
+  <code><a href='xLift.html'>%or%</a></code>, <code><a href='xLift.html'>xLift</a></code>,
+  <code><a href='xLift.html'>xLift...</a></code>; <code><a href='xCompose.html'>%of%</a></code>,
+  <code><a href='xCompose.html'>%then%</a></code>, <code><a href='xCompose.html'>xCompose</a></code>,
+  <code><a href='xCompose.html'>xCompose...</a></code>; <code><a href='xAsClosure.html'>xAsClosure</a></code>;
+  <code><a href='xAsUnary.html'>xAsUnary</a></code>; <code><a href='xAsVariadic.html'>xAsVariadic</a></code>;
+  <code><a href='xCapture.html'>xCapture</a></code>, <code><a href='xCapture.html'>xK</a></code>;
+  <code><a href='xDelay.html'>xDelay</a></code>; <code><a href='xJuxtapose.html'>xJuxtapose</a></code>,
+  <code><a href='xJuxtapose.html'>xJuxtapose...</a></code>; <code><a href='xNot.html'>xNot</a></code>;
+  <code><a href='xPartial.html'>xPartial</a></code>, <code><a href='xPartial.html'>xPartial...</a></code>;
+  <code><a href='xThread.html'>xThread</a></code>, <code><a href='xThread.html'>xThread...</a></code>
 
     
   </div>
 </div>
       
       <footer>
-      
+      <p class="pull-right"><a href="#">Back to top</a></p>
+<p>Built by <a href="https://github.com/hadley/staticdocs">staticdocs</a>. Styled with Flatstrap.</p>
       </footer>
     </div>
   </body>

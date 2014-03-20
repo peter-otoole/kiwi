@@ -23,6 +23,7 @@
 	}
 
 	h1 {
+		color: #C7254E;
 		font-family: Quicksand;
 	}
 
@@ -76,6 +77,10 @@
 	nav a {
 		display: inline-block;
 		padding: 10px;
+	}
+
+	pre {
+		font-family: monospace;
 	}
 
 </style>
@@ -135,9 +140,14 @@
     <dl>
       <dt>sym</dt>
       <dd>a symbol or string. The name of the variable
-  to be converted to a value.</dd>
+   to be converted to a value.</dd>
     </dl>
     
+    <div class="xAsVal">
+      <h2>xAsVal</h2>
+
+    </div>
+
     <div class="Value">
       <h2>Value</h2>
 
@@ -155,19 +165,21 @@
     <div class="Details">
       <h2>Details</h2>
 
-      <p><b>xAsVal</b> takes a variable that exists in the calling
-environment, and locks it. This prevents further
-modification, and if any attempt is made to modify the
-variable an error is thrown.</p>
+      <p><b>xAsVal</b> takes a variable that exists in the
+calling environment, and locks it. This prevents
+further modification, and if any attempt is made to
+modify the variable an error is thrown.</p>
 
     </div>
 
     <div class="Corner Cases">
       <h2>Corner Cases</h2>
 
-      <p><b>xAsVal</b> throws an error if an attempt is made to
-  convert a variable that doesn't exist in the parent
-  frame.</p>
+      <p></p>
+
+      <p><b>xAsVal</b> throws an error if an attempt is made
+   to convert a variable that doesn't exist in the
+   parent frame.</p>
 
     </div>
     
@@ -199,14 +211,15 @@ xAsVal(consts)
     <h2>See also</h2>
     
 Other immutable_value_functions: <code><a href='xAsVar.html'>xAsVar</a></code>;
-<code><a href='xVal.html'>xVal</a></code>
+  <code><a href='xVal.html'>xVal</a></code>
 
     
   </div>
 </div>
       
       <footer>
-      
+      <p class="pull-right"><a href="#">Back to top</a></p>
+<p>Built by <a href="https://github.com/hadley/staticdocs">staticdocs</a>. Styled with Flatstrap.</p>
       </footer>
     </div>
   </body>

@@ -23,6 +23,7 @@
 	}
 
 	h1 {
+		color: #C7254E;
 		font-family: Quicksand;
 	}
 
@@ -76,6 +77,10 @@
 	nav a {
 		display: inline-block;
 		padding: 10px;
+	}
+
+	pre {
+		font-family: monospace;
 	}
 
 </style>
@@ -135,13 +140,17 @@
     <h2>Arguments</h2>
     <dl>
       <dt>nums</dt>
-      <dd>a collection of double values. A list,
-  pairlist or vector of length-one double vectors to
-  convert to a double vector.</dd>
+      <dd>a collection of double values. A list, pairlist or vector
+   of length-one double vectors to convert to a double vector.</dd>
       <dt>...</dt>
       <dd>see above.</dd>
     </dl>
     
+    <div class="xAsDouble">
+      <h2>xAsDouble</h2>
+
+    </div>
+
     <div class="Value">
       <h2>Value</h2>
 
@@ -160,17 +169,18 @@
       <h2>Details</h2>
 
       <p><code>xAsDouble</code> converts a list, pairlist or vector of
-length-one double precision numbers to a double vector. It
-does not attempt to convert non-double collections to
-double vectors.</p>
+   length-one double precision numbers to a double vector. It does not attempt
+   to convert non-double collections to double vectors.</p>
 
     </div>
 
     <div class="Corner Cases">
       <h2>Corner Cases</h2>
 
-      <p>Integer vectors are coerced to double vectors freely,
-  since the difference is predominantly internal.</p>
+      <p></p>
+
+      <p>Integer vectors are coerced to double vectors freely, since the
+   difference is predominantly internal.</p>
 
     </div>
     
@@ -190,19 +200,20 @@ NULL
 
     <h2>See also</h2>
     
-Other container_conversion_functions:
-<code><a href='xAsCharacter.html'>xAsCharacter</a></code>, <code><a href='xAsCharacter.html'>xAsCharacter...</a></code>;
-<code><a href='xAsComplex.html'>xAsComplex</a></code>, <code><a href='xAsComplex.html'>xAsComplex...</a></code>;
-<code><a href='xAsInteger.html'>xAsInteger</a></code>, <code><a href='xAsInteger.html'>xAsInteger...</a></code>;
-<code><a href='xAsLogical.html'>xAsLogical</a></code>, <code><a href='xAsLogical.html'>xAsLogical...</a></code>;
-<code><a href='xAsRaw.html'>xAsRaw</a></code>, <code><a href='xAsRaw.html'>xAsRaw...</a></code>
+Other container_conversion_functions: <code><a href='xAsCharacter.html'>xAsCharacter</a></code>,
+  <code><a href='xAsCharacter.html'>xAsCharacter...</a></code>; <code><a href='xAsComplex.html'>xAsComplex</a></code>,
+  <code><a href='xAsComplex.html'>xAsComplex...</a></code>; <code><a href='xAsInteger.html'>xAsInteger</a></code>,
+  <code><a href='xAsInteger.html'>xAsInteger...</a></code>; <code><a href='xAsLogical.html'>xAsLogical</a></code>,
+  <code><a href='xAsLogical.html'>xAsLogical...</a></code>; <code><a href='xAsRaw.html'>xAsRaw</a></code>,
+  <code><a href='xAsRaw.html'>xAsRaw...</a></code>
 
     
   </div>
 </div>
       
       <footer>
-      
+      <p class="pull-right"><a href="#">Back to top</a></p>
+<p>Built by <a href="https://github.com/hadley/staticdocs">staticdocs</a>. Styled with Flatstrap.</p>
       </footer>
     </div>
   </body>

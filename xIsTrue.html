@@ -23,6 +23,7 @@
 	}
 
 	h1 {
+		color: #C7254E;
 		font-family: Quicksand;
 	}
 
@@ -76,6 +77,10 @@
 	nav a {
 		display: inline-block;
 		padding: 10px;
+	}
+
+	pre {
+		font-family: monospace;
 	}
 
 </style>
@@ -134,12 +139,16 @@
     <h2>Arguments</h2>
     <dl>
       <dt>val</dt>
-      <dd>an arbitrary value. The value to test for
-  being true.</dd>
+      <dd>an arbitrary value. The value to test for being true.</dd>
       <dt>...</dt>
       <dd>see above.</dd>
     </dl>
     
+    <div class="xIsTrue">
+      <h2>xIsTrue</h2>
+
+    </div>
+
     <div class="Value">
       <h2>Value</h2>
 
@@ -158,21 +167,19 @@
       <h2>Details</h2>
 
       <p><b>xIsTrue</b> is primarily meant for use with conditional
-statements like if and while. <b>xIsTrue</b> always returns
-a length-one true or false value; conditional statements
-throw an error if they are given a length zero logical
-vector.</p>
+    statements like if and while. <b>xIsTrue</b> always returns a
+    length-one true or false value; conditional statements throw an error
+    if they are given a length zero logical vector.</p>
 
-      <p>The below example will throw an error; forall of an empty
-list is logical zero, which if cannot handle:</p>
+      <p>The below example will throw an error; forall of an empty list is
+    logical zero, which if cannot handle:</p>
 
       <p><code>mybool <- xForall(xI, list())</code></p>
 
       <p><code>if (mybool) 1 else 2</code></p>
 
-      <p>The correct way to test for truth in Arrow is
-<b>xIsTrue</b>, which will return false in this case since
-logical zero isn't the value true.</p>
+      <p>The correct way to test for truth in Arrow is <b>xIsTrue</b>, which will
+    return false in this case since logical zero isn't the value true.</p>
 
       <p><code>if (xIsTrue(mybool)) 1 else 2</code></p>
 
@@ -181,9 +188,11 @@ logical zero isn't the value true.</p>
     <div class="Corner Cases">
       <h2>Corner Cases</h2>
 
-      <p>xIsTrue returns either true or false, to make it safe for
-  use with if statements. If val is length zero False is
-  returned.</p>
+      <p></p>
+
+      <p>xIsTrue returns either true or false, to make it
+    safe for use with if statements. If val is length zero
+    False is returned.</p>
 
     </div>
     
@@ -203,29 +212,33 @@ NULL
     <h2>See also</h2>
     
 Other value_testing_functions: <code><a href='xElemIsFalse.html'>xElemIsFalse</a></code>,
-<code><a href='xElemIsFalse.html'>xElemIsFalse...</a></code>; <code><a href='xElemIsNan.html'>xElemIsNan</a></code>,
-<code><a href='xElemIsNan.html'>xElemIsNan...</a></code>; <code><a href='xElemIsNa.html'>xElemIsNa</a></code>,
-<code><a href='xElemIsNa.html'>xElemIsNa...</a></code>; <code><a href='xElemIsNull.html'>xElemIsNull</a></code>,
-<code><a href='xElemIsNull.html'>xElemIsNull...</a></code>; <code><a href='xElemIsTrue.html'>xElemIsTrue</a></code>,
-<code><a href='xElemIsTrue.html'>xElemIsTrue...</a></code>; <code><a href='xElemNotFalse.html'>xElemNotFalse</a></code>,
-<code><a href='xElemNotFalse.html'>xElemNotFalse...</a></code>; <code><a href='xElemNotNan.html'>xElemNotNan</a></code>,
-<code><a href='xElemNotNan.html'>xElemNotNan...</a></code>; <code><a href='xElemNotNa.html'>xElemNotNa</a></code>,
-<code><a href='xElemNotNa.html'>xElemNotNa...</a></code>; <code><a href='xElemNotNull.html'>xElemNotNull</a></code>,
-<code><a href='xElemNotNull.html'>xElemNotNull...</a></code>; <code><a href='xElemNotTrue.html'>xElemNotTrue</a></code>,
-<code><a href='xElemNotTrue.html'>xElemNotTrue...</a></code>; <code><a href='xIsEmpty.html'>xIsEmpty</a></code>,
-<code><a href='xIsEmpty.html'>xIsEmpty...</a></code>; <code><a href='xIsFalse.html'>xIsFalse</a></code>;
-<code><a href='xIsNan.html'>xIsNan</a></code>; <code><a href='xIsNa.html'>xIsNa</a></code>;
-<code><a href='xIsNull.html'>xIsNull</a></code>; <code><a href='xNotEmpty.html'>xNotEmpty</a></code>,
-<code><a href='xNotEmpty.html'>xNotEmpty...</a></code>; <code><a href='xNotFalse.html'>xNotFalse</a></code>;
-<code><a href='xNotNan.html'>xNotNan</a></code>; <code><a href='xNotNa.html'>xNotNa</a></code>;
-<code><a href='xNotNull.html'>xNotNull</a></code>; <code><a href='xNotTrue.html'>xNotTrue</a></code>
+  <code><a href='xElemIsFalse.html'>xElemIsFalse...</a></code>; <code><a href='xElemIsNan.html'>xElemIsNan</a></code>,
+  <code><a href='xElemIsNan.html'>xElemIsNan...</a></code>; <code><a href='xElemIsNa.html'>xElemIsNa</a></code>,
+  <code><a href='xElemIsNa.html'>xElemIsNa...</a></code>; <code><a href='xElemIsNull.html'>xElemIsNull</a></code>,
+  <code><a href='xElemIsNull.html'>xElemIsNull...</a></code>; <code><a href='xElemIsTrue.html'>xElemIsTrue</a></code>,
+  <code><a href='xElemIsTrue.html'>xElemIsTrue...</a></code>;
+  <code><a href='xElemNotFalse.html'>xElemNotFalse</a></code>,
+  <code><a href='xElemNotFalse.html'>xElemNotFalse...</a></code>;
+  <code><a href='xElemNotNan.html'>xElemNotNan</a></code>, <code><a href='xElemNotNan.html'>xElemNotNan...</a></code>;
+  <code><a href='xElemNotNa.html'>xElemNotNa</a></code>, <code><a href='xElemNotNa.html'>xElemNotNa...</a></code>;
+  <code><a href='xElemNotNull.html'>xElemNotNull</a></code>,
+  <code><a href='xElemNotNull.html'>xElemNotNull...</a></code>;
+  <code><a href='xElemNotTrue.html'>xElemNotTrue</a></code>,
+  <code><a href='xElemNotTrue.html'>xElemNotTrue...</a></code>; <code><a href='xIsEmpty.html'>xIsEmpty</a></code>,
+  <code><a href='xIsEmpty.html'>xIsEmpty...</a></code>; <code><a href='xIsFalse.html'>xIsFalse</a></code>;
+  <code><a href='xIsNan.html'>xIsNan</a></code>; <code><a href='xIsNa.html'>xIsNa</a></code>;
+  <code><a href='xIsNull.html'>xIsNull</a></code>; <code><a href='xNotEmpty.html'>xNotEmpty</a></code>,
+  <code><a href='xNotEmpty.html'>xNotEmpty...</a></code>; <code><a href='xNotFalse.html'>xNotFalse</a></code>;
+  <code><a href='xNotNan.html'>xNotNan</a></code>; <code><a href='xNotNa.html'>xNotNa</a></code>;
+  <code><a href='xNotNull.html'>xNotNull</a></code>; <code><a href='xNotTrue.html'>xNotTrue</a></code>
 
     
   </div>
 </div>
       
       <footer>
-      
+      <p class="pull-right"><a href="#">Back to top</a></p>
+<p>Built by <a href="https://github.com/hadley/staticdocs">staticdocs</a>. Styled with Flatstrap.</p>
       </footer>
     </div>
   </body>

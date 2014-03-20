@@ -23,6 +23,7 @@
 	}
 
 	h1 {
+		color: #C7254E;
 		font-family: Quicksand;
 	}
 
@@ -76,6 +77,10 @@
 	nav a {
 		display: inline-block;
 		padding: 10px;
+	}
+
+	pre {
+		font-family: monospace;
 	}
 
 </style>
@@ -134,10 +139,15 @@
     <h2>Arguments</h2>
     <dl>
       <dt>fn</dt>
-      <dd>an arbitrary function or primitive function.
-  The function to find the parametre names of.</dd>
+      <dd>an arbitrary function or primitive function. The function to
+  find the parametre names of.</dd>
     </dl>
     
+    <div class="xParamsOf">
+      <h2>xParamsOf</h2>
+
+    </div>
+
     <div class="Value">
       <h2>Value</h2>
 
@@ -148,18 +158,18 @@
     <div class="Description">
       <h2>Description</h2>
 
-      <p>Get the parametre names of a function or primitive
-function.</p>
+      <p>Get the parametre names of a function or primitive function.</p>
 
     </div>
 
     <div class="Corner Cases">
       <h2>Corner Cases</h2>
 
-      <p>If <b>fn</b> is a primitive function a heuristic is used
-  to obtain its parametre names, which may not work for all
-  functions. If a function has no parametres the empty
-  character vector is returned.</p>
+      <p></p>
+
+      <p>If <b>fn</b> is a primitive function a heuristic is used to obtain
+	 its parametre names, which may not work for all functions. If a function
+  has no parametres the empty character vector is returned.</p>
 
     </div>
     
@@ -180,16 +190,17 @@ NULL
     <h2>See also</h2>
     
 Other parametre_functions: <code><a href='xArityOf.html'>xArityOf</a></code>;
-<code><a href='xAsUnary.html'>xAsUnary</a></code>; <code><a href='xAsVariadic.html'>xAsVariadic</a></code>;
-<code><a href='xFormalsOf.html'>xFormalsOf</a></code>; <code><a href='xIsVariadic.html'>xIsVariadic</a></code>;
-<code><a href='xPartial.html'>xPartial</a></code>, <code><a href='xPartial.html'>xPartial...</a></code>
+  <code><a href='xAsUnary.html'>xAsUnary</a></code>; <code><a href='xAsVariadic.html'>xAsVariadic</a></code>;
+  <code><a href='xFormalsOf.html'>xFormalsOf</a></code>; <code><a href='xIsVariadic.html'>xIsVariadic</a></code>;
+  <code><a href='xPartial.html'>xPartial</a></code>, <code><a href='xPartial.html'>xPartial...</a></code>
 
     
   </div>
 </div>
       
       <footer>
-      
+      <p class="pull-right"><a href="#">Back to top</a></p>
+<p>Built by <a href="https://github.com/hadley/staticdocs">staticdocs</a>. Styled with Flatstrap.</p>
       </footer>
     </div>
   </body>

@@ -23,6 +23,7 @@
 	}
 
 	h1 {
+		color: #C7254E;
 		font-family: Quicksand;
 	}
 
@@ -76,6 +77,10 @@
 	nav a {
 		display: inline-block;
 		padding: 10px;
+	}
+
+	pre {
+		font-family: monospace;
 	}
 
 </style>
@@ -135,14 +140,19 @@
     <h2>Arguments</h2>
     <dl>
       <dt>pred</dt>
-      <dd>a binary predicate. is the left argument
-  <b>larger</b> than the right argument?</dd>
+      <dd>a binary predicate. is the left argument <b>larger</b> than the
+   right argument?</dd>
       <dt>coll</dt>
       <dd>a collection. The collection to sort.</dd>
       <dt>...</dt>
       <dd>see above.</dd>
     </dl>
     
+    <div class="xSortBy">
+      <h2>xSortBy</h2>
+
+    </div>
+
     <div class="Value">
       <h2>Value</h2>
 
@@ -161,34 +171,31 @@
       <h2>Details</h2>
 
       <p><b>xSortBy</b> allows a collection to be sorted by a custom
-comparison operation. A classic example is sorting a
-collection of collections (analogous to a data frame) by a
-particular column.</p>
+    comparison operation. A classic example is sorting a collection of collections
+    (analogous to a data frame) by a particular column.</p>
 
-      <p><code>coll <- list(list('key1', 10), list('key2', 12),
-list('key3', 0))</code></p>
+      <p><code>coll <- list(list('key1', 10), list('key2', 12), list('key3', 0))</code></p>
 
-      <p><code>xSortBy((row1 : row2) := xSecondOf(row1) >
-xSecondOf(row2), coll)</code></p>
+      <p><code>xSortBy((row1 : row2) := xSecondOf(row1) > xSecondOf(row2), coll)</code></p>
 
-      <p><code>list(list("key2", 12), list("key1", 10), list("key3",
-0))</code></p>
+      <p><code>list(list("key2", 12), list("key1", 10), list("key3", 0))</code></p>
 
-      <p>In the above example several rows of collection of
-collections are rearranged by the value in one of their
-columns.</p>
+      <p>In the above example several rows of collection of collections are rearranged
+    by the value in one of their columns.</p>
 
-      <p><b>xSortBy</b> is currently (v0.1.0) inefficient for large
-collections, since both recursive and in-place sorting
-algorithms are not scalable in R.</p>
+      <p><b>xSortBy</b> is currently (v0.1.0) inefficient for large collections,
+    since both recursive and in-place sorting algorithms are not
+    scalable in R.</p>
 
     </div>
 
     <div class="Corner Cases">
       <h2>Corner Cases</h2>
 
-      <p>If <b>pred</b> returns Na it is interpreted as false; the
-  right argument is larger than the left.</p>
+      <p></p>
+
+      <p>If <b>pred</b> returns Na it is interpreted as false; the right argument is
+   larger than the left.</p>
 
     </div>
     
@@ -462,28 +469,29 @@ x_UniqueOf()
     <h2>See also</h2>
     
 Other reshaping_functions: <code><a href='xChop.html'>xChop</a></code>,
-<code><a href='xChop.html'>xChop...</a></code>; <code><a href='xChunk.html'>xChunk</a></code>,
-<code><a href='xChunk.html'>xChunk...</a></code>; <code><a href='xFlatten.html'>xFlatten</a></code>,
-<code><a href='xFlatten.html'>xFlatten...</a></code>; <code><a href='xJoin.html'>xJoin</a></code>,
-<code><a href='xJoin.html'>xJoin...</a></code>; <code><a href='xOneOf.html'>xOneOf</a></code>,
-<code><a href='xOneOf.html'>xOneOf...</a></code>; <code><a href='xRecycle.html'>xRecycle</a></code>,
-<code><a href='xRecycle.html'>xRecycle...</a></code>; <code><a href='xRepeat.html'>xRepeat</a></code>,
-<code><a href='xRepeat.html'>xRepeat...</a></code>; <code><a href='xReverse.html'>xReverse</a></code>,
-<code><a href='xReverse.html'>xReverse...</a></code>; <code><a href='xShuffle.html'>xShuffle</a></code>,
-<code><a href='xShuffle.html'>xShuffle...</a></code>; <code><a href='xSplitAt.html'>xSplitAt</a></code>,
-<code><a href='xSplitAt.html'>xSplitAt...</a></code>; <code><a href='xSplitBy.html'>xSplitBy</a></code>,
-<code><a href='xSplitBy.html'>xSplitBy...</a></code>; <code><a href='xTabulate.html'>xTabulate</a></code>,
-<code><a href='xTabulate.html'>xTabulate...</a></code>; <code><a href='xUnzipNames.html'>xUnzipNames</a></code>,
-<code><a href='xUnzipNames.html'>xUnzipNames...</a></code>; <code><a href='xZipNames.html'>xZipNames</a></code>,
-<code><a href='xZipNames.html'>xZipNames...</a></code>; <code><a href='xZip.html'>xZip</a></code>,
-<code><a href='xZip.html'>xZip...</a></code>
+  <code><a href='xChop.html'>xChop...</a></code>; <code><a href='xChunk.html'>xChunk</a></code>,
+  <code><a href='xChunk.html'>xChunk...</a></code>; <code><a href='xFlatten.html'>xFlatten</a></code>,
+  <code><a href='xFlatten.html'>xFlatten...</a></code>; <code><a href='xJoin.html'>xJoin</a></code>,
+  <code><a href='xJoin.html'>xJoin...</a></code>; <code><a href='xOneOf.html'>xOneOf</a></code>,
+  <code><a href='xOneOf.html'>xOneOf...</a></code>; <code><a href='xRecycle.html'>xRecycle</a></code>,
+  <code><a href='xRecycle.html'>xRecycle...</a></code>; <code><a href='xRepeat.html'>xRepeat</a></code>,
+  <code><a href='xRepeat.html'>xRepeat...</a></code>; <code><a href='xReverse.html'>xReverse</a></code>,
+  <code><a href='xReverse.html'>xReverse...</a></code>; <code><a href='xShuffle.html'>xShuffle</a></code>,
+  <code><a href='xShuffle.html'>xShuffle...</a></code>; <code><a href='xSplitAt.html'>xSplitAt</a></code>,
+  <code><a href='xSplitAt.html'>xSplitAt...</a></code>; <code><a href='xSplitBy.html'>xSplitBy</a></code>,
+  <code><a href='xSplitBy.html'>xSplitBy...</a></code>; <code><a href='xTabulate.html'>xTabulate</a></code>,
+  <code><a href='xTabulate.html'>xTabulate...</a></code>; <code><a href='xUnzipNames.html'>xUnzipNames</a></code>,
+  <code><a href='xUnzipNames.html'>xUnzipNames...</a></code>; <code><a href='xZipNames.html'>xZipNames</a></code>,
+  <code><a href='xZipNames.html'>xZipNames...</a></code>; <code><a href='xZip.html'>xZip</a></code>,
+  <code><a href='xZip.html'>xZip...</a></code>
 
     
   </div>
 </div>
       
       <footer>
-      
+      <p class="pull-right"><a href="#">Back to top</a></p>
+<p>Built by <a href="https://github.com/hadley/staticdocs">staticdocs</a>. Styled with Flatstrap.</p>
       </footer>
     </div>
   </body>

@@ -23,6 +23,7 @@
 	}
 
 	h1 {
+		color: #C7254E;
 		font-family: Quicksand;
 	}
 
@@ -76,6 +77,10 @@
 	nav a {
 		display: inline-block;
 		padding: 10px;
+	}
+
+	pre {
+		font-family: monospace;
 	}
 
 </style>
@@ -134,35 +139,38 @@
     <h2>Arguments</h2>
     <dl>
       <dt>fn</dt>
-      <dd>an arbitrary function. The function to get the
-  parametres of.</dd>
+      <dd>an arbitrary function. The function to get the parametres of.</dd>
     </dl>
     
+    <div class="xFormalsOf">
+      <h2>xFormalsOf</h2>
+
+    </div>
+
     <div class="Value">
       <h2>Value</h2>
 
-      <p>A named list, where each element's name is a parametre in
-<b>fn</b> and each value is the default value of that
-parametre.</p>
+      <p>A named list, where each element's name is a parametre in <b>fn</b> and each value
+	  is the default value of that parametre.</p>
 
     </div>
 
     <div class="Description">
       <h2>Description</h2>
 
-      <p>Get the parametres and defaults of a function or primitive
-function.</p>
+      <p>Get the parametres and defaults of a function or primitive function.</p>
 
     </div>
 
     <div class="Corner Cases">
       <h2>Corner Cases</h2>
 
-      <p>If <b>fn</b> is a primitive function a heuristic is used
-  to obtain its formals. If a parametre has no default, the
-  value of the corresponding element in the retun value
-  will be the empty symbol, which is identical to
-  <code>quote(expr=)</code>.</p>
+      <p></p>
+
+      <p>If <b>fn</b> is a primitive function a heuristic is used to obtain
+   its formals. If a parametre has no default, the value of the
+   corresponding element in the retun value will be the empty symbol,
+   which is identical to <code>quote(expr=)</code>.</p>
 
     </div>
     
@@ -183,16 +191,17 @@ NULL
     <h2>See also</h2>
     
 Other parametre_functions: <code><a href='xArityOf.html'>xArityOf</a></code>;
-<code><a href='xAsUnary.html'>xAsUnary</a></code>; <code><a href='xAsVariadic.html'>xAsVariadic</a></code>;
-<code><a href='xIsVariadic.html'>xIsVariadic</a></code>; <code><a href='xParamsOf.html'>xParamsOf</a></code>;
-<code><a href='xPartial.html'>xPartial</a></code>, <code><a href='xPartial.html'>xPartial...</a></code>
+  <code><a href='xAsUnary.html'>xAsUnary</a></code>; <code><a href='xAsVariadic.html'>xAsVariadic</a></code>;
+  <code><a href='xIsVariadic.html'>xIsVariadic</a></code>; <code><a href='xParamsOf.html'>xParamsOf</a></code>;
+  <code><a href='xPartial.html'>xPartial</a></code>, <code><a href='xPartial.html'>xPartial...</a></code>
 
     
   </div>
 </div>
       
       <footer>
-      
+      <p class="pull-right"><a href="#">Back to top</a></p>
+<p>Built by <a href="https://github.com/hadley/staticdocs">staticdocs</a>. Styled with Flatstrap.</p>
       </footer>
     </div>
   </body>

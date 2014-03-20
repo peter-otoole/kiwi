@@ -23,6 +23,7 @@
 	}
 
 	h1 {
+		color: #C7254E;
 		font-family: Quicksand;
 	}
 
@@ -76,6 +77,10 @@
 	nav a {
 		display: inline-block;
 		padding: 10px;
+	}
+
+	pre {
+		font-family: monospace;
 	}
 
 </style>
@@ -135,17 +140,22 @@
     <h2>Arguments</h2>
     <dl>
       <dt>colls</dt>
-      <dd>a collection of collections. The collections
-  to use to take the cartesian product.</dd>
+      <dd>a collection of collections. The collections to
+use to take the cartesian product.</dd>
       <dt>...</dt>
       <dd>see above.</dd>
     </dl>
     
+    <div class="xProdSetOf">
+      <h2>xProdSetOf</h2>
+
+    </div>
+
     <div class="Value">
       <h2>Value</h2>
 
-      <p>A list of collections, with as many elements per collection
-as there are collections in <b>colls</b>.</p>
+      <p>A list of collections, with as many elements per collection as
+     there are collections in <b>colls</b>.</p>
 
     </div>
 
@@ -158,6 +168,8 @@ as there are collections in <b>colls</b>.</p>
 
     <div class="Corner Cases">
       <h2>Corner Cases</h2>
+
+      <p></p>
 
       <p>Returns the empty list if <b>colls</b> is length-zero.</p>
 
@@ -1457,27 +1469,28 @@ xProdSetOf...(1:12, 1:12)
     <h2>See also</h2>
     
 Other combinatoric_functions: <code><a href='xChoose.html'>xChoose</a></code>,
-<code><a href='xChoose.html'>xChoose...</a></code>; <code><a href='xCycle.html'>xCycle</a></code>,
-<code><a href='xCycle.html'>xCycle...</a></code>; <code><a href='xPermute.html'>xPermute</a></code>,
-<code><a href='xPermute.html'>xPermute...</a></code>; <code><a href='xPowerSetOf.html'>xPowerSetOf</a></code>,
-<code><a href='xPowerSetOf.html'>xPowerSetOf...</a></code>
+  <code><a href='xChoose.html'>xChoose...</a></code>; <code><a href='xCycle.html'>xCycle</a></code>,
+  <code><a href='xCycle.html'>xCycle...</a></code>; <code><a href='xPermute.html'>xPermute</a></code>,
+  <code><a href='xPermute.html'>xPermute...</a></code>; <code><a href='xPowerSetOf.html'>xPowerSetOf</a></code>,
+  <code><a href='xPowerSetOf.html'>xPowerSetOf...</a></code>
 
 Other set_functions: <code><a href='xDuplicatesOf.html'>xDuplicatesOf</a></code>,
-<code><a href='xDuplicatesOf.html'>xDuplicatesOf...</a></code>; <code><a href='xInter.html'>xInter</a></code>,
-<code><a href='xInter.html'>xInter...</a></code>; <code><a href='xIsMember.html'>xIsMember</a></code>,
-<code><a href='xIsMember.html'>xIsMember...</a></code>; <code><a href='xNotMember.html'>xNotMember</a></code>,
-<code><a href='xNotMember.html'>xNotMember...</a></code>; <code><a href='xPermute.html'>xPermute</a></code>,
-<code><a href='xPermute.html'>xPermute...</a></code>; <code><a href='xPowerSetOf.html'>xPowerSetOf</a></code>,
-<code><a href='xPowerSetOf.html'>xPowerSetOf...</a></code>; <code><a href='xUnionOf.html'>xUnionOf</a></code>,
-<code><a href='xUnionOf.html'>xUnionOf...</a></code>; <code><a href='xUniqueOf.html'>xUniqueOf</a></code>,
-<code><a href='xUniqueOf.html'>xUniqueOf...</a></code>
+  <code><a href='xDuplicatesOf.html'>xDuplicatesOf...</a></code>; <code><a href='xInter.html'>xInter</a></code>,
+  <code><a href='xInter.html'>xInter...</a></code>; <code><a href='xIsMember.html'>xIsMember</a></code>,
+  <code><a href='xIsMember.html'>xIsMember...</a></code>; <code><a href='xNotMember.html'>xNotMember</a></code>,
+  <code><a href='xNotMember.html'>xNotMember...</a></code>; <code><a href='xPermute.html'>xPermute</a></code>,
+  <code><a href='xPermute.html'>xPermute...</a></code>; <code><a href='xPowerSetOf.html'>xPowerSetOf</a></code>,
+  <code><a href='xPowerSetOf.html'>xPowerSetOf...</a></code>; <code><a href='xUnionOf.html'>xUnionOf</a></code>,
+  <code><a href='xUnionOf.html'>xUnionOf...</a></code>; <code><a href='xUniqueOf.html'>xUniqueOf</a></code>,
+  <code><a href='xUniqueOf.html'>xUniqueOf...</a></code>
 
     
   </div>
 </div>
       
       <footer>
-      
+      <p class="pull-right"><a href="#">Back to top</a></p>
+<p>Built by <a href="https://github.com/hadley/staticdocs">staticdocs</a>. Styled with Flatstrap.</p>
       </footer>
     </div>
   </body>

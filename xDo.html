@@ -23,6 +23,7 @@
 	}
 
 	h1 {
+		color: #C7254E;
 		font-family: Quicksand;
 	}
 
@@ -76,6 +77,10 @@
 	nav a {
 		display: inline-block;
 		padding: 10px;
+	}
+
+	pre {
+		font-family: monospace;
 	}
 
 </style>
@@ -142,6 +147,11 @@
       <dd>see above.</dd>
     </dl>
     
+    <div class="xDo">
+      <h2>xDo</h2>
+
+    </div>
+
     <div class="Value">
       <h2>Value</h2>
 
@@ -152,8 +162,8 @@
     <div class="Description">
       <h2>Description</h2>
 
-      <p>Map (a possibly side-effectful) function over a collection
-and discard the results.</p>
+      <p>Map (a possibly side-effectful) function over a
+collection and discard the results.</p>
 
     </div>
     
@@ -200,10 +210,9 @@ NULL
 
 xDo(print %of% list.files, &#39;.&#39;)
 </div>
-<div class='output'> [1] &quot;demo&quot;             &quot;DESCRIPTION&quot;      &quot;inst&quot;            
- [4] &quot;LICENSE&quot;          &quot;man&quot;              &quot;NAMESPACE&quot;       
- [7] &quot;R&quot;                &quot;README.md&quot;        &quot;staticdocs.Rproj&quot;
-[10] &quot;vignettes&quot;       
+<div class='output'> [1] &quot;demo&quot;             &quot;DESCRIPTION&quot;      &quot;inst&quot;             &quot;LICENSE&quot;         
+ [5] &quot;man&quot;              &quot;NAMESPACE&quot;        &quot;R&quot;                &quot;README.md&quot;       
+ [9] &quot;staticdocs.Rproj&quot; &quot;vignettes&quot;       
 </div>
 <div class='input'>
 #2. plot a trig function.
@@ -264,18 +273,19 @@ xDo(print %of% xK(&#39;hello&#39;), 1:n)
     <h2>See also</h2>
     
 Other inpure_functions: <code><a href='xDelay.html'>xDelay</a></code>;
-<code><a href='xExecute.html'>xExecute</a></code>; <code><a href='xReadChars.html'>xReadChars</a></code>;
-<code><a href='xReadLines.html'>xReadLines</a></code>; <code><a href='xReadWords.html'>xReadWords</a></code>;
-<code><a href='xStopwatch.html'>xStopwatch</a></code>; <code><a href='xVersion.html'>xVersion</a></code>;
-<code><a href='xWriteChars.html'>xWriteChars</a></code>; <code><a href='xWriteLines.html'>xWriteLines</a></code>;
-<code><a href='xWriteWords.html'>xWriteWords</a></code>
+  <code><a href='xExecute.html'>xExecute</a></code>; <code><a href='xReadChars.html'>xReadChars</a></code>;
+  <code><a href='xReadLines.html'>xReadLines</a></code>; <code><a href='xReadWords.html'>xReadWords</a></code>;
+  <code><a href='xStopwatch.html'>xStopwatch</a></code>; <code><a href='xVersion.html'>xVersion</a></code>;
+  <code><a href='xWriteChars.html'>xWriteChars</a></code>; <code><a href='xWriteLines.html'>xWriteLines</a></code>;
+  <code><a href='xWriteWords.html'>xWriteWords</a></code>
 
     
   </div>
 </div>
       
       <footer>
-      
+      <p class="pull-right"><a href="#">Back to top</a></p>
+<p>Built by <a href="https://github.com/hadley/staticdocs">staticdocs</a>. Styled with Flatstrap.</p>
       </footer>
     </div>
   </body>

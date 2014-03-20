@@ -23,6 +23,7 @@
 	}
 
 	h1 {
+		color: #C7254E;
 		font-family: Quicksand;
 	}
 
@@ -76,6 +77,10 @@
 	nav a {
 		display: inline-block;
 		padding: 10px;
+	}
+
+	pre {
+		font-family: monospace;
 	}
 
 </style>
@@ -135,12 +140,16 @@
     <h2>Arguments</h2>
     <dl>
       <dt>coll</dt>
-      <dd>a named collection. The collection to split
-  into name, value pairs.</dd>
+      <dd>a named collection. The collection to split into name, value pairs.</dd>
       <dt>...</dt>
       <dd>see above.</dd>
     </dl>
     
+    <div class="xUnzipNames">
+      <h2>xUnzipNames</h2>
+
+    </div>
+
     <div class="Value">
       <h2>Value</h2>
 
@@ -151,25 +160,25 @@
     <div class="Description">
       <h2>Description</h2>
 
-      <p>Split a named collection into a list of name: value list
-pairs.</p>
+      <p>Split a named collection into a list of name: value list pairs.</p>
 
     </div>
 
     <div class="Details">
       <h2>Details</h2>
 
-      <p><b>xUnzipNames</b> is the inverse function to
-<b>xZipNames</b> - it takes a named collection and converts
-it into a list of key, value list pairs. This is primarily
-intended for allowing functions that cannot read collection
-names - like map and select - to be able to operate on both
-a value and its key simultaneouslty.</p>
+      <p><b>xUnzipNames</b> is the inverse function to <b>xZipNames</b> - it
+    takes a named collection and converts it into a list of
+    key, value list pairs. This is primarily intended for allowing functions that
+    cannot read collection names - like map and select - to be able to operate
+    on both a value and its key simultaneouslty.</p>
 
     </div>
 
     <div class="Corner Cases">
       <h2>Corner Cases</h2>
+
+      <p></p>
 
       <p>Returns <code>list()</code> if <code>coll</code> is length-zero.</p>
 
@@ -192,32 +201,33 @@ NULL
     <h2>See also</h2>
     
 Other key_functions: <code><a href='xAsNamed.html'>xAsNamed</a></code>;
-<code><a href='xPluck.html'>xPluck</a></code>, <code><a href='xPluck.html'>xPluck...</a></code>;
-<code><a href='xZipNames.html'>xZipNames</a></code>, <code><a href='xZipNames.html'>xZipNames...</a></code>
+  <code><a href='xPluck.html'>xPluck</a></code>, <code><a href='xPluck.html'>xPluck...</a></code>;
+  <code><a href='xZipNames.html'>xZipNames</a></code>, <code><a href='xZipNames.html'>xZipNames...</a></code>
 
 Other reshaping_functions: <code><a href='xChop.html'>xChop</a></code>,
-<code><a href='xChop.html'>xChop...</a></code>; <code><a href='xChunk.html'>xChunk</a></code>,
-<code><a href='xChunk.html'>xChunk...</a></code>; <code><a href='xFlatten.html'>xFlatten</a></code>,
-<code><a href='xFlatten.html'>xFlatten...</a></code>; <code><a href='xJoin.html'>xJoin</a></code>,
-<code><a href='xJoin.html'>xJoin...</a></code>; <code><a href='xOneOf.html'>xOneOf</a></code>,
-<code><a href='xOneOf.html'>xOneOf...</a></code>; <code><a href='xRecycle.html'>xRecycle</a></code>,
-<code><a href='xRecycle.html'>xRecycle...</a></code>; <code><a href='xRepeat.html'>xRepeat</a></code>,
-<code><a href='xRepeat.html'>xRepeat...</a></code>; <code><a href='xReverse.html'>xReverse</a></code>,
-<code><a href='xReverse.html'>xReverse...</a></code>; <code><a href='xShuffle.html'>xShuffle</a></code>,
-<code><a href='xShuffle.html'>xShuffle...</a></code>; <code><a href='xSortBy.html'>xSortBy</a></code>,
-<code><a href='xSortBy.html'>xSortBy...</a></code>; <code><a href='xSplitAt.html'>xSplitAt</a></code>,
-<code><a href='xSplitAt.html'>xSplitAt...</a></code>; <code><a href='xSplitBy.html'>xSplitBy</a></code>,
-<code><a href='xSplitBy.html'>xSplitBy...</a></code>; <code><a href='xTabulate.html'>xTabulate</a></code>,
-<code><a href='xTabulate.html'>xTabulate...</a></code>; <code><a href='xZipNames.html'>xZipNames</a></code>,
-<code><a href='xZipNames.html'>xZipNames...</a></code>; <code><a href='xZip.html'>xZip</a></code>,
-<code><a href='xZip.html'>xZip...</a></code>
+  <code><a href='xChop.html'>xChop...</a></code>; <code><a href='xChunk.html'>xChunk</a></code>,
+  <code><a href='xChunk.html'>xChunk...</a></code>; <code><a href='xFlatten.html'>xFlatten</a></code>,
+  <code><a href='xFlatten.html'>xFlatten...</a></code>; <code><a href='xJoin.html'>xJoin</a></code>,
+  <code><a href='xJoin.html'>xJoin...</a></code>; <code><a href='xOneOf.html'>xOneOf</a></code>,
+  <code><a href='xOneOf.html'>xOneOf...</a></code>; <code><a href='xRecycle.html'>xRecycle</a></code>,
+  <code><a href='xRecycle.html'>xRecycle...</a></code>; <code><a href='xRepeat.html'>xRepeat</a></code>,
+  <code><a href='xRepeat.html'>xRepeat...</a></code>; <code><a href='xReverse.html'>xReverse</a></code>,
+  <code><a href='xReverse.html'>xReverse...</a></code>; <code><a href='xShuffle.html'>xShuffle</a></code>,
+  <code><a href='xShuffle.html'>xShuffle...</a></code>; <code><a href='xSortBy.html'>xSortBy</a></code>,
+  <code><a href='xSortBy.html'>xSortBy...</a></code>; <code><a href='xSplitAt.html'>xSplitAt</a></code>,
+  <code><a href='xSplitAt.html'>xSplitAt...</a></code>; <code><a href='xSplitBy.html'>xSplitBy</a></code>,
+  <code><a href='xSplitBy.html'>xSplitBy...</a></code>; <code><a href='xTabulate.html'>xTabulate</a></code>,
+  <code><a href='xTabulate.html'>xTabulate...</a></code>; <code><a href='xZipNames.html'>xZipNames</a></code>,
+  <code><a href='xZipNames.html'>xZipNames...</a></code>; <code><a href='xZip.html'>xZip</a></code>,
+  <code><a href='xZip.html'>xZip...</a></code>
 
     
   </div>
 </div>
       
       <footer>
-      
+      <p class="pull-right"><a href="#">Back to top</a></p>
+<p>Built by <a href="https://github.com/hadley/staticdocs">staticdocs</a>. Styled with Flatstrap.</p>
       </footer>
     </div>
   </body>

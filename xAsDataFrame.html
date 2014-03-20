@@ -23,6 +23,7 @@
 	}
 
 	h1 {
+		color: #C7254E;
 		font-family: Quicksand;
 	}
 
@@ -76,6 +77,10 @@
 	nav a {
 		display: inline-block;
 		padding: 10px;
+	}
+
+	pre {
+		font-family: monospace;
 	}
 
 </style>
@@ -136,11 +141,16 @@
     <dl>
       <dt>colls</dt>
       <dd>a collection of collections. The collection
-  to convert to a data frame.</dd>
+   to convert to a data frame.</dd>
       <dt>...</dt>
       <dd>see above.</dd>
     </dl>
     
+    <div class="xAsDataFrame">
+      <h2>xAsDataFrame</h2>
+
+    </div>
+
     <div class="Value">
       <h2>Value</h2>
 
@@ -158,27 +168,29 @@
     <div class="Details">
       <h2>Details</h2>
 
-      <p>data.frames are not a beloved part of arrow, but they are
-ubiquitous in the base language.  Arrow uses collections of
-collections instead of data.frames, but data.frames are
-more common in the base language and importantly in
-libraries like ggplot2.</p>
+      <p>data.frames are not a beloved part of arrow,
+   but they are ubiquitous in the base language.
+   Arrow uses collections of collections instead of
+   data.frames, but data.frames are more common in the
+   base language and importantly in libraries like ggplot2.</p>
 
     </div>
 
     <div class="Corner Cases">
       <h2>Corner Cases</h2>
 
-      <p><b>xAsDataFrame</b> tried hard to avoid the crazy corner
-  cases of <b>data.frame</b>, but data frames are kludgy
-  and there's only so much they can be made workable.</p>
+      <p></p>
 
-      <p>Character vectors are not converted into factors, unlike
-  the base functions.</p>
+      <p><b>xAsDataFrame</b> tried hard to avoid the crazy corner
+   cases of <b>data.frame</b>, but data frames are kludgy and
+   there's only so much they can be made workable.</p>
+
+      <p>Character vectors are not converted into factors,
+   unlike the base functions.</p>
 
       <p>Rownames are added to the data.frame if the names of the
-  collections inside colls are identical.  If the rownames
-  are different, an error is thrown.</p>
+  collections inside colls are identical.
+  If the rownames are different, an error is thrown.</p>
 
       <p>If row names or column names are ommitted they default to
   indices.</p>
@@ -198,7 +210,8 @@ libraries like ggplot2.</p>
 </div>
       
       <footer>
-      
+      <p class="pull-right"><a href="#">Back to top</a></p>
+<p>Built by <a href="https://github.com/hadley/staticdocs">staticdocs</a>. Styled with Flatstrap.</p>
       </footer>
     </div>
   </body>

@@ -23,6 +23,7 @@
 	}
 
 	h1 {
+		color: #C7254E;
 		font-family: Quicksand;
 	}
 
@@ -76,6 +77,10 @@
 	nav a {
 		display: inline-block;
 		padding: 10px;
+	}
+
+	pre {
+		font-family: monospace;
 	}
 
 </style>
@@ -135,12 +140,17 @@
     <h2>Arguments</h2>
     <dl>
       <dt>bools</dt>
-      <dd>a collection of boolean values. The
-  collection to find the true elements in.</dd>
+      <dd>a collection of boolean values. The collection to
+   find the true elements in.</dd>
       <dt>...</dt>
       <dd>see above.</dd>
     </dl>
     
+    <div class="xWhere">
+      <h2>xWhere</h2>
+
+    </div>
+
     <div class="Value">
       <h2>Value</h2>
 
@@ -158,10 +168,12 @@
     <div class="Corner Cases">
       <h2>Corner Cases</h2>
 
-      <p>Returns the empty list if <b>coll</b> is length-zero, or
-  no match is found. If the predicate returns a non-logical
-  value an error is thrown. If an na value is returned by
-  the predicate it is treated as a false value.</p>
+      <p></p>
+
+      <p>Returns the empty list if <b>coll</b> is length-zero,
+   or no match is found. If the predicate returns a
+   non-logical value an error is thrown. If an na value
+   is returned by the predicate it is treated as a false value.</p>
 
     </div>
     
@@ -183,7 +195,8 @@ NULL
 </div>
       
       <footer>
-      
+      <p class="pull-right"><a href="#">Back to top</a></p>
+<p>Built by <a href="https://github.com/hadley/staticdocs">staticdocs</a>. Styled with Flatstrap.</p>
       </footer>
     </div>
   </body>

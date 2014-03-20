@@ -23,6 +23,7 @@
 	}
 
 	h1 {
+		color: #C7254E;
 		font-family: Quicksand;
 	}
 
@@ -76,6 +77,10 @@
 	nav a {
 		display: inline-block;
 		padding: 10px;
+	}
+
+	pre {
+		font-family: monospace;
 	}
 
 </style>
@@ -135,30 +140,34 @@
     <dl>
       <dt>val</dt>
       <dd>an arbitrary value. The value to wrap in an
-  arrow object.  The methods available depend on the input
-  type; functions and collections have the most methods
-  available.</dd>
+   arrow object.
+   The methods available depend on the input
+   type; functions and collections have the most methods available.</dd>
     </dl>
     
+    <div class="x_">
+      <h2>x_</h2>
+
+    </div>
+
     <div class="Value">
       <h2>Value</h2>
 
-      <p>An object of class "arrow". Internally the object is
-represented as a list with a single field <b>x</b>, but
-this field cannot be accessed directly.  Instead, the
-method <b>$ x_( )</b> or <b>$ x_Identity( )</b> can be used
-to return the data stored in an arrow object.</p>
+      <p>An object of class "arrow". Internally the object is represented as a
+   list with a single field <b>x</b>, but this field cannot be accessed directly.
+   Instead, the method <b>$ x_( )</b> or <b>$ x_Identity( )</b> can be used to
+   return the data stored in an arrow object.</p>
 
-      <p>The methods available to an arrow object depend on the type
-of the data it contains. All arrow objects inherit a
-handful of methods regardless of their type; these include
-<b>xIdentity</b> and <b>xTap</b> - a method that allows
-anonymous function to be executed on an arrow object.</p>
+      <p>The methods available to an arrow object depend on the type of the data it
+   contains. All arrow objects inherit a handful of methods regardless of their
+   type; these include <b>xIdentity</b> and <b>xTap</b> - a method that allows
+   anonymous function to be executed on an arrow object.</p>
 
-      <p>Matrices, data frames, and factors have methods for
-converting them to collections, while normal Arrow
-functions are also available as methods for collections and
-functions.</p>
+      <p>The two primary groups of methods are collection methods and function methods.</p>
+
+      <p>Matrices, data frames, and factors have methods for converting them to collections,
+   while normal Arrow functions are also available as methods for collections
+   and functions.</p>
 
     </div>
 
@@ -172,8 +181,10 @@ functions.</p>
     <div class="Corner Cases">
       <h2>Corner Cases</h2>
 
-      <p>The methods that can be used by <b>$ x_( )</b> object
-  varies depending on the type of val.</p>
+      <p></p>
+
+      <p>The methods that can be used by <b>$ x_( )</b> object varies depending
+   on the type of val.</p>
 
     </div>
     
@@ -195,19 +206,20 @@ Null
     <h2>See also</h2>
     
 Other methods: <code><a href='xByColnames.html'>xByColnames</a></code>;
-<code><a href='xByCols.html'>xByCols</a></code>; <code><a href='xByLevels.html'>xByLevels</a></code>,
-<code><a href='xByLevels.html'>xByLevels</a></code>; <code><a href='xByRows.html'>xByRows</a></code>;
-<code><a href='xColUnit.html'>xColUnit</a></code>; <code><a href='xElemsByCols.html'>xElemsByCols</a></code>;
-<code><a href='xElemsByRows.html'>xElemsByRows</a></code>; <code><a href='xExecute.html'>xExecute</a></code>;
-<code><a href='xRowUnit.html'>xRowUnit</a></code>; <code><a href='xTap.html'>xTap</a></code>;
-<code><a href='xTranspose.html'>xTranspose</a></code>
+  <code><a href='xByCols.html'>xByCols</a></code>; <code><a href='xByLevels.html'>xByLevels</a></code>,
+  <code><a href='xByLevels.html'>xByLevels</a></code>; <code><a href='xByRows.html'>xByRows</a></code>;
+  <code><a href='xColUnit.html'>xColUnit</a></code>; <code><a href='xElemsByCols.html'>xElemsByCols</a></code>;
+  <code><a href='xElemsByRows.html'>xElemsByRows</a></code>; <code><a href='xExecute.html'>xExecute</a></code>;
+  <code><a href='xRowUnit.html'>xRowUnit</a></code>; <code><a href='xTap.html'>xTap</a></code>;
+  <code><a href='xTranspose.html'>xTranspose</a></code>
 
     
   </div>
 </div>
       
       <footer>
-      
+      <p class="pull-right"><a href="#">Back to top</a></p>
+<p>Built by <a href="https://github.com/hadley/staticdocs">staticdocs</a>. Styled with Flatstrap.</p>
       </footer>
     </div>
   </body>

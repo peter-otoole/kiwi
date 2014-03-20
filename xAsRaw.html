@@ -23,6 +23,7 @@
 	}
 
 	h1 {
+		color: #C7254E;
 		font-family: Quicksand;
 	}
 
@@ -76,6 +77,10 @@
 	nav a {
 		display: inline-block;
 		padding: 10px;
+	}
+
+	pre {
+		font-family: monospace;
 	}
 
 </style>
@@ -135,13 +140,17 @@
     <h2>Arguments</h2>
     <dl>
       <dt>raws</dt>
-      <dd>a collection of raw values. A list, pairlist
-  or vector of length-one raw vectors to convert to a raw
-  vector.</dd>
+      <dd>a collection of raw values. A list, pairlist or vector
+   of length-one raw vectors to convert to a raw vector.</dd>
       <dt>...</dt>
       <dd>see above.</dd>
     </dl>
     
+    <div class="xAsRaw">
+      <h2>xAsRaw</h2>
+
+    </div>
+
     <div class="Value">
       <h2>Value</h2>
 
@@ -160,8 +169,8 @@
       <h2>Details</h2>
 
       <p><code>xAsRaw</code> converts a list, pairlist or vector of
-length-one raw numbers to a raw vector. It does not attempt
-to convert non-raw collections to raw vectors.</p>
+   length-one raw numbers to a raw vector. It does not attempt
+   to convert non-raw collections to raw vectors.</p>
 
     </div>
     
@@ -181,19 +190,20 @@ NULL
 
     <h2>See also</h2>
     
-Other container_conversion_functions:
-<code><a href='xAsCharacter.html'>xAsCharacter</a></code>, <code><a href='xAsCharacter.html'>xAsCharacter...</a></code>;
-<code><a href='xAsComplex.html'>xAsComplex</a></code>, <code><a href='xAsComplex.html'>xAsComplex...</a></code>;
-<code><a href='xAsDouble.html'>xAsDouble</a></code>, <code><a href='xAsDouble.html'>xAsDouble...</a></code>;
-<code><a href='xAsInteger.html'>xAsInteger</a></code>, <code><a href='xAsInteger.html'>xAsInteger...</a></code>;
-<code><a href='xAsLogical.html'>xAsLogical</a></code>, <code><a href='xAsLogical.html'>xAsLogical...</a></code>
+Other container_conversion_functions: <code><a href='xAsCharacter.html'>xAsCharacter</a></code>,
+  <code><a href='xAsCharacter.html'>xAsCharacter...</a></code>; <code><a href='xAsComplex.html'>xAsComplex</a></code>,
+  <code><a href='xAsComplex.html'>xAsComplex...</a></code>; <code><a href='xAsDouble.html'>xAsDouble</a></code>,
+  <code><a href='xAsDouble.html'>xAsDouble...</a></code>; <code><a href='xAsInteger.html'>xAsInteger</a></code>,
+  <code><a href='xAsInteger.html'>xAsInteger...</a></code>; <code><a href='xAsLogical.html'>xAsLogical</a></code>,
+  <code><a href='xAsLogical.html'>xAsLogical...</a></code>
 
     
   </div>
 </div>
       
       <footer>
-      
+      <p class="pull-right"><a href="#">Back to top</a></p>
+<p>Built by <a href="https://github.com/hadley/staticdocs">staticdocs</a>. Styled with Flatstrap.</p>
       </footer>
     </div>
   </body>

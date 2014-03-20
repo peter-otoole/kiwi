@@ -23,6 +23,7 @@
 	}
 
 	h1 {
+		color: #C7254E;
 		font-family: Quicksand;
 	}
 
@@ -76,6 +77,10 @@
 	nav a {
 		display: inline-block;
 		padding: 10px;
+	}
+
+	pre {
+		font-family: monospace;
 	}
 
 </style>
@@ -134,13 +139,17 @@
     <h2>Arguments</h2>
     <dl>
       <dt>strs</dt>
-      <dd>a collection of strings. The names to add to
-  the input collection.</dd>
+      <dd>a collection of strings. The names to add to the
+   input collection.</dd>
       <dt>coll</dt>
-      <dd>a collection. The collection to add names
-  to.</dd>
+      <dd>a collection. The collection to add names to.</dd>
     </dl>
     
+    <div class="xAsNamed">
+      <h2>xAsNamed</h2>
+
+    </div>
+
     <div class="Value">
       <h2>Value</h2>
 
@@ -167,8 +176,10 @@ assignment function.</p>
     <div class="Corner Cases">
       <h2>Corner Cases</h2>
 
-      <p>Returns the empty list if <b>coll</b> is length-zero.
-  Both duplicated and length-zero names are allowed.</p>
+      <p></p>
+
+      <p>Returns the empty list if <b>coll</b> is length-zero. Both
+   duplicated and length-zero names are allowed.</p>
 
     </div>
     
@@ -189,21 +200,22 @@ NULL
     <h2>See also</h2>
     
 Other key_functions: <code><a href='xPluck.html'>xPluck</a></code>,
-<code><a href='xPluck.html'>xPluck...</a></code>; <code><a href='xUnzipNames.html'>xUnzipNames</a></code>,
-<code><a href='xUnzipNames.html'>xUnzipNames...</a></code>; <code><a href='xZipNames.html'>xZipNames</a></code>,
-<code><a href='xZipNames.html'>xZipNames...</a></code>
+  <code><a href='xPluck.html'>xPluck...</a></code>; <code><a href='xUnzipNames.html'>xUnzipNames</a></code>,
+  <code><a href='xUnzipNames.html'>xUnzipNames...</a></code>; <code><a href='xZipNames.html'>xZipNames</a></code>,
+  <code><a href='xZipNames.html'>xZipNames...</a></code>
 
 Other key_functions: <code><a href='xPluck.html'>xPluck</a></code>,
-<code><a href='xPluck.html'>xPluck...</a></code>; <code><a href='xUnzipNames.html'>xUnzipNames</a></code>,
-<code><a href='xUnzipNames.html'>xUnzipNames...</a></code>; <code><a href='xZipNames.html'>xZipNames</a></code>,
-<code><a href='xZipNames.html'>xZipNames...</a></code>
+  <code><a href='xPluck.html'>xPluck...</a></code>; <code><a href='xUnzipNames.html'>xUnzipNames</a></code>,
+  <code><a href='xUnzipNames.html'>xUnzipNames...</a></code>; <code><a href='xZipNames.html'>xZipNames</a></code>,
+  <code><a href='xZipNames.html'>xZipNames...</a></code>
 
     
   </div>
 </div>
       
       <footer>
-      
+      <p class="pull-right"><a href="#">Back to top</a></p>
+<p>Built by <a href="https://github.com/hadley/staticdocs">staticdocs</a>. Styled with Flatstrap.</p>
       </footer>
     </div>
   </body>
