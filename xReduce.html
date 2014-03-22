@@ -137,8 +137,6 @@
   <div class="span8">
     <h2>Usage</h2>
     <pre><div>xReduce(fn, coll)</div>
-<div>xReducel(fn, coll)</div>
-<div>xReducel...(fn, ...)</div>
 <div>xReduce...(fn, ...)</div></pre>
     
     <h2>Arguments</h2>
@@ -194,12 +192,12 @@ is the plus operator, because the following equation holds</p>
 
       <p>for arbitrary numbers a, b, c. Bracketing from the left or the right
 does not alter the result of adding several numbers together.
-The below example involves using <b>xFoldl</b> to add a vector of numbers.
-<b>xFoldl</b> successively combines (with +) the leftmost two values into
+The below example involves using <b>xFold</b> to add a vector of numbers.
+<b>xFold</b> successively combines (with +) the leftmost two values into
 a single number, and repeats the process until the sum of the entire list
 is found.</p>
 
-      <p><code>xFoldl('+', 0, 1:5)</code></p>
+      <p><code>xFold('+', 0, 1:5)</code></p>
 
       <p><code>(((((0 + 1) + 2) + 3) + 4) + 5)</code></p>
 
@@ -215,7 +213,7 @@ is found.</p>
       <p><code>15</code></p>
 
       <p>As stated above the plus operator is associative, so both
-<b>xFoldl</b> or <b>xFoldr</b> yield the same result.</p>
+<b>xFold</b> or <b>xFold</b> yield the same result.</p>
 
       <p>Non-associative combining functions often focus on accumulating
 a data structure entirely different from the input collection,
@@ -229,7 +227,7 @@ is updated, if not it is returned as is.</p>
 
       <p><code>votes <- c('linux', 'mac', 'mac', 'bsd', 'windows', 'linux')</code></p>
 
-      <p><code>xFoldl(combiner, list(linux = 0, bsd = 0), votes) </code></p>
+      <p><code>xFold(combiner, list(linux = 0, bsd = 0), votes) </code></p>
 
       <p>The votes are tallied in the following order:</p>
 
@@ -263,7 +261,7 @@ contains any na value we could (but shouldn't) use the following inefficient cod
 
       <p><code>coll <- c(1, 2, 3, NA, rep(10, 1000))</code></p>
 
-      <p><code>xFoldl((acc : elem) := acc || is.na(elem), False, coll)</code></p>
+      <p><code>xFold((acc : elem) := acc || is.na(elem), False, coll)</code></p>
 
       <p><code>True</code>
 x
@@ -276,7 +274,7 @@ terminating certain higher-order functions called the <b>Return( )</b> function.
       <p>This function can be used to break out of the fold early; in this case upon
 discovery of an na value.</p>
 
-      <p><code>xFoldl((acc : elem) := if (is.na(elem)) Return(True) else False, False, coll)</code></p>
+      <p><code>xFold((acc : elem) := if (is.na(elem)) Return(True) else False, False, coll)</code></p>
 
       <p>The use of <b>Return( )</b> reduces the number of steps required to return a result
 from thousands to less than ten.</p>
@@ -295,38 +293,32 @@ from thousands to less than ten.</p>
     
     <h2 id="examples">Examples</h2>
     <pre class="examples"><div class='input'>
-# 1. the archetypal example of Reduce; summing a vector.
+palindromic &lt;- &quot;Marge let a moody baby doom a telegram.&quot;
 
-xReduce(&quot;+&quot;, 1:10)
-</div>
-<div class='output'>[1] 55
-</div>
-<div class='input'>
-55
-</div>
-<div class='output'>[1] 55
-</div>
-<div class='input'>
-# 2. another associative operator; using rbind to join several
-#    vectors into one matrix.
+left_to_right &lt;-
+x_(palindromic) $
+xToChars() $
+xMap(tolower) $
+x_Select(
+	function (char) xIsMember(char, letters)
+)
 
-xReduce...(
-    rbind,
-    c(1, 2),
-    c(3, 4)
+right_to_left &lt;- x_(left_to_right) $ x_Reverse()
+
+xForall...(
+	ith := {
+
+		xAsCharacter(left_to_right[ith]) == xAsCharacter(right_to_left[ith])
+	},
+	seq_along(left_to_right)
 )
 </div>
-<div class='output'>    [,1] [,2]
-val    1    2
-       3    4
-</div>
-<div class='input'>
-# matrix(1:4, 2, 2)
+<div class='output'>[1] TRUE
 </div></pre>
   </div>
   <div class="span4">
     <!-- <ul>
-      <li>xReduce</li><li>xReduce...</li><li>xReducel</li><li>xReducel...</li>
+      <li>xReduce</li><li>xReduce...</li>
     </ul>
     <ul>
       
@@ -334,21 +326,13 @@ val    1    2
 
     <h2>See also</h2>
     
-Other folding_functions: <code><a href='xFoldr.html'>xFoldr</a></code>,
-  <code><a href='xFoldr.html'>xFoldr...</a></code>; <code><a href='xFold.html'>xFold</a></code>,
-  <code><a href='xFold.html'>xFold...</a></code>, <code><a href='xFold.html'>xFoldl</a></code>,
-  <code><a href='xFold.html'>xFoldl...</a></code>; <code><a href='xReducer.html'>xReducer</a></code>,
-  <code><a href='xReducer.html'>xReducer...</a></code>; <code><a href='xScan.html'>xScan</a></code>,
-  <code><a href='xScan.html'>xScan...</a></code>, <code><a href='xScan.html'>xScanl</a></code>,
-  <code><a href='xScan.html'>xScanl...</a></code>
+Other folding_functions: <code><a href='xFold.html'>xFold</a></code>,
+  <code><a href='xFold.html'>xFold...</a></code>; <code><a href='xScan.html'>xScan</a></code>,
+  <code><a href='xScan.html'>xScan...</a></code>
 
-Other short_circuiting_functions: <code><a href='xFoldr.html'>xFoldr</a></code>,
-  <code><a href='xFoldr.html'>xFoldr...</a></code>; <code><a href='xFold.html'>xFold</a></code>,
-  <code><a href='xFold.html'>xFold...</a></code>, <code><a href='xFold.html'>xFoldl</a></code>,
-  <code><a href='xFold.html'>xFoldl...</a></code>; <code><a href='xIterate.html'>xIterate</a></code>;
-  <code><a href='xReducer.html'>xReducer</a></code>, <code><a href='xReducer.html'>xReducer...</a></code>;
-  <code><a href='xScan.html'>xScan</a></code>, <code><a href='xScan.html'>xScan...</a></code>,
-  <code><a href='xScan.html'>xScanl</a></code>, <code><a href='xScan.html'>xScanl...</a></code>
+Other short_circuiting_functions: <code><a href='xFold.html'>xFold</a></code>,
+  <code><a href='xFold.html'>xFold...</a></code>; <code><a href='xIterate.html'>xIterate</a></code>;
+  <code><a href='xScan.html'>xScan</a></code>, <code><a href='xScan.html'>xScan...</a></code>
 
     
   </div>
