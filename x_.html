@@ -14,7 +14,6 @@
 <!--[if lt IE 9]>
   <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
-
 <link href='http://fonts.googleapis.com/css?family=Open+Sans|Quicksand' rel='stylesheet' type='text/css'>
 
 <style type="text/css">
@@ -60,6 +59,10 @@
 
 	code {
 		font-family: monospace;
+	}
+
+	nav * {
+		font-family: Quicksand;
 	}
 
 	nav {
@@ -189,9 +192,38 @@
     
     <h2 id="examples">Examples</h2>
     <pre class="examples"><div class='input'>
-Null
+# 1. Construct an arrow object.
+
+x_(letters)
 </div>
-<div class='output'>NULL
+<div class='output'>[ an arrow object with methods for collections ]
+
+$x_()
+ [1] &quot;a&quot; &quot;b&quot; &quot;c&quot; &quot;d&quot; &quot;e&quot; &quot;f&quot; &quot;g&quot; &quot;h&quot; &quot;i&quot; &quot;j&quot; &quot;k&quot; &quot;l&quot; &quot;m&quot; &quot;n&quot; &quot;o&quot; &quot;p&quot; &quot;q&quot; &quot;r&quot;
+[19] &quot;s&quot; &quot;t&quot; &quot;u&quot; &quot;v&quot; &quot;w&quot; &quot;x&quot; &quot;y&quot; &quot;z&quot;
+</div>
+<div class='input'>
+# 2. Get data back out of an arrow object
+
+x_(letters) $ x_()
+</div>
+<div class='output'> [1] &quot;a&quot; &quot;b&quot; &quot;c&quot; &quot;d&quot; &quot;e&quot; &quot;f&quot; &quot;g&quot; &quot;h&quot; &quot;i&quot; &quot;j&quot; &quot;k&quot; &quot;l&quot; &quot;m&quot; &quot;n&quot; &quot;o&quot; &quot;p&quot; &quot;q&quot; &quot;r&quot;
+[19] &quot;s&quot; &quot;t&quot; &quot;u&quot; &quot;v&quot; &quot;w&quot; &quot;x&quot; &quot;y&quot; &quot;z&quot;
+</div>
+<div class='input'>x_(letters) $ x_Identity()
+</div>
+<div class='output'> [1] &quot;a&quot; &quot;b&quot; &quot;c&quot; &quot;d&quot; &quot;e&quot; &quot;f&quot; &quot;g&quot; &quot;h&quot; &quot;i&quot; &quot;j&quot; &quot;k&quot; &quot;l&quot; &quot;m&quot; &quot;n&quot; &quot;o&quot; &quot;p&quot; &quot;q&quot; &quot;r&quot;
+[19] &quot;s&quot; &quot;t&quot; &quot;u&quot; &quot;v&quot; &quot;w&quot; &quot;x&quot; &quot;y&quot; &quot;z&quot;
+</div>
+<div class='input'>
+# 3. Call methods off an arrow object.
+
+csv_string &lt;- &quot;swiss, swiss, german, irish, french, german&quot;
+
+parsed &lt;- x_(csv_string) $ xExplode(&quot;, &quot;)
+freqs  &lt;- parsed $ x_Tabulate()
+
+# list(list(&quot;swiss&quot;, 2), list(&quot;german&quot;, 2), list(&quot;irish&quot;, 1), list(&quot;french&quot;, 1))
 </div></pre>
   </div>
   <div class="span4">
