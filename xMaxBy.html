@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-<title>xInter. arrow 0.1.0</title>
+<title>xMaxBy. arrow 0.1.0</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="author" content="">
 
@@ -131,39 +131,42 @@
       
       </header>
 
-      <h1>xInter</h1>
+      <h1>xMaxBy</h1>
 
 <div class="row">
   <div class="span8">
     <h2>Usage</h2>
-    <pre><div>xInter(colls)</div>
-<div>xInter...(...)</div></pre>
+    <pre><div>xMaxBy(fn, coll)</div>
+<div>xMaxBy...(fn, ...)</div></pre>
     
     <h2>Arguments</h2>
     <dl>
-      <dt>colls</dt>
-      <dd>a collection of collections. The collections to
-   take the intersection of.</dd>
+      <dt>fn</dt>
+      <dd>a unary function. The function to measure the size of
+    an element.</dd>
+      <dt>coll</dt>
+      <dd>a non-empty collection. The collection to find the
+   largest value of.</dd>
       <dt>...</dt>
       <dd>see above.</dd>
     </dl>
     
-    <div class="xInter">
-      <h2>xInter</h2>
+    <div class="xMaxBy">
+      <h2>xMaxBy</h2>
 
     </div>
 
     <div class="Value">
       <h2>Value</h2>
 
-      <p>A list.</p>
+      <p>An element from <b>coll</b>.</p>
 
     </div>
 
     <div class="Description">
       <h2>Description</h2>
 
-      <p>Get the set intersection of several collections.</p>
+      <p>Get the largest value in a collection according to a measure function.</p>
 
     </div>
 
@@ -172,19 +175,30 @@
 
       <p></p>
 
-      <p>Returns the empty list if <b>coll</b> is length-zero.</p>
+      <p>If an empty collection is given, an error is thrown. This is because
+   is impossible to return an element from a list that has none.</p>
 
     </div>
     
     <h2 id="examples">Examples</h2>
     <pre class="examples"><div class='input'>
-NULL
+# 1. Select the largest row in a data-frame like struture
+#    by an attribute.
 
-</div></pre>
+GDP &lt;- list(
+	list(&#39;Saudi Arabia&#39;, 711050 * 10^6),
+	list(&#39;Switzerland&#39;, 631050 * 10^6),
+	list(&#39;Netherlands&#39;, 770067 * 10^6),
+	list(&#39;Iran&#39;, 551588 * 10^6)
+)
+
+x_(GDP) $ x_MaxBy(GDP, xSecondOf)
+</div>
+<strong class='error'>Error in x_(GDP)$x_MaxBy(GDP, xSecondOf): unused argument (xSecondOf)</strong></pre>
   </div>
   <div class="span4">
     <!-- <ul>
-      <li>xInter</li><li>xInter...</li>
+      <li>xMaxBy</li><li>xMaxBy...</li>
     </ul>
     <ul>
       
@@ -192,16 +206,23 @@ NULL
 
     <h2>See also</h2>
     
-Other set_functions: <code><a href='xDuplicatesOf.html'>xDuplicatesOf</a></code>,
-  <code><a href='xDuplicatesOf.html'>xDuplicatesOf...</a></code>; <code><a href='xIsMember.html'>xIsMember</a></code>,
-  <code><a href='xIsMember.html'>xIsMember...</a></code>; <code><a href='xIsSubset.html'>xIsSubset</a></code>,
-  <code><a href='xIsSubset.html'>xIsSubset...</a></code>; <code><a href='xNotMember.html'>xNotMember</a></code>,
-  <code><a href='xNotMember.html'>xNotMember...</a></code>; <code><a href='xPermute.html'>xPermute</a></code>,
-  <code><a href='xPermute.html'>xPermute...</a></code>; <code><a href='xPowerSetOf.html'>xPowerSetOf</a></code>,
-  <code><a href='xPowerSetOf.html'>xPowerSetOf...</a></code>; <code><a href='xProdSetOf.html'>xProdSetOf</a></code>,
-  <code><a href='xProdSetOf.html'>xProdSetOf...</a></code>; <code><a href='xUnionOf.html'>xUnionOf</a></code>,
-  <code><a href='xUnionOf.html'>xUnionOf...</a></code>; <code><a href='xUniqueOf.html'>xUniqueOf</a></code>,
-  <code><a href='xUniqueOf.html'>xUniqueOf...</a></code>
+Other selection_functions: <code><a href='xAtCol.html'>xAtCol</a></code>,
+  <code><a href='xAtCol.html'>xAtCol...</a></code>; <code><a href='xAt.html'>xAt</a></code>,
+  <code><a href='xAt.html'>xAt...</a></code>; <code><a href='xDropWhile.html'>xDropWhile</a></code>,
+  <code><a href='xDropWhile.html'>xDropWhile...</a></code>; <code><a href='xDrop.html'>xDrop</a></code>,
+  <code><a href='xDrop.html'>xDrop...</a></code>; <code><a href='xFirstOf.html'>xFirstOf</a></code>,
+  <code><a href='xFirstOf.html'>xFirstOf...</a></code>; <code><a href='xFourthOf.html'>xFourthOf</a></code>,
+  <code><a href='xFourthOf.html'>xFourthOf...</a></code>; <code><a href='xInitOf.html'>xInitOf</a></code>,
+  <code><a href='xInitOf.html'>xInitOf...</a></code>; <code><a href='xLastOf.html'>xLastOf</a></code>,
+  <code><a href='xLastOf.html'>xLastOf...</a></code>; <code><a href='xMinBy.html'>xMinBy</a></code>,
+  <code><a href='xMinBy.html'>xMinBy...</a></code>; <code><a href='xPluck.html'>xPluck</a></code>,
+  <code><a href='xPluck.html'>xPluck...</a></code>; <code><a href='xRestOf.html'>xRestOf</a></code>,
+  <code><a href='xRestOf.html'>xRestOf...</a></code>; <code><a href='xSecondOf.html'>xSecondOf</a></code>,
+  <code><a href='xSecondOf.html'>xSecondOf...</a></code>; <code><a href='xSlice.html'>xSlice</a></code>,
+  <code><a href='xSlice.html'>xSlice...</a></code>; <code><a href='xTakeWhile.html'>xTakeWhile</a></code>,
+  <code><a href='xTakeWhile.html'>xTakeWhile...</a></code>; <code><a href='xTake.html'>xTake</a></code>,
+  <code><a href='xTake.html'>xTake...</a></code>; <code><a href='xThirdOf.html'>xThirdOf</a></code>,
+  <code><a href='xThirdOf.html'>xThirdOf...</a></code>
 
     
   </div>
