@@ -466,7 +466,7 @@ as standard operations.</p></li>
     
     </ul>
     <h3>Basic Functions</h3>
-    <p>These very simple functions are useful for function corner cases.</p>
+    <p>These very simple functions are difficult to classify. They include the identity function, a function that  closes of a value, and functions that return true, false or na.</p>
 
 
     <ul class="index">
@@ -485,10 +485,13 @@ as standard operations.</p></li>
             
       <li>
         <code><a href="xTruth.html">xTruth</a></code><br />xTruth</li>
+            
+      <li>
+        <code><a href="xUnit.html">xUnit</a></code><br />xUnit</li>
     
     </ul>
     <h3>Folding Functions</h3>
-    <p>Folding is a fundemental operation in functional programming. These functions are varients of fold.</p>
+    <p>Folds are fundemental to functional programming. A fold takes a function that combines two values (like the plus operator, the function &#39;c&#39;, or the function rbind), and applies it to a collection of values, ultimately yielding a single value. In general, folds can be in place of tail recursion or loops, and most functions in arrow can be implemented as a fold.</p>
 
 
     <ul class="index">
@@ -541,7 +544,7 @@ as standard operations.</p></li>
     
     </ul>
     <h3>Function Combining Functions</h3>
-    <p>These functions take several functions and combine them into a resultant function. These include xCompose and xLift.</p>
+    <p>These functions take several functions and combine them into a single function. These include functions for composition functions,  and for composition a function with a binary operator.</p>
 
 
     <ul class="index">
@@ -579,6 +582,9 @@ as standard operations.</p></li>
             
       <li>
         <code><a href="xJuxtapose.html">xJuxtapose</a></code>(xJuxtapose...)<br />xJuxtapose</li>
+            
+      <li>
+        <code><a href="xLift.html">xLift</a></code>(%and%, %or%, xLift...)<br />xLift</li>
             
       <li>
         <code><a href="xNot.html">xNot</a></code><br />xNot</li>
@@ -712,7 +718,7 @@ as standard operations.</p></li>
         <code><a href="xSplitAt.html">xSplitAt</a></code>(xSplitAt...)<br />xSplitAt</li>
             
       <li>
-        <code><a href="xSplitBy.html">xSplitBy</a></code>(xSplitBy...)<br />xSplitBy</li>
+        <code><a href="xSplitWith.html">xSplitWith</a></code>(xSplitWith...)<br />xSplitWith</li>
             
       <li>
         <code><a href="xTabulate.html">xTabulate</a></code>(xTabulate...)<br />xTabulate</li>
@@ -947,9 +953,6 @@ as standard operations.</p></li>
             
       <li>
         <code><a href="xLocate.html">xLocate</a></code>(xLocate...)<br />xLocate</li>
-            
-      <li>
-        <code><a href="xUnit.html">xUnit</a></code><br />xUnit</li>
             
       <li>
         <code><a href="xWhere.html">xWhere</a></code>(xWhere...)<br />xWhere</li>

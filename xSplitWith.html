@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-<title>xSplitAt. arrow 0.1.0</title>
+<title>xSplitWith. arrow 0.1.0</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="author" content="">
 
@@ -131,27 +131,27 @@
       
       </header>
 
-      <h1>xSplitAt</h1>
+      <h1>xSplitWith</h1>
 
 <div class="row">
   <div class="span8">
     <h2>Usage</h2>
-    <pre><div>xSplitAt(nums, coll)</div>
-<div>xSplitAt...(nums, ...)</div></pre>
+    <pre><div>xSplitWith(pred, coll)</div>
+<div>xSplitWith...(pred, ...)</div></pre>
     
     <h2>Arguments</h2>
     <dl>
-      <dt>nums</dt>
-      <dd>a vector of nonnegative whole numbers. The indices
-   to split a collection <b>after</b>.</dd>
+      <dt>pred</dt>
+      <dd>a binary predicate. The predicate to test whether
+     a split should be introduced between the two elements.</dd>
       <dt>coll</dt>
       <dd>a collection. The collection to split.</dd>
       <dt>...</dt>
       <dd>see above.</dd>
     </dl>
     
-    <div class="xSplitAt">
-      <h2>xSplitAt</h2>
+    <div class="xSplitWith">
+      <h2>xSplitWith</h2>
 
     </div>
 
@@ -165,7 +165,7 @@
     <div class="Description">
       <h2>Description</h2>
 
-      <p>Split a collection into at several indices.</p>
+      <p>Divide a collection into groups determined by a predicate.</p>
 
     </div>
 
@@ -174,24 +174,18 @@
 
       <p></p>
 
-      <p>If <code>nums</code> is zero then the first list in the
-   returned value is empty.
-   Likewise, if <code>nums</code> is equal or larger than the
-   length of <b>coll</b> then
-   the second return list is empty. If <b>coll</b> is
-   length zero both lists are empty.</p>
+      <p>Returns the empty list if <b>coll</b> is length-zero.</p>
 
     </div>
     
     <h2 id="examples">Examples</h2>
     <pre class="examples"><div class='input'>
 NULL
-
 </div></pre>
   </div>
   <div class="span4">
     <!-- <ul>
-      <li>xSplitAt</li><li>xSplitAt...</li>
+      <li>xSplitWith</li><li>xSplitWith...</li>
     </ul>
     <ul>
       
@@ -210,8 +204,8 @@ Other reshaping_functions: <code><a href='xChop.html'>xChop</a></code>,
   <code><a href='xRepeat.html'>xRepeat...</a></code>; <code><a href='xReverse.html'>xReverse</a></code>,
   <code><a href='xReverse.html'>xReverse...</a></code>; <code><a href='xShuffle.html'>xShuffle</a></code>,
   <code><a href='xShuffle.html'>xShuffle...</a></code>; <code><a href='xSortBy.html'>xSortBy</a></code>,
-  <code><a href='xSortBy.html'>xSortBy...</a></code>; <code><a href='xSplitWith.html'>xSplitWith</a></code>,
-  <code><a href='xSplitWith.html'>xSplitWith...</a></code>; <code><a href='xTabulate.html'>xTabulate</a></code>,
+  <code><a href='xSortBy.html'>xSortBy...</a></code>; <code><a href='xSplitAt.html'>xSplitAt</a></code>,
+  <code><a href='xSplitAt.html'>xSplitAt...</a></code>; <code><a href='xTabulate.html'>xTabulate</a></code>,
   <code><a href='xTabulate.html'>xTabulate...</a></code>; <code><a href='xUnzipNames.html'>xUnzipNames</a></code>,
   <code><a href='xUnzipNames.html'>xUnzipNames...</a></code>; <code><a href='xZipNames.html'>xZipNames</a></code>,
   <code><a href='xZipNames.html'>xZipNames...</a></code>; <code><a href='xZip.html'>xZip</a></code>,

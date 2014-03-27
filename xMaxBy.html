@@ -181,8 +181,7 @@
     </div>
     
     <h2 id="examples">Examples</h2>
-    <pre class="examples"><div class='input'>
-# 1. Select the largest row in a data-frame like struture
+    <pre class="examples"><div class='input'># 1. Select the largest row in a data-frame like struture
 #    by an attribute.
 
 GDP &lt;- list(
@@ -192,9 +191,18 @@ GDP &lt;- list(
 	list(&#39;Iran&#39;, 551588 * 10^6)
 )
 
-x_(GDP) $ x_MaxBy(GDP, xSecondOf)
+x_(GDP) $ x_MaxBy(xSecondOf)
 </div>
-<strong class='error'>Error in x_(GDP)$x_MaxBy(GDP, xSecondOf): unused argument (xSecondOf)</strong></pre>
+<div class='output'>[[1]]
+[1] &quot;Netherlands&quot;
+
+[[2]]
+[1] 7.70067e+11
+
+</div>
+<div class='input'>
+# list(&quot;Netherlands&quot;, 7.70067e+11)
+</div></pre>
   </div>
   <div class="span4">
     <!-- <ul>
