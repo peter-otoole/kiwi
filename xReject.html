@@ -233,9 +233,7 @@ is_outlier &lt;- function (data_set) {
     }
 }
 
-data_set &lt;- c(
-    1.0, 0.1, 1.1, 1.2,
-    0.1, 0.7, 0.8, 1.1)
+data_set &lt;- c(1.0, 0.1, 1.1, 1.2, 0.1, 0.7, 0.8, 1.1)
 
 xReject(
     is_outlier(data_set), data_set)
@@ -268,7 +266,7 @@ xReject(
 # the values for which this is true.
 
 elems_smaller_than &lt;- (maximum : nums) := {
-    xReject(num := num &gt; maximum, nums)
+    xReject(x. &gt; maximum, nums)
 }
 
 elems_smaller_than(10, c(1, 8, 10, 11, 100))

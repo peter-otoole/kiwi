@@ -216,7 +216,7 @@
 csv &lt;- &quot;Monaco,48.9,Japan,44.6,Italy,44.3,Germany,43.7,Jersey,43.4&quot;
 
 x_(csv) $ xExplode(&#39;,&#39;) $ xChunk(2) $ xZip() $
-x_AsNamed(c(&#39;country&#39;, &#39;age&#39;))
+x_AddKeys(c(&#39;country&#39;, &#39;age&#39;))
 </div>
 <div class='output'>$country
 $country[[1]]
@@ -297,9 +297,9 @@ Other reshaping_functions: <code><a href='xChop.html'>xChop</a></code>,
   <code><a href='xSortBy.html'>xSortBy...</a></code>; <code><a href='xSplitAt.html'>xSplitAt</a></code>,
   <code><a href='xSplitAt.html'>xSplitAt...</a></code>; <code><a href='xSplitWith.html'>xSplitWith</a></code>,
   <code><a href='xSplitWith.html'>xSplitWith...</a></code>; <code><a href='xTabulate.html'>xTabulate</a></code>,
-  <code><a href='xTabulate.html'>xTabulate...</a></code>; <code><a href='xUnzipNames.html'>xUnzipNames</a></code>,
-  <code><a href='xUnzipNames.html'>xUnzipNames...</a></code>; <code><a href='xZipNames.html'>xZipNames</a></code>,
-  <code><a href='xZipNames.html'>xZipNames...</a></code>
+  <code><a href='xTabulate.html'>xTabulate...</a></code>; <code><a href='xUnzipKeys.html'>xUnzipKeys</a></code>,
+  <code><a href='xUnzipKeys.html'>xUnzipKeys...</a></code>; <code><a href='xZipKeys.html'>xZipKeys</a></code>,
+  <code><a href='xZipKeys.html'>xZipKeys...</a></code>
 
     
   </div>

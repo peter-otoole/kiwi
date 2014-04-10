@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-<title>xAsVariadic. arrow 0.1.0</title>
+<title>xUnzipKeys. arrow 0.1.0</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="author" content="">
 
@@ -131,72 +131,70 @@
       
       </header>
 
-      <h1>xAsVariadic</h1>
+      <h1>xUnzipKeys</h1>
 
 <div class="row">
   <div class="span8">
     <h2>Usage</h2>
-    <pre><div>xAsVariadic(fn)</div></pre>
+    <pre><div>xUnzipKeys(coll)</div>
+<div>xUnzipKeys...(...)</div></pre>
     
     <h2>Arguments</h2>
     <dl>
-      <dt>fn</dt>
-      <dd>a unary function. The function to convert
-   to a variadic function.</dd>
+      <dt>coll</dt>
+      <dd>a named collection. The collection to split into name, value pairs.</dd>
+      <dt>...</dt>
+      <dd>see above.</dd>
     </dl>
     
-    <div class="xAsVariadic">
-      <h2>xAsVariadic</h2>
+    <div class="xUnzipKeys">
+      <h2>xUnzipKeys</h2>
 
     </div>
 
     <div class="Value">
       <h2>Value</h2>
 
-      <p>A variadic function.</p>
+      <p>A named list.</p>
 
     </div>
 
     <div class="Description">
       <h2>Description</h2>
 
-      <p>Return a variadic function that passes its arguments
-as a list to ints underyling function.</p>
+      <p>Split a named collection into a list of name: value list pairs.</p>
 
     </div>
 
     <div class="Details">
       <h2>Details</h2>
 
-      <p><code>xAsVariadic</code> takes a unary function and
-   returns a function with ellipsis parametres.
-   The returned function passes its ellipsis arguments
-   as a single list to the underlying function.</p>
+      <p><b>xUnzipKeys</b> is the inverse function to <b>xZipKeys</b> - it
+    takes a named collection and converts it into a list of
+    key, value list pairs. This is primarily intended for allowing functions that
+    cannot read collection names - like map and select - to be able to operate
+    on both a value and its key simultaneouslty.</p>
+
+    </div>
+
+    <div class="Corner Cases">
+      <h2>Corner Cases</h2>
+
+      <p></p>
+
+      <p>Returns <code>list()</code> if <code>coll</code> is length-zero.</p>
 
     </div>
     
     <h2 id="examples">Examples</h2>
     <pre class="examples"><div class='input'>
-# 1.
-# Convert a function that takes a single value as an argument to
-# a function that takes many arguments.
-#
-
-summate &lt;- xAsVariadic(nums := xFold(&quot;+&quot;, 0, nums) )
-
-summate(1, 2, 3, 4, 5, 6)
-</div>
-<div class='output'>[1] 21
-</div>
-<div class='input'>
-# 2.
-#
+NULL
 
 </div></pre>
   </div>
   <div class="span4">
     <!-- <ul>
-      <li>xAsVariadic</li>
+      <li>xUnzipKeys</li><li>xUnzipKeys...</li>
     </ul>
     <ul>
       
@@ -204,33 +202,27 @@ summate(1, 2, 3, 4, 5, 6)
 
     <h2>See also</h2>
     
-Other function_application_functions: <code><a href='xApply.html'>xApply</a></code>,
-  <code><a href='xApply.html'>xApply...</a></code>; <code><a href='xAsUnary.html'>xAsUnary</a></code>;
-  <code><a href='xDeepMap.html'>xDeepMap</a></code>, <code><a href='xDeepMap.html'>xDeepMap...</a></code>;
-  <code><a href='xFlatMap.html'>xFlatMap</a></code>, <code><a href='xFlatMap.html'>xFlatMap...</a></code>;
-  <code><a href='xMapIndexed.html'>xMapIndexed</a></code>, <code><a href='xMapIndexed.html'>xMapIndexed...</a></code>;
-  <code><a href='xMapply.html'>xMapply</a></code>, <code><a href='xMapply.html'>xMapply...</a></code>;
-  <code><a href='xMap.html'>xMap</a></code>, <code><a href='xMap.html'>xMap...</a></code>;
-  <code><a href='xThread.html'>xThread</a></code>, <code><a href='xThread.html'>xThread...</a></code>;
-  <code><a href='xVectorise.html'>xVectorise</a></code>, <code><a href='xVectorise.html'>xVectorize</a></code>
+Other key_functions: <code><a href='xAddKeys.html'>xAddKeys</a></code>;
+  <code><a href='xPluck.html'>xPluck</a></code>, <code><a href='xPluck.html'>xPluck...</a></code>;
+  <code><a href='xZipKeys.html'>xZipKeys</a></code>, <code><a href='xZipKeys.html'>xZipKeys...</a></code>
 
-Other function_modifying_functions: <code><a href='xLift.html'>%and%</a></code>,
-  <code><a href='xLift.html'>%or%</a></code>, <code><a href='xLift.html'>xLift</a></code>,
-  <code><a href='xLift.html'>xLift...</a></code>; <code><a href='xCompose.html'>%of%</a></code>,
-  <code><a href='xCompose.html'>%then%</a></code>, <code><a href='xCompose.html'>xCompose</a></code>,
-  <code><a href='xCompose.html'>xCompose...</a></code>; <code><a href='xAsClosure.html'>xAsClosure</a></code>;
-  <code><a href='xAsUnary.html'>xAsUnary</a></code>; <code><a href='xCapture.html'>xCapture</a></code>,
-  <code><a href='xCapture.html'>xK</a></code>; <code><a href='xDelay.html'>xDelay</a></code>;
-  <code><a href='xJuxtapose.html'>xJuxtapose</a></code>, <code><a href='xJuxtapose.html'>xJuxtapose...</a></code>;
-  <code><a href='xNot.html'>xNot</a></code>; <code><a href='xPartial.html'>xPartial</a></code>,
-  <code><a href='xPartial.html'>xPartial...</a></code>; <code><a href='xThread.html'>xThread</a></code>,
-  <code><a href='xThread.html'>xThread...</a></code>; <code><a href='xVectorise.html'>xVectorise</a></code>,
-  <code><a href='xVectorise.html'>xVectorize</a></code>
-
-Other parametre_functions: <code><a href='xArityOf.html'>xArityOf</a></code>;
-  <code><a href='xAsUnary.html'>xAsUnary</a></code>; <code><a href='xFormalsOf.html'>xFormalsOf</a></code>;
-  <code><a href='xIsVariadic.html'>xIsVariadic</a></code>; <code><a href='xParamsOf.html'>xParamsOf</a></code>;
-  <code><a href='xPartial.html'>xPartial</a></code>, <code><a href='xPartial.html'>xPartial...</a></code>
+Other reshaping_functions: <code><a href='xChop.html'>xChop</a></code>,
+  <code><a href='xChop.html'>xChop...</a></code>; <code><a href='xChunk.html'>xChunk</a></code>,
+  <code><a href='xChunk.html'>xChunk...</a></code>; <code><a href='xFlatten.html'>xFlatten</a></code>,
+  <code><a href='xFlatten.html'>xFlatten...</a></code>; <code><a href='xGroupBy.html'>xGroupBy</a></code>,
+  <code><a href='xGroupBy.html'>xGroupBy...</a></code>; <code><a href='xJoin.html'>xJoin</a></code>,
+  <code><a href='xJoin.html'>xJoin...</a></code>; <code><a href='xOneOf.html'>xOneOf</a></code>,
+  <code><a href='xOneOf.html'>xOneOf...</a></code>; <code><a href='xRecycle.html'>xRecycle</a></code>,
+  <code><a href='xRecycle.html'>xRecycle...</a></code>; <code><a href='xRepeat.html'>xRepeat</a></code>,
+  <code><a href='xRepeat.html'>xRepeat...</a></code>; <code><a href='xReverse.html'>xReverse</a></code>,
+  <code><a href='xReverse.html'>xReverse...</a></code>; <code><a href='xShuffle.html'>xShuffle</a></code>,
+  <code><a href='xShuffle.html'>xShuffle...</a></code>; <code><a href='xSortBy.html'>xSortBy</a></code>,
+  <code><a href='xSortBy.html'>xSortBy...</a></code>; <code><a href='xSplitAt.html'>xSplitAt</a></code>,
+  <code><a href='xSplitAt.html'>xSplitAt...</a></code>; <code><a href='xSplitWith.html'>xSplitWith</a></code>,
+  <code><a href='xSplitWith.html'>xSplitWith...</a></code>; <code><a href='xTabulate.html'>xTabulate</a></code>,
+  <code><a href='xTabulate.html'>xTabulate...</a></code>; <code><a href='xZipKeys.html'>xZipKeys</a></code>,
+  <code><a href='xZipKeys.html'>xZipKeys...</a></code>; <code><a href='xZip.html'>xZip</a></code>,
+  <code><a href='xZip.html'>xZip...</a></code>
 
     
   </div>

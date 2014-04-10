@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-<title>xStopwatch. arrow 0.1.0</title>
+<title>xAtKey. arrow 0.1.0</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="author" content="">
 
@@ -131,86 +131,51 @@
       
       </header>
 
-      <h1>xStopwatch</h1>
+      <h1>xAtKey</h1>
 
 <div class="row">
   <div class="span8">
     <h2>Usage</h2>
-    <pre><div>xStopwatch(num)</div></pre>
+    <pre><div>xAtKey(str, coll)</div>
+<div>xAtKey...(str, ...)</div></pre>
     
     <h2>Arguments</h2>
     <dl>
-      <dt>num</dt>
-      <dd>a positive number. The number of seconds
-   the function should return true for.</dd>
+      <dt>str</dt>
+      <dd>a string. The key to select.</dd>
+      <dt>coll</dt>
+      <dd>a collection.</dd>
+      <dt>...</dt>
+      <dd>see above</dd>
     </dl>
     
-    <div class="xStopwatch">
-      <h2>xStopwatch</h2>
+    <div class="xAtKey">
+      <h2>xAtKey</h2>
 
     </div>
 
     <div class="Value">
       <h2>Value</h2>
 
-      <p>A variadic function that ignores its arguments.</p>
+      <p>an arbitrary value.</p>
 
     </div>
 
     <div class="Description">
       <h2>Description</h2>
 
-      <p>Create a function that returns true for a
-preset time after creation.</p>
+      <p>Select a particular key from a selection</p>
 
     </div>
     
     <h2 id="examples">Examples</h2>
     <pre class="examples"><div class='input'>
-# 1. Monte Carlo estimation of Pi
-# estimate the value of pi in a preset amount of time.
-#
-# this generates random points inside a square, and estimates the proportion
-# of points that fall within the circle centred at the centre of the square, which
-# has a diametre equal to the width of the square.
-#
-# this proportion (~0.78...) multiplied by four is pi.
-#
-# this randomised method of approximating pi is slow. The function xStopwatch can
-# be used to allow the function to run for an acceptable amount of time before
-# ending.
-
-make_point &lt;- xPartial...(runif, 2)
-
-in_unit_circle &lt;- (point) := {
-	# is a point within the unit circle?
-	sum(point^2) &lt;= 1
-}
-
-# create the timer function.
-time_left &lt;- xStopwatch(2)
-
-x_(logical(0)) $ xIterate(trials := {
-
-	if (!time_left()) {
-		Return(trials)
-	}
-
-	random_point &lt;- make_point()
-	c(trials, in_unit_circle(random_point))
-
-}) $
-xMap(trial := {
-	if (trial) 1 else 0
-}) $
-x_Tap(unlist %then% mean) * 4
-</div>
-<div class='output'>[1] 3.15761
+NULL
 </div></pre>
   </div>
   <div class="span4">
     <!-- <ul>
-      <li>xStopwatch</li>
+      <li>xAtKey</li><li>xAtKey...</li>
     </ul>
     <ul>
       
@@ -218,15 +183,24 @@ x_Tap(unlist %then% mean) * 4
 
     <h2>See also</h2>
     
-Other inpure_functions: <code><a href='xDelay.html'>xDelay</a></code>;
-  <code><a href='xDo.html'>xDo</a></code>, <code><a href='xDo.html'>xDo...</a></code>;
-  <code><a href='xExecute.html'>xExecute</a></code>; <code><a href='xReadChars.html'>xReadChars</a></code>;
-  <code><a href='xReadLines.html'>xReadLines</a></code>; <code><a href='xReadWords.html'>xReadWords</a></code>;
-  <code><a href='xVersion.html'>xVersion</a></code>; <code><a href='xWriteChars.html'>xWriteChars</a></code>;
-  <code><a href='xWriteLines.html'>xWriteLines</a></code>; <code><a href='xWriteWords.html'>xWriteWords</a></code>
-
-Other time_functions: <code><a href='xDelay.html'>xDelay</a></code>;
-  <code><a href='xLimit.html'>xLimit</a></code>
+Other selection_functions: <code><a href='xAtCol.html'>xAtCol</a></code>,
+  <code><a href='xAtCol.html'>xAtCol...</a></code>; <code><a href='xAt.html'>xAt</a></code>,
+  <code><a href='xAt.html'>xAt...</a></code>; <code><a href='xDropWhile.html'>xDropWhile</a></code>,
+  <code><a href='xDropWhile.html'>xDropWhile...</a></code>; <code><a href='xDrop.html'>xDrop</a></code>,
+  <code><a href='xDrop.html'>xDrop...</a></code>; <code><a href='xFirstOf.html'>xFirstOf</a></code>,
+  <code><a href='xFirstOf.html'>xFirstOf...</a></code>; <code><a href='xFourthOf.html'>xFourthOf</a></code>,
+  <code><a href='xFourthOf.html'>xFourthOf...</a></code>; <code><a href='xInitOf.html'>xInitOf</a></code>,
+  <code><a href='xInitOf.html'>xInitOf...</a></code>; <code><a href='xLastOf.html'>xLastOf</a></code>,
+  <code><a href='xLastOf.html'>xLastOf...</a></code>; <code><a href='xMaxBy.html'>xMaxBy</a></code>,
+  <code><a href='xMaxBy.html'>xMaxBy...</a></code>; <code><a href='xMinBy.html'>xMinBy</a></code>,
+  <code><a href='xMinBy.html'>xMinBy...</a></code>; <code><a href='xPluck.html'>xPluck</a></code>,
+  <code><a href='xPluck.html'>xPluck...</a></code>; <code><a href='xRestOf.html'>xRestOf</a></code>,
+  <code><a href='xRestOf.html'>xRestOf...</a></code>; <code><a href='xSecondOf.html'>xSecondOf</a></code>,
+  <code><a href='xSecondOf.html'>xSecondOf...</a></code>; <code><a href='xSlice.html'>xSlice</a></code>,
+  <code><a href='xSlice.html'>xSlice...</a></code>; <code><a href='xTakeWhile.html'>xTakeWhile</a></code>,
+  <code><a href='xTakeWhile.html'>xTakeWhile...</a></code>; <code><a href='xTake.html'>xTake</a></code>,
+  <code><a href='xTake.html'>xTake...</a></code>; <code><a href='xThirdOf.html'>xThirdOf</a></code>,
+  <code><a href='xThirdOf.html'>xThirdOf...</a></code>
 
     
   </div>

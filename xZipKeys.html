@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-<title>xRecycle. arrow 0.1.0</title>
+<title>xZipKeys. arrow 0.1.0</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="author" content="">
 
@@ -131,53 +131,42 @@
       
       </header>
 
-      <h1>xRecycle</h1>
+      <h1>xZipKeys</h1>
 
 <div class="row">
   <div class="span8">
     <h2>Usage</h2>
-    <pre><div>xRecycle(colls)</div>
-<div>xRecycle...(...)</div></pre>
+    <pre><div>xZipKeys(colls)</div>
+<div>xZipKeys...(...)</div></pre>
     
     <h2>Arguments</h2>
     <dl>
       <dt>colls</dt>
-      <dd>a collection of collections. The collection
-    to convert to a non-ragged form.</dd>
+      <dd>a list or pairlist of two-element lists or pairlists,
+   with the first element being a string and the second
+   element being an arbitrary value. The string part of each
+   sublist is used as the name in the output list, and the
+   remaining part is used as the value associated with that key.</dd>
       <dt>...</dt>
       <dd>see above.</dd>
     </dl>
     
-    <div class="xRecycle">
-      <h2>xRecycle</h2>
+    <div class="xZipKeys">
+      <h2>xZipKeys</h2>
 
     </div>
 
     <div class="Value">
       <h2>Value</h2>
 
-      <p>A list of lists.</p>
+      <p>A named list.</p>
 
     </div>
 
     <div class="Description">
       <h2>Description</h2>
 
-      <p>Make every subcollection in a collection the same
-length by cyclically reusing elements.</p>
-
-    </div>
-
-    <div class="Details">
-      <h2>Details</h2>
-
-      <p>xRecycle takes a ragged collection - a collection of collections
-    of varying length - and recycles elements to make the shorter
-    collections the same length as the longest collection.</p>
-
-      <p><code>xRecycle...( list('a', 'b'), 1:3 )</code></p>
-
-      <p><code>list(list("a", "b", "a"), list(1L, 2L, 3L))</code></p>
+      <p>Convert a collection of name, value pairs into a named collection.</p>
 
     </div>
 
@@ -186,14 +175,71 @@ length by cyclically reusing elements.</p>
 
       <p></p>
 
-      <p>Returns the empty list if <b>colls</b> is length-zero, or if a
-   collection in <b>colls</b> is length-zero.</p>
+      <p>Returns the empty list if <b>coll</b> is length-zero.</p>
 
     </div>
-      </div>
+    
+    <h2 id="examples">Examples</h2>
+    <pre class="examples"><div class='input'>
+# 1. turn a csv of country names and median ages into
+#    a named list of countires, with values being the median age.
+
+csv &lt;- &quot;Monaco,48.9,Japan,44.6,Italy,44.3,Germany,43.7,Jersey,43.4&quot;
+
+x_(csv) $ xExplode(&#39;,&#39;) $ xChunk(2) $ x_ZipKeys()
+</div>
+<div class='output'>$Monaco
+[1] &quot;48.9&quot;
+
+$Japan
+[1] &quot;44.6&quot;
+
+$Italy
+[1] &quot;44.3&quot;
+
+$Germany
+[1] &quot;43.7&quot;
+
+$Jersey
+[1] &quot;43.4&quot;
+
+</div>
+<div class='input'>
+# list(
+#    Monaco =
+#        48.9,
+#    Japan =
+#        44.6,
+#    Italy =
+#        44.3,
+#    Germany =
+#        43.7,
+#    Jersey =
+#        43.4
+# )
+
+x_(csv) $ xExplode(&#39;,&#39;) $ xChunk(2) $ x_ZipKeys()
+</div>
+<div class='output'>$Monaco
+[1] &quot;48.9&quot;
+
+$Japan
+[1] &quot;44.6&quot;
+
+$Italy
+[1] &quot;44.3&quot;
+
+$Germany
+[1] &quot;43.7&quot;
+
+$Jersey
+[1] &quot;43.4&quot;
+
+</div></pre>
+  </div>
   <div class="span4">
     <!-- <ul>
-      <li>xRecycle</li><li>xRecycle...</li>
+      <li>xZipKeys</li><li>xZipKeys...</li>
     </ul>
     <ul>
       
@@ -201,13 +247,18 @@ length by cyclically reusing elements.</p>
 
     <h2>See also</h2>
     
+Other key_functions: <code><a href='xAddKeys.html'>xAddKeys</a></code>;
+  <code><a href='xPluck.html'>xPluck</a></code>, <code><a href='xPluck.html'>xPluck...</a></code>;
+  <code><a href='xUnzipKeys.html'>xUnzipKeys</a></code>, <code><a href='xUnzipKeys.html'>xUnzipKeys...</a></code>
+
 Other reshaping_functions: <code><a href='xChop.html'>xChop</a></code>,
   <code><a href='xChop.html'>xChop...</a></code>; <code><a href='xChunk.html'>xChunk</a></code>,
   <code><a href='xChunk.html'>xChunk...</a></code>; <code><a href='xFlatten.html'>xFlatten</a></code>,
   <code><a href='xFlatten.html'>xFlatten...</a></code>; <code><a href='xGroupBy.html'>xGroupBy</a></code>,
   <code><a href='xGroupBy.html'>xGroupBy...</a></code>; <code><a href='xJoin.html'>xJoin</a></code>,
   <code><a href='xJoin.html'>xJoin...</a></code>; <code><a href='xOneOf.html'>xOneOf</a></code>,
-  <code><a href='xOneOf.html'>xOneOf...</a></code>; <code><a href='xRepeat.html'>xRepeat</a></code>,
+  <code><a href='xOneOf.html'>xOneOf...</a></code>; <code><a href='xRecycle.html'>xRecycle</a></code>,
+  <code><a href='xRecycle.html'>xRecycle...</a></code>; <code><a href='xRepeat.html'>xRepeat</a></code>,
   <code><a href='xRepeat.html'>xRepeat...</a></code>; <code><a href='xReverse.html'>xReverse</a></code>,
   <code><a href='xReverse.html'>xReverse...</a></code>; <code><a href='xShuffle.html'>xShuffle</a></code>,
   <code><a href='xShuffle.html'>xShuffle...</a></code>; <code><a href='xSortBy.html'>xSortBy</a></code>,
@@ -215,8 +266,7 @@ Other reshaping_functions: <code><a href='xChop.html'>xChop</a></code>,
   <code><a href='xSplitAt.html'>xSplitAt...</a></code>; <code><a href='xSplitWith.html'>xSplitWith</a></code>,
   <code><a href='xSplitWith.html'>xSplitWith...</a></code>; <code><a href='xTabulate.html'>xTabulate</a></code>,
   <code><a href='xTabulate.html'>xTabulate...</a></code>; <code><a href='xUnzipKeys.html'>xUnzipKeys</a></code>,
-  <code><a href='xUnzipKeys.html'>xUnzipKeys...</a></code>; <code><a href='xZipKeys.html'>xZipKeys</a></code>,
-  <code><a href='xZipKeys.html'>xZipKeys...</a></code>; <code><a href='xZip.html'>xZip</a></code>,
+  <code><a href='xUnzipKeys.html'>xUnzipKeys...</a></code>; <code><a href='xZip.html'>xZip</a></code>,
   <code><a href='xZip.html'>xZip...</a></code>
 
     

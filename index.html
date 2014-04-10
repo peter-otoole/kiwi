@@ -162,8 +162,7 @@ Any feedback is appreciated.</p>
 <ul>
 <li><p>Programs are built in a lego-like manner; stacking small,
 uniquely-purposed functions into a larger program.</p></li>
-<li><p>Like Ruby and JavaScript, Arrow has a shorthand syntax
-for creating functions to R.</p></li>
+<li><p>Like Ruby and JavaScript, Arrow has a shorthand syntax    for creating functions.</p></li>
 <li><p>Arrow implements jQuery-like chaining methods without using R&#39;s bulkier
 object-orientation systems. These methods are just as usable as those in
 Python or JavaScript. This syntax is handy for interactive programming.</p></li>
@@ -218,8 +217,7 @@ as standard operations.</p></li>
     <h2>Arrow Documentation</h2>
 
     <h3>Character Functions</h3>
-    <p>These functions are involved in text-processing, or interacting with text-files. These functions primarily involve converting text between a line, word or character representation.</p>
-
+    
 
     <ul class="index">
         
@@ -248,7 +246,7 @@ as standard operations.</p></li>
         <code><a href="xReadWords.html">xReadWords</a></code><br />xReadWords</li>
             
       <li>
-        <code><a href="xSubstring.html">xSubstring</a></code>(xSubstring...)<br />xSubstring</li>
+        <code><a href="xSliceString.html">xSliceString</a></code>(xSliceString...)<br />xSliceString</li>
             
       <li>
         <code><a href="xToChars.html">xToChars</a></code><br />xToChars</li>
@@ -270,8 +268,7 @@ as standard operations.</p></li>
     
     </ul>
     <h3>Combinatoric Functions</h3>
-    <p>These functions generate combinatorial structures, which are typically used for specialised patterns of iteration or generating more useful substructures from an initial pool of candidate structures. As these functions enumerate rapidly growing data structures they tend to inefficient for large inputs.</p>
-
+    
 
     <ul class="index">
         
@@ -292,8 +289,7 @@ as standard operations.</p></li>
     
     </ul>
     <h3>Collection Comprehensions</h3>
-    <p>Collection comprehensions provide syntactic sugar for defining  collections by providing the contraints that each element must satisfy to be a member of the collection. These are a translation of set-builder notation, which defines a set in terms of membership constraints.</p>
-
+    
 
     <ul class="index">
         
@@ -302,8 +298,7 @@ as standard operations.</p></li>
     
     </ul>
     <h3>Container Conversion Functions</h3>
-    <p>These functions convert the type of container that surrounds a data set. They do not coerce the contents of the container to a different type.</p>
-
+    
 
     <ul class="index">
         
@@ -327,8 +322,7 @@ as standard operations.</p></li>
     
     </ul>
     <h3>Filtering Functions</h3>
-    <p>These functions create a subset of collection, with elements sharing a certain property. This typically involves removing null or other special values from a collection, or selecting or rejecting elements based on a predicate.</p>
-
+    
 
     <ul class="index">
         
@@ -361,8 +355,7 @@ as standard operations.</p></li>
     
     </ul>
     <h3>Immutable Value Functions</h3>
-    <p>These functions work with immutable values; references to a variable that cannot be altered by reassignment after creation.</p>
-
+    
 
     <ul class="index">
         
@@ -380,8 +373,7 @@ as standard operations.</p></li>
     
     </ul>
     <h3>Impure Functions</h3>
-    <p>These functions are referentially impure or have side-effects like interacting with the file system.</p>
-
+    
 
     <ul class="index">
         
@@ -420,8 +412,7 @@ as standard operations.</p></li>
     
     </ul>
     <h3>Methods</h3>
-    <p>These functions involve arrow methods, or are only available as arrow methods. Most functions that are only available as methods convert second-class citizens of arrow like data frames and factors to collection representations.</p>
-
+    
 
     <ul class="index">
         
@@ -429,7 +420,7 @@ as standard operations.</p></li>
         <code><a href="xAsDataFrame.html">xAsDataFrame</a></code>(xAsDataFrame...)<br />xAsDataFrame</li>
             
       <li>
-        <code><a href="xByColnames.html">xByColnames</a></code><br />$ xByColnames</li>
+        <code><a href="xByColkeys.html">xByColkeys</a></code><br />$ xByColkeys</li>
             
       <li>
         <code><a href="xByCols.html">xByCols</a></code><br />$ xByCols</li>
@@ -466,8 +457,7 @@ as standard operations.</p></li>
     
     </ul>
     <h3>Basic Functions</h3>
-    <p>These very simple functions are difficult to classify. They include the identity function, a function that  closes of a value, and functions that return true, false or na.</p>
-
+    
 
     <ul class="index">
         
@@ -491,8 +481,7 @@ as standard operations.</p></li>
     
     </ul>
     <h3>Folding Functions</h3>
-    <p>Folds are fundemental to functional programming. A fold takes a function that combines two values (like the plus operator, the function &#39;c&#39;, or the function rbind), and applies it to a collection of values, ultimately yielding a single value. In general, folds can be in place of tail recursion or loops, and most functions in arrow can be implemented as a fold.</p>
-
+    
 
     <ul class="index">
         
@@ -507,8 +496,7 @@ as standard operations.</p></li>
     
     </ul>
     <h3>Function Application Functions</h3>
-    <p>These apply a function to a data set in varying ways, or  create a new function with a different function application pattern. These include the fuction xMap and varients theiron, and functions to convert functions to different arities.</p>
-
+    
 
     <ul class="index">
         
@@ -544,8 +532,7 @@ as standard operations.</p></li>
     
     </ul>
     <h3>Function Combining Functions</h3>
-    <p>These functions take several functions and combine them into a single function. These include functions for composition functions,  and for composition a function with a binary operator.</p>
-
+    
 
     <ul class="index">
         
@@ -560,8 +547,7 @@ as standard operations.</p></li>
     
     </ul>
     <h3>Function Modifying Functions</h3>
-    <p>These functions take a function and return a different or modified function</p>
-
+    
 
     <ul class="index">
         
@@ -600,27 +586,25 @@ as standard operations.</p></li>
     
     </ul>
     <h3>Key Functions</h3>
-    <p>These functions deal with collection names. They modify the names of a collection, or select from a collection using keys.</p>
-
+    
 
     <ul class="index">
         
       <li>
-        <code><a href="xAsNamed.html">xAsNamed</a></code><br />xAsNamed</li>
+        <code><a href="xAddKeys.html">xAddKeys</a></code><br />xAddKeys</li>
             
       <li>
         <code><a href="xPluck.html">xPluck</a></code>(xPluck...)<br />xPluck</li>
             
       <li>
-        <code><a href="xUnzipNames.html">xUnzipNames</a></code>(xUnzipNames...)<br />xUnzipNames</li>
+        <code><a href="xUnzipKeys.html">xUnzipKeys</a></code>(xUnzipKeys...)<br />xUnzipKeys</li>
             
       <li>
-        <code><a href="xZipNames.html">xZipNames</a></code>(xZipNames...)<br />xZipNames</li>
+        <code><a href="xZipKeys.html">xZipKeys</a></code>(xZipKeys...)<br />xZipKeys</li>
     
     </ul>
     <h3>Order Functions</h3>
-    <p>These functions deal with the order of a collection.</p>
-
+    
 
     <ul class="index">
         
@@ -632,8 +616,7 @@ as standard operations.</p></li>
     
     </ul>
     <h3>Parametre Functions</h3>
-    <p>These functions work with or alter function parametres. These include functions that return the parametres of a function, or partial application functions.</p>
-
+    
 
     <ul class="index">
         
@@ -660,11 +643,16 @@ as standard operations.</p></li>
     
     </ul>
     <h3>Quantifier Functions</h3>
-    <p>These functions count or summarise the true/false cases of a predicate over a data set.</p>
-
+    
 
     <ul class="index">
         
+      <li>
+        <code><a href="xAny.html">xAny</a></code>(xAny...)<br />xAny</li>
+            
+      <li>
+        <code><a href="xAll.html">xAll</a></code>(xAll...)<br />xAll</li>
+            
       <li>
         <code><a href="xForall.html">xForall</a></code>(xForall...)<br />xForall</li>
             
@@ -676,8 +664,7 @@ as standard operations.</p></li>
     
     </ul>
     <h3>Reshaping Functions</h3>
-    <p>These functions loosely fall into the role of reshaping or adding new elements to a collection. These include functions that subdivide collections, join collections, or reorder collections.</p>
-
+    
 
     <ul class="index">
         
@@ -724,18 +711,17 @@ as standard operations.</p></li>
         <code><a href="xTabulate.html">xTabulate</a></code>(xTabulate...)<br />xTabulate</li>
             
       <li>
-        <code><a href="xUnzipNames.html">xUnzipNames</a></code>(xUnzipNames...)<br />xUnzipNames</li>
+        <code><a href="xUnzipKeys.html">xUnzipKeys</a></code>(xUnzipKeys...)<br />xUnzipKeys</li>
             
       <li>
-        <code><a href="xZipNames.html">xZipNames</a></code>(xZipNames...)<br />xZipNames</li>
+        <code><a href="xZipKeys.html">xZipKeys</a></code>(xZipKeys...)<br />xZipKeys</li>
             
       <li>
         <code><a href="xZip.html">xZip</a></code>(xZip...)<br />xZip</li>
     
     </ul>
     <h3>Selection Functions</h3>
-    <p>These functions select or subset collections of values. This includes positional subsetting, selecting at certain keys and indices, or using a predicate for subsetting.</p>
-
+    
 
     <ul class="index">
         
@@ -792,8 +778,7 @@ as standard operations.</p></li>
     
     </ul>
     <h3>Set Functions</h3>
-    <p>These include functions for working with duplicated values, generating sets and the classic set operations</p>
-
+    
 
     <ul class="index">
         
@@ -821,8 +806,7 @@ as standard operations.</p></li>
     
     </ul>
     <h3>Short-Circuiting Functions</h3>
-    <p>Short-circuiting functions are higher-order functions that take functions with the ability to prematurely break evaluation of a program. When Return( ) is called the result is returned immediately, improving the efficiency of the subprogram.</p>
-
+    
 
     <ul class="index">
         
@@ -846,8 +830,7 @@ as standard operations.</p></li>
     
     </ul>
     <h3>Time Functions</h3>
-    <p>These side-effectful functions work with time, or alter the temporal properties of functions. These are useful for interacting with rate-limited API&#39;s, or allowing programs to observer their own run-times.</p>
-
+    
 
     <ul class="index">
         
@@ -862,8 +845,7 @@ as standard operations.</p></li>
     
     </ul>
     <h3>Value Testing Functions</h3>
-    <p>These functions test values to see if they are a particular type of value. These include functions that test for special values like null and na, and functions that test each element of a collection for these values.</p>
-
+    
 
     <ul class="index">
         
@@ -940,10 +922,13 @@ as standard operations.</p></li>
     <ul class="index">
         
       <li>
-        <code><a href="xAll.html">xAll</a></code>(xAll...)<br />xAll</li>
+        <code><a href="values.html">Na</a></code>(False, Null, True)<br />Special Values</li>
             
       <li>
-        <code><a href="xAny.html">xAny</a></code>(xAny...)<br />xAny</li>
+        <code><a href="x..html">x.</a></code>(!.xlambda_builder, !=.xlambda_builder, $.xlambda_builder, &amp;&amp;.xlambda_builder, &amp;.xlambda_builder, *.xlambda_builder, +.xlambda_builder, -.xlambda_builder, /.xlambda_builder, :.xlambda_builder, &lt;.xlambda_builder, &lt;=.xlambda_builder, ==.xlambda_builder, &gt;.xlambda_builder, &gt;=.xlambda_builder, @.xlambda_builder, [.xlambda_builder, [[.xlambda_builder, %/%.xlambda_builder, %%.xlambda_builder, ^.xlambda_builder, |.xlambda_builder, ||.xlambda_builder)<br />x.</li>
+            
+      <li>
+        <code><a href="xAtKey.html">xAtKey</a></code>(xAtKey...)<br />xAtKey</li>
             
       <li>
         <code><a href="xLambda.html">xLambda</a></code>(:=)<br />xLambda</li>

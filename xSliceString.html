@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-<title>xStopwatch. arrow 0.1.0</title>
+<title>xSliceString. arrow 0.1.0</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="author" content="">
 
@@ -131,86 +131,64 @@
       
       </header>
 
-      <h1>xStopwatch</h1>
+      <h1>xSliceString</h1>
 
 <div class="row">
   <div class="span8">
     <h2>Usage</h2>
-    <pre><div>xStopwatch(num)</div></pre>
+    <pre><div>xSliceString(str, nums)</div>
+<div>xSliceString...(str, ...)</div></pre>
     
     <h2>Arguments</h2>
     <dl>
-      <dt>num</dt>
-      <dd>a positive number. The number of seconds
-   the function should return true for.</dd>
+      <dt>str</dt>
+      <dd>a string. The string to subset.</dd>
+      <dt>nums</dt>
+      <dd>a collection of whole numbers. The indices to select
+   characters with. Negative, positive and zero indices are allowed,
+   but normal R index semantics dictate how they can intermix.</dd>
+      <dt>...</dt>
+      <dd>see above.</dd>
     </dl>
     
-    <div class="xStopwatch">
-      <h2>xStopwatch</h2>
+    <div class="xSliceString">
+      <h2>xSliceString</h2>
 
     </div>
 
     <div class="Value">
       <h2>Value</h2>
 
-      <p>A variadic function that ignores its arguments.</p>
+      <p>A character vector.</p>
 
     </div>
 
     <div class="Description">
       <h2>Description</h2>
 
-      <p>Create a function that returns true for a
-preset time after creation.</p>
+      <p>Subset a string using normal R vector indexing.</p>
+
+    </div>
+
+    <div class="Corner Cases">
+      <h2>Corner Cases</h2>
+
+      <p></p>
+
+      <p>Returns the empty list if <b>coll</b> is length-zero. If any number in
+     nums is larger than the length of <b>coll</b> an error is thrown.</p>
 
     </div>
     
     <h2 id="examples">Examples</h2>
     <pre class="examples"><div class='input'>
-# 1. Monte Carlo estimation of Pi
-# estimate the value of pi in a preset amount of time.
-#
-# this generates random points inside a square, and estimates the proportion
-# of points that fall within the circle centred at the centre of the square, which
-# has a diametre equal to the width of the square.
-#
-# this proportion (~0.78...) multiplied by four is pi.
-#
-# this randomised method of approximating pi is slow. The function xStopwatch can
-# be used to allow the function to run for an acceptable amount of time before
-# ending.
+NULL
 
-make_point &lt;- xPartial...(runif, 2)
-
-in_unit_circle &lt;- (point) := {
-	# is a point within the unit circle?
-	sum(point^2) &lt;= 1
-}
-
-# create the timer function.
-time_left &lt;- xStopwatch(2)
-
-x_(logical(0)) $ xIterate(trials := {
-
-	if (!time_left()) {
-		Return(trials)
-	}
-
-	random_point &lt;- make_point()
-	c(trials, in_unit_circle(random_point))
-
-}) $
-xMap(trial := {
-	if (trial) 1 else 0
-}) $
-x_Tap(unlist %then% mean) * 4
-</div>
-<div class='output'>[1] 3.15761
 </div></pre>
   </div>
   <div class="span4">
     <!-- <ul>
-      <li>xStopwatch</li>
+      <li>xSliceString</li><li>xSliceString...</li>
     </ul>
     <ul>
       
@@ -218,15 +196,16 @@ x_Tap(unlist %then% mean) * 4
 
     <h2>See also</h2>
     
-Other inpure_functions: <code><a href='xDelay.html'>xDelay</a></code>;
-  <code><a href='xDo.html'>xDo</a></code>, <code><a href='xDo.html'>xDo...</a></code>;
-  <code><a href='xExecute.html'>xExecute</a></code>; <code><a href='xReadChars.html'>xReadChars</a></code>;
+Other text_processing_functions: <code><a href='xExplode.html'>xExplode</a></code>,
+  <code><a href='xExplode.html'>xExplode...</a></code>; <code><a href='xFromChars.html'>xFromChars</a></code>,
+  <code><a href='xFromChars.html'>xFromChars...</a></code>; <code><a href='xFromLines.html'>xFromLines</a></code>,
+  <code><a href='xFromLines.html'>xFromLines...</a></code>; <code><a href='xFromWords.html'>xFromWords</a></code>,
+  <code><a href='xFromWords.html'>xFromWords...</a></code>; <code><a href='xImplode.html'>xImplode</a></code>,
+  <code><a href='xImplode.html'>xImplode...</a></code>; <code><a href='xReadChars.html'>xReadChars</a></code>;
   <code><a href='xReadLines.html'>xReadLines</a></code>; <code><a href='xReadWords.html'>xReadWords</a></code>;
-  <code><a href='xVersion.html'>xVersion</a></code>; <code><a href='xWriteChars.html'>xWriteChars</a></code>;
+  <code><a href='xToChars.html'>xToChars</a></code>; <code><a href='xToLines.html'>xToLines</a></code>;
+  <code><a href='xToWords.html'>xToWords</a></code>; <code><a href='xWriteChars.html'>xWriteChars</a></code>;
   <code><a href='xWriteLines.html'>xWriteLines</a></code>; <code><a href='xWriteWords.html'>xWriteWords</a></code>
-
-Other time_functions: <code><a href='xDelay.html'>xDelay</a></code>;
-  <code><a href='xLimit.html'>xLimit</a></code>
 
     
   </div>

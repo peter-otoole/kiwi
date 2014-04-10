@@ -170,15 +170,40 @@
 # 1. CE: Sum of Digits
 # sum the digits of a positive integer
 
-x_(toString(12358134L)) $
-xToChars() $
-xMap(as.numeric) $
-x_Reduce(&quot;+&quot;)
+x_(toString(12358134L)) $ xToChars() $ xMap(as.numeric) $ x_Reduce(&quot;+&quot;)
 </div>
 <div class='output'>[1] 27
 </div>
 <div class='input'>
 # 27
+
+# 2. Read in protein sequence data, and then find the most frequent
+# amino acid.
+
+dgcr8 &lt;- xFromLines...(
+	&quot;METDESPSPLPCGPAGEAVMESRARPFQALPREQSPPPPLQTSSGAEVMDVGSGGDGQSELPAEDPFNFYGASLLSKGSF&quot;,
+	&quot;SKGRLLIDPNCSGHSPRTARHAPAVRKFSPDLKLLKDVKISVSFTESCRSKDRKVLYTGAERDVRAECGLLLSPVSGDVHA&quot;,
+	&quot;CPFGGSVGDGVGIGGESADKKDEENELDQEKRVEYAVLDELEDFTDNLELDEEGAGGFTAKAIVQRDRVDEEALNFPYEDDF&quot;,
+	&quot;DNDVDALLEEGLCAPKKRRTEEKYGGDSDHPSDGETSVQPMMTKIKTVLKSRGRPPTEPLPDGWIMTFHNSGVPVYLHRESRVV&quot;,
+	&quot;TWSRPYFLGTGSIRKHDPPLSSIPCLHYKKMKDNEEREQSSDLTPSGDVSPVKPLSRSAELEFPLDEPDSMGADPGPPDEKDPLG&quot;,
+	&quot;AEAAPGALGQVKAKVEVCKDESVDLEEFRSYLEKRFDFEQVTVKKFRTWAERRQFNREMKRKQAESERPILPANQKLITLSVQDAP&quot;,
+	&quot;TKKEFVINPNGKSEVCILHEYMQRVLKVRPVYNFFECENPSEPFGASVTIDGVTYGSGTASSKKLAKNKAARATLEILIPDFVKQTSE&quot;,
+	&quot;EKPKDSEELEYFNHISIEDSRVYELTSKAGLLSPYQILHECLKRNHGMGDTSIKFEVVPGKNQKSEYVMACGKHTVRGWCKNKRVGKQLA&quot;,
+	&quot;SQKILQLLHPHVKNWGSLLRMYGRESSKMVKQETSDKSVIELQQYAKKNKPNLHILSKLQEEMKRLAEEREETRKKPKMSIVASAQPGGEPL&quot;,
+	&quot;CTVDV&quot;)
+
+x_(dgcr8) $ xToChars() $ xTabulate() $ x_MaxBy(xSecondOf)
+</div>
+<div class='output'>[[1]]
+[1] &quot;E&quot;
+
+[[2]]
+[1] 77
+
+</div>
+<div class='input'>
+# list(&#39;E&#39;, 77)
+# Glutamic Acid is the most common residue in dgcr8
 </div></pre>
   </div>
   <div class="span4">
@@ -198,10 +223,10 @@ Other text_processing_functions: <code><a href='xExplode.html'>xExplode</a></cod
   <code><a href='xFromWords.html'>xFromWords...</a></code>; <code><a href='xImplode.html'>xImplode</a></code>,
   <code><a href='xImplode.html'>xImplode...</a></code>; <code><a href='xReadChars.html'>xReadChars</a></code>;
   <code><a href='xReadLines.html'>xReadLines</a></code>; <code><a href='xReadWords.html'>xReadWords</a></code>;
-  <code><a href='xSubstring.html'>xSubstring</a></code>, <code><a href='xSubstring.html'>xSubstring...</a></code>;
-  <code><a href='xToLines.html'>xToLines</a></code>; <code><a href='xToWords.html'>xToWords</a></code>;
-  <code><a href='xWriteChars.html'>xWriteChars</a></code>; <code><a href='xWriteLines.html'>xWriteLines</a></code>;
-  <code><a href='xWriteWords.html'>xWriteWords</a></code>
+  <code><a href='xSliceString.html'>xSliceString</a></code>,
+  <code><a href='xSliceString.html'>xSliceString...</a></code>; <code><a href='xToLines.html'>xToLines</a></code>;
+  <code><a href='xToWords.html'>xToWords</a></code>; <code><a href='xWriteChars.html'>xWriteChars</a></code>;
+  <code><a href='xWriteLines.html'>xWriteLines</a></code>; <code><a href='xWriteWords.html'>xWriteWords</a></code>
 
     
   </div>

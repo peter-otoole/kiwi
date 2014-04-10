@@ -212,34 +212,36 @@
 blood_glucose &lt;- 135
 
 patients_data &lt;-
-xZip...(
-	&#39;mg per dl (fasting)&#39; =
-		c(130, 137, 139, 140, 141, 137, 127, 143, 135, 127,
-			77, 79, 79, 79, 88, 87, 95, 82, 93, 94),
-	&#39;category&#39; =
-		xJoin...(xRepeat(10, &#39;diabetic&#39;), xRepeat(10, &#39;non-diabetic&#39;))
-)
+	xZip...(
+		&#39;mg per dl (fasting)&#39; =
+			c(130, 137, 139, 140, 141, 137, 127, 143, 135, 127,
+				77, 79, 79, 79, 88, 87, 95, 82, 93, 94),
+		&#39;category&#39; =
+			xJoin...(xRepeat(10, &#39;diabetic&#39;), xRepeat(10, &#39;non-diabetic&#39;))
+	)
 
-k_nearest &lt;- (dist : point : space) := {
+# shuffle the rows of the data.
+patients_data &lt;- xPermute(xShuffle(1:length(patients_data)), patients_data)
+
+k_nearest &lt;- (dist : point : training) := {
 	# classification.
-	# given a space of points to test against,
-	# guess the category of a point based on its nearest neighbours.
+	# given training points to test against,
+	# classify a point based on its nearest neighbours.
 
-	k &lt;- floor( sqrt(xLenOf(space)) )
+	k &lt;- floor( sqrt(xLenOf(training)) )
 
 	dist_to_test_point &lt;- xPartial...(dist, point)
 
 	distances &lt;-
-		x_(space) $ xPluck(&#39;mg per dl (fasting)&#39;) $
+		x_(training) $ xPluck(&#39;mg per dl (fasting)&#39;) $
 		xMap(dist_to_test_point) $ x_AsDouble()
 
 	# rank the distances from closest to furthest.
-	nearest &lt;- x_(space) $ xSlice(xWhere(xRankOf(distances) &lt;= k))
+	nearest &lt;- x_(training) $ xSlice(xWhere(xRankOf(distances) &lt;= k))
 
 	# get the frequencies of the categories among the closest.
 	category_frequencies &lt;-
-		nearest $ xPluck(&#39;category&#39;) $
-		xTabulate() $ x_SortBy(xSecondOf)
+		nearest $ xPluck(&#39;category&#39;) $ xTabulate() $ x_SortBy(xSecondOf)
 
 	# select the name of the most frequent category
 	xFirstOf(xFirstOf(category_frequencies))
@@ -473,9 +475,9 @@ Other reshaping_functions: <code><a href='xChop.html'>xChop</a></code>,
   <code><a href='xShuffle.html'>xShuffle...</a></code>; <code><a href='xSplitAt.html'>xSplitAt</a></code>,
   <code><a href='xSplitAt.html'>xSplitAt...</a></code>; <code><a href='xSplitWith.html'>xSplitWith</a></code>,
   <code><a href='xSplitWith.html'>xSplitWith...</a></code>; <code><a href='xTabulate.html'>xTabulate</a></code>,
-  <code><a href='xTabulate.html'>xTabulate...</a></code>; <code><a href='xUnzipNames.html'>xUnzipNames</a></code>,
-  <code><a href='xUnzipNames.html'>xUnzipNames...</a></code>; <code><a href='xZipNames.html'>xZipNames</a></code>,
-  <code><a href='xZipNames.html'>xZipNames...</a></code>; <code><a href='xZip.html'>xZip</a></code>,
+  <code><a href='xTabulate.html'>xTabulate...</a></code>; <code><a href='xUnzipKeys.html'>xUnzipKeys</a></code>,
+  <code><a href='xUnzipKeys.html'>xUnzipKeys...</a></code>; <code><a href='xZipKeys.html'>xZipKeys</a></code>,
+  <code><a href='xZipKeys.html'>xZipKeys...</a></code>; <code><a href='xZip.html'>xZip</a></code>,
   <code><a href='xZip.html'>xZip...</a></code>
 
     

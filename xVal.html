@@ -180,6 +180,9 @@
       <p>As the above call shows <code>xVal</code> is a standard function,
    not an infix function like normal assignment.</p>
 
+      <p>Arrow's value functions are built on top of base R's <b>lockBinding</b>
+   mechanism, which is seft-described as being 'experimental'.</p>
+
     </div>
 
     <div class="Corner Cases">
@@ -194,7 +197,10 @@
     
     <h2 id="examples">Examples</h2>
     <pre class="examples"><div class='input'>
-NULL
+# 1. assign a constant value,
+# that can&#39;t later be altered.
+
+xVal(tau, 6.283185)
 </div></pre>
   </div>
   <div class="span4">
