@@ -11,7 +11,7 @@
 <link href="css/highlight.css" rel="stylesheet">
 <link href="css/staticdocs.css" rel="stylesheet">
 
-<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
 
 <script type="text/javascript">
 // highlight.js
@@ -21,7 +21,7 @@
 <!--[if lt IE 9]>
   <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
-<link href='http://fonts.googleapis.com/css?family=Open+Sans|Quicksand' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans|Quicksand' rel='stylesheet' type='text/css'>
 
 <style type="text/css">
 /*
@@ -239,17 +239,17 @@ is true for a predicate.</p>
       <h2>Details</h2>
 
       <p><b>xExists</b> can be used to test if any element of a
-collection is true (like the base function <b>all( )</b>) by
-simply using it with the identity function.</p>
+    collection is true (like the base function <b>all( )</b>) by
+    simply using it with the identity function.</p>
 
       <p><code>coll <- c(True, False, True, True)</code></p>
 
       <p><code>xExists...(xIdentity, coll)</code></p>
 
       <p>When supplied with a collection of multiple collections the
-set product of those collections is checked with the predicate.
-In order for <b>xExists</b> to return true at least one element of the
-set product must return true for a predicate.</p>
+    set product of those collections is checked with the predicate.
+    In order for <b>xExists</b> to return true at least one element of the
+    set product must return true for a predicate.</p>
 
       <p><code>commutes <- (a : b) := { a + b == b + a }</code></p>
 
@@ -260,7 +260,7 @@ set product must return true for a predicate.</p>
       <p><code>list(list(1, 1), list(1, 2), list(2, 1), list(2, 2))</code></p>
 
       <p>Each member of the set product is tested with the
-<b>commutes</b> function</p>
+    <b>commutes</b> function</p>
 
       <p><code>list(commutes(1, 1), commutes(1, 2), commutes(2, 1), commutes(2, 2))</code></p>
 

@@ -11,7 +11,7 @@
 <link href="css/highlight.css" rel="stylesheet">
 <link href="css/staticdocs.css" rel="stylesheet">
 
-<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
 
 <script type="text/javascript">
 // highlight.js
@@ -21,7 +21,7 @@
 <!--[if lt IE 9]>
   <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
-<link href='http://fonts.googleapis.com/css?family=Open+Sans|Quicksand' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans|Quicksand' rel='stylesheet' type='text/css'>
 
 <style type="text/css">
 /*
@@ -197,44 +197,103 @@ turn off the code examples
 
       <div class="row">
   <div class="span8">
-    <h2>Arrow pre-v0.1.0</h2>
+    <h2>Arrow &lt; v0.1.0 <a href="https://travis-ci.org/rgrannell1/arrow"><img src="https://travis-ci.org/rgrannell1/arrow.png" alt="Build Status"/></a></h2>
 
-<p><a href="https://travis-ci.org/rgrannell1/arrow"><img src="https://travis-ci.org/rgrannell1/arrow.png" alt="Build Status"/></a></p>
+<h2>What is Arrow?</h2>
 
-<p><strong>DISCLAIMER: Arrow is in heavy development and is highly liable to change.</strong></p>
+<p>Arrow makes R the functional language it was born to be.</p>
 
-<p>Arrow is an opinionated toolset of more than one hundred functions from languages
-like Haskell, JavaScript, and functions designed just for R. These
-include familiar functions like Map, Select, Reduce and Compose, as
-well as many functions for working with na values, reshaping collections,
-composing functions and manipulating strings.</p>
+<p>R can be an uncooperative language. Every function has its own way of
+handling missing values or naming its parametres. As a result, piecing together
+individual functions to make a useful program can be difficult and requires a
+lot of boilerplate code.</p>
 
-<p>I hope you enjoy using Arrow as much as I&#39;ve enjoyed making it.
-If you&#39;d like to contribute with feedback, bug-reports or code
-you can go to the Arrow <a href="https://github.com/rgrannell1/arrow">github repository</a>.
-Any feedback is appreciated.</p>
+<p>Arrow is an expressive composible foundation for programming in R. It implements all
+the common higher-order functions - Map, Fold, GroupBy and so on - as well as any reshaping
+operation you might want to perform on a collection. It has simple IO functions that let
+you read and write to files with minimal overhead, and the set and combinatoric functions
+you need for more advanced algorithms.</p>
+
+<p>It aims to be completely consistent and above all else user-friendly. Arrow functions
+rarely have more than two parametres, so functions will just work without configuration.</p>
 
 <p>For library documentation and tutorials head to
 <a href="http://rgrannell1.github.io/arrow/">http://rgrannell1.github.io/arrow/</a>.</p>
 
-<h3>What Arrow code looks like.</h3>
+<h2>What Does Arrow Look Like?</h2>
 
-<p><img src="example-code.png"> </img></p>
+<p>Arrow can be written using normal functions or with chaining methods. I prefer the latter. Chaining
+methods take an initial piece of data and apply successive transformation to it.
+This is a very natural way of expressing data munging or reshaping.</p>
+
+<pre><code class="javascript">&quot;-- Data From Hadley Wickham&#39;s https://github.com/hadley/data-stride&quot;
+
+asRow &lt;- (...) := {
+    list(state = ..1, potency = ..2, weight = ..3, month = ..4, price = ..5)
+}
+
+cocaineData &lt;- x_(list(
+    asRow(&quot;MA&quot;, 74,  3,  7,  180),
+    asRow(&quot;NY&quot;, 83, 34, 10,  960),
+    asRow(&quot;SC&quot;, 81, 47,  6, 1800),
+    asRow(&quot;NY&quot;, 50, 27, 12, 1000),
+    asRow(&quot;NY&quot;, 81,  1, 11,  100),
+    asRow(&quot;FL&quot;, 57,  1,  8,  100),
+    asRow(&quot;NJ&quot;, 47,  6,  5,  400),
+    asRow(&quot;FL&quot;, 37, 52,  3, 1600),
+    asRow(&quot;PA&quot;, 74,  2,  1,  200)
+))
+
+&quot;-- 1. get and sort the state seisure frequencies&quot;
+
+cocaineData $ xPluck(&quot;state&quot;) $ xTabulate() $ x_SortBy(xSecondOf)
+
+&#39;
+list(
+    list(&quot;MA&quot;, 1),
+    list(&quot;SC&quot;, 1),
+    list(&quot;NJ&quot;, 1),
+    list(&quot;PA&quot;, 1),
+    list(&quot;FL&quot;, 2),
+    list(&quot;NY&quot;, 3))
+&#39;
+
+&quot;-- 2. group the seizures by state.&quot;
+stateSeizures &lt;- cocaineData $ xGroupBy(x. $ state)
+
+&quot;-- 3. get the largest intrastate seizures by price&quot;
+largestStateSeizures &lt;- stateSeizures $ xPluck(&#39;price&#39;) $ xMap(group := {
+    xMaxBy(row := as.numeric(row $ price) , group)
+})
+
+&#39;
+list(
+    list(state = &quot;MA&quot;, potency = &quot;74&quot;, weight = &quot;3&quot;,  month = &quot;7&quot;,  price = &quot;180&quot;),
+    list(state = &quot;NY&quot;, potency = &quot;50&quot;, weight = &quot;27&quot;, month = &quot;12&quot;, price = &quot;1000&quot;),
+    list(state = &quot;SC&quot;, potency = &quot;81&quot;, weight = &quot;47&quot;, month = &quot;6&quot;,  price = &quot;1800&quot;),
+    list(state = &quot;FL&quot;, potency = &quot;37&quot;, weight = &quot;52&quot;, month = &quot;3&quot;,  price = &quot;1600&quot;),
+    list(state = &quot;NJ&quot;, potency = &quot;47&quot;, weight = &quot;6&quot;,  month = &quot;5&quot;,  price = &quot;400&quot;),
+    list(state = &quot;PA&quot;, potency = &quot;74&quot;, weight = &quot;2&quot;,  month = &quot;1&quot;,  price = &quot;200&quot;)
+)
+&#39;
+
+&quot;-- 4. get the average potency of the largest seizure&quot;
+
+largestStateSeizures $ xPluck(&#39;potency&#39;) $ xTap(unlist %then% mean)
+
+60.8
+</code></pre>
 
 <h3>Arrow is Expressive</h3>
 
 <ul>
 <li><p>Programs are built in a lego-like manner; stacking small,
 uniquely-purposed functions into a larger program.</p></li>
-<li><p>Like Ruby and JavaScript, Arrow has a shorthand syntax    for creating functions.</p></li>
-<li><p>Arrow implements jQuery-like chaining methods without using R&#39;s bulkier
-object-orientation systems. These methods are just as usable as those in
-Python or JavaScript. This syntax is handy for interactive programming.</p></li>
-<li><p>Arrow uses consistent naming conventions to make its functions more predictable.</p></li>
-<li><p>Almost every function has a variadic and non-variadic form, to
-reduce boilerplate code.</p></li>
-<li><p>Arrow adds collection-comprehensions; an expressive syntax
-for creating collections.</p></li>
+<li><p>Arrow has a shorthand syntax for creating functions.</p></li>
+<li><p>Arrow implements jQuery-style method-chaining.</p></li>
+<li><p>Most functions have variadic and non-variadic forms; this significantly reduces
+&#39;do.call&#39; boilerplate.</p></li>
+<li><p>Arrow adds list-comprehensions; an expressive syntax for creating lists.</p></li>
 </ul>
 
 <h3>Arrow is Consistent</h3>
@@ -246,36 +305,36 @@ and typed vectors are all interchangable.</p></li>
 a cryptic error - arguments are always explicitly checked, and the precise
 cause of the error is always given. Error messages are also coloured for readability.</p></li>
 <li><p>Arrow is interoperable with base R functions.</p></li>
+<li><p>Arrow follows careful thought-out naming conventions.</p></li>
 </ul>
 
 <h3>Arrow is Functional</h3>
 
 <ul>
-<li><p>Arrow implements all the standard higher-order functions,
-as well as set operations and combinatoric functions.</p></li>
-<li><p>Several variants of the most common functionals are implemented,
-including several flavours of map and fold.</p></li>
-<li><p>A new control statement - the <code>Return( )</code> function - can
-be used to improve the efficiency of functional code.</p></li>
-<li><p>Partial application and function composition are encouraged
-as standard operations.</p></li>
+<li><p>Every commonly used higher-order-function is included in Arrow, not limited to but including
+map, fold, select, flatmap and iterate.</p></li>
+<li><p>Arrow includes several mathematical functions, like the set operations and
+combinatoric functions.</p></li>
+<li><p>Arrow adds a big brother of <strong>return()</strong> - <strong>Return()</strong> - to make functions like fold
+much more efficient.</p></li>
+<li><p>Function composition and partial application are encouraged as standard operations.</p></li>
 </ul>
-
-<h2>Authors</h2>
-
-<p>Ryan Grannell.</p>
 
 <h2>Licensing</h2>
 
 <p><strong>Arrow</strong> is released under the terms of the GNU General Public License version 3.</p>
 
-<p><img src="gpl3.png" height = "180"> </img></p>
+<p><img src="gpl3.png" height = "120"> </img></p>
 
 <h2>Versioning</h2>
 
 <p>All versions post-release will be compliant with the Semantic Versioning 2.0.0 standard.</p>
 
 <p><a href="http://semver.org/">http://semver.org/</a></p>
+
+<h2>Authors</h2>
+
+<p>Ryan Grannell.</p>
 
 
     <h2>Arrow Documentation</h2>

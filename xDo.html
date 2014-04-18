@@ -11,7 +11,7 @@
 <link href="css/highlight.css" rel="stylesheet">
 <link href="css/staticdocs.css" rel="stylesheet">
 
-<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
 
 <script type="text/javascript">
 // highlight.js
@@ -21,7 +21,7 @@
 <!--[if lt IE 9]>
   <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
-<link href='http://fonts.googleapis.com/css?family=Open+Sans|Quicksand' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans|Quicksand' rel='stylesheet' type='text/css'>
 
 <style type="text/css">
 /*
@@ -232,6 +232,16 @@ turn off the code examples
 collection and discard the results.</p>
 
     </div>
+
+    <div class="Details">
+      <h2>Details</h2>
+
+      <p><b>xDo</b> is superficially similar to <b>xMap</b>, in that
+    it applies a function to each element of a collection. However
+    <b>xDo</b> does not accumulate a result, so it is more memory-efficient
+    and faster at executing side-effectful functions than <b>xMap</b>.</p>
+
+    </div>
     
     <h2 id="examples">Examples</h2>
     <pre class="examples"><div class='input'>
@@ -276,8 +286,8 @@ NULL
 
 xDo(print %of% list.files, &#39;.&#39;)
 </div>
-<div class='output'> [1] &quot;demo&quot;             &quot;DESCRIPTION&quot;      &quot;inst&quot;             &quot;LICENSE&quot;          &quot;man&quot;              &quot;NAMESPACE&quot;       
- [7] &quot;R&quot;                &quot;README.md&quot;        &quot;staticdocs.Rproj&quot; &quot;vignettes&quot;       
+<div class='output'> [1] &quot;demo&quot;             &quot;DESCRIPTION&quot;      &quot;inst&quot;             &quot;LICENSE&quot;          &quot;man&quot;              &quot;NAMESPACE&quot;        &quot;R&quot;               
+ [8] &quot;README.md&quot;        &quot;staticdocs.Rproj&quot; &quot;vignettes&quot;       
 </div>
 <div class='input'>
 #2. plot a trig function.
