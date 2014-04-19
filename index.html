@@ -81,79 +81,87 @@ turn off the code examples
 </style>
 
 <style type="text/css">
+
 	html * {
-		font-family: Open Sans;
-	}
+	  background: white; }
 
-	h1 {
-		color: #C7254E;
-		font-family: Quicksand;
-	}
+	::selection {
+	  background: #666666; }
 
-	h2 {
-		font-family: Quicksand;
-	}
+	::-moz-selection {
+	  background: #666666; }
 
+	.r {
+	  color: #505050; }
 
-	h3 {
-		font-family: Quicksand;
-	}
+	.r .comment {
+	  color: #8c8c8c;
+	  font-style: italic;
+	  background: white; }
 
-	h4 {
-		font-family: Quicksand;
-	}
+	.r .roxygen {
+	  color: #666666;
+	  background: white; }
 
-	h5 {
-		font-family: Quicksand;
-	}
+	.r .ssdouble {
+	  color: #e67e22; }
 
-	h6 {
-		font-family: Quicksand;
-	}
-	.navbar {
-		background: white;
-	}
-	.navbar * {
-		color: #333;
-	}
+	.r .dssingle {
+	  color: #e67e22; }
 
-	.examples * {
-		font-family: monospace;
-	}
+	.r .sstring {
+	  color: #f37028; }
 
-	code {
-		font-family: monospace;
-	}
+	.r .dstring {
+	  color: #f37028; }
 
-	nav * {
-		font-family: Quicksand;
-	}
+	.r .at {
+	  color: #c35dc3; }
 
-	nav {
-		border-width: 1px 0;
-		list-style: none;
-		padding: 0;
-		margin: 0;
-		text-align: center;
-	}
+	.r .dollar {
+	  color: #c35dc3; }
 
-	nav li {
-		display: inline;
-	}
+	.r .lev0 {
+	  color: #8ea812; }
 
-	nav a {
-		display: inline-block;
-		padding: 10px;
-	}
+	.r .lev1 {
+	  color: #8ea812; }
 
-	pre {
-		font-family: monospace;
-	}
+	.r .lev2 {
+	  color: #8ea812; }
 
-	/* a sloppy hack to get rid of a duplicated title field */
-	.span8 div:first-of-type h2 {
-		display: none;
-	}
+	.r .lev3 {
+	  color: #8ea812; }
+
+	.r .lev4 {
+	  color: #8ea812; }
+
+	.r .lev5 {
+	  color: #8ea812; }
+
+	.r .lev6 {
+	  color: #8ea812; }
+
+	.r .lev7 {
+	  color: #8ea812; }
+
+	.r .lev8 {
+	  color: #8ea812; }
+
+	.r .lev9 {
+	  color: #8ea812; }
+
+	.r .lev10 {
+	  color: #8ea812; }
+
+	.r .lev11 {
+	  color: #8ea812; }
+
+	.r .lev12 {
+	  color: #8ea812; }
+
+	.r .lev13 {
+	  color: #8ea812; }
 
 </style>
   </head>
@@ -226,63 +234,64 @@ rarely have more than two parametres, so functions will just work without config
 methods take an initial piece of data and apply successive transformation to it.
 This is a very natural way of expressing data munging or reshaping.</p>
 
-<pre><code class="javascript">&quot;-- Data From Hadley Wickham&#39;s https://github.com/hadley/data-stride&quot;
+<pre class = "input">
+"-- Data From Hadley Wickham's https://github.com/hadley/data-stride"
 
-asRow &lt;- (...) := {
+asRow <- (...) := {
     list(state = ..1, potency = ..2, weight = ..3, month = ..4, price = ..5)
 }
 
-cocaineData &lt;- x_(list(
-    asRow(&quot;MA&quot;, 74,  3,  7,  180),
-    asRow(&quot;NY&quot;, 83, 34, 10,  960),
-    asRow(&quot;SC&quot;, 81, 47,  6, 1800),
-    asRow(&quot;NY&quot;, 50, 27, 12, 1000),
-    asRow(&quot;NY&quot;, 81,  1, 11,  100),
-    asRow(&quot;FL&quot;, 57,  1,  8,  100),
-    asRow(&quot;NJ&quot;, 47,  6,  5,  400),
-    asRow(&quot;FL&quot;, 37, 52,  3, 1600),
-    asRow(&quot;PA&quot;, 74,  2,  1,  200)
+cocaineData <- x_(list(
+    asRow("MA", 74,  3,  7,  180),
+    asRow("NY", 83, 34, 10,  960),
+    asRow("SC", 81, 47,  6, 1800),
+    asRow("NY", 50, 27, 12, 1000),
+    asRow("NY", 81,  1, 11,  100),
+    asRow("FL", 57,  1,  8,  100),
+    asRow("NJ", 47,  6,  5,  400),
+    asRow("FL", 37, 52,  3, 1600),
+    asRow("PA", 74,  2,  1,  200)
 ))
 
-&quot;-- 1. get and sort the state seisure frequencies&quot;
+"-- 1. get and sort the state seisure frequencies"
 
-cocaineData $ xPluck(&quot;state&quot;) $ xTabulate() $ x_SortBy(xSecondOf)
+cocaineData $ xPluck("state") $ xTabulate() $ x_SortBy(xSecondOf)
 
-&#39;
+'
 list(
-    list(&quot;MA&quot;, 1),
-    list(&quot;SC&quot;, 1),
-    list(&quot;NJ&quot;, 1),
-    list(&quot;PA&quot;, 1),
-    list(&quot;FL&quot;, 2),
-    list(&quot;NY&quot;, 3))
-&#39;
+    list("MA", 1),
+    list("SC", 1),
+    list("NJ", 1),
+    list("PA", 1),
+    list("FL", 2),
+    list("NY", 3))
+'
 
-&quot;-- 2. group the seizures by state.&quot;
-stateSeizures &lt;- cocaineData $ xGroupBy(x. $ state)
+"-- 2. group the seizures by state."
+stateSeizures <- cocaineData $ xGroupBy(x. $ state)
 
-&quot;-- 3. get the largest intrastate seizures by price&quot;
-largestStateSeizures &lt;- stateSeizures $ xPluck(&#39;price&#39;) $ xMap(group := {
+"-- 3. get the largest intrastate seizures by price"
+largestStateSeizures <- stateSeizures $ xPluck('price') $ xMap(group := {
     xMaxBy(row := as.numeric(row $ price) , group)
 })
 
-&#39;
+'
 list(
-    list(state = &quot;MA&quot;, potency = &quot;74&quot;, weight = &quot;3&quot;,  month = &quot;7&quot;,  price = &quot;180&quot;),
-    list(state = &quot;NY&quot;, potency = &quot;50&quot;, weight = &quot;27&quot;, month = &quot;12&quot;, price = &quot;1000&quot;),
-    list(state = &quot;SC&quot;, potency = &quot;81&quot;, weight = &quot;47&quot;, month = &quot;6&quot;,  price = &quot;1800&quot;),
-    list(state = &quot;FL&quot;, potency = &quot;37&quot;, weight = &quot;52&quot;, month = &quot;3&quot;,  price = &quot;1600&quot;),
-    list(state = &quot;NJ&quot;, potency = &quot;47&quot;, weight = &quot;6&quot;,  month = &quot;5&quot;,  price = &quot;400&quot;),
-    list(state = &quot;PA&quot;, potency = &quot;74&quot;, weight = &quot;2&quot;,  month = &quot;1&quot;,  price = &quot;200&quot;)
+    list(state = "MA", potency = "74", weight = "3",  month = "7",  price = "180"),
+    list(state = "NY", potency = "50", weight = "27", month = "12", price = "1000"),
+    list(state = "SC", potency = "81", weight = "47", month = "6",  price = "1800"),
+    list(state = "FL", potency = "37", weight = "52", month = "3",  price = "1600"),
+    list(state = "NJ", potency = "47", weight = "6",  month = "5",  price = "400"),
+    list(state = "PA", potency = "74", weight = "2",  month = "1",  price = "200")
 )
-&#39;
+'
 
-&quot;-- 4. get the average potency of the largest seizure&quot;
+"-- 4. get the average potency of the largest seizure"
 
-largestStateSeizures $ xPluck(&#39;potency&#39;) $ xTap(unlist %then% mean)
+largestStateSeizures $ xPluck('potency') $ xTap(unlist %then% mean)
 
 60.8
-</code></pre>
+</pre>
 
 <h3>Arrow is Expressive</h3>
 

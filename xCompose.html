@@ -81,79 +81,87 @@ turn off the code examples
 </style>
 
 <style type="text/css">
+
 	html * {
-		font-family: Open Sans;
-	}
+	  background: white; }
 
-	h1 {
-		color: #C7254E;
-		font-family: Quicksand;
-	}
+	::selection {
+	  background: #666666; }
 
-	h2 {
-		font-family: Quicksand;
-	}
+	::-moz-selection {
+	  background: #666666; }
 
+	.r {
+	  color: #505050; }
 
-	h3 {
-		font-family: Quicksand;
-	}
+	.r .comment {
+	  color: #8c8c8c;
+	  font-style: italic;
+	  background: white; }
 
-	h4 {
-		font-family: Quicksand;
-	}
+	.r .roxygen {
+	  color: #666666;
+	  background: white; }
 
-	h5 {
-		font-family: Quicksand;
-	}
+	.r .ssdouble {
+	  color: #e67e22; }
 
-	h6 {
-		font-family: Quicksand;
-	}
-	.navbar {
-		background: white;
-	}
-	.navbar * {
-		color: #333;
-	}
+	.r .dssingle {
+	  color: #e67e22; }
 
-	.examples * {
-		font-family: monospace;
-	}
+	.r .sstring {
+	  color: #f37028; }
 
-	code {
-		font-family: monospace;
-	}
+	.r .dstring {
+	  color: #f37028; }
 
-	nav * {
-		font-family: Quicksand;
-	}
+	.r .at {
+	  color: #c35dc3; }
 
-	nav {
-		border-width: 1px 0;
-		list-style: none;
-		padding: 0;
-		margin: 0;
-		text-align: center;
-	}
+	.r .dollar {
+	  color: #c35dc3; }
 
-	nav li {
-		display: inline;
-	}
+	.r .lev0 {
+	  color: #8ea812; }
 
-	nav a {
-		display: inline-block;
-		padding: 10px;
-	}
+	.r .lev1 {
+	  color: #8ea812; }
 
-	pre {
-		font-family: monospace;
-	}
+	.r .lev2 {
+	  color: #8ea812; }
 
-	/* a sloppy hack to get rid of a duplicated title field */
-	.span8 div:first-of-type h2 {
-		display: none;
-	}
+	.r .lev3 {
+	  color: #8ea812; }
+
+	.r .lev4 {
+	  color: #8ea812; }
+
+	.r .lev5 {
+	  color: #8ea812; }
+
+	.r .lev6 {
+	  color: #8ea812; }
+
+	.r .lev7 {
+	  color: #8ea812; }
+
+	.r .lev8 {
+	  color: #8ea812; }
+
+	.r .lev9 {
+	  color: #8ea812; }
+
+	.r .lev10 {
+	  color: #8ea812; }
+
+	.r .lev11 {
+	  color: #8ea812; }
+
+	.r .lev12 {
+	  color: #8ea812; }
+
+	.r .lev13 {
+	  color: #8ea812; }
 
 </style>
   </head>
@@ -241,18 +249,18 @@ turn off the code examples
       <h2>Details</h2>
 
       <p>Arrow's function composition is largely done with the infix
-operators %of% and %then%.</p>
+   operators %of% and %then%.</p>
 
       <p><b>%then%</b> is the classic function composition operator;</p>
 
       <p><code>(as.numeric %then% sqrt %then% print)('10')</code></p>
 
       <p>Like methods, the order of fwunction execution is from left to right;
-convert a string to a number then take the square root then print the value.
-The reversed form %of% is equally as ubiquitous.</p>
+   convert a string to a number then take the square root then print the value.
+   The reversed form %of% is equally as ubiquitous.</p>
 
       <p>The classic example of function composition (apart from
-Church numerals) is composing linear functions.</p>
+   Church numerals) is composing linear functions.</p>
 
       <p><code>f <- x := 2*x</code></p>
 
@@ -267,17 +275,27 @@ Church numerals) is composing linear functions.</p>
       <p>xCompose</p>
 
       <p>In this case the output of one function is piped to
-another:</p>
+   another:</p>
 
       <p><code>1 => 1*1 => 1*4 => 4*2 => 8</code></p>
 
       <p>In this case function composition behaves exactly like
-multiplication.</p>
+   multiplication.</p>
 
       <p>In more typical use of <b>xCompose</b> is to reduce the
-number of anonymous functions needed by some programs.</p>
+   number of anonymous functions needed by some programs.</p>
 
       <p><code>xMap(sqrt %of% sqrt, 1:10)</code></p>
+
+    </div>
+
+    <div class="Corner Cases">
+      <h2>Corner Cases</h2>
+
+      <p></p>
+
+      <p><b>xCompose</b> throws an error if no functions are passed to it, as it has
+   no sensible definition in this case.</p>
 
     </div>
     
