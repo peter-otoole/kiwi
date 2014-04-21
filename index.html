@@ -14,7 +14,6 @@
 <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
 
 <script type="text/javascript">
-// highlight.js
 (function(){"use strict";})();highlight=function(){var e=function(e,t){var r={depth:0,transitions:e,html_output_rules:t(this.depth)};r.consume_token=function(e){var t=function(e,t,n){var i=r.html_output_rules[e][t];var s=n;for(var o in i){if(!i.hasOwnProperty(o)){continue}if(o!=="*nomatch*"&&o===n){s=i[o]}}return s};var i=function(e,t,i){var s=e==="normal"&&t==="open_delim"||e==="open_delim"&&t==="open_delim";var o=e==="close_delim"&&t==="normal"||e==="close_delim"&&t==="close_delim";if(s){i+=1;if(i>13)i=0}else if(o){i-=1;if(i<0)i=13}r.depth=i;r.html_output_rules=n(i);return{depth:i,html_output_rules:n(i)}};for(var s in r.transitions){if(!r.transitions.hasOwnProperty(s)){continue}if(r.transitions[s].active){var o=r.transitions[s];var u=s}}var a=o.edges["*nomatch*"];for(var f in o.edges){if(!o.edges.hasOwnProperty(f)){continue}if(e===f){a=o.edges[f]}}r.transitions[u].active=false;r.transitions[a].active=true;i(u,a,r.depth);return t(u,a,e)};return r};var t=function(){return{str_single:{active:false,edges:{"'":"normal","*nomatch*":"str_single"}},str_double:{active:false,edges:{'"':"normal","*nomatch*":"str_double"}},normal:{active:true,edges:{"'":"str_single",'"':"str_double","#":"comment","(":"open_delim","[":"open_delim","{":"open_delim","}":"close_delim","]":"close_delim",")":"close_delim","*nomatch*":"normal"}},open_delim:{active:false,edges:{"'":"str_single",'"':"str_double","#":"comment","(":"open_delim","[":"open_delim","{":"open_delim","}":"close_delim","]":"close_delim",")":"close_delim","*nomatch*":"normal"}},close_delim:{active:false,edges:{"'":"str_single",'"':"str_double","#":"comment","(":"open_delim","[":"open_delim","{":"open_delim","}":"close_delim","]":"close_delim",")":"close_delim","*nomatch*":"normal"}},comment:{active:false,edges:{"\n":"normal","*nomatch*":"comment"}}}}();var n=function(e){var t={open:function(e){return'<span class = "'+e+'">'},close:function(){return"</span>"},both:function(e,t){return'<span class="'+e+'">'+t+"</span>"}};var n=function(e){return{str_single:{"'":t.open("sstring")+"'"},str_double:{'"':t.open("dstring")+'"'},normal:{$:t.both("dollar","$"),",":t.both("comma lev"+e,","),"*nomatch*":"*token*"},comment:{"#":t.open("comment")+"#"},open_delim:{"(":t.both("lev"+e,"("),"[":t.both("lev"+e,"["),"{":t.both("lev"+e,"{")},close_delim:{")":t.both("lev"+e,")"),"]":t.both("lev"+e,"]"),"}":t.both("lev"+e,"}")}}};return{str_single:{str_single:{'"':t.both("ssdouble",'"'),"*nomatch*":"*token*"},normal:{"'":"'"+t.close()}},str_double:{str_double:{"'":t.both("dssingle","'"),"*nomatch*":"*token*"},normal:{'"':'"'+t.close()}},normal:n(e),open_delim:n(e),close_delim:n(e),comment:{normal:{"\n":"\n"+t.close()},comment:{"*nomatch*":"*token*"}}}};var r=function(r){var i="";var s=e(t,n);for(var o=0;o<r.length;o++){var u=r.substring(o,o+1);i=i+s.consume_token(u)}return i};var i=function(e,t){$(e).replaceWith(function(e,n){return t(r($(this).text()))})};return{StateMachine:e,highlight_text:r,highlight_r_code:i}}()
 </script>
 
@@ -27,69 +26,11 @@
 /*
 	The css for the example syntax highlighting.
 */
-
-.input           {background: white}
-.input           {background: white}
-.input:before    {content: '\A'}
-.input:after     {content: '\A'}
-
-.examples        {background:  white}
-
-/*
-turn off the code examples
-*/
-
-.output          {display: none}
-
-.input .comment {
- 	color:      #b2b2cd;
- 	font-style: italic;
- 	background: #f9f9fb;
-}
-
-.input .inputoxygen {
-	color: #C7254E;
-	background: white;
-}
-
-.input           {color: #839496}
-
-.input .ssdouble {color: #C7254E}
-.input .dssingle {color: #C7254E}
-
-.input .sstring  {color: #C7254E}
-.input .dstring  {color: #C7254E}
-
-.input .at       {color: #859900}
-.input .dollar   {color: #859900}
-
-.input .lev0     {color: #268bd2}
-.input .lev1     {color: #268bd2}
-.input .lev2     {color: #268bd2}
-.input .lev3     {color: #268bd2}
-.input .lev4     {color: #268bd2}
-.input .lev5     {color: #268bd2}
-.input .lev6     {color: #268bd2}
-.input .lev7     {color: #268bd2}
-.input .lev8     {color: #268bd2}
-.input .lev9     {color: #268bd2}
-.input .lev10    {color: #268bd2}
-.input .lev11    {color: #268bd2}
-.input .lev12    {color: #268bd2}
-.input .lev13    {color: #268bd2}
-
-</style>
-
-<style type="text/css">
+	h2 {
+		font-size: 24px}
 
 	html * {
 	  background: white; }
-
-	::selection {
-	  background: #666666; }
-
-	::-moz-selection {
-	  background: #666666; }
 
 	.r {
 	  color: #505050; }
@@ -234,64 +175,63 @@ rarely have more than two parametres, so functions will just work without config
 methods take an initial piece of data and apply successive transformation to it.
 This is a very natural way of expressing data munging or reshaping.</p>
 
-<pre class = "input">
-"-- Data From Hadley Wickham's https://github.com/hadley/data-stride"
+<pre><code class="r">&quot;-- Data From Hadley Wickham&#39;s https://github.com/hadley/data-stride&quot;
 
-asRow <- (...) := {
+asRow &lt;- (...) := {
     list(state = ..1, potency = ..2, weight = ..3, month = ..4, price = ..5)
 }
 
-cocaineData <- x_(list(
-    asRow("MA", 74,  3,  7,  180),
-    asRow("NY", 83, 34, 10,  960),
-    asRow("SC", 81, 47,  6, 1800),
-    asRow("NY", 50, 27, 12, 1000),
-    asRow("NY", 81,  1, 11,  100),
-    asRow("FL", 57,  1,  8,  100),
-    asRow("NJ", 47,  6,  5,  400),
-    asRow("FL", 37, 52,  3, 1600),
-    asRow("PA", 74,  2,  1,  200)
+cocaineData &lt;- x_(list(
+    asRow(&quot;MA&quot;, 74,  3,  7,  180),
+    asRow(&quot;NY&quot;, 83, 34, 10,  960),
+    asRow(&quot;SC&quot;, 81, 47,  6, 1800),
+    asRow(&quot;NY&quot;, 50, 27, 12, 1000),
+    asRow(&quot;NY&quot;, 81,  1, 11,  100),
+    asRow(&quot;FL&quot;, 57,  1,  8,  100),
+    asRow(&quot;NJ&quot;, 47,  6,  5,  400),
+    asRow(&quot;FL&quot;, 37, 52,  3, 1600),
+    asRow(&quot;PA&quot;, 74,  2,  1,  200)
 ))
 
-"-- 1. get and sort the state seisure frequencies"
+&quot;-- 1. get and sort the state seisure frequencies&quot;
 
-cocaineData $ xPluck("state") $ xTabulate() $ x_SortBy(xSecondOf)
+cocaineData $ xPluck(&quot;state&quot;) $ xTabulate() $ x_SortBy(xSecondOf)
 
-'
+&#39;
 list(
-    list("MA", 1),
-    list("SC", 1),
-    list("NJ", 1),
-    list("PA", 1),
-    list("FL", 2),
-    list("NY", 3))
-'
+    list(&quot;MA&quot;, 1),
+    list(&quot;SC&quot;, 1),
+    list(&quot;NJ&quot;, 1),
+    list(&quot;PA&quot;, 1),
+    list(&quot;FL&quot;, 2),
+    list(&quot;NY&quot;, 3))
+&#39;
 
-"-- 2. group the seizures by state."
-stateSeizures <- cocaineData $ xGroupBy(x. $ state)
+&quot;-- 2. group the seizures by state.&quot;
+stateSeizures &lt;- cocaineData $ xGroupBy(x. $ state)
 
-"-- 3. get the largest intrastate seizures by price"
-largestStateSeizures <- stateSeizures $ xPluck('price') $ xMap(group := {
+&quot;-- 3. get the largest intrastate seizures by price&quot;
+largestStateSeizures &lt;- stateSeizures $ xPluck(&#39;price&#39;) $ xMap(group := {
     xMaxBy(row := as.numeric(row $ price) , group)
 })
 
-'
+&#39;
 list(
-    list(state = "MA", potency = "74", weight = "3",  month = "7",  price = "180"),
-    list(state = "NY", potency = "50", weight = "27", month = "12", price = "1000"),
-    list(state = "SC", potency = "81", weight = "47", month = "6",  price = "1800"),
-    list(state = "FL", potency = "37", weight = "52", month = "3",  price = "1600"),
-    list(state = "NJ", potency = "47", weight = "6",  month = "5",  price = "400"),
-    list(state = "PA", potency = "74", weight = "2",  month = "1",  price = "200")
+    list(state = &quot;MA&quot;, potency = &quot;74&quot;, weight = &quot;3&quot;,  month = &quot;7&quot;,  price = &quot;180&quot;),
+    list(state = &quot;NY&quot;, potency = &quot;50&quot;, weight = &quot;27&quot;, month = &quot;12&quot;, price = &quot;1000&quot;),
+    list(state = &quot;SC&quot;, potency = &quot;81&quot;, weight = &quot;47&quot;, month = &quot;6&quot;,  price = &quot;1800&quot;),
+    list(state = &quot;FL&quot;, potency = &quot;37&quot;, weight = &quot;52&quot;, month = &quot;3&quot;,  price = &quot;1600&quot;),
+    list(state = &quot;NJ&quot;, potency = &quot;47&quot;, weight = &quot;6&quot;,  month = &quot;5&quot;,  price = &quot;400&quot;),
+    list(state = &quot;PA&quot;, potency = &quot;74&quot;, weight = &quot;2&quot;,  month = &quot;1&quot;,  price = &quot;200&quot;)
 )
-'
+&#39;
 
-"-- 4. get the average potency of the largest seizure"
+&quot;-- 4. get the average potency of the largest seizure&quot;
 
-largestStateSeizures $ xPluck('potency') $ xTap(unlist %then% mean)
+largestStateSeizures $ xPluck(&#39;potency&#39;) $ xTap(unlist %then% mean)
 
 60.8
-</pre>
+</code></pre>
 
 <h3>Arrow is Expressive</h3>
 
@@ -349,7 +289,7 @@ much more efficient.</p></li>
     <h2>Arrow Documentation</h2>
 
     <h3>Character Functions</h3>
-    
+    These functions are involved in text-processing, or interacting with text-files. These functions primarily involve converting text between a line, word or character representation.
 
     <ul class="index">
         
@@ -400,7 +340,7 @@ much more efficient.</p></li>
     
     </ul>
     <h3>Combinatoric Functions</h3>
-    
+    These functions generate combinatorial structures, which are typically used for specialised patterns of iteration or generating more useful substructures from an initial pool of candidate structures. As these functions enumerate rapidly growing data structures they tend to inefficient for large inputs.
 
     <ul class="index">
         
@@ -411,7 +351,7 @@ much more efficient.</p></li>
         <code><a href="xCycle.html">xCycle</a></code>(xCycle...)<br />xCycle</li>
             
       <li>
-        <code><a href="xPermute.html">xPermute</a></code>(xPermute...)<br />xPermute</li>
+        <code><a href="xReorder.html">xReorder</a></code>(xReorder...)<br />xReorder</li>
             
       <li>
         <code><a href="xProdSetOf.html">xProdSetOf</a></code>(xProdSetOf...)<br />xProdSetOf</li>
@@ -421,7 +361,7 @@ much more efficient.</p></li>
     
     </ul>
     <h3>Collection Comprehensions</h3>
-    
+    Collection comprehensions provide syntactic sugar for defining  collections by providing the contraints that each element must satisfy to be a member of the collection. These are a translation of set-builder notation, which defines a set in terms of membership constraints.
 
     <ul class="index">
         
@@ -430,7 +370,7 @@ much more efficient.</p></li>
     
     </ul>
     <h3>Container Conversion Functions</h3>
-    
+    These functions convert the type of container that surrounds a data set. They do not coerce the contents of the container to a different type.
 
     <ul class="index">
         
@@ -454,7 +394,7 @@ much more efficient.</p></li>
     
     </ul>
     <h3>Filtering Functions</h3>
-    
+    These functions create a subset of collection, with elements sharing a certain property. This typically involves removing null or other special values from a collection, or selecting or rejecting elements based on a predicate.
 
     <ul class="index">
         
@@ -468,7 +408,7 @@ much more efficient.</p></li>
         <code><a href="xRejectEmpty.html">xRejectEmpty</a></code>(xPack, xPack..., xRejectEmpty...)<br />xRejectEmpty</li>
             
       <li>
-        <code><a href="xRejectNan.html">xRejectNan</a></code><br />xRejectNan</li>
+        <code><a href="xRejectNan.html">xRejectNan</a></code>(xRejectNan...)<br />xRejectNan</li>
             
       <li>
         <code><a href="xRejectNa.html">xRejectNa</a></code>(xRejectNa...)<br />xRejectNa</li>
@@ -487,7 +427,7 @@ much more efficient.</p></li>
     
     </ul>
     <h3>Immutable Value Functions</h3>
-    
+    These functions work with immutable values; references to a variable that cannot be altered by reassignment after creation.
 
     <ul class="index">
         
@@ -505,7 +445,7 @@ much more efficient.</p></li>
     
     </ul>
     <h3>Impure Functions</h3>
-    
+    These functions are referentially impure or have side-effects like interacting with the file system.
 
     <ul class="index">
         
@@ -544,7 +484,7 @@ much more efficient.</p></li>
     
     </ul>
     <h3>Methods</h3>
-    
+    These functions involve arrow methods, or are only available as arrow methods. Most functions that are only available as methods convert second-class citizens of arrow like data frames and factors to collection representations.
 
     <ul class="index">
         
@@ -589,7 +529,7 @@ much more efficient.</p></li>
     
     </ul>
     <h3>Basic Functions</h3>
-    
+    These very simple functions are difficult to classify. They include the identity function, a function that  closes of a value, and functions that return true, false or na.
 
     <ul class="index">
         
@@ -613,7 +553,7 @@ much more efficient.</p></li>
     
     </ul>
     <h3>Folding Functions</h3>
-    
+    Folds are fundemental to functional programming. A fold takes a function that combines two values (like the plus operator, the function 'c', or the function rbind), and applies it to a collection of values, ultimately yielding a single value. In general, folds can be in place of tail recursion or loops, and most functions in arrow can be implemented as a fold.
 
     <ul class="index">
         
@@ -628,7 +568,7 @@ much more efficient.</p></li>
     
     </ul>
     <h3>Function Application Functions</h3>
-    
+    These apply a function to a data set in varying ways, or  create a new function with a different function application pattern. These include the fuction xMap and varients theiron, and functions to convert functions to different arities.
 
     <ul class="index">
         
@@ -636,10 +576,10 @@ much more efficient.</p></li>
         <code><a href="xApply.html">xApply</a></code>(xApply...)<br />xApply</li>
             
       <li>
-        <code><a href="xAsUnary.html">xAsUnary</a></code><br />xAsUnary</li>
+        <code><a href="xUnspread.html">xUnspread</a></code><br />xUnspread</li>
             
       <li>
-        <code><a href="xAsVariadic.html">xAsVariadic</a></code><br />xAsVariadic</li>
+        <code><a href="xSpread.html">xSpread</a></code><br />xSpread</li>
             
       <li>
         <code><a href="xDeepMap.html">xDeepMap</a></code>(xDeepMap...)<br />xDeepMap</li>
@@ -664,7 +604,7 @@ much more efficient.</p></li>
     
     </ul>
     <h3>Function Combining Functions</h3>
-    
+    These functions take several functions and combine them into a single function. These include functions for composition functions,  and for composition a function with a binary operator.
 
     <ul class="index">
         
@@ -679,7 +619,7 @@ much more efficient.</p></li>
     
     </ul>
     <h3>Function Modifying Functions</h3>
-    
+    These functions take a function and return a different or modified function
 
     <ul class="index">
         
@@ -690,7 +630,7 @@ much more efficient.</p></li>
         <code><a href="xAsClosure.html">xAsClosure</a></code><br />xAsClosure</li>
             
       <li>
-        <code><a href="xAsVariadic.html">xAsVariadic</a></code><br />xAsVariadic</li>
+        <code><a href="xSpread.html">xSpread</a></code><br />xSpread</li>
             
       <li>
         <code><a href="xCapture.html">xCapture</a></code>(xK)<br />xCapture</li>
@@ -718,7 +658,7 @@ much more efficient.</p></li>
     
     </ul>
     <h3>Key Functions</h3>
-    
+    These functions deal with collection names. They modify the names of a collection, or select from a collection using keys.
 
     <ul class="index">
         
@@ -736,7 +676,7 @@ much more efficient.</p></li>
     
     </ul>
     <h3>Order Functions</h3>
-    
+    These functions deal with the order of a collection.
 
     <ul class="index">
         
@@ -748,7 +688,7 @@ much more efficient.</p></li>
     
     </ul>
     <h3>Parametre Functions</h3>
-    
+    These functions work with or alter function parametres. These include functions that return the parametres of a function, or partial application functions.
 
     <ul class="index">
         
@@ -756,10 +696,10 @@ much more efficient.</p></li>
         <code><a href="xArityOf.html">xArityOf</a></code><br />xArityOf</li>
             
       <li>
-        <code><a href="xAsUnary.html">xAsUnary</a></code><br />xAsUnary</li>
+        <code><a href="xUnspread.html">xUnspread</a></code><br />xUnspread</li>
             
       <li>
-        <code><a href="xAsVariadic.html">xAsVariadic</a></code><br />xAsVariadic</li>
+        <code><a href="xSpread.html">xSpread</a></code><br />xSpread</li>
             
       <li>
         <code><a href="xIsVariadic.html">xIsVariadic</a></code><br />xIsVariadic</li>
@@ -775,7 +715,7 @@ much more efficient.</p></li>
     
     </ul>
     <h3>Quantifier Functions</h3>
-    
+    These functions count or summarise the true/false cases of a predicate over a data set.
 
     <ul class="index">
         
@@ -792,11 +732,11 @@ much more efficient.</p></li>
         <code><a href="xExists.html">xExists</a></code>(xExists...)<br />xExists</li>
             
       <li>
-        <code><a href="xPoll.html">xPoll</a></code>(xPoll..., xRejectNan...)<br />xPoll</li>
+        <code><a href="xPoll.html">xPoll</a></code>(xPoll...)<br />xPoll</li>
     
     </ul>
     <h3>Reshaping Functions</h3>
-    
+    These functions loosely fall into the role of reshaping or adding new elements to a collection. These include functions that subdivide collections, join collections, or reorder collections.
 
     <ul class="index">
         
@@ -853,7 +793,7 @@ much more efficient.</p></li>
     
     </ul>
     <h3>Selection Functions</h3>
-    
+    These functions select or subset collections of values. This includes positional subsetting, selecting at certain keys and indices, or using a predicate for subsetting.
 
     <ul class="index">
         
@@ -910,7 +850,7 @@ much more efficient.</p></li>
     
     </ul>
     <h3>Set Functions</h3>
-    
+    These include functions for working with duplicated values, generating sets and the classic set operations
 
     <ul class="index">
         
@@ -938,7 +878,7 @@ much more efficient.</p></li>
     
     </ul>
     <h3>Short-Circuiting Functions</h3>
-    
+    Short-circuiting functions are higher-order functions that take functions with the ability to prematurely break evaluation of a program. When Return( ) is called the result is returned immediately, improving the efficiency of the subprogram.
 
     <ul class="index">
         
@@ -962,7 +902,7 @@ much more efficient.</p></li>
     
     </ul>
     <h3>Time Functions</h3>
-    
+    These side-effectful functions work with time, or alter the temporal properties of functions. These are useful for interacting with rate-limited API's, or allowing programs to observer their own run-times.
 
     <ul class="index">
         
@@ -977,7 +917,7 @@ much more efficient.</p></li>
     
     </ul>
     <h3>Value Testing Functions</h3>
-    
+    These functions test values to see if they are a particular type of value. These include functions that test for special values like null and na, and functions that test each element of a collection for these values.
 
     <ul class="index">
         
@@ -1049,7 +989,11 @@ much more efficient.</p></li>
     
     </ul>
     <h3>Other</h3>
-    
+    **Arrow** is a functional programming framework that adds partial
+application, jQuery-like method calling, function composition, and nearly
+one-hundred higher-order functions and utility functions to the R language.
+Arrow helps make R an elegant functional language with an emphasis on the
+composition of simple functions to create complex, expressive programs.
 
     <ul class="index">
         
@@ -1087,7 +1031,11 @@ much more efficient.</p></li>
 <script type="text/javascript">
 	// highlight code examples.
 
-	highlight.highlight_r_code(".input", function (text) {
+	highlight.highlight_r_code("code:empty", function (text) {
+		return "<code class = 'input r'>" + text + "</code>"
+	})
+
+	highlight.highlight_r_code("pre .input", function (text) {
 		return "<div class = 'input r'>" + text + "</div>"
 	})
 

@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-<title>xTranspose. arrow 0.1.0</title>
+<title>xReorder. arrow 0.1.0</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="author" content="">
 
@@ -144,44 +144,54 @@
       
       </header>
 
-      <h1>$ xTranspose</h1>
+      <h1>xReorder</h1>
 
 <div class="row">
   <div class="span8">
     <h2>Usage</h2>
-    <pre><div>x_(  ) $ xTranspose()</div></pre>
-        
-    <div class="$ xTranspose">
-      <h2>$ xTranspose</h2>
+    <pre><div>xReorder(nums, colls)</div>
+<div>xReorder...(nums, ...)</div></pre>
+    
+    <h2>Arguments</h2>
+    <dl>
+      <dt>nums</dt>
+      <dd>a collection of whole numbers. The indices
+   by which to permute the input collections.</dd>
+      <dt>colls</dt>
+      <dd>several collections of equal length to <b>nums</b>. The
+   collections to permute.</dd>
+      <dt>...</dt>
+      <dd>see above.</dd>
+    </dl>
+    
+    <div class="xReorder">
+      <h2>xReorder</h2>
 
     </div>
 
     <div class="Value">
       <h2>Value</h2>
 
-      <p>An arrow object containing a matrix.</p>
+      <p>A list of collections.</p>
 
     </div>
 
     <div class="Description">
       <h2>Description</h2>
 
-      <p>Transpose a matrix.</p>
+      <p>Permute a collection of collections using indices.</p>
 
     </div>
 
     <div class="Details">
       <h2>Details</h2>
 
-      <p><b>xTranspose( )</b> is very similar to the base function
-   <b>t( )</b>. It takes each row of an input matrix and
-   uses it as a column in the output matrix. The dimensions of
-   the input matrix is flipped; if a 4 x 2 matrix is supplied to
-   <b>xTranspose( )</b> then a 2 x 4 matrix is returned.</p>
+      <p><b>xReorder</b> allows several collections to be rearranged
+   in the same way simultaneously.</p>
 
-      <p><b>xTranspose</b> is an involution - a function that is its own
-   inverse. For any collection, <b>xTranspose(xTranspose(coll))</b>
-   is the original collection.</p>
+      <p><code>colls <- list(ids = list(15, 1, 12), ages = list(17, 29, 24), weights = list(80, 82, 76))</code></p>
+
+      <p><code>xReorder(xOrderOf( xFirstOf(colls) ), colls)</code></p>
 
     </div>
 
@@ -190,14 +200,19 @@
 
       <p></p>
 
-      <p>The empty matrix is returned if the input matrix is empty.
-   Matrices with zero rows or columns are transposed as expected.</p>
+      <p>returns the empty list is <b>nums</b> is length-zero.</p>
 
     </div>
-      </div>
+    
+    <h2 id="examples">Examples</h2>
+    <pre class="examples"><div class='input'>
+NULL
+
+</div></pre>
+  </div>
   <div class="span4">
     <!-- <ul>
-      <li>xTranspose</li>
+      <li>xReorder</li><li>xReorder...</li>
     </ul>
     <ul>
       
@@ -205,13 +220,22 @@
 
     <h2>See also</h2>
     
-Other methods: <code><a href='xByColkeys.html'>xByColkeys</a></code>;
-  <code><a href='xByCols.html'>xByCols</a></code>; <code><a href='xByLevels.html'>xByLevels</a></code>,
-  <code><a href='xByLevels.html'>xByLevels</a></code>; <code><a href='xByRows.html'>xByRows</a></code>;
-  <code><a href='xColUnit.html'>xColUnit</a></code>; <code><a href='xElemsByCols.html'>xElemsByCols</a></code>;
-  <code><a href='xElemsByRows.html'>xElemsByRows</a></code>; <code><a href='xExecute.html'>xExecute</a></code>;
-  <code><a href='xRowUnit.html'>xRowUnit</a></code>; <code><a href='xTap.html'>xTap</a></code>;
-  <code><a href='x_.html'>x_</a></code>
+Other combinatoric_functions: <code><a href='xChoose.html'>xChoose</a></code>,
+  <code><a href='xChoose.html'>xChoose...</a></code>; <code><a href='xCycle.html'>xCycle</a></code>,
+  <code><a href='xCycle.html'>xCycle...</a></code>; <code><a href='xPowerSetOf.html'>xPowerSetOf</a></code>,
+  <code><a href='xPowerSetOf.html'>xPowerSetOf...</a></code>; <code><a href='xProdSetOf.html'>xProdSetOf</a></code>,
+  <code><a href='xProdSetOf.html'>xProdSetOf...</a></code>
+
+Other set_functions: <code><a href='xDuplicatesOf.html'>xDuplicatesOf</a></code>,
+  <code><a href='xDuplicatesOf.html'>xDuplicatesOf...</a></code>; <code><a href='xInter.html'>xInter</a></code>,
+  <code><a href='xInter.html'>xInter...</a></code>; <code><a href='xIsMember.html'>xIsMember</a></code>,
+  <code><a href='xIsMember.html'>xIsMember...</a></code>; <code><a href='xIsSubset.html'>xIsSubset</a></code>,
+  <code><a href='xIsSubset.html'>xIsSubset...</a></code>; <code><a href='xNotMember.html'>xNotMember</a></code>,
+  <code><a href='xNotMember.html'>xNotMember...</a></code>; <code><a href='xPowerSetOf.html'>xPowerSetOf</a></code>,
+  <code><a href='xPowerSetOf.html'>xPowerSetOf...</a></code>; <code><a href='xProdSetOf.html'>xProdSetOf</a></code>,
+  <code><a href='xProdSetOf.html'>xProdSetOf...</a></code>; <code><a href='xUnionOf.html'>xUnionOf</a></code>,
+  <code><a href='xUnionOf.html'>xUnionOf...</a></code>; <code><a href='xUniqueOf.html'>xUniqueOf</a></code>,
+  <code><a href='xUniqueOf.html'>xUniqueOf...</a></code>
 
     
   </div>

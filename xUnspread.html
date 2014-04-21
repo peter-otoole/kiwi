@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-<title>xTranspose. arrow 0.1.0</title>
+<title>xUnspread. arrow 0.1.0</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="author" content="">
 
@@ -144,60 +144,83 @@
       
       </header>
 
-      <h1>$ xTranspose</h1>
+      <h1>xUnspread</h1>
 
 <div class="row">
   <div class="span8">
     <h2>Usage</h2>
-    <pre><div>x_(  ) $ xTranspose()</div></pre>
-        
-    <div class="$ xTranspose">
-      <h2>$ xTranspose</h2>
+    <pre><div>xUnspread(fn)</div></pre>
+    
+    <h2>Arguments</h2>
+    <dl>
+      <dt>fn</dt>
+      <dd>an arbitrary function. The function to be
+   converted to a function that takes a single collection.</dd>
+    </dl>
+    
+    <div class="xUnspread">
+      <h2>xUnspread</h2>
 
     </div>
 
     <div class="Value">
       <h2>Value</h2>
 
-      <p>An arrow object containing a matrix.</p>
+      <p>A unary function of <b>coll</b>, that applies its arguments
+   to its underlying function.</p>
 
     </div>
 
     <div class="Description">
       <h2>Description</h2>
 
-      <p>Transpose a matrix.</p>
+      <p>Convert any function to a unary function.</p>
 
     </div>
 
     <div class="Details">
       <h2>Details</h2>
 
-      <p><b>xTranspose( )</b> is very similar to the base function
-   <b>t( )</b>. It takes each row of an input matrix and
-   uses it as a column in the output matrix. The dimensions of
-   the input matrix is flipped; if a 4 x 2 matrix is supplied to
-   <b>xTranspose( )</b> then a 2 x 4 matrix is returned.</p>
-
-      <p><b>xTranspose</b> is an involution - a function that is its own
-   inverse. For any collection, <b>xTranspose(xTranspose(coll))</b>
-   is the original collection.</p>
+      <p><b>xUnspread</b> takes a function and returns a function that
+has one argument. The first element of the argument is
+passed to the first parametre of the underlying function,
+the second element to the second parametre, and so on.</p>
 
     </div>
+    
+    <h2 id="examples">Examples</h2>
+    <pre class="examples"><div class='input'>
+# 1. xUnspread can be used to adapt higher-order
+#    functions to make them work with non-unary functions.
 
-    <div class="Corner Cases">
-      <h2>Corner Cases</h2>
+xSelect...(
+    xUnspread(
+        (a : b) := {
+            a &gt; 0 &amp;&amp; b &gt;= 0
+        }
+    ),
+    list(+1, +1),
+    list(+0, +1),
+    list(-1, 1),
+    list(-1, -1)
+)
+</div>
+<div class='output'>[[1]]
+[[1]][[1]]
+[1] 1
 
-      <p></p>
+[[1]][[2]]
+[1] 1
 
-      <p>The empty matrix is returned if the input matrix is empty.
-   Matrices with zero rows or columns are transposed as expected.</p>
 
-    </div>
-      </div>
+</div>
+<div class='input'>
+# list(+1, +1)
+</div></pre>
+  </div>
   <div class="span4">
     <!-- <ul>
-      <li>xTranspose</li>
+      <li>xUnspread</li>
     </ul>
     <ul>
       
@@ -205,13 +228,33 @@
 
     <h2>See also</h2>
     
-Other methods: <code><a href='xByColkeys.html'>xByColkeys</a></code>;
-  <code><a href='xByCols.html'>xByCols</a></code>; <code><a href='xByLevels.html'>xByLevels</a></code>,
-  <code><a href='xByLevels.html'>xByLevels</a></code>; <code><a href='xByRows.html'>xByRows</a></code>;
-  <code><a href='xColUnit.html'>xColUnit</a></code>; <code><a href='xElemsByCols.html'>xElemsByCols</a></code>;
-  <code><a href='xElemsByRows.html'>xElemsByRows</a></code>; <code><a href='xExecute.html'>xExecute</a></code>;
-  <code><a href='xRowUnit.html'>xRowUnit</a></code>; <code><a href='xTap.html'>xTap</a></code>;
-  <code><a href='x_.html'>x_</a></code>
+Other function_application_functions: <code><a href='xApply.html'>xApply</a></code>,
+  <code><a href='xApply.html'>xApply...</a></code>; <code><a href='xDeepMap.html'>xDeepMap</a></code>,
+  <code><a href='xDeepMap.html'>xDeepMap...</a></code>; <code><a href='xFlatMap.html'>xFlatMap</a></code>,
+  <code><a href='xFlatMap.html'>xFlatMap...</a></code>; <code><a href='xMapIndexed.html'>xMapIndexed</a></code>,
+  <code><a href='xMapIndexed.html'>xMapIndexed...</a></code>; <code><a href='xMapply.html'>xMapply</a></code>,
+  <code><a href='xMapply.html'>xMapply...</a></code>; <code><a href='xMap.html'>xMap</a></code>,
+  <code><a href='xMap.html'>xMap...</a></code>; <code><a href='xSpread.html'>xSpread</a></code>;
+  <code><a href='xThread.html'>xThread</a></code>, <code><a href='xThread.html'>xThread...</a></code>;
+  <code><a href='xVectorise.html'>xVectorise</a></code>, <code><a href='xVectorise.html'>xVectorize</a></code>
+
+Other function_modifying_functions: <code><a href='xLift.html'>%and%</a></code>,
+  <code><a href='xLift.html'>%or%</a></code>, <code><a href='xLift.html'>xLift</a></code>,
+  <code><a href='xLift.html'>xLift...</a></code>; <code><a href='xCompose.html'>%of%</a></code>,
+  <code><a href='xCompose.html'>%then%</a></code>, <code><a href='xCompose.html'>xCompose</a></code>,
+  <code><a href='xCompose.html'>xCompose...</a></code>; <code><a href='xAsClosure.html'>xAsClosure</a></code>;
+  <code><a href='xCapture.html'>xCapture</a></code>, <code><a href='xCapture.html'>xK</a></code>;
+  <code><a href='xDelay.html'>xDelay</a></code>; <code><a href='xJuxtapose.html'>xJuxtapose</a></code>,
+  <code><a href='xJuxtapose.html'>xJuxtapose...</a></code>; <code><a href='xNot.html'>xNot</a></code>;
+  <code><a href='xPartial.html'>xPartial</a></code>, <code><a href='xPartial.html'>xPartial...</a></code>;
+  <code><a href='xSpread.html'>xSpread</a></code>; <code><a href='xThread.html'>xThread</a></code>,
+  <code><a href='xThread.html'>xThread...</a></code>; <code><a href='xVectorise.html'>xVectorise</a></code>,
+  <code><a href='xVectorise.html'>xVectorize</a></code>
+
+Other parametre_functions: <code><a href='xArityOf.html'>xArityOf</a></code>;
+  <code><a href='xFormalsOf.html'>xFormalsOf</a></code>; <code><a href='xIsVariadic.html'>xIsVariadic</a></code>;
+  <code><a href='xParamsOf.html'>xParamsOf</a></code>; <code><a href='xPartial.html'>xPartial</a></code>,
+  <code><a href='xPartial.html'>xPartial...</a></code>; <code><a href='xSpread.html'>xSpread</a></code>
 
     
   </div>
