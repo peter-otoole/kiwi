@@ -21,8 +21,7 @@
 <!--[if lt IE 9]>
   <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
-<link href='https://fonts.googleapis.com/css?family=Open+Sans|Quicksand' rel='stylesheet' type='text/css'>
-
+<link href='http://fonts.googleapis.com/css?family=Open+Sans|Quicksand:400,700' rel='stylesheet' type='text/css'>
 <style type="text/css">
 /*
 	The css for the example syntax highlighting.
@@ -32,6 +31,49 @@
 	.span8 div:first-of-type h2 {
 		display: none;
 	}
+
+	a {
+		color: #3498db
+	}
+
+	p {
+		font-family: "Open Sans"
+	}
+
+	.navbar  {
+		font-family: Quicksand
+	}
+
+	h1 {
+		font-family: Quicksand
+	}
+
+	h2 {
+		font-family: Quicksand
+	}
+
+	h3 {
+		font-family: Quicksand
+	}
+
+	h4 {
+		font-family: Quicksand
+	}
+
+	h5 {
+		font-family: Quicksand
+	}
+
+	h6 {
+		font-family: Quicksand
+	}
+
+
+
+
+
+
+
 
 	/*overflow on examples*/
 	div.output {
@@ -300,10 +342,10 @@ much more efficient.</p></li>
 <p>Ryan Grannell.</p>
 
 
-    <h2>Arrow Documentation</h2>
+    <h2>Arrow API Documentation</h2>
 
     <h3>Character Functions</h3>
-    These functions are involved in text-processing, or interacting with text-files. These functions primarily involve converting text between a line, word or character representation.
+    <p> These functions are involved in text-processing, or interacting with text-files. These functions primarily involve converting text between a line, word or character representation. </p>
 
     <ul class="index">
         
@@ -354,7 +396,7 @@ much more efficient.</p></li>
     
     </ul>
     <h3>Combinatoric Functions</h3>
-    These functions generate combinatorial structures, which are typically used for specialised patterns of iteration or generating more useful substructures from an initial pool of candidate structures. As these functions enumerate rapidly growing data structures they tend to inefficient for large inputs.
+    <p> These functions generate combinatorial structures, which are typically used for specialised patterns of iteration or generating more useful substructures from an initial pool of candidate structures. As these functions enumerate rapidly growing data structures they tend to inefficient for large inputs. </p>
 
     <ul class="index">
         
@@ -375,7 +417,7 @@ much more efficient.</p></li>
     
     </ul>
     <h3>Collection Comprehensions</h3>
-    Collection comprehensions provide syntactic sugar for defining  collections by providing the contraints that each element must satisfy to be a member of the collection. These are a translation of set-builder notation, which defines a set in terms of membership constraints.
+    <p> Collection comprehensions provide syntactic sugar for defining  collections by providing the contraints that each element must satisfy to be a member of the collection. These are a translation of set-builder notation, which defines a set in terms of membership constraints. </p>
 
     <ul class="index">
         
@@ -384,7 +426,7 @@ much more efficient.</p></li>
     
     </ul>
     <h3>Container Conversion Functions</h3>
-    These functions convert the type of container that surrounds a data set. They do not coerce the contents of the container to a different type.
+    <p> These functions convert the type of container that surrounds a data set. They do not coerce the contents of the container to a different type. </p>
 
     <ul class="index">
         
@@ -408,7 +450,7 @@ much more efficient.</p></li>
     
     </ul>
     <h3>Filtering Functions</h3>
-    These functions create a subset of collection, with elements sharing a certain property. This typically involves removing null or other special values from a collection, or selecting or rejecting elements based on a predicate.
+    <p> These functions create a subset of collection, with elements sharing a certain property. This typically involves removing null or other special values from a collection, or selecting or rejecting elements based on a predicate. </p>
 
     <ul class="index">
         
@@ -441,7 +483,7 @@ much more efficient.</p></li>
     
     </ul>
     <h3>Immutable Value Functions</h3>
-    These functions work with immutable values; references to a variable that cannot be altered by reassignment after creation.
+    <p> These functions work with immutable values; references to a variable that cannot be altered by reassignment after creation. </p>
 
     <ul class="index">
         
@@ -459,7 +501,7 @@ much more efficient.</p></li>
     
     </ul>
     <h3>Impure Functions</h3>
-    These functions are referentially impure or have side-effects like interacting with the file system.
+    <p> These functions are referentially impure or have side-effects like interacting with the file system. </p>
 
     <ul class="index">
         
@@ -498,7 +540,7 @@ much more efficient.</p></li>
     
     </ul>
     <h3>Methods</h3>
-    These functions involve arrow methods, or are only available as arrow methods. Most functions that are only available as methods convert second-class citizens of arrow like data frames and factors to collection representations.
+    <p> These functions involve arrow methods, or are only available as arrow methods. Most functions that are only available as methods convert second-class citizens of arrow like data frames and factors to collection representations. </p>
 
     <ul class="index">
         
@@ -543,7 +585,7 @@ much more efficient.</p></li>
     
     </ul>
     <h3>Basic Functions</h3>
-    These very simple functions are difficult to classify. They include the identity function, a function that  closes of a value, and functions that return true, false or na.
+    <p> These very simple functions are difficult to classify. They include the identity function, a function that  closes of a value, and functions that return true, false or na. </p>
 
     <ul class="index">
         
@@ -567,7 +609,7 @@ much more efficient.</p></li>
     
     </ul>
     <h3>Folding Functions</h3>
-    Folds are fundemental to functional programming. A fold takes a function that combines two values (like the plus operator, the function 'c', or the function rbind), and applies it to a collection of values, ultimately yielding a single value. In general, folds can be in place of tail recursion or loops, and most functions in arrow can be implemented as a fold.
+    <p>Folds are fundemental to functional programming. A fold takes a function that combines two values (like the plus operator, the function 'c', or the function rbind), and applies it to a collection of values, ultimately yielding a single value. In general, folds can be in place of tail recursion or loops, and most functions in arrow can be implemented as a fold.</p>
 
     <ul class="index">
         
@@ -582,7 +624,7 @@ much more efficient.</p></li>
     
     </ul>
     <h3>Function Application Functions</h3>
-    These apply a function to a data set in varying ways, or  create a new function with a different function application pattern. These include the fuction xMap and varients theiron, and functions to convert functions to different arities.
+    <p> These apply a function to a data set in varying ways, or  create a new function with a different function application pattern. These include the fuction xMap and varients theiron, and functions to convert functions to different arities. </p>
 
     <ul class="index">
         
@@ -618,7 +660,7 @@ much more efficient.</p></li>
     
     </ul>
     <h3>Function Combining Functions</h3>
-    These functions take several functions and combine them into a single function. These include functions for composition functions,  and for composition a function with a binary operator.
+    <p> These functions take several functions and combine them into a single function. These include functions for composition functions,  and for composition a function with a binary operator. </p>
 
     <ul class="index">
         
@@ -633,7 +675,7 @@ much more efficient.</p></li>
     
     </ul>
     <h3>Function Modifying Functions</h3>
-    These functions take a function and return a different or modified function
+    <p> These functions take a function and return a different or modified function </p>
 
     <ul class="index">
         
@@ -672,7 +714,7 @@ much more efficient.</p></li>
     
     </ul>
     <h3>Key Functions</h3>
-    These functions deal with collection names. They modify the names of a collection, or select from a collection using keys.
+    <p> These functions deal with collection names. They modify the names of a collection, or select from a collection using keys. </p>
 
     <ul class="index">
         
@@ -690,7 +732,7 @@ much more efficient.</p></li>
     
     </ul>
     <h3>Order Functions</h3>
-    These functions deal with the order of a collection.
+    <p>These functions deal with the order of a collection.</p>
 
     <ul class="index">
         
@@ -702,7 +744,7 @@ much more efficient.</p></li>
     
     </ul>
     <h3>Parametre Functions</h3>
-    These functions work with or alter function parametres. These include functions that return the parametres of a function, or partial application functions.
+    <p> These functions work with or alter function parametres. These include functions that return the parametres of a function, or partial application functions. </p>
 
     <ul class="index">
         
@@ -729,7 +771,7 @@ much more efficient.</p></li>
     
     </ul>
     <h3>Quantifier Functions</h3>
-    These functions count or summarise the true/false cases of a predicate over a data set.
+    <p>These functions count or summarise the true/false cases of a predicate over a data set.</p>
 
     <ul class="index">
         
@@ -750,7 +792,7 @@ much more efficient.</p></li>
     
     </ul>
     <h3>Reshaping Functions</h3>
-    These functions loosely fall into the role of reshaping or adding new elements to a collection. These include functions that subdivide collections, join collections, or reorder collections.
+    <p> These functions loosely fall into the role of reshaping or adding new elements to a collection. These include functions that subdivide collections, join collections, or reorder collections. </p>
 
     <ul class="index">
         
@@ -807,7 +849,7 @@ much more efficient.</p></li>
     
     </ul>
     <h3>Selection Functions</h3>
-    These functions select or subset collections of values. This includes positional subsetting, selecting at certain keys and indices, or using a predicate for subsetting.
+    <p> These functions select or subset collections of values. This includes positional subsetting, selecting at certain keys and indices, or using a predicate for subsetting. </p>
 
     <ul class="index">
         
@@ -867,7 +909,7 @@ much more efficient.</p></li>
     
     </ul>
     <h3>Set Functions</h3>
-    These include functions for working with duplicated values, generating sets and the classic set operations
+    <p> These include functions for working with duplicated values, generating sets and the classic set operations </p>
 
     <ul class="index">
         
@@ -895,7 +937,7 @@ much more efficient.</p></li>
     
     </ul>
     <h3>Short-Circuiting Functions</h3>
-    Short-circuiting functions are higher-order functions that take functions with the ability to prematurely break evaluation of a program. When Return( ) is called the result is returned immediately, improving the efficiency of the subprogram.
+    <p> Short-circuiting functions are higher-order functions that take functions with the ability to prematurely break evaluation of a program. When Return( ) is called the result is returned immediately, improving the efficiency of the subprogram. </p>
 
     <ul class="index">
         
@@ -919,7 +961,7 @@ much more efficient.</p></li>
     
     </ul>
     <h3>Special Function Constructors</h3>
-    These constructors are shorthands for creating functions. These included arrow functions and wildcard binary functions.
+    <p> These constructors are shorthands for creating functions. These included arrow functions and wildcard binary functions. </p>
 
     <ul class="index">
         
@@ -931,7 +973,7 @@ much more efficient.</p></li>
     
     </ul>
     <h3>Time Functions</h3>
-    These side-effectful functions work with time, or alter the temporal properties of functions. These are useful for interacting with rate-limited API's, or allowing programs to observer their own run-times.
+    <p> These side-effectful functions work with time, or alter the temporal properties of functions. These are useful for interacting with rate-limited API's, or allowing programs to observer their own run-times. </p>
 
     <ul class="index">
         
@@ -946,7 +988,7 @@ much more efficient.</p></li>
     
     </ul>
     <h3>Value Testing Functions</h3>
-    These functions test values to see if they are a particular type of value. These include functions that test for special values like null and na, and functions that test each element of a collection for these values. They are generally safer or more precise that their base counterparts.
+    <p> These functions test values to see if they are a particular type of value. These include functions that test for special values like null and na, and functions that test each element of a collection for these values. They are generally safer or more precise that their base counterparts. </p>
 
     <ul class="index">
         
@@ -1061,6 +1103,10 @@ composition of simple functions to create complex, expressive programs.
 
 	highlight.highlight_r_code("code.r", function (text) {
 		return "<div class = 'input r'>" + text + "</div>"
+	})
+
+	highlight.highlight_r_code(".span8 pre:first", function (text) {
+		return "<pre class = 'input r'>" + text + "</pre>"
 	})
 </script>
       </footer>
