@@ -21,16 +21,13 @@
 <!--[if lt IE 9]>
   <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
-<link href='https://fonts.googleapis.com/css?family=Open+Sans|Quicksand:400,700' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans|Quicksand:400,700|Inconsolata' rel='stylesheet' type='text/css'>
 <style type="text/css">
 /*
 	The css for the example syntax highlighting.
 */
 
 	/* a sloppy hack to get rid of a duplicated title field */
-	.span8 div:first-of-type h2 {
-		display: none;
-	}
 
 	a {
 		color: #3498db
@@ -38,6 +35,11 @@
 
 	p {
 		font-family: "Open Sans"
+	}
+
+	/*order matters*/
+	.r {
+		font-family: Inconsolata;
 	}
 
 	.navbar  {
@@ -291,8 +293,10 @@ NULL
 
 xDo(print %of% list.files, &#39;.&#39;)
 </div>
-<div class='output'> [1] &quot;demo&quot;             &quot;DESCRIPTION&quot;      &quot;inst&quot;             &quot;LICENSE&quot;         
- [5] &quot;man&quot;              &quot;NAMESPACE&quot;        &quot;R&quot;                &quot;README.md&quot;       
+<div class='output'> [1] &quot;demo&quot;             &quot;DESCRIPTION&quot;     
+ [3] &quot;inst&quot;             &quot;LICENSE&quot;         
+ [5] &quot;man&quot;              &quot;NAMESPACE&quot;       
+ [7] &quot;R&quot;                &quot;README.md&quot;       
  [9] &quot;staticdocs.Rproj&quot; &quot;vignettes&quot;       
 </div>
 <div class='input'>
@@ -360,8 +364,7 @@ Other inpure_functions: <code><a href='xDelay.html'>xDelay</a></code>;
   <code><a href='xWriteChars.html'>xWriteChars</a></code>; <code><a href='xWriteLines.html'>xWriteLines</a></code>;
   <code><a href='xWriteWords.html'>xWriteWords</a></code>
 
-    
-  </div>
+      </div>
 </div>
 
       <footer>
@@ -387,8 +390,19 @@ Other inpure_functions: <code><a href='xDelay.html'>xDelay</a></code>;
 	})
 
 	// reorder the xMethod fields.
+	$('div.Description').prependTo('.span8')
 
 </script>
+
+<style type="text/css">
+.span8 > div:nth-child(6) > h2:nth-child(1) {
+	display: none;
+}
+.span8 div:first-of-type h2 {
+	display: none;
+}
+</style>
+
       </footer>
     </div>
   </body>

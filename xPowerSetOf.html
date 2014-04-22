@@ -21,16 +21,13 @@
 <!--[if lt IE 9]>
   <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
-<link href='https://fonts.googleapis.com/css?family=Open+Sans|Quicksand:400,700' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans|Quicksand:400,700|Inconsolata' rel='stylesheet' type='text/css'>
 <style type="text/css">
 /*
 	The css for the example syntax highlighting.
 */
 
 	/* a sloppy hack to get rid of a duplicated title field */
-	.span8 div:first-of-type h2 {
-		display: none;
-	}
 
 	a {
 		color: #3498db
@@ -38,6 +35,11 @@
 
 	p {
 		font-family: "Open Sans"
+	}
+
+	/*order matters*/
+	.r {
+		font-family: Inconsolata;
 	}
 
 	.navbar  {
@@ -327,8 +329,7 @@ Other set_functions: <code><a href='xDuplicatesOf.html'>xDuplicatesOf</a></code>
   <code><a href='xUnionOf.html'>xUnionOf...</a></code>; <code><a href='xUniqueOf.html'>xUniqueOf</a></code>,
   <code><a href='xUniqueOf.html'>xUniqueOf...</a></code>
 
-    
-  </div>
+      </div>
 </div>
 
       <footer>
@@ -354,8 +355,19 @@ Other set_functions: <code><a href='xDuplicatesOf.html'>xDuplicatesOf</a></code>
 	})
 
 	// reorder the xMethod fields.
+	$('div.Description').prependTo('.span8')
 
 </script>
+
+<style type="text/css">
+.span8 > div:nth-child(6) > h2:nth-child(1) {
+	display: none;
+}
+.span8 div:first-of-type h2 {
+	display: none;
+}
+</style>
+
       </footer>
     </div>
   </body>
