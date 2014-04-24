@@ -208,7 +208,7 @@
   <div class="span8">
     <h2>Usage</h2>
     <pre><div>xJuxtapose(fns)</div>
-<div>xJuxtapose...(...)</div></pre>
+<div>xJuxtapose_(...)</div></pre>
     
     <h2>Arguments</h2>
     <dl>
@@ -249,7 +249,7 @@
 
       <p>A function to summarise a data set can be implemented with <b>xJuxtapose</b>:</p>
 
-      <p><code>summarise <- xJuxtapose...(min, median, max)</code></p>
+      <p><code>summarise <- xJuxtapose_(min, median, max)</code></p>
 
       <p><code>summarise(c(3, 1, 2, 4))</code></p>
 
@@ -276,7 +276,7 @@
 
 nums &lt;- xList[c(a, a^2, a^3), a &lt;- 1:10]
 
-x_(nums) $ x_Map(xJuxtapose...(max, mean, min))
+x_(nums) $ x_Map(xJuxtapose_(max, mean, min))
 </div>
 <div class='output'>[[1]]
 [[1]][[1]]
@@ -392,7 +392,7 @@ x_(nums) $ x_Map(xJuxtapose...(max, mean, min))
   </div>
   <div class="span4">
     <!-- <ul>
-      <li>xJuxtapose</li><li>xJuxtapose...</li>
+      <li>xJuxtapose</li><li>xJuxtapose_</li>
     </ul>
     <ul>
       
@@ -402,20 +402,20 @@ x_(nums) $ x_Map(xJuxtapose...(max, mean, min))
     
 Other function_combining_functions: <code><a href='xLift.html'>%and%</a></code>,
   <code><a href='xLift.html'>%or%</a></code>, <code><a href='xLift.html'>xLift</a></code>,
-  <code><a href='xLift.html'>xLift...</a></code>; <code><a href='xCompose.html'>%of%</a></code>,
+  <code><a href='xLift.html'>xLift_</a></code>; <code><a href='xCompose.html'>%of%</a></code>,
   <code><a href='xCompose.html'>%then%</a></code>, <code><a href='xCompose.html'>xCompose</a></code>,
-  <code><a href='xCompose.html'>xCompose...</a></code>
+  <code><a href='xCompose.html'>xCompose_</a></code>
 
 Other function_modifying_functions: <code><a href='xLift.html'>%and%</a></code>,
   <code><a href='xLift.html'>%or%</a></code>, <code><a href='xLift.html'>xLift</a></code>,
-  <code><a href='xLift.html'>xLift...</a></code>; <code><a href='xCompose.html'>%of%</a></code>,
+  <code><a href='xLift.html'>xLift_</a></code>; <code><a href='xCompose.html'>%of%</a></code>,
   <code><a href='xCompose.html'>%then%</a></code>, <code><a href='xCompose.html'>xCompose</a></code>,
-  <code><a href='xCompose.html'>xCompose...</a></code>; <code><a href='xAsClosure.html'>xAsClosure</a></code>;
+  <code><a href='xCompose.html'>xCompose_</a></code>; <code><a href='xAsClosure.html'>xAsClosure</a></code>;
   <code><a href='xCapture.html'>xCapture</a></code>, <code><a href='xCapture.html'>xK</a></code>;
-  <code><a href='xDelay.html'>xDelay</a></code>; <code><a href='xNot.html'>xNot</a></code>;
-  <code><a href='xPartial.html'>xPartial</a></code>, <code><a href='xPartial.html'>xPartial...</a></code>;
+  <code><a href='xDelay.html'>xDelay</a></code>; <code><a href='xFix.html'>xFix</a></code>,
+  <code><a href='xFix.html'>xFix_</a></code>; <code><a href='xNot.html'>xNot</a></code>;
   <code><a href='xSpread.html'>xSpread</a></code>; <code><a href='xThread.html'>xThread</a></code>,
-  <code><a href='xThread.html'>xThread...</a></code>; <code><a href='xUnspread.html'>xUnspread</a></code>;
+  <code><a href='xThread.html'>xThread_</a></code>; <code><a href='xUnspread.html'>xUnspread</a></code>;
   <code><a href='xVectorise.html'>xVectorise</a></code>, <code><a href='xVectorise.html'>xVectorize</a></code>
 
       </div>

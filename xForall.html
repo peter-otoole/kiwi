@@ -208,7 +208,7 @@
   <div class="span8">
     <h2>Usage</h2>
     <pre><div>xForall(pred, colls)</div>
-<div>xForall...(pred, ...)</div></pre>
+<div>xForall_(pred, ...)</div></pre>
     
     <h2>Arguments</h2>
     <dl>
@@ -251,7 +251,7 @@ is true for a predicate.</p>
 
       <p><code>coll <- c(True, False, True, True)</code></p>
 
-      <p><code>xForall...(xIdentity, coll)</code></p>
+      <p><code>xForall_(xIdentity, coll)</code></p>
 
       <p>When supplied with a collection of multiple collections the
     set product of those collections is checked with the predicate.
@@ -260,7 +260,7 @@ is true for a predicate.</p>
 
       <p><code>commutes <- (a : b) := { a + b == b + a }</code></p>
 
-      <p><code>xForall...(commutes, 1:2, 1:2)</code></p>
+      <p><code>xForall_(commutes, 1:2, 1:2)</code></p>
 
       <p>The set product is</p>
 
@@ -303,7 +303,7 @@ left_to_right &lt;-
 
 right_to_left &lt;- x_(left_to_right) $ x_Reverse()
 
-xForall...(
+xForall_(
 	ith := {
 		xAsCharacter(left_to_right[ith]) ==
 		xAsCharacter(right_to_left[ith])
@@ -319,7 +319,7 @@ xForall...(
   </div>
   <div class="span4">
     <!-- <ul>
-      <li>xForall</li><li>xForall...</li>
+      <li>xForall</li><li>xForall_</li>
     </ul>
     <ul>
       
@@ -328,10 +328,10 @@ xForall...(
     <h2>See also</h2>
     
 Other quantifier_functions: <code><a href='xAll.html'>xAll</a></code>,
-  <code><a href='xAll.html'>xAll...</a></code>; <code><a href='xAny.html'>xAny</a></code>,
-  <code><a href='xAny.html'>xAny...</a></code>; <code><a href='xExists.html'>xExists</a></code>,
-  <code><a href='xExists.html'>xExists...</a></code>; <code><a href='xPoll.html'>xPoll</a></code>,
-  <code><a href='xPoll.html'>xPoll...</a></code>
+  <code><a href='xAll.html'>xAll_</a></code>; <code><a href='xAny.html'>xAny</a></code>,
+  <code><a href='xAny.html'>xAny_</a></code>; <code><a href='xExists.html'>xExists</a></code>,
+  <code><a href='xExists.html'>xExists_</a></code>; <code><a href='xPoll.html'>xPoll</a></code>,
+  <code><a href='xPoll.html'>xPoll_</a></code>
 
       </div>
 </div>

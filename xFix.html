@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-<title>xThirdOf. arrow 0.1.0</title>
+<title>xFix. arrow 0.1.0</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="author" content="">
 
@@ -202,48 +202,59 @@
       
       </header>
 
-      <h1>xThirdOf</h1>
+      <h1>xFix</h1>
 
 <div class="row">
   <div class="span8">
     <h2>Usage</h2>
-    <pre><div>xThirdOf(coll)</div>
-<div>xThirdOf_(...)</div></pre>
+    <pre><div>xFix(fn, coll)</div>
+<div>xFix_(fn, ...)</div></pre>
     
     <h2>Arguments</h2>
     <dl>
+      <dt>fn</dt>
+      <dd>an arbitrary function. The function to have some
+   of its arguments fixed.</dd>
       <dt>coll</dt>
-      <dd>a collection. The collection to get the
-   third element of.</dd>
+      <dd>a collection. The arguments to fix.</dd>
       <dt>...</dt>
       <dd>see above.</dd>
     </dl>
     
-    <div class="xThirdOf">
-      <h2>xThirdOf</h2>
+    <div class="xFix">
+      <h2>xFix</h2>
 
     </div>
 
     <div class="Value">
       <h2>Value</h2>
 
-      <p>The third element in <b>coll</b>.</p>
+      <p>A function of equal or lesser arity to <b>fn</b>.</p>
 
     </div>
 
     <div class="Description">
       <h2>Description</h2>
 
-      <p>Return the third value in a collection.</p>
+      <p>Fix several arguments of a function, producing a function of smaller arity.</p>
 
     </div>
 
-    <div class="Type Signature">
-      <h2>Type Signature</h2>
+    <div class="Details">
+      <h2>Details</h2>
 
-      <p></p>
+      <p>Partial application is a mechanism for specialising a general function
+    to a particular purpose. For example, the very general function <b>xMap</b>
+    can be easily specialised to particular tasks using <code>xFix</code>:</p>
 
-      <p>|any| -> any</p>
+      <p><code>lengths <- xFix(xMap, list(fn = length))</code></p>
+
+      <p><code>sizes <- xFix(xMap, object.size))</code></p>
+
+      <p>In this case the use of xFix can match the argument to specialise by
+    name, or by position. The use of <b>xFix</b> over <b>xFix_</b> is
+    required in the first case, to avoid a parametre name class between the argument of
+    <b>xMap</b> to fix (fn) and the function passed to <b>xFix</b> (fn).</p>
 
     </div>
 
@@ -252,32 +263,19 @@
 
       <p></p>
 
-      <p>Throws an error if <b>coll</b> has less than
-   three elements; this is because any other corner
-   case would violate the function's type-signature.</p>
+      <p>Partial application also works for ellipses (eg list(... = 1)).</p>
 
     </div>
     
     <h2 id="examples">Examples</h2>
     <pre class="examples"><div class='input'>
-xThirdOf(letters)
-</div>
-<div class='output'>[1] &quot;c&quot;
-</div>
-<div class='input'>
-# c
+NULL
 
-x_(letters) $ x_ThirdOf()
-</div>
-<div class='output'>[1] &quot;c&quot;
-</div>
-<div class='input'>
-# c
 </div></pre>
   </div>
   <div class="span4">
     <!-- <ul>
-      <li>xThirdOf</li><li>xThirdOf_</li>
+      <li>xFix</li><li>xFix_</li>
     </ul>
     <ul>
       
@@ -285,24 +283,22 @@ x_(letters) $ x_ThirdOf()
 
     <h2>See also</h2>
     
-Other selection_functions: <code><a href='xAtCol.html'>xAtCol</a></code>,
-  <code><a href='xAtCol.html'>xAtCol_</a></code>; <code><a href='xAtKey.html'>xAtKey</a></code>,
-  <code><a href='xAtKey.html'>xAtKey_</a></code>; <code><a href='xAt.html'>xAt</a></code>,
-  <code><a href='xAt.html'>xAt_</a></code>; <code><a href='xDropWhile.html'>xDropWhile</a></code>,
-  <code><a href='xDropWhile.html'>xDropWhile_</a></code>; <code><a href='xDrop.html'>xDrop</a></code>,
-  <code><a href='xDrop.html'>xDrop_</a></code>; <code><a href='xFirstOf.html'>xFirstOf</a></code>,
-  <code><a href='xFirstOf.html'>xFirstOf_</a></code>; <code><a href='xFourthOf.html'>xFourthOf</a></code>,
-  <code><a href='xFourthOf.html'>xFourthOf_</a></code>; <code><a href='xInitOf.html'>xInitOf</a></code>,
-  <code><a href='xInitOf.html'>xInitOf_</a></code>; <code><a href='xLastOf.html'>xLastOf</a></code>,
-  <code><a href='xLastOf.html'>xLastOf_</a></code>; <code><a href='xMaxBy.html'>xMaxBy</a></code>,
-  <code><a href='xMaxBy.html'>xMaxBy_</a></code>; <code><a href='xMinBy.html'>xMinBy</a></code>,
-  <code><a href='xMinBy.html'>xMinBy_</a></code>; <code><a href='xPluck.html'>xPluck</a></code>,
-  <code><a href='xPluck.html'>xPluck_</a></code>; <code><a href='xRestOf.html'>xRestOf</a></code>,
-  <code><a href='xRestOf.html'>xRestOf_</a></code>; <code><a href='xSecondOf.html'>xSecondOf</a></code>,
-  <code><a href='xSecondOf.html'>xSecondOf_</a></code>; <code><a href='xSlice.html'>xSlice</a></code>,
-  <code><a href='xSlice.html'>xSlice_</a></code>; <code><a href='xTakeWhile.html'>xTakeWhile</a></code>,
-  <code><a href='xTakeWhile.html'>xTakeWhile_</a></code>; <code><a href='xTake.html'>xTake</a></code>,
-  <code><a href='xTake.html'>xTake_</a></code>
+Other function_modifying_functions: <code><a href='xLift.html'>%and%</a></code>,
+  <code><a href='xLift.html'>%or%</a></code>, <code><a href='xLift.html'>xLift</a></code>,
+  <code><a href='xLift.html'>xLift_</a></code>; <code><a href='xCompose.html'>%of%</a></code>,
+  <code><a href='xCompose.html'>%then%</a></code>, <code><a href='xCompose.html'>xCompose</a></code>,
+  <code><a href='xCompose.html'>xCompose_</a></code>; <code><a href='xAsClosure.html'>xAsClosure</a></code>;
+  <code><a href='xCapture.html'>xCapture</a></code>, <code><a href='xCapture.html'>xK</a></code>;
+  <code><a href='xDelay.html'>xDelay</a></code>; <code><a href='xJuxtapose.html'>xJuxtapose</a></code>,
+  <code><a href='xJuxtapose.html'>xJuxtapose_</a></code>; <code><a href='xNot.html'>xNot</a></code>;
+  <code><a href='xSpread.html'>xSpread</a></code>; <code><a href='xThread.html'>xThread</a></code>,
+  <code><a href='xThread.html'>xThread_</a></code>; <code><a href='xUnspread.html'>xUnspread</a></code>;
+  <code><a href='xVectorise.html'>xVectorise</a></code>, <code><a href='xVectorise.html'>xVectorize</a></code>
+
+Other parametre_functions: <code><a href='xArityOf.html'>xArityOf</a></code>;
+  <code><a href='xFormalsOf.html'>xFormalsOf</a></code>; <code><a href='xIsVariadic.html'>xIsVariadic</a></code>;
+  <code><a href='xParamsOf.html'>xParamsOf</a></code>; <code><a href='xSpread.html'>xSpread</a></code>;
+  <code><a href='xUnspread.html'>xUnspread</a></code>
 
       </div>
 </div>

@@ -208,7 +208,7 @@
   <div class="span8">
     <h2>Usage</h2>
     <pre><div>xLift(fn, fns)</div>
-<div>xLift...(fn, ...)</div>
+<div>xLift_(fn, ...)</div>
 <div>fn1 %or% fn2</div>
 <div>fn1 %and% fn2</div></pre>
     
@@ -281,8 +281,8 @@
 
       <p><b>xLift</b> factors out this pattern, for binary functions and higher arity functions.</p>
 
-      <p><code>sextuple <- xLift...('+', double, triple)</code>
-   <code>is_positive_and_whole <- xLift...('&&', is_positive, is_whole)</code></p>
+      <p><code>sextuple <- xLift_('+', double, triple)</code>
+   <code>is_positive_and_whole <- xLift_('&&', is_positive, is_whole)</code></p>
 
       <p>Two partially applied forms of xLift are included in arrow, which are useful for cutting down
   on the amount of anonymous functions you need to pass to higher-order functions.</p>
@@ -303,7 +303,7 @@ is_recursive &lt;- is.list %or% is.pairlist
   </div>
   <div class="span4">
     <!-- <ul>
-      <li>%and%</li><li>%or%</li><li>xLift</li><li>xLift...</li>
+      <li>%and%</li><li>%or%</li><li>xLift</li><li>xLift_</li>
     </ul>
     <ul>
       
@@ -313,18 +313,18 @@ is_recursive &lt;- is.list %or% is.pairlist
     
 Other function_combining_functions: <code><a href='xCompose.html'>%of%</a></code>,
   <code><a href='xCompose.html'>%then%</a></code>, <code><a href='xCompose.html'>xCompose</a></code>,
-  <code><a href='xCompose.html'>xCompose...</a></code>; <code><a href='xJuxtapose.html'>xJuxtapose</a></code>,
-  <code><a href='xJuxtapose.html'>xJuxtapose...</a></code>
+  <code><a href='xCompose.html'>xCompose_</a></code>; <code><a href='xJuxtapose.html'>xJuxtapose</a></code>,
+  <code><a href='xJuxtapose.html'>xJuxtapose_</a></code>
 
 Other function_modifying_functions: <code><a href='xCompose.html'>%of%</a></code>,
   <code><a href='xCompose.html'>%then%</a></code>, <code><a href='xCompose.html'>xCompose</a></code>,
-  <code><a href='xCompose.html'>xCompose...</a></code>; <code><a href='xAsClosure.html'>xAsClosure</a></code>;
+  <code><a href='xCompose.html'>xCompose_</a></code>; <code><a href='xAsClosure.html'>xAsClosure</a></code>;
   <code><a href='xCapture.html'>xCapture</a></code>, <code><a href='xCapture.html'>xK</a></code>;
-  <code><a href='xDelay.html'>xDelay</a></code>; <code><a href='xJuxtapose.html'>xJuxtapose</a></code>,
-  <code><a href='xJuxtapose.html'>xJuxtapose...</a></code>; <code><a href='xNot.html'>xNot</a></code>;
-  <code><a href='xPartial.html'>xPartial</a></code>, <code><a href='xPartial.html'>xPartial...</a></code>;
+  <code><a href='xDelay.html'>xDelay</a></code>; <code><a href='xFix.html'>xFix</a></code>,
+  <code><a href='xFix.html'>xFix_</a></code>; <code><a href='xJuxtapose.html'>xJuxtapose</a></code>,
+  <code><a href='xJuxtapose.html'>xJuxtapose_</a></code>; <code><a href='xNot.html'>xNot</a></code>;
   <code><a href='xSpread.html'>xSpread</a></code>; <code><a href='xThread.html'>xThread</a></code>,
-  <code><a href='xThread.html'>xThread...</a></code>; <code><a href='xUnspread.html'>xUnspread</a></code>;
+  <code><a href='xThread.html'>xThread_</a></code>; <code><a href='xUnspread.html'>xUnspread</a></code>;
   <code><a href='xVectorise.html'>xVectorise</a></code>, <code><a href='xVectorise.html'>xVectorize</a></code>
 
       </div>

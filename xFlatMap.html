@@ -202,13 +202,14 @@
       
       </header>
 
-      <h1>xFlatMap</h1>
+      <h1>Concatenate the results of applying a function
+to each element of a collection.</h1>
 
 <div class="row">
   <div class="span8">
     <h2>Usage</h2>
     <pre><div>xFlatMap(fn, coll)</div>
-<div>xFlatMap...(fn, ...)</div></pre>
+<div>xFlatMap_(fn, ...)</div></pre>
     
     <h2>Arguments</h2>
     <dl>
@@ -220,8 +221,10 @@
       <dd>see above.</dd>
     </dl>
     
-    <div class="xFlatMap">
-      <h2>xFlatMap</h2>
+    <div class="Concatenate the results of applying a function
+to each element of a collection.">
+      <h2>Concatenate the results of applying a function
+to each element of a collection.</h2>
 
     </div>
 
@@ -294,7 +297,7 @@ to each element of a collection.</p>
 repeat_elements &lt;- (n : coll) := {
 
 	xFlatMap(
-		xPartial...(xRepeat, num = n),
+		xFix_(xRepeat, num = n),
 		coll)
 
 }
@@ -374,7 +377,7 @@ $x_()
   </div>
   <div class="span4">
     <!-- <ul>
-      <li>xFlatMap</li><li>xFlatMap...</li>
+      <li>xFlatMap</li><li>xFlatMap_</li>
     </ul>
     <ul>
       
@@ -383,12 +386,12 @@ $x_()
     <h2>See also</h2>
     
 Other function_application_functions: <code><a href='xApply.html'>xApply</a></code>,
-  <code><a href='xApply.html'>xApply...</a></code>; <code><a href='xDeepMap.html'>xDeepMap</a></code>,
-  <code><a href='xDeepMap.html'>xDeepMap...</a></code>; <code><a href='xMapIndexed.html'>xMapIndexed</a></code>,
-  <code><a href='xMapIndexed.html'>xMapIndexed...</a></code>; <code><a href='xMapply.html'>xMapply</a></code>,
-  <code><a href='xMapply.html'>xMapply...</a></code>; <code><a href='xMap.html'>xMap</a></code>,
-  <code><a href='xMap.html'>xMap...</a></code>; <code><a href='xSpread.html'>xSpread</a></code>;
-  <code><a href='xThread.html'>xThread</a></code>, <code><a href='xThread.html'>xThread...</a></code>;
+  <code><a href='xApply.html'>xApply_</a></code>; <code><a href='xDeepMap.html'>xDeepMap</a></code>,
+  <code><a href='xDeepMap.html'>xDeepMap_</a></code>; <code><a href='xMapIndexed.html'>xMapIndexed</a></code>,
+  <code><a href='xMapIndexed.html'>xMapIndexed_</a></code>; <code><a href='xMapply.html'>xMapply</a></code>,
+  <code><a href='xMapply.html'>xMapply_</a></code>; <code><a href='xMap.html'>xMap</a></code>,
+  <code><a href='xMap.html'>xMap_</a></code>; <code><a href='xSpread.html'>xSpread</a></code>;
+  <code><a href='xThread.html'>xThread</a></code>, <code><a href='xThread.html'>xThread_</a></code>;
   <code><a href='xUnspread.html'>xUnspread</a></code>; <code><a href='xVectorise.html'>xVectorise</a></code>,
   <code><a href='xVectorise.html'>xVectorize</a></code>
 

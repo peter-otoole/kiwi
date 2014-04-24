@@ -202,13 +202,13 @@
       
       </header>
 
-      <h1>xIsEmpty</h1>
+      <h1>Is a collection length-zero?</h1>
 
 <div class="row">
   <div class="span8">
     <h2>Usage</h2>
     <pre><div>xIsEmpty(coll)</div>
-<div>xIsEmpty...(...)</div></pre>
+<div>xIsEmpty_(...)</div></pre>
     
     <h2>Arguments</h2>
     <dl>
@@ -218,8 +218,8 @@
       <dd>see above.</dd>
     </dl>
     
-    <div class="xIsEmpty">
-      <h2>xIsEmpty</h2>
+    <div class="Is a collection length-zero?">
+      <h2>Is a collection length-zero?</h2>
 
     </div>
 
@@ -247,7 +247,7 @@ map &lt;- function (fn, coll) {
 	if (xIsEmpty(coll)) {
 		list()
 	} else {
-		xJoin...(
+		xJoin_(
 			fn(xFirstOf(coll)),
 			map(fn, xRestOf(coll)) )
 	}
@@ -274,7 +274,7 @@ map(sqrt, 1:4)
 # 2.
 # xIsEmpty can be used as a predicate for reject.
 
-xReject...(xIsEmpty, &#39;a&#39;, &#39;b&#39;, integer(0), &#39;c&#39;)
+xReject_(xIsEmpty, &#39;a&#39;, &#39;b&#39;, integer(0), &#39;c&#39;)
 </div>
 <div class='output'>[[1]]
 [1] &quot;a&quot;
@@ -292,7 +292,7 @@ xReject...(xIsEmpty, &#39;a&#39;, &#39;b&#39;, integer(0), &#39;c&#39;)
   </div>
   <div class="span4">
     <!-- <ul>
-      <li>xIsEmpty</li><li>xIsEmpty...</li>
+      <li>xIsEmpty</li><li>xIsEmpty_</li>
     </ul>
     <ul>
       
@@ -301,22 +301,19 @@ xReject...(xIsEmpty, &#39;a&#39;, &#39;b&#39;, integer(0), &#39;c&#39;)
     <h2>See also</h2>
     
 Other value_testing_functions: <code><a href='xElemIsFalse.html'>xElemIsFalse</a></code>,
-  <code><a href='xElemIsFalse.html'>xElemIsFalse...</a></code>; <code><a href='xElemIsNan.html'>xElemIsNan</a></code>,
-  <code><a href='xElemIsNan.html'>xElemIsNan...</a></code>; <code><a href='xElemIsNa.html'>xElemIsNa</a></code>,
-  <code><a href='xElemIsNa.html'>xElemIsNa...</a></code>; <code><a href='xElemIsNull.html'>xElemIsNull</a></code>,
-  <code><a href='xElemIsNull.html'>xElemIsNull...</a></code>; <code><a href='xElemIsTrue.html'>xElemIsTrue</a></code>,
-  <code><a href='xElemIsTrue.html'>xElemIsTrue...</a></code>;
-  <code><a href='xElemNotFalse.html'>xElemNotFalse</a></code>,
-  <code><a href='xElemNotFalse.html'>xElemNotFalse...</a></code>;
-  <code><a href='xElemNotNan.html'>xElemNotNan</a></code>, <code><a href='xElemNotNan.html'>xElemNotNan...</a></code>;
-  <code><a href='xElemNotNa.html'>xElemNotNa</a></code>, <code><a href='xElemNotNa.html'>xElemNotNa...</a></code>;
-  <code><a href='xElemNotNull.html'>xElemNotNull</a></code>,
-  <code><a href='xElemNotNull.html'>xElemNotNull...</a></code>;
-  <code><a href='xElemNotTrue.html'>xElemNotTrue</a></code>,
-  <code><a href='xElemNotTrue.html'>xElemNotTrue...</a></code>; <code><a href='xIsFalse.html'>xIsFalse</a></code>;
+  <code><a href='xElemIsFalse.html'>xElemIsFalse_</a></code>; <code><a href='xElemIsNan.html'>xElemIsNan</a></code>,
+  <code><a href='xElemIsNan.html'>xElemIsNan_</a></code>; <code><a href='xElemIsNa.html'>xElemIsNa</a></code>,
+  <code><a href='xElemIsNa.html'>xElemIsNa_</a></code>; <code><a href='xElemIsNull.html'>xElemIsNull</a></code>,
+  <code><a href='xElemIsNull.html'>xElemIsNull_</a></code>; <code><a href='xElemIsTrue.html'>xElemIsTrue</a></code>,
+  <code><a href='xElemIsTrue.html'>xElemIsTrue_</a></code>; <code><a href='xElemNotFalse.html'>xElemNotFalse</a></code>,
+  <code><a href='xElemNotFalse.html'>xElemNotFalse_</a></code>; <code><a href='xElemNotNan.html'>xElemNotNan</a></code>,
+  <code><a href='xElemNotNan.html'>xElemNotNan_</a></code>; <code><a href='xElemNotNa.html'>xElemNotNa</a></code>,
+  <code><a href='xElemNotNa.html'>xElemNotNa_</a></code>; <code><a href='xElemNotNull.html'>xElemNotNull</a></code>,
+  <code><a href='xElemNotNull.html'>xElemNotNull_</a></code>; <code><a href='xElemNotTrue.html'>xElemNotTrue</a></code>,
+  <code><a href='xElemNotTrue.html'>xElemNotTrue_</a></code>; <code><a href='xIsFalse.html'>xIsFalse</a></code>;
   <code><a href='xIsNan.html'>xIsNan</a></code>; <code><a href='xIsNa.html'>xIsNa</a></code>;
   <code><a href='xIsNull.html'>xIsNull</a></code>; <code><a href='xIsTrue.html'>xIsTrue</a></code>;
-  <code><a href='xNotEmpty.html'>xNotEmpty</a></code>, <code><a href='xNotEmpty.html'>xNotEmpty...</a></code>;
+  <code><a href='xNotEmpty.html'>xNotEmpty</a></code>, <code><a href='xNotEmpty.html'>xNotEmpty_</a></code>;
   <code><a href='xNotFalse.html'>xNotFalse</a></code>; <code><a href='xNotNan.html'>xNotNan</a></code>;
   <code><a href='xNotNa.html'>xNotNa</a></code>; <code><a href='xNotNull.html'>xNotNull</a></code>;
   <code><a href='xNotTrue.html'>xNotTrue</a></code>

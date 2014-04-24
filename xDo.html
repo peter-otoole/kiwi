@@ -202,13 +202,14 @@
       
       </header>
 
-      <h1>xDo</h1>
+      <h1>Map (a possibly side-effectful) function over a
+collection and discard the results.</h1>
 
 <div class="row">
   <div class="span8">
     <h2>Usage</h2>
     <pre><div>xDo(fn, coll)</div>
-<div>xDo...(fn, ...)</div></pre>
+<div>xDo_(fn, ...)</div></pre>
     
     <h2>Arguments</h2>
     <dl>
@@ -220,8 +221,10 @@
       <dd>see above.</dd>
     </dl>
     
-    <div class="xDo">
-      <h2>xDo</h2>
+    <div class="Map (a possibly side-effectful) function over a
+collection and discard the results.">
+      <h2>Map (a possibly side-effectful) function over a
+collection and discard the results.</h2>
 
     </div>
 
@@ -293,11 +296,8 @@ NULL
 
 xDo(print %of% list.files, &#39;.&#39;)
 </div>
-<div class='output'> [1] &quot;demo&quot;             &quot;DESCRIPTION&quot;     
- [3] &quot;inst&quot;             &quot;LICENSE&quot;         
- [5] &quot;man&quot;              &quot;NAMESPACE&quot;       
- [7] &quot;R&quot;                &quot;README.md&quot;       
- [9] &quot;staticdocs.Rproj&quot; &quot;vignettes&quot;       
+<div class='output'> [1] &quot;demo&quot;             &quot;DESCRIPTION&quot;      &quot;inst&quot;             &quot;LICENSE&quot;          &quot;man&quot;             
+ [6] &quot;NAMESPACE&quot;        &quot;R&quot;                &quot;README.md&quot;        &quot;staticdocs.Rproj&quot; &quot;vignettes&quot;       
 </div>
 <div class='input'>
 #2. plot a trig function.
@@ -349,7 +349,7 @@ xDo(print %of% xK(&#39;hello&#39;), 1:n)
   </div>
   <div class="span4">
     <!-- <ul>
-      <li>xDo</li><li>xDo...</li>
+      <li>xDo</li><li>xDo_</li>
     </ul>
     <ul>
       

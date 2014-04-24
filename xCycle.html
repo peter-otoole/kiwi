@@ -208,7 +208,7 @@
   <div class="span8">
     <h2>Usage</h2>
     <pre><div>xCycle(num, colls)</div>
-<div>xCycle...(num, ...)</div></pre>
+<div>xCycle_(num, ...)</div></pre>
     
     <h2>Arguments</h2>
     <dl>
@@ -259,13 +259,13 @@
 
       <p>Which map to</p>
 
-      <p><code>xCycle...(0, 1:4)</code></p>
+      <p><code>xCycle_(0, 1:4)</code></p>
 
-      <p><code>xCycle...(1, 1:4)</code></p>
+      <p><code>xCycle_(1, 1:4)</code></p>
 
-      <p><code>xCycle...(2, 1:4)</code></p>
+      <p><code>xCycle_(2, 1:4)</code></p>
 
-      <p><code>xCycle...(3, 1:4)</code></p>
+      <p><code>xCycle_(3, 1:4)</code></p>
 
     </div>
 
@@ -285,7 +285,7 @@
 
 all_cyclic_permutations &lt;- coll := {
     xMap(
-    	xPartial(xCycle, list(colls = coll)),
+    	xFix(xCycle, list(colls = coll)),
         seq_along(coll) - 1
     )
 }
@@ -354,7 +354,7 @@ all_cyclic_permutations(letters[1:3])
   </div>
   <div class="span4">
     <!-- <ul>
-      <li>xCycle</li><li>xCycle...</li>
+      <li>xCycle</li><li>xCycle_</li>
     </ul>
     <ul>
       
@@ -363,10 +363,10 @@ all_cyclic_permutations(letters[1:3])
     <h2>See also</h2>
     
 Other combinatoric_functions: <code><a href='xChoose.html'>xChoose</a></code>,
-  <code><a href='xChoose.html'>xChoose...</a></code>; <code><a href='xPowerSetOf.html'>xPowerSetOf</a></code>,
-  <code><a href='xPowerSetOf.html'>xPowerSetOf...</a></code>; <code><a href='xProdSetOf.html'>xProdSetOf</a></code>,
-  <code><a href='xProdSetOf.html'>xProdSetOf...</a></code>; <code><a href='xReorder.html'>xReorder</a></code>,
-  <code><a href='xReorder.html'>xReorder...</a></code>
+  <code><a href='xChoose.html'>xChoose_</a></code>; <code><a href='xPowerSetOf.html'>xPowerSetOf</a></code>,
+  <code><a href='xPowerSetOf.html'>xPowerSetOf_</a></code>; <code><a href='xProdSetOf.html'>xProdSetOf</a></code>,
+  <code><a href='xProdSetOf.html'>xProdSetOf_</a></code>; <code><a href='xReorder.html'>xReorder</a></code>,
+  <code><a href='xReorder.html'>xReorder_</a></code>
 
       </div>
 </div>

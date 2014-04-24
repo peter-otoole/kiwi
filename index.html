@@ -274,17 +274,17 @@ stateSeizures &lt;- cocaineData $ xGroupBy(x. $ state)
 
 &quot;-- 3. get the largest intrastate seizures by price&quot;
 largestStateSeizures &lt;- stateSeizures $ xPluck(&#39;price&#39;) $ xMap(group := {
-    xMaxBy(row := as.numeric(row $ price) , group)
+    xMaxBy(x. $ price, group)
 })
 
 &#39;
 list(
-    list(state = &quot;MA&quot;, potency = &quot;74&quot;, weight = &quot;3&quot;,  month = &quot;7&quot;,  price = &quot;180&quot;),
-    list(state = &quot;NY&quot;, potency = &quot;50&quot;, weight = &quot;27&quot;, month = &quot;12&quot;, price = &quot;1000&quot;),
-    list(state = &quot;SC&quot;, potency = &quot;81&quot;, weight = &quot;47&quot;, month = &quot;6&quot;,  price = &quot;1800&quot;),
-    list(state = &quot;FL&quot;, potency = &quot;37&quot;, weight = &quot;52&quot;, month = &quot;3&quot;,  price = &quot;1600&quot;),
-    list(state = &quot;NJ&quot;, potency = &quot;47&quot;, weight = &quot;6&quot;,  month = &quot;5&quot;,  price = &quot;400&quot;),
-    list(state = &quot;PA&quot;, potency = &quot;74&quot;, weight = &quot;2&quot;,  month = &quot;1&quot;,  price = &quot;200&quot;)
+    list(state = &quot;MA&quot;, potency = 74, weight = 3&quot;, month = 7,  price = 180),
+    list(state = &quot;NY&quot;, potency = 50, weight = 27, month = 12, price = 1000),
+    list(state = &quot;SC&quot;, potency = 81, weight = 47, month = 6,  price = 1800),
+    list(state = &quot;FL&quot;, potency = 37, weight = 5&quot;, month = 3,  price = 1600),
+    list(state = &quot;NJ&quot;, potency = 47, weight = 6,  month = 5,  price = 400),
+    list(state = &quot;PA&quot;, potency = 74, weight = 2,  month = 1,  price = 200)
 )
 &#39;
 
@@ -356,19 +356,19 @@ much more efficient.</p></li>
     <ul class="index">
         
       <li>
-        <code><a href="xExplode.html">xExplode</a></code>(xExplode...)<br />xExplode</li>
+        <code><a href="xExplode.html">xExplode</a></code>(xExplode_)<br />xExplode</li>
             
       <li>
-        <code><a href="xFromChars.html">xFromChars</a></code>(xFromChars...)<br />xFromChars</li>
+        <code><a href="xFromChars.html">xFromChars</a></code>(xFromChars_)<br />xFromChars</li>
             
       <li>
-        <code><a href="xFromLines.html">xFromLines</a></code>(xFromLines...)<br />xFromLines</li>
+        <code><a href="xFromLines.html">xFromLines</a></code>(xFromLines_)<br />Concatentate a character vector with newlines as delimiters.</li>
             
       <li>
-        <code><a href="xFromWords.html">xFromWords</a></code>(xFromWords...)<br />xFromWords</li>
+        <code><a href="xFromWords.html">xFromWords</a></code>(xFromWords_)<br />Concatentate a character vector with spaces as delimiters.</li>
             
       <li>
-        <code><a href="xImplode.html">xImplode</a></code>(xImplode...)<br />xImplode</li>
+        <code><a href="xImplode.html">xImplode</a></code>(xImplode_)<br />xImplode</li>
             
       <li>
         <code><a href="xReadChars.html">xReadChars</a></code><br />xReadChars</li>
@@ -380,7 +380,7 @@ much more efficient.</p></li>
         <code><a href="xReadWords.html">xReadWords</a></code><br />xReadWords</li>
             
       <li>
-        <code><a href="xSliceString.html">xSliceString</a></code>(xSliceString...)<br />xSliceString</li>
+        <code><a href="xSliceString.html">xSliceString</a></code>(xSliceString_)<br />xSliceString</li>
             
       <li>
         <code><a href="xToChars.html">xToChars</a></code><br />xToChars</li>
@@ -407,19 +407,19 @@ much more efficient.</p></li>
     <ul class="index">
         
       <li>
-        <code><a href="xChoose.html">xChoose</a></code>(xChoose...)<br />xChoose</li>
+        <code><a href="xChoose.html">xChoose</a></code>(xChoose_)<br />Enumerate all ways of choosing several elements from a collection.</li>
             
       <li>
-        <code><a href="xCycle.html">xCycle</a></code>(xCycle...)<br />xCycle</li>
+        <code><a href="xCycle.html">xCycle</a></code>(xCycle_)<br />xCycle</li>
             
       <li>
-        <code><a href="xReorder.html">xReorder</a></code>(xReorder...)<br />xReorder</li>
+        <code><a href="xReorder.html">xReorder</a></code>(xReorder_)<br />Permute a collection of collections using indices.</li>
             
       <li>
-        <code><a href="xProdSetOf.html">xProdSetOf</a></code>(xProdSetOf...)<br />xProdSetOf</li>
+        <code><a href="xProdSetOf.html">xProdSetOf</a></code>(xProdSetOf_)<br />xProdSetOf</li>
             
       <li>
-        <code><a href="xPowerSetOf.html">xPowerSetOf</a></code>(xPowerSetOf...)<br />xPowerSetOf</li>
+        <code><a href="xPowerSetOf.html">xPowerSetOf</a></code>(xPowerSetOf_)<br />xPowerSetOf</li>
     
     </ul>
     <h3>Collection Comprehensions</h3>
@@ -437,22 +437,22 @@ much more efficient.</p></li>
     <ul class="index">
         
       <li>
-        <code><a href="xAsCharacter.html">xAsCharacter</a></code>(xAsCharacter...)<br />xAsCharacter</li>
+        <code><a href="xAsCharacter.html">xAsCharacter</a></code>(xAsCharacter_)<br />xAsCharacter</li>
             
       <li>
-        <code><a href="xAsComplex.html">xAsComplex</a></code>(xAsComplex...)<br />xAsComplex</li>
+        <code><a href="xAsComplex.html">xAsComplex</a></code>(xAsComplex_)<br />xAsComplex</li>
             
       <li>
-        <code><a href="xAsDouble.html">xAsDouble</a></code>(xAsDouble...)<br />xAsDouble</li>
+        <code><a href="xAsDouble.html">xAsDouble</a></code>(xAsDouble_)<br />xAsDouble</li>
             
       <li>
-        <code><a href="xAsInteger.html">xAsInteger</a></code>(xAsInteger...)<br />xAsInteger</li>
+        <code><a href="xAsInteger.html">xAsInteger</a></code>(xAsInteger_)<br />xAsInteger</li>
             
       <li>
-        <code><a href="xAsLogical.html">xAsLogical</a></code>(xAsLogical...)<br />xAsLogical</li>
+        <code><a href="xAsLogical.html">xAsLogical</a></code>(xAsLogical_)<br />xAsLogical</li>
             
       <li>
-        <code><a href="xAsRaw.html">xAsRaw</a></code>(xAsRaw...)<br />xAsRaw</li>
+        <code><a href="xAsRaw.html">xAsRaw</a></code>(xAsRaw_)<br />xAsRaw</li>
     
     </ul>
     <h3>Filtering Functions</h3>
@@ -461,31 +461,31 @@ much more efficient.</p></li>
     <ul class="index">
         
       <li>
-        <code><a href="xDropWhile.html">xDropWhile</a></code>(xDropWhile...)<br />xDropWhile</li>
+        <code><a href="xDropWhile.html">xDropWhile</a></code>(xDropWhile_)<br />xDropWhile</li>
             
       <li>
-        <code><a href="xPartition.html">xPartition</a></code>(xPartition...)<br />xPartition</li>
+        <code><a href="xPartition.html">xPartition</a></code>(xPartition_)<br />xPartition</li>
             
       <li>
-        <code><a href="xRejectEmpty.html">xRejectEmpty</a></code>(xPack, xPack..., xRejectEmpty...)<br />xRejectEmpty</li>
+        <code><a href="xRejectEmpty.html">xRejectEmpty</a></code>(xPack, xPack_, xRejectEmpty_)<br />Remove the empty values from a collection.</li>
             
       <li>
-        <code><a href="xRejectNan.html">xRejectNan</a></code>(xRejectNan...)<br />xRejectNan</li>
+        <code><a href="xRejectNan.html">xRejectNan</a></code>(xRejectNan_)<br />xRejectNan</li>
             
       <li>
-        <code><a href="xRejectNa.html">xRejectNa</a></code>(xRejectNa...)<br />xRejectNa</li>
+        <code><a href="xRejectNa.html">xRejectNa</a></code>(xRejectNa_)<br />xRejectNa</li>
             
       <li>
-        <code><a href="xRejectNull.html">xRejectNull</a></code>(xRejectNull...)<br />xRejectNull</li>
+        <code><a href="xRejectNull.html">xRejectNull</a></code>(xRejectNull_)<br />xRejectNull</li>
             
       <li>
-        <code><a href="xReject.html">xReject</a></code>(xReject...)<br />xReject</li>
+        <code><a href="xReject.html">xReject</a></code>(xReject_)<br />xReject</li>
             
       <li>
-        <code><a href="xSelect.html">xSelect</a></code>(xSelect...)<br />xSelect</li>
+        <code><a href="xSelect.html">xSelect</a></code>(xSelect_)<br />xSelect</li>
             
       <li>
-        <code><a href="xTakeWhile.html">xTakeWhile</a></code>(xTakeWhile...)<br />xTakeWhile</li>
+        <code><a href="xTakeWhile.html">xTakeWhile</a></code>(xTakeWhile_)<br />xTakeWhile</li>
     
     </ul>
     <h3>Immutable Value Functions</h3>
@@ -515,7 +515,8 @@ much more efficient.</p></li>
         <code><a href="xDelay.html">xDelay</a></code><br />xDelay</li>
             
       <li>
-        <code><a href="xDo.html">xDo</a></code>(xDo...)<br />xDo</li>
+        <code><a href="xDo.html">xDo</a></code>(xDo_)<br />Map (a possibly side-effectful) function over a
+</li>
             
       <li>
         <code><a href="xExecute.html">xExecute</a></code><br />$ xExecute</li>
@@ -551,7 +552,7 @@ much more efficient.</p></li>
     <ul class="index">
         
       <li>
-        <code><a href="xAsDataFrame.html">xAsDataFrame</a></code>(xAsDataFrame...)<br />xAsDataFrame</li>
+        <code><a href="xAsDataFrame.html">xAsDataFrame</a></code>(xAsDataFrame_)<br />xAsDataFrame</li>
             
       <li>
         <code><a href="xByColkeys.html">xByColkeys</a></code><br />$ xByColkeys</li>
@@ -620,13 +621,13 @@ much more efficient.</p></li>
     <ul class="index">
         
       <li>
-        <code><a href="xFold.html">xFold</a></code>(xFold...)<br />xFold</li>
+        <code><a href="xFold.html">xFold</a></code>(xFold_)<br />xFold</li>
             
       <li>
-        <code><a href="xReduce.html">xReduce</a></code>(xReduce...)<br />xReduce</li>
+        <code><a href="xReduce.html">xReduce</a></code>(xReduce_)<br />xReduce</li>
             
       <li>
-        <code><a href="xScan.html">xScan</a></code>(xScan...)<br />xScan</li>
+        <code><a href="xScan.html">xScan</a></code>(xScan_)<br />xScan</li>
     
     </ul>
     <h3>Function Application Functions</h3>
@@ -635,28 +636,29 @@ much more efficient.</p></li>
     <ul class="index">
         
       <li>
-        <code><a href="xApply.html">xApply</a></code>(xApply...)<br />xApply</li>
+        <code><a href="xApply.html">xApply</a></code>(xApply_)<br />xApply</li>
             
       <li>
         <code><a href="xSpread.html">xSpread</a></code><br />xSpread</li>
             
       <li>
-        <code><a href="xDeepMap.html">xDeepMap</a></code>(xDeepMap...)<br />xDeepMap</li>
+        <code><a href="xDeepMap.html">xDeepMap</a></code>(xDeepMap_)<br />xDeepMap</li>
             
       <li>
-        <code><a href="xFlatMap.html">xFlatMap</a></code>(xFlatMap...)<br />xFlatMap</li>
+        <code><a href="xFlatMap.html">xFlatMap</a></code>(xFlatMap_)<br />Concatenate the results of applying a function
+</li>
             
       <li>
-        <code><a href="xMap.html">xMap</a></code>(xMap...)<br />xMap</li>
+        <code><a href="xMap.html">xMap</a></code>(xMap_)<br />xMap</li>
             
       <li>
-        <code><a href="xMapIndexed.html">xMapIndexed</a></code>(xMapIndexed...)<br />xMapIndexed</li>
+        <code><a href="xMapIndexed.html">xMapIndexed</a></code>(xMapIndexed_)<br />xMapIndexed</li>
             
       <li>
-        <code><a href="xMapply.html">xMapply</a></code>(xMapply...)<br />xMapply</li>
+        <code><a href="xMapply.html">xMapply</a></code>(xMapply_)<br />xMapply</li>
             
       <li>
-        <code><a href="xThread.html">xThread</a></code>(xThread...)<br />xThread</li>
+        <code><a href="xThread.html">xThread</a></code>(xThread_)<br />xThread</li>
             
       <li>
         <code><a href="xUnspread.html">xUnspread</a></code><br />xUnspread</li>
@@ -671,13 +673,13 @@ much more efficient.</p></li>
     <ul class="index">
         
       <li>
-        <code><a href="xCompose.html">xCompose</a></code>(%of%, %then%, xCompose...)<br />xCompose</li>
+        <code><a href="xCompose.html">xCompose</a></code>(%of%, %then%, xCompose_)<br />xCompose</li>
             
       <li>
-        <code><a href="xJuxtapose.html">xJuxtapose</a></code>(xJuxtapose...)<br />xJuxtapose</li>
+        <code><a href="xJuxtapose.html">xJuxtapose</a></code>(xJuxtapose_)<br />xJuxtapose</li>
             
       <li>
-        <code><a href="xLift.html">xLift</a></code>(%and%, %or%, xLift...)<br />xLift</li>
+        <code><a href="xLift.html">xLift</a></code>(%and%, %or%, xLift_)<br />xLift</li>
     
     </ul>
     <h3>Function Modifying Functions</h3>
@@ -686,7 +688,7 @@ much more efficient.</p></li>
     <ul class="index">
         
       <li>
-        <code><a href="xCompose.html">xCompose</a></code>(%of%, %then%, xCompose...)<br />xCompose</li>
+        <code><a href="xCompose.html">xCompose</a></code>(%of%, %then%, xCompose_)<br />xCompose</li>
             
       <li>
         <code><a href="xAsClosure.html">xAsClosure</a></code><br />xAsClosure</li>
@@ -698,22 +700,22 @@ much more efficient.</p></li>
         <code><a href="xDelay.html">xDelay</a></code><br />xDelay</li>
             
       <li>
-        <code><a href="xJuxtapose.html">xJuxtapose</a></code>(xJuxtapose...)<br />xJuxtapose</li>
+        <code><a href="xJuxtapose.html">xJuxtapose</a></code>(xJuxtapose_)<br />xJuxtapose</li>
             
       <li>
-        <code><a href="xLift.html">xLift</a></code>(%and%, %or%, xLift...)<br />xLift</li>
+        <code><a href="xLift.html">xLift</a></code>(%and%, %or%, xLift_)<br />xLift</li>
             
       <li>
-        <code><a href="xNot.html">xNot</a></code><br />xNot</li>
+        <code><a href="xNot.html">xNot</a></code><br />Return the logical negation of a function.</li>
             
       <li>
-        <code><a href="xPartial.html">xPartial</a></code>(xPartial...)<br />xPartial</li>
+        <code><a href="xFix.html">xFix</a></code>(xFix_)<br />xFix</li>
             
       <li>
         <code><a href="xSpread.html">xSpread</a></code><br />xSpread</li>
             
       <li>
-        <code><a href="xThread.html">xThread</a></code>(xThread...)<br />xThread</li>
+        <code><a href="xThread.html">xThread</a></code>(xThread_)<br />xThread</li>
             
       <li>
         <code><a href="xVectorise.html">xVectorise</a></code>(xVectorize)<br />xVectorise</li>
@@ -728,13 +730,13 @@ much more efficient.</p></li>
         <code><a href="xAddKeys.html">xAddKeys</a></code><br />xAddKeys</li>
             
       <li>
-        <code><a href="xPluck.html">xPluck</a></code>(xPluck...)<br />xPluck</li>
+        <code><a href="xPluck.html">xPluck</a></code>(xPluck_)<br />xPluck</li>
             
       <li>
-        <code><a href="xUnzipKeys.html">xUnzipKeys</a></code>(xUnzipKeys...)<br />xUnzipKeys</li>
+        <code><a href="xUnzipKeys.html">xUnzipKeys</a></code>(xUnzipKeys_)<br />xUnzipKeys</li>
             
       <li>
-        <code><a href="xZipKeys.html">xZipKeys</a></code>(xZipKeys...)<br />xZipKeys</li>
+        <code><a href="xZipKeys.html">xZipKeys</a></code>(xZipKeys_)<br />xZipKeys</li>
     
     </ul>
     <h3>Order Functions</h3>
@@ -743,10 +745,10 @@ much more efficient.</p></li>
     <ul class="index">
         
       <li>
-        <code><a href="xOrderOf.html">xOrderOf</a></code>(xOrderOf...)<br />xOrderOf</li>
+        <code><a href="xOrderOf.html">xOrderOf</a></code>(xOrderOf_)<br />xOrderOf</li>
             
       <li>
-        <code><a href="xRankOf.html">xRankOf</a></code>(xRankOf...)<br />xRankOf</li>
+        <code><a href="xRankOf.html">xRankOf</a></code>(xRankOf_)<br />xRankOf</li>
     
     </ul>
     <h3>Parametre Functions</h3>
@@ -767,7 +769,7 @@ much more efficient.</p></li>
         <code><a href="xParamsOf.html">xParamsOf</a></code><br />xParamsOf</li>
             
       <li>
-        <code><a href="xPartial.html">xPartial</a></code>(xPartial...)<br />xPartial</li>
+        <code><a href="xFix.html">xFix</a></code>(xFix_)<br />xFix</li>
             
       <li>
         <code><a href="xUnspread.html">xUnspread</a></code><br />xUnspread</li>
@@ -782,19 +784,19 @@ much more efficient.</p></li>
     <ul class="index">
         
       <li>
-        <code><a href="xAny.html">xAny</a></code>(xAny...)<br />xAny</li>
+        <code><a href="xAny.html">xAny</a></code>(xAny_)<br />xAny</li>
             
       <li>
-        <code><a href="xAll.html">xAll</a></code>(xAll...)<br />xAll</li>
+        <code><a href="xAll.html">xAll</a></code>(xAll_)<br />xAll</li>
             
       <li>
-        <code><a href="xForall.html">xForall</a></code>(xForall...)<br />xForall</li>
+        <code><a href="xForall.html">xForall</a></code>(xForall_)<br />xForall</li>
             
       <li>
-        <code><a href="xExists.html">xExists</a></code>(xExists...)<br />xExists</li>
+        <code><a href="xExists.html">xExists</a></code>(xExists_)<br />xExists</li>
             
       <li>
-        <code><a href="xPoll.html">xPoll</a></code>(xPoll...)<br />xPoll</li>
+        <code><a href="xPoll.html">xPoll</a></code>(xPoll_)<br />xPoll</li>
     
     </ul>
     <h3>Reshaping Functions</h3>
@@ -803,55 +805,55 @@ much more efficient.</p></li>
     <ul class="index">
         
       <li>
-        <code><a href="xChop.html">xChop</a></code>(xChop...)<br />xChop</li>
+        <code><a href="xChop.html">xChop</a></code>(xChop_)<br />xChop</li>
             
       <li>
-        <code><a href="xChunk.html">xChunk</a></code>(xChunk...)<br />xChunk</li>
+        <code><a href="xChunk.html">xChunk</a></code>(xChunk_)<br />xChunk</li>
             
       <li>
-        <code><a href="xFlatten.html">xFlatten</a></code>(xFlatten...)<br />xFlatten</li>
+        <code><a href="xFlatten.html">xFlatten</a></code>(xFlatten_)<br />Unnest a nested list to a given depth.</li>
             
       <li>
-        <code><a href="xGroupBy.html">xGroupBy</a></code>(xGroupBy...)<br />xGroupBy</li>
+        <code><a href="xGroupBy.html">xGroupBy</a></code>(xGroupBy_)<br />xGroupBy</li>
             
       <li>
-        <code><a href="xJoin.html">xJoin</a></code>(xJoin...)<br />xJoin</li>
+        <code><a href="xJoin.html">xJoin</a></code>(xJoin_)<br />xJoin</li>
             
       <li>
-        <code><a href="xOneOf.html">xOneOf</a></code>(xOneOf...)<br />xOneOf</li>
+        <code><a href="xOneOf.html">xOneOf</a></code>(xOneOf_)<br />xOneOf</li>
             
       <li>
-        <code><a href="xRecycle.html">xRecycle</a></code>(xRecycle...)<br />xRecycle</li>
+        <code><a href="xRecycle.html">xRecycle</a></code>(xRecycle_)<br />xRecycle</li>
             
       <li>
-        <code><a href="xRepeat.html">xRepeat</a></code>(xRepeat...)<br />xRepeat</li>
+        <code><a href="xRepeat.html">xRepeat</a></code>(xRepeat_)<br />xRepeat</li>
             
       <li>
-        <code><a href="xReverse.html">xReverse</a></code>(xReverse...)<br />xReverse</li>
+        <code><a href="xReverse.html">xReverse</a></code>(xReverse_)<br />xReverse</li>
             
       <li>
-        <code><a href="xShuffle.html">xShuffle</a></code>(xShuffle...)<br />xShuffle</li>
+        <code><a href="xShuffle.html">xShuffle</a></code>(xShuffle_)<br />xShuffle</li>
             
       <li>
-        <code><a href="xSortBy.html">xSortBy</a></code>(xSortBy...)<br />xSortBy</li>
+        <code><a href="xSortBy.html">xSortBy</a></code>(xSortBy_)<br />xSortBy</li>
             
       <li>
-        <code><a href="xSplitAt.html">xSplitAt</a></code>(xSplitAt...)<br />xSplitAt</li>
+        <code><a href="xSplitAt.html">xSplitAt</a></code>(xSplitAt_)<br />xSplitAt</li>
             
       <li>
-        <code><a href="xSplitWith.html">xSplitWith</a></code>(xSplitWith...)<br />xSplitWith</li>
+        <code><a href="xSplitWith.html">xSplitWith</a></code>(xSplitWith_)<br />xSplitWith</li>
             
       <li>
-        <code><a href="xTabulate.html">xTabulate</a></code>(xTabulate...)<br />xTabulate</li>
+        <code><a href="xTabulate.html">xTabulate</a></code>(xTabulate_)<br />xTabulate</li>
             
       <li>
-        <code><a href="xUnzipKeys.html">xUnzipKeys</a></code>(xUnzipKeys...)<br />xUnzipKeys</li>
+        <code><a href="xUnzipKeys.html">xUnzipKeys</a></code>(xUnzipKeys_)<br />xUnzipKeys</li>
             
       <li>
-        <code><a href="xZipKeys.html">xZipKeys</a></code>(xZipKeys...)<br />xZipKeys</li>
+        <code><a href="xZipKeys.html">xZipKeys</a></code>(xZipKeys_)<br />xZipKeys</li>
             
       <li>
-        <code><a href="xZip.html">xZip</a></code>(xZip...)<br />xZip</li>
+        <code><a href="xZip.html">xZip</a></code>(xZip_)<br />xZip</li>
     
     </ul>
     <h3>Selection Functions</h3>
@@ -860,58 +862,58 @@ much more efficient.</p></li>
     <ul class="index">
         
       <li>
-        <code><a href="xAt.html">xAt</a></code>(xAt...)<br />xAt</li>
+        <code><a href="xAt.html">xAt</a></code>(xAt_)<br />xAt</li>
             
       <li>
-        <code><a href="xAtCol.html">xAtCol</a></code>(xAtCol...)<br />xAtCol</li>
+        <code><a href="xAtCol.html">xAtCol</a></code>(xAtCol_)<br />xAtCol</li>
             
       <li>
-        <code><a href="xAtKey.html">xAtKey</a></code>(xAtKey...)<br />xAtKey</li>
+        <code><a href="xAtKey.html">xAtKey</a></code>(xAtKey_)<br />xAtKey</li>
             
       <li>
-        <code><a href="xDropWhile.html">xDropWhile</a></code>(xDropWhile...)<br />xDropWhile</li>
+        <code><a href="xDropWhile.html">xDropWhile</a></code>(xDropWhile_)<br />xDropWhile</li>
             
       <li>
-        <code><a href="xDrop.html">xDrop</a></code>(xDrop...)<br />xDrop</li>
+        <code><a href="xDrop.html">xDrop</a></code>(xDrop_)<br />xDrop</li>
             
       <li>
-        <code><a href="xMaxBy.html">xMaxBy</a></code>(xMaxBy...)<br />xMaxBy</li>
+        <code><a href="xMaxBy.html">xMaxBy</a></code>(xMaxBy_)<br />Get the largest value in a collection according to a measure function.</li>
             
       <li>
-        <code><a href="xMinBy.html">xMinBy</a></code>(xMinBy...)<br />xMinBy</li>
+        <code><a href="xMinBy.html">xMinBy</a></code>(xMinBy_)<br />xMinBy</li>
             
       <li>
-        <code><a href="xFirstOf.html">xFirstOf</a></code>(xFirstOf...)<br />xFirstOf</li>
+        <code><a href="xFirstOf.html">xFirstOf</a></code>(xFirstOf_)<br />xFirstOf</li>
             
       <li>
-        <code><a href="xFourthOf.html">xFourthOf</a></code>(xFourthOf...)<br />xFourthOf</li>
+        <code><a href="xFourthOf.html">xFourthOf</a></code>(xFourthOf_)<br />xFourthOf</li>
             
       <li>
-        <code><a href="xInitOf.html">xInitOf</a></code>(xInitOf...)<br />xInitOf</li>
+        <code><a href="xInitOf.html">xInitOf</a></code>(xInitOf_)<br />Remove the last element of a collection.</li>
             
       <li>
-        <code><a href="xLastOf.html">xLastOf</a></code>(xLastOf...)<br />xLastOf</li>
+        <code><a href="xLastOf.html">xLastOf</a></code>(xLastOf_)<br />xLastOf</li>
             
       <li>
-        <code><a href="xPluck.html">xPluck</a></code>(xPluck...)<br />xPluck</li>
+        <code><a href="xPluck.html">xPluck</a></code>(xPluck_)<br />xPluck</li>
             
       <li>
-        <code><a href="xRestOf.html">xRestOf</a></code>(xRestOf...)<br />xRestOf</li>
+        <code><a href="xRestOf.html">xRestOf</a></code>(xRestOf_)<br />Remove the first element from a collection.</li>
             
       <li>
-        <code><a href="xSlice.html">xSlice</a></code>(xSlice...)<br />xSlice</li>
+        <code><a href="xSlice.html">xSlice</a></code>(xSlice_)<br />xSlice</li>
             
       <li>
-        <code><a href="xSecondOf.html">xSecondOf</a></code>(xSecondOf...)<br />xSecondOf</li>
+        <code><a href="xSecondOf.html">xSecondOf</a></code>(xSecondOf_)<br />xSecondOf</li>
             
       <li>
-        <code><a href="xTake.html">xTake</a></code>(xTake...)<br />xTake</li>
+        <code><a href="xTake.html">xTake</a></code>(xTake_)<br />xTake</li>
             
       <li>
-        <code><a href="xTakeWhile.html">xTakeWhile</a></code>(xTakeWhile...)<br />xTakeWhile</li>
+        <code><a href="xTakeWhile.html">xTakeWhile</a></code>(xTakeWhile_)<br />xTakeWhile</li>
             
       <li>
-        <code><a href="xThirdOf.html">xThirdOf</a></code>(xThirdOf...)<br />xThirdOf</li>
+        <code><a href="xThirdOf.html">xThirdOf</a></code>(xThirdOf_)<br />xThirdOf</li>
     
     </ul>
     <h3>Set Functions</h3>
@@ -920,26 +922,26 @@ much more efficient.</p></li>
     <ul class="index">
         
       <li>
-        <code><a href="xDuplicatesOf.html">xDuplicatesOf</a></code>(xDuplicatesOf...)<br />xDuplicatesOf</li>
+        <code><a href="xDuplicatesOf.html">xDuplicatesOf</a></code>(xDuplicatesOf_)<br />xDuplicatesOf</li>
             
       <li>
-        <code><a href="xInter.html">xInter</a></code>(xInter...)<br />xInter</li>
+        <code><a href="xInter.html">xInter</a></code>(xInter_)<br />xInter</li>
             
       <li>
-        <code><a href="xIsMember.html">xIsMember</a></code>(xIsMember...)<br />xIsMember</li>
+        <code><a href="xIsMember.html">xIsMember</a></code>(xIsMember_)<br />xIsMember</li>
             
       <li>
-        <code><a href="xIsSubset.html">xIsSubset</a></code>(xIsSubset...)<br />xIsSubset</li>
+        <code><a href="xIsSubset.html">xIsSubset</a></code>(xIsSubset_)<br />xIsSubset</li>
             
       <li>
-        <code><a href="xNotMember.html">xNotMember</a></code>(xNotMember...)<br />xNotMember</li>
+        <code><a href="xNotMember.html">xNotMember</a></code>(xNotMember_)<br />xNotMember</li>
             
       <li>
-        <code><a href="xUnionOf.html">xUnionOf</a></code>(xUnionOf...)<br />xUnionOf
+        <code><a href="xUnionOf.html">xUnionOf</a></code>(xUnionOf_)<br />xUnionOf
 </li>
             
       <li>
-        <code><a href="xUniqueOf.html">xUniqueOf</a></code>(xUniqueOf...)<br />xUniqueOf</li>
+        <code><a href="xUniqueOf.html">xUniqueOf</a></code>(xUniqueOf_)<br />xUniqueOf</li>
     
     </ul>
     <h3>Short-Circuiting Functions</h3>
@@ -948,19 +950,19 @@ much more efficient.</p></li>
     <ul class="index">
         
       <li>
-        <code><a href="xFold.html">xFold</a></code>(xFold...)<br />xFold</li>
+        <code><a href="xFold.html">xFold</a></code>(xFold_)<br />xFold</li>
             
       <li>
-        <code><a href="xFold.html">xFold</a></code>(xFold...)<br />xFold</li>
+        <code><a href="xFold.html">xFold</a></code>(xFold_)<br />xFold</li>
             
       <li>
-        <code><a href="xReduce.html">xReduce</a></code>(xReduce...)<br />xReduce</li>
+        <code><a href="xReduce.html">xReduce</a></code>(xReduce_)<br />xReduce</li>
             
       <li>
-        <code><a href="xReduce.html">xReduce</a></code>(xReduce...)<br />xReduce</li>
+        <code><a href="xReduce.html">xReduce</a></code>(xReduce_)<br />xReduce</li>
             
       <li>
-        <code><a href="xScan.html">xScan</a></code>(xScan...)<br />xScan</li>
+        <code><a href="xScan.html">xScan</a></code>(xScan_)<br />xScan</li>
             
       <li>
         <code><a href="xIterate.html">xIterate</a></code><br />xIterate</li>
@@ -999,16 +1001,16 @@ much more efficient.</p></li>
     <ul class="index">
         
       <li>
-        <code><a href="xIsEmpty.html">xIsEmpty</a></code>(xIsEmpty...)<br />xIsEmpty</li>
+        <code><a href="xIsEmpty.html">xIsEmpty</a></code>(xIsEmpty_)<br />Is a collection length-zero?</li>
             
       <li>
-        <code><a href="xIsFalse.html">xIsFalse</a></code><br />xIsFalse</li>
+        <code><a href="xIsFalse.html">xIsFalse</a></code><br />Is an value false?</li>
             
       <li>
-        <code><a href="xIsNa.html">xIsNa</a></code><br />xIsNa</li>
+        <code><a href="xIsNa.html">xIsNa</a></code><br />Is an value na?</li>
             
       <li>
-        <code><a href="xIsNan.html">xIsNan</a></code><br />xIsNan</li>
+        <code><a href="xIsNan.html">xIsNan</a></code><br />Is an value nan?</li>
             
       <li>
         <code><a href="xIsNull.html">xIsNull</a></code><br />xIsNull</li>
@@ -1017,7 +1019,7 @@ much more efficient.</p></li>
         <code><a href="xIsTrue.html">xIsTrue</a></code><br />xIsTrue</li>
             
       <li>
-        <code><a href="xNotEmpty.html">xNotEmpty</a></code>(xNotEmpty...)<br />xNotEmpty</li>
+        <code><a href="xNotEmpty.html">xNotEmpty</a></code>(xNotEmpty_)<br />xNotEmpty</li>
             
       <li>
         <code><a href="xNotFalse.html">xNotFalse</a></code><br />xNotFalse</li>
@@ -1035,34 +1037,34 @@ much more efficient.</p></li>
         <code><a href="xNotTrue.html">xNotTrue</a></code><br />xNotTrue</li>
             
       <li>
-        <code><a href="xElemIsFalse.html">xElemIsFalse</a></code>(xElemIsFalse...)<br />xElemIsFalse</li>
+        <code><a href="xElemIsFalse.html">xElemIsFalse</a></code>(xElemIsFalse_)<br />xElemIsFalse</li>
             
       <li>
-        <code><a href="xElemIsNa.html">xElemIsNa</a></code>(xElemIsNa...)<br />xElemIsNa</li>
+        <code><a href="xElemIsNa.html">xElemIsNa</a></code>(xElemIsNa_)<br />xElemIsNa</li>
             
       <li>
-        <code><a href="xElemIsNan.html">xElemIsNan</a></code>(xElemIsNan...)<br />xElemIsNan</li>
+        <code><a href="xElemIsNan.html">xElemIsNan</a></code>(xElemIsNan_)<br />xElemIsNan</li>
             
       <li>
-        <code><a href="xElemIsNull.html">xElemIsNull</a></code>(xElemIsNull...)<br />xElemIsNull</li>
+        <code><a href="xElemIsNull.html">xElemIsNull</a></code>(xElemIsNull_)<br />xElemIsNull</li>
             
       <li>
-        <code><a href="xElemIsTrue.html">xElemIsTrue</a></code>(xElemIsTrue...)<br />xElemIsTrue</li>
+        <code><a href="xElemIsTrue.html">xElemIsTrue</a></code>(xElemIsTrue_)<br />xElemIsTrue</li>
             
       <li>
-        <code><a href="xElemNotFalse.html">xElemNotFalse</a></code>(xElemNotFalse...)<br />xElemNotFalse</li>
+        <code><a href="xElemNotFalse.html">xElemNotFalse</a></code>(xElemNotFalse_)<br />xElemNotFalse</li>
             
       <li>
-        <code><a href="xElemNotNa.html">xElemNotNa</a></code>(xElemNotNa...)<br />xElemNotNa</li>
+        <code><a href="xElemNotNa.html">xElemNotNa</a></code>(xElemNotNa_)<br />xElemNotNa</li>
             
       <li>
-        <code><a href="xElemNotNan.html">xElemNotNan</a></code>(xElemNotNan...)<br />xElemNotNan</li>
+        <code><a href="xElemNotNan.html">xElemNotNan</a></code>(xElemNotNan_)<br />xElemNotNan</li>
             
       <li>
-        <code><a href="xElemNotNull.html">xElemNotNull</a></code>(xElemNotNull...)<br />xElemNotNull</li>
+        <code><a href="xElemNotNull.html">xElemNotNull</a></code>(xElemNotNull_)<br />xElemNotNull</li>
             
       <li>
-        <code><a href="xElemNotTrue.html">xElemNotTrue</a></code>(xElemNotTrue...)<br />xElemNotTrue</li>
+        <code><a href="xElemNotTrue.html">xElemNotTrue</a></code>(xElemNotTrue_)<br />xElemNotTrue</li>
     
     </ul>
     <h3>Other</h3>
@@ -1078,13 +1080,13 @@ composition of simple functions to create complex, expressive programs.
         <code><a href="values.html">Na</a></code>(False, Null, True)<br />Special Values</li>
             
       <li>
-        <code><a href="xLenOf.html">xLenOf</a></code>(xLenOf...)<br />xLenOf</li>
+        <code><a href="xLenOf.html">xLenOf</a></code>(xLenOf_)<br />xLenOf</li>
             
       <li>
-        <code><a href="xLocate.html">xLocate</a></code>(xLocate...)<br />xLocate</li>
+        <code><a href="xLocate.html">xLocate</a></code>(xLocate_)<br />xLocate</li>
             
       <li>
-        <code><a href="xWhere.html">xWhere</a></code>(xWhere...)<br />xWhere</li>
+        <code><a href="xWhere.html">xWhere</a></code>(xWhere_)<br />xWhere</li>
     
     </ul>
   </div>

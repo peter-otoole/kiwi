@@ -208,7 +208,7 @@
   <div class="span8">
     <h2>Usage</h2>
     <pre><div>xExists(pred, colls)</div>
-<div>xExists...(pred, ...)</div></pre>
+<div>xExists_(pred, ...)</div></pre>
     
     <h2>Arguments</h2>
     <dl>
@@ -251,7 +251,7 @@ is true for a predicate.</p>
 
       <p><code>coll <- c(True, False, True, True)</code></p>
 
-      <p><code>xExists...(xIdentity, coll)</code></p>
+      <p><code>xExists_(xIdentity, coll)</code></p>
 
       <p>When supplied with a collection of multiple collections the
     set product of those collections is checked with the predicate.
@@ -260,7 +260,7 @@ is true for a predicate.</p>
 
       <p><code>commutes <- (a : b) := { a + b == b + a }</code></p>
 
-      <p><code>xExists...(commutes, 1:2, 1:2)</code></p>
+      <p><code>xExists_(commutes, 1:2, 1:2)</code></p>
 
       <p>The set product is</p>
 
@@ -305,10 +305,10 @@ is_cyclic_permutation &lt;- (string1 : string2) := {
     } else {
 
         x_(seq_along(string1)) $
-        x_Exists...(ith := {
+        x_Exists_(ith := {
                 # does there exist a cyclic permutation such that the
                 # the permutation is equal to a second string?
-                identical(xCycle...(ith, string1), as.list(string2))
+                identical(xCycle_(ith, string1), as.list(string2))
         })
 
     }
@@ -328,7 +328,7 @@ True
   </div>
   <div class="span4">
     <!-- <ul>
-      <li>xExists</li><li>xExists...</li>
+      <li>xExists</li><li>xExists_</li>
     </ul>
     <ul>
       
@@ -337,10 +337,10 @@ True
     <h2>See also</h2>
     
 Other quantifier_functions: <code><a href='xAll.html'>xAll</a></code>,
-  <code><a href='xAll.html'>xAll...</a></code>; <code><a href='xAny.html'>xAny</a></code>,
-  <code><a href='xAny.html'>xAny...</a></code>; <code><a href='xForall.html'>xForall</a></code>,
-  <code><a href='xForall.html'>xForall...</a></code>; <code><a href='xPoll.html'>xPoll</a></code>,
-  <code><a href='xPoll.html'>xPoll...</a></code>
+  <code><a href='xAll.html'>xAll_</a></code>; <code><a href='xAny.html'>xAny</a></code>,
+  <code><a href='xAny.html'>xAny_</a></code>; <code><a href='xForall.html'>xForall</a></code>,
+  <code><a href='xForall.html'>xForall_</a></code>; <code><a href='xPoll.html'>xPoll</a></code>,
+  <code><a href='xPoll.html'>xPoll_</a></code>
 
       </div>
 </div>

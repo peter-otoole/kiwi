@@ -208,7 +208,7 @@
   <div class="span8">
     <h2>Usage</h2>
     <pre><div>xReduce(fn, coll)</div>
-<div>xReduce...(fn, ...)</div></pre>
+<div>xReduce_(fn, ...)</div></pre>
     
     <h2>Arguments</h2>
     <dl>
@@ -375,7 +375,7 @@ x_(palindromic) $ xToChars() $ xMap(tolower) $ x_Select(char := xIsMember(char, 
 # the same string, reversed.
 right_to_left &lt;- x_(left_to_right) $ x_Reverse()
 
-xForall...(
+xForall_(
 	ith := {
 		# the strings are the same, read from either direction.
 		xAsCharacter(left_to_right[ith]) == xAsCharacter(right_to_left[ith])
@@ -388,7 +388,7 @@ xForall...(
   </div>
   <div class="span4">
     <!-- <ul>
-      <li>xReduce</li><li>xReduce...</li>
+      <li>xReduce</li><li>xReduce_</li>
     </ul>
     <ul>
       
@@ -397,12 +397,12 @@ xForall...(
     <h2>See also</h2>
     
 Other folding_functions: <code><a href='xFold.html'>xFold</a></code>,
-  <code><a href='xFold.html'>xFold...</a></code>; <code><a href='xScan.html'>xScan</a></code>,
-  <code><a href='xScan.html'>xScan...</a></code>
+  <code><a href='xFold.html'>xFold_</a></code>; <code><a href='xScan.html'>xScan</a></code>,
+  <code><a href='xScan.html'>xScan_</a></code>
 
 Other short_circuiting_functions: <code><a href='xFold.html'>xFold</a></code>,
-  <code><a href='xFold.html'>xFold...</a></code>; <code><a href='xIterate.html'>xIterate</a></code>;
-  <code><a href='xScan.html'>xScan</a></code>, <code><a href='xScan.html'>xScan...</a></code>
+  <code><a href='xFold.html'>xFold_</a></code>; <code><a href='xIterate.html'>xIterate</a></code>;
+  <code><a href='xScan.html'>xScan</a></code>, <code><a href='xScan.html'>xScan_</a></code>
 
       </div>
 </div>

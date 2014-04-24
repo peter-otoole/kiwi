@@ -208,7 +208,7 @@
   <div class="span8">
     <h2>Usage</h2>
     <pre><div>xImplode(str, strs)</div>
-<div>xImplode...(str, ...)</div></pre>
+<div>xImplode_(str, ...)</div></pre>
     
     <h2>Arguments</h2>
     <dl>
@@ -245,7 +245,7 @@
     <pre class="examples"><div class='input'>
 # 1. create a simple csv writer.
 
-to_csv &lt;- xPartial(xImplode, &#39;, &#39;)
+to_csv &lt;- xFix(xImplode, &#39;, &#39;)
 to_csv(xTake(10, letters))
 </div>
 <div class='output'>[1] &quot;a, b, c, d, e, f, g, h, i, j&quot;
@@ -257,7 +257,7 @@ to_csv(xTake(10, letters))
   </div>
   <div class="span4">
     <!-- <ul>
-      <li>xImplode</li><li>xImplode...</li>
+      <li>xImplode</li><li>xImplode_</li>
     </ul>
     <ul>
       
@@ -266,16 +266,15 @@ to_csv(xTake(10, letters))
     <h2>See also</h2>
     
 Other text_processing_functions: <code><a href='xExplode.html'>xExplode</a></code>,
-  <code><a href='xExplode.html'>xExplode...</a></code>; <code><a href='xFromChars.html'>xFromChars</a></code>,
-  <code><a href='xFromChars.html'>xFromChars...</a></code>; <code><a href='xFromLines.html'>xFromLines</a></code>,
-  <code><a href='xFromLines.html'>xFromLines...</a></code>; <code><a href='xFromWords.html'>xFromWords</a></code>,
-  <code><a href='xFromWords.html'>xFromWords...</a></code>; <code><a href='xReadChars.html'>xReadChars</a></code>;
+  <code><a href='xExplode.html'>xExplode_</a></code>; <code><a href='xFromChars.html'>xFromChars</a></code>,
+  <code><a href='xFromChars.html'>xFromChars_</a></code>; <code><a href='xFromLines.html'>xFromLines</a></code>,
+  <code><a href='xFromLines.html'>xFromLines_</a></code>; <code><a href='xFromWords.html'>xFromWords</a></code>,
+  <code><a href='xFromWords.html'>xFromWords_</a></code>; <code><a href='xReadChars.html'>xReadChars</a></code>;
   <code><a href='xReadLines.html'>xReadLines</a></code>; <code><a href='xReadWords.html'>xReadWords</a></code>;
-  <code><a href='xSliceString.html'>xSliceString</a></code>,
-  <code><a href='xSliceString.html'>xSliceString...</a></code>; <code><a href='xToChars.html'>xToChars</a></code>;
-  <code><a href='xToLines.html'>xToLines</a></code>; <code><a href='xToWords.html'>xToWords</a></code>;
-  <code><a href='xWriteChars.html'>xWriteChars</a></code>; <code><a href='xWriteLines.html'>xWriteLines</a></code>;
-  <code><a href='xWriteWords.html'>xWriteWords</a></code>
+  <code><a href='xSliceString.html'>xSliceString</a></code>, <code><a href='xSliceString.html'>xSliceString_</a></code>;
+  <code><a href='xToChars.html'>xToChars</a></code>; <code><a href='xToLines.html'>xToLines</a></code>;
+  <code><a href='xToWords.html'>xToWords</a></code>; <code><a href='xWriteChars.html'>xWriteChars</a></code>;
+  <code><a href='xWriteLines.html'>xWriteLines</a></code>; <code><a href='xWriteWords.html'>xWriteWords</a></code>
 
       </div>
 </div>

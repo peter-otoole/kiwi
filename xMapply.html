@@ -208,7 +208,7 @@
   <div class="span8">
     <h2>Usage</h2>
     <pre><div>xMapply(fn, colls)</div>
-<div>xMapply...(fn, ...)</div></pre>
+<div>xMapply_(fn, ...)</div></pre>
     
     <h2>Arguments</h2>
     <dl>
@@ -268,7 +268,7 @@ points &lt;- list(
 )
 
 # get the set product to generate all pairs of points.
-x_( xProdSetOf...(points, points) ) $
+x_( xProdSetOf_(points, points) ) $
 # remove the pairs wich contain the same point twice.
 xReject(xUnspread(identical)) $
 xMapply(
@@ -289,7 +289,7 @@ x_Reduce(min)
   </div>
   <div class="span4">
     <!-- <ul>
-      <li>xMapply</li><li>xMapply...</li>
+      <li>xMapply</li><li>xMapply_</li>
     </ul>
     <ul>
       
@@ -298,12 +298,12 @@ x_Reduce(min)
     <h2>See also</h2>
     
 Other function_application_functions: <code><a href='xApply.html'>xApply</a></code>,
-  <code><a href='xApply.html'>xApply...</a></code>; <code><a href='xDeepMap.html'>xDeepMap</a></code>,
-  <code><a href='xDeepMap.html'>xDeepMap...</a></code>; <code><a href='xFlatMap.html'>xFlatMap</a></code>,
-  <code><a href='xFlatMap.html'>xFlatMap...</a></code>; <code><a href='xMapIndexed.html'>xMapIndexed</a></code>,
-  <code><a href='xMapIndexed.html'>xMapIndexed...</a></code>; <code><a href='xMap.html'>xMap</a></code>,
-  <code><a href='xMap.html'>xMap...</a></code>; <code><a href='xSpread.html'>xSpread</a></code>;
-  <code><a href='xThread.html'>xThread</a></code>, <code><a href='xThread.html'>xThread...</a></code>;
+  <code><a href='xApply.html'>xApply_</a></code>; <code><a href='xDeepMap.html'>xDeepMap</a></code>,
+  <code><a href='xDeepMap.html'>xDeepMap_</a></code>; <code><a href='xFlatMap.html'>xFlatMap</a></code>,
+  <code><a href='xFlatMap.html'>xFlatMap_</a></code>; <code><a href='xMapIndexed.html'>xMapIndexed</a></code>,
+  <code><a href='xMapIndexed.html'>xMapIndexed_</a></code>; <code><a href='xMap.html'>xMap</a></code>,
+  <code><a href='xMap.html'>xMap_</a></code>; <code><a href='xSpread.html'>xSpread</a></code>;
+  <code><a href='xThread.html'>xThread</a></code>, <code><a href='xThread.html'>xThread_</a></code>;
   <code><a href='xUnspread.html'>xUnspread</a></code>; <code><a href='xVectorise.html'>xVectorise</a></code>,
   <code><a href='xVectorise.html'>xVectorize</a></code>
 

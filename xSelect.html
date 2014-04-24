@@ -208,7 +208,7 @@
   <div class="span8">
     <h2>Usage</h2>
     <pre><div>xSelect(pred, coll)</div>
-<div>xSelect...(pred, ...)</div></pre>
+<div>xSelect_(pred, ...)</div></pre>
     
     <h2>Arguments</h2>
     <dl>
@@ -271,7 +271,7 @@
 coll &lt;- c(3,-3, 1, 2, 9, -12, 3, 8, 4, 5, 1)
 expected_sum &lt;- 8
 
-x_(xProdSetOf...(coll, coll)) $
+x_(xProdSetOf_(coll, coll)) $
 xSelect(xUnspread(
 	(num1 : num2) := {
 		num1 + num2 == expected_sum
@@ -307,7 +307,7 @@ x_UniqueOf()
   </div>
   <div class="span4">
     <!-- <ul>
-      <li>xSelect</li><li>xSelect...</li>
+      <li>xSelect</li><li>xSelect_</li>
     </ul>
     <ul>
       
@@ -316,13 +316,13 @@ x_UniqueOf()
     <h2>See also</h2>
     
 Other filtering_functions: <code><a href='xRejectEmpty.html'>xPack</a></code>,
-  <code><a href='xRejectEmpty.html'>xPack...</a></code>, <code><a href='xRejectEmpty.html'>xRejectEmpty</a></code>,
-  <code><a href='xRejectEmpty.html'>xRejectEmpty...</a></code>; <code><a href='xPartition.html'>xPartition</a></code>,
-  <code><a href='xPartition.html'>xPartition...</a></code>; <code><a href='xRejectNan.html'>xRejectNan</a></code>,
-  <code><a href='xRejectNan.html'>xRejectNan...</a></code>; <code><a href='xRejectNa.html'>xRejectNa</a></code>,
-  <code><a href='xRejectNa.html'>xRejectNa...</a></code>; <code><a href='xRejectNull.html'>xRejectNull</a></code>,
-  <code><a href='xRejectNull.html'>xRejectNull...</a></code>; <code><a href='xReject.html'>xReject</a></code>,
-  <code><a href='xReject.html'>xReject...</a></code>
+  <code><a href='xRejectEmpty.html'>xPack_</a></code>, <code><a href='xRejectEmpty.html'>xRejectEmpty</a></code>,
+  <code><a href='xRejectEmpty.html'>xRejectEmpty_</a></code>; <code><a href='xPartition.html'>xPartition</a></code>,
+  <code><a href='xPartition.html'>xPartition_</a></code>; <code><a href='xRejectNan.html'>xRejectNan</a></code>,
+  <code><a href='xRejectNan.html'>xRejectNan_</a></code>; <code><a href='xRejectNa.html'>xRejectNa</a></code>,
+  <code><a href='xRejectNa.html'>xRejectNa_</a></code>; <code><a href='xRejectNull.html'>xRejectNull</a></code>,
+  <code><a href='xRejectNull.html'>xRejectNull_</a></code>; <code><a href='xReject.html'>xReject</a></code>,
+  <code><a href='xReject.html'>xReject_</a></code>
 
       </div>
 </div>
