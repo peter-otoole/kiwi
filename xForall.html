@@ -297,7 +297,37 @@ is true for a predicate.</p>
    collections are given), then logical(0) is returned.</p>
 
     </div>
-      </div>
+    
+    <h2 id="examples">Examples</h2>
+    <pre class="examples"><div class='input'>
+# 1. Detect if a sentence without punctuation is palindromic.
+
+palindromic &lt;- &quot;Marge let a moody baby doom a telegram.&quot;
+
+left_to_right &lt;-
+    x_(palindromic) $
+    xToChars() $
+    xMap(tolower) $
+    x_Select(
+        function (char) xIsMember(char, letters)
+    )
+
+right_to_left &lt;- x_(left_to_right) $ x_Reverse()
+
+xForall_(
+	ith := {
+		xAsCharacter(left_to_right[ith]) ==
+		xAsCharacter(right_to_left[ith])
+	},
+	seq_along(left_to_right)
+)
+</div>
+<div class='output'>[1] TRUE
+</div>
+<div class='input'>
+# True
+</div></pre>
+  </div>
   <div class="span4">
     <!-- <ul>
       <li>xForall</li><li>xForall_</li>

@@ -260,7 +260,30 @@
       <p>Returns the empty list if <b>coll</b> is length-zero.</p>
 
     </div>
-      </div>
+    
+    <h2 id="examples">Examples</h2>
+    <pre class="examples"><div class='input'>
+# 1. xThread can be used to emulate methods for the
+#    base functions in R
+
+# get the scalar square of a matrix, and sum the rows
+xThread_(matrix(1:4, 2, 2),
+	t,
+	X := X^2,
+	rowSums
+)
+</div>
+<div class='output'>[1]  5 25
+</div>
+<div class='input'>
+# c(5, 25)
+# is conceptually similar to
+
+# x_(matrix(1:4, 2, 2)) $ xTranspose() $ xTap(X := X^2) $ x_Tap(rowSums)
+#
+# but without all the tapping.
+</div></pre>
+  </div>
   <div class="span4">
     <!-- <ul>
       <li>xThread</li><li>xThread_</li>

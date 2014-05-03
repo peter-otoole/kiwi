@@ -257,7 +257,24 @@
    parent frame.</p>
 
     </div>
-      </div>
+    
+    <h2 id="examples">Examples</h2>
+    <pre class="examples"><div class='input'>
+# 1. xAsVal can be used to &#39;lock&#39; a list of constant variables
+#    so it can&#39;t accidentally be updated.
+
+consts &lt;- list(
+    pi = 3.14,
+    golden = 1.618
+)
+
+xAsVal(consts)
+
+# consts$pi &lt;- 2
+# would throw an error.
+
+</div></pre>
+  </div>
   <div class="span4">
     <!-- <ul>
       <li>xAsVal</li>

@@ -246,7 +246,48 @@
       <p><character> -> <character></p>
 
     </div>
-      </div>
+    
+    <h2 id="examples">Examples</h2>
+    <pre class="examples"><div class='input'>
+# 1. CE: Sum of Digits
+# sum the digits of a positive integer
+
+x_(toString(12358134L)) $ xToChars() $ xMap(as.numeric) $ x_Reduce(&quot;+&quot;)
+</div>
+<div class='output'>[1] 27
+</div>
+<div class='input'>
+# 27
+
+# 2. Read in protein sequence data, and then find the most frequent
+# amino acid.
+
+dgcr8 &lt;- xFromLines_(
+	&quot;METDESPSPLPCGPAGEAVMESRARPFQALPREQSPPPPLQTSSGAEVMDVGSGGDGQSELPAEDPFNFYGASLLSKGSF&quot;,
+	&quot;SKGRLLIDPNCSGHSPRTARHAPAVRKFSPDLKLLKDVKISVSFTESCRSKDRKVLYTGAERDVRAECGLLLSPVSGDVHA&quot;,
+	&quot;CPFGGSVGDGVGIGGESADKKDEENELDQEKRVEYAVLDELEDFTDNLELDEEGAGGFTAKAIVQRDRVDEEALNFPYEDDF&quot;,
+	&quot;DNDVDALLEEGLCAPKKRRTEEKYGGDSDHPSDGETSVQPMMTKIKTVLKSRGRPPTEPLPDGWIMTFHNSGVPVYLHRESRVV&quot;,
+	&quot;TWSRPYFLGTGSIRKHDPPLSSIPCLHYKKMKDNEEREQSSDLTPSGDVSPVKPLSRSAELEFPLDEPDSMGADPGPPDEKDPLG&quot;,
+	&quot;AEAAPGALGQVKAKVEVCKDESVDLEEFRSYLEKRFDFEQVTVKKFRTWAERRQFNREMKRKQAESERPILPANQKLITLSVQDAP&quot;,
+	&quot;TKKEFVINPNGKSEVCILHEYMQRVLKVRPVYNFFECENPSEPFGASVTIDGVTYGSGTASSKKLAKNKAARATLEILIPDFVKQTSE&quot;,
+	&quot;EKPKDSEELEYFNHISIEDSRVYELTSKAGLLSPYQILHECLKRNHGMGDTSIKFEVVPGKNQKSEYVMACGKHTVRGWCKNKRVGKQLA&quot;,
+	&quot;SQKILQLLHPHVKNWGSLLRMYGRESSKMVKQETSDKSVIELQQYAKKNKPNLHILSKLQEEMKRLAEEREETRKKPKMSIVASAQPGGEPL&quot;,
+	&quot;CTVDV&quot;)
+
+x_(dgcr8) $ xToChars() $ xTabulate() $ x_MaxBy(xSecondOf)
+</div>
+<div class='output'>[[1]]
+[1] &quot;E&quot;
+
+[[2]]
+[1] 77
+
+</div>
+<div class='input'>
+# list(&#39;E&#39;, 77)
+# Glutamic Acid is the most common residue in dgcr8
+</div></pre>
+  </div>
   <div class="span4">
     <!-- <ul>
       <li>xToChars</li>

@@ -308,7 +308,30 @@
    no sensible definition in this case.</p>
 
     </div>
-      </div>
+    
+    <h2 id="examples">Examples</h2>
+    <pre class="examples"><div class='input'>
+# 1. Composing linear functions
+#    composing linear function &#39;multiplies&#39; them,
+#    so composing x := 2x and x := 3x returns the
+#    &#39;product&#39; function x := 6x
+
+f &lt;- x := 2*x
+g &lt;- x := 3*x
+
+# h = x := 3(2*x)
+# h = x := 6*x
+
+h &lt;- f %then% g
+
+h(2)
+</div>
+<div class='output'>[1] 12
+</div>
+<div class='input'># 12
+
+</div></pre>
+  </div>
   <div class="span4">
     <!-- <ul>
       <li>%of%</li><li>%then%</li><li>xCompose</li><li>xCompose_</li>

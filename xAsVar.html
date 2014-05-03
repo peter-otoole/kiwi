@@ -256,7 +256,29 @@
     Non-locked variables are also allowed.</p>
 
     </div>
-      </div>
+    
+    <h2 id="examples">Examples</h2>
+    <pre class="examples"><div class='input'>
+# 1. xAsVar can be used to unlock values back to
+#    variables, since every function needs an inverse.
+
+const &lt;- list(
+    letters =
+        letters
+)
+
+xAsVal(const)
+xAsVar(const)
+
+const &lt;- NULL
+const
+</div>
+<div class='output'>NULL
+</div>
+<div class='input'>
+# NULL
+</div></pre>
+  </div>
   <div class="span4">
     <!-- <ul>
       <li>xAsVar</li>

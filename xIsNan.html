@@ -258,7 +258,22 @@
     False is returned.</p>
 
     </div>
-      </div>
+    
+    <h2 id="examples">Examples</h2>
+    <pre class="examples"><div class='input'>
+# 1. Division by zero generates NaN,
+# and the value may pop up (often erroneously) in other contexts.
+
+val &lt;- 0 / 0
+
+xIsNan(val)
+</div>
+<div class='output'>[1] TRUE
+</div>
+<div class='input'>
+# True
+</div></pre>
+  </div>
   <div class="span4">
     <!-- <ul>
       <li>xIsNan</li>

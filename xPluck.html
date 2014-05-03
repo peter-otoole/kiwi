@@ -262,7 +262,49 @@ selecting fields in each element by name.</p>
    used to match key-names.</p>
 
     </div>
-      </div>
+    
+    <h2 id="examples">Examples</h2>
+    <pre class="examples"><div class='input'>
+# 1. selecting a key from each row in a data frame.
+
+median_lethal_dose &lt;- list(
+	&#39;toxicant&#39; =
+		c(&#39;ricin&#39;, &#39;dioxin&#39;, &#39;sarin&#39;, &#39;vx&#39;, &#39;batrachotoxin&#39;, &#39;maitotoxin&#39;, &#39;polonium-210&#39;, &#39;botox&#39;),
+	&#39;mg_per_kg&#39; =
+		c(22, 20, 17, 2, 2, 0.13, 0.01, 0.001)
+)
+
+x_(median_lethal_dose) $ xZip() $ x_Pluck(&#39;mg_per_kg&#39;)
+</div>
+<div class='output'>[[1]]
+[1] 22
+
+[[2]]
+[1] 20
+
+[[3]]
+[1] 17
+
+[[4]]
+[1] 2
+
+[[5]]
+[1] 2
+
+[[6]]
+[1] 0.13
+
+[[7]]
+[1] 0.01
+
+[[8]]
+[1] 0.001
+
+</div>
+<div class='input'>
+# list(22, 20, 17, 2, 2, 0.13, 0.01, 0.001)
+</div></pre>
+  </div>
   <div class="span4">
     <!-- <ul>
       <li>xPluck</li><li>xPluck_</li>

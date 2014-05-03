@@ -279,7 +279,159 @@
       <p>Returns the empty list if <b>coll</b> is length-zero.</p>
 
     </div>
-      </div>
+    
+    <h2 id="examples">Examples</h2>
+    <pre class="examples"><div class='input'>
+# 1. Convert letters to uppercase.
+
+LETTERS &lt;- xMap(toupper, letters)
+LETTERS
+</div>
+<div class='output'>[[1]]
+[1] &quot;A&quot;
+
+[[2]]
+[1] &quot;B&quot;
+
+[[3]]
+[1] &quot;C&quot;
+
+[[4]]
+[1] &quot;D&quot;
+
+[[5]]
+[1] &quot;E&quot;
+
+[[6]]
+[1] &quot;F&quot;
+
+[[7]]
+[1] &quot;G&quot;
+
+[[8]]
+[1] &quot;H&quot;
+
+[[9]]
+[1] &quot;I&quot;
+
+[[10]]
+[1] &quot;J&quot;
+
+[[11]]
+[1] &quot;K&quot;
+
+[[12]]
+[1] &quot;L&quot;
+
+[[13]]
+[1] &quot;M&quot;
+
+[[14]]
+[1] &quot;N&quot;
+
+[[15]]
+[1] &quot;O&quot;
+
+[[16]]
+[1] &quot;P&quot;
+
+[[17]]
+[1] &quot;Q&quot;
+
+[[18]]
+[1] &quot;R&quot;
+
+[[19]]
+[1] &quot;S&quot;
+
+[[20]]
+[1] &quot;T&quot;
+
+[[21]]
+[1] &quot;U&quot;
+
+[[22]]
+[1] &quot;V&quot;
+
+[[23]]
+[1] &quot;W&quot;
+
+[[24]]
+[1] &quot;X&quot;
+
+[[25]]
+[1] &quot;Y&quot;
+
+[[26]]
+[1] &quot;Z&quot;
+
+</div>
+<div class='input'>
+# list(
+#    &quot;A&quot;, &quot;B&quot;, &quot;C&quot;, &quot;D&quot;, &quot;E&quot;, &quot;F&quot;,
+#    &quot;G&quot;, &quot;H&quot;, &quot;I&quot;, &quot;J&quot;, &quot;K&quot;, &quot;L&quot;,
+#    &quot;M&quot;, &quot;N&quot;, &quot;O&quot;, &quot;P&quot;, &quot;Q&quot;, &quot;R&quot;,
+#    &quot;S&quot;, &quot;T&quot;, &quot;U&quot;, &quot;V&quot;, &quot;W&quot;, &quot;X&quot;,
+#    &quot;Y&quot;, &quot;Z&quot;)
+
+# 2. grab the second value in a collection
+#    of collections.
+
+xMap_(
+    xSecondOf,
+    list(&quot;a&quot;, &quot;b&quot;, &quot;c&quot;),
+    list(1, 2, 3)
+)
+</div>
+<div class='output'>[[1]]
+[1] &quot;b&quot;
+
+[[2]]
+[1] 2
+
+</div>
+<div class='input'>
+# list(&quot;b&quot;, 2)
+
+
+
+# 3. HR Functional Programming
+# Evaluate the first 10 terms of the series of e^x
+
+# The number e^x is given by the series
+
+# 1 + x + x^2/2! + x^3/3! + ...,
+
+# This problem is perfect for xMap and xReduce.
+# The moderately astute will notice that
+
+# x = x^1 / 1!, and that 1 = x^0 / 0!,
+
+# meaning that the first two terms aren&#39;t any more difficult
+# to generate than the rest of the series. The series really is
+
+# x^0/0! + x^1/1! + x^2/2! + x^3/3! + ...,
+
+# which means we can map over the sequence 0, 1, ... and generate
+# the corresponding term in the series e^x
+
+power_of_e &lt;- x := {
+
+	x_(0:15)$
+	xMap(ith := {
+		(x^ith) / factorial(ith)
+	})$
+	x_Reduce(&#39;+&#39;)
+
+}
+
+power_of_e(1)
+</div>
+<div class='output'>[1] 2.718282
+</div>
+<div class='input'># 2.718282
+</div></pre>
+  </div>
   <div class="span4">
     <!-- <ul>
       <li>xMap</li><li>xMap_</li>

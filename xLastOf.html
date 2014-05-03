@@ -258,7 +258,21 @@
    because any other corner case would violate the function's type-signature.</p>
 
     </div>
-      </div>
+    
+    <h2 id="examples">Examples</h2>
+    <pre class="examples"><div class='input'>
+# 1. extract a filename from a full path-name
+
+my_path &lt;- &#39;/home/ryan/Code/arrow.R/xMap.R&#39;
+
+x_(my_path) $ xExplode(&#39;/&#39;) $ x_LastOf()
+</div>
+<div class='output'>[1] &quot;xMap.R&quot;
+</div>
+<div class='input'>
+# xMap.R
+</div></pre>
+  </div>
   <div class="span4">
     <!-- <ul>
       <li>xLastOf</li><li>xLastOf_</li>

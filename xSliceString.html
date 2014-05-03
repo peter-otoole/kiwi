@@ -261,7 +261,133 @@
      nums is larger than the length of <b>coll</b> an error is thrown.</p>
 
     </div>
-      </div>
+    
+    <h2 id="examples">Examples</h2>
+    <pre class="examples"><div class='input'>
+# 1. k-mers
+#
+# A common problem in molecular biology is to find every
+# unique continous substringin a set of
+# dna sequences. For example, the spectrum of length
+# four continous substrings in the below sequences
+
+# contig1: AATTCCGG
+# contig2: TGGTAACGG
+
+# is
+
+# AATT, ATTC, TTCC, TCCG, CCGG
+# TGGT, GGTA, GTAA, TAAC, AACG, ACGG
+
+# this can be useful when trying to sequence a genome from a
+# lot of random overlapping subsequences of the genome. In a non-molecular
+# biology context this is just a run of the mill string algorithm.
+#
+# xSliceString makes it easy to select a subsequence from a string
+
+kmers &lt;- (k : string) := {
+
+	xMap(
+		ith := {
+			# subset the string.
+			xSliceString(string, (1:k) + ith)
+		},
+		0:(nchar(string) - k)
+	)
+
+}
+
+# the DNA sequences to find kmers of.
+
+contigs &lt;- list(
+	&#39;AT&#39;,
+	&#39;AATTCCGG&#39;,
+	&#39;GGTCGTCGGTGAGTGC&#39;,
+	&#39;TTATTATTA&#39;,
+	&#39;A&#39;,
+	&#39;AGGTGTGAGAGAT&#39;
+)
+
+# get all unique 3-mers.
+x_(contigs) $ xReject(contig := nchar(contig) &lt; 3) $ # -- remove the contigs that are too short.
+xMap(contig := {
+	kmers(3, contig)
+}) $
+xJoin() $ x_UniqueOf() # -- join all the kmers into one flat list, and get the unique ones.
+</div>
+<div class='output'>[[1]]
+[1] &quot;AAT&quot;
+
+[[2]]
+[1] &quot;ATT&quot;
+
+[[3]]
+[1] &quot;TTC&quot;
+
+[[4]]
+[1] &quot;TCC&quot;
+
+[[5]]
+[1] &quot;CCG&quot;
+
+[[6]]
+[1] &quot;CGG&quot;
+
+[[7]]
+[1] &quot;GGT&quot;
+
+[[8]]
+[1] &quot;GTC&quot;
+
+[[9]]
+[1] &quot;TCG&quot;
+
+[[10]]
+[1] &quot;CGT&quot;
+
+[[11]]
+[1] &quot;GTG&quot;
+
+[[12]]
+[1] &quot;TGA&quot;
+
+[[13]]
+[1] &quot;GAG&quot;
+
+[[14]]
+[1] &quot;AGT&quot;
+
+[[15]]
+[1] &quot;TGC&quot;
+
+[[16]]
+[1] &quot;TTA&quot;
+
+[[17]]
+[1] &quot;TAT&quot;
+
+[[18]]
+[1] &quot;AGG&quot;
+
+[[19]]
+[1] &quot;TGT&quot;
+
+[[20]]
+[1] &quot;AGA&quot;
+
+[[21]]
+[1] &quot;GAT&quot;
+
+</div>
+<div class='input'>
+
+
+
+# list(&quot;AAT&quot;, &quot;ATT&quot;, &quot;TTC&quot;, &quot;TCC&quot;, &quot;CCG&quot;, &quot;CGG&quot;, &quot;GGT&quot;, &quot;GTC&quot;,
+#     &quot;TCG&quot;, &quot;CGT&quot;, &quot;GTG&quot;, &quot;TGA&quot;, &quot;GAG&quot;, &quot;AGT&quot;, &quot;TGC&quot;, &quot;TTA&quot;, &quot;TAT&quot;,
+#     &quot;AGG&quot;, &quot;TGT&quot;, &quot;AGA&quot;, &quot;GAT&quot;)
+</div></pre>
+  </div>
   <div class="span4">
     <!-- <ul>
       <li>xSliceString</li><li>xSliceString_</li>

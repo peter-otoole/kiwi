@@ -297,7 +297,46 @@ is true for a predicate.</p>
    collections are given), then logical(0) is returned.</p>
 
     </div>
-      </div>
+    
+    <h2 id="examples">Examples</h2>
+    <pre class="examples"><div class='input'>
+# 1. Determine if a string is a cyclic permutation of another string.
+#    check if there exists a way of cyclically permutting one string
+#    so that the other string is identical.
+
+is_cyclic_permutation &lt;- (string1 : string2) := {
+
+    is_same_length &lt;- nchar(string1) == nchar(string2)
+
+    string1 &lt;- xToChars(string1)
+    string2 &lt;- xToChars(string2)
+
+    if (length(string1) != length(string2)) {
+        False
+    } else {
+
+        x_(seq_along(string1)) $
+        x_Exists_(ith := {
+                # does there exist a cyclic permutation such that the
+                # the permutation is equal to a second string?
+                identical(xCycle_(ith, string1), as.list(string2))
+        })
+
+    }
+
+}
+
+is_cyclic_permutation(
+    &#39;CyclicStringsForTheWin&#39;, &#39;ForTheWinCyclicStrings&#39;)
+</div>
+<div class='output'>[1] FALSE
+</div>
+<div class='input'>
+True
+</div>
+<div class='output'>[1] TRUE
+</div></pre>
+  </div>
   <div class="span4">
     <!-- <ul>
       <li>xExists</li><li>xExists_</li>

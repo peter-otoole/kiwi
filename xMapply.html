@@ -260,7 +260,44 @@
       <p>Returns the empty list is <b>colls</b> is length-zero.</p>
 
     </div>
-      </div>
+    
+    <h2 id="examples">Examples</h2>
+    <pre class="examples"><div class='input'>
+# 1. CE Find the minimum distance
+#    between any two points in a set of points.
+#    xMapply could be swapped for xMap(xUnspread(fn) )
+#    below, as was done with the call to reject, but
+#    map is important enough to have a few variants for
+#    convenience.
+
+points &lt;- list(
+	c(12, 2),
+	c(32, -4),
+	c(5, -2),
+	c(6, 7),
+	c(9, 31)
+)
+
+# get the set product to generate all pairs of points.
+x_( xProdSetOf_(points, points) ) $
+# remove the pairs wich contain the same point twice.
+xReject(xUnspread(identical)) $
+xMapply(
+	(xs : ys) := {
+		# the distance function.
+
+		sqrt( (xs[1] - xs[2])^2 + (ys[1] - ys[2])^2 )
+
+	}
+) $
+x_Reduce(min)
+</div>
+<div class='output'>[1] 7.071068
+</div>
+<div class='input'>
+# 7.071068
+</div></pre>
+  </div>
   <div class="span4">
     <!-- <ul>
       <li>xMapply</li><li>xMapply_</li>

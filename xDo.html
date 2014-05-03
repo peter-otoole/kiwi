@@ -260,7 +260,107 @@ collection and discard the results.</p>
       <p>(any -> any) -> |any| -></p>
 
     </div>
-      </div>
+    
+    <h2 id="examples">Examples</h2>
+    <pre class="examples"><div class='input'>
+#1. print the files in your current directory.
+
+xDo(print, list.files(&#39;.&#39;))
+</div>
+<div class='output'>[1] &quot;demo&quot;
+[1] &quot;DESCRIPTION&quot;
+[1] &quot;inst&quot;
+[1] &quot;LICENSE&quot;
+[1] &quot;man&quot;
+[1] &quot;NAMESPACE&quot;
+[1] &quot;R&quot;
+[1] &quot;README.md&quot;
+[1] &quot;site-content&quot;
+[1] &quot;staticdocs.Rproj&quot;
+[1] &quot;vignettes&quot;
+</div>
+<div class='input'>
+#    or
+
+x_(list.files(&#39;.&#39;))$xDo(print)
+</div>
+<div class='output'>[1] &quot;demo&quot;
+[1] &quot;DESCRIPTION&quot;
+[1] &quot;inst&quot;
+[1] &quot;LICENSE&quot;
+[1] &quot;man&quot;
+[1] &quot;NAMESPACE&quot;
+[1] &quot;R&quot;
+[1] &quot;README.md&quot;
+[1] &quot;site-content&quot;
+[1] &quot;staticdocs.Rproj&quot;
+[1] &quot;vignettes&quot;
+</div>
+<div class='output'>[ an arrow object with methods for collections ]
+
+$x_()
+NULL
+</div>
+<div class='input'>
+#    or even
+
+xDo(print %of% list.files, &#39;.&#39;)
+</div>
+<div class='output'> [1] &quot;demo&quot;             &quot;DESCRIPTION&quot;     
+ [3] &quot;inst&quot;             &quot;LICENSE&quot;         
+ [5] &quot;man&quot;              &quot;NAMESPACE&quot;       
+ [7] &quot;R&quot;                &quot;README.md&quot;       
+ [9] &quot;site-content&quot;     &quot;staticdocs.Rproj&quot;
+[11] &quot;vignettes&quot;       
+</div>
+<div class='input'>
+#2. plot a trig function.
+
+plot(
+    0, 0,
+    xlim = c(0, 10),
+    ylim = c(-10, 10),
+    type = &#39;n&#39;)
+</div>
+<p><img src='xDo-9.png' alt='' width='400' height='400' /></p>
+<div class='input'>
+xDo(
+    x := {
+        y &lt;- tan( sin( x ) / cos( x )^2 )
+        points(x, y)
+
+    },
+    (1:1000) / 100
+)
+</div>
+<p><img src='xDo-11.png' alt='' width='400' height='400' /></p>
+<div class='input'>
+#3. HR Functional Programming
+#   Print &quot;Hello World&quot; n times
+
+# xDo is Arrow&#39;s construct for mapping over a collection and discarding the result, for use
+# with side-effectful functions. An anonymous function or print composed with a constant function can
+# be used to print the actual message.
+
+n &lt;- 5
+
+xDo(print %of% xK(&#39;hello&#39;), 1:n)
+</div>
+<div class='output'>[1] &quot;hello&quot;
+[1] &quot;hello&quot;
+[1] &quot;hello&quot;
+[1] &quot;hello&quot;
+[1] &quot;hello&quot;
+</div>
+<div class='input'>xDo(num := print(&#39;hello&#39;),  1:n)
+</div>
+<div class='output'>[1] &quot;hello&quot;
+[1] &quot;hello&quot;
+[1] &quot;hello&quot;
+[1] &quot;hello&quot;
+[1] &quot;hello&quot;
+</div></pre>
+  </div>
   <div class="span4">
     <!-- <ul>
       <li>xDo</li><li>xDo_</li>

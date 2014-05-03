@@ -253,7 +253,32 @@
       <p><character> -> <character></p>
 
     </div>
-      </div>
+    
+    <h2 id="examples">Examples</h2>
+    <pre class="examples"><div class='input'>
+# 1. Lexically sort a list.
+#
+
+info &lt;-
+&quot;
+a: a for aardvark.
+z: z for zebra.
+d: d for deer.
+f: f for ferret.
+g: g for green snake.
+y: y for yapok.
+&quot;
+
+x_(info) $ xToLines() $ x_Tap(sort)
+</div>
+<div class='output'>[1] &quot;a: a for aardvark.&quot;   
+[2] &quot;d: d for deer.&quot;       
+[3] &quot;f: f for ferret.&quot;     
+[4] &quot;g: g for green snake.&quot;
+[5] &quot;y: y for yapok.&quot;      
+[6] &quot;z: z for zebra.&quot;      
+</div></pre>
+  </div>
   <div class="span4">
     <!-- <ul>
       <li>xToLines</li>

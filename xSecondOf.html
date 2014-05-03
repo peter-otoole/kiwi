@@ -259,7 +259,27 @@
    would violate the functions type-signature.</p>
 
     </div>
-      </div>
+    
+    <h2 id="examples">Examples</h2>
+    <pre class="examples"><div class='input'>
+# 1. CE Return the penultimate string in a sentence.
+#    Not the most efficient solution, but it&#39;s usually
+#    sufficient. As always, using a right fold would be more
+#    efficient but less expressive. Every problem can be solved
+#    with a fold.
+
+sentence &lt;- &quot;He just kept talking in one long incredibly unbroken sentence moving from
+topic to topic so that no-one had a chance to
+interrupt; it was really quite hypnotic&quot;
+
+x_(sentence) $ xToWords() $ xReverse() $ x_SecondOf()
+</div>
+<div class='output'>[1] &quot;quite&quot;
+</div>
+<div class='input'>
+# &#39;quite&#39;
+</div></pre>
+  </div>
   <div class="span4">
     <!-- <ul>
       <li>xSecondOf</li><li>xSecondOf_</li>

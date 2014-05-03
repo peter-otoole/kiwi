@@ -256,7 +256,24 @@
       <p>Reversing the empty list yields the empty list.</p>
 
     </div>
-      </div>
+    
+    <h2 id="examples">Examples</h2>
+    <pre class="examples"><div class='input'>
+# 1.
+# select the third last letter in the english alphabet.
+
+x_(letters) $ xReverse() $ xThirdOf()
+</div>
+<div class='output'>[ an arrow object with methods for collections ]
+
+$x_()
+[1] &quot;x&quot;
+</div>
+<div class='input'>
+# the above is more semantic than
+# x_(letters) $ xAt(length(letters) - 3)
+</div></pre>
+  </div>
   <div class="span4">
     <!-- <ul>
       <li>xReverse</li><li>xReverse_</li>

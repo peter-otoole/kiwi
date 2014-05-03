@@ -256,7 +256,37 @@
       <p>(...any -> any) -> (any -> any)</p>
 
     </div>
-      </div>
+    
+    <h2 id="examples">Examples</h2>
+    <pre class="examples"><div class='input'>
+# 1. xUnspread can be used to adapt higher-order
+#    functions to make them work with non-unary functions.
+
+xSelect_(
+    xUnspread(
+        (a : b) := {
+            a &gt; 0 &amp;&amp; b &gt;= 0
+        }
+    ),
+    list(+1, +1),
+    list(+0, +1),
+    list(-1, 1),
+    list(-1, -1)
+)
+</div>
+<div class='output'>[[1]]
+[[1]][[1]]
+[1] 1
+
+[[1]][[2]]
+[1] 1
+
+
+</div>
+<div class='input'>
+# list(+1, +1)
+</div></pre>
+  </div>
   <div class="span4">
     <!-- <ul>
       <li>xUnspread</li>

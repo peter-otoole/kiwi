@@ -260,7 +260,20 @@
    generated.</p>
 
     </div>
-      </div>
+    
+    <h2 id="examples">Examples</h2>
+    <pre class="examples"><div class='input'>
+# 1. Create a simple csv parser.
+
+from_csv &lt;- xFix(xExplode, &#39;[ 	]*,[ 	]*&#39;)
+from_csv(&quot;field1, field2, field3&quot;)
+</div>
+<div class='output'>[1] &quot;field1&quot; &quot;field2&quot; &quot;field3&quot;
+</div>
+<div class='input'>
+# c(&quot;field1, field2, field3&quot;)
+</div></pre>
+  </div>
   <div class="span4">
     <!-- <ul>
       <li>xExplode</li>

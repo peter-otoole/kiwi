@@ -287,7 +287,74 @@
    has length-zero, or no collections are included.</p>
 
     </div>
-      </div>
+    
+    <h2 id="examples">Examples</h2>
+    <pre class="examples"><div class='input'>
+# seperate a csv of country,median age pairs
+# into a list of countries and ages.
+# this is a nicer format for Arrow to work with
+# than a string or data.frame.
+
+csv &lt;- &quot;Monaco,48.9,Japan,44.6,Italy,44.3,Germany,43.7,Jersey,43.4&quot;
+
+x_(csv) $ xExplode(&#39;,&#39;) $ xChunk(2) $ xZip() $
+x_AddKeys(c(&#39;country&#39;, &#39;age&#39;))
+</div>
+<div class='output'>$country
+$country[[1]]
+[1] &quot;Monaco&quot;
+
+$country[[2]]
+[1] &quot;Japan&quot;
+
+$country[[3]]
+[1] &quot;Italy&quot;
+
+$country[[4]]
+[1] &quot;Germany&quot;
+
+$country[[5]]
+[1] &quot;Jersey&quot;
+
+
+$age
+$age[[1]]
+[1] &quot;48.9&quot;
+
+$age[[2]]
+[1] &quot;44.6&quot;
+
+$age[[3]]
+[1] &quot;44.3&quot;
+
+$age[[4]]
+[1] &quot;43.7&quot;
+
+$age[[5]]
+[1] &quot;43.4&quot;
+
+
+</div>
+<div class='input'>
+# list(
+#     country =
+#     list(
+#         &quot;Monaco&quot;,
+#         &quot;Japan&quot;,
+#         &quot;Italy&quot;,
+#         &quot;Germany&quot;,
+#         &quot;Jersey&quot;),
+#     age =
+#     list(
+#         &quot;48.9&quot;,
+#         &quot;44.6&quot;,
+#         &quot;44.3&quot;,
+#         &quot;43.7&quot;,
+#         &quot;43.4&quot;
+# ))
+
+</div></pre>
+  </div>
   <div class="span4">
     <!-- <ul>
       <li>xZip</li><li>xZip_</li>

@@ -250,7 +250,24 @@
       <p>Concatentate a character vector with empty strs as delimiters.</p>
 
     </div>
-      </div>
+    
+    <h2 id="examples">Examples</h2>
+    <pre class="examples"><div class='input'>
+# 1. Remove Specific Characters from a string
+#    in all likelyhood I&#39;d use the base function gsub() here,
+#    but xFromChars and xReject work too.
+
+x_(&#39;the letter e is overrated&#39;) $
+xToChars() $
+xReject(
+	char := {
+		char == &#39;e&#39;
+}) $
+x_FromChars()
+</div>
+<div class='output'>[1] &quot;th lttr  is ovrratd&quot;
+</div></pre>
+  </div>
   <div class="span4">
     <!-- <ul>
       <li>xFromChars</li><li>xFromChars_</li>

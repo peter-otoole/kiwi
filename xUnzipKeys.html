@@ -267,7 +267,44 @@
       <p>Returns <code>list()</code> if <code>coll</code> is length-zero.</p>
 
     </div>
-      </div>
+    
+    <h2 id="examples">Examples</h2>
+    <pre class="examples"><div class='input'>
+# 1. xUnzipkeys can be useful for
+#    reformatting a named list before passing it
+#    to a function like map or select, allowing those
+#    functions access to both the key and value.
+
+irish_birds &lt;- list(
+	&#39;Grey Heron&#39;  = &#39;Ardeidae&#39;,
+	&#39;Black Stork&#39; = &#39;Ciconiiformes&#39;,
+	&#39;Giant Ibis&#39;  = &#39;Ciconiiformes&#39;
+)
+
+x_(irish_birds) $ xUnzipKeys() $ x_Map(xUnspread((key : val) := {
+
+		xFromWords_(&#39;the&#39;, key, &#39;is of order&#39;, val)
+
+	})
+)
+</div>
+<div class='output'>[[1]]
+[1] &quot;the Grey Heron is of order Ardeidae&quot;
+
+[[2]]
+[1] &quot;the Black Stork is of order Ciconiiformes&quot;
+
+[[3]]
+[1] &quot;the Giant Ibis is of order Ciconiiformes&quot;
+
+</div>
+<div class='input'>
+# list(
+#     &quot;the  Grey Heron is of order Ardeidae&quot;,
+#     &quot;the  Black Stork is of order Ciconiiformes&quot;,
+#     &quot;the  Giant Ibis is of order Ciconiiformes&quot;)
+</div></pre>
+  </div>
   <div class="span4">
     <!-- <ul>
       <li>xUnzipKeys</li><li>xUnzipKeys_</li>

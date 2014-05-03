@@ -264,7 +264,49 @@
    function can accept an infinite number of arguments.</p>
 
     </div>
-      </div>
+    
+    <h2 id="examples">Examples</h2>
+    <pre class="examples"><div class='input'>
+# 1. xArityOf works on primitive functions.
+
+xArityOf(&#39;+&#39;)
+</div>
+<div class='output'>[1] 2
+</div>
+<div class='input'>
+# 2
+
+# 2. xArityOf also works on normal functions
+#    and variadic functions.
+
+xArityOf(Reduce)
+</div>
+<div class='output'>[1] 5
+</div>
+<div class='input'>
+# 5
+
+xArityOf(function (a, ...) {})
+</div>
+<div class='output'>[1] Inf
+</div>
+<div class='input'>
+# Inf
+
+# 3. xArityOf can be used to check that a function
+#    given to a higher-order function is safe to
+#    use.
+
+safeMap &lt;- function (fn, coll) {
+
+    if (!xArityOf(fn) == 1) {
+        stop(&quot;the function given to safeMap is not unary.&quot;)
+    } else {
+        lapply(fn, coll)
+    }
+}
+</div></pre>
+  </div>
   <div class="span4">
     <!-- <ul>
       <li>xArityOf</li>

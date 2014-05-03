@@ -256,7 +256,26 @@ as a list to its underyling function.</p>
       <p>([any] -> any) -> (...any -> any)</p>
 
     </div>
-      </div>
+    
+    <h2 id="examples">Examples</h2>
+    <pre class="examples"><div class='input'>
+# 1.
+# Convert a function that takes a single value as an argument to
+# a function that takes many arguments.
+#
+
+summate &lt;- xSpread(nums := xFold(&quot;+&quot;, 0, nums) )
+
+summate(1, 2, 3, 4, 5, 6)
+</div>
+<div class='output'>[1] 21
+</div>
+<div class='input'>
+# 2.
+#
+
+</div></pre>
+  </div>
   <div class="span4">
     <!-- <ul>
       <li>xSpread</li>

@@ -276,7 +276,261 @@
       <p>If <b>coll</b> is a empty collection the empty list is returned.</p>
 
     </div>
-      </div>
+    
+    <h2 id="examples">Examples</h2>
+    <pre class="examples"><div class='input'>
+# 1. k-nearest neighbours
+#   is a patient diabetic?
+
+# ------------- observations ------------- #
+#
+# the patient in question has a fasting blood glucose level
+# of 135 mL / dL, and we also have data on the blood sugar
+# of diabetic and non-diabetic individuals.
+#
+# By finding the most similar blood glucose levels and checking
+# whether the people with those readings were or weren&#39;t diabetic.
+
+blood_glucose &lt;- 135
+
+patients_data &lt;-
+	xZip_(
+		&#39;mg per dl (fasting)&#39; =
+			c(130, 137, 139, 140, 141, 137, 127, 143, 135, 127,
+				77, 79, 79, 79, 88, 87, 95, 82, 93, 94),
+		&#39;category&#39; =
+			xJoin_(xRepeat(10, &#39;diabetic&#39;), xRepeat(10, &#39;non-diabetic&#39;))
+	)
+
+# shuffle the rows of the data.
+patients_data &lt;- xReorder(xShuffle(1:length(patients_data)), patients_data)
+
+k_nearest &lt;- (dist : point : training) := {
+	# classification.
+	# given training points to test against,
+	# classify a point based on its nearest neighbours.
+
+	k &lt;- floor( sqrt(xLenOf(training)) )
+
+	dist_to_test_point &lt;- xFix_(dist, point)
+
+	distances &lt;-
+		x_(training) $ xPluck(&#39;mg per dl (fasting)&#39;) $
+		xMap(dist_to_test_point) $ x_AsDouble()
+
+	# rank the distances from closest to furthest.
+	nearest &lt;- x_(training) $ xSlice(xWhere(xRankOf(distances) &lt;= k))
+
+	# get the frequencies of the categories among the closest.
+	category_frequencies &lt;-
+		nearest $ xPluck(&#39;category&#39;) $ xTabulate() $ x_SortBy(xSecondOf)
+
+	# select the name of the most frequent category
+	xFirstOf(xFirstOf(category_frequencies))
+}
+
+k_nearest(
+	(x1 : x2) := abs(x1 - x2), blood_glucose, patients_data)
+</div>
+<div class='output'>[1] &quot;diabetic&quot;
+</div>
+<div class='input'>
+# &#39;diabetic&#39;
+
+# 2. CE Get the N longest lines
+#    text from Wikipedia
+
+paragraph &lt;-
+&quot;The plant glutamate cysteine ligase (GCL) is a redox-sensitive homodimeric enzyme, conserved in the plant kingdom.
+[11] In an oxidizing environment, intermolecular disulfide bridges are formed and the enzyme switches to the dimeric active state.
+ The midpoint potential of the critical cysteine pair is -318 mV.
+ In addition to the redox-dependent control is the plant GCL enzyme feedback inhibited by GSH.
+ [12] GCL is exclusively located in plastids, and glutathione synthetase is dual-targeted to plastids and cytosol, thus are GSH and gamma-glutamylcysteine exported from the plastids.
+ [13] Both glutathione biosynthesis enzymes are essential in plants; knock-outs of GCL and GS are lethal to embryo and seedling.&quot;
+
+x_(paragraph) $ xToLines() $ xSortBy(nchar) $ x_Take(3)
+</div>
+<div class='output'>[[1]]
+[1] &quot; The midpoint potential of the critical cysteine pair is -318 mV.&quot;
+
+[[2]]
+[1] &quot; In addition to the redox-dependent control is the plant GCL enzyme feedback inhibited by GSH.&quot;
+
+[[3]]
+[1] &quot;The plant glutamate cysteine ligase (GCL) is a redox-sensitive homodimeric enzyme, conserved in the plant kingdom.&quot;
+
+</div>
+<div class='input'>
+# list(
+#     &quot; [12] GCL is exclusively located in plastids, and glutathione synthetase is dual-targeted to plastids and cytosol, thus are GSH and gamma-glutamylcysteine exported from the plastids.&quot;,
+#     &quot;[11] In an oxidizing environment, intermolecular disulfide bridges are formed and the enzyme switches to the dimeric active state.&quot;,
+#     &quot; [13] Both glutathione biosynthesis enzymes are essential in plants; knock-outs of GCL and GS are lethal to embryo and seedling.&quot;
+# )
+
+# 3. CE How many ways do numbers drawn from an
+#    array sum to zero?
+
+nums &lt;- c(-2, 2, -4, 2, -2, -6)
+
+x_(xProdSetOf_(nums, nums, nums, nums)) $
+xSelect(
+	xs := {
+		(unlist %then% sum)(xs) == 0
+	}
+) $
+x_UniqueOf()
+</div>
+<div class='output'>[[1]]
+[[1]][[1]]
+[1] 2
+
+[[1]][[2]]
+[1] 2
+
+[[1]][[3]]
+[1] -2
+
+[[1]][[4]]
+[1] -2
+
+
+[[2]]
+[[2]][[1]]
+[1] 2
+
+[[2]][[2]]
+[1] -2
+
+[[2]][[3]]
+[1] 2
+
+[[2]][[4]]
+[1] -2
+
+
+[[3]]
+[[3]][[1]]
+[1] -2
+
+[[3]][[2]]
+[1] 2
+
+[[3]][[3]]
+[1] 2
+
+[[3]][[4]]
+[1] -2
+
+
+[[4]]
+[[4]][[1]]
+[1] 2
+
+[[4]][[2]]
+[1] -2
+
+[[4]][[3]]
+[1] -2
+
+[[4]][[4]]
+[1] 2
+
+
+[[5]]
+[[5]][[1]]
+[1] -2
+
+[[5]][[2]]
+[1] 2
+
+[[5]][[3]]
+[1] -2
+
+[[5]][[4]]
+[1] 2
+
+
+[[6]]
+[[6]][[1]]
+[1] -2
+
+[[6]][[2]]
+[1] -2
+
+[[6]][[3]]
+[1] 2
+
+[[6]][[4]]
+[1] 2
+
+
+[[7]]
+[[7]][[1]]
+[1] -6
+
+[[7]][[2]]
+[1] 2
+
+[[7]][[3]]
+[1] 2
+
+[[7]][[4]]
+[1] 2
+
+
+[[8]]
+[[8]][[1]]
+[1] 2
+
+[[8]][[2]]
+[1] -6
+
+[[8]][[3]]
+[1] 2
+
+[[8]][[4]]
+[1] 2
+
+
+[[9]]
+[[9]][[1]]
+[1] 2
+
+[[9]][[2]]
+[1] 2
+
+[[9]][[3]]
+[1] -6
+
+[[9]][[4]]
+[1] 2
+
+
+[[10]]
+[[10]][[1]]
+[1] 2
+
+[[10]][[2]]
+[1] 2
+
+[[10]][[3]]
+[1] 2
+
+[[10]][[4]]
+[1] -6
+
+
+</div>
+<div class='input'>
+# list(
+#     list(2, 2, -2, -2), list(2, -2, 2, -2),
+#     list(-2, 2, 2, -2), list(2, -2, -2, 2),
+#     list(-2, 2, -2, 2), list(-2, -2, 2, 2),
+#     list(-6, 2, 2, 2),  list(2, -6, 2, 2),
+#     list(2, 2, -6, 2),  list(2, 2, 2, -6)
+# )
+</div></pre>
+  </div>
   <div class="span4">
     <!-- <ul>
       <li>xSortBy</li><li>xSortBy_</li>

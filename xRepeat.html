@@ -260,7 +260,20 @@
       <p>Returns the empty list if <b>coll</b> is length-zero or num is zero.</p>
 
     </div>
-      </div>
+    
+    <h2 id="examples">Examples</h2>
+    <pre class="examples"><div class='input'>
+# Example 1
+#
+# Use xRepeat to repeat a sine wave.
+
+range &lt;- seq(0, 2*pi, len = 600)
+wave &lt;- xRepeat(5, sin(range))
+
+plot(unlist(wave), type = &#39;l&#39;)
+</div>
+<p><img src='xRepeat-2.png' alt='' width='400' height='400' /></p></pre>
+  </div>
   <div class="span4">
     <!-- <ul>
       <li>xRepeat</li><li>xRepeat_</li>

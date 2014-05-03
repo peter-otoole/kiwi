@@ -261,7 +261,31 @@
    is impossible to return an element from a list that has none.</p>
 
     </div>
-      </div>
+    
+    <h2 id="examples">Examples</h2>
+    <pre class="examples"><div class='input'># 1. Select the largest row in a data-frame like struture
+#    by an attribute.
+
+GDP &lt;- list(
+	list(&#39;Saudi Arabia&#39;, 711050 * 10^6),
+	list(&#39;Switzerland&#39;, 631050 * 10^6),
+	list(&#39;Netherlands&#39;, 770067 * 10^6),
+	list(&#39;Iran&#39;, 551588 * 10^6)
+)
+
+x_(GDP) $ x_MaxBy(xSecondOf)
+</div>
+<div class='output'>[[1]]
+[1] &quot;Netherlands&quot;
+
+[[2]]
+[1] 7.70067e+11
+
+</div>
+<div class='input'>
+# list(&quot;Netherlands&quot;, 7.70067e+11)
+</div></pre>
+  </div>
   <div class="span4">
     <!-- <ul>
       <li>xMaxBy</li><li>xMaxBy_</li>
