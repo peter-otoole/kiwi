@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-<title>xDo. arrow 0.1.0</title>
+<title>xDo. arrow 0.3.0</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="author" content="">
 
@@ -82,6 +82,9 @@
 		max-height: 250px;
 		overflow: scroll;
 		padding-left: 10px;
+	}
+	div.output {
+	    background: #f6f6f6;
 	}
 
 	h2 {
@@ -176,21 +179,21 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">arrow 0.1.0</a>
+      <a class="navbar-brand" href="#">arrow 0.3.0</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
 
-        <li><a href="index.html">Index</a></li>
-        <li><a href="content-test.html">Tutorials</a></li>
-        <li><a href="#">Demos</a></li>
-        <li><a href="#">Contact/About</a></li>
+        <li><a id="index-link" href="index.html">Index</a></li>
+        <li><a id="tutorial-link">Tutorials</a></li>
+        <li><a id="demos-link" href="#">Demos</a></li>
+        <li><a id="contact-link" href="#">Contact/About</a></li>
 
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="https://github.com/rgrannell1/arrow">Github</a></li>
+        <li><a id="github-link" href="https://github.com/rgrannell1/arrow">Github</a></li>
         </li>
       </ul>
     </div><!-- /.navbar-collapse -->
@@ -202,8 +205,7 @@
       
       </header>
 
-      <h1>Map (a possibly side-effectful) function over a
-collection and discard the results.</h1>
+      <h1>xDo</h1>
 
 <div class="row">
   <div class="span8">
@@ -221,10 +223,8 @@ collection and discard the results.</h1>
       <dd>see above.</dd>
     </dl>
     
-    <div class="Map (a possibly side-effectful) function over a
-collection and discard the results.">
-      <h2>Map (a possibly side-effectful) function over a
-collection and discard the results.</h2>
+    <div class="xDo">
+      <h2>xDo</h2>
 
     </div>
 
@@ -252,6 +252,15 @@ collection and discard the results.</p>
     and faster at executing side-effectful functions than <b>xMap</b>.</p>
 
     </div>
+
+    <div class="Type Signature">
+      <h2>Type Signature</h2>
+
+      <p></p>
+
+      <p>(any -> any) -> |any| -></p>
+
+    </div>
     
     <h2 id="examples">Examples</h2>
     <pre class="examples"><div class='input'>
@@ -267,6 +276,7 @@ xDo(print, list.files(&#39;.&#39;))
 [1] &quot;NAMESPACE&quot;
 [1] &quot;R&quot;
 [1] &quot;README.md&quot;
+[1] &quot;site-content&quot;
 [1] &quot;staticdocs.Rproj&quot;
 [1] &quot;vignettes&quot;
 </div>
@@ -283,6 +293,7 @@ x_(list.files(&#39;.&#39;))$xDo(print)
 [1] &quot;NAMESPACE&quot;
 [1] &quot;R&quot;
 [1] &quot;README.md&quot;
+[1] &quot;site-content&quot;
 [1] &quot;staticdocs.Rproj&quot;
 [1] &quot;vignettes&quot;
 </div>
@@ -297,7 +308,8 @@ NULL
 xDo(print %of% list.files, &#39;.&#39;)
 </div>
 <div class='output'> [1] &quot;demo&quot;             &quot;DESCRIPTION&quot;      &quot;inst&quot;             &quot;LICENSE&quot;          &quot;man&quot;             
- [6] &quot;NAMESPACE&quot;        &quot;R&quot;                &quot;README.md&quot;        &quot;staticdocs.Rproj&quot; &quot;vignettes&quot;       
+ [6] &quot;NAMESPACE&quot;        &quot;R&quot;                &quot;README.md&quot;        &quot;site-content&quot;     &quot;staticdocs.Rproj&quot;
+[11] &quot;vignettes&quot;       
 </div>
 <div class='input'>
 #2. plot a trig function.
@@ -389,8 +401,16 @@ Other inpure_functions: <code><a href='xDelay.html'>xDelay</a></code>;
 		return "<pre class = 'input r'>" + text + "</pre>"
 	})
 
+	// I LOVE having jQuery as a dependency. Best library ever written.
+
 	// reorder the xMethod fields.
 	$('div.Description').prependTo('.span8')
+
+	$('#contact-link').click(function() {
+
+		$('.span8').html("to contact me do stuff.")
+
+	})
 
 </script>
 

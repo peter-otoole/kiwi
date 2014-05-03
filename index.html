@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-<title>Index. arrow 0.1.0</title>
+<title>Index. arrow 0.3.0</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="author" content="Ryan Grannell">
 
@@ -82,6 +82,9 @@
 		max-height: 250px;
 		overflow: scroll;
 		padding-left: 10px;
+	}
+	div.output {
+	    background: #f6f6f6;
 	}
 
 	h2 {
@@ -176,21 +179,21 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">arrow 0.1.0</a>
+      <a class="navbar-brand" href="#">arrow 0.3.0</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
 
-        <li><a href="index.html">Index</a></li>
-        <li><a href="content-test.html">Tutorials</a></li>
-        <li><a href="#">Demos</a></li>
-        <li><a href="#">Contact/About</a></li>
+        <li><a id="index-link" href="index.html">Index</a></li>
+        <li><a id="tutorial-link">Tutorials</a></li>
+        <li><a id="demos-link" href="#">Demos</a></li>
+        <li><a id="contact-link" href="#">Contact/About</a></li>
 
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="https://github.com/rgrannell1/arrow">Github</a></li>
+        <li><a id="github-link" href="https://github.com/rgrannell1/arrow">Github</a></li>
         </li>
       </ul>
     </div><!-- /.navbar-collapse -->
@@ -204,7 +207,7 @@
 
       <div class="row">
   <div class="span8">
-    <h2>Arrow &lt; v0.1.0 <a href="https://travis-ci.org/rgrannell1/arrow"><img src="https://travis-ci.org/rgrannell1/arrow.png" alt="Build Status"/></a></h2>
+    <h2>Arrow 0.3.0 <a href="https://travis-ci.org/rgrannell1/arrow"><img src="https://travis-ci.org/rgrannell1/arrow.png" alt="Build Status"/></a></h2>
 
 <blockquote>
 <p><em>&#39;The enjoyment of one&#39;s tools is an essential ingredient of successful work.&#39;</em> &ndash; Donald E. Knuth</p>
@@ -235,7 +238,7 @@ rarely have more than two parametres, so functions will just work without config
 
 <p>Arrow can be written using normal functions or with chaining methods. I prefer the latter. Chaining
 methods take an initial piece of data and apply successive transformation to it.
-This is a very natural way of expressing data munging or reshaping.</p>
+This is a very natural way of expressing data munging or reshaping</p>
 
 <pre><code class="r">&quot;-- Data From Hadley Wickham&#39;s https://github.com/hadley/data-stride&quot;
 
@@ -356,16 +359,16 @@ much more efficient.</p></li>
     <ul class="index">
         
       <li>
-        <code><a href="xExplode.html">xExplode</a></code>(xExplode_)<br />xExplode</li>
+        <code><a href="xExplode.html">xExplode</a></code><br />xExplode</li>
             
       <li>
         <code><a href="xFromChars.html">xFromChars</a></code>(xFromChars_)<br />xFromChars</li>
             
       <li>
-        <code><a href="xFromLines.html">xFromLines</a></code>(xFromLines_)<br />Concatentate a character vector with newlines as delimiters.</li>
+        <code><a href="xFromLines.html">xFromLines</a></code>(xFromLines_)<br />xFromLines</li>
             
       <li>
-        <code><a href="xFromWords.html">xFromWords</a></code>(xFromWords_)<br />Concatentate a character vector with spaces as delimiters.</li>
+        <code><a href="xFromWords.html">xFromWords</a></code>(xFromWords_)<br />xFromWords</li>
             
       <li>
         <code><a href="xImplode.html">xImplode</a></code>(xImplode_)<br />xImplode</li>
@@ -407,13 +410,13 @@ much more efficient.</p></li>
     <ul class="index">
         
       <li>
-        <code><a href="xChoose.html">xChoose</a></code>(xChoose_)<br />Enumerate all ways of choosing several elements from a collection.</li>
+        <code><a href="xChoose.html">xChoose</a></code>(xChoose_)<br />xChoose</li>
             
       <li>
         <code><a href="xCycle.html">xCycle</a></code>(xCycle_)<br />xCycle</li>
             
       <li>
-        <code><a href="xReorder.html">xReorder</a></code>(xReorder_)<br />Permute a collection of collections using indices.</li>
+        <code><a href="xReorder.html">xReorder</a></code>(xReorder_)<br />xReorder</li>
             
       <li>
         <code><a href="xProdSetOf.html">xProdSetOf</a></code>(xProdSetOf_)<br />xProdSetOf</li>
@@ -467,7 +470,7 @@ much more efficient.</p></li>
         <code><a href="xPartition.html">xPartition</a></code>(xPartition_)<br />xPartition</li>
             
       <li>
-        <code><a href="xRejectEmpty.html">xRejectEmpty</a></code>(xPack, xPack_, xRejectEmpty_)<br />Remove the empty values from a collection.</li>
+        <code><a href="xRejectEmpty.html">xRejectEmpty</a></code>(xPack, xPack_, xRejectEmpty_)<br />xRejectEmpty</li>
             
       <li>
         <code><a href="xRejectNan.html">xRejectNan</a></code>(xRejectNan_)<br />xRejectNan</li>
@@ -515,8 +518,7 @@ much more efficient.</p></li>
         <code><a href="xDelay.html">xDelay</a></code><br />xDelay</li>
             
       <li>
-        <code><a href="xDo.html">xDo</a></code>(xDo_)<br />Map (a possibly side-effectful) function over a
-</li>
+        <code><a href="xDo.html">xDo</a></code>(xDo_)<br />xDo</li>
             
       <li>
         <code><a href="xExecute.html">xExecute</a></code><br />$ xExecute</li>
@@ -645,14 +647,10 @@ much more efficient.</p></li>
         <code><a href="xDeepMap.html">xDeepMap</a></code>(xDeepMap_)<br />xDeepMap</li>
             
       <li>
-        <code><a href="xFlatMap.html">xFlatMap</a></code>(xFlatMap_)<br />Concatenate the results of applying a function
-</li>
+        <code><a href="xFlatMap.html">xFlatMap</a></code>(xFlatMap_)<br />xFlatMap</li>
             
       <li>
         <code><a href="xMap.html">xMap</a></code>(xMap_)<br />xMap</li>
-            
-      <li>
-        <code><a href="xMapIndexed.html">xMapIndexed</a></code>(xMapIndexed_)<br />xMapIndexed</li>
             
       <li>
         <code><a href="xMapply.html">xMapply</a></code>(xMapply_)<br />xMapply</li>
@@ -706,7 +704,7 @@ much more efficient.</p></li>
         <code><a href="xLift.html">xLift</a></code>(%and%, %or%, xLift_)<br />xLift</li>
             
       <li>
-        <code><a href="xNot.html">xNot</a></code><br />Return the logical negation of a function.</li>
+        <code><a href="xNot.html">xNot</a></code><br />xNot</li>
             
       <li>
         <code><a href="xFix.html">xFix</a></code>(xFix_)<br />xFix</li>
@@ -727,7 +725,7 @@ much more efficient.</p></li>
     <ul class="index">
         
       <li>
-        <code><a href="xAddKeys.html">xAddKeys</a></code><br />xAddKeys</li>
+        <code><a href="xAddKeys.html">xAddKeys</a></code>(xAddKeys...)<br />xAddKeys</li>
             
       <li>
         <code><a href="xPluck.html">xPluck</a></code>(xPluck_)<br />xPluck</li>
@@ -811,7 +809,7 @@ much more efficient.</p></li>
         <code><a href="xChunk.html">xChunk</a></code>(xChunk_)<br />xChunk</li>
             
       <li>
-        <code><a href="xFlatten.html">xFlatten</a></code>(xFlatten_)<br />Unnest a nested list to a given depth.</li>
+        <code><a href="xFlatten.html">xFlatten</a></code>(xFlatten_)<br />xFlatten</li>
             
       <li>
         <code><a href="xGroupBy.html">xGroupBy</a></code>(xGroupBy_)<br />xGroupBy</li>
@@ -877,7 +875,7 @@ much more efficient.</p></li>
         <code><a href="xDrop.html">xDrop</a></code>(xDrop_)<br />xDrop</li>
             
       <li>
-        <code><a href="xMaxBy.html">xMaxBy</a></code>(xMaxBy_)<br />Get the largest value in a collection according to a measure function.</li>
+        <code><a href="xMaxBy.html">xMaxBy</a></code>(xMaxBy_)<br />xMaxBy</li>
             
       <li>
         <code><a href="xMinBy.html">xMinBy</a></code>(xMinBy_)<br />xMinBy</li>
@@ -889,7 +887,7 @@ much more efficient.</p></li>
         <code><a href="xFourthOf.html">xFourthOf</a></code>(xFourthOf_)<br />xFourthOf</li>
             
       <li>
-        <code><a href="xInitOf.html">xInitOf</a></code>(xInitOf_)<br />Remove the last element of a collection.</li>
+        <code><a href="xInitOf.html">xInitOf</a></code>(xInitOf_)<br />xInitOf</li>
             
       <li>
         <code><a href="xLastOf.html">xLastOf</a></code>(xLastOf_)<br />xLastOf</li>
@@ -898,7 +896,7 @@ much more efficient.</p></li>
         <code><a href="xPluck.html">xPluck</a></code>(xPluck_)<br />xPluck</li>
             
       <li>
-        <code><a href="xRestOf.html">xRestOf</a></code>(xRestOf_)<br />Remove the first element from a collection.</li>
+        <code><a href="xRestOf.html">xRestOf</a></code>(xRestOf_)<br />xRestOf</li>
             
       <li>
         <code><a href="xSlice.html">xSlice</a></code>(xSlice_)<br />xSlice</li>
@@ -1001,16 +999,16 @@ much more efficient.</p></li>
     <ul class="index">
         
       <li>
-        <code><a href="xIsEmpty.html">xIsEmpty</a></code>(xIsEmpty_)<br />Is a collection length-zero?</li>
+        <code><a href="xIsEmpty.html">xIsEmpty</a></code>(xIsEmpty_)<br />xIsEmpty</li>
             
       <li>
-        <code><a href="xIsFalse.html">xIsFalse</a></code><br />Is an value false?</li>
+        <code><a href="xIsFalse.html">xIsFalse</a></code><br />xIsFalse</li>
             
       <li>
-        <code><a href="xIsNa.html">xIsNa</a></code><br />Is an value na?</li>
+        <code><a href="xIsNa.html">xIsNa</a></code><br />xIsNa</li>
             
       <li>
-        <code><a href="xIsNan.html">xIsNan</a></code><br />Is an value nan?</li>
+        <code><a href="xIsNan.html">xIsNan</a></code><br />xIsNan</li>
             
       <li>
         <code><a href="xIsNull.html">xIsNull</a></code><br />xIsNull</li>
@@ -1086,6 +1084,9 @@ composition of simple functions to create complex, expressive programs.
         <code><a href="xLocate.html">xLocate</a></code>(xLocate_)<br />xLocate</li>
             
       <li>
+        <code><a href="xUnzipIndices.html">xUnzipIndices</a></code>(xUnzipIndices_)<br />xUnzipIndices</li>
+            
+      <li>
         <code><a href="xWhere.html">xWhere</a></code>(xWhere_)<br />xWhere</li>
     
     </ul>
@@ -1117,8 +1118,16 @@ composition of simple functions to create complex, expressive programs.
 		return "<pre class = 'input r'>" + text + "</pre>"
 	})
 
+	// I LOVE having jQuery as a dependency. Best library ever written.
+
 	// reorder the xMethod fields.
 	$('div.Description').prependTo('.span8')
+
+	$('#contact-link').click(function() {
+
+		$('.span8').html("to contact me do stuff.")
+
+	})
 
 </script>
 

@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-<title>xIsNa. arrow 0.1.0</title>
+<title>xIsNa. arrow 0.3.0</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="author" content="">
 
@@ -82,6 +82,9 @@
 		max-height: 250px;
 		overflow: scroll;
 		padding-left: 10px;
+	}
+	div.output {
+	    background: #f6f6f6;
 	}
 
 	h2 {
@@ -176,21 +179,21 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">arrow 0.1.0</a>
+      <a class="navbar-brand" href="#">arrow 0.3.0</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
 
-        <li><a href="index.html">Index</a></li>
-        <li><a href="content-test.html">Tutorials</a></li>
-        <li><a href="#">Demos</a></li>
-        <li><a href="#">Contact/About</a></li>
+        <li><a id="index-link" href="index.html">Index</a></li>
+        <li><a id="tutorial-link">Tutorials</a></li>
+        <li><a id="demos-link" href="#">Demos</a></li>
+        <li><a id="contact-link" href="#">Contact/About</a></li>
 
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="https://github.com/rgrannell1/arrow">Github</a></li>
+        <li><a id="github-link" href="https://github.com/rgrannell1/arrow">Github</a></li>
         </li>
       </ul>
     </div><!-- /.navbar-collapse -->
@@ -202,7 +205,7 @@
       
       </header>
 
-      <h1>Is an value na?</h1>
+      <h1>xIsNa</h1>
 
 <div class="row">
   <div class="span8">
@@ -217,8 +220,8 @@
       <dd>see above.</dd>
     </dl>
     
-    <div class="Is an value na?">
-      <h2>Is an value na?</h2>
+    <div class="xIsNa">
+      <h2>xIsNa</h2>
 
     </div>
 
@@ -233,6 +236,15 @@
       <h2>Description</h2>
 
       <p>Is an value na?</p>
+
+    </div>
+
+    <div class="Type Signature">
+      <h2>Type Signature</h2>
+
+      <p></p>
+
+      <p>any -> <logical></p>
 
     </div>
 
@@ -312,8 +324,16 @@ Other value_testing_functions: <code><a href='xElemIsFalse.html'>xElemIsFalse</a
 		return "<pre class = 'input r'>" + text + "</pre>"
 	})
 
+	// I LOVE having jQuery as a dependency. Best library ever written.
+
 	// reorder the xMethod fields.
 	$('div.Description').prependTo('.span8')
+
+	$('#contact-link').click(function() {
+
+		$('.span8').html("to contact me do stuff.")
+
+	})
 
 </script>
 

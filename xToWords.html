@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-<title>xToWords. arrow 0.1.0</title>
+<title>xToWords. arrow 0.3.0</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="author" content="">
 
@@ -82,6 +82,9 @@
 		max-height: 250px;
 		overflow: scroll;
 		padding-left: 10px;
+	}
+	div.output {
+	    background: #f6f6f6;
 	}
 
 	h2 {
@@ -176,21 +179,21 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">arrow 0.1.0</a>
+      <a class="navbar-brand" href="#">arrow 0.3.0</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
 
-        <li><a href="index.html">Index</a></li>
-        <li><a href="content-test.html">Tutorials</a></li>
-        <li><a href="#">Demos</a></li>
-        <li><a href="#">Contact/About</a></li>
+        <li><a id="index-link" href="index.html">Index</a></li>
+        <li><a id="tutorial-link">Tutorials</a></li>
+        <li><a id="demos-link" href="#">Demos</a></li>
+        <li><a id="contact-link" href="#">Contact/About</a></li>
 
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="https://github.com/rgrannell1/arrow">Github</a></li>
+        <li><a id="github-link" href="https://github.com/rgrannell1/arrow">Github</a></li>
         </li>
       </ul>
     </div><!-- /.navbar-collapse -->
@@ -290,17 +293,16 @@ x_Reduce(
 
     <h2>See also</h2>
     
-Other text_processing_functions: <code><a href='xExplode.html'>xExplode</a></code>,
-  <code><a href='xExplode.html'>xExplode_</a></code>; <code><a href='xFromChars.html'>xFromChars</a></code>,
-  <code><a href='xFromChars.html'>xFromChars_</a></code>; <code><a href='xFromLines.html'>xFromLines</a></code>,
-  <code><a href='xFromLines.html'>xFromLines_</a></code>; <code><a href='xFromWords.html'>xFromWords</a></code>,
-  <code><a href='xFromWords.html'>xFromWords_</a></code>; <code><a href='xImplode.html'>xImplode</a></code>,
-  <code><a href='xImplode.html'>xImplode_</a></code>; <code><a href='xReadChars.html'>xReadChars</a></code>;
-  <code><a href='xReadLines.html'>xReadLines</a></code>; <code><a href='xReadWords.html'>xReadWords</a></code>;
-  <code><a href='xSliceString.html'>xSliceString</a></code>, <code><a href='xSliceString.html'>xSliceString_</a></code>;
-  <code><a href='xToChars.html'>xToChars</a></code>; <code><a href='xToLines.html'>xToLines</a></code>;
-  <code><a href='xWriteChars.html'>xWriteChars</a></code>; <code><a href='xWriteLines.html'>xWriteLines</a></code>;
-  <code><a href='xWriteWords.html'>xWriteWords</a></code>
+Other text_processing_functions: <code><a href='xExplode.html'>xExplode</a></code>;
+  <code><a href='xFromChars.html'>xFromChars</a></code>, <code><a href='xFromChars.html'>xFromChars_</a></code>;
+  <code><a href='xFromLines.html'>xFromLines</a></code>, <code><a href='xFromLines.html'>xFromLines_</a></code>;
+  <code><a href='xFromWords.html'>xFromWords</a></code>, <code><a href='xFromWords.html'>xFromWords_</a></code>;
+  <code><a href='xImplode.html'>xImplode</a></code>, <code><a href='xImplode.html'>xImplode_</a></code>;
+  <code><a href='xReadChars.html'>xReadChars</a></code>; <code><a href='xReadLines.html'>xReadLines</a></code>;
+  <code><a href='xReadWords.html'>xReadWords</a></code>; <code><a href='xSliceString.html'>xSliceString</a></code>,
+  <code><a href='xSliceString.html'>xSliceString_</a></code>; <code><a href='xToChars.html'>xToChars</a></code>;
+  <code><a href='xToLines.html'>xToLines</a></code>; <code><a href='xWriteChars.html'>xWriteChars</a></code>;
+  <code><a href='xWriteLines.html'>xWriteLines</a></code>; <code><a href='xWriteWords.html'>xWriteWords</a></code>
 
       </div>
 </div>
@@ -327,8 +329,16 @@ Other text_processing_functions: <code><a href='xExplode.html'>xExplode</a></cod
 		return "<pre class = 'input r'>" + text + "</pre>"
 	})
 
+	// I LOVE having jQuery as a dependency. Best library ever written.
+
 	// reorder the xMethod fields.
 	$('div.Description').prependTo('.span8')
+
+	$('#contact-link').click(function() {
+
+		$('.span8').html("to contact me do stuff.")
+
+	})
 
 </script>
 

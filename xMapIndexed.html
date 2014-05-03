@@ -6,10 +6,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="author" content="">
 
-<link href="css/bootstrap.css" rel="stylesheet">
-<link href="css/bootstrap-responsive.css" rel="stylesheet">
-<link href="css/highlight.css" rel="stylesheet">
-<link href="css/staticdocs.css" rel="stylesheet">
+<linkhref="css/bootstrap.css" rel="stylesheet">
+<linkhref="css/bootstrap-responsive.css" rel="stylesheet">
+<linkhref="css/highlight.css" rel="stylesheet">
+<linkhref="css/staticdocs.css" rel="stylesheet">
 
 <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
 
@@ -183,14 +183,14 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
 
-        <li><a href="index.html">Index</a></li>
-        <li><a href="content-test.html">Tutorials</a></li>
-        <li><a href="#">Demos</a></li>
-        <li><a href="#">Contact/About</a></li>
+        <li><a id="index-link" href="index.html">Index</a></li>
+        <li><a id="tutorial-link">Tutorials</a></li>
+        <li><a id="demos-link" href="#">Demos</a></li>
+        <li><a id="contact-link" href="#">Contact/About</a></li>
 
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="https://github.com/rgrannell1/arrow">Github</a></li>
+        <li><a id="github-link" href="https://github.com/rgrannell1/arrow">Github</a></li>
         </li>
       </ul>
     </div><!-- /.navbar-collapse -->
@@ -343,8 +343,16 @@ Other function_application_functions: <code><a href='xApply.html'>xApply</a></co
 		return "<pre class = 'input r'>" + text + "</pre>"
 	})
 
+	// I LOVE having jQuery as a dependency. Best library ever written.
+
 	// reorder the xMethod fields.
 	$('div.Description').prependTo('.span8')
+
+	$('#contact-link').click(function() {
+
+		$('.span8').html("to contact me do stuff.")
+
+	})
 
 </script>
 

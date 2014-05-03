@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-<title>xChop. arrow 0.1.0</title>
+<title>xChop. arrow 0.3.0</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="author" content="">
 
@@ -82,6 +82,9 @@
 		max-height: 250px;
 		overflow: scroll;
 		padding-left: 10px;
+	}
+	div.output {
+	    background: #f6f6f6;
 	}
 
 	h2 {
@@ -176,21 +179,21 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">arrow 0.1.0</a>
+      <a class="navbar-brand" href="#">arrow 0.3.0</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
 
-        <li><a href="index.html">Index</a></li>
-        <li><a href="content-test.html">Tutorials</a></li>
-        <li><a href="#">Demos</a></li>
-        <li><a href="#">Contact/About</a></li>
+        <li><a id="index-link" href="index.html">Index</a></li>
+        <li><a id="tutorial-link">Tutorials</a></li>
+        <li><a id="demos-link" href="#">Demos</a></li>
+        <li><a id="contact-link" href="#">Contact/About</a></li>
 
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="https://github.com/rgrannell1/arrow">Github</a></li>
+        <li><a id="github-link" href="https://github.com/rgrannell1/arrow">Github</a></li>
         </li>
       </ul>
     </div><!-- /.navbar-collapse -->
@@ -244,19 +247,28 @@
       <h2>Details</h2>
 
       <p><b>xChop</b> is used to divide a collection into several
-segments. This differs from <b>xChunk</b> in that <b>xChop</b>
-creates a fixed number of segments or arbitrary size, while
-<b>xChunk</b> creates segments of fixed size, but not a fixed
-number of such segments.</p>
+    segments. This differs from <b>xChunk</b> in that <b>xChop</b>
+    creates a fixed number of segments or arbitrary size, while
+    <b>xChunk</b> creates segments of fixed size, but not a fixed
+    number of such segments.</p>
 
       <p><code>xChop(2, 1:5)</code></p>
 
       <p><code>list(list(1, 2, 3), list(4, 5))</code></p>
 
       <p><b>xChop</b> can be used for dividing a task for parallel execution.
-For example, a very large collection could be chopped into
-four subcollections by using <b>xChop(4, coll)</b>, before applying a
-function to each sublist using <b>mclapply( )</b>.</p>
+    For example, a very large collection could be chopped into
+    four subcollections by using <b>xChop(4, coll)</b>, before applying a
+    function to each sublist using <b>mclapply( )</b>.</p>
+
+    </div>
+
+    <div class="Type Signature">
+      <h2>Type Signature</h2>
+
+      <p></p>
+
+      <p>|numeric| -> |any| -> [[any]]</p>
 
     </div>
 
@@ -300,7 +312,8 @@ Other reshaping_functions: <code><a href='xChunk.html'>xChunk</a></code>,
   <code><a href='xSortBy.html'>xSortBy_</a></code>; <code><a href='xSplitAt.html'>xSplitAt</a></code>,
   <code><a href='xSplitAt.html'>xSplitAt_</a></code>; <code><a href='xSplitWith.html'>xSplitWith</a></code>,
   <code><a href='xSplitWith.html'>xSplitWith_</a></code>; <code><a href='xTabulate.html'>xTabulate</a></code>,
-  <code><a href='xTabulate.html'>xTabulate_</a></code>; <code><a href='xUnzipKeys.html'>xUnzipKeys</a></code>,
+  <code><a href='xTabulate.html'>xTabulate_</a></code>; <code><a href='xUnzipIndices.html'>xUnzipIndices</a></code>,
+  <code><a href='xUnzipIndices.html'>xUnzipIndices_</a></code>; <code><a href='xUnzipKeys.html'>xUnzipKeys</a></code>,
   <code><a href='xUnzipKeys.html'>xUnzipKeys_</a></code>; <code><a href='xZipKeys.html'>xZipKeys</a></code>,
   <code><a href='xZipKeys.html'>xZipKeys_</a></code>; <code><a href='xZip.html'>xZip</a></code>,
   <code><a href='xZip.html'>xZip_</a></code>
@@ -330,8 +343,16 @@ Other reshaping_functions: <code><a href='xChunk.html'>xChunk</a></code>,
 		return "<pre class = 'input r'>" + text + "</pre>"
 	})
 
+	// I LOVE having jQuery as a dependency. Best library ever written.
+
 	// reorder the xMethod fields.
 	$('div.Description').prependTo('.span8')
+
+	$('#contact-link').click(function() {
+
+		$('.span8').html("to contact me do stuff.")
+
+	})
 
 </script>
 
