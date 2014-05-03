@@ -173,7 +173,6 @@
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
         <span class="sr-only">Toggle navigation</span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -243,6 +242,26 @@
 
     </div>
 
+    <div class="Details">
+      <h2>Details</h2>
+
+      <p><b>xMap</b> is probably the most commonly used higher-order function.
+    It is also one of the easier ones to understand. <b>xMap</b> takes a function
+    that works on a single value (like <b>isTRUE</b>) and a collection of such values.
+    It then calls that function on each element of a collection.</p>
+
+      <p><code>xMap(isTRUE, list(True, False, 10))</code></p>
+
+      <p>is essentially transformed to</p>
+
+      <p><code>list(isTRUE(True), isTRUE(False), isTRUE(10))</code></p>
+
+      <p>which result in</p>
+
+      <p><code>list(True, False, False)</code></p>
+
+    </div>
+
     <div class="Type Signature">
       <h2>Type Signature</h2>
 
@@ -260,159 +279,7 @@
       <p>Returns the empty list if <b>coll</b> is length-zero.</p>
 
     </div>
-    
-    <h2 id="examples">Examples</h2>
-    <pre class="examples"><div class='input'>
-# 1. Convert letters to uppercase.
-
-LETTERS &lt;- xMap(toupper, letters)
-LETTERS
-</div>
-<div class='output'>[[1]]
-[1] &quot;A&quot;
-
-[[2]]
-[1] &quot;B&quot;
-
-[[3]]
-[1] &quot;C&quot;
-
-[[4]]
-[1] &quot;D&quot;
-
-[[5]]
-[1] &quot;E&quot;
-
-[[6]]
-[1] &quot;F&quot;
-
-[[7]]
-[1] &quot;G&quot;
-
-[[8]]
-[1] &quot;H&quot;
-
-[[9]]
-[1] &quot;I&quot;
-
-[[10]]
-[1] &quot;J&quot;
-
-[[11]]
-[1] &quot;K&quot;
-
-[[12]]
-[1] &quot;L&quot;
-
-[[13]]
-[1] &quot;M&quot;
-
-[[14]]
-[1] &quot;N&quot;
-
-[[15]]
-[1] &quot;O&quot;
-
-[[16]]
-[1] &quot;P&quot;
-
-[[17]]
-[1] &quot;Q&quot;
-
-[[18]]
-[1] &quot;R&quot;
-
-[[19]]
-[1] &quot;S&quot;
-
-[[20]]
-[1] &quot;T&quot;
-
-[[21]]
-[1] &quot;U&quot;
-
-[[22]]
-[1] &quot;V&quot;
-
-[[23]]
-[1] &quot;W&quot;
-
-[[24]]
-[1] &quot;X&quot;
-
-[[25]]
-[1] &quot;Y&quot;
-
-[[26]]
-[1] &quot;Z&quot;
-
-</div>
-<div class='input'>
-# list(
-#    &quot;A&quot;, &quot;B&quot;, &quot;C&quot;, &quot;D&quot;, &quot;E&quot;, &quot;F&quot;,
-#    &quot;G&quot;, &quot;H&quot;, &quot;I&quot;, &quot;J&quot;, &quot;K&quot;, &quot;L&quot;,
-#    &quot;M&quot;, &quot;N&quot;, &quot;O&quot;, &quot;P&quot;, &quot;Q&quot;, &quot;R&quot;,
-#    &quot;S&quot;, &quot;T&quot;, &quot;U&quot;, &quot;V&quot;, &quot;W&quot;, &quot;X&quot;,
-#    &quot;Y&quot;, &quot;Z&quot;)
-
-# 2. grab the second value in a collection
-#    of collections.
-
-xMap_(
-    xSecondOf,
-    list(&quot;a&quot;, &quot;b&quot;, &quot;c&quot;),
-    list(1, 2, 3)
-)
-</div>
-<div class='output'>[[1]]
-[1] &quot;b&quot;
-
-[[2]]
-[1] 2
-
-</div>
-<div class='input'>
-# list(&quot;b&quot;, 2)
-
-
-
-# 3. HR Functional Programming
-# Evaluate the first 10 terms of the series of e^x
-
-# The number e^x is given by the series
-
-# 1 + x + x^2/2! + x^3/3! + ...,
-
-# This problem is perfect for xMap and xReduce.
-# The moderately astute will notice that
-
-# x = x^1 / 1!, and that 1 = x^0 / 0!,
-
-# meaning that the first two terms aren&#39;t any more difficult
-# to generate than the rest of the series. The series really is
-
-# x^0/0! + x^1/1! + x^2/2! + x^3/3! + ...,
-
-# which means we can map over the sequence 0, 1, ... and generate
-# the corresponding term in the series e^x
-
-power_of_e &lt;- x := {
-
-	x_(0:15)$
-	xMap(ith := {
-		(x^ith) / factorial(ith)
-	})$
-	x_Reduce(&#39;+&#39;)
-
-}
-
-power_of_e(1)
-</div>
-<div class='output'>[1] 2.718282
-</div>
-<div class='input'># 2.718282
-</div></pre>
-  </div>
+      </div>
   <div class="span4">
     <!-- <ul>
       <li>xMap</li><li>xMap_</li>
@@ -463,8 +330,43 @@ Other function_application_functions: <code><a href='xApply.html'>xApply</a></co
 	$('div.Description').prependTo('.span8')
 
 	$('#contact-link').click(function() {
+		// I know this is sub-optimal, but it'll do.
 
-		$('.span8').html("to contact me do stuff.")
+		var h1 = function (text) {
+			return "<h1>" + text + "</h1>"
+		}
+		var p = function (text) {
+			return "<p>" + text + "</p>"
+		}
+		var ul = function (text) {
+			return "<ul>" + text + "</ul>"
+		}
+		var li = function (text) {
+			return "<li>" + text + "</li>"
+		}
+		var a = function (href, text) {
+			return "<a href='" + href + "'>" + text + "</a>"
+		}
+		var em = function (text) {
+			return "<em>" + text + "</em>"
+		}
+
+		$('.span8').html(
+
+			h1("Contact / Queries") +
+			p("Feel free to contact me if any issue with or queries about Arrow through the following channels:</p>") +
+			ul(
+				li(p("my gmail address is r.grannell2")) +
+				li(a("https://twitter.com/RyanGrannell", "Twitter")) +
+				li(a("https://github.com/rgrannell1", "Github"))
+			) +
+			p("If you spot a typo or slight error in this documentation I would really appreciate if you sent " +
+				"a " + a("https://help.github.com/articles/using-pull-requests", "pull request") + " with the typo fixed.") +
+			p("Thanks for using Arrow") +
+			p("Ryan Grannell")
+
+		)
+
 
 	})
 

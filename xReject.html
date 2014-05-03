@@ -173,7 +173,6 @@
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
         <span class="sr-only">Toggle navigation</span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -274,99 +273,7 @@
    is returned by the predicate it is treated as a false value.</p>
 
     </div>
-    
-    <h2 id="examples">Examples</h2>
-    <pre class="examples"><div class='input'>
-# 1. removing NA values from a collection;
-#    an essential rstats task.
-
-xReject(is.na, c(1, 2, NA, 3, NA, 4))
-</div>
-<div class='output'>[[1]]
-[1] 1
-
-[[2]]
-[1] 2
-
-[[3]]
-[1] 3
-
-[[4]]
-[1] 4
-
-</div>
-<div class='input'>
-# list(1, 2, 3, 4)
-
-# 2. remove numeric outliers from a data set,
-#    by filtering them out.
-
-is_outlier &lt;- function (data_set) {
-    # returns a function that tests whether an element of the
-    # set is an outlier.
-
-    data_quantile &lt;- quantile(data_set)
-
-    range &lt;- list(
-        lower = data_quantile[[&#39;25%&#39;]],
-        higher = data_quantile[[&#39;75%&#39;]] )
-
-    function (member) {
-        member &lt; range$lower || member &gt; range$higher
-    }
-}
-
-data_set &lt;- c(1.0, 0.1, 1.1, 1.2, 0.1, 0.7, 0.8, 1.1)
-
-xReject(
-    is_outlier(data_set), data_set)
-</div>
-<div class='output'>[[1]]
-[1] 1
-
-[[2]]
-[1] 1.1
-
-[[3]]
-[1] 0.7
-
-[[4]]
-[1] 0.8
-
-[[5]]
-[1] 1.1
-
-</div>
-<div class='input'>
-# list(1, 1.1, 0.8, 1.1)
-
-# 3. HR Functional Programming #3
-# Remove values larger than a certain number
-
-# This is a job for xReject (close cousin of xSelect); it removes the values of
-# a collection for which its predicate function returns true. In this case,
-# we test if a number is larger than a maximum number; xReject then removes
-# the values for which this is true.
-
-elems_smaller_than &lt;- (maximum : nums) := {
-    xReject(x. &gt; maximum, nums)
-}
-
-elems_smaller_than(10, c(1, 8, 10, 11, 100))
-</div>
-<div class='output'>[[1]]
-[1] 1
-
-[[2]]
-[1] 8
-
-[[3]]
-[1] 10
-
-</div>
-<div class='input'># c(1, 8, 10)
-</div></pre>
-  </div>
+      </div>
   <div class="span4">
     <!-- <ul>
       <li>xReject</li><li>xReject_</li>
@@ -417,8 +324,43 @@ Other filtering_functions: <code><a href='xRejectEmpty.html'>xPack</a></code>,
 	$('div.Description').prependTo('.span8')
 
 	$('#contact-link').click(function() {
+		// I know this is sub-optimal, but it'll do.
 
-		$('.span8').html("to contact me do stuff.")
+		var h1 = function (text) {
+			return "<h1>" + text + "</h1>"
+		}
+		var p = function (text) {
+			return "<p>" + text + "</p>"
+		}
+		var ul = function (text) {
+			return "<ul>" + text + "</ul>"
+		}
+		var li = function (text) {
+			return "<li>" + text + "</li>"
+		}
+		var a = function (href, text) {
+			return "<a href='" + href + "'>" + text + "</a>"
+		}
+		var em = function (text) {
+			return "<em>" + text + "</em>"
+		}
+
+		$('.span8').html(
+
+			h1("Contact / Queries") +
+			p("Feel free to contact me if any issue with or queries about Arrow through the following channels:</p>") +
+			ul(
+				li(p("my gmail address is r.grannell2")) +
+				li(a("https://twitter.com/RyanGrannell", "Twitter")) +
+				li(a("https://github.com/rgrannell1", "Github"))
+			) +
+			p("If you spot a typo or slight error in this documentation I would really appreciate if you sent " +
+				"a " + a("https://help.github.com/articles/using-pull-requests", "pull request") + " with the typo fixed.") +
+			p("Thanks for using Arrow") +
+			p("Ryan Grannell")
+
+		)
+
 
 	})
 

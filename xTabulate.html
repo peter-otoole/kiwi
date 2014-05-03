@@ -173,7 +173,6 @@
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
         <span class="sr-only">Toggle navigation</span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -274,166 +273,7 @@
       <p>If <b>coll</b> is length-zero the empty list is returned.</p>
 
     </div>
-    
-    <h2 id="examples">Examples</h2>
-    <pre class="examples"><div class='input'>
-#
-# a subset of the 1999 Clinton impeachment vote.
-# each row of the data represents a candidate;
-# the columns the party, perjury vote and obstruction vote respectively.
-
-raw_clinton_vote &lt;- &quot;
-	R	Guilty		Guilty
-	D	NotGuilty	NotGuilty
-	R	Guilty		Guilty
-	R	Guilty		Guilty
-	D	NotGuilty	NotGuilty
-	D	NotGuilty	NotGuilty
-	R	Guilty		Guilty
-	D	NotGuilty	NotGuilty
-	D	NotGuilty	NotGuilty
-	R	Guilty		Guilty
-	D	NotGuilty	NotGuilty
-	D	NotGuilty	NotGuilty
-	R	Guilty		Guilty
-	D	NotGuilty	NotGuilty
-	R	Guilty		Guilty
-	R	Guilty		Guilty
-	D	NotGuilty	NotGuilty
-	R	Guilty		Guilty
-	R	NotGuilty	NotGuilty
-	D	NotGuilty	NotGuilty
-	R	Guilty		Guilty
-	R	NotGuilty	NotGuilty
-	D	NotGuilty	NotGuilty
-	R	Guilty		Guilty
-	R	Guilty		Guilty
-	D	NotGuilty	NotGuilty&quot;
-
-clinton_vote &lt;-
-	x_(raw_clinton_vote) $ xToLines() $ xMap(xToWords) $
-	xZip() $ xAddKeys(c(&#39;party&#39;, &#39;perjury&#39;, &#39;obstruction&#39;))
-
-# 1.
-# Tabulate the overall results for the perjury vote
-
-clinton_vote $ xAtKey(&#39;perjury&#39;) $ x_Tabulate()
-</div>
-<div class='output'>[[1]]
-[[1]][[1]]
-[1] &quot;Guilty&quot;
-
-[[1]][[2]]
-[1] 12
-
-
-[[2]]
-[[2]][[1]]
-[1] &quot;NotGuilty&quot;
-
-[[2]][[2]]
-[1] 14
-
-
-</div>
-<div class='input'>
-# list( list(&quot;Guilty&quot;, 12), list(&quot;NotGuilty&quot;, 14) )
-
-# 2.
-# Tabulate the overall results for the obstruction vote
-
-clinton_vote $ xAtKey(&#39;obstruction&#39;) $ x_Tabulate()
-</div>
-<div class='output'>[[1]]
-[[1]][[1]]
-[1] &quot;Guilty&quot;
-
-[[1]][[2]]
-[1] 12
-
-
-[[2]]
-[[2]][[1]]
-[1] &quot;NotGuilty&quot;
-
-[[2]][[2]]
-[1] 14
-
-
-</div>
-<div class='input'>
-# list( list(&quot;Guilty&quot;, 12), list(&quot;NotGuilty&quot;, 14) )
-
-# 3.
-# An advanced example;
-# get the overall vote within each party.
-
-clinton_vote $ xZip () $ xGroupBy(xFirstOf) $ # -- group by party
-xAtCol(2) $ # -- select the groups
-xMap(party := {
-	# get the perjury and obstruction votes by party.
-
-	list(
-		perjury =
-			x_(party) $ xAtCol(2) $ xTabulate() $ x_ZipKeys(),
-		obstruction =
-			x_(party) $ xAtCol(3) $ xTabulate() $ x_ZipKeys()
-	)
-
-}) $
-x_AddKeys(c(&#39;Republican&#39;, &#39;Democrat&#39;))
-</div>
-<div class='output'>$Republican
-$Republican$perjury
-$Republican$perjury$Guilty
-[1] 12
-
-$Republican$perjury$NotGuilty
-[1] 2
-
-
-$Republican$obstruction
-$Republican$obstruction$Guilty
-[1] 12
-
-$Republican$obstruction$NotGuilty
-[1] 2
-
-
-
-$Democrat
-$Democrat$perjury
-$Democrat$perjury$NotGuilty
-[1] 12
-
-
-$Democrat$obstruction
-$Democrat$obstruction$NotGuilty
-[1] 12
-
-
-
-</div>
-<div class='input'>
-
-# list(
-#     Republican =
-#         list(
-#             perjury =
-#                 list(Guilty = 12, NotGuilty = 2),
-#             obstruction =
-#                 list(Guilty = 12, NotGuilty = 2),
-#     Democrat =
-#         list(
-#             perjury =
-#                 list(NotGuilty = 12),
-#             obstruction =
-#                 list(NotGuilty = 12)
-#         )
-#     )
-# )
-</div></pre>
-  </div>
+      </div>
   <div class="span4">
     <!-- <ul>
       <li>xTabulate</li><li>xTabulate_</li>
@@ -494,8 +334,43 @@ Other reshaping_functions: <code><a href='xChop.html'>xChop</a></code>,
 	$('div.Description').prependTo('.span8')
 
 	$('#contact-link').click(function() {
+		// I know this is sub-optimal, but it'll do.
 
-		$('.span8').html("to contact me do stuff.")
+		var h1 = function (text) {
+			return "<h1>" + text + "</h1>"
+		}
+		var p = function (text) {
+			return "<p>" + text + "</p>"
+		}
+		var ul = function (text) {
+			return "<ul>" + text + "</ul>"
+		}
+		var li = function (text) {
+			return "<li>" + text + "</li>"
+		}
+		var a = function (href, text) {
+			return "<a href='" + href + "'>" + text + "</a>"
+		}
+		var em = function (text) {
+			return "<em>" + text + "</em>"
+		}
+
+		$('.span8').html(
+
+			h1("Contact / Queries") +
+			p("Feel free to contact me if any issue with or queries about Arrow through the following channels:</p>") +
+			ul(
+				li(p("my gmail address is r.grannell2")) +
+				li(a("https://twitter.com/RyanGrannell", "Twitter")) +
+				li(a("https://github.com/rgrannell1", "Github"))
+			) +
+			p("If you spot a typo or slight error in this documentation I would really appreciate if you sent " +
+				"a " + a("https://help.github.com/articles/using-pull-requests", "pull request") + " with the typo fixed.") +
+			p("Thanks for using Arrow") +
+			p("Ryan Grannell")
+
+		)
+
 
 	})
 

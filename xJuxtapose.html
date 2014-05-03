@@ -173,7 +173,6 @@
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
         <span class="sr-only">Toggle navigation</span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -280,128 +279,7 @@
       <p>If no functions are provided the empty list is returned.</p>
 
     </div>
-    
-    <h2 id="examples">Examples</h2>
-    <pre class="examples"><div class='input'>
-# 1. Collect several summary statistics of a dataset
-#    simultaneously.
-
-nums &lt;- xList[c(a, a^2, a^3), a &lt;- 1:10]
-
-x_(nums) $ x_Map(xJuxtapose_(max, mean, min))
-</div>
-<div class='output'>[[1]]
-[[1]][[1]]
-[1] 1
-
-[[1]][[2]]
-[1] 1
-
-[[1]][[3]]
-[1] 1
-
-
-[[2]]
-[[2]][[1]]
-[1] 8
-
-[[2]][[2]]
-[1] 4.666667
-
-[[2]][[3]]
-[1] 2
-
-
-[[3]]
-[[3]][[1]]
-[1] 27
-
-[[3]][[2]]
-[1] 13
-
-[[3]][[3]]
-[1] 3
-
-
-[[4]]
-[[4]][[1]]
-[1] 64
-
-[[4]][[2]]
-[1] 28
-
-[[4]][[3]]
-[1] 4
-
-
-[[5]]
-[[5]][[1]]
-[1] 125
-
-[[5]][[2]]
-[1] 51.66667
-
-[[5]][[3]]
-[1] 5
-
-
-[[6]]
-[[6]][[1]]
-[1] 216
-
-[[6]][[2]]
-[1] 86
-
-[[6]][[3]]
-[1] 6
-
-
-[[7]]
-[[7]][[1]]
-[1] 343
-
-[[7]][[2]]
-[1] 133
-
-[[7]][[3]]
-[1] 7
-
-
-[[8]]
-[[8]][[1]]
-[1] 512
-
-[[8]][[2]]
-[1] 194.6667
-
-[[8]][[3]]
-[1] 8
-
-
-[[9]]
-[[9]][[1]]
-[1] 729
-
-[[9]][[2]]
-[1] 273
-
-[[9]][[3]]
-[1] 9
-
-
-[[10]]
-[[10]][[1]]
-[1] 1000
-
-[[10]][[2]]
-[1] 370
-
-[[10]][[3]]
-[1] 10
-
-
-</div></pre>
-  </div>
+      </div>
   <div class="span4">
     <!-- <ul>
       <li>xJuxtapose</li><li>xJuxtapose_</li>
@@ -461,8 +339,43 @@ Other function_modifying_functions: <code><a href='xLift.html'>%and%</a></code>,
 	$('div.Description').prependTo('.span8')
 
 	$('#contact-link').click(function() {
+		// I know this is sub-optimal, but it'll do.
 
-		$('.span8').html("to contact me do stuff.")
+		var h1 = function (text) {
+			return "<h1>" + text + "</h1>"
+		}
+		var p = function (text) {
+			return "<p>" + text + "</p>"
+		}
+		var ul = function (text) {
+			return "<ul>" + text + "</ul>"
+		}
+		var li = function (text) {
+			return "<li>" + text + "</li>"
+		}
+		var a = function (href, text) {
+			return "<a href='" + href + "'>" + text + "</a>"
+		}
+		var em = function (text) {
+			return "<em>" + text + "</em>"
+		}
+
+		$('.span8').html(
+
+			h1("Contact / Queries") +
+			p("Feel free to contact me if any issue with or queries about Arrow through the following channels:</p>") +
+			ul(
+				li(p("my gmail address is r.grannell2")) +
+				li(a("https://twitter.com/RyanGrannell", "Twitter")) +
+				li(a("https://github.com/rgrannell1", "Github"))
+			) +
+			p("If you spot a typo or slight error in this documentation I would really appreciate if you sent " +
+				"a " + a("https://help.github.com/articles/using-pull-requests", "pull request") + " with the typo fixed.") +
+			p("Thanks for using Arrow") +
+			p("Ryan Grannell")
+
+		)
+
 
 	})
 
