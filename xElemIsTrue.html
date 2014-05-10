@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-<title>xElemIsTrue. arrow 0.3.0</title>
+<title>xElemIsTrue. arrow 0.6.0</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="author" content="">
 
@@ -178,7 +178,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">arrow 0.3.0</a>
+      <a class="navbar-brand" href="#">arrow 0.6.0</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -245,7 +245,7 @@
 
       <p></p>
 
-      <p>|any| -> <logical></p>
+      <p>|any| -> &lt;logical></p>
 
     </div>
     
@@ -278,10 +278,10 @@ Other value_testing_functions: <code><a href='xElemIsFalse.html'>xElemIsFalse</a
   <code><a href='xIsEmpty.html'>xIsEmpty_</a></code>; <code><a href='xIsFalse.html'>xIsFalse</a></code>;
   <code><a href='xIsNan.html'>xIsNan</a></code>; <code><a href='xIsNa.html'>xIsNa</a></code>;
   <code><a href='xIsNull.html'>xIsNull</a></code>; <code><a href='xIsTrue.html'>xIsTrue</a></code>;
-  <code><a href='xNotEmpty.html'>xNotEmpty</a></code>, <code><a href='xNotEmpty.html'>xNotEmpty_</a></code>;
-  <code><a href='xNotFalse.html'>xNotFalse</a></code>; <code><a href='xNotNan.html'>xNotNan</a></code>;
-  <code><a href='xNotNa.html'>xNotNa</a></code>; <code><a href='xNotNull.html'>xNotNull</a></code>;
-  <code><a href='xNotTrue.html'>xNotTrue</a></code>
+  <code><a href='xIs.html'>xIs</a></code>; <code><a href='xNotEmpty.html'>xNotEmpty</a></code>,
+  <code><a href='xNotEmpty.html'>xNotEmpty_</a></code>; <code><a href='xNotFalse.html'>xNotFalse</a></code>;
+  <code><a href='xNotNan.html'>xNotNan</a></code>; <code><a href='xNotNa.html'>xNotNa</a></code>;
+  <code><a href='xNotNull.html'>xNotNull</a></code>; <code><a href='xNotTrue.html'>xNotTrue</a></code>
 
       </div>
 </div>
@@ -308,10 +308,15 @@ Other value_testing_functions: <code><a href='xElemIsFalse.html'>xElemIsFalse</a
 		return "<pre class = 'input r'>" + text + "</pre>"
 	})
 
-	// I LOVE having jQuery as a dependency. Best library ever written.
+	// I LOVE having jQuery as a dependency. Best library ever written,
+	// and a major inspiration for arrow.
 
 	// reorder the xMethod fields.
 	$('div.Description').prependTo('.span8')
+	// Type Signature gets split into two classes;
+	// I should fix this by renaming section names.
+	$('div.Type').prependTo('.span8')
+	// replace the special characters > and < in the type signatures.
 
 	$('#contact-link').click(function() {
 		// I know this is sub-optimal, but it'll do.
@@ -348,7 +353,6 @@ Other value_testing_functions: <code><a href='xElemIsFalse.html'>xElemIsFalse</a
 				"a " + a("https://help.github.com/articles/using-pull-requests", "pull request") + " with the typo fixed.") +
 			p("Thanks for using Arrow") +
 			p("Ryan Grannell")
-
 		)
 
 
@@ -357,7 +361,7 @@ Other value_testing_functions: <code><a href='xElemIsFalse.html'>xElemIsFalse</a
 </script>
 
 <style type="text/css">
-.span8 > div:nth-child(6) > h2:nth-child(1) {
+.span8 > div:nth-child(7) > h2:nth-child(1) {
 	display: none;
 }
 .span8 div:first-of-type h2 {

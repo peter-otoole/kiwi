@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-<title>xNotMember. arrow 0.3.0</title>
+<title>xNotMember. arrow 0.6.0</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="author" content="">
 
@@ -178,7 +178,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">arrow 0.3.0</a>
+      <a class="navbar-brand" href="#">arrow 0.6.0</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -247,7 +247,7 @@
 
       <p></p>
 
-      <p>any -> |any| -> <logical></p>
+      <p>any -> |any| -> &lt;logical></p>
 
     </div>
 
@@ -281,7 +281,8 @@ Other set_functions: <code><a href='xDuplicatesOf.html'>xDuplicatesOf</a></code>
   <code><a href='xDuplicatesOf.html'>xDuplicatesOf_</a></code>; <code><a href='xInter.html'>xInter</a></code>,
   <code><a href='xInter.html'>xInter_</a></code>; <code><a href='xIsMember.html'>xIsMember</a></code>,
   <code><a href='xIsMember.html'>xIsMember_</a></code>; <code><a href='xIsSubset.html'>xIsSubset</a></code>,
-  <code><a href='xIsSubset.html'>xIsSubset_</a></code>; <code><a href='xPowerSetOf.html'>xPowerSetOf</a></code>,
+  <code><a href='xIsSubset.html'>xIsSubset_</a></code>; <code><a href='xNotSubset.html'>xNotSubset</a></code>,
+  <code><a href='xNotSubset.html'>xNotSubset_</a></code>; <code><a href='xPowerSetOf.html'>xPowerSetOf</a></code>,
   <code><a href='xPowerSetOf.html'>xPowerSetOf_</a></code>; <code><a href='xProdSetOf.html'>xProdSetOf</a></code>,
   <code><a href='xProdSetOf.html'>xProdSetOf_</a></code>; <code><a href='xReorder.html'>xReorder</a></code>,
   <code><a href='xReorder.html'>xReorder_</a></code>; <code><a href='xUnionOf.html'>xUnionOf</a></code>,
@@ -313,10 +314,15 @@ Other set_functions: <code><a href='xDuplicatesOf.html'>xDuplicatesOf</a></code>
 		return "<pre class = 'input r'>" + text + "</pre>"
 	})
 
-	// I LOVE having jQuery as a dependency. Best library ever written.
+	// I LOVE having jQuery as a dependency. Best library ever written,
+	// and a major inspiration for arrow.
 
 	// reorder the xMethod fields.
 	$('div.Description').prependTo('.span8')
+	// Type Signature gets split into two classes;
+	// I should fix this by renaming section names.
+	$('div.Type').prependTo('.span8')
+	// replace the special characters > and < in the type signatures.
 
 	$('#contact-link').click(function() {
 		// I know this is sub-optimal, but it'll do.
@@ -353,7 +359,6 @@ Other set_functions: <code><a href='xDuplicatesOf.html'>xDuplicatesOf</a></code>
 				"a " + a("https://help.github.com/articles/using-pull-requests", "pull request") + " with the typo fixed.") +
 			p("Thanks for using Arrow") +
 			p("Ryan Grannell")
-
 		)
 
 
@@ -362,7 +367,7 @@ Other set_functions: <code><a href='xDuplicatesOf.html'>xDuplicatesOf</a></code>
 </script>
 
 <style type="text/css">
-.span8 > div:nth-child(6) > h2:nth-child(1) {
+.span8 > div:nth-child(7) > h2:nth-child(1) {
 	display: none;
 }
 .span8 div:first-of-type h2 {

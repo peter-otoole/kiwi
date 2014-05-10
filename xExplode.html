@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-<title>xExplode. arrow 0.3.0</title>
+<title>xExplode. arrow 0.6.0</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="author" content="">
 
@@ -178,7 +178,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">arrow 0.3.0</a>
+      <a class="navbar-brand" href="#">arrow 0.6.0</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -244,7 +244,7 @@
 
       <p></p>
 
-      <p><character> -> <character> -> <character></p>
+      <p><character> -> &lt;character> -> &lt;character></p>
 
     </div>
 
@@ -253,7 +253,7 @@
 
       <p></p>
 
-      <p>Returns the empty list if <b>coll</b> is length-zero.
+      <p>Returns the empty string if <b>str</b> is length-zero.
    If no match is found the original string is returned.
    Every element of the returned character vector has one
    or more characters - no zero-character elements are ever
@@ -288,7 +288,8 @@ Other text_processing_functions: <code><a href='xFromChars.html'>xFromChars</a><
   <code><a href='xFromChars.html'>xFromChars_</a></code>; <code><a href='xFromLines.html'>xFromLines</a></code>,
   <code><a href='xFromLines.html'>xFromLines_</a></code>; <code><a href='xFromWords.html'>xFromWords</a></code>,
   <code><a href='xFromWords.html'>xFromWords_</a></code>; <code><a href='xImplode.html'>xImplode</a></code>,
-  <code><a href='xImplode.html'>xImplode_</a></code>; <code><a href='xReadChars.html'>xReadChars</a></code>;
+  <code><a href='xImplode.html'>xImplode_</a></code>; <code><a href='xIsMatch.html'>xIsMatch</a></code>;
+  <code><a href='xNotMatch.html'>xNotMatch</a></code>; <code><a href='xReadChars.html'>xReadChars</a></code>;
   <code><a href='xReadLines.html'>xReadLines</a></code>; <code><a href='xReadWords.html'>xReadWords</a></code>;
   <code><a href='xSliceString.html'>xSliceString</a></code>, <code><a href='xSliceString.html'>xSliceString_</a></code>;
   <code><a href='xToChars.html'>xToChars</a></code>; <code><a href='xToLines.html'>xToLines</a></code>;
@@ -320,10 +321,15 @@ Other text_processing_functions: <code><a href='xFromChars.html'>xFromChars</a><
 		return "<pre class = 'input r'>" + text + "</pre>"
 	})
 
-	// I LOVE having jQuery as a dependency. Best library ever written.
+	// I LOVE having jQuery as a dependency. Best library ever written,
+	// and a major inspiration for arrow.
 
 	// reorder the xMethod fields.
 	$('div.Description').prependTo('.span8')
+	// Type Signature gets split into two classes;
+	// I should fix this by renaming section names.
+	$('div.Type').prependTo('.span8')
+	// replace the special characters > and < in the type signatures.
 
 	$('#contact-link').click(function() {
 		// I know this is sub-optimal, but it'll do.
@@ -360,7 +366,6 @@ Other text_processing_functions: <code><a href='xFromChars.html'>xFromChars</a><
 				"a " + a("https://help.github.com/articles/using-pull-requests", "pull request") + " with the typo fixed.") +
 			p("Thanks for using Arrow") +
 			p("Ryan Grannell")
-
 		)
 
 
@@ -369,7 +374,7 @@ Other text_processing_functions: <code><a href='xFromChars.html'>xFromChars</a><
 </script>
 
 <style type="text/css">
-.span8 > div:nth-child(6) > h2:nth-child(1) {
+.span8 > div:nth-child(7) > h2:nth-child(1) {
 	display: none;
 }
 .span8 div:first-of-type h2 {

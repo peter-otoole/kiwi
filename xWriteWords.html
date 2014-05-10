@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-<title>xWriteWords. arrow 0.3.0</title>
+<title>xWriteWords. arrow 0.6.0</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="author" content="">
 
@@ -178,7 +178,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">arrow 0.3.0</a>
+      <a class="navbar-brand" href="#">arrow 0.6.0</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -275,6 +275,7 @@ Other text_processing_functions: <code><a href='xExplode.html'>xExplode</a></cod
   <code><a href='xFromLines.html'>xFromLines</a></code>, <code><a href='xFromLines.html'>xFromLines_</a></code>;
   <code><a href='xFromWords.html'>xFromWords</a></code>, <code><a href='xFromWords.html'>xFromWords_</a></code>;
   <code><a href='xImplode.html'>xImplode</a></code>, <code><a href='xImplode.html'>xImplode_</a></code>;
+  <code><a href='xIsMatch.html'>xIsMatch</a></code>; <code><a href='xNotMatch.html'>xNotMatch</a></code>;
   <code><a href='xReadChars.html'>xReadChars</a></code>; <code><a href='xReadLines.html'>xReadLines</a></code>;
   <code><a href='xReadWords.html'>xReadWords</a></code>; <code><a href='xSliceString.html'>xSliceString</a></code>,
   <code><a href='xSliceString.html'>xSliceString_</a></code>; <code><a href='xToChars.html'>xToChars</a></code>;
@@ -306,10 +307,15 @@ Other text_processing_functions: <code><a href='xExplode.html'>xExplode</a></cod
 		return "<pre class = 'input r'>" + text + "</pre>"
 	})
 
-	// I LOVE having jQuery as a dependency. Best library ever written.
+	// I LOVE having jQuery as a dependency. Best library ever written,
+	// and a major inspiration for arrow.
 
 	// reorder the xMethod fields.
 	$('div.Description').prependTo('.span8')
+	// Type Signature gets split into two classes;
+	// I should fix this by renaming section names.
+	$('div.Type').prependTo('.span8')
+	// replace the special characters > and < in the type signatures.
 
 	$('#contact-link').click(function() {
 		// I know this is sub-optimal, but it'll do.
@@ -346,7 +352,6 @@ Other text_processing_functions: <code><a href='xExplode.html'>xExplode</a></cod
 				"a " + a("https://help.github.com/articles/using-pull-requests", "pull request") + " with the typo fixed.") +
 			p("Thanks for using Arrow") +
 			p("Ryan Grannell")
-
 		)
 
 
@@ -355,7 +360,7 @@ Other text_processing_functions: <code><a href='xExplode.html'>xExplode</a></cod
 </script>
 
 <style type="text/css">
-.span8 > div:nth-child(6) > h2:nth-child(1) {
+.span8 > div:nth-child(7) > h2:nth-child(1) {
 	display: none;
 }
 .span8 div:first-of-type h2 {

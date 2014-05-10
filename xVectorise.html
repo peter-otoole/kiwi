@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-<title>xVectorise. arrow 0.3.0</title>
+<title>xVectorise. arrow 0.6.0</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="author" content="">
 
@@ -178,7 +178,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">arrow 0.3.0</a>
+      <a class="navbar-brand" href="#">arrow 0.6.0</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -321,13 +321,13 @@ Other function_modifying_functions: <code><a href='xLift.html'>%and%</a></code>,
   <code><a href='xLift.html'>%or%</a></code>, <code><a href='xLift.html'>xLift</a></code>,
   <code><a href='xLift.html'>xLift_</a></code>; <code><a href='xCompose.html'>%of%</a></code>,
   <code><a href='xCompose.html'>%then%</a></code>, <code><a href='xCompose.html'>xCompose</a></code>,
-  <code><a href='xCompose.html'>xCompose_</a></code>; <code><a href='xAsClosure.html'>xAsClosure</a></code>;
-  <code><a href='xCapture.html'>xCapture</a></code>, <code><a href='xCapture.html'>xK</a></code>;
-  <code><a href='xDelay.html'>xDelay</a></code>; <code><a href='xFix.html'>xFix</a></code>,
-  <code><a href='xFix.html'>xFix_</a></code>; <code><a href='xJuxtapose.html'>xJuxtapose</a></code>,
-  <code><a href='xJuxtapose.html'>xJuxtapose_</a></code>; <code><a href='xNot.html'>xNot</a></code>;
-  <code><a href='xSpread.html'>xSpread</a></code>; <code><a href='xThread.html'>xThread</a></code>,
-  <code><a href='xThread.html'>xThread_</a></code>; <code><a href='xUnspread.html'>xUnspread</a></code>
+  <code><a href='xCompose.html'>xCompose_</a></code>; <code><a href='xCapture.html'>xCapture</a></code>,
+  <code><a href='xCapture.html'>xK</a></code>; <code><a href='xDelay.html'>xDelay</a></code>;
+  <code><a href='xFix.html'>xFix</a></code>, <code><a href='xFix.html'>xFix_</a></code>;
+  <code><a href='xJuxtapose.html'>xJuxtapose</a></code>, <code><a href='xJuxtapose.html'>xJuxtapose_</a></code>;
+  <code><a href='xNegate.html'>xNegate</a></code>; <code><a href='xSpread.html'>xSpread</a></code>;
+  <code><a href='xThread.html'>xThread</a></code>, <code><a href='xThread.html'>xThread_</a></code>;
+  <code><a href='xUnspread.html'>xUnspread</a></code>
 
       </div>
 </div>
@@ -354,10 +354,15 @@ Other function_modifying_functions: <code><a href='xLift.html'>%and%</a></code>,
 		return "<pre class = 'input r'>" + text + "</pre>"
 	})
 
-	// I LOVE having jQuery as a dependency. Best library ever written.
+	// I LOVE having jQuery as a dependency. Best library ever written,
+	// and a major inspiration for arrow.
 
 	// reorder the xMethod fields.
 	$('div.Description').prependTo('.span8')
+	// Type Signature gets split into two classes;
+	// I should fix this by renaming section names.
+	$('div.Type').prependTo('.span8')
+	// replace the special characters > and < in the type signatures.
 
 	$('#contact-link').click(function() {
 		// I know this is sub-optimal, but it'll do.
@@ -394,7 +399,6 @@ Other function_modifying_functions: <code><a href='xLift.html'>%and%</a></code>,
 				"a " + a("https://help.github.com/articles/using-pull-requests", "pull request") + " with the typo fixed.") +
 			p("Thanks for using Arrow") +
 			p("Ryan Grannell")
-
 		)
 
 
@@ -403,7 +407,7 @@ Other function_modifying_functions: <code><a href='xLift.html'>%and%</a></code>,
 </script>
 
 <style type="text/css">
-.span8 > div:nth-child(6) > h2:nth-child(1) {
+.span8 > div:nth-child(7) > h2:nth-child(1) {
 	display: none;
 }
 .span8 div:first-of-type h2 {

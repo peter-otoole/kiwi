@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-<title>Index. arrow 0.3.0</title>
+<title>Index. arrow 0.6.0</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="author" content="Ryan Grannell">
 
@@ -178,7 +178,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">arrow 0.3.0</a>
+      <a class="navbar-brand" href="#">arrow 0.6.0</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -206,42 +206,70 @@
 
       <div class="row">
   <div class="span8">
-    <p><img src="https://raw.githubusercontent.com/rgrannell1/arrow/develop/logo.png" width="100"></img></p>
+    <p><img src="https://raw.githubusercontent.com/rgrannell1/arrow/develop/logo.png" width="200"></img></p>
 
-<h2>Arrow 0.3.0 <a href="https://travis-ci.org/rgrannell1/arrow"><img src="https://travis-ci.org/rgrannell1/arrow.png" alt="Build Status"/></a></h2>
+<h2>Arrow 0.6.0 <a href="https://travis-ci.org/rgrannell1/arrow"><img src="https://travis-ci.org/rgrannell1/arrow.png" alt="Build Status"/></a></h2>
 
 <blockquote>
 <p><em>&#39;The enjoyment of one&#39;s tools is an essential ingredient of successful work.&#39;</em> &ndash; Donald E. Knuth</p>
 </blockquote>
 
+<p>Arrow makes R the functional language it was always meant to be.</p>
+
+<h3>Installation</h3>
+
+<p>Arrow isn&#39;t (and probably won&#39;t be) on CRAN. This is to allow for frequent updates; it
+is considered bad etiquite to update a CRAN package more than once a month.</p>
+
+<pre><code>install.packages(&quot;devtools&quot;)
+install_github(&quot;arrow&quot;, &quot;rgrannell1&quot;, ref = &quot;releases&quot;)
+</code></pre>
+
 <h2>What is Arrow?</h2>
 
-<p>Arrow makes R the functional language it was born to be.</p>
+<p>R&#39;s base packages are uncooperative. Functions in the standard library have a tonne
+of arcane parametres. They can&#39;t decide on how to handle empty values, NA values or even
+the humble list. Sometimes they crash a program, sometimes they fail silently or
+are handled gracefully. In any case, every function requires you to memorise its precise
+behaviour.</p>
 
-<p>R can be an uncooperative language. Every function has its own way of
-handling missing values or naming its parametres. As a result, piecing together
-individual functions to make a useful program can be difficult and requires a
-lot of boilerplate code.</p>
+<p>Worse still, base functions stack badly. Despite knowing exactly what you want to do,
+you will spend a lot of time chasing down empty values and NA&#39;s in the debugger.</p>
 
-<p>Arrow is an expressive composible foundation for programming in R. It implements all
-the common higher-order functions - Map, Fold, GroupBy and so on - as well as any reshaping
-operation you might want to perform on a collection. It has simple IO functions that let
-you read and write to files with minimal overhead, and the set and combinatoric functions
-you need for more advanced algorithms.</p>
+<p>The remedy? Arrow is a composable functional programming framework. It includes
+all the functionals you know and love from Haskell (map, fold, select, flatmap)
+it has functions for reshaping and summarising your data structures. These functions
+slot neatly together without boilerplate code.</p>
 
-<p>It aims to be completely consistent and above all else user-friendly. Arrow functions
-rarely have more than two parametres, so functions will just work without configuration.</p>
+<p>Above all else it is designed to be pleasant to use. Functional
+programming, unix-style pipelines and shorthand functions reduce the keystrokes
+and mental effort needed to go from &ldquo;I have an idea&rdquo; to a working prototype.</p>
 
 <p>For library documentation and tutorials head to
 <a href="http://rgrannell1.github.io/arrow/">http://rgrannell1.github.io/arrow/</a>.</p>
 
 <h2>What Does Arrow Look Like?</h2>
 
-<p>Arrow can be written using normal functions or with chaining methods. I prefer the latter. Chaining
-methods take an initial piece of data and apply successive transformation to it.
-This is a very natural way of expressing data munging or reshaping</p>
+<p>First, a table of Arrow&#39;s (optional) new syntax.</p>
 
-<pre><code class="r">&quot;-- Data From Hadley Wickham&#39;s https://github.com/hadley/data-stride&quot;
+<pre><code class="r"># function shorthands
+x := 2 * x + 1                               # instead of function (x) 2 * x + 1
+x. $ Species                                 # instead of function (x) x $ Species
+
+# list comprehensions
+xList[x, x &lt;- 1:10, x %% 2 == 0]             # generates 2, 4, ..., 10
+
+# function composition
+(unlist %then% mean)(list(1, 2, 3))          # instead of ( function (x) mean(unlist(x)) )(list(1, 2, 3))
+(is.integer %or% is.double %or% is.list)(1)  # instead of is.integer(1) || is.double(1) || is.list(1)
+
+# methods!
+x_(letters) $ xMap(toupper) $ x_FromChars()  # generates the string ABCD...Z
+</code></pre>
+
+<p>With that out the way, here is a simple use of Arrow to examine cocaine seizure data.</p>
+
+<pre><code class="r"># Data From Hadley Wickham&#39;s https://github.com/hadley/data-stride
 
 asRow &lt;- (...) := {
     list(state = ..1, potency = ..2, weight = ..3, month = ..4, price = ..5)
@@ -259,7 +287,7 @@ cocaineData &lt;- x_(list(
     asRow(&quot;PA&quot;, 74,  2,  1,  200)
 ))
 
-&quot;-- 1. get and sort the state seisure frequencies&quot;
+# 1. get and sort the state seisure frequencies
 
 cocaineData $ xPluck(&quot;state&quot;) $ xTabulate() $ x_SortBy(xSecondOf)
 
@@ -273,10 +301,10 @@ list(
     list(&quot;NY&quot;, 3))
 &#39;
 
-&quot;-- 2. group the seizures by state.&quot;
+# 2. group the seizures by state.
 stateSeizures &lt;- cocaineData $ xGroupBy(x. $ state)
 
-&quot;-- 3. get the largest intrastate seizures by price&quot;
+# 3. get the largest intrastate seizures by price
 largestStateSeizures &lt;- stateSeizures $ xPluck(&#39;price&#39;) $ xMap(group := {
     xMaxBy(x. $ price, group)
 })
@@ -292,7 +320,7 @@ list(
 )
 &#39;
 
-&quot;-- 4. get the average potency of the largest seizure&quot;
+# 4. get the average potency of the largest seizure
 
 largestStateSeizures $ xPluck(&#39;potency&#39;) $ xTap(unlist %then% mean)
 
@@ -302,13 +330,15 @@ largestStateSeizures $ xPluck(&#39;potency&#39;) $ xTap(unlist %then% mean)
 <h3>Arrow is Expressive</h3>
 
 <ul>
-<li><p>Programs are built in a lego-like manner; stacking small,
+<li><p>Programs are built like lego; stacking small,
 uniquely-purposed functions into a larger program.</p></li>
 <li><p>Arrow has a shorthand syntax for creating functions.</p></li>
 <li><p>Arrow implements jQuery-style method-chaining.</p></li>
 <li><p>Most functions have variadic and non-variadic forms; this significantly reduces
 &#39;do.call&#39; boilerplate.</p></li>
 <li><p>Arrow adds list-comprehensions; an expressive syntax for creating lists.</p></li>
+<li><p>Arrow is general enough to let you use the same functions for your
+data reshaping and general purpose programming code.</p></li>
 </ul>
 
 <h3>Arrow is Consistent</h3>
@@ -316,11 +346,9 @@ uniquely-purposed functions into a larger program.</p></li>
 <ul>
 <li><p>Functions don&#39;t discriminate between different types of vectors; lists, pairlists
 and typed vectors are all interchangable.</p></li>
-<li><p>Extensive effort was made to make sure that Arrow never throws
-a cryptic error - arguments are always explicitly checked, and the precise
-cause of the error is always given. Error messages are also coloured for readability.</p></li>
-<li><p>Arrow is interoperable with base R functions.</p></li>
-<li><p>Arrow follows careful thought-out naming conventions.</p></li>
+<li><p>Arrow is very easy to debug, thanks to input validation and automatically summarising bad input.</p></li>
+<li><p>Arrow is completely interoperable with base R functions.</p></li>
+<li><p>Arrow follows careful thought-out naming conventions, to make it a joy to write.</p></li>
 </ul>
 
 <h3>Arrow is Functional</h3>
@@ -330,7 +358,7 @@ cause of the error is always given. Error messages are also coloured for readabi
 map, fold, select, flatmap and iterate.</p></li>
 <li><p>Arrow includes several mathematical functions, like the set operations and
 combinatoric functions.</p></li>
-<li><p>Arrow adds a big brother of <strong>return()</strong> - <strong>Return()</strong> - to make functions like fold
+<li><p>Arrow adds a big brother of <strong>return( )</strong> - <strong>Return( )</strong> - to make functions like fold
 much more efficient.</p></li>
 <li><p>Function composition and partial application are encouraged as standard operations.</p></li>
 </ul>
@@ -690,9 +718,6 @@ much more efficient.</p></li>
         <code><a href="xCompose.html">xCompose</a></code>(%of%, %then%, xCompose_)<br />xCompose</li>
             
       <li>
-        <code><a href="xAsClosure.html">xAsClosure</a></code><br />xAsClosure</li>
-            
-      <li>
         <code><a href="xCapture.html">xCapture</a></code>(xK)<br />xCapture</li>
             
       <li>
@@ -703,9 +728,6 @@ much more efficient.</p></li>
             
       <li>
         <code><a href="xLift.html">xLift</a></code>(%and%, %or%, xLift_)<br />xLift</li>
-            
-      <li>
-        <code><a href="xNot.html">xNot</a></code><br />xNot</li>
             
       <li>
         <code><a href="xFix.html">xFix</a></code>(xFix_)<br />xFix</li>
@@ -726,7 +748,7 @@ much more efficient.</p></li>
     <ul class="index">
         
       <li>
-        <code><a href="xAddKeys.html">xAddKeys</a></code>(xAddKeys...)<br />xAddKeys</li>
+        <code><a href="xAddKeys.html">xAddKeys</a></code>(xAddKeys_)<br />xAddKeys</li>
             
       <li>
         <code><a href="xPluck.html">xPluck</a></code>(xPluck_)<br />xPluck</li>
@@ -793,6 +815,9 @@ much more efficient.</p></li>
             
       <li>
         <code><a href="xExists.html">xExists</a></code>(xExists_)<br />xExists</li>
+            
+      <li>
+        <code><a href="xNone.html">xNone</a></code>(xNone_)<br />xNone</li>
             
       <li>
         <code><a href="xPoll.html">xPoll</a></code>(xPoll_)<br />xPoll</li>
@@ -1079,10 +1104,25 @@ composition of simple functions to create complex, expressive programs.
         <code><a href="values.html">Na</a></code>(False, Null, True)<br />Special Values</li>
             
       <li>
+        <code><a href="xIs.html">xIs</a></code><br />xIs</li>
+            
+      <li>
+        <code><a href="xIsMatch.html">xIsMatch</a></code><br />xIsMatch</li>
+            
+      <li>
         <code><a href="xLenOf.html">xLenOf</a></code>(xLenOf_)<br />xLenOf</li>
             
       <li>
         <code><a href="xLocate.html">xLocate</a></code>(xLocate_)<br />xLocate</li>
+            
+      <li>
+        <code><a href="xNegate.html">xNegate</a></code><br />xNegate</li>
+            
+      <li>
+        <code><a href="xNotMatch.html">xNotMatch</a></code><br />xNotMatch</li>
+            
+      <li>
+        <code><a href="xNotSubset.html">xNotSubset</a></code>(xNotSubset_)<br />xNotSubset</li>
             
       <li>
         <code><a href="xUnzipIndices.html">xUnzipIndices</a></code>(xUnzipIndices_)<br />xUnzipIndices</li>
@@ -1119,10 +1159,15 @@ composition of simple functions to create complex, expressive programs.
 		return "<pre class = 'input r'>" + text + "</pre>"
 	})
 
-	// I LOVE having jQuery as a dependency. Best library ever written.
+	// I LOVE having jQuery as a dependency. Best library ever written,
+	// and a major inspiration for arrow.
 
 	// reorder the xMethod fields.
 	$('div.Description').prependTo('.span8')
+	// Type Signature gets split into two classes;
+	// I should fix this by renaming section names.
+	$('div.Type').prependTo('.span8')
+	// replace the special characters > and < in the type signatures.
 
 	$('#contact-link').click(function() {
 		// I know this is sub-optimal, but it'll do.
@@ -1159,7 +1204,6 @@ composition of simple functions to create complex, expressive programs.
 				"a " + a("https://help.github.com/articles/using-pull-requests", "pull request") + " with the typo fixed.") +
 			p("Thanks for using Arrow") +
 			p("Ryan Grannell")
-
 		)
 
 
@@ -1168,7 +1212,7 @@ composition of simple functions to create complex, expressive programs.
 </script>
 
 <style type="text/css">
-.span8 > div:nth-child(6) > h2:nth-child(1) {
+.span8 > div:nth-child(7) > h2:nth-child(1) {
 	display: none;
 }
 .span8 div:first-of-type h2 {
