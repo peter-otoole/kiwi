@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-<title>xNot. arrow 0.4.0</title>
+<title>xNot. arrow 0.10.0</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="author" content="">
 
@@ -178,7 +178,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">arrow 0.4.0</a>
+      <a class="navbar-brand" href="#">arrow 0.10.0</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -209,12 +209,14 @@
 <div class="row">
   <div class="span8">
     <h2>Usage</h2>
-    <pre><div>xNot(pred)</div></pre>
+    <pre><div>xNot(val1, val2)</div></pre>
     
     <h2>Arguments</h2>
     <dl>
-      <dt>pred</dt>
-      <dd>a predicate. The predicate function to return a negation of.</dd>
+      <dt>val1</dt>
+      <dd>an arbitrary value. The first value to test.</dd>
+      <dt>val2</dt>
+      <dd>an arbitrary value. The second value to test.</dd>
     </dl>
     
     <div class="xNot">
@@ -225,37 +227,14 @@
     <div class="Value">
       <h2>Value</h2>
 
-      <p>A predicate function with the same parametres as <code>pred</code>.</p>
+      <p>A true or false value.</p>
 
     </div>
 
     <div class="Description">
       <h2>Description</h2>
 
-      <p>Return the logical negation of a function.</p>
-
-    </div>
-
-    <div class="Details">
-      <h2>Details</h2>
-
-      <p><b>xNot</b> takes a predicate function - such as <b>is.integer( )</b> -
-   and returns the negation of that function - <b>not.integer( )</b>.</p>
-
-      <p><code>not.integer <- xNot(is.integer)</code></p>
-
-      <p><code>is.integer(1L)</code></p>
-
-      <p><code>True</code></p>
-
-      <p><code>not.integer(1L)</code></p>
-
-      <p><code>False</code></p>
-
-      <p>In general, if a function <b>fn</b> returns true <b>xNot(fn)</b> returns false
-   for the same value. Similarily, if <b>fn</b> returns false then <b>xNot(fn)</b>
-   returns true for that value. Finally (R uses three-value logic) if <b>fn</b> returns
-   na for a value so does its negation.</p>
+      <p>Are two values not equal?</p>
 
     </div>
 
@@ -264,25 +243,23 @@
 
       <p></p>
 
-      <p>(any -> <logical>) -> (any -> <logical>)</p>
+      <p>any -> any -> &lt;logical></p>
+
+    </div>
+
+    <div class="Corner Cases">
+      <h2>Corner Cases</h2>
+
+      <p></p>
+
+      <p><b>xNot</b> does not allow for minor numeric inequality (0.999999 != 1),
+   and treats -0. and 0. as identical.</p>
 
     </div>
     
     <h2 id="examples">Examples</h2>
     <pre class="examples"><div class='input'>
-# 1. Reverse a type checking predicate
-
-xSelect_(xNot(is.character), &#39;a&#39;, &#39;b&#39;, 3, &#39;d&#39;, 5)
-</div>
-<div class='output'>[[1]]
-[1] 3
-
-[[2]]
-[1] 5
-
-</div>
-<div class='input'>
-# list(3, 5)
+NULL
 </div></pre>
   </div>
   <div class="span4">
@@ -295,18 +272,16 @@ xSelect_(xNot(is.character), &#39;a&#39;, &#39;b&#39;, 3, &#39;d&#39;, 5)
 
     <h2>See also</h2>
     
-Other function_modifying_functions: <code><a href='xLift.html'>%and%</a></code>,
-  <code><a href='xLift.html'>%or%</a></code>, <code><a href='xLift.html'>xLift</a></code>,
-  <code><a href='xLift.html'>xLift_</a></code>; <code><a href='xCompose.html'>%of%</a></code>,
-  <code><a href='xCompose.html'>%then%</a></code>, <code><a href='xCompose.html'>xCompose</a></code>,
-  <code><a href='xCompose.html'>xCompose_</a></code>; <code><a href='xAsClosure.html'>xAsClosure</a></code>;
-  <code><a href='xCapture.html'>xCapture</a></code>, <code><a href='xCapture.html'>xK</a></code>;
-  <code><a href='xDelay.html'>xDelay</a></code>; <code><a href='xFix.html'>xFix</a></code>,
-  <code><a href='xFix.html'>xFix_</a></code>; <code><a href='xJuxtapose.html'>xJuxtapose</a></code>,
-  <code><a href='xJuxtapose.html'>xJuxtapose_</a></code>; <code><a href='xSpread.html'>xSpread</a></code>;
-  <code><a href='xThread.html'>xThread</a></code>, <code><a href='xThread.html'>xThread_</a></code>;
-  <code><a href='xUnspread.html'>xUnspread</a></code>; <code><a href='xVectorise.html'>xVectorise</a></code>,
-  <code><a href='xVectorise.html'>xVectorize</a></code>
+Other value_testing_functions: <code><a href='xElemIs.html'>xElemIs</a></code>,
+  <code><a href='xElemIs.html'>xElemIs_</a></code>; <code><a href='xElemNot.html'>xElemNot</a></code>,
+  <code><a href='xElemNot.html'>xElemNot_</a></code>; <code><a href='xIsEmpty.html'>xIsEmpty</a></code>,
+  <code><a href='xIsEmpty.html'>xIsEmpty_</a></code>; <code><a href='xIsFalse.html'>xIsFalse</a></code>;
+  <code><a href='xIsNan.html'>xIsNan</a></code>; <code><a href='xIsNa.html'>xIsNa</a></code>;
+  <code><a href='xIsNull.html'>xIsNull</a></code>; <code><a href='xIsTrue.html'>xIsTrue</a></code>;
+  <code><a href='xIs.html'>xIs</a></code>; <code><a href='xNotEmpty.html'>xNotEmpty</a></code>,
+  <code><a href='xNotEmpty.html'>xNotEmpty_</a></code>; <code><a href='xNotFalse.html'>xNotFalse</a></code>;
+  <code><a href='xNotNan.html'>xNotNan</a></code>; <code><a href='xNotNa.html'>xNotNa</a></code>;
+  <code><a href='xNotNull.html'>xNotNull</a></code>; <code><a href='xNotTrue.html'>xNotTrue</a></code>
 
       </div>
 </div>
@@ -333,13 +308,15 @@ Other function_modifying_functions: <code><a href='xLift.html'>%and%</a></code>,
 		return "<pre class = 'input r'>" + text + "</pre>"
 	})
 
-	// I LOVE having jQuery as a dependency. Best library ever written.
+	// I LOVE having jQuery as a dependency. Best library ever written,
+	// and a major inspiration for arrow.
 
 	// reorder the xMethod fields.
 	$('div.Description').prependTo('.span8')
 	// Type Signature gets split into two classes;
 	// I should fix this by renaming section names.
 	$('div.Type').prependTo('.span8')
+	// replace the special characters > and < in the type signatures.
 
 	$('#contact-link').click(function() {
 		// I know this is sub-optimal, but it'll do.
@@ -376,7 +353,6 @@ Other function_modifying_functions: <code><a href='xLift.html'>%and%</a></code>,
 				"a " + a("https://help.github.com/articles/using-pull-requests", "pull request") + " with the typo fixed.") +
 			p("Thanks for using Arrow") +
 			p("Ryan Grannell")
-
 		)
 
 
@@ -385,7 +361,7 @@ Other function_modifying_functions: <code><a href='xLift.html'>%and%</a></code>,
 </script>
 
 <style type="text/css">
-.span8 > div:nth-child(6) > h2:nth-child(1) {
+.span8 > div:nth-child(7) > h2:nth-child(1) {
 	display: none;
 }
 .span8 div:first-of-type h2 {

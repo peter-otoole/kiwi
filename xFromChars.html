@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-<title>xFromChars. arrow 0.6.0</title>
+<title>xFromChars. arrow 0.10.0</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="author" content="">
 
@@ -178,7 +178,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">arrow 0.6.0</a>
+      <a class="navbar-brand" href="#">arrow 0.10.0</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -247,7 +247,7 @@
 
       <p>|character| -> &lt;character></p>
 
-      <p>Concatentate a character vector with empty strs as delimiters.</p>
+      <p>Concatentate a character vector with no delimiter.</p>
 
     </div>
     
@@ -257,13 +257,7 @@
 #    in all likelyhood I&#39;d use the base function gsub() here,
 #    but xFromChars and xReject work too.
 
-x_(&#39;the letter e is overrated&#39;) $
-xToChars() $
-xReject(
-	char := {
-		char == &#39;e&#39;
-}) $
-x_FromChars()
+x_(&#39;the letter e is overrated&#39;) $ xToChars() $ xReject(x. == &#39;e&#39;) $ x_FromChars()
 </div>
 <div class='output'>[1] &quot;th lttr  is ovrratd&quot;
 </div></pre>

@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-<title>xFix. arrow 0.6.0</title>
+<title>xFix. arrow 0.10.0</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="author" content="">
 
@@ -178,7 +178,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">arrow 0.6.0</a>
+      <a class="navbar-brand" href="#">arrow 0.10.0</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -280,8 +280,80 @@
     
     <h2 id="examples">Examples</h2>
     <pre class="examples"><div class='input'>
-NULL
+# 1. A simple example of specialisation.
+#
+# xFix can be used to take a general function like add
+# and create more specific instances of it; for example
+# the general function &#39;add&#39; can be specialised into
+# increment, decrement, and addtwo.
 
+add &lt;- function (a, b) a + b
+
+increment &lt;- xFix(add, c(a = 1))
+
+# the variadic form is often more useful.
+
+decrement &lt;- xFix_(add, -1)
+addtwo &lt;- xFix_(add, 2)
+
+increment(0)
+</div>
+<div class='output'>[1] 1
+</div>
+<div class='input'>
+# 1
+
+decrement(0)
+</div>
+<div class='output'>[1] -1
+</div>
+<div class='input'>
+# this specialisation of general functions is one of the most powerful techniques in
+# functional programming.
+
+# -1
+
+# 2. Recursion!
+#
+# This may not be the most useful example, but I thought it was interesting.
+# if you partially apply the Fix function itself with identity as its first argument,
+# it creates the constant function: the function that takes a value and returns
+# a function that always returns that value.
+#
+# (constant (xCapture) can be defined in easier ways though)
+
+constant = xFix_(xFix_, xIdentity)
+
+five &lt;- constant(5)
+five()
+</div>
+<div class='output'>[1] 5
+</div>
+<div class='input'>
+# 3. Avoiding Anonymous Functions
+#
+# Partial application cuts down the number of small anonymous functions you need.
+# The following example matches every species from the genus &#39;Homo&#39; (H. )
+#
+
+x_(c(&#39;H. ergaster&#39;, &#39;H. habilis&#39;, &#39;H. sapiens&#39;, &#39;C. elegans&#39;)) $
+x_Select(xFix(xIsMatch, &#39;H[.] &#39;))
+</div>
+<div class='output'>[[1]]
+[1] &quot;H. ergaster&quot;
+
+[[2]]
+[1] &quot;H. habilis&quot;
+
+[[3]]
+[1] &quot;H. sapiens&quot;
+
+</div>
+<div class='input'>
+# list(&#39;H. ergaster&#39;, &#39;H. habilis&#39;, &#39;H. sapiens&#39;)
+
+# Only use partial application like this if improves readability or
+# shortens code significantly.
 </div></pre>
   </div>
   <div class="span4">

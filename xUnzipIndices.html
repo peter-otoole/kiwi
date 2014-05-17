@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-<title>xUnzipIndices. arrow 0.6.0</title>
+<title>xUnzipIndices. arrow 0.10.0</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="author" content="">
 
@@ -178,7 +178,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">arrow 0.6.0</a>
+      <a class="navbar-brand" href="#">arrow 0.10.0</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -235,7 +235,18 @@
     <div class="Description">
       <h2>Description</h2>
 
-      <p>Split a named collection into a list of name: value list pairs.</p>
+      <p>Split a collection into a list of index: value pairs</p>
+
+    </div>
+
+    <div class="Details">
+      <h2>Details</h2>
+
+      <p><b>xUnzipIndices</b> reshapes a collection to allow you to pass
+    both the indices and elements to another higher order function.
+    More generally, <b>xUnzipIndices</b> allows you to selectively work on
+    elements based on their position in a collection, which functions like
+    <b>xMap</b> and <b>xSelect</b> otherwise do not support.</p>
 
     </div>
 
@@ -259,7 +270,93 @@
     
     <h2 id="examples">Examples</h2>
     <pre class="examples"><div class='input'>
-NULL
+# 1. enumerate the letters with their indices.
+
+x_(letters) $ xUnzipIndices() $ xMapply((ith : val) := {
+	xFromWords_(&#39;the &#39;, toString(ith), &#39; letter is &#39;, val)
+})
+</div>
+<div class='output'>[ an arrow object with methods for collections ]
+
+$x_()
+[[1]]
+[1] &quot;the  1  letter is  a&quot;
+
+[[2]]
+[1] &quot;the  2  letter is  b&quot;
+
+[[3]]
+[1] &quot;the  3  letter is  c&quot;
+
+[[4]]
+[1] &quot;the  4  letter is  d&quot;
+
+[[5]]
+[1] &quot;the  5  letter is  e&quot;
+
+[[6]]
+[1] &quot;the  6  letter is  f&quot;
+
+[[7]]
+[1] &quot;the  7  letter is  g&quot;
+
+[[8]]
+[1] &quot;the  8  letter is  h&quot;
+
+[[9]]
+[1] &quot;the  9  letter is  i&quot;
+
+[[10]]
+[1] &quot;the  10  letter is  j&quot;
+
+[[11]]
+[1] &quot;the  11  letter is  k&quot;
+
+[[12]]
+[1] &quot;the  12  letter is  l&quot;
+
+[[13]]
+[1] &quot;the  13  letter is  m&quot;
+
+[[14]]
+[1] &quot;the  14  letter is  n&quot;
+
+[[15]]
+[1] &quot;the  15  letter is  o&quot;
+
+[[16]]
+[1] &quot;the  16  letter is  p&quot;
+
+[[17]]
+[1] &quot;the  17  letter is  q&quot;
+
+[[18]]
+[1] &quot;the  18  letter is  r&quot;
+
+[[19]]
+[1] &quot;the  19  letter is  s&quot;
+
+[[20]]
+[1] &quot;the  20  letter is  t&quot;
+
+[[21]]
+[1] &quot;the  21  letter is  u&quot;
+
+[[22]]
+[1] &quot;the  22  letter is  v&quot;
+
+[[23]]
+[1] &quot;the  23  letter is  w&quot;
+
+[[24]]
+[1] &quot;the  24  letter is  x&quot;
+
+[[25]]
+[1] &quot;the  25  letter is  y&quot;
+
+[[26]]
+[1] &quot;the  26  letter is  z&quot;
+
 </div></pre>
   </div>
   <div class="span4">

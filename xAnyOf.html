@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-<title>xInitOf. arrow 0.10.0</title>
+<title>xAnyOf. arrow 0.10.0</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="author" content="">
 
@@ -204,39 +204,41 @@
       
       </header>
 
-      <h1>xInitOf</h1>
+      <h1>xAnyOf</h1>
 
 <div class="row">
   <div class="span8">
     <h2>Usage</h2>
-    <pre><div>xInitOf(coll)</div>
-<div>xInitOf_(...)</div></pre>
+    <pre><div>xAnyOf(pred, coll)</div>
+<div>xAnyOf_(pred, ...)</div></pre>
     
     <h2>Arguments</h2>
     <dl>
+      <dt>pred</dt>
+      <dd>a predicate. The function used to test each element of
+   the input collection.</dd>
       <dt>coll</dt>
-      <dd>a collection. A collection to return
-   all but the last element of.</dd>
+      <dd>a collection. The collection to test each element of.</dd>
       <dt>...</dt>
       <dd>see above.</dd>
     </dl>
     
-    <div class="xInitOf">
-      <h2>xInitOf</h2>
+    <div class="xAnyOf">
+      <h2>xAnyOf</h2>
 
     </div>
 
     <div class="Value">
       <h2>Value</h2>
 
-      <p>A list.</p>
+      <p>A boolean value.</p>
 
     </div>
 
     <div class="Description">
       <h2>Description</h2>
 
-      <p>Remove the last element of a collection.</p>
+      <p>Is a predicate true for any element of a collection?</p>
 
     </div>
 
@@ -245,7 +247,7 @@
 
       <p></p>
 
-      <p>|any| -> [any]</p>
+      <p>(any -> &lt;logical>) -> |any| -> &lt;logical></p>
 
     </div>
 
@@ -254,19 +256,35 @@
 
       <p></p>
 
-      <p>Returns the empty list if <b>coll</b> is length-zero.</p>
+      <p>If coll is length zero then logical(0) is returned. Na values are treated as False.</p>
 
     </div>
     
     <h2 id="examples">Examples</h2>
     <pre class="examples"><div class='input'>
-NULL
+# 1. Using any to test if there are any true values in a vector.
 
+xAnyOf(xI, c(True, True, False, True))
+</div>
+<div class='output'>[1] TRUE
+</div>
+<div class='input'>
+# True
+
+# 2. Does a function name with more that 25 characters exist
+#    in the base R libraries?
+
+xAnyOf(name := nchar(name) &gt; 25, ls(&#39;package:base&#39;))
+</div>
+<div class='output'>[1] TRUE
+</div>
+<div class='input'>
+# several matches exist, including the terse &#39;suppressPackageStartupMessages&#39;
 </div></pre>
   </div>
   <div class="span4">
     <!-- <ul>
-      <li>xInitOf</li><li>xInitOf_</li>
+      <li>xAnyOf</li><li>xAnyOf_</li>
     </ul>
     <ul>
       
@@ -274,24 +292,12 @@ NULL
 
     <h2>See also</h2>
     
-Other selection_functions: <code><a href='xAtCol.html'>xAtCol</a></code>,
-  <code><a href='xAtCol.html'>xAtCol_</a></code>; <code><a href='xAtKey.html'>xAtKey</a></code>,
-  <code><a href='xAtKey.html'>xAtKey_</a></code>; <code><a href='xAt.html'>xAt</a></code>,
-  <code><a href='xAt.html'>xAt_</a></code>; <code><a href='xDropWhile.html'>xDropWhile</a></code>,
-  <code><a href='xDropWhile.html'>xDropWhile_</a></code>; <code><a href='xDrop.html'>xDrop</a></code>,
-  <code><a href='xDrop.html'>xDrop_</a></code>; <code><a href='xFirstOf.html'>xFirstOf</a></code>,
-  <code><a href='xFirstOf.html'>xFirstOf_</a></code>; <code><a href='xFourthOf.html'>xFourthOf</a></code>,
-  <code><a href='xFourthOf.html'>xFourthOf_</a></code>; <code><a href='xLastOf.html'>xLastOf</a></code>,
-  <code><a href='xLastOf.html'>xLastOf_</a></code>; <code><a href='xMaxBy.html'>xMaxBy</a></code>,
-  <code><a href='xMaxBy.html'>xMaxBy_</a></code>; <code><a href='xMinBy.html'>xMinBy</a></code>,
-  <code><a href='xMinBy.html'>xMinBy_</a></code>; <code><a href='xPluck.html'>xPluck</a></code>,
-  <code><a href='xPluck.html'>xPluck_</a></code>; <code><a href='xRestOf.html'>xRestOf</a></code>,
-  <code><a href='xRestOf.html'>xRestOf_</a></code>; <code><a href='xSecondOf.html'>xSecondOf</a></code>,
-  <code><a href='xSecondOf.html'>xSecondOf_</a></code>; <code><a href='xSlice.html'>xSlice</a></code>,
-  <code><a href='xSlice.html'>xSlice_</a></code>; <code><a href='xTakeWhile.html'>xTakeWhile</a></code>,
-  <code><a href='xTakeWhile.html'>xTakeWhile_</a></code>; <code><a href='xTake.html'>xTake</a></code>,
-  <code><a href='xTake.html'>xTake_</a></code>; <code><a href='xThirdOf.html'>xThirdOf</a></code>,
-  <code><a href='xThirdOf.html'>xThirdOf_</a></code>
+Other quantifier_functions: <code><a href='xAllOf.html'>xAllOf</a></code>,
+  <code><a href='xAllOf.html'>xAllOf_</a></code>; <code><a href='xExists.html'>xExists</a></code>,
+  <code><a href='xExists.html'>xExists_</a></code>; <code><a href='xForall.html'>xForall</a></code>,
+  <code><a href='xForall.html'>xForall_</a></code>; <code><a href='xNoneOf.html'>xNoneOf</a></code>,
+  <code><a href='xNoneOf.html'>xNoneOf_</a></code>; <code><a href='xPoll.html'>xPoll</a></code>,
+  <code><a href='xPoll.html'>xPoll_</a></code>
 
       </div>
 </div>

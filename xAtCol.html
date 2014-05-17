@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-<title>xAtCol. arrow 0.6.0</title>
+<title>xAtCol. arrow 0.10.0</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="author" content="">
 
@@ -178,7 +178,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">arrow 0.6.0</a>
+      <a class="navbar-brand" href="#">arrow 0.10.0</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -242,12 +242,33 @@
 
     </div>
 
+    <div class="Details">
+      <h2>Details</h2>
+
+      <p>If <b>xAt</b> behaves like <b>coll[[ith,]]</b> then
+    <b>xAtCol</b> is its counterpart, coll[[,ith]]. Tabular
+    data can be encoded as a list of row-lists, and it is
+    to be able to select this data "by-columns".</p>
+
+    </div>
+
     <div class="Type Signature">
       <h2>Type Signature</h2>
 
       <p></p>
 
       <p>|numeric| -> ||any|| -> |any|</p>
+
+    </div>
+
+    <div class="Corner Cases">
+      <h2>Corner Cases</h2>
+
+      <p></p>
+
+      <p>If cols is length-zero the empty list is returned. <b>xAtCol</b>
+   can operate on lists of mixed-length collections, if the smallest
+   collection has length equal to or longer than <b>num</b>.s</p>
 
     </div>
     

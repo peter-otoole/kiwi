@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-<title>xByRows. arrow 0.6.0</title>
+<title>xByRows. arrow 0.10.0</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="author" content="">
 
@@ -178,7 +178,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">arrow 0.6.0</a>
+      <a class="navbar-brand" href="#">arrow 0.10.0</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -227,6 +227,17 @@
       <h2>Description</h2>
 
       <p>Convert a matrix or data.frame to a collection of rows.</p>
+
+    </div>
+
+    <div class="Details">
+      <h2>Details</h2>
+
+      <p><b>xByRows</b> is the most common way in which data-frames
+    are reformatted for use by arrow. Internally dataframes are
+    represented as lists of lists, and arrow prefers this explicit representation.</p>
+
+      <p>Column names are preserved by <b>xByRows</b>.</p>
 
     </div>
       </div>
