@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+<title>stringify_call. arrow 0.1.0</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="">
+
+<link href="css/bootstrap.css" rel="stylesheet">
+<link href="css/bootstrap-responsive.css" rel="stylesheet">
+<link href="css/highlight.css" rel="stylesheet">
+<link href="css/staticdocs.css" rel="stylesheet">
+
+<!--[if lt IE 9]>
+  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+
+<link href='http://fonts.googleapis.com/css?family=Open+Sans|Quicksand' rel='stylesheet' type='text/css'>
+
+<style type="text/css">
+	html * {
+		font-family: Open Sans;
+	}
+
+	h1 {
+		color: #C7254E;
+		font-family: Quicksand;
+	}
+
+	h2 {
+		font-family: Quicksand;
+	}
+
+
+	h3 {
+		font-family: Quicksand;
+	}
+
+	h4 {
+		font-family: Quicksand;
+	}
+
+	h5 {
+		font-family: Quicksand;
+	}
+
+	h6 {
+		font-family: Quicksand;
+	}
+	.navbar {
+		background: white;
+	}
+	.navbar * {
+		color: #333;
+	}
+
+	.examples * {
+		font-family: monospace;
+	}
+
+	code {
+		font-family: monospace;
+	}
+
+	nav {
+		border-width: 1px 0;
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		text-align: center;
+	}
+
+	nav li {
+		display: inline;
+	}
+
+	nav a {
+		display: inline-block;
+		padding: 10px;
+	}
+
+	pre {
+		font-family: monospace;
+	}
+
+</style>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-default" role="navigation">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">arrow 0.1.0</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+
+        <li><a href="index.html">Index</a></li>
+        <li><a href="#">Tutorials</a></li>
+        <li><a href="#">Demos</a></li>
+        <li><a href="#">Contact/About</a></li>
+
+      </ul>
+      <form class="navbar-form navbar-left" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search">
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+      </form>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="https://github.com/rgrannell1/arrow">Github</a></li>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+    <div class="container">
+      <header>
+        
+      </header>
+      
+      <h1>Package Internals</h1>
+
+<div class="row">
+  <div class="span8">
+    <h2>Usage</h2>
+    <pre><div>stringify_call(call)</div>
+<div>colourise</div>
+<div>write_error(..., call.&nbsp;=&nbsp;True)</div>
+<div>get_call_components(invoking_call)</div>
+<div>insist</div>
+<div>dictate</div>
+<div>Truth(...)</div>
+<div>one_of(coll)</div>
+<div>a %equals% b</div>
+<div>call_with_params(fnname, fn)</div>
+<div>x %+% y</div>
+<div>x %!in% y</div>
+<div>Object()</div>
+<div>join_env(x, y)</div>
+<div>is_fn_matchable(val)</div>
+<div>is_collection(val)</div></pre>
+        
+    <div class="Format">
+      <h2>Format</h2>
+
+      <p><pre>List of 5
+ $ black :function (message)  
+ $ red   :function (message)  
+ $ green :function (message)  
+ $ blue  :function (message)  
+ $ yellow:function (message)  
+</pre></p>
+
+    </div>
+
+    <div class="Description">
+      <h2>Description</h2>
+
+      <p>Documentation for the internals of Arrow. Every
+sufficiently large utility library will contain its own
+utility library. These functions are required to reduce
+repetition of code when implementing arrow functions.</p>
+
+    </div>
+
+    <div class="stringify_call">
+      <h2>stringify_call</h2>
+
+      <p>stringify_call is a tool for formatting the source call
+  of an error message. It fixes as issue with printing ':='
+  functions, and cuts off very long calls.</p>
+
+    </div>
+
+    <div class="colourise">
+      <h2>colourise</h2>
+
+      <p>colourise is a set of functions that wraps strings in
+  ansii escape sequences on coloured terminals, allowing
+  coloured text to be printed. These are used to colour
+  error messages and print methods.</p>
+
+    </div>
+
+    <div class="write_error">
+      <h2>write_error</h2>
+
+      <p>write_error prints a red error message to the terminal,
+  if the terminal supports colour.</p>
+
+    </div>
+
+    <div class="assert">
+      <h2>assert</h2>
+
+      <p>assert is a key arrow function - it takes an expression,
+  a call to display, and a string message. If the
+  expression isn't true, the error is thrown with that
+  message and call.</p>
+
+    </div>
+
+    <div class="insist">
+      <h2>insist</h2>
+
+      <p>insist is a list of functions that provide a minimal
+  interface to an assertion. This object exists to reduce
+  the amount of assertion checking code needed.</p>
+
+      <p><code>insist $ must_be_fn_matchable(fn, invoking_call)</code></p>
+
+      <p>Each function encloses a message function to stop the
+  function being repeatedly created when assertions are
+  ran. When the assertion inside the insist function fails,
+  an error is thrown.</p>
+
+    </div>
+
+    <div class="demand">
+      <h2>demand</h2>
+
+      <p>An internal object containing assertions that are
+  required by the collection comprehension functions.
+  Mostly contains parse error assertions.</p>
+
+    </div>
+
+    <div class="one_of">
+      <h2>one_of</h2>
+
+      <p>Return one value from a collection.</p>
+
+    </div>
+
+    <div class="equals">
+      <h2>equals</h2>
+
+      <p>R's equal operator doesn't work on lists or strange
+  values. equals is a better measure of identity.</p>
+
+    </div>
+
+    <div class="call_with_params">
+      <h2>call_with_params</h2>
+
+      <p>Construct a call to a function 'fnname' with the
+  parametres of a second function. Useful for higher order
+  functions.</p>
+
+    </div>
+
+    <div class="+">
+      <h2>+</h2>
+
+      <p>Concatenate two strings.</p>
+
+    </div>
+
+    <div class="in">
+      <h2>in</h2>
+
+      <p>An infix function to test for the non-membership of an
+  element in a set.</p>
+
+    </div>
+
+    <div class="Object">
+      <h2>Object</h2>
+
+      <p>Construct an empty environment.</p>
+
+    </div>
+
+    <div class="join_env">
+      <h2>join_env</h2>
+
+      <p>Join two environments together into one environment. This
+  allows for inheritance of environments without having to
+  traverse multiple environments.</p>
+
+    </div>
+
+    <div class="is_fn_matchable">
+      <h2>is_fn_matchable</h2>
+
+      <p>Is a value a function, or possibly the name of a
+  function.</p>
+
+    </div>
+
+    <div class="is_collection">
+      <h2>is_collection</h2>
+
+      <p>Is a value a generic or atomic vector or a pairlist.</p>
+
+    </div>
+      </div>
+  <div class="span4">
+    <!-- <ul>
+      <li>Object</li><li>Truth</li><li>%!in%</li><li>%+%</li><li>%equals%</li><li>call_with_params</li><li>colourise</li><li>dictate</li><li>get_call_components</li><li>insist</li><li>is_collection</li><li>is_fn_matchable</li><li>join_env</li><li>one_of</li><li>stringify_call</li><li>write_error</li>
+    </ul>
+    <ul>
+      <li>internal</li>
+    </ul> -->
+
+    
+  </div>
+</div>
+      
+      <footer>
+      
+      </footer>
+    </div>
+  </body>
+</html>

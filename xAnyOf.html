@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+<title>xAnyOf. kiwi 0.23.0</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="">
+
+<link href="css/bootstrap.css" rel="stylesheet">
+<link href="css/bootstrap-responsive.css" rel="stylesheet">
+<link href="css/highlight.css" rel="stylesheet">
+<link href="css/staticdocs.css" rel="stylesheet">
+
+<script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+
+<script type="text/javascript">
+/*this lump of code highlight the R code on this page.*/
+(function(){"use strict";})();highlight=function(){var e=function(e,t){var r={depth:0,transitions:e,html_output_rules:t(this.depth)};r.consume_token=function(e){var t=function(e,t,n){var i=r.html_output_rules[e][t];var s=n;for(var o in i){if(!i.hasOwnProperty(o)){continue}if(o!=="*nomatch*"&&o===n){s=i[o]}}return s};var i=function(e,t,i){var s=e==="normal"&&t==="open_delim"||e==="open_delim"&&t==="open_delim";var o=e==="close_delim"&&t==="normal"||e==="close_delim"&&t==="close_delim";if(s){i+=1;if(i>13)i=0}else if(o){i-=1;if(i<0)i=13}r.depth=i;r.html_output_rules=n(i);return{depth:i,html_output_rules:n(i)}};for(var s in r.transitions){if(!r.transitions.hasOwnProperty(s)){continue}if(r.transitions[s].active){var o=r.transitions[s];var u=s}}var a=o.edges["*nomatch*"];for(var f in o.edges){if(!o.edges.hasOwnProperty(f)){continue}if(e===f){a=o.edges[f]}}r.transitions[u].active=false;r.transitions[a].active=true;i(u,a,r.depth);return t(u,a,e)};return r};var t=function(){return{str_single:{active:false,edges:{"'":"normal","*nomatch*":"str_single"}},str_double:{active:false,edges:{'"':"normal","*nomatch*":"str_double"}},normal:{active:true,edges:{"'":"str_single",'"':"str_double","#":"comment","(":"open_delim","[":"open_delim","{":"open_delim","}":"close_delim","]":"close_delim",")":"close_delim","*nomatch*":"normal"}},open_delim:{active:false,edges:{"'":"str_single",'"':"str_double","#":"comment","(":"open_delim","[":"open_delim","{":"open_delim","}":"close_delim","]":"close_delim",")":"close_delim","*nomatch*":"normal"}},close_delim:{active:false,edges:{"'":"str_single",'"':"str_double","#":"comment","(":"open_delim","[":"open_delim","{":"open_delim","}":"close_delim","]":"close_delim",")":"close_delim","*nomatch*":"normal"}},comment:{active:false,edges:{"\n":"normal","*nomatch*":"comment"}}}}();var n=function(e){var t={open:function(e){return'<span class = "'+e+'">'},close:function(){return"</span>"},both:function(e,t){return'<span class="'+e+'">'+t+"</span>"}};var n=function(e){return{str_single:{"'":t.open("sstring")+"'"},str_double:{'"':t.open("dstring")+'"'},normal:{$:t.both("dollar","$"),",":t.both("comma lev"+e,","),"*nomatch*":"*token*"},comment:{"#":t.open("comment")+"#"},open_delim:{"(":t.both("lev"+e,"("),"[":t.both("lev"+e,"["),"{":t.both("lev"+e,"{")},close_delim:{")":t.both("lev"+e,")"),"]":t.both("lev"+e,"]"),"}":t.both("lev"+e,"}")}}};return{str_single:{str_single:{'"':t.both("ssdouble",'"'),"*nomatch*":"*token*"},normal:{"'":"'"+t.close()}},str_double:{str_double:{"'":t.both("dssingle","'"),"*nomatch*":"*token*"},normal:{'"':'"'+t.close()}},normal:n(e),open_delim:n(e),close_delim:n(e),comment:{normal:{"\n":"\n"+t.close()},comment:{"*nomatch*":"*token*"}}}};var r=function(r){var i="";var s=e(t,n);for(var o=0;o<r.length;o++){var u=r.substring(o,o+1);i=i+s.consume_token(u)}return i};var i=function(e,t){$(e).replaceWith(function(e,n){return t(r($(this).text()))})};return{StateMachine:e,highlight_text:r,highlight_r_code:i}}()
+</script>
+
+<!--[if lt IE 9]>
+  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<link href='https://fonts.googleapis.com/css?family=Open+Sans|Quicksand:400,700|Inconsolata' rel='stylesheet' type='text/css'>
+<style type="text/css">
+/*
+	The css for the example syntax highlighting.
+*/
+
+	/* a sloppy hack to get rid of a duplicated title field */
+
+	a {
+		color: #3498db
+	}
+
+	p {
+		font-family: "Open Sans"
+	}
+
+	/*order matters*/
+	.r {
+		font-family: Inconsolata;
+	}
+
+	.navbar  {
+		font-family: Quicksand
+	}
+
+	h1 {
+		font-family: Quicksand
+	}
+
+	h2 {
+		font-family: Quicksand
+	}
+
+	h3 {
+		font-family: Quicksand
+	}
+
+	h4 {
+		font-family: Quicksand
+	}
+
+	h5 {
+		font-family: Quicksand
+	}
+
+	h6 {
+		font-family: Quicksand
+	}
+
+
+
+
+
+
+
+
+	/*overflow on examples*/
+	div.output {
+		max-height: 250px;
+		overflow: scroll;
+		padding-left: 10px;
+	}
+	div.output {
+	    background: #f6f6f6;
+	}
+
+	h2 {
+		font-size: 24px}
+
+	html * {
+	  background: white; }
+
+	.r {
+	  color: #505050; }
+
+	.r .comment {
+	  color: #8c8c8c;
+	  font-style: italic;
+	  background: white; }
+
+	.r .roxygen {
+	  color: #666666;
+	  background: white; }
+
+	.r .ssdouble {
+	  color: #e67e22; }
+
+	.r .dssingle {
+	  color: #e67e22; }
+
+	.r .sstring {
+	  color: #f37028; }
+
+	.r .dstring {
+	  color: #f37028; }
+
+	.r .at {
+	  color: #c35dc3; }
+
+	.r .dollar {
+	  color: #c35dc3; }
+
+	.r .lev0 {
+	  color: #8ea812; }
+
+	.r .lev1 {
+	  color: #8ea812; }
+
+	.r .lev2 {
+	  color: #8ea812; }
+
+	.r .lev3 {
+	  color: #8ea812; }
+
+	.r .lev4 {
+	  color: #8ea812; }
+
+	.r .lev5 {
+	  color: #8ea812; }
+
+	.r .lev6 {
+	  color: #8ea812; }
+
+	.r .lev7 {
+	  color: #8ea812; }
+
+	.r .lev8 {
+	  color: #8ea812; }
+
+	.r .lev9 {
+	  color: #8ea812; }
+
+	.r .lev10 {
+	  color: #8ea812; }
+
+	.r .lev11 {
+	  color: #8ea812; }
+
+	.r .lev12 {
+	  color: #8ea812; }
+
+	.r .lev13 {
+	  color: #8ea812; }
+
+</style>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-default" role="navigation">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">kiwi 0.23.0</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+
+        <li><a id="index-link" href="index.html">Index</a></li>
+        <li><a id="tutorial-link">Tutorials</a></li>
+        <li><a id="demos-link" href="#">Demos</a></li>
+        <li><a id="contact-link" href="#">Contact/About</a></li>
+
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a id="github-link" href="https://github.com/rgrannell1/kiwi">Github</a></li>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+    <div class="container">
+      <header>
+      
+      </header>
+
+      <h1>xAnyOf</h1>
+
+<div class="row">
+  <div class="span8">
+    <h2>Usage</h2>
+    <pre><div>xAnyOf(pred, coll)</div>
+<div>xAnyOf_(pred, ...)</div></pre>
+    
+    <h2>Arguments</h2>
+    <dl>
+      <dt>pred</dt>
+      <dd>a predicate. The function used to test each element of
+   the input collection.</dd>
+      <dt>coll</dt>
+      <dd>a collection. The collection to test each element of.</dd>
+      <dt>...</dt>
+      <dd>see above.</dd>
+    </dl>
+    
+    <div class="xAnyOf">
+      <h2>xAnyOf</h2>
+
+    </div>
+
+    <div class="Value">
+      <h2>Value</h2>
+
+      <p>A boolean value.</p>
+
+    </div>
+
+    <div class="Description">
+      <h2>Description</h2>
+
+      <p>Is a predicate true for any element of a collection?</p>
+
+    </div>
+
+    <div class="Type Signature">
+      <h2>Type Signature</h2>
+
+      <p></p>
+
+      <p>(any -> &lt;logical>) -> |any| -> &lt;logical></p>
+
+    </div>
+
+    <div class="Corner Cases">
+      <h2>Corner Cases</h2>
+
+      <p></p>
+
+      <p>If coll is length zero then logical(0) is returned. Na values are treated as False.</p>
+
+    </div>
+    
+    <h2 id="examples">Examples</h2>
+    <pre class="examples"><div class='input'>
+# 1. Using any to test if there are any true values in a vector.
+
+xAnyOf(xI, c(True, True, False, True))
+</div>
+<div class='output'>[1] TRUE
+</div>
+<div class='input'>
+# True
+
+# 2. Does a function name with more that 25 characters exist
+#    in the base R libraries?
+
+xAnyOf(name := nchar(name) &gt; 25, ls(&#39;package:base&#39;))
+</div>
+<div class='output'>[1] TRUE
+</div>
+<div class='input'>
+# several matches exist, including the terse &#39;suppressPackageStartupMessages&#39;
+</div></pre>
+  </div>
+  <div class="span4">
+    <!-- <ul>
+      <li>xAnyOf</li><li>xAnyOf_</li>
+    </ul>
+    <ul>
+      
+    </ul> -->
+
+    <h2>See also</h2>
+    
+Other quantifier_functions: <code><a href='xAllOf.html'>xAllOf</a></code>,
+  <code><a href='xAllOf.html'>xAllOf_</a></code>; <code><a href='xNoneOf.html'>xNoneOf</a></code>,
+  <code><a href='xNoneOf.html'>xNoneOf_</a></code>; <code><a href='xPoll.html'>xPoll</a></code>,
+  <code><a href='xPoll.html'>xPoll_</a></code>
+
+      </div>
+</div>
+
+      <footer>
+      <p class="pull-right"><a href="#">Back to top</a></p>
+<p>Built by <a href="https://github.com/hadley/staticdocs">staticdocs</a>. Styled with Flatstrap.</p>
+<script type="text/javascript">
+	// highlight code examples.
+
+	highlight.highlight_r_code("p code", function (text) {
+		return "<p><code class = 'input r'>" + text + "</code><p>"
+	})
+
+	highlight.highlight_r_code("pre .input", function (text) {
+		return "<div class = 'input r'>" + text + "</div>"
+	})
+
+	highlight.highlight_r_code("code.r", function (text) {
+		return "<div class = 'input r'>" + text + "</div>"
+	})
+
+	highlight.highlight_r_code(".span8 pre:first", function (text) {
+		return "<pre class = 'input r'>" + text + "</pre>"
+	})
+
+	// I LOVE having jQuery as a dependency. Best library ever written,
+	// and a major inspiration for kiwi.
+
+	// reorder the xMethod fields.
+	$('div.Description').prependTo('.span8')
+	// Type Signature gets split into two classes;
+	// I should fix this by renaming section names.
+	$('div.Type').prependTo('.span8')
+	// replace the special characters > and < in the type signatures.
+
+	$('#contact-link').click(function() {
+		// I know this is sub-optimal, but it'll do.
+
+		var h1 = function (text) {
+			return "<h1>" + text + "</h1>"
+		}
+		var p = function (text) {
+			return "<p>" + text + "</p>"
+		}
+		var ul = function (text) {
+			return "<ul>" + text + "</ul>"
+		}
+		var li = function (text) {
+			return "<li>" + text + "</li>"
+		}
+		var a = function (href, text) {
+			return "<a href='" + href + "'>" + text + "</a>"
+		}
+		var em = function (text) {
+			return "<em>" + text + "</em>"
+		}
+
+		$('.span8').html(
+
+			h1("Contact / Queries") +
+			p("Feel free to contact me if any issue with or queries about Kiwi through the following channels:</p>") +
+			ul(
+				li(p("my gmail address is r.grannell2")) +
+				li(a("https://twitter.com/RyanGrannell", "Twitter")) +
+				li(a("https://github.com/rgrannell1", "Github"))
+			) +
+			p("If you spot a typo or slight error in this documentation I would really appreciate if you sent " +
+				"a " + a("https://help.github.com/articles/using-pull-requests", "pull request") + " with the typo fixed.") +
+			p("Thanks for using Kiwi") +
+			p("Ryan Grannell")
+		)
+
+
+	})
+
+</script>
+
+<style type="text/css">
+.span8 > div:nth-child(7) > h2:nth-child(1) {
+	display: none;
+}
+.span8 div:first-of-type h2 {
+	display: none;
+}
+</style>
+
+      </footer>
+    </div>
+  </body>
+</html>

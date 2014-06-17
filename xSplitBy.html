@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+<title>xSplitBy. arrow 0.1.0</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="">
+
+<link href="css/bootstrap.css" rel="stylesheet">
+<link href="css/bootstrap-responsive.css" rel="stylesheet">
+<link href="css/highlight.css" rel="stylesheet">
+<link href="css/staticdocs.css" rel="stylesheet">
+
+<!--[if lt IE 9]>
+  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<link href='http://fonts.googleapis.com/css?family=Open+Sans|Quicksand' rel='stylesheet' type='text/css'>
+
+<style type="text/css">
+	html * {
+		font-family: Open Sans;
+	}
+
+	h1 {
+		color: #C7254E;
+		font-family: Quicksand;
+	}
+
+	h2 {
+		font-family: Quicksand;
+	}
+
+
+	h3 {
+		font-family: Quicksand;
+	}
+
+	h4 {
+		font-family: Quicksand;
+	}
+
+	h5 {
+		font-family: Quicksand;
+	}
+
+	h6 {
+		font-family: Quicksand;
+	}
+	.navbar {
+		background: white;
+	}
+	.navbar * {
+		color: #333;
+	}
+
+	.examples * {
+		font-family: monospace;
+	}
+
+	code {
+		font-family: monospace;
+	}
+
+	nav * {
+		font-family: Quicksand;
+	}
+
+	nav {
+		border-width: 1px 0;
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		text-align: center;
+	}
+
+	nav li {
+		display: inline;
+	}
+
+	nav a {
+		display: inline-block;
+		padding: 10px;
+	}
+
+	pre {
+		font-family: monospace;
+	}
+
+	/* a sloppy hack to get rid of a duplicated title field */
+	.span8 div:first-of-type h2 {
+		display: none;
+	}
+
+</style>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-default" role="navigation">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">arrow 0.1.0</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+
+        <li><a href="index.html">Index</a></li>
+        <li><a href="content-test.html">Tutorials</a></li>
+        <li><a href="#">Demos</a></li>
+        <li><a href="#">Contact/About</a></li>
+
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="https://github.com/rgrannell1/arrow">Github</a></li>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+    <div class="container">
+      <header>
+      
+      </header>
+
+      <h1>xSplitBy</h1>
+
+<div class="row">
+  <div class="span8">
+    <h2>Usage</h2>
+    <pre><div>xSplitBy(pred, coll)</div>
+<div>xSplitBy...(pred, ...)</div></pre>
+    
+    <h2>Arguments</h2>
+    <dl>
+      <dt>pred</dt>
+      <dd>a binary predicate. The predicate to test whether
+     a split should be introduced between the two elements.</dd>
+      <dt>coll</dt>
+      <dd>a collection. The collection to split.</dd>
+      <dt>...</dt>
+      <dd>see above.</dd>
+    </dl>
+    
+    <div class="xSplitBy">
+      <h2>xSplitBy</h2>
+
+    </div>
+
+    <div class="Value">
+      <h2>Value</h2>
+
+      <p>A list of lists.</p>
+
+    </div>
+
+    <div class="Description">
+      <h2>Description</h2>
+
+      <p>Divide a collection into groups determined by a predicate.</p>
+
+    </div>
+
+    <div class="Corner Cases">
+      <h2>Corner Cases</h2>
+
+      <p></p>
+
+      <p>Returns the empty list if <b>coll</b> is length-zero.</p>
+
+    </div>
+    
+    <h2 id="examples">Examples</h2>
+    <pre class="examples"><div class='input'>
+NULL
+</div></pre>
+  </div>
+  <div class="span4">
+    <!-- <ul>
+      <li>xSplitBy</li><li>xSplitBy...</li>
+    </ul>
+    <ul>
+      
+    </ul> -->
+
+    <h2>See also</h2>
+    
+Other reshaping_functions: <code><a href='xChop.html'>xChop</a></code>,
+  <code><a href='xChop.html'>xChop...</a></code>; <code><a href='xChunk.html'>xChunk</a></code>,
+  <code><a href='xChunk.html'>xChunk...</a></code>; <code><a href='xFlatten.html'>xFlatten</a></code>,
+  <code><a href='xFlatten.html'>xFlatten...</a></code>; <code><a href='xGroupBy.html'>xGroupBy</a></code>,
+  <code><a href='xGroupBy.html'>xGroupBy...</a></code>; <code><a href='xJoin.html'>xJoin</a></code>,
+  <code><a href='xJoin.html'>xJoin...</a></code>; <code><a href='xOneOf.html'>xOneOf</a></code>,
+  <code><a href='xOneOf.html'>xOneOf...</a></code>; <code><a href='xRecycle.html'>xRecycle</a></code>,
+  <code><a href='xRecycle.html'>xRecycle...</a></code>; <code><a href='xRepeat.html'>xRepeat</a></code>,
+  <code><a href='xRepeat.html'>xRepeat...</a></code>; <code><a href='xReverse.html'>xReverse</a></code>,
+  <code><a href='xReverse.html'>xReverse...</a></code>; <code><a href='xShuffle.html'>xShuffle</a></code>,
+  <code><a href='xShuffle.html'>xShuffle...</a></code>; <code><a href='xSortBy.html'>xSortBy</a></code>,
+  <code><a href='xSortBy.html'>xSortBy...</a></code>; <code><a href='xSplitAt.html'>xSplitAt</a></code>,
+  <code><a href='xSplitAt.html'>xSplitAt...</a></code>; <code><a href='xTabulate.html'>xTabulate</a></code>,
+  <code><a href='xTabulate.html'>xTabulate...</a></code>; <code><a href='xUnzipNames.html'>xUnzipNames</a></code>,
+  <code><a href='xUnzipNames.html'>xUnzipNames...</a></code>; <code><a href='xZipNames.html'>xZipNames</a></code>,
+  <code><a href='xZipNames.html'>xZipNames...</a></code>; <code><a href='xZip.html'>xZip</a></code>,
+  <code><a href='xZip.html'>xZip...</a></code>
+
+    
+  </div>
+</div>
+
+      <footer>
+      <p class="pull-right"><a href="#">Back to top</a></p>
+<p>Built by <a href="https://github.com/hadley/staticdocs">staticdocs</a>. Styled with Flatstrap.</p>
+      </footer>
+    </div>
+  </body>
+</html>

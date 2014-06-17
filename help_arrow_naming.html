@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+<title>help_arrow_naming. arrow 0.1.0</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="">
+
+<link href="css/bootstrap.css" rel="stylesheet">
+<link href="css/bootstrap-responsive.css" rel="stylesheet">
+<link href="css/highlight.css" rel="stylesheet">
+<link href="css/staticdocs.css" rel="stylesheet">
+
+<!--[if lt IE 9]>
+  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+
+<link href='http://fonts.googleapis.com/css?family=Open+Sans|Quicksand' rel='stylesheet' type='text/css'>
+
+<style type="text/css">
+	html * {
+		font-family: Open Sans;
+	}
+
+	h1 {
+		color: #C7254E;
+		font-family: Quicksand;
+	}
+
+	h2 {
+		font-family: Quicksand;
+	}
+
+
+	h3 {
+		font-family: Quicksand;
+	}
+
+	h4 {
+		font-family: Quicksand;
+	}
+
+	h5 {
+		font-family: Quicksand;
+	}
+
+	h6 {
+		font-family: Quicksand;
+	}
+	.navbar {
+		background: white;
+	}
+	.navbar * {
+		color: #333;
+	}
+
+	.examples * {
+		font-family: monospace;
+	}
+
+	code {
+		font-family: monospace;
+	}
+
+	nav {
+		border-width: 1px 0;
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		text-align: center;
+	}
+
+	nav li {
+		display: inline;
+	}
+
+	nav a {
+		display: inline-block;
+		padding: 10px;
+	}
+
+	pre {
+		font-family: monospace;
+	}
+
+</style>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-default" role="navigation">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">arrow 0.1.0</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+
+        <li><a href="index.html">Index</a></li>
+        <li><a href="#">Tutorials</a></li>
+        <li><a href="#">Demos</a></li>
+        <li><a href="#">Contact/About</a></li>
+
+      </ul>
+      <form class="navbar-form navbar-left" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search">
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+      </form>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="https://github.com/rgrannell1/arrow">Github</a></li>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+    <div class="container">
+      <header>
+        
+      </header>
+      
+      <h1>Usage - Naming Conventions</h1>
+
+<div class="row">
+  <div class="span8">
+        
+    <div class="Description">
+      <h2>Description</h2>
+
+      <p>A guide to naming conventions.</p>
+
+    </div>
+
+    <div class="Details">
+      <h2>Details</h2>
+
+      <p>Good function naming conventions can make a library easier
+to use. The fantastic plyr library uses a two-letter prefix
+to denote the input and output types of each ply function,
+which makes it trivial to find the correct variant of ply
+function. Arrow uses a few different naming conventions,
+though most don't need to be remembered.</p>
+
+      <p><b>Function Names</b></p>
+
+      <p>Arrow functions are always prefixed with the letter 'x',
+followed by an uppercase letter. Method names are camel
+case.</p>
+
+      <p><ul>
+<li><b>xMap</b> </li>
+<li><b>xFold</b>
+</li>
+<li><b>xProdSetOf</b> </li>
+</ul></p>
+
+      <p>Functions often come in pairs of related functions;</p>
+
+      <p><ul>
+<li><b>xExplode / xImplode</b>
+</li>
+<li><b>xSelect / xReject</b> </li>
+</ul></p>
+
+      <p>Certain functions process collections in a certain
+direction; as is convention in Haskell these have a 'l'
+(left) or 'r' (right) suffix.</p>
+
+      <p><ul>
+<li><b>xFoldl</b> </li>
+<li><b>xFoldr</b> </li>
+</ul></p>
+
+      <p>Most arrow functions have a normal version and a ellipsis
+(...) version; the ellipsis form has a three-dot suffix.</p>
+
+      <p><ul>
+<li><b>xMap / xMap...</b> </li>
+<li><b>xJoin
+/ xJoin...</b> </li>
+</ul></p>
+
+      <p><b>Parametre Names</b></p>
+
+      <p>Arrow has a small number of parametre names, which refer to
+some property of the expected argument.</p>
+
+      <p><ul>
+<li><b>bool:</b> a single boolean value. 
+</li>
+<li><b>bools:</b> a collection of boolean values. 
+</li>
+<li><b>coll:</b> a collection.  </li>
+<li><b>ims:</b> a
+collection of complex values.  </li>
+<li><b>colls:</b> a
+collection of collections.  </li>
+<li><b>fn:</b> a
+collection of collections.  </li>
+<li><b>num:</b> a single
+number.  </li>
+<li><b>nums:</b> a collection of numbers. 
+</li>
+<li><b>pred:</b> a function that returns a logical
+value.  </li>
+<li><b>rexp:</b> a string to be used as a
+regular expression.  </li>
+<li><b>str:</b> a string. 
+</li>
+<li><b>strs:</b> a collection of strings. 
+</li>
+<li><b>sym:</b> a symbol or string. 
+</li>
+<li><b>val:</b> any R value.  </li>
+</ul></p>
+
+      <p>Arrow functions rarely have more than two parametres.</p>
+
+      <p><b>Method Names</b></p>
+
+      <p>R doesn't have a native implementation of chaining methods,
+so a few naming conventions are needed to make them behave
+as nicely as the methods in Python or JavaScript.</p>
+
+      <p>Chaining methods - methods whose return value itself has
+methods - use the normal Arrow naming conventions.</p>
+
+      <p><code>x_( letters ) \$ xMap...(toupper)</code></p>
+
+      <p>Chaining methods don't play nicely with normal functions;
+if you want to use the return value of a method in either a
+base R function or an Arrow function you need to use an
+unchaining method. Unchaining methods are prefixed with
+'x_'.</p>
+
+      <p><code>length( x_( letters ) \$ x_Map(toupper) )</code></p>
+
+      <p><code>length( x_( letters ) \$ x_Map...(toupper) )</code></p>
+
+    </div>
+      </div>
+  <div class="span4">
+    <!-- <ul>
+      <li>help_arrow_naming</li>
+    </ul>
+    <ul>
+      
+    </ul> -->
+
+    
+  </div>
+</div>
+      
+      <footer>
+      
+      </footer>
+    </div>
+  </body>
+</html>

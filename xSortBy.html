@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+<title>xSortBy. kiwi 0.23.0</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="">
+
+<link href="css/bootstrap.css" rel="stylesheet">
+<link href="css/bootstrap-responsive.css" rel="stylesheet">
+<link href="css/highlight.css" rel="stylesheet">
+<link href="css/staticdocs.css" rel="stylesheet">
+
+<script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+
+<script type="text/javascript">
+/*this lump of code highlight the R code on this page.*/
+(function(){"use strict";})();highlight=function(){var e=function(e,t){var r={depth:0,transitions:e,html_output_rules:t(this.depth)};r.consume_token=function(e){var t=function(e,t,n){var i=r.html_output_rules[e][t];var s=n;for(var o in i){if(!i.hasOwnProperty(o)){continue}if(o!=="*nomatch*"&&o===n){s=i[o]}}return s};var i=function(e,t,i){var s=e==="normal"&&t==="open_delim"||e==="open_delim"&&t==="open_delim";var o=e==="close_delim"&&t==="normal"||e==="close_delim"&&t==="close_delim";if(s){i+=1;if(i>13)i=0}else if(o){i-=1;if(i<0)i=13}r.depth=i;r.html_output_rules=n(i);return{depth:i,html_output_rules:n(i)}};for(var s in r.transitions){if(!r.transitions.hasOwnProperty(s)){continue}if(r.transitions[s].active){var o=r.transitions[s];var u=s}}var a=o.edges["*nomatch*"];for(var f in o.edges){if(!o.edges.hasOwnProperty(f)){continue}if(e===f){a=o.edges[f]}}r.transitions[u].active=false;r.transitions[a].active=true;i(u,a,r.depth);return t(u,a,e)};return r};var t=function(){return{str_single:{active:false,edges:{"'":"normal","*nomatch*":"str_single"}},str_double:{active:false,edges:{'"':"normal","*nomatch*":"str_double"}},normal:{active:true,edges:{"'":"str_single",'"':"str_double","#":"comment","(":"open_delim","[":"open_delim","{":"open_delim","}":"close_delim","]":"close_delim",")":"close_delim","*nomatch*":"normal"}},open_delim:{active:false,edges:{"'":"str_single",'"':"str_double","#":"comment","(":"open_delim","[":"open_delim","{":"open_delim","}":"close_delim","]":"close_delim",")":"close_delim","*nomatch*":"normal"}},close_delim:{active:false,edges:{"'":"str_single",'"':"str_double","#":"comment","(":"open_delim","[":"open_delim","{":"open_delim","}":"close_delim","]":"close_delim",")":"close_delim","*nomatch*":"normal"}},comment:{active:false,edges:{"\n":"normal","*nomatch*":"comment"}}}}();var n=function(e){var t={open:function(e){return'<span class = "'+e+'">'},close:function(){return"</span>"},both:function(e,t){return'<span class="'+e+'">'+t+"</span>"}};var n=function(e){return{str_single:{"'":t.open("sstring")+"'"},str_double:{'"':t.open("dstring")+'"'},normal:{$:t.both("dollar","$"),",":t.both("comma lev"+e,","),"*nomatch*":"*token*"},comment:{"#":t.open("comment")+"#"},open_delim:{"(":t.both("lev"+e,"("),"[":t.both("lev"+e,"["),"{":t.both("lev"+e,"{")},close_delim:{")":t.both("lev"+e,")"),"]":t.both("lev"+e,"]"),"}":t.both("lev"+e,"}")}}};return{str_single:{str_single:{'"':t.both("ssdouble",'"'),"*nomatch*":"*token*"},normal:{"'":"'"+t.close()}},str_double:{str_double:{"'":t.both("dssingle","'"),"*nomatch*":"*token*"},normal:{'"':'"'+t.close()}},normal:n(e),open_delim:n(e),close_delim:n(e),comment:{normal:{"\n":"\n"+t.close()},comment:{"*nomatch*":"*token*"}}}};var r=function(r){var i="";var s=e(t,n);for(var o=0;o<r.length;o++){var u=r.substring(o,o+1);i=i+s.consume_token(u)}return i};var i=function(e,t){$(e).replaceWith(function(e,n){return t(r($(this).text()))})};return{StateMachine:e,highlight_text:r,highlight_r_code:i}}()
+</script>
+
+<!--[if lt IE 9]>
+  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<link href='https://fonts.googleapis.com/css?family=Open+Sans|Quicksand:400,700|Inconsolata' rel='stylesheet' type='text/css'>
+<style type="text/css">
+/*
+	The css for the example syntax highlighting.
+*/
+
+	/* a sloppy hack to get rid of a duplicated title field */
+
+	a {
+		color: #3498db
+	}
+
+	p {
+		font-family: "Open Sans"
+	}
+
+	/*order matters*/
+	.r {
+		font-family: Inconsolata;
+	}
+
+	.navbar  {
+		font-family: Quicksand
+	}
+
+	h1 {
+		font-family: Quicksand
+	}
+
+	h2 {
+		font-family: Quicksand
+	}
+
+	h3 {
+		font-family: Quicksand
+	}
+
+	h4 {
+		font-family: Quicksand
+	}
+
+	h5 {
+		font-family: Quicksand
+	}
+
+	h6 {
+		font-family: Quicksand
+	}
+
+
+
+
+
+
+
+
+	/*overflow on examples*/
+	div.output {
+		max-height: 250px;
+		overflow: scroll;
+		padding-left: 10px;
+	}
+	div.output {
+	    background: #f6f6f6;
+	}
+
+	h2 {
+		font-size: 24px}
+
+	html * {
+	  background: white; }
+
+	.r {
+	  color: #505050; }
+
+	.r .comment {
+	  color: #8c8c8c;
+	  font-style: italic;
+	  background: white; }
+
+	.r .roxygen {
+	  color: #666666;
+	  background: white; }
+
+	.r .ssdouble {
+	  color: #e67e22; }
+
+	.r .dssingle {
+	  color: #e67e22; }
+
+	.r .sstring {
+	  color: #f37028; }
+
+	.r .dstring {
+	  color: #f37028; }
+
+	.r .at {
+	  color: #c35dc3; }
+
+	.r .dollar {
+	  color: #c35dc3; }
+
+	.r .lev0 {
+	  color: #8ea812; }
+
+	.r .lev1 {
+	  color: #8ea812; }
+
+	.r .lev2 {
+	  color: #8ea812; }
+
+	.r .lev3 {
+	  color: #8ea812; }
+
+	.r .lev4 {
+	  color: #8ea812; }
+
+	.r .lev5 {
+	  color: #8ea812; }
+
+	.r .lev6 {
+	  color: #8ea812; }
+
+	.r .lev7 {
+	  color: #8ea812; }
+
+	.r .lev8 {
+	  color: #8ea812; }
+
+	.r .lev9 {
+	  color: #8ea812; }
+
+	.r .lev10 {
+	  color: #8ea812; }
+
+	.r .lev11 {
+	  color: #8ea812; }
+
+	.r .lev12 {
+	  color: #8ea812; }
+
+	.r .lev13 {
+	  color: #8ea812; }
+
+</style>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-default" role="navigation">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">kiwi 0.23.0</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+
+        <li><a id="index-link" href="index.html">Index</a></li>
+        <li><a id="tutorial-link">Tutorials</a></li>
+        <li><a id="demos-link" href="#">Demos</a></li>
+        <li><a id="contact-link" href="#">Contact/About</a></li>
+
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a id="github-link" href="https://github.com/rgrannell1/kiwi">Github</a></li>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+    <div class="container">
+      <header>
+      
+      </header>
+
+      <h1>xSortBy</h1>
+
+<div class="row">
+  <div class="span8">
+    <h2>Usage</h2>
+    <pre><div>xSortBy(fn, coll)</div>
+<div>xSortBy_(fn, ...)</div></pre>
+    
+    <h2>Arguments</h2>
+    <dl>
+      <dt>fn</dt>
+      <dd>a function that returns a number. The size metric of an element.</dd>
+      <dt>coll</dt>
+      <dd>a collection. The collection to sort.</dd>
+      <dt>...</dt>
+      <dd>see above.</dd>
+    </dl>
+    
+    <div class="xSortBy">
+      <h2>xSortBy</h2>
+
+    </div>
+
+    <div class="Value">
+      <h2>Value</h2>
+
+      <p>A list</p>
+
+    </div>
+
+    <div class="Description">
+      <h2>Description</h2>
+
+      <p>Sort a collection by the output of a function applied to each element.</p>
+
+    </div>
+
+    <div class="Details">
+      <h2>Details</h2>
+
+      <p><b>xSortBy</b> allows a collection to be sorted by a custom
+    size operation. A classic example is sorting a collection of collections
+    (analogous to a data frame) by a particular column.</p>
+
+      <p><code>coll <- list(list('key1', 10), list('key2', 12), list('key3', 0))</code></p>
+
+      <p><code>xSortBy(xSecondOf, coll)</code></p>
+
+      <p><code>list(list("key2", 12), list("key1", 10), list("key3", 0))</code></p>
+
+      <p>In the above example several rows of collection of collections are rearranged
+    by the value in one of their columns.</p>
+
+    </div>
+
+    <div class="Type Signature">
+      <h2>Type Signature</h2>
+
+      <p></p>
+
+      <p>(any -> &lt;number>) -> |any| -> |any|</p>
+
+    </div>
+
+    <div class="Corner Cases">
+      <h2>Corner Cases</h2>
+
+      <p></p>
+
+      <p>If <b>coll</b> is a empty collection the empty list is returned.</p>
+
+    </div>
+    
+    <h2 id="examples">Examples</h2>
+    <pre class="examples"><div class='input'>
+# 1. k-nearest neighbours
+#   is a patient diabetic?
+
+# ------------- observations ------------- #
+#
+# the patient in question has a fasting blood glucose level
+# of 135 mL / dL, and we also have data on the blood sugar
+# of diabetic and non-diabetic individuals.
+#
+# By finding the most similar blood glucose levels and checking
+# whether the people with those readings were or weren&#39;t diabetic.
+
+blood_glucose &lt;- 135
+
+patients_data &lt;-
+	xZip_(
+		&#39;mg per dl (fasting)&#39; =
+			c(130, 137, 139, 140, 141, 137, 127, 143, 135, 127,
+				77, 79, 79, 79, 88, 87, 95, 82, 93, 94),
+		&#39;category&#39; =
+			xJoin_(xRepeat(10, &#39;diabetic&#39;), xRepeat(10, &#39;non-diabetic&#39;))
+	)
+
+# shuffle the rows of the data.
+patients_data &lt;- xShuffle(patients_data)
+
+k_nearest &lt;- (dist : point : training) := {
+	# classification.
+	# given training points to test against,
+	# classify a point based on its nearest neighbours.
+
+	k &lt;- floor( sqrt(xLenOf(training)) )
+
+	dist_to_test_point &lt;- xFix_(dist, point)
+
+	distances &lt;-
+		x_(training) $ xPluck(&#39;mg per dl (fasting)&#39;) $
+		xMap(dist_to_test_point) $ x_AsDouble()
+
+	# rank the distances from closest to furthest.
+	nearest &lt;- x_(training) $ xSlice(xWhere(xRankOf(distances) &lt;= k))
+
+	# get the frequencies of the categories among the closest.
+	category_frequencies &lt;-
+		nearest $ xPluck(&#39;category&#39;) $ xTabulate() $ x_SortBy(xSecondOf)
+
+	# select the name of the most frequent category
+	xFirstOf(xFirstOf(category_frequencies))
+}
+
+k_nearest(
+	(x1 : x2) := abs(x1 - x2), blood_glucose, patients_data)
+</div>
+<div class='output'>[1] &quot;diabetic&quot;
+</div>
+<div class='input'>
+# &#39;diabetic&#39;
+
+# 2. CE Get the N longest lines
+#    text from Wikipedia
+
+paragraph &lt;-
+&quot;The plant glutamate cysteine ligase (GCL) is a redox-sensitive homodimeric enzyme, conserved in the plant kingdom.
+[11] In an oxidizing environment, intermolecular disulfide bridges are formed and the enzyme switches to the dimeric active state.
+ The midpoint potential of the critical cysteine pair is -318 mV.
+ In addition to the redox-dependent control is the plant GCL enzyme feedback inhibited by GSH.
+ [12] GCL is exclusively located in plastids, and glutathione synthetase is dual-targeted to plastids and cytosol, thus are GSH and gamma-glutamylcysteine exported from the plastids.
+ [13] Both glutathione biosynthesis enzymes are essential in plants; knock-outs of GCL and GS are lethal to embryo and seedling.&quot;
+
+x_(paragraph) $ xToLines() $ xSortBy(nchar) $ x_Take(3)
+</div>
+<div class='output'>[[1]]
+[1] &quot; The midpoint potential of the critical cysteine pair is -318 mV.&quot;
+
+[[2]]
+[1] &quot; In addition to the redox-dependent control is the plant GCL enzyme feedback inhibited by GSH.&quot;
+
+[[3]]
+[1] &quot;The plant glutamate cysteine ligase (GCL) is a redox-sensitive homodimeric enzyme, conserved in the plant kingdom.&quot;
+
+</div>
+<div class='input'>
+# list(
+#     &quot; [12] GCL is exclusively located in plastids, and glutathione synthetase is dual-targeted to plastids and cytosol, thus are GSH and gamma-glutamylcysteine exported from the plastids.&quot;,
+#     &quot;[11] In an oxidizing environment, intermolecular disulfide bridges are formed and the enzyme switches to the dimeric active state.&quot;,
+#     &quot; [13] Both glutathione biosynthesis enzymes are essential in plants; knock-outs of GCL and GS are lethal to embryo and seedling.&quot;
+# )
+
+# 3. CE How many ways do numbers drawn from an
+#    array sum to zero?
+
+nums &lt;- c(-2, 2, -4, 2, -2, -6)
+
+x_(xProdSetOf_(nums, nums, nums, nums)) $
+xSelect(
+	xs := {
+		(unlist %then% sum)(xs) == 0
+	}
+) $
+x_UniqueOf()
+</div>
+<div class='output'>[[1]]
+[[1]][[1]]
+[1] 2
+
+[[1]][[2]]
+[1] 2
+
+[[1]][[3]]
+[1] -2
+
+[[1]][[4]]
+[1] -2
+
+
+[[2]]
+[[2]][[1]]
+[1] 2
+
+[[2]][[2]]
+[1] -2
+
+[[2]][[3]]
+[1] 2
+
+[[2]][[4]]
+[1] -2
+
+
+[[3]]
+[[3]][[1]]
+[1] -2
+
+[[3]][[2]]
+[1] 2
+
+[[3]][[3]]
+[1] 2
+
+[[3]][[4]]
+[1] -2
+
+
+[[4]]
+[[4]][[1]]
+[1] 2
+
+[[4]][[2]]
+[1] -2
+
+[[4]][[3]]
+[1] -2
+
+[[4]][[4]]
+[1] 2
+
+
+[[5]]
+[[5]][[1]]
+[1] -2
+
+[[5]][[2]]
+[1] 2
+
+[[5]][[3]]
+[1] -2
+
+[[5]][[4]]
+[1] 2
+
+
+[[6]]
+[[6]][[1]]
+[1] -2
+
+[[6]][[2]]
+[1] -2
+
+[[6]][[3]]
+[1] 2
+
+[[6]][[4]]
+[1] 2
+
+
+[[7]]
+[[7]][[1]]
+[1] -6
+
+[[7]][[2]]
+[1] 2
+
+[[7]][[3]]
+[1] 2
+
+[[7]][[4]]
+[1] 2
+
+
+[[8]]
+[[8]][[1]]
+[1] 2
+
+[[8]][[2]]
+[1] -6
+
+[[8]][[3]]
+[1] 2
+
+[[8]][[4]]
+[1] 2
+
+
+[[9]]
+[[9]][[1]]
+[1] 2
+
+[[9]][[2]]
+[1] 2
+
+[[9]][[3]]
+[1] -6
+
+[[9]][[4]]
+[1] 2
+
+
+[[10]]
+[[10]][[1]]
+[1] 2
+
+[[10]][[2]]
+[1] 2
+
+[[10]][[3]]
+[1] 2
+
+[[10]][[4]]
+[1] -6
+
+
+</div>
+<div class='input'>
+# list(
+#     list(2, 2, -2, -2), list(2, -2, 2, -2),
+#     list(-2, 2, 2, -2), list(2, -2, -2, 2),
+#     list(-2, 2, -2, 2), list(-2, -2, 2, 2),
+#     list(-6, 2, 2, 2),  list(2, -6, 2, 2),
+#     list(2, 2, -6, 2),  list(2, 2, 2, -6)
+# )
+</div></pre>
+  </div>
+  <div class="span4">
+    <!-- <ul>
+      <li>xSortBy</li><li>xSortBy_</li>
+    </ul>
+    <ul>
+      
+    </ul> -->
+
+    <h2>See also</h2>
+    
+Other reshaping_functions: <code><a href='xAppend.html'>xAppend</a></code>,
+  <code><a href='xAppend.html'>xAppend_</a></code>; <code><a href='xChop.html'>xChop</a></code>,
+  <code><a href='xChop.html'>xChop_</a></code>; <code><a href='xChunk.html'>xChunk</a></code>,
+  <code><a href='xChunk.html'>xChunk_</a></code>; <code><a href='xFlatten.html'>xFlatten</a></code>,
+  <code><a href='xFlatten.html'>xFlatten_</a></code>; <code><a href='xGroupBy.html'>xGroupBy</a></code>,
+  <code><a href='xGroupBy.html'>xGroupBy_</a></code>; <code><a href='xJoin.html'>xJoin</a></code>,
+  <code><a href='xJoin.html'>xJoin_</a></code>; <code><a href='xOneOf.html'>xOneOf</a></code>,
+  <code><a href='xOneOf.html'>xOneOf_</a></code>; <code><a href='xPrepend.html'>xPrepend</a></code>,
+  <code><a href='xPrepend.html'>xPrepend_</a></code>; <code><a href='xRecycle.html'>xRecycle</a></code>,
+  <code><a href='xRecycle.html'>xRecycle_</a></code>; <code><a href='xRepeat.html'>xRepeat</a></code>,
+  <code><a href='xRepeat.html'>xRepeat_</a></code>; <code><a href='xReverse.html'>xReverse</a></code>,
+  <code><a href='xReverse.html'>xReverse_</a></code>; <code><a href='xShuffle.html'>xShuffle</a></code>,
+  <code><a href='xShuffle.html'>xShuffle_</a></code>; <code><a href='xSplitAt.html'>xSplitAt</a></code>,
+  <code><a href='xSplitAt.html'>xSplitAt_</a></code>; <code><a href='xSplitWith.html'>xSplitWith</a></code>,
+  <code><a href='xSplitWith.html'>xSplitWith_</a></code>; <code><a href='xTabulate.html'>xTabulate</a></code>,
+  <code><a href='xTabulate.html'>xTabulate_</a></code>; <code><a href='xUnzipIndices.html'>xUnzipIndices</a></code>,
+  <code><a href='xUnzipIndices.html'>xUnzipIndices_</a></code>; <code><a href='xUnzipKeys.html'>xUnzipKeys</a></code>,
+  <code><a href='xUnzipKeys.html'>xUnzipKeys_</a></code>; <code><a href='xZipKeys.html'>xZipKeys</a></code>,
+  <code><a href='xZipKeys.html'>xZipKeys_</a></code>; <code><a href='xZip.html'>xZip</a></code>,
+  <code><a href='xZip.html'>xZip_</a></code>
+
+      </div>
+</div>
+
+      <footer>
+      <p class="pull-right"><a href="#">Back to top</a></p>
+<p>Built by <a href="https://github.com/hadley/staticdocs">staticdocs</a>. Styled with Flatstrap.</p>
+<script type="text/javascript">
+	// highlight code examples.
+
+	highlight.highlight_r_code("p code", function (text) {
+		return "<p><code class = 'input r'>" + text + "</code><p>"
+	})
+
+	highlight.highlight_r_code("pre .input", function (text) {
+		return "<div class = 'input r'>" + text + "</div>"
+	})
+
+	highlight.highlight_r_code("code.r", function (text) {
+		return "<div class = 'input r'>" + text + "</div>"
+	})
+
+	highlight.highlight_r_code(".span8 pre:first", function (text) {
+		return "<pre class = 'input r'>" + text + "</pre>"
+	})
+
+	// I LOVE having jQuery as a dependency. Best library ever written,
+	// and a major inspiration for kiwi.
+
+	// reorder the xMethod fields.
+	$('div.Description').prependTo('.span8')
+	// Type Signature gets split into two classes;
+	// I should fix this by renaming section names.
+	$('div.Type').prependTo('.span8')
+	// replace the special characters > and < in the type signatures.
+
+	$('#contact-link').click(function() {
+		// I know this is sub-optimal, but it'll do.
+
+		var h1 = function (text) {
+			return "<h1>" + text + "</h1>"
+		}
+		var p = function (text) {
+			return "<p>" + text + "</p>"
+		}
+		var ul = function (text) {
+			return "<ul>" + text + "</ul>"
+		}
+		var li = function (text) {
+			return "<li>" + text + "</li>"
+		}
+		var a = function (href, text) {
+			return "<a href='" + href + "'>" + text + "</a>"
+		}
+		var em = function (text) {
+			return "<em>" + text + "</em>"
+		}
+
+		$('.span8').html(
+
+			h1("Contact / Queries") +
+			p("Feel free to contact me if any issue with or queries about Kiwi through the following channels:</p>") +
+			ul(
+				li(p("my gmail address is r.grannell2")) +
+				li(a("https://twitter.com/RyanGrannell", "Twitter")) +
+				li(a("https://github.com/rgrannell1", "Github"))
+			) +
+			p("If you spot a typo or slight error in this documentation I would really appreciate if you sent " +
+				"a " + a("https://help.github.com/articles/using-pull-requests", "pull request") + " with the typo fixed.") +
+			p("Thanks for using Kiwi") +
+			p("Ryan Grannell")
+		)
+
+
+	})
+
+</script>
+
+<style type="text/css">
+.span8 > div:nth-child(7) > h2:nth-child(1) {
+	display: none;
+}
+.span8 div:first-of-type h2 {
+	display: none;
+}
+</style>
+
+      </footer>
+    </div>
+  </body>
+</html>

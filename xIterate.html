@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+<title>xIterate. kiwi 0.23.0</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="">
+
+<link href="css/bootstrap.css" rel="stylesheet">
+<link href="css/bootstrap-responsive.css" rel="stylesheet">
+<link href="css/highlight.css" rel="stylesheet">
+<link href="css/staticdocs.css" rel="stylesheet">
+
+<script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+
+<script type="text/javascript">
+/*this lump of code highlight the R code on this page.*/
+(function(){"use strict";})();highlight=function(){var e=function(e,t){var r={depth:0,transitions:e,html_output_rules:t(this.depth)};r.consume_token=function(e){var t=function(e,t,n){var i=r.html_output_rules[e][t];var s=n;for(var o in i){if(!i.hasOwnProperty(o)){continue}if(o!=="*nomatch*"&&o===n){s=i[o]}}return s};var i=function(e,t,i){var s=e==="normal"&&t==="open_delim"||e==="open_delim"&&t==="open_delim";var o=e==="close_delim"&&t==="normal"||e==="close_delim"&&t==="close_delim";if(s){i+=1;if(i>13)i=0}else if(o){i-=1;if(i<0)i=13}r.depth=i;r.html_output_rules=n(i);return{depth:i,html_output_rules:n(i)}};for(var s in r.transitions){if(!r.transitions.hasOwnProperty(s)){continue}if(r.transitions[s].active){var o=r.transitions[s];var u=s}}var a=o.edges["*nomatch*"];for(var f in o.edges){if(!o.edges.hasOwnProperty(f)){continue}if(e===f){a=o.edges[f]}}r.transitions[u].active=false;r.transitions[a].active=true;i(u,a,r.depth);return t(u,a,e)};return r};var t=function(){return{str_single:{active:false,edges:{"'":"normal","*nomatch*":"str_single"}},str_double:{active:false,edges:{'"':"normal","*nomatch*":"str_double"}},normal:{active:true,edges:{"'":"str_single",'"':"str_double","#":"comment","(":"open_delim","[":"open_delim","{":"open_delim","}":"close_delim","]":"close_delim",")":"close_delim","*nomatch*":"normal"}},open_delim:{active:false,edges:{"'":"str_single",'"':"str_double","#":"comment","(":"open_delim","[":"open_delim","{":"open_delim","}":"close_delim","]":"close_delim",")":"close_delim","*nomatch*":"normal"}},close_delim:{active:false,edges:{"'":"str_single",'"':"str_double","#":"comment","(":"open_delim","[":"open_delim","{":"open_delim","}":"close_delim","]":"close_delim",")":"close_delim","*nomatch*":"normal"}},comment:{active:false,edges:{"\n":"normal","*nomatch*":"comment"}}}}();var n=function(e){var t={open:function(e){return'<span class = "'+e+'">'},close:function(){return"</span>"},both:function(e,t){return'<span class="'+e+'">'+t+"</span>"}};var n=function(e){return{str_single:{"'":t.open("sstring")+"'"},str_double:{'"':t.open("dstring")+'"'},normal:{$:t.both("dollar","$"),",":t.both("comma lev"+e,","),"*nomatch*":"*token*"},comment:{"#":t.open("comment")+"#"},open_delim:{"(":t.both("lev"+e,"("),"[":t.both("lev"+e,"["),"{":t.both("lev"+e,"{")},close_delim:{")":t.both("lev"+e,")"),"]":t.both("lev"+e,"]"),"}":t.both("lev"+e,"}")}}};return{str_single:{str_single:{'"':t.both("ssdouble",'"'),"*nomatch*":"*token*"},normal:{"'":"'"+t.close()}},str_double:{str_double:{"'":t.both("dssingle","'"),"*nomatch*":"*token*"},normal:{'"':'"'+t.close()}},normal:n(e),open_delim:n(e),close_delim:n(e),comment:{normal:{"\n":"\n"+t.close()},comment:{"*nomatch*":"*token*"}}}};var r=function(r){var i="";var s=e(t,n);for(var o=0;o<r.length;o++){var u=r.substring(o,o+1);i=i+s.consume_token(u)}return i};var i=function(e,t){$(e).replaceWith(function(e,n){return t(r($(this).text()))})};return{StateMachine:e,highlight_text:r,highlight_r_code:i}}()
+</script>
+
+<!--[if lt IE 9]>
+  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<link href='https://fonts.googleapis.com/css?family=Open+Sans|Quicksand:400,700|Inconsolata' rel='stylesheet' type='text/css'>
+<style type="text/css">
+/*
+	The css for the example syntax highlighting.
+*/
+
+	/* a sloppy hack to get rid of a duplicated title field */
+
+	a {
+		color: #3498db
+	}
+
+	p {
+		font-family: "Open Sans"
+	}
+
+	/*order matters*/
+	.r {
+		font-family: Inconsolata;
+	}
+
+	.navbar  {
+		font-family: Quicksand
+	}
+
+	h1 {
+		font-family: Quicksand
+	}
+
+	h2 {
+		font-family: Quicksand
+	}
+
+	h3 {
+		font-family: Quicksand
+	}
+
+	h4 {
+		font-family: Quicksand
+	}
+
+	h5 {
+		font-family: Quicksand
+	}
+
+	h6 {
+		font-family: Quicksand
+	}
+
+
+
+
+
+
+
+
+	/*overflow on examples*/
+	div.output {
+		max-height: 250px;
+		overflow: scroll;
+		padding-left: 10px;
+	}
+	div.output {
+	    background: #f6f6f6;
+	}
+
+	h2 {
+		font-size: 24px}
+
+	html * {
+	  background: white; }
+
+	.r {
+	  color: #505050; }
+
+	.r .comment {
+	  color: #8c8c8c;
+	  font-style: italic;
+	  background: white; }
+
+	.r .roxygen {
+	  color: #666666;
+	  background: white; }
+
+	.r .ssdouble {
+	  color: #e67e22; }
+
+	.r .dssingle {
+	  color: #e67e22; }
+
+	.r .sstring {
+	  color: #f37028; }
+
+	.r .dstring {
+	  color: #f37028; }
+
+	.r .at {
+	  color: #c35dc3; }
+
+	.r .dollar {
+	  color: #c35dc3; }
+
+	.r .lev0 {
+	  color: #8ea812; }
+
+	.r .lev1 {
+	  color: #8ea812; }
+
+	.r .lev2 {
+	  color: #8ea812; }
+
+	.r .lev3 {
+	  color: #8ea812; }
+
+	.r .lev4 {
+	  color: #8ea812; }
+
+	.r .lev5 {
+	  color: #8ea812; }
+
+	.r .lev6 {
+	  color: #8ea812; }
+
+	.r .lev7 {
+	  color: #8ea812; }
+
+	.r .lev8 {
+	  color: #8ea812; }
+
+	.r .lev9 {
+	  color: #8ea812; }
+
+	.r .lev10 {
+	  color: #8ea812; }
+
+	.r .lev11 {
+	  color: #8ea812; }
+
+	.r .lev12 {
+	  color: #8ea812; }
+
+	.r .lev13 {
+	  color: #8ea812; }
+
+</style>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-default" role="navigation">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">kiwi 0.23.0</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+
+        <li><a id="index-link" href="index.html">Index</a></li>
+        <li><a id="tutorial-link">Tutorials</a></li>
+        <li><a id="demos-link" href="#">Demos</a></li>
+        <li><a id="contact-link" href="#">Contact/About</a></li>
+
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a id="github-link" href="https://github.com/rgrannell1/kiwi">Github</a></li>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+    <div class="container">
+      <header>
+      
+      </header>
+
+      <h1>xIterate</h1>
+
+<div class="row">
+  <div class="span8">
+    <h2>Usage</h2>
+    <pre><div>xIterate(fn, val)</div></pre>
+    
+    <h2>Arguments</h2>
+    <dl>
+      <dt>fn</dt>
+      <dd>a function. The function to repeatedly apply to an initial value.</dd>
+      <dt>val</dt>
+      <dd>an arbitrary value. The initial value to iteratively modify.</dd>
+    </dl>
+    
+    <div class="xIterate">
+      <h2>xIterate</h2>
+
+    </div>
+
+    <div class="Value">
+      <h2>Value</h2>
+
+      <p>The result of successively applying <b>fn</b> to <b>val</b>.</p>
+
+    </div>
+
+    <div class="Description">
+      <h2>Description</h2>
+
+      <p>Iteratively apply a function to a value.</p>
+
+    </div>
+
+    <div class="Details">
+      <h2>Details</h2>
+
+      <p><b>xIterate</b> repeatedly calls a function on an initial value until
+    it is explicitely halted using <b>Return( )</b>. It is similar
+    for a while loop, with the added benefits of an explicit return value
+    and easier debugging.</p>
+
+      <p>The only way to end <b>xIterate</b> is to call <b>Return( )</b>. A
+    trivial example of ending an <b>xIterate</b> call is given below.</p>
+
+      <p><code>xIterate(num := if (num >= 10) Return(num) else num + 1, 0)</code></p>
+
+      <p><code>10</code></p>
+
+      <p>The above call iterates from zero to ten, before returning the
+    last number it encounters - ten. More useful examples are given below,
+    but the above example demonstrates the basic usage of <b>xIterate</b>.</p>
+
+    </div>
+
+    <div class="Type Signature">
+      <h2>Type Signature</h2>
+
+      <p></p>
+
+      <p>(any -> any) -> any -> any</p>
+
+    </div>
+
+    <div class="Corner Cases">
+      <h2>Corner Cases</h2>
+
+      <p></p>
+
+      <p>Length-zero values of <b>val</b> are treated as normal values,
+   since <b>val</b> accepts an arbitrary value. Like while loops
+   <b>xIterate</b> is potentially non-terminating, and <b>Return( )</b>
+   must be called to terminate the function.</p>
+
+    </div>
+    
+    <h2 id="examples">Examples</h2>
+    <pre class="examples"><div class='input'>
+# 1.
+#
+# find the smallest number evenly divisible by 1, 2, ..., 10
+# this works a lot like a while loop that returns a value.
+
+xIterate(
+    num := {
+
+        evenly_divisible &lt;- num %% (1:10) == 0
+
+        if (all(evenly_divisible)) {
+            Return(num)
+        } else {
+            num + 1
+        }
+    },
+    1
+)
+</div>
+<div class='output'>[1] 2520
+</div>
+<div class='input'>
+# 2. CE - Sum the first 1,000 primes
+#    This is trivial to do with a fold, but interesting
+#    to do with iterate and take,
+
+# according to the prime number theorem,
+# the number of primes is roughly
+#
+# y &lt;- x / ln(x)
+#
+# we know y is 1000, but we want to know how many
+# integers in 1...n we need to examine to find a thousand
+# primes. An analytic function is no fun, so lets
+# use a genetic algorithm to find the correct area to search.
+#
+# We have to make sure to overestimate the search space,
+# since the prime density function has a certain error range.
+# Otherwise we might find less than 1000 primes.
+#
+# In this case we use the sqrt(n) approximation to add
+# an approximate error to the estimated search space.
+#
+
+is_prime &lt;- num := {
+    min(num %% 2:(num - 1)) &gt; 0
+}
+
+prime_density &lt;- x := {
+    x / log(x)
+}
+
+upper_bound &lt;-
+x_(100000L) $
+xIterate(
+    estimate := {
+
+        mutants &lt;- estimate + c(
+            +(estimate / 1000),
+            -(estimate / 1000))
+
+        remaining_error &lt;- c(
+            abs(prime_density(mutants[1]) - 1000),
+            abs(prime_density(mutants[2]) - 1000))
+
+        new_estimate &lt;- mutants[which.min(remaining_error)]
+
+        if (min(remaining_error) &lt; 0.01) {
+            Return(new_estimate)
+        } else {
+            new_estimate
+        }
+    }
+) $
+x_Tap(
+    upper := {
+        floor(sqrt(upper) + upper)
+    }
+)
+
+# the sum of the first thousand primes.
+
+prime_sum &lt;-
+x_(1:upper_bound) $ xSelect(is_prime) $ xTake(1000) $ xReduce(&#39;+&#39;)
+
+# 3. CE Compute modulo without the builtin operator
+#    This is trivial to do with xIterate.
+
+modulo &lt;- (num : modulus) := {
+    # compute modulo without %%.
+
+    x_(num) $
+    x_Iterate(remainder := {
+
+        if (remainder &lt; modulus) {
+            Return(remainder)
+        } else {
+            remainder - modulus
+        }
+    })
+}
+
+modulo(1121, 10)
+</div>
+<div class='output'>[1] 1
+</div>
+<div class='input'>
+# 1
+
+# 4. CE find a palindromic number by
+#    taking a number, adding its reversed digits, and
+# repeating.
+
+to_digits &lt;- num := {
+    as.integer( xToChars(paste0(num)) )
+}
+
+from_digits &lt;- nums := {
+    as.integer(paste0(nums, collapse = &#39;&#39;))
+}
+
+xIterate(
+    num := {
+
+        newnum &lt;- to_digits(
+            num + from_digits( xReverse(to_digits(num)) ))
+
+        if ( all(newnum == xReverse(newnum)) ) {
+            Return(from_digits(newnum))
+        } else {
+            from_digits(newnum)
+        }
+    },
+    195
+)
+</div>
+<div class='output'>[1] 9339
+</div></pre>
+  </div>
+  <div class="span4">
+    <!-- <ul>
+      <li>xIterate</li>
+    </ul>
+    <ul>
+      
+    </ul> -->
+
+    <h2>See also</h2>
+    
+Other short_circuiting_functions: <code><a href='xFold.html'>xFold</a></code>,
+  <code><a href='xFold.html'>xFold_</a></code>; <code><a href='xReduce.html'>xReduce</a></code>,
+  <code><a href='xReduce.html'>xReduce_</a></code>; <code><a href='xScan.html'>xScan</a></code>,
+  <code><a href='xScan.html'>xScan_</a></code>
+
+      </div>
+</div>
+
+      <footer>
+      <p class="pull-right"><a href="#">Back to top</a></p>
+<p>Built by <a href="https://github.com/hadley/staticdocs">staticdocs</a>. Styled with Flatstrap.</p>
+<script type="text/javascript">
+	// highlight code examples.
+
+	highlight.highlight_r_code("p code", function (text) {
+		return "<p><code class = 'input r'>" + text + "</code><p>"
+	})
+
+	highlight.highlight_r_code("pre .input", function (text) {
+		return "<div class = 'input r'>" + text + "</div>"
+	})
+
+	highlight.highlight_r_code("code.r", function (text) {
+		return "<div class = 'input r'>" + text + "</div>"
+	})
+
+	highlight.highlight_r_code(".span8 pre:first", function (text) {
+		return "<pre class = 'input r'>" + text + "</pre>"
+	})
+
+	// I LOVE having jQuery as a dependency. Best library ever written,
+	// and a major inspiration for kiwi.
+
+	// reorder the xMethod fields.
+	$('div.Description').prependTo('.span8')
+	// Type Signature gets split into two classes;
+	// I should fix this by renaming section names.
+	$('div.Type').prependTo('.span8')
+	// replace the special characters > and < in the type signatures.
+
+	$('#contact-link').click(function() {
+		// I know this is sub-optimal, but it'll do.
+
+		var h1 = function (text) {
+			return "<h1>" + text + "</h1>"
+		}
+		var p = function (text) {
+			return "<p>" + text + "</p>"
+		}
+		var ul = function (text) {
+			return "<ul>" + text + "</ul>"
+		}
+		var li = function (text) {
+			return "<li>" + text + "</li>"
+		}
+		var a = function (href, text) {
+			return "<a href='" + href + "'>" + text + "</a>"
+		}
+		var em = function (text) {
+			return "<em>" + text + "</em>"
+		}
+
+		$('.span8').html(
+
+			h1("Contact / Queries") +
+			p("Feel free to contact me if any issue with or queries about Kiwi through the following channels:</p>") +
+			ul(
+				li(p("my gmail address is r.grannell2")) +
+				li(a("https://twitter.com/RyanGrannell", "Twitter")) +
+				li(a("https://github.com/rgrannell1", "Github"))
+			) +
+			p("If you spot a typo or slight error in this documentation I would really appreciate if you sent " +
+				"a " + a("https://help.github.com/articles/using-pull-requests", "pull request") + " with the typo fixed.") +
+			p("Thanks for using Kiwi") +
+			p("Ryan Grannell")
+		)
+
+
+	})
+
+</script>
+
+<style type="text/css">
+.span8 > div:nth-child(7) > h2:nth-child(1) {
+	display: none;
+}
+.span8 div:first-of-type h2 {
+	display: none;
+}
+</style>
+
+      </footer>
+    </div>
+  </body>
+</html>

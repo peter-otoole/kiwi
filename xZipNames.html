@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+<title>xZipNames. arrow 0.1.0</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="">
+
+<link href="css/bootstrap.css" rel="stylesheet">
+<link href="css/bootstrap-responsive.css" rel="stylesheet">
+<link href="css/highlight.css" rel="stylesheet">
+<link href="css/staticdocs.css" rel="stylesheet">
+
+<!--[if lt IE 9]>
+  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<link href='http://fonts.googleapis.com/css?family=Open+Sans|Quicksand' rel='stylesheet' type='text/css'>
+
+<style type="text/css">
+	html * {
+		font-family: Open Sans;
+	}
+
+	h1 {
+		color: #C7254E;
+		font-family: Quicksand;
+	}
+
+	h2 {
+		font-family: Quicksand;
+	}
+
+
+	h3 {
+		font-family: Quicksand;
+	}
+
+	h4 {
+		font-family: Quicksand;
+	}
+
+	h5 {
+		font-family: Quicksand;
+	}
+
+	h6 {
+		font-family: Quicksand;
+	}
+	.navbar {
+		background: white;
+	}
+	.navbar * {
+		color: #333;
+	}
+
+	.examples * {
+		font-family: monospace;
+	}
+
+	code {
+		font-family: monospace;
+	}
+
+	nav * {
+		font-family: Quicksand;
+	}
+
+	nav {
+		border-width: 1px 0;
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		text-align: center;
+	}
+
+	nav li {
+		display: inline;
+	}
+
+	nav a {
+		display: inline-block;
+		padding: 10px;
+	}
+
+	pre {
+		font-family: monospace;
+	}
+
+	/* a sloppy hack to get rid of a duplicated title field */
+	.span8 div:first-of-type h2 {
+		display: none;
+	}
+
+</style>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-default" role="navigation">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">arrow 0.1.0</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+
+        <li><a href="index.html">Index</a></li>
+        <li><a href="content-test.html">Tutorials</a></li>
+        <li><a href="#">Demos</a></li>
+        <li><a href="#">Contact/About</a></li>
+
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="https://github.com/rgrannell1/arrow">Github</a></li>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+    <div class="container">
+      <header>
+      
+      </header>
+
+      <h1>xZipNames</h1>
+
+<div class="row">
+  <div class="span8">
+    <h2>Usage</h2>
+    <pre><div>xZipNames(colls)</div>
+<div>xZipNames...(...)</div></pre>
+    
+    <h2>Arguments</h2>
+    <dl>
+      <dt>colls</dt>
+      <dd>a list or pairlist of two-element lists or pairlists,
+   with the first element being a string and the second
+   element being an arbitrary value. The string part of each
+   sublist is used as the name in the output list, and the
+   remaining part is used as the value associated with that key.</dd>
+      <dt>...</dt>
+      <dd>see above.</dd>
+    </dl>
+    
+    <div class="xZipNames">
+      <h2>xZipNames</h2>
+
+    </div>
+
+    <div class="Value">
+      <h2>Value</h2>
+
+      <p>A named list.</p>
+
+    </div>
+
+    <div class="Description">
+      <h2>Description</h2>
+
+      <p>Convert a collection of name, value pairs into a named collection.</p>
+
+    </div>
+
+    <div class="Corner Cases">
+      <h2>Corner Cases</h2>
+
+      <p></p>
+
+      <p>Returns the empty list if <b>coll</b> is length-zero.</p>
+
+    </div>
+    
+    <h2 id="examples">Examples</h2>
+    <pre class="examples"><div class='input'>
+# 1. turn a csv of country names and median ages into
+#    a named list of countires, with values being the median age.
+
+csv &lt;- &quot;Monaco,48.9,Japan,44.6,Italy,44.3,Germany,43.7,Jersey,43.4&quot;
+
+x_(csv) $ xExplode(&#39;,&#39;) $ xChunk(2) $ x_ZipNames()
+</div>
+<div class='output'>$Monaco
+[1] &quot;48.9&quot;
+
+$Japan
+[1] &quot;44.6&quot;
+
+$Italy
+[1] &quot;44.3&quot;
+
+$Germany
+[1] &quot;43.7&quot;
+
+$Jersey
+[1] &quot;43.4&quot;
+
+</div>
+<div class='input'>
+# list(
+#    Monaco =
+#        48.9,
+#    Japan =
+#        44.6,
+#    Italy =
+#        44.3,
+#    Germany =
+#        43.7,
+#    Jersey =
+#        43.4
+# )
+
+x_(csv) $ xExplode(&#39;,&#39;) $ xChunk(2) $ x_ZipNames()
+</div>
+<div class='output'>$Monaco
+[1] &quot;48.9&quot;
+
+$Japan
+[1] &quot;44.6&quot;
+
+$Italy
+[1] &quot;44.3&quot;
+
+$Germany
+[1] &quot;43.7&quot;
+
+$Jersey
+[1] &quot;43.4&quot;
+
+</div></pre>
+  </div>
+  <div class="span4">
+    <!-- <ul>
+      <li>xZipNames</li><li>xZipNames...</li>
+    </ul>
+    <ul>
+      
+    </ul> -->
+
+    <h2>See also</h2>
+    
+Other key_functions: <code><a href='xAsNamed.html'>xAsNamed</a></code>;
+  <code><a href='xPluck.html'>xPluck</a></code>, <code><a href='xPluck.html'>xPluck...</a></code>;
+  <code><a href='xUnzipNames.html'>xUnzipNames</a></code>, <code><a href='xUnzipNames.html'>xUnzipNames...</a></code>
+
+Other reshaping_functions: <code><a href='xChop.html'>xChop</a></code>,
+  <code><a href='xChop.html'>xChop...</a></code>; <code><a href='xChunk.html'>xChunk</a></code>,
+  <code><a href='xChunk.html'>xChunk...</a></code>; <code><a href='xFlatten.html'>xFlatten</a></code>,
+  <code><a href='xFlatten.html'>xFlatten...</a></code>; <code><a href='xGroupBy.html'>xGroupBy</a></code>,
+  <code><a href='xGroupBy.html'>xGroupBy...</a></code>; <code><a href='xJoin.html'>xJoin</a></code>,
+  <code><a href='xJoin.html'>xJoin...</a></code>; <code><a href='xOneOf.html'>xOneOf</a></code>,
+  <code><a href='xOneOf.html'>xOneOf...</a></code>; <code><a href='xRecycle.html'>xRecycle</a></code>,
+  <code><a href='xRecycle.html'>xRecycle...</a></code>; <code><a href='xRepeat.html'>xRepeat</a></code>,
+  <code><a href='xRepeat.html'>xRepeat...</a></code>; <code><a href='xReverse.html'>xReverse</a></code>,
+  <code><a href='xReverse.html'>xReverse...</a></code>; <code><a href='xShuffle.html'>xShuffle</a></code>,
+  <code><a href='xShuffle.html'>xShuffle...</a></code>; <code><a href='xSortBy.html'>xSortBy</a></code>,
+  <code><a href='xSortBy.html'>xSortBy...</a></code>; <code><a href='xSplitAt.html'>xSplitAt</a></code>,
+  <code><a href='xSplitAt.html'>xSplitAt...</a></code>; <code><a href='xSplitWith.html'>xSplitWith</a></code>,
+  <code><a href='xSplitWith.html'>xSplitWith...</a></code>; <code><a href='xTabulate.html'>xTabulate</a></code>,
+  <code><a href='xTabulate.html'>xTabulate...</a></code>; <code><a href='xUnzipNames.html'>xUnzipNames</a></code>,
+  <code><a href='xUnzipNames.html'>xUnzipNames...</a></code>; <code><a href='xZip.html'>xZip</a></code>,
+  <code><a href='xZip.html'>xZip...</a></code>
+
+    
+  </div>
+</div>
+
+      <footer>
+      <p class="pull-right"><a href="#">Back to top</a></p>
+<p>Built by <a href="https://github.com/hadley/staticdocs">staticdocs</a>. Styled with Flatstrap.</p>
+      </footer>
+    </div>
+  </body>
+</html>
