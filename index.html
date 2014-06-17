@@ -207,11 +207,643 @@
       <div class="row">
   <div class="span8">
 
-    Input error!
+    
 
     <h2>Kiwi API Documentation</h2>
 
-    <h3></h3>
+    <h3>Character Functions</h3>
+    <p> These functions are involved in text-processing, or interacting with text-files. These functions primarily involve converting text between a line, word or character representation. </p>
+
+    <ul class="index">
+        
+      <li>
+        <code><a href="xExplode.html">xExplode</a></code><br />xExplode</li>
+            
+      <li>
+        <code><a href="xFromChars.html">xFromChars</a></code>(xFromChars_)<br />xFromChars</li>
+            
+      <li>
+        <code><a href="xFromLines.html">xFromLines</a></code>(xFromLines_)<br />xFromLines</li>
+            
+      <li>
+        <code><a href="xFromWords.html">xFromWords</a></code>(xFromWords_)<br />xFromWords</li>
+            
+      <li>
+        <code><a href="xImplode.html">xImplode</a></code>(xImplode_)<br />xImplode</li>
+            
+      <li>
+        <code><a href="xRead.html">xRead</a></code><br />xRead</li>
+            
+      <li>
+        <code><a href="xSliceString.html">xSliceString</a></code>(xSliceString_)<br />xSliceString</li>
+            
+      <li>
+        <code><a href="xToChars.html">xToChars</a></code><br />xToChars</li>
+            
+      <li>
+        <code><a href="xToLines.html">xToLines</a></code><br />xToLines</li>
+            
+      <li>
+        <code><a href="xToWords.html">xToWords</a></code><br />xToWords</li>
+            
+      <li>
+        <code><a href="xWrite.html">xWrite</a></code><br />xWrite</li>
+    
+    </ul>
+    <h3>Combinatoric Functions</h3>
+    <p> These functions generate combinatorial structures, which are typically used for specialised patterns of iteration or generating more useful substructures from an initial pool of candidate structures. As these functions enumerate rapidly growing data structures they tend to inefficient for large inputs. </p>
+
+    <ul class="index">
+        
+      <li>
+        <code><a href="xChoose.html">xChoose</a></code>(xChoose_)<br />xChoose</li>
+            
+      <li>
+        <code><a href="xCycle.html">xCycle</a></code>(xCycle_)<br />xCycle</li>
+            
+      <li>
+        <code><a href="xProdSetOf.html">xProdSetOf</a></code>(xProdSetOf_)<br />xProdSetOf</li>
+            
+      <li>
+        <code><a href="xPowerSetOf.html">xPowerSetOf</a></code>(xPowerSetOf_)<br />xPowerSetOf</li>
+    
+    </ul>
+    <h3>Collection Comprehensions</h3>
+    <p> Collection comprehensions provide syntactic sugar for defining  collections by providing the contraints that each element must satisfy to be a member of the collection. These are a translation of set-builder notation, which defines a set in terms of membership constraints. </p>
+
+    <ul class="index">
+        
+      <li>
+        <code><a href="xList.html">xList</a></code><br />xList[ ]</li>
+    
+    </ul>
+    <h3>Container Conversion Functions</h3>
+    <p> These functions convert the type of container that surrounds a data set. They do not coerce the contents of the container to a different type. </p>
+
+    <ul class="index">
+        
+      <li>
+        <code><a href="xAsCharacter.html">xAsCharacter</a></code>(xAsCharacter_)<br />xAsCharacter</li>
+            
+      <li>
+        <code><a href="xAsComplex.html">xAsComplex</a></code>(xAsComplex_)<br />xAsComplex</li>
+            
+      <li>
+        <code><a href="xAsDouble.html">xAsDouble</a></code>(xAsDouble_)<br />xAsDouble</li>
+            
+      <li>
+        <code><a href="xAsInteger.html">xAsInteger</a></code>(xAsInteger_)<br />xAsInteger</li>
+            
+      <li>
+        <code><a href="xAsLogical.html">xAsLogical</a></code>(xAsLogical_)<br />xAsLogical</li>
+            
+      <li>
+        <code><a href="xAsRaw.html">xAsRaw</a></code>(xAsRaw_)<br />xAsRaw</li>
+    
+    </ul>
+    <h3>Filtering Functions</h3>
+    <p> These functions create a subset of collection, with elements sharing a certain property. This typically involves removing null or other special values from a collection, or selecting or rejecting elements based on a predicate. </p>
+
+    <ul class="index">
+        
+      <li>
+        <code><a href="xDropWhile.html">xDropWhile</a></code>(xDropWhile_)<br />xDropWhile</li>
+            
+      <li>
+        <code><a href="xPartition.html">xPartition</a></code>(xPartition_)<br />xPartition</li>
+            
+      <li>
+        <code><a href="xReject.html">xReject</a></code>(xReject_)<br />xReject</li>
+            
+      <li>
+        <code><a href="xSelect.html">xSelect</a></code>(xSelect_)<br />xSelect</li>
+            
+      <li>
+        <code><a href="xTakeWhile.html">xTakeWhile</a></code>(xTakeWhile_)<br />xTakeWhile</li>
+    
+    </ul>
+    <h3>Immutable Value Functions</h3>
+    <p> These functions work with immutable values; references to a variable that cannot be altered by reassignment after creation. </p>
+
+    <ul class="index">
+        
+      <li>
+        <code><a href="xAsVal.html">xAsVal</a></code><br />xAsVal</li>
+            
+      <li>
+        <code><a href="xAsVar.html">xAsVar</a></code><br />xAsVar</li>
+            
+      <li>
+        <code><a href="xIsVal.html">xIsVal</a></code><br />xIsVal</li>
+            
+      <li>
+        <code><a href="xVal.html">xVal</a></code><br />xVal</li>
+    
+    </ul>
+    <h3>Impure Functions</h3>
+    <p> These functions are referentially impure or have side-effects like interacting with the file system. </p>
+
+    <ul class="index">
+        
+      <li>
+        <code><a href="xDelay.html">xDelay</a></code><br />xDelay</li>
+            
+      <li>
+        <code><a href="xDo.html">xDo</a></code>(xDo_)<br />xDo</li>
+            
+      <li>
+        <code><a href="xExecute.html">xExecute</a></code><br />xExecute</li>
+            
+      <li>
+        <code><a href="xStopwatch.html">xStopwatch</a></code><br />xStopwatch</li>
+            
+      <li>
+        <code><a href="xVersion.html">xVersion</a></code><br />xVersion</li>
+    
+    </ul>
+    <h3>Methods</h3>
+    <p> These functions involve arrow methods, or are only available as arrow methods. Most functions that are only available as methods convert second-class citizens of arrow like data frames and factors to collection representations. </p>
+
+    <ul class="index">
+        
+      <li>
+        <code><a href="xAsDataFrame.html">xAsDataFrame</a></code>(xAsDataFrame_)<br />xAsDataFrame</li>
+            
+      <li>
+        <code><a href="xByColkeys.html">xByColkeys</a></code><br />xByColkeys</li>
+            
+      <li>
+        <code><a href="xByCols.html">xByCols</a></code><br />xByCols</li>
+            
+      <li>
+        <code><a href="xByLevels.html">xByLevels</a></code>(xByValues)<br />xByLevels</li>
+            
+      <li>
+        <code><a href="xByRows.html">xByRows</a></code><br />xByRows</li>
+            
+      <li>
+        <code><a href="xElemsByCols.html">xElemsByCols</a></code><br />xElemsByCols</li>
+            
+      <li>
+        <code><a href="xExecute.html">xExecute</a></code><br />xExecute</li>
+            
+      <li>
+        <code><a href="xElemsByRows.html">xElemsByRows</a></code><br />xElemsByRows</li>
+            
+      <li>
+        <code><a href="xTap.html">xTap</a></code><br />xTap</li>
+            
+      <li>
+        <code><a href="x_.html">x_</a></code>(x__)<br />x_</li>
+    
+    </ul>
+    <h3>Basic Functions</h3>
+    <p> These very simple functions are difficult to classify. They include the identity function, a function that  closes of a value, and functions that return true, false or na. </p>
+
+    <ul class="index">
+        
+      <li>
+        <code><a href="xCapture.html">xCapture</a></code>(xK)<br />xCapture</li>
+            
+      <li>
+        <code><a href="xFalsity.html">xFalsity</a></code><br />xFalsity</li>
+            
+      <li>
+        <code><a href="xIdentity.html">xIdentity</a></code>(xI)<br />xIdentity</li>
+            
+      <li>
+        <code><a href="xIrrelevance.html">xIrrelevance</a></code><br />xIrrelevance</li>
+            
+      <li>
+        <code><a href="xTruth.html">xTruth</a></code><br />xTruth</li>
+            
+      <li>
+        <code><a href="xUnit.html">xUnit</a></code>(xUnit_)<br />xUnit</li>
+    
+    </ul>
+    <h3>Folding Functions</h3>
+    <p>Folds are fundemental to functional programming. A fold takes a function that combines two values (like the plus operator, the function 'c', or the function rbind), and applies it to a collection of values, ultimately yielding a single value. In general, folds can be in place of tail recursion or loops, and most functions in arrow can be implemented as a fold.</p>
+
+    <ul class="index">
+        
+      <li>
+        <code><a href="xFold.html">xFold</a></code>(xFold_)<br />xFold</li>
+            
+      <li>
+        <code><a href="xReduce.html">xReduce</a></code>(xReduce_)<br />xReduce</li>
+            
+      <li>
+        <code><a href="xScan.html">xScan</a></code>(xScan_)<br />xScan</li>
+    
+    </ul>
+    <h3>Function Application Functions</h3>
+    <p> These apply a function to a data set in varying ways, or  create a new function with a different function application pattern. These include the fuction xMap and varients theiron, and functions to convert functions to different arities. </p>
+
+    <ul class="index">
+        
+      <li>
+        <code><a href="xApply.html">xApply</a></code>(xApply_)<br />xApply</li>
+            
+      <li>
+        <code><a href="xSpread.html">xSpread</a></code><br />xSpread</li>
+            
+      <li>
+        <code><a href="xDeepMap.html">xDeepMap</a></code>(xDeepMap_)<br />xDeepMap</li>
+            
+      <li>
+        <code><a href="xFlatMap.html">xFlatMap</a></code>(xFlatMap_)<br />xFlatMap</li>
+            
+      <li>
+        <code><a href="xMap.html">xMap</a></code>(xMap_)<br />xMap</li>
+            
+      <li>
+        <code><a href="xMapply.html">xMapply</a></code>(xMapply_)<br />xMapply</li>
+            
+      <li>
+        <code><a href="xThread.html">xThread</a></code>(xThread_)<br />xThread</li>
+            
+      <li>
+        <code><a href="xUnspread.html">xUnspread</a></code><br />xUnspread</li>
+    
+    </ul>
+    <h3>Function Combining Functions</h3>
+    <p> These functions take several functions and combine them into a single function. These include functions for composition functions,  and for composition a function with a binary operator. </p>
+
+    <ul class="index">
+        
+      <li>
+        <code><a href="xCompose.html">xCompose</a></code>(%of%, %then%, xCompose_)<br />xCompose</li>
+            
+      <li>
+        <code><a href="xJuxtapose.html">xJuxtapose</a></code>(xJuxtapose_)<br />xJuxtapose</li>
+            
+      <li>
+        <code><a href="xLift.html">xLift</a></code>(%and%, %or%, xLift_)<br />xLift</li>
+    
+    </ul>
+    <h3>Function Modifying Functions</h3>
+    <p> These functions take a function and return a different or modified function </p>
+
+    <ul class="index">
+        
+      <li>
+        <code><a href="xCompose.html">xCompose</a></code>(%of%, %then%, xCompose_)<br />xCompose</li>
+            
+      <li>
+        <code><a href="xCapture.html">xCapture</a></code>(xK)<br />xCapture</li>
+            
+      <li>
+        <code><a href="xDelay.html">xDelay</a></code><br />xDelay</li>
+            
+      <li>
+        <code><a href="xJuxtapose.html">xJuxtapose</a></code>(xJuxtapose_)<br />xJuxtapose</li>
+            
+      <li>
+        <code><a href="xLift.html">xLift</a></code>(%and%, %or%, xLift_)<br />xLift</li>
+            
+      <li>
+        <code><a href="xFix.html">xFix</a></code>(xFix_)<br />xFix</li>
+            
+      <li>
+        <code><a href="xSpread.html">xSpread</a></code><br />xSpread</li>
+            
+      <li>
+        <code><a href="xThread.html">xThread</a></code>(xThread_)<br />xThread</li>
+    
+    </ul>
+    <h3>Key Functions</h3>
+    <p> These functions deal with collection names. They modify the names of a collection, or select from a collection using keys. </p>
+
+    <ul class="index">
+        
+      <li>
+        <code><a href="xAddKeys.html">xAddKeys</a></code>(xAddKeys_)<br />xAddKeys</li>
+            
+      <li>
+        <code><a href="xPluck.html">xPluck</a></code>(xPluck_)<br />xPluck</li>
+            
+      <li>
+        <code><a href="xUnzipIndices.html">xUnzipIndices</a></code>(xUnzipIndices_)<br />xUnzipIndices</li>
+            
+      <li>
+        <code><a href="xUnzipKeys.html">xUnzipKeys</a></code>(xUnzipKeys_)<br />xUnzipKeys</li>
+            
+      <li>
+        <code><a href="xZipKeys.html">xZipKeys</a></code>(xZipKeys_)<br />xZipKeys</li>
+    
+    </ul>
+    <h3>Order Functions</h3>
+    <p>These functions deal with the order of a collection.</p>
+
+    <ul class="index">
+        
+      <li>
+        <code><a href="xOrderOf.html">xOrderOf</a></code>(xOrderOf_)<br />xOrderOf</li>
+            
+      <li>
+        <code><a href="xRankOf.html">xRankOf</a></code>(xRankOf_)<br />xRankOf</li>
+    
+    </ul>
+    <h3>Parametre Functions</h3>
+    <p> These functions work with or alter function parametres. These include functions that return the parametres of a function, or partial application functions. </p>
+
+    <ul class="index">
+        
+      <li>
+        <code><a href="xArityOf.html">xArityOf</a></code><br />xArityOf</li>
+            
+      <li>
+        <code><a href="xIsVariadic.html">xIsVariadic</a></code><br />xIsVariadic</li>
+            
+      <li>
+        <code><a href="xFormalsOf.html">xFormalsOf</a></code><br />xFormalsOf</li>
+            
+      <li>
+        <code><a href="xParamsOf.html">xParamsOf</a></code><br />xParamsOf</li>
+            
+      <li>
+        <code><a href="xFix.html">xFix</a></code>(xFix_)<br />xFix</li>
+            
+      <li>
+        <code><a href="xUnspread.html">xUnspread</a></code><br />xUnspread</li>
+            
+      <li>
+        <code><a href="xSpread.html">xSpread</a></code><br />xSpread</li>
+    
+    </ul>
+    <h3>Quantifier Functions</h3>
+    <p>These functions count or summarise the true/false cases of a predicate over a data set.</p>
+
+    <ul class="index">
+        
+      <li>
+        <code><a href="xAnyOf.html">xAnyOf</a></code>(xAnyOf_)<br />xAnyOf</li>
+            
+      <li>
+        <code><a href="xAllOf.html">xAllOf</a></code>(xAllOf_)<br />xAllOf</li>
+            
+      <li>
+        <code><a href="xNoneOf.html">xNoneOf</a></code>(xNoneOf_)<br />xNoneOf</li>
+            
+      <li>
+        <code><a href="xPoll.html">xPoll</a></code>(xPoll_)<br />xPoll</li>
+    
+    </ul>
+    <h3>Reshaping Functions</h3>
+    <p> These functions loosely fall into the role of reshaping or adding new elements to a collection. These include functions that subdivide collections, join collections, or reorder collections. </p>
+
+    <ul class="index">
+        
+      <li>
+        <code><a href="xChop.html">xChop</a></code>(xChop_)<br />xChop</li>
+            
+      <li>
+        <code><a href="xChunk.html">xChunk</a></code>(xChunk_)<br />xChunk</li>
+            
+      <li>
+        <code><a href="xFlatten.html">xFlatten</a></code>(xFlatten_)<br />xFlatten</li>
+            
+      <li>
+        <code><a href="xGroupBy.html">xGroupBy</a></code>(xGroupBy_)<br />xGroupBy</li>
+            
+      <li>
+        <code><a href="xJoin.html">xJoin</a></code>(xJoin_)<br />xJoin</li>
+            
+      <li>
+        <code><a href="xOneOf.html">xOneOf</a></code>(xOneOf_)<br />xOneOf</li>
+            
+      <li>
+        <code><a href="xRecycle.html">xRecycle</a></code>(xRecycle_)<br />xRecycle</li>
+            
+      <li>
+        <code><a href="xRepeat.html">xRepeat</a></code>(xRepeat_)<br />xRepeat</li>
+            
+      <li>
+        <code><a href="xReverse.html">xReverse</a></code>(xReverse_)<br />xReverse</li>
+            
+      <li>
+        <code><a href="xShuffle.html">xShuffle</a></code>(xShuffle_)<br />xShuffle</li>
+            
+      <li>
+        <code><a href="xSortBy.html">xSortBy</a></code>(xSortBy_)<br />xSortBy</li>
+            
+      <li>
+        <code><a href="xSplitAt.html">xSplitAt</a></code>(xSplitAt_)<br />xSplitAt</li>
+            
+      <li>
+        <code><a href="xSplitWith.html">xSplitWith</a></code>(xSplitWith_)<br />xSplitWith</li>
+            
+      <li>
+        <code><a href="xTabulate.html">xTabulate</a></code>(xTabulate_)<br />xTabulate</li>
+            
+      <li>
+        <code><a href="xUnzipKeys.html">xUnzipKeys</a></code>(xUnzipKeys_)<br />xUnzipKeys</li>
+            
+      <li>
+        <code><a href="xZipKeys.html">xZipKeys</a></code>(xZipKeys_)<br />xZipKeys</li>
+            
+      <li>
+        <code><a href="xZip.html">xZip</a></code>(xZip_)<br />xZip</li>
+    
+    </ul>
+    <h3>Selection Functions</h3>
+    <p> These functions select or subset collections of values. This includes positional subsetting, selecting at certain keys and indices, or using a predicate for subsetting. </p>
+
+    <ul class="index">
+        
+      <li>
+        <code><a href="xAt.html">xAt</a></code>(xAt_)<br />xAt</li>
+            
+      <li>
+        <code><a href="xAtCol.html">xAtCol</a></code>(xAtCol_)<br />xAtCol</li>
+            
+      <li>
+        <code><a href="xAtKey.html">xAtKey</a></code>(xAtKey_)<br />xAtKey</li>
+            
+      <li>
+        <code><a href="xDropWhile.html">xDropWhile</a></code>(xDropWhile_)<br />xDropWhile</li>
+            
+      <li>
+        <code><a href="xDrop.html">xDrop</a></code>(xDrop_)<br />xDrop</li>
+            
+      <li>
+        <code><a href="xMaxBy.html">xMaxBy</a></code>(xMaxBy_)<br />xMaxBy</li>
+            
+      <li>
+        <code><a href="xMinBy.html">xMinBy</a></code>(xMinBy_)<br />xMinBy</li>
+            
+      <li>
+        <code><a href="xFirstOf.html">xFirstOf</a></code>(xFirstOf_)<br />xFirstOf</li>
+            
+      <li>
+        <code><a href="xFourthOf.html">xFourthOf</a></code>(xFourthOf_)<br />xFourthOf</li>
+            
+      <li>
+        <code><a href="xInitOf.html">xInitOf</a></code>(xInitOf_)<br />xInitOf</li>
+            
+      <li>
+        <code><a href="xLastOf.html">xLastOf</a></code>(xLastOf_)<br />xLastOf</li>
+            
+      <li>
+        <code><a href="xPluck.html">xPluck</a></code>(xPluck_)<br />xPluck</li>
+            
+      <li>
+        <code><a href="xRestOf.html">xRestOf</a></code>(xRestOf_)<br />xRestOf</li>
+            
+      <li>
+        <code><a href="xSlice.html">xSlice</a></code>(xSlice_)<br />xSlice</li>
+            
+      <li>
+        <code><a href="xSecondOf.html">xSecondOf</a></code>(xSecondOf_)<br />xSecondOf</li>
+            
+      <li>
+        <code><a href="xTake.html">xTake</a></code>(xTake_)<br />xTake</li>
+            
+      <li>
+        <code><a href="xTakeWhile.html">xTakeWhile</a></code>(xTakeWhile_)<br />xTakeWhile</li>
+            
+      <li>
+        <code><a href="xThirdOf.html">xThirdOf</a></code>(xThirdOf_)<br />xThirdOf</li>
+    
+    </ul>
+    <h3>Set Functions</h3>
+    <p> These include functions for working with duplicated values, generating sets and the classic set operations </p>
+
+    <ul class="index">
+        
+      <li>
+        <code><a href="xDuplicatesOf.html">xDuplicatesOf</a></code>(xDuplicatesOf_)<br />xDuplicatesOf</li>
+            
+      <li>
+        <code><a href="xInterOf.html">xInterOf</a></code>(xInterOf_)<br />xInterOf</li>
+            
+      <li>
+        <code><a href="xIsMember.html">xIsMember</a></code>(xIsMember_)<br />xIsMember</li>
+            
+      <li>
+        <code><a href="xIsSubset.html">xIsSubset</a></code>(xIsSubset_)<br />xIsSubset</li>
+            
+      <li>
+        <code><a href="xNotMember.html">xNotMember</a></code>(xNotMember_)<br />xNotMember</li>
+            
+      <li>
+        <code><a href="xNotSubset.html">xNotSubset</a></code>(xNotSubset_)<br />xNotSubset</li>
+            
+      <li>
+        <code><a href="xUnionOf.html">xUnionOf</a></code>(xUnionOf_)<br />xUnionOf
+</li>
+            
+      <li>
+        <code><a href="xUniqueOf.html">xUniqueOf</a></code>(xUniqueOf_)<br />xUniqueOf</li>
+    
+    </ul>
+    <h3>Short-Circuiting Functions</h3>
+    <p> Short-circuiting functions are higher-order functions that take functions with the ability to prematurely break evaluation of a program. When Return( ) is called the result is returned immediately, improving the efficiency of the subprogram. </p>
+
+    <ul class="index">
+        
+      <li>
+        <code><a href="xFold.html">xFold</a></code>(xFold_)<br />xFold</li>
+            
+      <li>
+        <code><a href="xFold.html">xFold</a></code>(xFold_)<br />xFold</li>
+            
+      <li>
+        <code><a href="xReduce.html">xReduce</a></code>(xReduce_)<br />xReduce</li>
+            
+      <li>
+        <code><a href="xReduce.html">xReduce</a></code>(xReduce_)<br />xReduce</li>
+            
+      <li>
+        <code><a href="xScan.html">xScan</a></code>(xScan_)<br />xScan</li>
+            
+      <li>
+        <code><a href="xIterate.html">xIterate</a></code><br />xIterate</li>
+    
+    </ul>
+    <h3>Special Function Constructors</h3>
+    <p> These constructors are shorthands for creating functions. These included arrow functions and wildcard binary functions. </p>
+
+    <ul class="index">
+        
+      <li>
+        <code><a href="x..html">x.</a></code>(!.xlambda_builder, !=.xlambda_builder, $.xlambda_builder, &amp;&amp;.xlambda_builder, &amp;.xlambda_builder, *.xlambda_builder, +.xlambda_builder, -.xlambda_builder, /.xlambda_builder, :.xlambda_builder, &lt;.xlambda_builder, &lt;=.xlambda_builder, ==.xlambda_builder, &gt;.xlambda_builder, &gt;=.xlambda_builder, @.xlambda_builder, [.xlambda_builder, [[.xlambda_builder, %/%.xlambda_builder, %%.xlambda_builder, ^.xlambda_builder, |.xlambda_builder, ||.xlambda_builder)<br />x.</li>
+            
+      <li>
+        <code><a href="xLambda.html">xLambda</a></code>(:=)<br />xLambda</li>
+    
+    </ul>
+    <h3>Time Functions</h3>
+    <p> These side-effectful functions work with time, or alter the temporal properties of functions. These are useful for interacting with rate-limited API's, or allowing programs to observer their own run-times. </p>
+
+    <ul class="index">
+        
+      <li>
+        <code><a href="xDelay.html">xDelay</a></code><br />xDelay</li>
+            
+      <li>
+        <code><a href="xLimit.html">xLimit</a></code><br />Create a function that can call its underlying
+</li>
+            
+      <li>
+        <code><a href="xStopwatch.html">xStopwatch</a></code><br />xStopwatch</li>
+    
+    </ul>
+    <h3>Value Testing Functions</h3>
+    <p> These functions test values to see if they are a particular type of value. These include functions that test for special values like null and na, and functions that test each element of a collection for these values. They are generally safer or more precise that their base counterparts. </p>
+
+    <ul class="index">
+        
+      <li>
+        <code><a href="xIs.html">xIs</a></code><br />xIs</li>
+            
+      <li>
+        <code><a href="xIsEmpty.html">xIsEmpty</a></code>(xIsEmpty_)<br />xIsEmpty</li>
+            
+      <li>
+        <code><a href="xIsFalse.html">xIsFalse</a></code><br />xIsFalse</li>
+            
+      <li>
+        <code><a href="xIsMatch.html">xIsMatch</a></code><br />xIsMatch</li>
+            
+      <li>
+        <code><a href="xIsNa.html">xIsNa</a></code><br />xIsNa</li>
+            
+      <li>
+        <code><a href="xIsNan.html">xIsNan</a></code><br />xIsNan</li>
+            
+      <li>
+        <code><a href="xIsNull.html">xIsNull</a></code><br />xIsNull</li>
+            
+      <li>
+        <code><a href="xIsTrue.html">xIsTrue</a></code><br />xIsTrue</li>
+            
+      <li>
+        <code><a href="xNot.html">xNot</a></code><br />xNot</li>
+            
+      <li>
+        <code><a href="xNotEmpty.html">xNotEmpty</a></code>(xNotEmpty_)<br />xNotEmpty</li>
+            
+      <li>
+        <code><a href="xNotFalse.html">xNotFalse</a></code><br />xNotFalse</li>
+            
+      <li>
+        <code><a href="xNotMatch.html">xNotMatch</a></code><br />xNotMatch</li>
+            
+      <li>
+        <code><a href="xNotNan.html">xNotNan</a></code><br />xNotNan</li>
+            
+      <li>
+        <code><a href="xNotNa.html">xNotNa</a></code><br />xNotNa</li>
+            
+      <li>
+        <code><a href="xNotNull.html">xNotNull</a></code><br />xNotNull</li>
+            
+      <li>
+        <code><a href="xNotTrue.html">xNotTrue</a></code><br />xNotTrue</li>
+    
+    </ul>
+    <h3>Other</h3>
     **Kiwi** is a functional programming framework that adds partial
 application, jQuery-like method calling, function composition, and nearly
 one-hundred higher-order functions and utility functions to the R language.
@@ -228,462 +860,40 @@ composition of simple functions to create complex, expressive programs.
         <code><a href="values.html">Na</a></code>(False, Null, True)<br />Special Values</li>
             
       <li>
-        <code><a href="x_.html">x_</a></code>(x__)<br />x_</li>
-            
-      <li>
-        <code><a href="x..html">x.</a></code>(!.xlambda_builder, !=.xlambda_builder, $.xlambda_builder, &amp;&amp;.xlambda_builder, &amp;.xlambda_builder, *.xlambda_builder, +.xlambda_builder, -.xlambda_builder, /.xlambda_builder, :.xlambda_builder, &lt;.xlambda_builder, &lt;=.xlambda_builder, ==.xlambda_builder, &gt;.xlambda_builder, &gt;=.xlambda_builder, @.xlambda_builder, [.xlambda_builder, [[.xlambda_builder, %/%.xlambda_builder, %%.xlambda_builder, ^.xlambda_builder, |.xlambda_builder, ||.xlambda_builder)<br />x.</li>
-            
-      <li>
-        <code><a href="xAddKeys.html">xAddKeys</a></code>(xAddKeys_)<br />xAddKeys</li>
-            
-      <li>
-        <code><a href="xAllOf.html">xAllOf</a></code>(xAllOf_)<br />xAllOf</li>
-            
-      <li>
-        <code><a href="xAnyOf.html">xAnyOf</a></code>(xAnyOf_)<br />xAnyOf</li>
-            
-      <li>
         <code><a href="xAppend.html">xAppend</a></code>(xAppend_)<br />xAppend</li>
-            
-      <li>
-        <code><a href="xApply.html">xApply</a></code>(xApply_)<br />xApply</li>
-            
-      <li>
-        <code><a href="xArityOf.html">xArityOf</a></code><br />xArityOf</li>
-            
-      <li>
-        <code><a href="xAsCharacter.html">xAsCharacter</a></code>(xAsCharacter_)<br />xAsCharacter</li>
-            
-      <li>
-        <code><a href="xAsComplex.html">xAsComplex</a></code>(xAsComplex_)<br />xAsComplex</li>
-            
-      <li>
-        <code><a href="xAsDataFrame.html">xAsDataFrame</a></code>(xAsDataFrame_)<br />xAsDataFrame</li>
-            
-      <li>
-        <code><a href="xAsDouble.html">xAsDouble</a></code>(xAsDouble_)<br />xAsDouble</li>
-            
-      <li>
-        <code><a href="xAsInteger.html">xAsInteger</a></code>(xAsInteger_)<br />xAsInteger</li>
-            
-      <li>
-        <code><a href="xAsLogical.html">xAsLogical</a></code>(xAsLogical_)<br />xAsLogical</li>
-            
-      <li>
-        <code><a href="xAsRaw.html">xAsRaw</a></code>(xAsRaw_)<br />xAsRaw</li>
-            
-      <li>
-        <code><a href="xAsVal.html">xAsVal</a></code><br />xAsVal</li>
-            
-      <li>
-        <code><a href="xAsVar.html">xAsVar</a></code><br />xAsVar</li>
-            
-      <li>
-        <code><a href="xAt.html">xAt</a></code>(xAt_)<br />xAt</li>
-            
-      <li>
-        <code><a href="xAtCol.html">xAtCol</a></code>(xAtCol_)<br />xAtCol</li>
-            
-      <li>
-        <code><a href="xAtKey.html">xAtKey</a></code>(xAtKey_)<br />xAtKey</li>
-            
-      <li>
-        <code><a href="xByColkeys.html">xByColkeys</a></code><br />xByColkeys</li>
-            
-      <li>
-        <code><a href="xByCols.html">xByCols</a></code><br />xByCols</li>
-            
-      <li>
-        <code><a href="xByLevels.html">xByLevels</a></code>(xByValues)<br />xByLevels</li>
             
       <li>
         <code><a href="xByRowkeys.html">xByRowkeys</a></code><br />xByRowkeys</li>
             
       <li>
-        <code><a href="xByRownames.html">xByRownames</a></code>(xByRowkeys)<br />$ xByRownames</li>
-            
-      <li>
-        <code><a href="xByRows.html">xByRows</a></code><br />xByRows</li>
-            
-      <li>
-        <code><a href="xCapture.html">xCapture</a></code>(xK)<br />xCapture</li>
-            
-      <li>
-        <code><a href="xChoose.html">xChoose</a></code>(xChoose_)<br />xChoose</li>
-            
-      <li>
-        <code><a href="xChop.html">xChop</a></code>(xChop_)<br />xChop</li>
-            
-      <li>
-        <code><a href="xChunk.html">xChunk</a></code>(xChunk_)<br />xChunk</li>
-            
-      <li>
-        <code><a href="xCompose.html">xCompose</a></code>(%of%, %then%, xCompose_)<br />xCompose</li>
-            
-      <li>
-        <code><a href="xCycle.html">xCycle</a></code>(xCycle_)<br />xCycle</li>
-            
-      <li>
-        <code><a href="xDeepMap.html">xDeepMap</a></code>(xDeepMap_)<br />xDeepMap</li>
-            
-      <li>
-        <code><a href="xDelay.html">xDelay</a></code><br />xDelay</li>
-            
-      <li>
-        <code><a href="xDo.html">xDo</a></code>(xDo_)<br />xDo</li>
-            
-      <li>
-        <code><a href="xDrop.html">xDrop</a></code>(xDrop_)<br />xDrop</li>
-            
-      <li>
-        <code><a href="xDropWhile.html">xDropWhile</a></code>(xDropWhile_)<br />xDropWhile</li>
-            
-      <li>
-        <code><a href="xDuplicatesOf.html">xDuplicatesOf</a></code>(xDuplicatesOf_)<br />xDuplicatesOf</li>
-            
-      <li>
-        <code><a href="xElemsByCols.html">xElemsByCols</a></code><br />xElemsByCols</li>
-            
-      <li>
-        <code><a href="xElemsByRows.html">xElemsByRows</a></code><br />xElemsByRows</li>
-            
-      <li>
-        <code><a href="xExecute.html">xExecute</a></code><br />xExecute</li>
-            
-      <li>
-        <code><a href="xExplode.html">xExplode</a></code><br />xExplode</li>
-            
-      <li>
-        <code><a href="xFalsity.html">xFalsity</a></code><br />xFalsity</li>
-            
-      <li>
         <code><a href="xFirstAs.html">xFirstAs</a></code>(xFirstAs_)<br />xFirstAs</li>
-            
-      <li>
-        <code><a href="xFirstOf.html">xFirstOf</a></code>(xFirstOf_)<br />xFirstOf</li>
-            
-      <li>
-        <code><a href="xFix.html">xFix</a></code>(xFix_)<br />xFix</li>
-            
-      <li>
-        <code><a href="xFlatMap.html">xFlatMap</a></code>(xFlatMap_)<br />xFlatMap</li>
-            
-      <li>
-        <code><a href="xFlatten.html">xFlatten</a></code>(xFlatten_)<br />xFlatten</li>
-            
-      <li>
-        <code><a href="xFold.html">xFold</a></code>(xFold_)<br />xFold</li>
-            
-      <li>
-        <code><a href="xFormalsOf.html">xFormalsOf</a></code><br />xFormalsOf</li>
             
       <li>
         <code><a href="xFourthAs.html">xFourthAs</a></code>(xFourthAs_)<br />xFourthAs</li>
             
       <li>
-        <code><a href="xFourthOf.html">xFourthOf</a></code>(xFourthOf_)<br />xFourthOf</li>
-            
-      <li>
-        <code><a href="xFromChars.html">xFromChars</a></code>(xFromChars_)<br />xFromChars</li>
-            
-      <li>
-        <code><a href="xFromLines.html">xFromLines</a></code>(xFromLines_)<br />xFromLines</li>
-            
-      <li>
-        <code><a href="xFromWords.html">xFromWords</a></code>(xFromWords_)<br />xFromWords</li>
-            
-      <li>
-        <code><a href="xGroupBy.html">xGroupBy</a></code>(xGroupBy_)<br />xGroupBy</li>
-            
-      <li>
-        <code><a href="xIdentity.html">xIdentity</a></code>(xI)<br />xIdentity</li>
-            
-      <li>
-        <code><a href="xImplode.html">xImplode</a></code>(xImplode_)<br />xImplode</li>
-            
-      <li>
-        <code><a href="xInitOf.html">xInitOf</a></code>(xInitOf_)<br />xInitOf</li>
-            
-      <li>
-        <code><a href="xInterOf.html">xInterOf</a></code>(xInterOf_)<br />xInterOf</li>
-            
-      <li>
-        <code><a href="xIrrelevance.html">xIrrelevance</a></code><br />xIrrelevance</li>
-            
-      <li>
-        <code><a href="xIs.html">xIs</a></code><br />xIs</li>
-            
-      <li>
-        <code><a href="xIsEmpty.html">xIsEmpty</a></code>(xIsEmpty_)<br />xIsEmpty</li>
-            
-      <li>
-        <code><a href="xIsFalse.html">xIsFalse</a></code><br />xIsFalse</li>
-            
-      <li>
-        <code><a href="xIsMatch.html">xIsMatch</a></code><br />xIsMatch</li>
-            
-      <li>
-        <code><a href="xIsMember.html">xIsMember</a></code>(xIsMember_)<br />xIsMember</li>
-            
-      <li>
-        <code><a href="xIsNa.html">xIsNa</a></code><br />xIsNa</li>
-            
-      <li>
-        <code><a href="xIsNan.html">xIsNan</a></code><br />xIsNan</li>
-            
-      <li>
-        <code><a href="xIsNull.html">xIsNull</a></code><br />xIsNull</li>
-            
-      <li>
-        <code><a href="xIsSubset.html">xIsSubset</a></code>(xIsSubset_)<br />xIsSubset</li>
-            
-      <li>
-        <code><a href="xIsTrue.html">xIsTrue</a></code><br />xIsTrue</li>
-            
-      <li>
-        <code><a href="xIsVal.html">xIsVal</a></code><br />xIsVal</li>
-            
-      <li>
-        <code><a href="xIsVariadic.html">xIsVariadic</a></code><br />xIsVariadic</li>
-            
-      <li>
-        <code><a href="xIterate.html">xIterate</a></code><br />xIterate</li>
-            
-      <li>
-        <code><a href="xJoin.html">xJoin</a></code>(xJoin_)<br />xJoin</li>
-            
-      <li>
-        <code><a href="xJuxtapose.html">xJuxtapose</a></code>(xJuxtapose_)<br />xJuxtapose</li>
-            
-      <li>
-        <code><a href="xLambda.html">xLambda</a></code>(:=)<br />xLambda</li>
-            
-      <li>
         <code><a href="xLastAs.html">xLastAs</a></code>(xLastAs_)<br />xLastAs</li>
-            
-      <li>
-        <code><a href="xLastOf.html">xLastOf</a></code>(xLastOf_)<br />xLastOf</li>
             
       <li>
         <code><a href="xLenOf.html">xLenOf</a></code>(xLenOf_)<br />xLenOf</li>
             
       <li>
-        <code><a href="xLift.html">xLift</a></code>(%and%, %or%, xLift_)<br />xLift</li>
-            
-      <li>
-        <code><a href="xLimit.html">xLimit</a></code><br />Create a function that can call its underlying
-</li>
-            
-      <li>
-        <code><a href="xList.html">xList</a></code><br />xList[ ]</li>
-            
-      <li>
         <code><a href="xLocate.html">xLocate</a></code>(xLocate_)<br />xLocate</li>
-            
-      <li>
-        <code><a href="xMap.html">xMap</a></code>(xMap_)<br />xMap</li>
-            
-      <li>
-        <code><a href="xMapply.html">xMapply</a></code>(xMapply_)<br />xMapply</li>
-            
-      <li>
-        <code><a href="xMaxBy.html">xMaxBy</a></code>(xMaxBy_)<br />xMaxBy</li>
-            
-      <li>
-        <code><a href="xMinBy.html">xMinBy</a></code>(xMinBy_)<br />xMinBy</li>
             
       <li>
         <code><a href="xNegate.html">xNegate</a></code><br />xNegate</li>
             
       <li>
-        <code><a href="xNoneOf.html">xNoneOf</a></code>(xNoneOf_)<br />xNoneOf</li>
-            
-      <li>
-        <code><a href="xNot.html">xNot</a></code><br />xNot</li>
-            
-      <li>
-        <code><a href="xNotEmpty.html">xNotEmpty</a></code>(xNotEmpty_)<br />xNotEmpty</li>
-            
-      <li>
-        <code><a href="xNotFalse.html">xNotFalse</a></code><br />xNotFalse</li>
-            
-      <li>
-        <code><a href="xNotMatch.html">xNotMatch</a></code><br />xNotMatch</li>
-            
-      <li>
-        <code><a href="xNotMember.html">xNotMember</a></code>(xNotMember_)<br />xNotMember</li>
-            
-      <li>
-        <code><a href="xNotNa.html">xNotNa</a></code><br />xNotNa</li>
-            
-      <li>
-        <code><a href="xNotNan.html">xNotNan</a></code><br />xNotNan</li>
-            
-      <li>
-        <code><a href="xNotNull.html">xNotNull</a></code><br />xNotNull</li>
-            
-      <li>
-        <code><a href="xNotSubset.html">xNotSubset</a></code>(xNotSubset_)<br />xNotSubset</li>
-            
-      <li>
-        <code><a href="xNotTrue.html">xNotTrue</a></code><br />xNotTrue</li>
-            
-      <li>
-        <code><a href="xOneOf.html">xOneOf</a></code>(xOneOf_)<br />xOneOf</li>
-            
-      <li>
-        <code><a href="xOrderOf.html">xOrderOf</a></code>(xOrderOf_)<br />xOrderOf</li>
-            
-      <li>
-        <code><a href="xParamsOf.html">xParamsOf</a></code><br />xParamsOf</li>
-            
-      <li>
-        <code><a href="xPartition.html">xPartition</a></code>(xPartition_)<br />xPartition</li>
-            
-      <li>
-        <code><a href="xPluck.html">xPluck</a></code>(xPluck_)<br />xPluck</li>
-            
-      <li>
-        <code><a href="xPoll.html">xPoll</a></code>(xPoll_)<br />xPoll</li>
-            
-      <li>
-        <code><a href="xPowerSetOf.html">xPowerSetOf</a></code>(xPowerSetOf_)<br />xPowerSetOf</li>
-            
-      <li>
         <code><a href="xPrepend.html">xPrepend</a></code>(xPrepend_)<br />xPrepend</li>
-            
-      <li>
-        <code><a href="xProdSetOf.html">xProdSetOf</a></code>(xProdSetOf_)<br />xProdSetOf</li>
-            
-      <li>
-        <code><a href="xRankOf.html">xRankOf</a></code>(xRankOf_)<br />xRankOf</li>
-            
-      <li>
-        <code><a href="xRead.html">xRead</a></code><br />xRead</li>
-            
-      <li>
-        <code><a href="xRecycle.html">xRecycle</a></code>(xRecycle_)<br />xRecycle</li>
-            
-      <li>
-        <code><a href="xReduce.html">xReduce</a></code>(xReduce_)<br />xReduce</li>
-            
-      <li>
-        <code><a href="xReject.html">xReject</a></code>(xReject_)<br />xReject</li>
-            
-      <li>
-        <code><a href="xRepeat.html">xRepeat</a></code>(xRepeat_)<br />xRepeat</li>
-            
-      <li>
-        <code><a href="xRestOf.html">xRestOf</a></code>(xRestOf_)<br />xRestOf</li>
-            
-      <li>
-        <code><a href="xReverse.html">xReverse</a></code>(xReverse_)<br />xReverse</li>
-            
-      <li>
-        <code><a href="xScan.html">xScan</a></code>(xScan_)<br />xScan</li>
             
       <li>
         <code><a href="xSecondAs.html">xSecondAs</a></code>(xSecondAs_)<br />xSecondAs</li>
             
       <li>
-        <code><a href="xSecondOf.html">xSecondOf</a></code>(xSecondOf_)<br />xSecondOf</li>
-            
-      <li>
-        <code><a href="xSelect.html">xSelect</a></code>(xSelect_)<br />xSelect</li>
-            
-      <li>
-        <code><a href="xShuffle.html">xShuffle</a></code>(xShuffle_)<br />xShuffle</li>
-            
-      <li>
-        <code><a href="xSlice.html">xSlice</a></code>(xSlice_)<br />xSlice</li>
-            
-      <li>
-        <code><a href="xSliceString.html">xSliceString</a></code>(xSliceString_)<br />xSliceString</li>
-            
-      <li>
-        <code><a href="xSortBy.html">xSortBy</a></code>(xSortBy_)<br />xSortBy</li>
-            
-      <li>
-        <code><a href="xSplitAt.html">xSplitAt</a></code>(xSplitAt_)<br />xSplitAt</li>
-            
-      <li>
-        <code><a href="xSplitWith.html">xSplitWith</a></code>(xSplitWith_)<br />xSplitWith</li>
-            
-      <li>
-        <code><a href="xSpread.html">xSpread</a></code><br />xSpread</li>
-            
-      <li>
-        <code><a href="xStopwatch.html">xStopwatch</a></code><br />xStopwatch</li>
-            
-      <li>
-        <code><a href="xTabulate.html">xTabulate</a></code>(xTabulate_)<br />xTabulate</li>
-            
-      <li>
-        <code><a href="xTake.html">xTake</a></code>(xTake_)<br />xTake</li>
-            
-      <li>
-        <code><a href="xTakeWhile.html">xTakeWhile</a></code>(xTakeWhile_)<br />xTakeWhile</li>
-            
-      <li>
-        <code><a href="xTap.html">xTap</a></code><br />xTap</li>
-            
-      <li>
         <code><a href="xThirdAs.html">xThirdAs</a></code>(xThirdAs_)<br />xThirdAs</li>
             
       <li>
-        <code><a href="xThirdOf.html">xThirdOf</a></code>(xThirdOf_)<br />xThirdOf</li>
-            
-      <li>
-        <code><a href="xThread.html">xThread</a></code>(xThread_)<br />xThread</li>
-            
-      <li>
-        <code><a href="xToChars.html">xToChars</a></code><br />xToChars</li>
-            
-      <li>
-        <code><a href="xToLines.html">xToLines</a></code><br />xToLines</li>
-            
-      <li>
-        <code><a href="xToWords.html">xToWords</a></code><br />xToWords</li>
-            
-      <li>
-        <code><a href="xTruth.html">xTruth</a></code><br />xTruth</li>
-            
-      <li>
-        <code><a href="xUnionOf.html">xUnionOf</a></code>(xUnionOf_)<br />xUnionOf
-</li>
-            
-      <li>
-        <code><a href="xUniqueOf.html">xUniqueOf</a></code>(xUniqueOf_)<br />xUniqueOf</li>
-            
-      <li>
-        <code><a href="xUnit.html">xUnit</a></code>(xUnit_)<br />xUnit</li>
-            
-      <li>
-        <code><a href="xUnspread.html">xUnspread</a></code><br />xUnspread</li>
-            
-      <li>
-        <code><a href="xUnzipIndices.html">xUnzipIndices</a></code>(xUnzipIndices_)<br />xUnzipIndices</li>
-            
-      <li>
-        <code><a href="xUnzipKeys.html">xUnzipKeys</a></code>(xUnzipKeys_)<br />xUnzipKeys</li>
-            
-      <li>
-        <code><a href="xVal.html">xVal</a></code><br />xVal</li>
-            
-      <li>
-        <code><a href="xVersion.html">xVersion</a></code><br />xVersion</li>
-            
-      <li>
         <code><a href="xWhere.html">xWhere</a></code>(xWhere_)<br />xWhere</li>
-            
-      <li>
-        <code><a href="xWrite.html">xWrite</a></code><br />xWrite</li>
-            
-      <li>
-        <code><a href="xZip.html">xZip</a></code>(xZip_)<br />xZip</li>
-            
-      <li>
-        <code><a href="xZipKeys.html">xZipKeys</a></code>(xZipKeys_)<br />xZipKeys</li>
     
     </ul>
   </div>
