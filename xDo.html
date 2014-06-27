@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-<title>xDo. kiwi 0.23.0</title>
+<title>xDo. kiwi 0.28.0</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="author" content="">
 
@@ -178,7 +178,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">kiwi 0.23.0</a>
+      <a class="navbar-brand" href="#">kiwi 0.28.0</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -314,11 +314,10 @@ NULL
 <div class='input'>
 #    or even
 
-xDo(print %of% list.files, &#39;.&#39;)
+xDo(list.files %then% print, &#39;.&#39;)
 </div>
-<div class='output'> [1] &quot;demo&quot;             &quot;DESCRIPTION&quot;      &quot;inst&quot;             &quot;LICENSE&quot;          &quot;man&quot;             
- [6] &quot;NAMESPACE&quot;        &quot;R&quot;                &quot;README.md&quot;        &quot;site-content&quot;     &quot;staticdocs.Rproj&quot;
-[11] &quot;vignettes&quot;       
+<div class='output'> [1] &quot;demo&quot;             &quot;DESCRIPTION&quot;      &quot;inst&quot;             &quot;LICENSE&quot;          &quot;man&quot;              &quot;NAMESPACE&quot;       
+ [7] &quot;R&quot;                &quot;README.md&quot;        &quot;site-content&quot;     &quot;staticdocs.Rproj&quot; &quot;vignettes&quot;       
 </div>
 <div class='input'>
 #2. plot a trig function.
@@ -352,7 +351,7 @@ xDo(
 
 n &lt;- 5
 
-xDo(print %of% xK(&#39;hello&#39;), 1:n)
+xDo(xK(&#39;hello&#39;) %then% print, 1:n)
 </div>
 <div class='output'>[1] &quot;hello&quot;
 [1] &quot;hello&quot;

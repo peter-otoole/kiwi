@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-<title>xNotEmpty. kiwi 0.28.0</title>
+<title>xIndicesOf. kiwi 0.28.0</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="author" content="">
 
@@ -204,39 +204,38 @@
       
       </header>
 
-      <h1>xNotEmpty</h1>
+      <h1>xIndicesOf</h1>
 
 <div class="row">
   <div class="span8">
     <h2>Usage</h2>
-    <pre><div>xNotEmpty(coll)</div>
-<div>xNotEmpty_(...)</div></pre>
+    <pre><div>xIndicesOf(coll)</div>
+<div>xIndicesOf_(...)</div></pre>
     
     <h2>Arguments</h2>
     <dl>
       <dt>coll</dt>
-      <dd>a collection. The value to test for
-   having non-zero length.</dd>
+      <dd>a collection. The collection to get the indices of.</dd>
       <dt>...</dt>
       <dd>see above.</dd>
     </dl>
     
-    <div class="xNotEmpty">
-      <h2>xNotEmpty</h2>
+    <div class="xIndicesOf">
+      <h2>xIndicesOf</h2>
 
     </div>
 
     <div class="Value">
       <h2>Value</h2>
 
-      <p>A boolean value.</p>
+      <p>an integer vector.</p>
 
     </div>
 
     <div class="Description">
       <h2>Description</h2>
 
-      <p>Is a collection not length-zero?</p>
+      <p>Get the indices of a collection.</p>
 
     </div>
 
@@ -245,7 +244,7 @@
 
       <p></p>
 
-      <p>any -> &lt;logical></p>
+      <p>|any| -> <integer></p>
 
     </div>
 
@@ -254,44 +253,25 @@
 
       <p></p>
 
-      <p></p>
+      <p>Returns <b>integer(0)</b> when <b>coll</b> is length-zero.</p>
 
     </div>
     
     <h2 id="examples">Examples</h2>
     <pre class="examples"><div class='input'>
-# 1. Conditionally execute code on non-empty collections.
-#
-# Often code on lists will have two branches;
-# the case for the empty list and the case for the
-# non-empty list.
+# 1. get the indices of a collection.
 
-safeFirstOf &lt;- function (coll, default = NA) {
-	if (xNotEmpty(coll)) {
-		xFirstOf(coll)
-	} else {
-		default
-	}
-}
-
-safeFirstOf(letters)
+xIndicesOf(letters)
 </div>
-<div class='output'>[1] &quot;a&quot;
+<div class='output'> [1]  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26
 </div>
 <div class='input'>
-# &#39;a&#39;
-
-safeFirstOf(character(0))
-</div>
-<div class='output'>[1] NA
-</div>
-<div class='input'>
-# Na - xFirstOf usually fails for empty collections.
+# 1:26
 </div></pre>
   </div>
   <div class="span4">
     <!-- <ul>
-      <li>xNotEmpty</li><li>xNotEmpty_</li>
+      <li>xIndicesOf</li><li>xIndicesOf_</li>
     </ul>
     <ul>
       
@@ -299,14 +279,12 @@ safeFirstOf(character(0))
 
     <h2>See also</h2>
     
-Other value_testing_functions: <code><a href='xIsEmpty.html'>xIsEmpty</a></code>,
-  <code><a href='xIsEmpty.html'>xIsEmpty_</a></code>; <code><a href='xIsFalse.html'>xIsFalse</a></code>;
-  <code><a href='xIsNan.html'>xIsNan</a></code>; <code><a href='xIsNa.html'>xIsNa</a></code>;
-  <code><a href='xIsNull.html'>xIsNull</a></code>; <code><a href='xIsTrue.html'>xIsTrue</a></code>;
-  <code><a href='xIs.html'>xIs</a></code>; <code><a href='xNotFalse.html'>xNotFalse</a></code>;
-  <code><a href='xNotNan.html'>xNotNan</a></code>; <code><a href='xNotNa.html'>xNotNa</a></code>;
-  <code><a href='xNotNull.html'>xNotNull</a></code>; <code><a href='xNotTrue.html'>xNotTrue</a></code>;
-  <code><a href='xNot.html'>xNot</a></code>
+Other key_functions: <code><a href='xAddKeys.html'>xAddKeys</a></code>,
+  <code><a href='xAddKeys.html'>xAddKeys_</a></code>; <code><a href='xKeysOf.html'>xKeysOf</a></code>,
+  <code><a href='xKeysOf.html'>xKeysOf_</a></code>; <code><a href='xUnzipIndices.html'>xUnzipIndices</a></code>,
+  <code><a href='xUnzipIndices.html'>xUnzipIndices_</a></code>; <code><a href='xUnzipKeys.html'>xUnzipKeys</a></code>,
+  <code><a href='xUnzipKeys.html'>xUnzipKeys_</a></code>; <code><a href='xZipKeys.html'>xZipKeys</a></code>,
+  <code><a href='xZipKeys.html'>xZipKeys_</a></code>
 
       </div>
 </div>
