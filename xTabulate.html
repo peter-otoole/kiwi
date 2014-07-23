@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-<title>xTabulate. kiwi 0.28.0</title>
+<title>xTabulate. kiwi 0.37.0</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="author" content="">
 
@@ -178,7 +178,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">kiwi 0.28.0</a>
+      <a class="navbar-brand" href="#">kiwi 0.37.0</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -368,15 +368,15 @@ clinton_vote $ xAtKey(&#39;obstruction&#39;) $ x_Tabulate()
 # get the overall vote within each party.
 
 clinton_vote $ xZip () $ xGroupBy(xFirstOf) $ # -- group by party
-xAtCol(2) $ # -- select the groups
+xMap(xAt(2)) $ # -- select the groups
 xMap(party := {
 	# get the perjury and obstruction votes by party.
 
 	list(
 		perjury =
-			x_(party) $ xAtCol(2) $ xTabulate() $ x_ZipKeys(),
+			x_(party) $ xMap(xAt(2)) $ xTabulate() $ x_ZipKeys(),
 		obstruction =
-			x_(party) $ xAtCol(3) $ xTabulate() $ x_ZipKeys()
+			x_(party) $ xMap(xAt(3)) $ xTabulate() $ x_ZipKeys()
 	)
 
 }) $

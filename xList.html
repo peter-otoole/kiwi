@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-<title>xList. kiwi 0.28.0</title>
+<title>xList. kiwi 0.37.0</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="author" content="">
 
@@ -178,7 +178,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">kiwi 0.28.0</a>
+      <a class="navbar-brand" href="#">kiwi 0.37.0</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -221,7 +221,7 @@
 
       <p><pre>function (...)  
  - attr(*, "srcref")=Class 'srcref'  atomic [1:8] 74 2 83 2 9 9 74 83
-  .. ..- attr(*, "srcfile")=Classes 'srcfilecopy', 'srcfile' <environment: 0x4501190> 
+  .. ..- attr(*, "srcfile")=Classes 'srcfilecopy', 'srcfile' <environment: 0x2d90b20> 
  - attr(*, "class")= chr "xlist_builder"
 </pre></p>
 
@@ -267,7 +267,7 @@
 
       <p>is loosely translated into normal kiwi code as</p>
 
-      <p><code>xMapply(x := x^2, 1:10)</code></p>
+      <p><code>xMap(x := x^2, 1:10)</code></p>
 
       <p><b>2 Variable bindings</b></p>
 
@@ -278,7 +278,7 @@
 
       <p>The above comprehension loosely translates as</p>
 
-      <p><code>x_(xSetProd(1:3, 1:3)) $ xMapply((x : y) := c(x, y))</code></p>
+      <p><code>x_(xSetProd(1:3, 1:3)) $ xMap( xUnspread((x : y) := c(x, y)) )</code></p>
 
       <p><b>3 The predicate expression (optional)</b></p>
 

@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-<title>xPrepend. kiwi 0.28.0</title>
+<title>xPrepend. kiwi 0.37.0</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="author" content="">
 
@@ -178,7 +178,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">kiwi 0.28.0</a>
+      <a class="navbar-brand" href="#">kiwi 0.37.0</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -262,7 +262,25 @@
     
     <h2 id="examples">Examples</h2>
     <pre class="examples"><div class='input'>
-NULL
+
+# 1. generate the fibonacct numbers under 100.
+#
+# prepend to make accessing the previous two numbers easy.
+
+fibs &lt;-
+	x__(1, 1) $
+	xIterate(nums := {
+
+		if (xFirstOf(nums) &gt; 100) {
+			Return(xSelect(x. &lt; 100, nums))
+		} else {
+			xPrepend(xFirstOf(nums) + xSecondOf(nums), nums)
+		}
+
+	}) $
+	x_Reverse()
+
+# list(1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89)
 </div></pre>
   </div>
   <div class="span4">

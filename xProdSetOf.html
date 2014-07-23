@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-<title>xProdSetOf. kiwi 0.28.0</title>
+<title>xProdSetOf. kiwi 0.37.0</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="author" content="">
 
@@ -178,7 +178,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">kiwi 0.28.0</a>
+      <a class="navbar-brand" href="#">kiwi 0.37.0</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -262,13 +262,13 @@ use to take the cartesian product.</dd>
     
     <h2 id="examples">Examples</h2>
     <pre class="examples"><div class='input'>
-# 1. xProdSetOf with xMap, xMapply or xReduce are
-#    generally very nice replacements for loops.
+# 1. xProdSetOf with xMap or xReduce is
+#    often a very nice replacements for loops.
 
-xMapply(
-    (ith : jth) := {
+xMap(
+    xUnspread((ith : jth) := {
         ith^2 + jth^2
-    },
+    }),
     xProdSetOf_(1:4, 1:4)
 )
 </div>
@@ -1560,10 +1560,10 @@ Other combinatoric_functions: <code><a href='xChoose.html'>xChoose</a></code>,
 
 Other set_functions: <code><a href='xDuplicatesOf.html'>xDuplicatesOf</a></code>,
   <code><a href='xDuplicatesOf.html'>xDuplicatesOf_</a></code>; <code><a href='xInterOf.html'>xInterOf</a></code>,
-  <code><a href='xInterOf.html'>xInterOf_</a></code>; <code><a href='xIsMember.html'>xIsMember</a></code>,
-  <code><a href='xIsMember.html'>xIsMember_</a></code>; <code><a href='xIsSubset.html'>xIsSubset</a></code>,
-  <code><a href='xIsSubset.html'>xIsSubset_</a></code>; <code><a href='xNotMember.html'>xNotMember</a></code>,
-  <code><a href='xNotMember.html'>xNotMember_</a></code>; <code><a href='xNotSubset.html'>xNotSubset</a></code>,
+  <code><a href='xInterOf.html'>xInterOf_</a></code>; <code><a href='xIsIn.html'>xIsIn</a></code>,
+  <code><a href='xIsIn.html'>xIsIn_</a></code>; <code><a href='xIsSubset.html'>xIsSubset</a></code>,
+  <code><a href='xIsSubset.html'>xIsSubset_</a></code>; <code><a href='xNotIn.html'>xNotIn</a></code>,
+  <code><a href='xNotIn.html'>xNotIn_</a></code>; <code><a href='xNotSubset.html'>xNotSubset</a></code>,
   <code><a href='xNotSubset.html'>xNotSubset_</a></code>; <code><a href='xPowerSetOf.html'>xPowerSetOf</a></code>,
   <code><a href='xPowerSetOf.html'>xPowerSetOf_</a></code>; <code><a href='xUnionOf.html'>xUnionOf</a></code>,
   <code><a href='xUnionOf.html'>xUnionOf_</a></code>; <code><a href='xUniqueOf.html'>xUniqueOf</a></code>,

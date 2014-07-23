@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-<title>xUnzipIndices. kiwi 0.28.0</title>
+<title>xUnzipIndices. kiwi 0.37.0</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="author" content="">
 
@@ -178,7 +178,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">kiwi 0.28.0</a>
+      <a class="navbar-brand" href="#">kiwi 0.37.0</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -272,9 +272,9 @@
     <pre class="examples"><div class='input'>
 # 1. enumerate the letters with their indices.
 
-x_(letters) $ xUnzipIndices() $ xMapply((ith : val) := {
+x_(letters) $ xUnzipIndices() $ xMap( xUnspread((ith : val) := {
 	xFromWords_(&#39;the &#39;, paste(ith), &#39; letter is &#39;, val)
-})
+}) )
 </div>
 <div class='output'>
 [ an kiwi object with methods for collections ]
@@ -374,8 +374,8 @@ Other key_functions: <code><a href='xAddKeys.html'>xAddKeys</a></code>,
   <code><a href='xAddKeys.html'>xAddKeys_</a></code>; <code><a href='xIndicesOf.html'>xIndicesOf</a></code>,
   <code><a href='xIndicesOf.html'>xIndicesOf_</a></code>; <code><a href='xKeysOf.html'>xKeysOf</a></code>,
   <code><a href='xKeysOf.html'>xKeysOf_</a></code>; <code><a href='xUnzipKeys.html'>xUnzipKeys</a></code>,
-  <code><a href='xUnzipKeys.html'>xUnzipKeys_</a></code>; <code><a href='xZipKeys.html'>xZipKeys</a></code>,
-  <code><a href='xZipKeys.html'>xZipKeys_</a></code>
+  <code><a href='xUnzipKeys.html'>xUnzipKeys_</a></code>; <code><a href='xValuesOf.html'>xValuesOf</a></code>;
+  <code><a href='xZipKeys.html'>xZipKeys</a></code>, <code><a href='xZipKeys.html'>xZipKeys_</a></code>
 
 Other reshaping_functions: <code><a href='xAppend.html'>xAppend</a></code>,
   <code><a href='xAppend.html'>xAppend_</a></code>; <code><a href='xChop.html'>xChop</a></code>,

@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-<title>xSortBy. kiwi 0.28.0</title>
+<title>xSortBy. kiwi 0.37.0</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="author" content="">
 
@@ -178,7 +178,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">kiwi 0.28.0</a>
+      <a class="navbar-brand" href="#">kiwi 0.37.0</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -215,7 +215,7 @@
     <h2>Arguments</h2>
     <dl>
       <dt>fn</dt>
-      <dd>a function that returns a number. The size metric of an element.</dd>
+      <dd>a function that returns a number. The measure of an elements size.</dd>
       <dt>coll</dt>
       <dd>a collection. The collection to sort.</dd>
       <dt>...</dt>
@@ -245,7 +245,7 @@
       <h2>Details</h2>
 
       <p><b>xSortBy</b> allows a collection to be sorted by a custom
-    size operation. A classic example is sorting a collection of collections
+    measure of size. A typical use is sorting a collection of collections
     (analogous to a data frame) by a particular column.</p>
 
       <p><code>coll <- list(list('key1', 10), list('key2', 12), list('key3', 0))</code></p>
@@ -273,7 +273,8 @@
 
       <p></p>
 
-      <p>If <b>coll</b> is a empty collection the empty list is returned.</p>
+      <p>If <b>coll</b> is a empty collection the empty list is returned. Throws an error if
+   <b>fn</b> returns Na or NaN or a non length-one-numeric value.</p>
 
     </div>
     
@@ -319,7 +320,7 @@ k_nearest &lt;- (dist : point : training) := {
 		xMap(dist_to_test_point) $ x_AsDouble()
 
 	# rank the distances from closest to furthest.
-	nearest &lt;- x_(training) $ xSlice(xWhere(xRankOf(distances) &lt;= k))
+	nearest &lt;- x_(training) $ xSlice(xWhere(xRank(distances) &lt;= k))
 
 	# get the frequencies of the categories among the closest.
 	category_frequencies &lt;-

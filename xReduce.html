@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-<title>xReduce. kiwi 0.28.0</title>
+<title>xReduce. kiwi 0.37.0</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="author" content="">
 
@@ -178,7 +178,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">kiwi 0.28.0</a>
+      <a class="navbar-brand" href="#">kiwi 0.37.0</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -381,7 +381,7 @@ palindromic &lt;- &quot;Marge let a moody baby doom a telegram.&quot;
 
 # the letters in the string, right to left.
 left_to_right &lt;-
-x_(palindromic) $ xToChars() $ xMap(tolower) $ x_Select(char := xIsMember(char, letters))
+x_(palindromic) $ xToChars() $ xMap(tolower) $ x_Select(char := xIsIn(char, letters))
 
 # the same string, reversed.
 right_to_left &lt;- x_(left_to_right) $ x_Reverse()

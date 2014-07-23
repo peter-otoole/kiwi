@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-<title>xExplode. kiwi 0.28.0</title>
+<title>xExplode. kiwi 0.37.0</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="author" content="">
 
@@ -178,7 +178,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">kiwi 0.28.0</a>
+      <a class="navbar-brand" href="#">kiwi 0.37.0</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -244,7 +244,7 @@
 
       <p></p>
 
-      <p>&lt;character> -> &lt;character> -> &lt;character></p>
+      <p>|character| -> |character| -> &lt;character></p>
 
     </div>
 
@@ -265,7 +265,7 @@
     <pre class="examples"><div class='input'>
 # 1. Create a simple csv parser.
 
-from_csv &lt;- xFix(xExplode, &#39;[ 	]*,[ 	]*&#39;)
+from_csv &lt;- xExplode(&#39;[ 	]*,[ 	]*&#39;)
 from_csv(&quot;field1, field2, field3&quot;)
 </div>
 <div class='output'>[1] &quot;field1&quot; &quot;field2&quot; &quot;field3&quot;
