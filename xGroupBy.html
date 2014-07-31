@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-<title>xGroupBy. kiwi 0.37.0</title>
+<title>xGroupBy. kiwi 0.39.0</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="author" content="">
 
@@ -178,7 +178,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">kiwi 0.37.0</a>
+      <a class="navbar-brand" href="#">kiwi 0.39.0</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -244,7 +244,7 @@
     <div class="Details">
       <h2>Details</h2>
 
-      <p>xGroupBy allows the grouping of a heterogenous dataset into groups of elements
+      <p>xGroupBy allows the grouping of a heterogeneous dataset into groups of elements
     similar in some way.</p>
 
     </div>
@@ -301,7 +301,7 @@ ICEbox              07:02:26    ripley
 # parse the table, and add rownames.
 cran_data &lt;-
 	x_(raw_cran_data) $ xToLines() $
-	xMap(row := xExplode(&quot;[ ]+&quot;, row)) $
+	xMap(xExplode(&quot;[ ]+&quot;)) $
 	xMap(as.list) $
 	xMap( xAddKeys(c(&quot;package&quot;, &quot;time&quot;, &quot;maintainer&quot;)) )
 

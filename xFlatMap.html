@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-<title>xFlatMap. kiwi 0.37.0</title>
+<title>xFlatMap. kiwi 0.39.0</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="author" content="">
 
@@ -178,7 +178,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">kiwi 0.37.0</a>
+      <a class="navbar-brand" href="#">kiwi 0.39.0</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -285,7 +285,7 @@ to each element of a collection.</p>
     
     <h2 id="examples">Examples</h2>
     <pre class="examples"><div class='input'>
-# 1. HR Functional Programming
+# 1. HackerRank Functional Programming
 #    Given an input list repeat each element n times
 
 # In this problem each element of a list must be repeated n times;
@@ -304,11 +304,7 @@ to each element of a collection.</p>
 # input collection.
 
 repeat_elements &lt;- (n : coll) := {
-
-	xFlatMap(
-		xFix_(xRepeat, num = n),
-		coll)
-
+	xFlatMap(xRepeat(n), coll)
 }
 
 # Here we mapped a partially-applied version of the xRepeat function
@@ -353,11 +349,13 @@ repeat_elements(2, c(1, 2, 3))
 #
 #    There are more efficient ways to find the numbers,
 #    but a brute force search is fun, if really slow.
+#
+#    For CRAN&#39;s sake, I will only find the first three factorions.
 
 digit_factorial_sum_of &lt;-
 	paste %then% xToChars %then% as.integer %then% factorial %then% sum
 
-x_(1:50000) $
+x_(1:5000) $
 xFlatMap(num := {
 
 	digit_factorial_sum &lt;- digit_factorial_sum_of(num)
@@ -380,9 +378,6 @@ $x_()
 
 [[3]]
 [1] 145
-
-[[4]]
-[1] 40585
 
 </div></pre>
   </div>

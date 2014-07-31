@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-<title>xChoose. kiwi 0.37.0</title>
+<title>xChoose. kiwi 0.39.0</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="author" content="">
 
@@ -178,7 +178,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">kiwi 0.37.0</a>
+      <a class="navbar-brand" href="#">kiwi 0.39.0</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -268,21 +268,12 @@
 # 1. How many ways can you get one or more royals from a random hand of two cards?
 #    Determine by exhaustive search.
 
-cards &lt;-x_(xProdSetOf_(
-	c(&#39;spades&#39;, &#39;hearts&#39;, &#39;diamonds&#39;, &#39;clubs&#39;),
-	c(&#39;ace&#39;, &#39;2&#39;, &#39;3&#39;, &#39;4&#39;, &#39;5&#39;, &#39;6&#39;, &#39;7&#39;, &#39;8&#39;, &#39;9&#39;, &#39;10&#39;, &#39;Jack&#39;, &#39;Queen&#39;, &#39;King&#39;) ))
+cards &lt;-x__(
+	&#39;ace&#39;, &#39;2&#39;, &#39;3&#39;, &#39;4&#39;, &#39;5&#39;, &#39;6&#39;, &#39;7&#39;, &#39;8&#39;, &#39;9&#39;, &#39;10&#39;, &#39;Jack&#39;, &#39;Queen&#39;, &#39;King&#39;) $ xRepeat(4)
 
-pairs &lt;- cards $ xChoose(2)
+is_royal &lt;- xIsIn(coll = c(&#39;Jack&#39;, &#39;Queen&#39;, &#39;King&#39;))
 
-royals &lt;- c(&#39;Jack&#39;, &#39;Queen&#39;, &#39;King&#39;)
-
-pairs $ xPoll( xUnspread((card1 : card2) := {
-
-	rank1 &lt;- xSecondOf(card1)
-	rank2 &lt;- xSecondOf(card2)
-
-	xIsIn(rank1, royals) || xIsIn(rank2, royals)
-}) )
+cards $ xChoose(2) $ xPoll(xAnyOf(is_royal))
 </div>
 <div class='output'>
 [ an kiwi object with methods for collections ]

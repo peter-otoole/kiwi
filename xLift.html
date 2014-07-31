@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-<title>xLift. kiwi 0.37.0</title>
+<title>xLift. kiwi 0.39.0</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="author" content="">
 
@@ -178,7 +178,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">kiwi 0.37.0</a>
+      <a class="navbar-brand" href="#">kiwi 0.39.0</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -216,16 +216,16 @@
     
     <h2>Arguments</h2>
     <dl>
-      <dt>fn1</dt>
-      <dd>a function. The left function to compose with locical and or logical or.</dd>
-      <dt>fn2</dt>
-      <dd>a function. The right function to compose with locical and or logical or.</dd>
       <dt>fn</dt>
       <dd>a binary function.</dd>
       <dt>fns</dt>
       <dd>a collection of functions.</dd>
       <dt>...</dt>
       <dd>see above.</dd>
+      <dt>fn1</dt>
+      <dd>a function. The left function to compose with logical and or logical or.</dd>
+      <dt>fn2</dt>
+      <dd>a function. The right function to compose with locical and or logical or.</dd>
     </dl>
     
     <div class="xLift">
@@ -279,7 +279,7 @@
    <code>is_positive_and_whole <- x := '&&'(is_positive(x), is_whole(x))</code></p>
 
       <p><b>sextuple</b> and <b>is_positive_and_whole</b> share a common structure. They both
-   have take one value, and call a binary function (plus, and) with the ouput of two other functions.</p>
+   have take one value, and call a binary function (plus, and) with the output of two other functions.</p>
 
       <p><b>xLift</b> factors out this pattern, for binary functions and higher arity functions.</p>
 
@@ -308,7 +308,7 @@
 
       <p></p>
 
-      <p></p>
+      <p>Calls <b>fn</b> with no arguments when <b>fns</b> is empty.</p>
 
     </div>
     

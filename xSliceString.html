@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-<title>xSliceString. kiwi 0.37.0</title>
+<title>xSliceString. kiwi 0.39.0</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="author" content="">
 
@@ -178,7 +178,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">kiwi 0.37.0</a>
+      <a class="navbar-brand" href="#">kiwi 0.39.0</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -209,17 +209,17 @@
 <div class="row">
   <div class="span8">
     <h2>Usage</h2>
-    <pre><div>xSliceString(str, nums)</div>
-<div>xSliceString_(str, ...)</div></pre>
+    <pre><div>xSliceString(nums, str)</div>
+<div>xSliceString_(..., str)</div></pre>
     
     <h2>Arguments</h2>
     <dl>
-      <dt>str</dt>
-      <dd>a string. The string to subset.</dd>
       <dt>nums</dt>
       <dd>a collection of whole numbers. The indices to select
    characters with. Negative, positive and zero indices are allowed,
    but normal R index semantics dictate how they can intermix.</dd>
+      <dt>str</dt>
+      <dd>a string. The string to subset.</dd>
       <dt>...</dt>
       <dd>see above.</dd>
     </dl>
@@ -248,7 +248,7 @@
 
       <p></p>
 
-      <p>|character| -> |numeric| -> &lt;character></p>
+      <p>|numeric| -> |character| -> &lt;character></p>
 
     </div>
 
@@ -267,9 +267,9 @@
 # 1. k-mers
 #
 # A common problem in molecular biology is to find every
-# unique continous substringin a set of
+# unique continuous substring in a set of
 # dna sequences. For example, the spectrum of length
-# four continous substrings in the below sequences
+# four continuous substrings in the below sequences
 
 # contig1: AATTCCGG
 # contig2: TGGTAACGG
@@ -290,7 +290,7 @@ kmers &lt;- (k : string) := {
 	xMap(
 		ith := {
 			# subset the string.
-			xSliceString(string, (1:k) + ith)
+			xSliceString((1:k) + ith, string)
 		},
 		0:(nchar(string) - k)
 	)
@@ -307,6 +307,7 @@ contigs &lt;- list(
 	&#39;A&#39;,
 	&#39;AGGTGTGAGAGAT&#39;
 )
+
 
 # get all unique 3-mers.
 x_(contigs) $ xReject(contig := nchar(contig) &lt; 3) $ # -- remove the contigs that are too short.

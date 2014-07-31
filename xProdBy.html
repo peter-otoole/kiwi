@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-<title>xElemsByCols. kiwi 0.39.0</title>
+<title>xProdBy. kiwi 0.39.0</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="author" content="">
 
@@ -204,35 +204,51 @@
       
       </header>
 
-      <h1>xElemsByCols</h1>
+      <h1>xProdBy</h1>
 
 <div class="row">
   <div class="span8">
     <h2>Usage</h2>
-    <pre><div>xElemsByCols(tab)</div></pre>
+    <pre><div>xProdBy(fn, coll)</div>
+<div>xProdBy_(fn, ...)</div></pre>
     
     <h2>Arguments</h2>
     <dl>
-      <dt>tab</dt>
-      <dd>a matrix. The matrix to enumerate by elements.</dd>
+      <dt>fn</dt>
+      <dd>a unary function. The function to measure the size of
+    an element.</dd>
+      <dt>coll</dt>
+      <dd>a non-empty collection. The collection to find the
+   product of.</dd>
+      <dt>...</dt>
+      <dd>see above.</dd>
     </dl>
     
-    <div class="xElemsByCols">
-      <h2>xElemsByCols</h2>
+    <div class="xProdBy">
+      <h2>xProdBy</h2>
 
     </div>
 
     <div class="Value">
       <h2>Value</h2>
 
-      <p>A kiwi object containing a list.</p>
+      <p>A double.</p>
 
     </div>
 
     <div class="Description">
       <h2>Description</h2>
 
-      <p>Enumerate the elements of a matrix down columns.</p>
+      <p>Get the product of a collection according to a measure function.</p>
+
+    </div>
+
+    <div class="Type Signature">
+      <h2>Type Signature</h2>
+
+      <p></p>
+
+      <p>(any -> &lt;number>) -> |any| -> &lt;number></p>
 
     </div>
 
@@ -241,26 +257,29 @@
 
       <p></p>
 
-      <p>Returns the empty list if either dimension of <b>tab</b> is empty.</p>
+      <p>If an empty collection is given, numeric(0) is returned.</p>
 
     </div>
-      </div>
+    
+    <h2 id="examples">Examples</h2>
+    <pre class="examples"><div class='input'>
+# 1. compounding the numbers themselves.
+
+xSumBy(xIdentity, 1:10)
+</div>
+<div class='output'>[1] 55
+</div>
+<div class='input'>
+# 3628800
+</div></pre>
+  </div>
   <div class="span4">
     <!-- <ul>
-      <li>xElemsByCols</li>
+      <li>xProdBy</li><li>xProdBy_</li>
     </ul>
     <ul>
       
     </ul> -->
-
-    <h2>See also</h2>
-    
-Other methods: <code><a href='xByColkeys.html'>xByColkeys</a></code>;
-  <code><a href='xByCols.html'>xByCols</a></code>; <code><a href='xByLevels.html'>xByLevels</a></code>;
-  <code><a href='xByRowkeys.html'>xByRowkeys</a></code>; <code><a href='xByRows.html'>xByRows</a></code>;
-  <code><a href='xByValues.html'>xByValues</a></code>; <code><a href='xElemsByRows.html'>xElemsByRows</a></code>;
-  <code><a href='xExecute.html'>xExecute</a></code>; <code><a href='xTap.html'>xTap</a></code>;
-  <code><a href='x_.html'>x_</a></code>, <code><a href='x_.html'>x__</a></code>
 
       </div>
 </div>

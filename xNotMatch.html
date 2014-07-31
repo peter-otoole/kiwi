@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-<title>xNotMatch. kiwi 0.37.0</title>
+<title>xNotMatch. kiwi 0.39.0</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="author" content="">
 
@@ -178,7 +178,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">kiwi 0.37.0</a>
+      <a class="navbar-brand" href="#">kiwi 0.39.0</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -260,7 +260,14 @@
     
     <h2 id="examples">Examples</h2>
     <pre class="examples"><div class='input'>
-NULL
+# 1. Test if a string doesn&#39;t match a regular expression
+
+xNotMatch(&#39;Over 90+[!]$&#39;, &#39;Over 9000!&#39;)
+</div>
+<div class='output'>[1] FALSE
+</div>
+<div class='input'>
+# False
 </div></pre>
   </div>
   <div class="span4">

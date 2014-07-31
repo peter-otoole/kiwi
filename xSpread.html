@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-<title>xSpread. kiwi 0.37.0</title>
+<title>xSpread. kiwi 0.39.0</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="author" content="">
 
@@ -178,7 +178,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">kiwi 0.37.0</a>
+      <a class="navbar-brand" href="#">kiwi 0.39.0</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -234,7 +234,7 @@
       <h2>Description</h2>
 
       <p>Return a variadic function that passes its arguments
-as a list to its underyling function.</p>
+as a list to its underlying function.</p>
 
     </div>
 
@@ -273,14 +273,14 @@ as a list to its underyling function.</p>
 # a function that takes many arguments.
 #
 
-summate &lt;- xSpread(nums := xFold(&quot;+&quot;, 0, nums) )
+summate &lt;- xSpread(xFold(&quot;+&quot;, 0) )
 
 summate(1, 2, 3, 4, 5, 6)
 </div>
 <div class='output'>[1] 21
 </div>
 <div class='input'>
-# 2.
+# 21.
 #
 
 </div></pre>

@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-<title>xDo. kiwi 0.37.0</title>
+<title>xDo. kiwi 0.39.0</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="author" content="">
 
@@ -178,7 +178,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">kiwi 0.37.0</a>
+      <a class="navbar-brand" href="#">kiwi 0.39.0</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -215,7 +215,7 @@
     <h2>Arguments</h2>
     <dl>
       <dt>fn</dt>
-      <dd>a unary function, usually side-effectful.</dd>
+      <dd>a unary function, usually side-effectual.</dd>
       <dt>coll</dt>
       <dd>a collection</dd>
       <dt>...</dt>
@@ -237,7 +237,7 @@
     <div class="Description">
       <h2>Description</h2>
 
-      <p>Map (a possibly side-effectful) function over a
+      <p>Map (a possibly side-effectual) function over a
 collection and discard the results.</p>
 
     </div>
@@ -248,7 +248,7 @@ collection and discard the results.</p>
       <p><b>xDo</b> is superficially similar to <b>xMap</b>, in that
     it applies a function to each element of a collection. However
     <b>xDo</b> does not accumulate a result, so it is more memory-efficient
-    and faster at executing side-effectful functions than <b>xMap</b>.</p>
+    and faster at executing side-effectual functions than <b>xMap</b>.</p>
 
     </div>
 
@@ -266,7 +266,7 @@ collection and discard the results.</p>
 
       <p></p>
 
-      <p></p>
+      <p>Does not call <b>fn</b> when given an empty list.</p>
 
     </div>
     
@@ -316,9 +316,8 @@ NULL
 
 xDo(list.files %then% print, &#39;.&#39;)
 </div>
-<div class='output'> [1] &quot;demo&quot;             &quot;DESCRIPTION&quot;      &quot;inst&quot;             &quot;LICENSE&quot;          &quot;man&quot;             
- [6] &quot;NAMESPACE&quot;        &quot;R&quot;                &quot;README.md&quot;        &quot;site-content&quot;     &quot;staticdocs.Rproj&quot;
-[11] &quot;vignettes&quot;       
+<div class='output'> [1] &quot;demo&quot;             &quot;DESCRIPTION&quot;      &quot;inst&quot;             &quot;LICENSE&quot;          &quot;man&quot;              &quot;NAMESPACE&quot;        &quot;R&quot;               
+ [8] &quot;README.md&quot;        &quot;site-content&quot;     &quot;staticdocs.Rproj&quot; &quot;vignettes&quot;       
 </div>
 <div class='input'>
 #2. plot a trig function.
@@ -342,11 +341,11 @@ xDo(
 </div>
 <p><img src='xDo-11.png' alt='' width='400' height='400' /></p>
 <div class='input'>
-#3. HR Functional Programming
+#3. HackerRank Functional Programming
 #   Print &quot;Hello World&quot; n times
 
 # xDo is Kiwi&#39;s construct for mapping over a collection
-# and discarding the result, for use with side-effectful
+# and discarding the result, for use with side-effectual
 # functions. An anonymous function or print composed with
 # a constant function can be used to print the actual message.
 

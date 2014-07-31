@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-<title>xIterate. kiwi 0.37.0</title>
+<title>xIterate. kiwi 0.39.0</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="author" content="">
 
@@ -178,7 +178,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">kiwi 0.37.0</a>
+      <a class="navbar-brand" href="#">kiwi 0.39.0</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -242,7 +242,7 @@
       <h2>Details</h2>
 
       <p><b>xIterate</b> repeatedly calls a function on an initial value until
-    it is explicitely halted using <b>Return( )</b>. It is similar
+    it is explicitly halted using <b>Return( )</b>. It is similar
     for a while loop, with the added benefits of an explicit return value
     and easier debugging.</p>
 
@@ -304,7 +304,7 @@ xIterate(
 <div class='output'>[1] 2520
 </div>
 <div class='input'>
-# 2. CE - Sum the first 1,000 primes
+# 2. CodeEval- Sum the first 1,000 primes
 #    This is trivial to do with a fold, but interesting
 #    to do with iterate and take,
 
@@ -367,7 +367,7 @@ x_Tap(
 prime_sum &lt;-
 x_(1:upper_bound) $ xSelect(is_prime) $ xTake(1000) $ xReduce(&#39;+&#39;)
 
-# 3. CE Compute modulo without the builtin operator
+# 3. CodeEvalCompute modulo without the built in operator
 #    This is trivial to do with xIterate.
 
 modulo &lt;- (num : modulus) := {
@@ -391,7 +391,7 @@ modulo(1121, 10)
 <div class='input'>
 # 1
 
-# 4. CE find a palindromic number by
+# 4. CodeEvalfind a palindromic number by
 #    taking a number, adding its reversed digits, and
 # repeating.
 

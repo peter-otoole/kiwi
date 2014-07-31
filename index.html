@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-<title>Index. kiwi 0.37.0</title>
+<title>Index. kiwi 0.39.0</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="author" content="Ryan Grannell">
 
@@ -178,7 +178,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">kiwi 0.37.0</a>
+      <a class="navbar-brand" href="#">kiwi 0.39.0</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -364,8 +364,8 @@
         <code><a href="xWrite.html">xWrite</a></code><br />xWrite</li>
     
     </ul>
-    <h3>Methods</h3>
-    <p> These functions involve arrow methods, or are only available as arrow methods. Most functions that are only available as methods convert second-class citizens of arrow like data frames and factors to collection representations. </p>
+    <h3>Miscellaneous</h3>
+    <p> These functions do not fall neatly into any other category. </p>
 
     <ul class="index">
         
@@ -379,7 +379,7 @@
         <code><a href="xByCols.html">xByCols</a></code><br />xByCols</li>
             
       <li>
-        <code><a href="xByLevels.html">xByLevels</a></code>(xByValues)<br />xByLevels</li>
+        <code><a href="xByLevels.html">xByLevels</a></code><br />xByLevels</li>
             
       <li>
         <code><a href="xByRows.html">xByRows</a></code><br />xByRows</li>
@@ -392,6 +392,24 @@
             
       <li>
         <code><a href="xElemsByRows.html">xElemsByRows</a></code><br />xElemsByRows</li>
+            
+      <li>
+        <code><a href="xLenOf.html">xLenOf</a></code>(xLenOf_)<br />xLenOf</li>
+            
+      <li>
+        <code><a href="xLocate.html">xLocate</a></code>(xLocate_)<br />xLocate</li>
+            
+      <li>
+        <code><a href="xMeanOf.html">xMeanOf</a></code>(xMeanOf_)<br />xMeanOf</li>
+            
+      <li>
+        <code><a href="xProdBy.html">xProdBy</a></code>(xProdBy_)<br />xProdBy</li>
+            
+      <li>
+        <code><a href="xSumBy.html">xSumBy</a></code>(xSumBy_)<br />xSumBy</li>
+            
+      <li>
+        <code><a href="xWhere.html">xWhere</a></code>(xWhere_)<br />xWhere</li>
             
       <li>
         <code><a href="xTap.html">xTap</a></code><br />xTap</li>
@@ -505,6 +523,9 @@
         <code><a href="xFix.html">xFix</a></code>(xFix_)<br />xFix</li>
             
       <li>
+        <code><a href="xNegate.html">xNegate</a></code><br />xNegate</li>
+            
+      <li>
         <code><a href="xSpread.html">xSpread</a></code><br />xSpread</li>
             
       <li>
@@ -518,6 +539,15 @@
         
       <li>
         <code><a href="xAddKeys.html">xAddKeys</a></code>(xAddKeys_)<br />xAddKeys</li>
+            
+      <li>
+        <code><a href="xIndicesOf.html">xIndicesOf</a></code>(xIndicesOf_)<br />xIndicesOf</li>
+            
+      <li>
+        <code><a href="xIndicesTo.html">xIndicesTo</a></code><br />xIndicesTo</li>
+            
+      <li>
+        <code><a href="xKeysOf.html">xKeysOf</a></code>(xKeysOf_)<br />xKeysOf</li>
             
       <li>
         <code><a href="xUnzipIndices.html">xUnzipIndices</a></code>(xUnzipIndices_)<br />xUnzipIndices</li>
@@ -592,6 +622,9 @@
     <ul class="index">
         
       <li>
+        <code><a href="xAppend.html">xAppend</a></code>(xAppend_)<br />xAppend</li>
+            
+      <li>
         <code><a href="xChop.html">xChop</a></code>(xChop_)<br />xChop</li>
             
       <li>
@@ -608,6 +641,9 @@
             
       <li>
         <code><a href="xOneOf.html">xOneOf</a></code>(xOneOf_)<br />xOneOf</li>
+            
+      <li>
+        <code><a href="xPrepend.html">xPrepend</a></code>(xPrepend_)<br />xPrepend</li>
             
       <li>
         <code><a href="xRepeat.html">xRepeat</a></code>(xRepeat_)<br />xRepeat</li>
@@ -667,6 +703,9 @@
         <code><a href="xInitOf.html">xInitOf</a></code>(xInitOf_)<br />xInitOf</li>
             
       <li>
+        <code><a href="xKeysOf.html">xKeysOf</a></code>(xKeysOf_)<br />xKeysOf</li>
+            
+      <li>
         <code><a href="xLastOf.html">xLastOf</a></code>(xLastOf_)<br />xLastOf</li>
             
       <li>
@@ -686,6 +725,9 @@
             
       <li>
         <code><a href="xThirdOf.html">xThirdOf</a></code>(xThirdOf_)<br />xThirdOf</li>
+            
+      <li>
+        <code><a href="xValuesOf.html">xValuesOf</a></code>(xValuesOf_)<br />xValuesOf</li>
     
     </ul>
     <h3>Set Functions</h3>
@@ -756,7 +798,7 @@
     
     </ul>
     <h3>Time Functions</h3>
-    <p> These side-effectful functions work with time, or alter the temporal properties of functions. These are useful for interacting with rate-limited API's, or allowing programs to observer their own run-times. </p>
+    <p> These side-effectual functions work with time, or alter the temporal properties of functions. These are useful for interacting with rate-limited API's, or allowing programs to observer their own run-times. </p>
 
     <ul class="index">
         
@@ -825,56 +867,18 @@
     
     </ul>
     <h3>Other</h3>
-    **Kiwi** is a functional programming framework that adds partial
-application, jQuery-like method calling, function composition, and nearly
-one-hundred higher-order functions and utility functions to the R language.
-Kiwi makes R an elegant functional language with an emphasis on the
-composition of simple functions to create complex, expressive programs.
+    **Kiwi**.
 
     <ul class="index">
         
       <li>
-        <code><a href="Fix.html">Fix</a></code><br />An efficient implementation of xFix, lacking safe-guards and some features.
-</li>
-            
-      <li>
         <code><a href="values.html">Na</a></code>(False, Null, True)<br />Special Values</li>
-            
-      <li>
-        <code><a href="xAppend.html">xAppend</a></code>(xAppend_)<br />xAppend</li>
             
       <li>
         <code><a href="xByRowkeys.html">xByRowkeys</a></code><br />xByRowkeys</li>
             
       <li>
-        <code><a href="xIndicesOf.html">xIndicesOf</a></code>(xIndicesOf_)<br />xIndicesOf</li>
-            
-      <li>
-        <code><a href="xKeysOf.html">xKeysOf</a></code>(xKeysOf_)<br />xKeysOf</li>
-            
-      <li>
-        <code><a href="xLenOf.html">xLenOf</a></code>(xLenOf_)<br />xLenOf</li>
-            
-      <li>
-        <code><a href="xLocate.html">xLocate</a></code>(xLocate_)<br />xLocate</li>
-            
-      <li>
-        <code><a href="xMeanOf.html">xMeanOf</a></code>(xMeanOf_)<br />xMeanOf</li>
-            
-      <li>
-        <code><a href="xNegate.html">xNegate</a></code><br />xNegate</li>
-            
-      <li>
-        <code><a href="xPrepend.html">xPrepend</a></code>(xPrepend_)<br />xPrepend</li>
-            
-      <li>
-        <code><a href="xValuesOf.html">xValuesOf</a></code><br />xValuesOf</li>
-            
-      <li>
-        <code><a href="xValuesOf_.html">xValuesOf_</a></code><br />xValuesOf</li>
-            
-      <li>
-        <code><a href="xWhere.html">xWhere</a></code>(xWhere_)<br />xWhere</li>
+        <code><a href="xByValues.html">xByValues</a></code><br />xByValues</li>
     
     </ul>
   </div>
